@@ -1,0 +1,190 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:a163:b0:4fd:23d3:a27 with SMTP id r3csp216991pxe;
+        Fri, 6 Oct 2023 04:15:07 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IG9cMr1Hvuv/rGhGlLtAGoeuee6mTOsjRTdmecmjiJm3BKYO3zDhSW6K/TLz4bgAKPeht0h
+X-Received: by 2002:a17:902:d30d:b0:1c5:ecff:1bc7 with SMTP id b13-20020a170902d30d00b001c5ecff1bc7mr7620371plc.4.1696590907580;
+        Fri, 06 Oct 2023 04:15:07 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1696590907; cv=none;
+        d=google.com; s=arc-20160816;
+        b=0cWOyIoj/dz92NyGgHtjOF7gAp3129CMOgMjQ4M9sGU2MjH5AAxZVVYCR1Piz062MY
+         UK8bIkaRWdl3nwlxzNtiqNPklRkRbVW2StSQy5Ue2s4fXJTzosSIcq+VFgX3USEsVnZ6
+         oxhqwNu1QFRU9w1j5DwIng39Q76Ly0g6255BDFKNokxcB1cmVaSFeVOFpJFUhoNwBI/Y
+         eD/d4BMuMSKiOGzVLazv3A+4hvXRJlqxVzPVuMFdSMFCJBvn1Q3YwKdH1/grGLqudVw0
+         vN73SXHBAcY4WFsmSey4jZStS/oJZJS+RVfKhgVFN7Gyk8+JFqo/iMxw92wWRWgAxftr
+         HbnQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-id:list-unsubscribe:from:subject:reply-to:mime-version:date
+         :message-id:to:content-transfer-encoding:dkim-signature;
+        bh=kdLlkFfRznEUggrjWPgmf0srBMQrlBTgUff15yUZlqg=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=Njw63z+vJasVpSWdiIGejSR6m77P/iY3dnsMmINmNKs9uE2QN7s9w7JVR7TlOIFCWn
+         m0b9QgFWcZFuQYIdiiMOoriYr6M82s787U8CvprLxnQ0eL9CcJDwWFtu7QH+BRf0N61C
+         NadvoTwm4XgcedpTHvWW6oSIZMDWORy6H+XeFg2gutXC+KsoZXSBCOgnpuGQmCaD+wuw
+         Vkf3TIBQQJbsRHtYX3lQlaSj01XZIwkKAMo3ayvwCu9UNze4NyJv19Zxptwv83ZDiXpv
+         rTwspBzxjHTIqemfVCY0r86dljQlUNDYZvBGVMhoL7eOwru3fYN3eX199MDNtxr6XFW/
+         xnJg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@crio.in header.s=scph0223 header.b=wSTYe+1N;
+       spf=pass (google.com: domain of msprvs1=19643zwqegr9k=bounces-265607-991@spmailtechnolo.com designates 156.70.150.155 as permitted sender) smtp.mailfrom="msprvs1=19643ZwQeGR9K=bounces-265607-991@spmailtechnolo.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=crio.in
+Return-Path: <msprvs1=19643ZwQeGR9K=bounces-265607-991@spmailtechnolo.com>
+Received: from mta-70-150-155.sparkpostmail.com (mta-70-150-155.sparkpostmail.com. [156.70.150.155])
+        by mx.google.com with ESMTPS id r12-20020a170903410c00b001bbe13e753esi3318264pld.310.2023.10.06.04.15.07
+        for <srijani515@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 06 Oct 2023 04:15:07 -0700 (PDT)
+Received-SPF: pass (google.com: domain of msprvs1=19643zwqegr9k=bounces-265607-991@spmailtechnolo.com designates 156.70.150.155 as permitted sender) client-ip=156.70.150.155;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@crio.in header.s=scph0223 header.b=wSTYe+1N;
+       spf=pass (google.com: domain of msprvs1=19643zwqegr9k=bounces-265607-991@spmailtechnolo.com designates 156.70.150.155 as permitted sender) smtp.mailfrom="msprvs1=19643ZwQeGR9K=bounces-265607-991@spmailtechnolo.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=crio.in
+X-MSFBL: 5e8W0zcrP7sREhQJJxlC34LBn0HYo7ArCdc7fpNPOZk=|eyJyIjoic3JpamFuaTU
+	xNUBnbWFpbC5jb20iLCJ0ZW5hbnRfaWQiOiJzcGMiLCJtZXNzYWdlX2lkIjoiNjU
+	xZjNhZWMxZjY1MTdiY2IyYjYiLCJjdXN0b21lcl9pZCI6IjI2NTYwNyIsInN1YmF
+	jY291bnRfaWQiOiI5OTEifQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=crio.in; s=scph0223;
+	t=1696590906; i=@crio.in;
+	bh=kdLlkFfRznEUggrjWPgmf0srBMQrlBTgUff15yUZlqg=;
+	h=Content-Type:To:Message-ID:Date:Subject:From:List-Unsubscribe:
+	 From:To:Cc:Subject;
+	b=wSTYe+1NDxEBqK1xDBWQ4Bp2lE86a8o8BsF/bnrUTXmENStKvYjA979+bLqqbFcAj
+	 bDv7vR5ybJU0gM9hzjy5AwgvLKlD53DCm/cgrTzxeH7gfewqFW6op0pbs3944sZEcS
+	 1xN1h7PpKpYdbpbNzKG3X1jIDqljXSCmofAOp5lU=
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+To: srijani515@gmail.com
+Message-ID: <2B.6B.31486.A3CEF156@jc.mta1vrest.cc.prd.sparkpost>
+Date: Fri, 06 Oct 2023 11:15:06 +0000
+MIME-Version: 1.0
+Reply-To: programs@criodo.com
+Subject: All SDEs are asked this interview question.
+From: "Rhea from Crio.Do" <team@crio.in>
+List-Unsubscribe: <mailto:unsubscribe@unsub.spmta.com?subject=unsubscribe:0dJfcBgIjOGhdeNAxPEWPufIce4iI-8Dw6H-3sjUfzo~|eyAicmNwdF90byI6ICJzcmlqYW5pNTE1QGdtYWlsLmNvbSIsICJ0ZW5hbnRfaWQiOiAic3BjIiwgImN1c3RvbWVyX2lkIjogIjI2NTYwNyIsICJtZXNzYWdlX2lkIjogIjY1MWYzYWVjMWY2NTE3YmNiMmI2IiwgInN1YmFjY291bnRfaWQiOiAiOTkxIiB9>
+List-Id: <spc.265607.991.sparkpostmail.com>
+
+<!doctype html><html><head>=0A</head>=0A<body>=0D=0A<div style=3D"color:tra=
+nsparent;visibility:hidden;opacity:0;font-size:0px;border:0;max-height:1px;=
+width:1px;margin:0px;padding:0px;border-width:0px!important;display:none!im=
+portant;line-height:0px!important;"><img border=3D"0" width=3D"1" height=3D=
+"1" src=3D"https://ampsp.webengage.co/q/qMp5lrjnt-9wFYLg1lsmEA~~/AAQNhwA~/R=
+gRnAnE6PVcDc3BjQgplHzrsH2UXvLK2UhRzcmlqYW5pNTE1QGdtYWlsLmNvbVgEAAAD3w~~" al=
+t=3D""/></div>=0D=0A=0A<p dir=3D"ltr" style=3D"line-height: 1.38; margin-to=
+p: 0pt; margin-bottom: 0pt;"><span style=3D"font-size: 11pt; font-family: A=
+rial,sans-serif; color: #000000; background-color: transparent; font-weight=
+: 400; font-style: normal; font-variant: normal; text-decoration: none; ver=
+tical-align: baseline; white-space: pre-wrap;">Hey Srijani,<br><br></span><=
+span style=3D"font-size: 11pt; font-family: Arial,sans-serif; color: #00000=
+0; background-color: transparent; font-weight: 400; font-style: normal; fon=
+t-variant: normal; text-decoration: none; vertical-align: baseline; white-s=
+pace: pre-wrap;"></span><span style=3D"background-color: transparent; font-=
+size: 11pt; font-family: Arial, sans-serif; font-variant-numeric: normal; f=
+ont-variant-east-asian: normal; font-variant-alternates: normal; vertical-a=
+lign: baseline; white-space-collapse: preserve;"><b style=3D"font-weight: n=
+ormal;"></b></span></p><p dir=3D"ltr" style=3D"line-height: 1.38; margin-to=
+p: 0pt; margin-bottom: 0pt;"><span style=3D"font-size: 11pt; font-family: A=
+rial,sans-serif; color: #000000; background-color: transparent; font-weight=
+: bold; font-style: italic; font-variant: normal; text-decoration: none; ve=
+rtical-align: baseline; white-space: pre-wrap;">In a survey of 2000 softwar=
+e engineers, 72% said they had been asked to demonstrate their system desig=
+n skills during a job interview. </span><span style=3D"font-size: 11pt; fon=
+t-family: Arial,sans-serif; color: #000000; background-color: transparent; =
+font-weight: 400; font-style: normal; font-variant: normal; text-decoration=
+: none; vertical-align: baseline; white-space: pre-wrap;">- Triplebyte</spa=
+n></p><p dir=3D"ltr" style=3D"line-height: 2.1599999999999997; margin-top: =
+0pt; margin-bottom: 0pt;"><b style=3D"font-weight: normal;"><br></b></p><p =
+dir=3D"ltr" style=3D"line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt=
+;"><span style=3D"font-size: 11pt; font-family: Arial,sans-serif; color: #0=
+00000; background-color: transparent; font-weight: 400; font-style: normal;=
+ font-variant: normal; text-decoration: none; vertical-align: baseline; whi=
+te-space: pre-wrap;">It=E2=80=99s a crucial indicator of your problem-solvi=
+ng skills, technical knowledge, and communication skills. It also tests sca=
+lability and performance.&nbsp;</span></p><p dir=3D"ltr" style=3D"line-heig=
+ht: 2.1599999999999997; margin-top: 0pt; margin-bottom: 0pt;"><b style=3D"f=
+ont-weight: normal;"><br></b></p><p dir=3D"ltr" style=3D"line-height: 1.38;=
+ margin-top: 0pt; margin-bottom: 0pt;"><span style=3D"font-size: 11pt; font=
+-family: Arial,sans-serif; color: #000000; background-color: transparent; f=
+ont-weight: 400; font-style: normal; font-variant: normal; text-decoration:=
+ none; vertical-align: baseline; white-space: pre-wrap;">Learn how to crack=
+ interviews with awesome System Design skills!</span></p><p dir=3D"ltr" sty=
+le=3D"line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; text-align: c=
+enter;"><b style=3D"font-weight: normal;" id=3D"docs-internal-guid-5f64b810=
+-7fff-b5a2-7c48-5c5df9c1a81a"></b><br><a href=3D"https://ampsp.webengage.co=
+/f/a/1iVqnWrUIMw8CNJtlfjz8g~~/AAQNhwA~/RgRnAnE6P4SCAmh0dHBzOi8vYy53ZWJlbmdh=
+Z2UuY29tL2x3L2cxLmpwZz9wPWV5SnNZeUk2SWpFME5UQTNZMlEwWkNJc0ltd2lPaUl5T0dFMk1=
+UbGxOMkpsWldNek1XWTRNMlUxTnpkalkyUmxPVEptWkRFME5XSXdNbVV3TVRJNElpd2lZeUk2SW=
+5OeWFXcGhibWsxTVRWQVoyMWhhV3d1WTI5dElpd2laVzBpT2lKemNtbHFZVzVwTlRFMVFHZHRZV=
+2xzTG1OdmJTSXNJbVVpT2lKJTJCTVRjM2JITnJNQ0lzSW5ZaU9pSiUyQk0ybGpNbWR1WWlJc0lu=
+TWlPaUolMkJOV05pWm1wcFlUTTBORE5tT0docVgyRXhOakV4WXpSbExUVTJaVGd0TkdFNU55MWh=
+ORFEwTFdWbU5qSmlOV1JtTURsbU56b3hOamsyTlRrd05qUXpNRGM1SWl3aVpYWmxiblFpT2lKbG=
+JXRnBiRjlqYkdsamF5SXNJbU4wWVNJNkluNHpNamxqT1RBNE5TSXNJblJ2VlZKTUlqb2lhSFIwY=
+0hNNkx5OTNkM2N1WTNKcGJ5NWtieTl6YjJaMGQyRnlaUzFrWlhabGJHOXdiV1Z1ZEMxbVpXeHNi=
+M2R6YUdsd0xYQnliMmR5WVcwdlAyeGxZV1JtYjNKdFgyOXdaVzQ5ZEhKMVpTWjFkRzFmYzI5MWN=
+tTmxQWE5yYVd4c2JIbHVZeTFzWldGa2N5WjFkRzFmYldWa2FYVnRQWE5yYVd4c2JIbHVZeTFzWl=
+dGa2N5WjFkRzFmWTJGdGNHRnBaMjQ5YzJ0cGJHeHNlVzVqTFd4bFlXUnpMV1Z0WVdsc01qY2lmU=
+SUzRCUzRFcDc3BjQgplHzrsH2UXvLK2UhRzcmlqYW5pNTE1QGdtYWlsLmNvbVgEAAAD3w~~" ti=
+tle=3D"Apply &amp; Start for Free" target=3D"_blank" rel=3D"noopener"><span=
+ style=3D"text-decoration: underline;"><strong><span style=3D"color: #3366f=
+f;"><span style=3D"font-size: 14pt;"><span style=3D"font-family: Arial, san=
+s-serif; background-color: transparent; font-style: normal; font-variant: n=
+ormal; text-decoration: none; vertical-align: baseline; white-space: pre-wr=
+ap;">Apply &amp; Start for Free</span></span></span></strong></span></a><sp=
+an style=3D"text-decoration: underline;"><strong><span style=3D"color: #336=
+6ff;"><span style=3D"font-size: 14pt;"><span style=3D"font-family: Arial, s=
+ans-serif; background-color: transparent; font-style: normal; font-variant:=
+ normal; text-decoration: none; vertical-align: baseline; white-space: pre-=
+wrap;"></span></span></span></strong></span><span style=3D"font-size: 8pt; =
+font-family: Arial, sans-serif; color: #000000; background-color: transpare=
+nt; font-weight: 400; font-style: normal; font-variant: normal; text-decora=
+tion: none; vertical-align: baseline; white-space: pre-wrap;"><span style=
+=3D"font-size: 11pt; font-family: Arial,sans-serif; color: #000000; backgro=
+und-color: transparent; font-weight: 400; font-style: normal; font-variant:=
+ normal; text-decoration: none; vertical-align: baseline; white-space: pre-=
+wrap;"></span></span></p><p dir=3D"ltr" style=3D"line-height: 1.38; margin-=
+top: 0pt; margin-bottom: 0pt;"><span style=3D"font-size: 8pt; font-family: =
+Arial, sans-serif; color: #000000; background-color: transparent; font-weig=
+ht: 400; font-style: normal; font-variant: normal; text-decoration: none; v=
+ertical-align: baseline; white-space: pre-wrap;"><span style=3D"font-size: =
+11pt; font-family: Arial,sans-serif; color: #000000; background-color: tran=
+sparent; font-weight: 400; font-style: normal; font-variant: normal; text-d=
+ecoration: none; vertical-align: baseline; white-space: pre-wrap;"><br>Than=
+k you<br>Rhea,<br>Team Crio</span></span></p><p dir=3D"ltr" style=3D"line-h=
+eight: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style=3D"font-size=
+: 8pt; font-family: Arial, sans-serif; color: #000000; background-color: tr=
+ansparent; font-weight: 400; font-style: normal; font-variant: normal; text=
+-decoration: none; vertical-align: baseline; white-space: pre-wrap;">&nbsp;=
+</span><span style=3D"font-size: 8pt; font-family: Arial, sans-serif; color=
+: #000000; background-color: transparent; font-weight: 400; font-style: nor=
+mal; font-variant: normal; text-decoration: none; vertical-align: baseline;=
+ white-space: pre-wrap;"></span></p><p dir=3D"ltr" style=3D"line-height: 1.=
+38; margin-top: 0pt; margin-bottom: 0pt;"><span style=3D"font-size: 8pt; fo=
+nt-family: Arial, sans-serif; color: #000000; background-color: transparent=
+; font-weight: 400; font-style: normal; font-variant: normal; text-decorati=
+on: none; vertical-align: baseline; white-space: pre-wrap;"><br></span></p>=
+<p dir=3D"ltr" style=3D"line-height: 1.38; margin-top: 0pt; margin-bottom: =
+0pt;"><span style=3D"font-size: 8pt; font-family: Arial, sans-serif; color:=
+ #000000; background-color: transparent; font-weight: 400; font-style: norm=
+al; font-variant: normal; text-decoration: none; vertical-align: baseline; =
+white-space: pre-wrap;"><a href=3D"https://ampsp.webengage.co/f/a/chXtW80KL=
+MfBnYVOF8pYRQ~~/AAQNhwA~/RgRnAnE6P4SuAWh0dHBzOi8vZGFzaGJvYXJkLndlYmVuZ2FnZS=
+5jb20vdXNlcnMvZW1haWxzL3Vuc3Vic2NyaWJlLmh0bWw_cD1leUpzWXlJNklqRTBOVEEzWTJRM=
+FpDSXNJbXdpT2lJeU9HRTJNVGxsTjJKbFpXTXpNV1k0TTJVMU56ZGpZMlJsT1RKbVpERTBOV0l3=
+TW1Vd01USTRJaXdpWXlJNkluTnlhV3BoYm1rMU1UVkFaMjFoYVd3dVkyOXRJaXdpWlcwaU9pSnp=
+jbWxxWVc1cE5URTFRR2R0WVdsc0xtTnZiU0lzSW1VaU9pSiUyQk1UYzNiSE5yTUNJc0luWWlPaU=
+olMkJNMmxqTW1kdVlpSXNJbk1pT2lKJTJCTldOaVptcHBZVE0wTkRObU9HaHFYMkV4TmpFeFl6U=
+mxMVFUyWlRndE5HRTVOeTFoTkRRMExXVm1OakppTldSbU1EbG1Oem94TmprMk5Ua3dOalF6TURj=
+NUlpd2laWFpsYm5RaU9pSmxiV0ZwYkY5MWJuTjFZbk5qY21saVpTSXNJbU4wWVNJNkluNDFPREF=
+4TTJFelpTSjlXA3NwY0IKZR867B9lF7yytlIUc3JpamFuaTUxNUBnbWFpbC5jb21YBAAAA98~">=
+Unsubscribe</a></span><span style=3D"font-size: 8pt; font-family: Arial, sa=
+ns-serif; color: #000000; background-color: transparent; font-weight: 400; =
+font-style: normal; font-variant: normal; text-decoration: none; vertical-a=
+lign: baseline; white-space: pre-wrap;"></span></p>=0A<img height=3D"0" wid=
+th=3D"0" alt=3D" " src=3D"https://c.webengage.com/lw/g1.jpg=3Fp=3DeyJsYyI6I=
+jE0NTA3Y2Q0ZCIsImwiOiIyOGE2MTllN2JlZWMzMWY4M2U1NzdjY2RlOTJmZDE0NWIwMmUwMTI4=
+IiwiYyI6InNyaWphbmk1MTVAZ21haWwuY29tIiwiZW0iOiJzcmlqYW5pNTE1QGdtYWlsLmNvbSI=
+sImUiOiJ%2BMTc3bHNrMCIsInYiOiJ%2BM2ljMmduYiIsInMiOiJ%2BNWNiZmppYTM0NDNmOGhq=
+X2ExNjExYzRlLTU2ZTgtNGE5Ny1hNDQ0LWVmNjJiNWRmMDlmNzoxNjk2NTkwNjQzMDc5IiwiZXZ=
+lbnQiOiJlbWFpbF9vcGVuIn0%3D">=0D=0A<img border=3D"0" width=3D"1" height=3D"=
+1" alt=3D"" src=3D"https://ampsp.webengage.co/q/JEFM7WcrlC7B0pMgQmE1sw~~/AA=
+QNhwA~/RgRnAnE6PlcDc3BjQgplHzrsH2UXvLK2UhRzcmlqYW5pNTE1QGdtYWlsLmNvbVgEAAAD=
+3w~~">=0D=0A</body></html>
+

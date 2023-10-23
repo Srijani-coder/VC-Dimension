@@ -1,0 +1,475 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:8691:b0:4fd:23d3:a27 with SMTP id e17csp719936pxn;
+        Sun, 22 Oct 2023 03:52:12 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGjxOLGarupNICx7JXac5XrzAqrFdD+Bbo7GGhPkTXl0/H9e/t7vBFSNMdM8I3uj0zojtU7
+X-Received: by 2002:a05:620a:25c6:b0:775:9ca1:7490 with SMTP id y6-20020a05620a25c600b007759ca17490mr8028115qko.6.1697971931792;
+        Sun, 22 Oct 2023 03:52:11 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697971931; cv=none;
+        d=google.com; s=arc-20160816;
+        b=owJO8m8zECmZBhGMAtn60x8ZkIWM9xExL211vyYNMbUwkoiQkKDfjs0NOkdttifdtW
+         TEwHmxIF6AS1/cmk6rywXqMAdJW4zUP9Ps1GBcTbYP+uaIfb+/CcqkBtRNqxovqlyj7d
+         F5NN6N9CQXF0MsHvBRCIregC5BfRWoMqu0lUJGL1Oz7a1uDdM+UZD9IOKJbXIhOM2wJo
+         5yHuvaH5YAwRorrx9Xtj0fbJbYMlb/ibB+zerc54bt7RNLfp2Ui2IjFS1o6HdUW7tTWw
+         V8mf+zOfGudV2a6oyX+rHzUvab1PqUOQ0DaI5aK0ylmpTVv88NhK3NdBvJqvrllkuxvg
+         YBZQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:feedback-id:message-id
+         :list-unsubscribe-post:list-unsubscribe:date:reply-to:to:from
+         :subject:dkim-signature;
+        bh=t8vMsT4i+R9biq9aPYdK0bARm2TquIZ2WpJgOSBFrdA=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=Yf+YdUzRi2cL7A8Kbad1XLGG79+eWWKi2AjBjz2/HDufSLPrsq0v+PT/v9YRDbfcsB
+         Vgml91OBey2oYCYeksnVcm3Uybs5j2kK0e6LBfFzY9Apf5Y14HT6lCAP9GBc0JWPU2ll
+         0vSFTwWsiPEXLmoCkjoQsGorfBDlpVRtk4SnezKoh5gtsh3NNddtI/zHER2Em+i3Wsgs
+         eosVU+Ebh9fFjVJdspzgL5a3GkwJXJrj/8e/4r7vDn96g2qBfHIcnXHQJw4BoAFjbSXi
+         zTotLb4Wq/Bh055GA09+1Ci7yntzrF1QBeONnOOcui3NEgNuy83iNBZIFQ1HFDhUWL46
+         Gpng==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.1mg.com header.s=default header.b=injNpFem;
+       spf=pass (google.com: domain of return-a6897-1005494-1005505-9c5a55d3=1029081032=8@email.1mg.com designates 103.96.100.145 as permitted sender) smtp.mailfrom="return-a6897-1005494-1005505-9c5a55d3=1029081032=8@email.1mg.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=1mg.com
+Return-Path: <return-a6897-1005494-1005505-9c5a55d3=1029081032=8@email.1mg.com>
+Received: from ksm2-145.email.1mg.com (ksm2-145.email.1mg.com. [103.96.100.145])
+        by mx.google.com with ESMTPS id a6-20020a05620a066600b00765ad3da644si3730118qkh.600.2023.10.22.03.52.11
+        for <srijani515@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 22 Oct 2023 03:52:11 -0700 (PDT)
+Received-SPF: pass (google.com: domain of return-a6897-1005494-1005505-9c5a55d3=1029081032=8@email.1mg.com designates 103.96.100.145 as permitted sender) client-ip=103.96.100.145;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.1mg.com header.s=default header.b=injNpFem;
+       spf=pass (google.com: domain of return-a6897-1005494-1005505-9c5a55d3=1029081032=8@email.1mg.com designates 103.96.100.145 as permitted sender) smtp.mailfrom="return-a6897-1005494-1005505-9c5a55d3=1029081032=8@email.1mg.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=1mg.com
+DKIM-Signature: a=rsa-sha256; bh=H/7m0ElN1fiDaUtOyRvojARvz3NtZG8gBxJk31JJ0xQ=;
+ c=simple/simple; d=email.1mg.com;
+ h=Subject:From:To:Reply-To:Date:List-Unsubscribe:List-Unsubscribe-Post:X-CampaignID:Message-ID:X-Mailer-Info:Feedback-ID:Content-Type:Content-Transfer-Encoding;
+ s=default; t=1697971931; v=1;
+ b=injNpFemh74J91RTS7bq4UroFoWivBbdRu7J8of38BmSfudM27glhRZkORohLbmPiKAjlGFo
+ zcKJafEdBkiXISUkp5EhNRQ+jCTHLw+nDrJ6gZZEhusx9eI1tOdKwnRDv4uZZbzmhdU5R6AYkx9
+ 3xFrKkN+phvCkk9ABFnMHVgY=
+Subject: Smart ways to stay healthy this festive season
+From: "Tata 1mg" <care@email.1mg.com>
+To: srijani515@gmail.com
+Reply-To: care@1mg.com
+Date: 22 Oct 2023 10:52:11 -0000
+List-Unsubscribe: <https://emg.email.1mg.com/ga/unsubscribe/2-1029081032-6897-522627-1005505-b2988cf46000331-7k93eb9bea>,
+ <mailto:return-a6897-1005494-1005505-9c5a55d3=1029081032=8u@email.1mg.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-CampaignID: s4:1005494-24eb1a79d578dee4
+Message-ID: <mid-95ce7ad4ed89ba93d0e2bb140f5f1daa-147@email.1mg.com>
+X-Mailer-Info: 11.EmN4kzN.QMwATN0kDN.MncppWYulWNxUDQn1WYpxmLj9Wb.QMwITOwgTMwM
+ jM.QMwATN1ATN....
+Feedback-ID: o147:o147c522627:o147s1029081032:mlkt6
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www=
+.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:o=3D"urn:schemas-microso=
+ft-com:office:office" xmlns:v=3D"urn:schemas-microsoft-com:vml">
+
+<head>
+    <meta content=3D"text/html; charset=3Dutf-8" http-equiv=3D"Content-Type=
+" />
+    <meta content=3D"width=3Ddevice-width" name=3D"viewport" />
+    <meta content=3D"IE=3Dedge" http-equiv=3D"X-UA-Compatible" />
+    <title></title>
+    <style type=3D"text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        table,
+        td,
+        tr {
+            vertical-align: top;
+            border-collapse: collapse;
+        }
+        * {
+            line-height: inherit;
+        }
+        a[x-apple-data-detectors=3Dtrue] {
+            color: inherit !important;
+            text-decoration: none !important;
+        }
+        .block-grid,
+        .col {
+            width: 600px !important;
+            display: block !important;
+        }
+        .block-grid {
+            width: 600px !important;
+        }
+        .col {
+            width: 100% !important;
+        }
+        .col>div {
+            margin: 0 auto;
+        }
+        img.fullwidth,
+        img.fullwidthOnMobile {
+            max-width: 600px !important;
+        }
+        .no-stack .col {
+            min-width: 0 !important;
+            display: table-cell !important;
+        }
+        .no-stack.two-up .col {
+            width: 50% !important;
+        }
+        .no-stack .col.num4 {
+            width: 33% !important;
+        }
+        .no-stack .col.num8 {
+            width: 66% !important;
+        }
+        .no-stack .col.num4 {
+            width: 33% !important;
+        }
+        .no-stack .col.num3 {
+            width: 25% !important;
+        }
+        .no-stack .col.num6 {
+            width: 50% !important;
+        }
+        .no-stack .col.num9 {
+            width: 75% !important;
+        }
+        .no-stack .col.num12 {
+            width: 100% !important;
+        }
+        .video-block {
+            max-width: none !important;
+        }
+    </style>
+</head>
+
+<body class=3D"clean-body" style=3D"margin: 0; padding: 0; -webkit-text-siz=
+e-adjust: 100%; background-color: #f2f2f2;">
+<table class=3D"nl-container" style=3D"table-layout: fixed; vertical-align:=
+ top; margin: 0 auto; border-spacing: 0; border-collapse: collapse; mso-tab=
+le-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f2f2f2; width: 60=
+0px;" role=3D"presentation" width=3D"600" cellspacing=3D"0" cellpadding=3D"=
+0" bgcolor=3D"#f2f2f2">
+<tbody>
+<tr style=3D"vertical-align: top;" valign=3D"top">
+<td style=3D"word-break: break-word; vertical-align: top;" valign=3D"top"><=
+!--single images-->
+<div style=3D"background-color: transparent;">
+<div class=3D"block-grid" style=3D"margin: 0 auto; width: 600px; overflow-w=
+rap: break-word; word-wrap: break-word; word-break: break-word; background-=
+color: transparent;">
+<div style=3D"border-collapse: collapse; display: table; width: 600px; back=
+ground-color: transparent;">
+<div class=3D"col num12" style=3D"width: 600px; display: table-cell; vertic=
+al-align: top;">
+<div style=3D"width: 600px !important;">
+<div style=3D"border: 0px solid transparent; padding: 0px;">
+<div style=3D"color: #f2f2f2; font-family: Arial, Helvetica Neue, Helvetica=
+, sans-serif; line-height: 1.5; width: 600px; padding: 12px 0px 12px 0px;">
+<div style=3D"font-size: 10px; line-height: 1.5; color: #f2f2f2; font-famil=
+y: Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 21px;=
+ width: 600px; text-align: center;">As we step into the festive season, our=
+ hearts fill up with joy, ready to celebrate with loved ones.</div>
+</div>
+<!--three images blocks-->
+<div style=3D"background-color: transparent;">
+<div class=3D"block-grid no-stack" style=3D"margin: 0 auto; width: 600px; o=
+verflow-wrap: break-word; word-wrap: break-word; word-break: break-word; ba=
+ckground-color: transparent;">
+<div style=3D"border-collapse: collapse; display: table; width: 100%; backg=
+round-color: transparent;">
+<div class=3D"col num4" style=3D"display: table-cell; vertical-align: top; =
+width: 108px;">
+<div style=3D"width: 100% !important;">
+<div style=3D"border: 0px solid transparent; padding: 0px;"><!--1st-->
+<div class=3D"img-container center autowidth" style=3D"padding-right: 0px; =
+padding-left: 0px;" align=3D"center"><a style=3D"outline: none;" tabindex=
+=3D"-1" href=3D"https://emg.email.1mg.com/ga/click/2-1029081032-6897-522627=
+-1005505-786151-4eab159806-7k93eb9bea" target=3D"_blank" rel=3D"noopener"> =
+<img class=3D"center autowidth" style=3D"text-decoration: none; -ms-interpo=
+lation-mode: bicubic; height: auto; border: none; width: 108px; display: bl=
+ock;" src=3D"https://onemg.gumlet.io/marketing/2801de6d-97b8-460c-a65b-b7cd=
+0bbf27da.png" width=3D"200" align=3D"center" border=3D"0" /> </a></div>
+</div>
+</div>
+</div>
+<div class=3D"col num4" style=3D"display: table-cell; vertical-align: top; =
+width: 76px;">
+<div style=3D"width: 100% !important;">
+<div style=3D"border: 0px solid transparent; padding: 0px;"><!--2nd-->
+<div class=3D"img-container center autowidth" style=3D"padding-right: 0px; =
+padding-left: 0px;" align=3D"center"><a style=3D"outline: none;" tabindex=
+=3D"-1" href=3D"https://emg.email.1mg.com/ga/click/2-1029081032-6897-522627=
+-1005505-786153-d18bccfafa-7k93eb9bea" target=3D"_blank" rel=3D"noopener"> =
+<img class=3D"center autowidth" style=3D"text-decoration: none; -ms-interpo=
+lation-mode: bicubic; height: auto; border: none; width: 76px; display: blo=
+ck;" src=3D"https://onemg.gumlet.io/marketing/4a36364a-84ab-4808-bcf1-66980=
+74d51ee.png" width=3D"200" align=3D"center" border=3D"0" /> </a></div>
+</div>
+</div>
+</div>
+<div class=3D"col num4" style=3D"display: table-cell; vertical-align: top; =
+width: 94px;">
+<div style=3D"width: 100% !important;">
+<div style=3D"border: 0px solid transparent; padding: 0px;"><!--2nd-->
+<div class=3D"img-container center autowidth" style=3D"padding-right: 0px; =
+padding-left: 0px;" align=3D"center"><a style=3D"outline: none;" tabindex=
+=3D"-1" href=3D"https://emg.email.1mg.com/ga/click/2-1029081032-6897-522627=
+-1005505-786154-381df59148-7k93eb9bea" target=3D"_blank" rel=3D"noopener"> =
+<img class=3D"center autowidth" style=3D"text-decoration: none; -ms-interpo=
+lation-mode: bicubic; height: auto; border: none; width: 94px; display: blo=
+ck;" src=3D"https://onemg.gumlet.io/marketing/cfd96a93-3568-4246-8783-af51a=
+be13b8e.png" width=3D"200" align=3D"center" border=3D"0" /> </a></div>
+</div>
+</div>
+</div>
+<div class=3D"col num4" style=3D"display: table-cell; vertical-align: top; =
+width: 322px;">
+<div style=3D"width: 100% !important;">
+<div style=3D"border: 0px solid transparent; padding: 0px;"><!--3rd-->
+<div class=3D"img-container center autowidth" style=3D"padding-right: 0px; =
+padding-left: 0px;" align=3D"center"><a style=3D"outline: none;" tabindex=
+=3D"-1" href=3D"https://emg.email.1mg.com/ga/click/2-1029081032-6897-522627=
+-1005505-786155-9a5bbe8b18-7k93eb9bea" target=3D"_blank" rel=3D"noopener"> =
+<img class=3D"center autowidth" style=3D"text-decoration: none; -ms-interpo=
+lation-mode: bicubic; height: auto; border: none; width: 322px; display: bl=
+ock;" src=3D"https://onemg.gumlet.io/marketing/f639b236-e63f-465f-8d26-a136=
+71ccf6dd.png" width=3D"200" align=3D"center" border=3D"0" /> </a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--end images blocks--> <!--1st image header-->
+<div class=3D"img-container center autowidth" style=3D"padding-right: 0px; =
+padding-left: 0px;" align=3D"center"><a href=3D"https://emg.email.1mg.com/g=
+a/click/2-1029081032-6897-522627-1005505-786156-0a6cd7c209-7k93eb9bea"> <im=
+g class=3D"img-max" style=3D"display: block; color: #666666; font-family: H=
+elvetica, arial, sans-serif; font-size: 16px;" title=3D"" src=3D"https://on=
+emg.gumlet.io/marketing/829e34bd-6288-4fc4-9b39-ccb5bf84034c.png" alt=3D" "=
+ width=3D"600" height=3D"auto" border=3D"0" /> </a> <a href=3D"#"> <img cla=
+ss=3D"img-max" style=3D"display: block; color: #666666; font-family: Helvet=
+ica, arial, sans-serif; font-size: 16px;" title=3D"" src=3D"https://onemg.g=
+umlet.io/marketing/c397d7d6-15b6-401e-a084-c113e286d036.png" alt=3D" " widt=
+h=3D"600" height=3D"auto" border=3D"0" /> </a> <a href=3D"https://emg.email=
+.1mg.com/ga/click/2-1029081032-6897-522627-1005505-786157-74c8f8b748-7k93eb=
+9bea"> <img class=3D"img-max" style=3D"display: block; color: #666666; font=
+-family: Helvetica, arial, sans-serif; font-size: 16px;" title=3D"" src=3D"=
+https://onemg.gumlet.io/marketing/15c7f8a1-4986-4e5b-8aa5-4c296f07a87a.png"=
+ alt=3D" " width=3D"600" height=3D"auto" border=3D"0" /> </a> <a href=3D"ht=
+tps://emg.email.1mg.com/ga/click/2-1029081032-6897-522627-1005505-786155-9a=
+5bbe8b18-7k93eb9bea"> <img class=3D"img-max" style=3D"display: block; color=
+: #666666; font-family: Helvetica, arial, sans-serif; font-size: 16px;" tit=
+le=3D"" src=3D"https://onemg.gumlet.io/marketing/98d1559a-fd27-4a84-a8bd-ae=
+aadf97eb91.png" alt=3D" " width=3D"600" height=3D"auto" border=3D"0" /> </a=
+> <a href=3D"https://emg.email.1mg.com/ga/click/2-1029081032-6897-522627-10=
+05505-786155-9a5bbe8b18-7k93eb9bea"> <img class=3D"img-max" style=3D"displa=
+y: block; color: #666666; font-family: Helvetica, arial, sans-serif; font-s=
+ize: 16px;" title=3D"" src=3D"https://onemg.gumlet.io/marketing/7305350b-0f=
+71-42d2-ad01-e3290eda760b.png" alt=3D" " width=3D"600" height=3D"auto" bord=
+er=3D"0" /> </a> <a href=3D"https://emg.email.1mg.com/ga/click/2-1029081032=
+-6897-522627-1005505-786158-5dbb951350-7k93eb9bea"> <img class=3D"img-max" =
+style=3D"display: block; color: #666666; font-family: Helvetica, arial, san=
+s-serif; font-size: 16px;" title=3D"" src=3D"https://onemg.gumlet.io/market=
+ing/6d22c3f3-f58a-4d76-869b-2da0d082b13b.png" alt=3D" " width=3D"600" heigh=
+t=3D"auto" border=3D"0" /> </a> <a href=3D"https://emg.email.1mg.com/ga/cli=
+ck/2-1029081032-6897-522627-1005505-786159-0ac78efc9b-7k93eb9bea"> <img cla=
+ss=3D"img-max" style=3D"display: block; color: #666666; font-family: Helvet=
+ica, arial, sans-serif; font-size: 16px;" title=3D"" src=3D"https://onemg.g=
+umlet.io/marketing/983a2dfe-643e-4ab4-99af-dfc24fc12ba3.png" alt=3D" " widt=
+h=3D"600" height=3D"auto" border=3D"0" /> </a> <a href=3D"https://emg.email=
+.1mg.com/ga/click/2-1029081032-6897-522627-1005505-786155-9a5bbe8b18-7k93eb=
+9bea"> <img class=3D"img-max" style=3D"display: block; color: #666666; font=
+-family: Helvetica, arial, sans-serif; font-size: 16px;" title=3D"" src=3D"=
+https://onemg.gumlet.io/marketing/ca500b80-f455-4256-b643-ebf780ea3388.png"=
+ alt=3D" " width=3D"600" height=3D"auto" border=3D"0" /> </a> <a href=3D"ht=
+tps://emg.email.1mg.com/ga/click/2-1029081032-6897-522627-1005505-786155-9a=
+5bbe8b18-7k93eb9bea"> <img class=3D"img-max" style=3D"display: block; color=
+: #666666; font-family: Helvetica, arial, sans-serif; font-size: 16px;" tit=
+le=3D"" src=3D"https://onemg.gumlet.io/marketing/9407438f-975b-46a3-b3e9-f6=
+726dd5f326.png" alt=3D" " width=3D"600" height=3D"auto" border=3D"0" /> </a=
+> <a href=3D"https://emg.email.1mg.com/ga/click/2-1029081032-6897-522627-10=
+05505-786155-9a5bbe8b18-7k93eb9bea"> <img class=3D"img-max" style=3D"displa=
+y: block; color: #666666; font-family: Helvetica, arial, sans-serif; font-s=
+ize: 16px;" title=3D"" src=3D"https://onemg.gumlet.io/marketing/650986b0-1d=
+7f-4c96-828c-c7ed93743605.png" alt=3D" " width=3D"600" height=3D"auto" bord=
+er=3D"0" /> </a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--single images-->
+<div style=3D"background-color: transparent;">
+<div class=3D"block-grid no-stack" style=3D"margin: 0 auto; width: 600px; o=
+verflow-wrap: break-word; word-wrap: break-word; word-break: break-word; ba=
+ckground-color: transparent;">
+<div style=3D"border-collapse: collapse; display: table; width: 100%; backg=
+round-color: transparent;">
+<div class=3D"col num12" style=3D"width: 600px; display: table-cell; vertic=
+al-align: top;">
+<div style=3D"width: 100% !important;">
+<div style=3D"border: 0px solid transparent; padding: 0px;"><!--reference -=
+->
+<div class=3D"img-container center autowidth" style=3D"padding-right: 0px; =
+padding-left: 0px;" align=3D"center"><a href=3D"#"> <img class=3D"img-max" =
+style=3D"display: block; color: #666666; font-family: Helvetica, arial, san=
+s-serif; font-size: 16px;" title=3D"" src=3D"https://onemg.gumlet.io/market=
+ing/f86fa5bb-dba6-443c-9299-840d44f722c1.png" alt=3D" " width=3D"600" heigh=
+t=3D"auto" border=3D"0" /> </a> <a href=3D"https://emg.email.1mg.com/ga/cli=
+ck/2-1029081032-6897-522627-1005505-786160-15e100e10d-7k93eb9bea"> <img cla=
+ss=3D"img-max" style=3D"display: block; color: #666666; font-family: Helvet=
+ica, arial, sans-serif; font-size: 16px;" title=3D"" src=3D"https://onemg.g=
+umlet.io/marketing/4cbbec33-f9eb-45a0-b97d-abd3fc88399e.gif" alt=3D" " widt=
+h=3D"600" height=3D"auto" border=3D"0" /> </a> <!--three images blocks-->
+<div style=3D"background-color: transparent;">
+<div class=3D"block-grid no-stack" style=3D"margin: 0 auto; width: 600px; o=
+verflow-wrap: break-word; word-wrap: break-word; word-break: break-word; ba=
+ckground-color: transparent;">
+<div style=3D"border-collapse: collapse; display: table; width: 100%; backg=
+round-color: transparent;">
+<div class=3D"col num4" style=3D"display: table-cell; vertical-align: top; =
+width: 57px;">
+<div style=3D"width: 100% !important;">
+<div style=3D"border: 0px solid transparent; padding: 0px;"><!--1st-->
+<div class=3D"img-container center autowidth" style=3D"padding-right: 0px; =
+padding-left: 0px;" align=3D"center"><a style=3D"outline: none;" tabindex=
+=3D"-1" href=3D"https://emg.email.1mg.com/ga/click/2-1029081032-6897-522627=
+-1005505-786161-1bf0fa8a3c-7k93eb9bea" target=3D"_blank" rel=3D"noopener"> =
+<img class=3D"center autowidth" style=3D"text-decoration: none; -ms-interpo=
+lation-mode: bicubic; height: auto; border: none; width: 57px; display: blo=
+ck;" src=3D"https://onemg.gumlet.io/marketing/decd6fa2-1025-432b-888d-4e726=
+7b80147.png" width=3D"200" align=3D"center" border=3D"0" /> </a></div>
+</div>
+</div>
+</div>
+<div class=3D"col num4" style=3D"display: table-cell; vertical-align: top; =
+width: 36px;">
+<div style=3D"width: 100% !important;">
+<div style=3D"border: 0px solid transparent; padding: 0px;"><!--2nd-->
+<div class=3D"img-container center autowidth" style=3D"padding-right: 0px; =
+padding-left: 0px;" align=3D"center"><a style=3D"outline: none;" tabindex=
+=3D"-1" href=3D"https://emg.email.1mg.com/ga/click/2-1029081032-6897-522627=
+-1005505-786162-9791e7f46f-7k93eb9bea" target=3D"_blank" rel=3D"noopener"> =
+<img class=3D"center autowidth" style=3D"text-decoration: none; -ms-interpo=
+lation-mode: bicubic; height: auto; border: none; width: 36px; display: blo=
+ck;" src=3D"https://onemg.gumlet.io/marketing/63c3f3ee-d6b8-4073-a6a3-33c42=
+918b529.png" width=3D"200" align=3D"center" border=3D"0" /> </a></div>
+</div>
+</div>
+</div>
+<div class=3D"col num4" style=3D"display: table-cell; vertical-align: top; =
+width: 44px;">
+<div style=3D"width: 100% !important;">
+<div style=3D"border: 0px solid transparent; padding: 0px;"><!--2nd-->
+<div class=3D"img-container center autowidth" style=3D"padding-right: 0px; =
+padding-left: 0px;" align=3D"center"><a style=3D"outline: none;" tabindex=
+=3D"-1" href=3D"https://emg.email.1mg.com/ga/click/2-1029081032-6897-522627=
+-1005505-786163-9bfeceaeae-7k93eb9bea" target=3D"_blank" rel=3D"noopener"> =
+<img class=3D"center autowidth" style=3D"text-decoration: none; -ms-interpo=
+lation-mode: bicubic; height: auto; border: none; width: 44px; display: blo=
+ck;" src=3D"https://onemg.gumlet.io/marketing/5bd5bb8d-b946-47b3-ac9a-76040=
+94d3ee2.png" width=3D"200" align=3D"center" border=3D"0" /> </a></div>
+</div>
+</div>
+</div>
+<div class=3D"col num4" style=3D"display: table-cell; vertical-align: top; =
+width: 44px;">
+<div style=3D"width: 100% !important;">
+<div style=3D"border: 0px solid transparent; padding: 0px;"><!--2nd-->
+<div class=3D"img-container center autowidth" style=3D"padding-right: 0px; =
+padding-left: 0px;" align=3D"center"><a style=3D"outline: none;" tabindex=
+=3D"-1" href=3D"https://emg.email.1mg.com/ga/click/2-1029081032-6897-522627=
+-1005505-786164-eb5e688b2f-7k93eb9bea" target=3D"_blank" rel=3D"noopener"> =
+<img class=3D"center autowidth" style=3D"text-decoration: none; -ms-interpo=
+lation-mode: bicubic; height: auto; border: none; width: 44px; display: blo=
+ck;" src=3D"https://onemg.gumlet.io/marketing/1d3b14e7-087f-45a3-a4cc-acbe4=
+0322c0e.png" width=3D"200" align=3D"center" border=3D"0" /> </a></div>
+</div>
+</div>
+</div>
+<div class=3D"col num4" style=3D"display: table-cell; vertical-align: top; =
+width: 279px;">
+<div style=3D"width: 100% !important;">
+<div style=3D"border: 0px solid transparent; padding: 0px;"><!--3rd-->
+<div class=3D"img-container center autowidth" style=3D"padding-right: 0px; =
+padding-left: 0px;" align=3D"center"><a style=3D"outline: none;" tabindex=
+=3D"-1" href=3D"#" target=3D"_blank" rel=3D"noopener"> <img class=3D"center=
+ autowidth" style=3D"text-decoration: none; -ms-interpolation-mode: bicubic=
+; height: auto; border: none; width: 279px; display: block;" src=3D"https:/=
+/onemg.gumlet.io/marketing/77097879-0a38-4ff4-a038-c3248d45c723.png" width=
+=3D"200" align=3D"center" border=3D"0" /> </a></div>
+</div>
+</div>
+</div>
+<div class=3D"col num4" style=3D"display: table-cell; vertical-align: top; =
+width: 43px;">
+<div style=3D"width: 100% !important;">
+<div style=3D"border: 0px solid transparent; padding: 0px;"><!--2nd-->
+<div class=3D"img-container center autowidth" style=3D"padding-right: 0px; =
+padding-left: 0px;" align=3D"center"><a style=3D"outline: none;" tabindex=
+=3D"-1" href=3D"https://emg.email.1mg.com/ga/click/2-1029081032-6897-522627=
+-1005505-786165-ab03b09133-7k93eb9bea" target=3D"_blank" rel=3D"noopener"> =
+<img class=3D"center autowidth" style=3D"text-decoration: none; -ms-interpo=
+lation-mode: bicubic; height: auto; border: none; width: 43px; display: blo=
+ck;" src=3D"https://onemg.gumlet.io/marketing/5bb58e89-7749-40a5-ac97-80920=
+b96b531.png" width=3D"200" align=3D"center" border=3D"0" /> </a></div>
+</div>
+</div>
+</div>
+<div class=3D"col num4" style=3D"display: table-cell; vertical-align: top; =
+width: 45px;">
+<div style=3D"width: 100% !important;">
+<div style=3D"border: 0px solid transparent; padding: 0px;"><!--3rd-->
+<div class=3D"img-container center autowidth" style=3D"padding-right: 0px; =
+padding-left: 0px;" align=3D"center"><a style=3D"outline: none;" tabindex=
+=3D"-1" href=3D"https://emg.email.1mg.com/ga/click/2-1029081032-6897-522627=
+-1005505-786166-80fd8da653-7k93eb9bea" target=3D"_blank" rel=3D"noopener"> =
+<img class=3D"center autowidth" style=3D"text-decoration: none; -ms-interpo=
+lation-mode: bicubic; height: auto; border: none; width: 45px; display: blo=
+ck;" src=3D"https://onemg.gumlet.io/marketing/f6d19c6b-46d0-4134-8d31-f56ad=
+ebdb175.png" width=3D"200" align=3D"center" border=3D"0" /> </a></div>
+</div>
+</div>
+</div>
+<div class=3D"col num4" style=3D"display: table-cell; vertical-align: top; =
+width: 52px;">
+<div style=3D"width: 100% !important;">
+<div style=3D"border: 0px solid transparent; padding: 0px;"><!--3rd-->
+<div class=3D"img-container center autowidth" style=3D"padding-right: 0px; =
+padding-left: 0px;" align=3D"center"><a style=3D"outline: none;" tabindex=
+=3D"-1" href=3D"https://emg.email.1mg.com/ga/click/2-1029081032-6897-522627=
+-1005505-786167-91fbfc2117-7k93eb9bea" target=3D"_blank" rel=3D"noopener"> =
+<img class=3D"center autowidth" style=3D"text-decoration: none; -ms-interpo=
+lation-mode: bicubic; height: auto; border: none; width: 52px; display: blo=
+ck;" src=3D"https://onemg.gumlet.io/marketing/b7371e4d-01eb-4ba6-a62a-005f7=
+c4f774f.png" width=3D"200" align=3D"center" border=3D"0" /> </a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--end images blocks-->
+<div style=3D"padding-top: 10px;"><span style=3D"font-size: 11px; color: #0=
+00; font-family: verdana;">If you no longer wish to receive emails from Tat=
+a 1mg, you may <a style=3D"text-decoration: none;" href=3D"https://emg.emai=
+l.1mg.com/ga/unsubscribe/2-1029081032-6897-522627-1005505-b2988cf46000331-7=
+k93eb9bea" rel=3D"nofollow">unsubscribe</a></span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<img src=3D"https://emg.email.1mg.com/ga/open/2-1029081032-6897-522627-1005=
+505-7k93eb9bea" height=3D"2" width=3D"3" alt=3D""></body>
+
+</html>=

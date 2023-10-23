@@ -1,0 +1,1077 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:8691:b0:4fd:23d3:a27 with SMTP id e17csp580890pxn;
+        Sat, 21 Oct 2023 19:22:32 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IH3yDMl1FvtiDHbpkrNLa+VlVLiNf5qogYPnPNSduvkSDoEvhuhyuie8gLKaNfAxcHAPCoB
+X-Received: by 2002:a05:620a:4015:b0:778:8f9c:38e8 with SMTP id h21-20020a05620a401500b007788f9c38e8mr4991138qko.37.1697941351700;
+        Sat, 21 Oct 2023 19:22:31 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697941351; cv=none;
+        d=google.com; s=arc-20160816;
+        b=eH+Jrqm2IptlrmTlVlWUd6vv3mzu8NYnn07v9ZAX7iFiG/cHRBdqlBr4ErJqYtKj58
+         SMX3DzwjX2JaOa80W3x9z8kqwFlIFLK2VfyL7FajEwxeu+t/7D8Ao3Ca+3D/9FPquXfj
+         pxkSNvOqVkFm1AMSx6qA3IuH4SUG1DUGqWXTf9cJwHAw/WwfmY9y3tF81JLHxH34bpUH
+         b2q4lKX/De9hAnfA+9IxSrqX5ZMF4m2T4Ztr/iPaR/8yq7/HcWSsnuqgphN04tJLFC3/
+         iKvYP/mQHnmnVLTKcwpu74kh8Iqu0SnfggNHat8bB/Vm/jERAiV8kLu2PP9T9p0/ZW/w
+         UTpA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:list-unsubscribe:mime-version:subject:message-id:to
+         :from:date:dkim-signature:dkim-signature;
+        bh=sWlHBjORiLH06LnLCQeEmLB7Hmus/To9iBJOMRLoMsQ=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=FVBFhLVLw6kJ8zDMOYEfAPHoYbDrV9mm4xk0GoCNeDhTXFx/e7SuOk4wvPqgJvZV+c
+         woZowoxsW8XgfXLy1Wn3U6U7Uo1ub6FpBpUjUdHZ9eB+mHynz2zqw8c9Gt0zAaxf8Knn
+         SYokVCgfiArixWM+YuPCPKfKAH0Ks2oGQvEeH+cazyBGT82KObwlK7o7JBrf5QWKfgo2
+         5hbaDP3yXtbMVYuEu16u2ZceaBFusGpo54ZJIJsGzrAQvUumbbWrMWDEOpn9H/9NoNdO
+         GYAhReF0RWBiK+2YrjBq04uaVNFmoNT7CKtLU3m3WTDDHJ0kuQgFGRDewKuqiOONalTI
+         64xQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@members.netflix.com header.s=iaseihk74moc3752k4xtwmuhqqtktskk header.b=NKlsHSFv;
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=jxcKSaFx;
+       spf=pass (google.com: domain of 0100018b5530ead7-2ea438ff-b001-46f9-82df-54ee58f7d426-000000@mailer.members.netflix.com designates 54.240.124.17 as permitted sender) smtp.mailfrom=0100018b5530ead7-2ea438ff-b001-46f9-82df-54ee58f7d426-000000@mailer.members.netflix.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=netflix.com
+Return-Path: <0100018b5530ead7-2ea438ff-b001-46f9-82df-54ee58f7d426-000000@mailer.members.netflix.com>
+Received: from a124-17.smtp-out.amazonses.com (a124-17.smtp-out.amazonses.com. [54.240.124.17])
+        by mx.google.com with ESMTPS id f7-20020a05620a280700b00773dc332a78si3645480qkp.420.2023.10.21.19.22.31
+        for <srijani515@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 21 Oct 2023 19:22:31 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 0100018b5530ead7-2ea438ff-b001-46f9-82df-54ee58f7d426-000000@mailer.members.netflix.com designates 54.240.124.17 as permitted sender) client-ip=54.240.124.17;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@members.netflix.com header.s=iaseihk74moc3752k4xtwmuhqqtktskk header.b=NKlsHSFv;
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=jxcKSaFx;
+       spf=pass (google.com: domain of 0100018b5530ead7-2ea438ff-b001-46f9-82df-54ee58f7d426-000000@mailer.members.netflix.com designates 54.240.124.17 as permitted sender) smtp.mailfrom=0100018b5530ead7-2ea438ff-b001-46f9-82df-54ee58f7d426-000000@mailer.members.netflix.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=netflix.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=iaseihk74moc3752k4xtwmuhqqtktskk; d=members.netflix.com;
+	t=1697941351;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:List-Unsubscribe;
+	bh=heZmz4XxJPPHM2UbFCpNBlSBWEKyd8YNDyk1OnSdQps=;
+	b=NKlsHSFv1g2iSv2EhSqS/o8OxMNjhiJo+ZxLwz68ZbRrmS+gsM9iZHSX/1n7IBtv
+	ux6+O1NLEC8HjHxawbiOwIY83gIJrRuIeHqOliJ7Up15hFF9+IdFwnnF45rtC8rz27U
+	DrV0tmiAYtlONU408HXZZD3EO95KjVccAPAj7lTo=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=224i4yxa5dv7c2xz3womw6peuasteono; d=amazonses.com; t=1697941351;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:List-Unsubscribe:Feedback-ID;
+	bh=heZmz4XxJPPHM2UbFCpNBlSBWEKyd8YNDyk1OnSdQps=;
+	b=jxcKSaFxvZA2BpqLWnQ5/7JJhUDc85pbImIuPbqbNG57Bxr1JWaQtSh3JFmOwfOC
+	1OrMZFIo/GZe+8lELqw77KRO3e/VIigiL2gxM4Rub3RK7qrTZxRLwM+z8m+GJQYkEp4
+	ACQIs4WJ/zfkIHPhn+zQ7QM0dCg0UOVdohUDp1io=
+Date: Sun, 22 Oct 2023 02:22:31 +0000
+From: Netflix <info@members.netflix.com>
+To: srijani515@gmail.com
+Message-ID: <0100018b5530ead7-2ea438ff-b001-46f9-82df-54ee58f7d426-000000@email.amazonses.com>
+Subject: Coming Tuesday, 24 October ... Justice League
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_1054471_629300484.1697941351112"
+X-TrackingUuid: ee6c597e-fdc8-4161-9a64-7df8ef859927
+X-AppInfo: easel::us-east-1::4::easel-i-0fc7f9edaa50db651::prod
+X-WorkflowId: 62E0498A
+X-MessageGuid: 2446f770-5475-4add-a437-6ba8ddfa9c9b
+List-Unsubscribe: <mailto:V0xESTNKWlpVSkQzM0RRQUoyRTVEREhRVEUxRkM3@unsubscribe.netflix.com>, <https://www.netflix.com/notificationsettings/email?id=BQE0AAEBEEo94LLt9iOSV0fb1QYn2tiAkCdJXQs6%2Fr8GVTFVfxj2oAIqbQ79L2Hfb0sS9i2i4W2tAlYAHn5gT%2B%2BTF%2BkVKf0arRo5EWs7WozzT3jbk5r6RuYkIUCRsk70ywR4DLk00uMT75mi2gb%2Bz4LH7vREs6HQNA2st63Ir8TI1Ds%2FoBwqbBRPeEaHwtfhuA0BpMq%2F7024BfyAhsG%2BXv6usAYidwMV7A%3D%3D&lnktrk=EVO&g=2446f770-5475-4add-a437-6ba8ddfa9c9b&lkid=unsubscribe_link&mid=none>
+X-localeCountry: en-AU::AU
+X-To: srijani515@gmail.com
+X-SourceAppName: hank
+X-TaskUuid: e11a2f3d-98ae-4bb0-b611-17dfd17377ed
+X-EventGuid: ee6c597e-fdc8-4161-9a64-7df8ef859927
+X-ProcEnc: BQAtAAEBEGOprh8rcZqgyc/7Oe0v/ZIg4kEkrk8zEfXNArYc1xz42zou9g+gpnT0hFO1vzZkfDY=
+Feedback-ID: 1.us-east-1.cH2tGwpBLIxia3teqeNiC4px/mCp35LHVs2n0ZR/rKI=:AmazonSES
+X-SES-Outgoing: 2023.10.22-54.240.124.17
+
+------=_Part_1054471_629300484.1697941351112
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Get a first look today.
+
+https://www.netflix.com/title/70177043?g=3D2446f770-5475-4add-a437-6ba8ddfa=
+9c9b&lkid=3DURL_PRIMARY_HERO_IMAGE_0&lnktrk=3DEVO&trkid=3D13710079
+
+Rousing=E2=80=A2Exciting=E2=80=A2Kids=E2=80=A2Armageddon
+Justice League
+Coming Tuesday
+
+In this animated series, Superman, Batman, Wonder Woman, The
+Flash, Green Lantern, The Martian Manhunter and Hawkgirl
+fight crime as the Justice League.=C2=A0=C2=A0More=C2=A0info
+[https://www.netflix.com/title/70177043?g=3D2446f770-5475-4add-a437-6ba8ddf=
+a9c9b&lkid=3DURL_PRIMARY_MORE_INFO_0&lnktrk=3DEVO&trkid=3D13710079]
+
+Remind me                                                                  =
+                                                          More=C2=A0info
+[https://www.netflix.com/title/70177043?g=3D2446f770-5475-4add-a437-6ba8ddf=
+a9c9b&lkid=3DURL_REMINDME_CTA&lnktrk=3DEVO&trkid=3D13710079]      [https://=
+www.netflix.com/title/70177043?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b&lki=
+d=3DURL_MORE_INFO&lnktrk=3DEVO&trkid=3D13710079]
+
+Coming soon
+
+https://www.netflix.com/title/81511780?g=3D2446f770-5475-4add-a437-6ba8ddfa=
+9c9b&lkid=3DURL_ROW_0_TITLE_0&lnktrk=3DEVO&trkid=3D13710079      https://ww=
+w.netflix.com/title/81318160?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b&lkid=
+=3DURL_ROW_0_TITLE_1&lnktrk=3DEVO&trkid=3D13710079      https://www.netflix=
+.com/title/80214514?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b&lkid=3DURL_ROW=
+_0_TITLE_2&lnktrk=3DEVO&trkid=3D13710079
+
+More like this
+
+https://www.netflix.com/title/80048100?g=3D2446f770-5475-4add-a437-6ba8ddfa=
+9c9b&lkid=3DURL_ROW_1_TITLE_0&lnktrk=3DEVO&trkid=3D13710079      https://ww=
+w.netflix.com/title/81004016?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b&lkid=
+=3DURL_ROW_1_TITLE_1&lnktrk=3DEVO&trkid=3D13710079      https://www.netflix=
+.com/title/80222892?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b&lkid=3DURL_ROW=
+_1_TITLE_2&lnktrk=3DEVO&trkid=3D13710079
+
+Recently added
+
+https://www.netflix.com/title/81252916?g=3D2446f770-5475-4add-a437-6ba8ddfa=
+9c9b&lkid=3DURL_ROW_2_TITLE_0&lnktrk=3DEVO&trkid=3D13710079      https://ww=
+w.netflix.com/title/81704795?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b&lkid=
+=3DURL_ROW_2_TITLE_1&lnktrk=3DEVO&trkid=3D13710079      https://www.netflix=
+.com/title/81637534?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b&lkid=3DURL_ROW=
+_2_TITLE_2&lnktrk=3DEVO&trkid=3D13710079
+
+Top picks for you
+
+https://www.netflix.com/title/80176893?g=3D2446f770-5475-4add-a437-6ba8ddfa=
+9c9b&lkid=3DURL_ROW_3_TITLE_0&lnktrk=3DEVO&trkid=3D13710079      https://ww=
+w.netflix.com/title/70021640?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b&lkid=
+=3DURL_ROW_3_TITLE_1&lnktrk=3DEVO&trkid=3D13710079      https://www.netflix=
+.com/title/81664346?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b&lkid=3DURL_ROW=
+_3_TITLE_2&lnktrk=3DEVO&trkid=3D13710079
+
+Trending now
+
+https://www.netflix.com/title/80197526?g=3D2446f770-5475-4add-a437-6ba8ddfa=
+9c9b&lkid=3DURL_ROW_4_TITLE_0&lnktrk=3DEVO&trkid=3D13710079      https://ww=
+w.netflix.com/title/70252898?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b&lkid=
+=3DURL_ROW_4_TITLE_1&lnktrk=3DEVO&trkid=3D13710079      https://www.netflix=
+.com/title/70155571?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b&lkid=3DURL_ROW=
+_4_TITLE_2&lnktrk=3DEVO&trkid=3D13710079
+
+View all TV shows & movies
+[https://www.netflix.com/browse?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b&lk=
+id=3DURL_VIEW_ALL&lnktrk=3DEVO]
+=C2=A0
+
+   Questions? Phone 1 800 404 982
+  =20
+   Netflix Australia Pty Ltd.
+   [https://help.netflix.com/legal/corpinfo?g=3D2446f770-5475-4add-a437-6ba=
+8ddfa9c9b&lkid=3DURL_CORP_INFO&lnktrk=3DEVO]
+  =20
+   Unsubscribe
+   [https://www.netflix.com/notificationsettings/email?id=3DBQE0AAEBEEo94LL=
+t9iOSV0fb1QYn2tiAkCdJXQs6%2Fr8GVTFVfxj2oAIqbQ79L2Hfb0sS9i2i4W2tAlYAHn5gT%2B=
+%2BTF%2BkVKf0arRo5EWs7WozzT3jbk5r6RuYkIUCRsk70ywR4DLk00uMT75mi2gb%2Bz4LH7vR=
+Es6HQNA2st63Ir8TI1Ds%2FoBwqbBRPeEaHwtfhuA0BpMq%2F7024BfyAhsG%2BXv6usAYidwMV=
+7A%3D%3D&g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b&mid=3D2&lkid=3DURL_UNSUB&=
+lnktrk=3DEVO]
+   Terms of Use
+   [https://www.netflix.com/TermsOfUse?g=3D2446f770-5475-4add-a437-6ba8ddfa=
+9c9b&lkid=3DURL_TERMS&lnktrk=3DEVO]
+   Privacy
+   [https://www.netflix.com/PrivacyPolicy?g=3D2446f770-5475-4add-a437-6ba8d=
+dfa9c9b&lkid=3DURL_PRIVACY&lnktrk=3DEVO]
+   Help Centre
+   [https://help.netflix.com/help?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b&=
+lkid=3DURL_HELP&lnktrk=3DEVO]
+  =20
+   This message was mailed to [srijani515@gmail.com]
+   [https://www.netflix.com/browse?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b=
+&lkid=3DURL_EMAIL&lnktrk=3DEVO]
+   by Netflix as part of your Netflix=C2=A0membership.
+   SRC:
+   62E0498A_2446f770-5475-4add-a437-6ba8ddfa9c9b_en-AU_AU_EVO
+   [https://www.netflix.com/browse?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b=
+&lkid=3DURL_SRC&lnktrk=3DEVO]
+------=_Part_1054471_629300484.1697941351112
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http:/=
+/www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:o=3D"urn:schemas-mic=
+rosoft-com:office:office" style=3D"background-color: #eaeaea; margin-top: 0=
+; padding: 0; margin: 0;">
+    <head>
+      <meta http-equiv=3D"Content-Type" content=3D"text/html charset=3DUTF-=
+8">
+      <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scal=
+e=3D1">
+      <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+      <meta name=3D"format-detection" content=3D"telephone=3Dno">
+      <style type=3D"text/css">
+@media (max-width: 499px) {
+  u + .body .inbox-fix,
+u + .body .content-shell-table,
+u + .body .footer-shell-table,
+u + .body .footer {
+    min-width: calc(100vw - 8.5vw) !important;
+  }
+
+  .mobile-hide,
+.ios-hide {
+    display: none !important;
+  }
+
+  .desktop-hide,
+.desktop-hide img {
+    display: initial !important;
+  }
+
+  table.desktop-hide {
+    display: table !important;
+  }
+
+  .mobile-100w {
+    width: 100% !important;
+  }
+
+  .mobile-block {
+    display: block !important;
+  }
+
+  .mobile-center {
+    margin: 0 auto;
+    text-align: center !important;
+  }
+
+  .inner-padding {
+    padding-left: 6% !important;
+    padding-right: 6% !important;
+  }
+
+  .outside-padding {
+    padding-left: 12% !important;
+    padding-right: 12% !important;
+  }
+
+  .content-padding {
+    padding-left: 5.6% !important;
+    padding-right: 5.6% !important;
+  }
+
+  .desktop-hide-max,
+.desktop-hide-max img {
+    display: initial !important;
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 499px=
+) {
+  .container.main-border {
+    padding: 0 !important;
+  }
+
+  .content-shell {
+    border: none !important;
+  }
+}
+@media yahoo {
+  table {
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  table table {
+    table-layout: auto;
+  }
+}
+.hide-link a,
+.iosnonlink a,
+.hide-link {
+  text-decoration: none !important;
+  cursor: text;
+}
+@media screen {
+  @font-face {
+    font-family: NetflixSans-Light;
+    src: url("https://assets.nflxext.com/us/email/fonts/NetflixSans-Light-O=
+pt.woff2");
+    font-weight: 300;
+  }
+
+  @font-face {
+    font-family: NetflixSans-Regular;
+    src: url("https://assets.nflxext.com/us/email/fonts/NetflixSans-Regular=
+-Opt.woff2");
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: NetflixSans-Medium;
+    src: url("https://assets.nflxext.com/us/email/fonts/NetflixSans-Medium-=
+Opt.woff2");
+    font-weight: 700;
+  }
+
+  @font-face {
+    font-family: NetflixSans-Bold;
+    src: url("https://assets.nflxext.com/us/email/fonts/NetflixSans-Bold-Op=
+t.woff2");
+    font-weight: 700;
+  }
+}
+@media (max-width: 500px) {
+  .button-copy a {
+    padding: 13px 0px !important;
+    width: 100% !important;
+  }
+}
+@media (min-width: 501px) {
+  .button-copy a {
+    padding: 13px 40px;
+  }
+}
+@media (max-width: 499px) {
+  .image .default-image-width img {
+    width: 100%;
+  }
+
+  .artwork img {
+    width: 100% !important;
+  }
+
+  .number img {
+    width: 100% !important;
+  }
+}
+@media (max-width: 499px) {
+  .episode-content-cell {
+    width: 40% !important;
+  }
+
+  .episode-content-cell-image {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .episode-content-cell-progress-bar {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+@media (max-width: 499px) {
+  .exp-img-1 img {
+    width: 70% !important;
+  }
+
+  .exp-img-2 {
+    padding-left: 20px !important;
+  }
+
+  .exp-img-2 img {
+    width: 85% !important;
+  }
+
+  .exp-img-3 img {
+    width: 85% !important;
+  }
+
+  .exp-img-4 img {
+    width: 85% !important;
+  }
+
+  .calendar img {
+    width: 85% !important;
+    height: auto !important;
+  }
+}
+@media (max-width: 499px) {
+  .logo-with-horizontal-date-logo-image-cell {
+    width: 60% !important;
+  }
+}
+@media (max-width: 499px) {
+  .thumbs-button-image-width {
+    width: 80% !important;
+  }
+
+  .thumbs-button-cell-spacer {
+    width: 6% !important;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .module-kar-hero-inner-body-cell {
+    width: 88% !important;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .module-kar-hero-inner-body-cell {
+    width: 88% !important;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .module-kar-themed-category-spacer-td {
+    height: 12px !important;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .right-pencil-image img {
+    width: 75% !important;
+    height: auto !important;
+  }
+
+  .left-pencil-image img {
+    width: 85% !important;
+    height: auto !important;
+  }
+
+  .left-pencil-cell {
+    width: 30% !important;
+  }
+
+  .right-pencil-cell {
+    width: 30% !important;
+  }
+
+  .color-page-cell {
+    width: 40% !important;
+  }
+
+  .printable-logo-image img {
+    width: 40% !important;
+    height: auto !important;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .module-kar-theme-bars-images img {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+@media (max-width: 500px) {
+  .mosaic-module .middle {
+    width: 46% !important;
+    padding-right: 4% !important;
+    padding-left: 4% !important;
+  }
+
+  .mosaic-module .left,
+.mosaic-module .right {
+    width: 24.8% !important;
+  }
+
+  .mosaic-module .component-image.cell,
+.mosaic-module .single-button .content-padding {
+    padding-top: 15px !important;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .main-header-icon-cell {
+    width: 12% !important;
+  }
+
+  .header-copy-cell {
+    width: 85% !important;
+  }
+
+  .header-copy-cell-with-profile-icon {
+    width: 78% !important;
+  }
+
+  .netflix-logo-cell {
+    width: 10% !important;
+  }
+}
+@media (max-width: 499px) {
+  .evidence-cards-component-image-cell {
+    width: 12% !important;
+  }
+}
+@media (max-width: 499px) {
+  .evidence-images img {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+@media (max-width: 499px) {
+  .marker {
+    padding: 5px 7px 5px 7px !important;
+  }
+}
+@media (max-width: 499px) {
+  .evidence-trailer-component-image-cell {
+    width: 12% !important;
+  }
+}
+@media (max-width: 499px) {
+  u + .body .gmail-screen {
+    background: #000;
+    mix-blend-mode: screen;
+  }
+
+  u + .body .gmail-difference {
+    background: #000;
+    mix-blend-mode: difference;
+  }
+}
+@media (max-width: 499px) {
+  .color-wrapper {
+    width: 100% !important;
+  }
+}
+@media (max-width: 499px) {
+  .bullet .indent.true {
+    width: 8% !important;
+  }
+
+  .bullet .indent.true {
+    padding-left: 3% !important;
+  }
+
+  .envelope.rtl .bullet .indent.true {
+    padding-right: 3% !important;
+  }
+}
+@media (max-width: 499px) {
+  .bullet-point {
+    line-height: 22px !important;
+  }
+}
+@media (max-width: 768px) {
+  .icon {
+    padding-top: 4px !important;
+  }
+}
+@media (max-width: 499px) {
+  .image .default-image-width img {
+    width: 100%;
+  }
+}
+@media (max-width: 499px) {
+  .mobile-hide-max,
+.ios-hide-max {
+    display: none !important;
+  }
+
+  .inbox-fix {
+    display: none;
+  }
+
+  .desktop-hide-max,
+.desktop-hide-max img {
+    display: initial !important;
+  }
+
+  table.content-shell-table,
+table.footer-shell-table,
+.footer {
+    width: 100% !important;
+  }
+
+  .content {
+    width: 100% !important;
+  }
+}
+.footer-shell .footer-link {
+  line-height: 20px;
+}
+</style>
+    </head>
+    <body class=3D"body" style=3D"background-color: #eaeaea; margin-top: 0;=
+ padding: 0; margin: 0;">
+      <div class=3D"hide" style=3D"display: none; width: 0; height: 0; max-=
+height: 0; line-height: 0; mso-hide: all; overflow: hidden; visibility: hid=
+den;">Get a first look today.<br><div class=3D"hide disabled-plaintext" sty=
+le=3D"display: none; width: 0; height: 0; max-height: 0; line-height: 0; ms=
+o-hide: all; overflow: hidden; visibility: hidden;">&#8199;&#847; &#8199;&#=
+847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; =
+&#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#819=
+9;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#8=
+47; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &=
+#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199=
+;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#84=
+7; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#=
+8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;=
+&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847=
+; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8=
+199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&=
+#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847;=
+ &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#81=
+99;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#=
+847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; =
+&#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#819=
+9;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#8=
+47; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &=
+#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199=
+;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#84=
+7; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#=
+8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;=
+&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847=
+; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8=
+199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&=
+#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847;=
+ &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#81=
+99;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#=
+847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; =
+&#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#819=
+9;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#8=
+47; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &=
+#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199=
+;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#84=
+7; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &shy; &shy; &shy=
+; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &=
+shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy=
+; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &=
+shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy=
+; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &=
+shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy=
+; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &=
+shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy=
+; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &=
+shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy=
+; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &=
+shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy=
+; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &=
+shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy=
+; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &nbsp;</div><=
+/div><table width=3D"100%" border=3D"0" class=3D"envelope account " cellpad=
+ding=3D"0" cellspacing=3D"0" style=3D"background-color: #000000;" bgcolor=
+=3D"#000000"><tbody><tr><td align=3D"center" class=3D"container" style=3D"m=
+argin-top: 0; background-color: #000000;" bgcolor=3D"#000000"><table align=
+=3D"center" border=3D"0" class=3D"content" cellpadding=3D"0" cellspacing=3D=
+"0" style=3D"width: 500px; background-color: #000000;" width=3D"500" bgcolo=
+r=3D"#000000"><tbody><tr><td><table class=3D"tracking-pixel disabled-plaint=
+ext image" width=3D"100%" data-testid=3D"image" cellpadding=3D"0" cellspaci=
+ng=3D"0"><tbody><tr><td class=3D"cell tracking-pixel disabled-plaintext con=
+tent-padding" align=3D"center" style=3D"padding-left: 20px; padding-right: =
+20px; padding-top: 0;"><img src=3D"https://beaconimages.netflix.net/img/BAQ=
+gBEAEawAJ2THSsgosiINnMMOKPnivWX8_FAt5qPzp-rk5ml598bTV5lU77rejQLSLpn8BBjh611=
+CtQR0vOZpyGlgziMsZ2M2-p2tZmep9X1ulc6e_PsjvcWRtQhxJN-kGsC7yY5OqzfdmRegKiYpnj=
+kG9qkIB-Y6Dm1uBySN-_zI_piSX7ZEOP-RCPg3DK1m2faJUKT2X3WnqGKP-UaPnRdOyv1hp4IKe=
+i1oTqaJMDa3kqzHVXCTcHd25jjdrLxJ0T-JOWYHn4Be92xn62bHWuGPbK2zjvaO1_MpXwHHv7WY=
+HQy8EKgOlw_XrVLNBcO83umxg3AX5WqDh6hwDjU6GyF4TXYvNvBay34rWQkmog-JkX5SeaBk5dh=
+0DgNSYrxXepI67JE45HcXZprhxy0jlNuv8F4r9MAJU6ih799TuwvEjPcDwAVg.." alt width=
+=3D"0" border=3D"0" class=3D"undefined " style=3D"-ms-interpolation-mode: b=
+icubic; border: none; outline: none; border-collapse: collapse; display: bl=
+ock;"></td></tr></tbody></table></td></tr><tr><td align=3D"center" class=3D=
+"shell"><table class=3D"title-card-70177043 title-card-table" align=3D"cent=
+er" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0"><tbody><tr><td class=
+=3D"title-card-image-cell none" style=3D"padding-top:0" align=3D"center"><t=
+able class=3D"title-card-inner-wrapper" cellpadding=3D"0" cellspacing=3D"0"=
+><tbody><tr><td><table class=3D"title-card-hero-image image" width=3D"100%"=
+ data-testid=3D"image" cellpadding=3D"0" cellspacing=3D"0"><tbody><tr><td c=
+lass=3D"cell title-card-hero-image none" align=3D"center" style=3D"padding-=
+top: 0;"><a href=3D"https://www.netflix.com/title/70177043?g=3D2446f770-547=
+5-4add-a437-6ba8ddfa9c9b&amp;lkid=3DURL_PRIMARY_HERO_IMAGE_0&amp;lnktrk=3DE=
+VO&amp;trkid=3D13710079" target=3D"_blank" style=3D"color: inherit;"><img s=
+rc=3D"https://dnm.nflximg.net/api/v6/Nv1iaVJQtCVCGJ_djZdnrPxfPck/AAAAC49o6z=
+fjaddQhq-XW407vLAidDVKvy1POQJnisLx-wSpYsetOIhNsCnrCxC8uXjA1KGj6wD_ptwIz8ZD3=
+ow6DKTxOjVL0D79mT0ufHHirF5caTnUmvFTW0t-.dyn?r=3D27b" alt=3D"Justice League"=
+ width=3D"500" border=3D"0" class=3D"prepromotion-hero-image mobile-100w" s=
+tyle=3D"-ms-interpolation-mode: bicubic; border: none; outline: none; borde=
+r-collapse: collapse; display: block; border-style: none; border-radius: 0p=
+x;"></a></td></tr></tbody></table><table class=3D"title-card-cell-inner-tab=
+le" align=3D"center" width=3D"100%" bgcolor=3D"#000000" cellpadding=3D"0" c=
+ellspacing=3D"0" style=3D"border-radius: 0px 0px 8px 8px;"><tbody><tr><td c=
+lass=3D"title-card-body-cell inner-padding" style=3D"padding-left: 20px; pa=
+dding-right: 20px; padding-bottom: 20px; padding-top: 20px;"><table width=
+=3D"100%" cellpadding=3D"0" cellspacing=3D"0"><tbody><tr><td class=3D"extra=
+-meta" style=3D"padding-bottom: 12px;"><table class=3D"evidence-tag-element=
+-table" align=3D"center" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0"=
+><tbody><tr><td class=3D"evidence-tag-element-main-cell none p2" align=3D"c=
+enter" style=3D"font-family: NetflixSans-Regular, Helvetica, Roboto, Segoe =
+UI, sans-serif; font-weight: 400; font-size: 12px; line-height: 15px; lette=
+r-spacing: -0.12px; padding-top: 0; color: #f5f5f1;">Rousing<span class=3D"=
+marker" style=3D"padding: 0px 7px 0px 7px; color: #E50914;">=E2=80=A2</span=
+>Exciting<span class=3D"marker" style=3D"padding: 0px 7px 0px 7px; color: #=
+E50914;">=E2=80=A2</span>Kids<span class=3D"marker" style=3D"padding: 0px 7=
+px 0px 7px; color: #E50914;">=E2=80=A2</span>Armageddon</td></tr></tbody></=
+table></td></tr><tr><td class=3D"h4 headline" align=3D"left" style=3D"font-=
+family: NetflixSans-Bold, Helvetica, Roboto, Segoe UI, sans-serif; font-wei=
+ght: 700; font-size: 18px; line-height: 22px; letter-spacing: -0.35px; colo=
+r: #ffffff; padding-top: 20px;">Justice League</td></tr><tr><td class=3D"h5=
+" align=3D"left" style=3D"font-family: NetflixSans-Bold, Helvetica, Roboto,=
+ Segoe UI, sans-serif; font-weight: 700; font-size: 14px; letter-spacing: -=
+0.2px; padding-top: 12px; color: #ffffff; line-height: 32px;">Coming Tuesda=
+y</td></tr></tbody></table><table width=3D"100%" cellpadding=3D"0" cellspac=
+ing=3D"0"><tbody><tr><td class=3D"p1" align=3D"left" style=3D"font-family: =
+NetflixSans-Regular, Helvetica, Roboto, Segoe UI, sans-serif; font-weight: =
+400; font-size: 14px; line-height: 18px; letter-spacing: -0.25px; color: #f=
+fffff; padding-top: 12px;">In this animated series, Superman, Batman, Wonde=
+r Woman, The Flash, Green Lantern, The Martian Manhunter and Hawkgirl fight=
+ crime as the Justice League.=C2=A0=C2=A0<a href=3D"https://www.netflix.com=
+/title/70177043?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b&amp;lkid=3DURL_PRI=
+MARY_MORE_INFO_0&amp;lnktrk=3DEVO&amp;trkid=3D13710079" style=3D"color: #ff=
+ffff; text-decoration: underline;">More=C2=A0info</a></td></tr></tbody></ta=
+ble><table class=3D"dual-buttons-table " width=3D"100%" cellpadding=3D"0" c=
+ellspacing=3D"0"><tbody><tr><td class=3D"dual-buttons-outer-cell none" alig=
+n=3D"center" style=3D"padding-top: 20px;"><table class=3D"dual-buttons-tabl=
+e " width=3D"100%" cellpadding=3D"0" cellspacing=3D"0"><tbody><tr><td width=
+=3D"48%"><table class=3D"dual-buttons shell-1 " bgcolor=3D"#e50914" style=
+=3D"border-radius: 4px; text-decoration: none; width: 100%; border: solid 2=
+px #e50914;" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"><tbody><tr>=
+<td class=3D"h5 button-copy" style=3D"font-family: NetflixSans-Bold, Helvet=
+ica, Roboto, Segoe UI, sans-serif; font-weight: 700; font-size: 14px; line-=
+height: 17px; letter-spacing: -0.2px; color: #F5F5F1;" align=3D"center" hei=
+ght=3D"42"><a href=3D"https://www.netflix.com/title/70177043?g=3D2446f770-5=
+475-4add-a437-6ba8ddfa9c9b&amp;lkid=3DURL_REMINDME_CTA&amp;lnktrk=3DEVO&amp=
+;trkid=3D13710079" style=3D"text-align: center; display: inline-block; text=
+-decoration: none; color: #F5F5F1;">Remind me</a></td></tr></tbody></table>=
+</td><td width=3D"3%"><table class=3D"component-image image" width=3D"100%"=
+ data-testid=3D"image" cellpadding=3D"0" cellspacing=3D"0"><tbody><tr><td c=
+lass=3D"cell component-image none" align=3D"center" style=3D"padding-top: 2=
+0px;"><img src=3D"https://assets.nflxext.com/us/email/spacer.gif" alt width=
+=3D"12" border=3D"0" class=3D"undefined " style=3D"-ms-interpolation-mode: =
+bicubic; border: none; outline: none; border-collapse: collapse; display: b=
+lock;"></td></tr></tbody></table></td><td width=3D"48%"><table class=3D"dua=
+l-buttons shell-2 " bgcolor=3D"#333333" style=3D"border-radius: 4px; text-d=
+ecoration: none; width: 100%; border: solid 2px #333333;" cellpadding=3D"0"=
+ cellspacing=3D"0" width=3D"100%"><tbody><tr><td class=3D"h5 button-copy" s=
+tyle=3D"font-family: NetflixSans-Bold, Helvetica, Roboto, Segoe UI, sans-se=
+rif; font-weight: 700; font-size: 14px; line-height: 17px; letter-spacing: =
+-0.2px; color: #F5F5F1;" align=3D"center" height=3D"42"><a href=3D"https://=
+www.netflix.com/title/70177043?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b&amp=
+;lkid=3DURL_MORE_INFO&amp;lnktrk=3DEVO&amp;trkid=3D13710079" style=3D"text-=
+align: center; display: inline-block; text-decoration: none; color: #F5F5F1=
+;">More=C2=A0info</a></td></tr></tbody></table></td></tr></tbody></table></=
+td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table=
+></td></tr></tbody></table><table align=3D"left" width=3D"100%" class=3D"co=
+py-table " data-testid=3D"copy" cellpadding=3D"0" cellspacing=3D"0"><tbody>=
+<tr><td align=3D"left" class=3D"copy h4 content-padding" style=3D"padding-l=
+eft: 20px; padding-right: 20px; font-family: NetflixSans-Bold, Helvetica, R=
+oboto, Segoe UI, sans-serif; font-weight: 700; font-size: 18px; line-height=
+: 22px; letter-spacing: -0.35px; padding-top: 24px; color: #ffffff;">Coming=
+ soon</td></tr></tbody></table><table border=3D"0" width=3D"100%" cellpaddi=
+ng=3D"0" cellspacing=3D"0"><tbody><tr><td class=3D"title-row-cell content-p=
+adding " align=3D"center" style=3D"padding-left: 20px; padding-right: 20px;=
+ padding-top: 8px;"><table cellpadding=3D"0" cellspacing=3D"0"><tbody><tr><=
+td><table class=3D"component-image image" width=3D"100%" data-testid=3D"ima=
+ge" cellpadding=3D"0" cellspacing=3D"0"><tbody><tr><td class=3D"cell compon=
+ent-image none" align=3D"center" style=3D"padding-top: 0;"><a href=3D"https=
+://www.netflix.com/title/81511780?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b&=
+amp;lkid=3DURL_ROW_0_TITLE_0&amp;lnktrk=3DEVO&amp;trkid=3D13710079" target=
+=3D"_blank" style=3D"color: inherit;"><img src=3D"https://dnm.nflximg.net/a=
+pi/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABf-sXRm6Yezs2e_Nur17Nt_ooXJS89XvQVky5=
+tDaRw7MND31y0vyBTV5F1v_lMLrYZ3_b2uwkG-rw4eKwK6VywbkWawogLmPlbJq.jpg?r=3D9fc=
+" alt width=3D"149.33333333333334" border=3D"0" class=3D"outer-radius mobil=
+e-100w" style=3D"-ms-interpolation-mode: bicubic; border: none; outline: no=
+ne; border-collapse: collapse; display: block; border-style: none; border-r=
+adius: 8px;"></a></td></tr></tbody></table></td><td width=3D"6"></td><td><t=
+able class=3D"component-image image" width=3D"100%" data-testid=3D"image" c=
+ellpadding=3D"0" cellspacing=3D"0"><tbody><tr><td class=3D"cell component-i=
+mage none" align=3D"center" style=3D"padding-top: 0;"><a href=3D"https://ww=
+w.netflix.com/title/81318160?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b&amp;l=
+kid=3DURL_ROW_0_TITLE_1&amp;lnktrk=3DEVO&amp;trkid=3D13710079" target=3D"_b=
+lank" style=3D"color: inherit;"><img src=3D"https://dnm.nflximg.net/api/v6/=
+WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABUrxUS91jSvn_Vbj-8bDSiAfikJ6oORCi3VJVvqZAVU=
+_pB_qHURsK89pZUd4qOqAflt_60OX_6eQU6RvUVI0-mzMe8-czRpy3uaaeWSs1L63Q4Ssv0uUEZ=
+O4IjeAD3AMq1meYw.jpg?r=3Db14" alt width=3D"149.33333333333334" border=3D"0"=
+ class=3D"outer-radius mobile-100w" style=3D"-ms-interpolation-mode: bicubi=
+c; border: none; outline: none; border-collapse: collapse; display: block; =
+border-style: none; border-radius: 8px;"></a></td></tr></tbody></table></td=
+><td width=3D"6"></td><td><table class=3D"component-image image" width=3D"1=
+00%" data-testid=3D"image" cellpadding=3D"0" cellspacing=3D"0"><tbody><tr><=
+td class=3D"cell component-image none" align=3D"center" style=3D"padding-to=
+p: 0;"><a href=3D"https://www.netflix.com/title/80214514?g=3D2446f770-5475-=
+4add-a437-6ba8ddfa9c9b&amp;lkid=3DURL_ROW_0_TITLE_2&amp;lnktrk=3DEVO&amp;tr=
+kid=3D13710079" target=3D"_blank" style=3D"color: inherit;"><img src=3D"htt=
+ps://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABdlTgMJ9tAnzNwE=
+vrk2TWkkQnUstrQ8c68Hs2ulCooUFc0u2gfpMf8phZj6RmLro9FTZ7QknrQu6AU5M5RuDwt5EAi=
+uAPejWD9SnyYRuIzM2sFb-d3m9Q_uYt4bdWNVVM_azOg.jpg?r=3Dab8" alt width=3D"149.=
+33333333333334" border=3D"0" class=3D"outer-radius mobile-100w" style=3D"-m=
+s-interpolation-mode: bicubic; border: none; outline: none; border-collapse=
+: collapse; display: block; border-style: none; border-radius: 8px;"></a></=
+td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table=
+><table align=3D"left" width=3D"100%" class=3D"copy-table " data-testid=3D"=
+copy" cellpadding=3D"0" cellspacing=3D"0"><tbody><tr><td align=3D"left" cla=
+ss=3D"copy h4 content-padding" style=3D"padding-left: 20px; padding-right: =
+20px; font-family: NetflixSans-Bold, Helvetica, Roboto, Segoe UI, sans-seri=
+f; font-weight: 700; font-size: 18px; line-height: 22px; letter-spacing: -0=
+.35px; padding-top: 24px; color: #ffffff;">More like this</td></tr></tbody>=
+</table><table border=3D"0" width=3D"100%" cellpadding=3D"0" cellspacing=3D=
+"0"><tbody><tr><td class=3D"title-row-cell content-padding " align=3D"cente=
+r" style=3D"padding-left: 20px; padding-right: 20px; padding-top: 8px;"><ta=
+ble cellpadding=3D"0" cellspacing=3D"0"><tbody><tr><td><table class=3D"comp=
+onent-image image" width=3D"100%" data-testid=3D"image" cellpadding=3D"0" c=
+ellspacing=3D"0"><tbody><tr><td class=3D"cell component-image none" align=
+=3D"center" style=3D"padding-top: 0;"><a href=3D"https://www.netflix.com/ti=
+tle/80048100?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b&amp;lkid=3DURL_ROW_1_=
+TITLE_0&amp;lnktrk=3DEVO&amp;trkid=3D13710079" target=3D"_blank" style=3D"c=
+olor: inherit;"><img src=3D"https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp=
+6pUM7-lXMJg/AAAABaJghpqrha4uBYftf3ztPNqOIf0KpEW8Q_3XphWBggZy0u5M6mn41GHszwh=
+b76PNS6a0mN8ekzcSCCw9NkHegYe0Ci-DV5ZHGQcA.jpg?r=3D00b" alt width=3D"149.333=
+33333333334" border=3D"0" class=3D"outer-radius mobile-100w" style=3D"-ms-i=
+nterpolation-mode: bicubic; border: none; outline: none; border-collapse: c=
+ollapse; display: block; border-style: none; border-radius: 8px;"></a></td>=
+</tr></tbody></table></td><td width=3D"6"></td><td><table class=3D"componen=
+t-image image" width=3D"100%" data-testid=3D"image" cellpadding=3D"0" cells=
+pacing=3D"0"><tbody><tr><td class=3D"cell component-image none" align=3D"ce=
+nter" style=3D"padding-top: 0;"><a href=3D"https://www.netflix.com/title/81=
+004016?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b&amp;lkid=3DURL_ROW_1_TITLE_=
+1&amp;lnktrk=3DEVO&amp;trkid=3D13710079" target=3D"_blank" style=3D"color: =
+inherit;"><img src=3D"https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-=
+lXMJg/AAAABQb7PdTYyz7DFuZ6wcSC_woN6GP_uJjtMx6dSxrvyRs6IliPFXry-wu6YNBMaOnkj=
+qGDS3rzsDoNfTbVkFVcTmI2KV44ZR1jPB0nudu_bpMeKNChqXbjm2AaQ88Gj7LH4lPrsw.jpg?r=
+=3Dca6" alt width=3D"149.33333333333334" border=3D"0" class=3D"outer-radius=
+ mobile-100w" style=3D"-ms-interpolation-mode: bicubic; border: none; outli=
+ne: none; border-collapse: collapse; display: block; border-style: none; bo=
+rder-radius: 8px;"></a></td></tr></tbody></table></td><td width=3D"6"></td>=
+<td><table class=3D"component-image image" width=3D"100%" data-testid=3D"im=
+age" cellpadding=3D"0" cellspacing=3D"0"><tbody><tr><td class=3D"cell compo=
+nent-image none" align=3D"center" style=3D"padding-top: 0;"><a href=3D"http=
+s://www.netflix.com/title/80222892?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b=
+&amp;lkid=3DURL_ROW_1_TITLE_2&amp;lnktrk=3DEVO&amp;trkid=3D13710079" target=
+=3D"_blank" style=3D"color: inherit;"><img src=3D"https://dnm.nflximg.net/a=
+pi/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABXRgYx4V9tw8btPpqqRFwljaVeAKdijr-lWtv=
+kIye4BGPRmiK-QIjULC9XLCyCvSF6RlfGMdcxa4hLOmFegFoJuYbFvUxH2LY_aafyN-OMyTAjPn=
+DEkoMSjfgmjRZl9Jpk4t3A.jpg?r=3Dc9f" alt width=3D"149.33333333333334" border=
+=3D"0" class=3D"outer-radius mobile-100w" style=3D"-ms-interpolation-mode: =
+bicubic; border: none; outline: none; border-collapse: collapse; display: b=
+lock; border-style: none; border-radius: 8px;"></a></td></tr></tbody></tabl=
+e></td></tr></tbody></table></td></tr></tbody></table><table align=3D"left"=
+ width=3D"100%" class=3D"copy-table " data-testid=3D"copy" cellpadding=3D"0=
+" cellspacing=3D"0"><tbody><tr><td align=3D"left" class=3D"copy h4 content-=
+padding" style=3D"padding-left: 20px; padding-right: 20px; font-family: Net=
+flixSans-Bold, Helvetica, Roboto, Segoe UI, sans-serif; font-weight: 700; f=
+ont-size: 18px; line-height: 22px; letter-spacing: -0.35px; padding-top: 24=
+px; color: #ffffff;">Recently added</td></tr></tbody></table><table border=
+=3D"0" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0"><tbody><tr><td cl=
+ass=3D"title-row-cell content-padding " align=3D"center" style=3D"padding-l=
+eft: 20px; padding-right: 20px; padding-top: 8px;"><table cellpadding=3D"0"=
+ cellspacing=3D"0"><tbody><tr><td><table class=3D"component-image image" wi=
+dth=3D"100%" data-testid=3D"image" cellpadding=3D"0" cellspacing=3D"0"><tbo=
+dy><tr><td class=3D"cell component-image none" align=3D"center" style=3D"pa=
+dding-top: 0;"><a href=3D"https://www.netflix.com/title/81252916?g=3D2446f7=
+70-5475-4add-a437-6ba8ddfa9c9b&amp;lkid=3DURL_ROW_2_TITLE_0&amp;lnktrk=3DEV=
+O&amp;trkid=3D13710079" target=3D"_blank" style=3D"color: inherit;"><img sr=
+c=3D"https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABa6PD_p=
+dvov5eppwKrDDOEnuwT1U8jF_Bb1tEErm16q7I3TM2CHNbNHRWWQS4eOqGsMxabwnsKTvG1y5HS=
+IS87ry4HyjUusx5BR5Ki7PyrbMhiIlgK2nM3IiFS04-_SrQ2gXV_lI3Rv62Y5rZARYxb6fuPVZ2=
+RXVRYaSwLAVLY_LwWaiut1myawPaZw7tCh0ckV0MpLYKE2jeVtTpU7bK4pNdEzA76l5o1giewKX=
+Cx0-9ydlFkuTD26L_5TJmmP22ciepBEhFdRrg-FAcsy-lZ7ZQeNGIKVqp4nNSromLZfK4CKOad_=
+0SvtBbQ.jpg?r=3D413" alt width=3D"149.33333333333334" border=3D"0" class=3D=
+"outer-radius mobile-100w" style=3D"-ms-interpolation-mode: bicubic; border=
+: none; outline: none; border-collapse: collapse; display: block; border-st=
+yle: none; border-radius: 8px;"></a></td></tr></tbody></table></td><td widt=
+h=3D"6"></td><td><table class=3D"component-image image" width=3D"100%" data=
+-testid=3D"image" cellpadding=3D"0" cellspacing=3D"0"><tbody><tr><td class=
+=3D"cell component-image none" align=3D"center" style=3D"padding-top: 0;"><=
+a href=3D"https://www.netflix.com/title/81704795?g=3D2446f770-5475-4add-a43=
+7-6ba8ddfa9c9b&amp;lkid=3DURL_ROW_2_TITLE_1&amp;lnktrk=3DEVO&amp;trkid=3D13=
+710079" target=3D"_blank" style=3D"color: inherit;"><img src=3D"https://dnm=
+.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABZi5T_u7ZmkuVBIHSf4k2ty=
+FJO64C0llvmeK-1oEp3uPYj0FuqenvlVfq3CN0lnHAPeBALdTSq36nIw-PftBIigthzRMRk9j_m=
+fgh1BgumwyayF74wXyDPSqVdAkLSivb-s31BY5luaVR3OO6LUu07dSMTN2yhl2-WDM0k9ktQt9w=
+0NYxU1x3L9UseTlFbKNoFFk8fUeyZJFOdrbVNe1n2iAylB-0ZlkTB2iec0t_HTBASeGGpuY0HWY=
+nn_wN4e5x9AwpUk_89H-WSEyVLsFrNBcABhOmg.jpg?r=3D36b" alt width=3D"149.333333=
+33333334" border=3D"0" class=3D"outer-radius mobile-100w" style=3D"-ms-inte=
+rpolation-mode: bicubic; border: none; outline: none; border-collapse: coll=
+apse; display: block; border-style: none; border-radius: 8px;"></a></td></t=
+r></tbody></table></td><td width=3D"6"></td><td><table class=3D"component-i=
+mage image" width=3D"100%" data-testid=3D"image" cellpadding=3D"0" cellspac=
+ing=3D"0"><tbody><tr><td class=3D"cell component-image none" align=3D"cente=
+r" style=3D"padding-top: 0;"><a href=3D"https://www.netflix.com/title/81637=
+534?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b&amp;lkid=3DURL_ROW_2_TITLE_2&a=
+mp;lnktrk=3DEVO&amp;trkid=3D13710079" target=3D"_blank" style=3D"color: inh=
+erit;"><img src=3D"https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXM=
+Jg/AAAABXpiHSAhUXzXdZmVZ_ieEe97PvS1JglnDRcwF2N7lZ5caKwSxXqNp1gQ0015gzWTcUhg=
+YA8FrJkCEJzNzpEFzHUbaem6CzgGiMzadMIoASUSyGadJi_MYYOACD1IxwHtYMFmx3b9DGloxSv=
+3ukuvgI_fwGRJ6VxBBIQJsVboIctCU9cz3GaOdankjddNOf2FnQTL1OZt3YlUFXD5S7EZfbXr0j=
+yBDwaJi9nNarps4JK744zRD3FSttAJRXEsokPGY2oAg6LJtkrvvVYxuC-EMWvftREndA.jpg?r=
+=3Da7f" alt width=3D"149.33333333333334" border=3D"0" class=3D"outer-radius=
+ mobile-100w" style=3D"-ms-interpolation-mode: bicubic; border: none; outli=
+ne: none; border-collapse: collapse; display: block; border-style: none; bo=
+rder-radius: 8px;"></a></td></tr></tbody></table></td></tr></tbody></table>=
+</td></tr></tbody></table><table align=3D"left" width=3D"100%" class=3D"cop=
+y-table " data-testid=3D"copy" cellpadding=3D"0" cellspacing=3D"0"><tbody><=
+tr><td align=3D"left" class=3D"copy h4 content-padding" style=3D"padding-le=
+ft: 20px; padding-right: 20px; font-family: NetflixSans-Bold, Helvetica, Ro=
+boto, Segoe UI, sans-serif; font-weight: 700; font-size: 18px; line-height:=
+ 22px; letter-spacing: -0.35px; padding-top: 24px; color: #ffffff;">Top pic=
+ks for you</td></tr></tbody></table><table border=3D"0" width=3D"100%" cell=
+padding=3D"0" cellspacing=3D"0"><tbody><tr><td class=3D"title-row-cell cont=
+ent-padding " align=3D"center" style=3D"padding-left: 20px; padding-right: =
+20px; padding-top: 8px;"><table cellpadding=3D"0" cellspacing=3D"0"><tbody>=
+<tr><td><table class=3D"component-image image" width=3D"100%" data-testid=
+=3D"image" cellpadding=3D"0" cellspacing=3D"0"><tbody><tr><td class=3D"cell=
+ component-image none" align=3D"center" style=3D"padding-top: 0;"><a href=
+=3D"https://www.netflix.com/title/80176893?g=3D2446f770-5475-4add-a437-6ba8=
+ddfa9c9b&amp;lkid=3DURL_ROW_3_TITLE_0&amp;lnktrk=3DEVO&amp;trkid=3D13710079=
+" target=3D"_blank" style=3D"color: inherit;"><img src=3D"https://dnm.nflxi=
+mg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABSxOVBlQoVp4x4kW56J6xe_1hmASy=
+uSDvFod9u9moeZN4Yb08n_hTM7-b7bBB1q7PNznLMoTzcVblj1l9-RCfUSPgqvvq214gc4bWOQ4=
+owWfy50oTKW4MVVulBXKApg8ywHE4id-fscUlKgR2WI8FP0-JVi5z3Ci7IeKK0aJwkAigZqE6QW=
+kKUsA7uAzFPIf3PfZ5rDRNuhAO-Z-KaRiRWoVXTGAmCU1WfvBDGA8ej-4_1rFwf6Lt67L2l-kPP=
+_waAuyocdL-5wykBpRzX8z8nzt.jpg?r=3Dcaa" alt width=3D"149.33333333333334" bo=
+rder=3D"0" class=3D"outer-radius mobile-100w" style=3D"-ms-interpolation-mo=
+de: bicubic; border: none; outline: none; border-collapse: collapse; displa=
+y: block; border-style: none; border-radius: 8px;"></a></td></tr></tbody></=
+table></td><td width=3D"6"></td><td><table class=3D"component-image image" =
+width=3D"100%" data-testid=3D"image" cellpadding=3D"0" cellspacing=3D"0"><t=
+body><tr><td class=3D"cell component-image none" align=3D"center" style=3D"=
+padding-top: 0;"><a href=3D"https://www.netflix.com/title/70021640?g=3D2446=
+f770-5475-4add-a437-6ba8ddfa9c9b&amp;lkid=3DURL_ROW_3_TITLE_1&amp;lnktrk=3D=
+EVO&amp;trkid=3D13710079" target=3D"_blank" style=3D"color: inherit;"><img =
+src=3D"https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABQjbn=
+7rJjGab8Dacp3aJD0dijSpHh071iT7ouO4tk_1cGyoaZe-TR9SP4RbTD65azjhN6p4MFGf0irfR=
+Qx6F6xhbc4Qm-LbqzMjV.jpg?r=3D496" alt width=3D"149.33333333333334" border=
+=3D"0" class=3D"outer-radius mobile-100w" style=3D"-ms-interpolation-mode: =
+bicubic; border: none; outline: none; border-collapse: collapse; display: b=
+lock; border-style: none; border-radius: 8px;"></a></td></tr></tbody></tabl=
+e></td><td width=3D"6"></td><td><table class=3D"component-image image" widt=
+h=3D"100%" data-testid=3D"image" cellpadding=3D"0" cellspacing=3D"0"><tbody=
+><tr><td class=3D"cell component-image none" align=3D"center" style=3D"padd=
+ing-top: 0;"><a href=3D"https://www.netflix.com/title/81664346?g=3D2446f770=
+-5475-4add-a437-6ba8ddfa9c9b&amp;lkid=3DURL_ROW_3_TITLE_2&amp;lnktrk=3DEVO&=
+amp;trkid=3D13710079" target=3D"_blank" style=3D"color: inherit;"><img src=
+=3D"https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABVC268a2=
+1_hCKpqttBtEAh1PAgXbdZfRU9Y5zvLDrV28XMdnNQmnzkcML9DujKJoph8rYRPOvVzeHiQCvXj=
+nCYDEGchamRt-CrbcQC7HqCyEGUEbPzOqkjmZiqJEnapCNY1eYAb54uls_DxvgC8HcukMKIJXnZ=
+O3UjaPW0JEPKh_k_XhmbSQqTLb6Pe8naWVEjwEK2c1V_agam1C-GywmhiHt2zw_wiZvnhtX9KkD=
+I3_lBnGWPEBvVdDbET1wSBiP6J_7UqGoWCqsWL7_w-aYtCn59dEdA.jpg?r=3Dfb2" alt widt=
+h=3D"149.33333333333334" border=3D"0" class=3D"outer-radius mobile-100w" st=
+yle=3D"-ms-interpolation-mode: bicubic; border: none; outline: none; border=
+-collapse: collapse; display: block; border-style: none; border-radius: 8px=
+;"></a></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbod=
+y></table><table align=3D"left" width=3D"100%" class=3D"copy-table " data-t=
+estid=3D"copy" cellpadding=3D"0" cellspacing=3D"0"><tbody><tr><td align=3D"=
+left" class=3D"copy h4 content-padding" style=3D"padding-left: 20px; paddin=
+g-right: 20px; font-family: NetflixSans-Bold, Helvetica, Roboto, Segoe UI, =
+sans-serif; font-weight: 700; font-size: 18px; line-height: 22px; letter-sp=
+acing: -0.35px; padding-top: 24px; color: #ffffff;">Trending now</td></tr><=
+/tbody></table><table border=3D"0" width=3D"100%" cellpadding=3D"0" cellspa=
+cing=3D"0"><tbody><tr><td class=3D"title-row-cell content-padding " align=
+=3D"center" style=3D"padding-left: 20px; padding-right: 20px; padding-top: =
+8px;"><table cellpadding=3D"0" cellspacing=3D"0"><tbody><tr><td><table clas=
+s=3D"component-image image" width=3D"100%" data-testid=3D"image" cellpaddin=
+g=3D"0" cellspacing=3D"0"><tbody><tr><td class=3D"cell component-image none=
+" align=3D"center" style=3D"padding-top: 0;"><a href=3D"https://www.netflix=
+.com/title/80197526?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b&amp;lkid=3DURL=
+_ROW_4_TITLE_0&amp;lnktrk=3DEVO&amp;trkid=3D13710079" target=3D"_blank" sty=
+le=3D"color: inherit;"><img src=3D"https://dnm.nflximg.net/api/v6/WNk1mr9x_=
+Cd_2itp6pUM7-lXMJg/AAAABT93KGt8pWPd2LyS4etLBVT8OHdZm56GJQV4QUYmF3s0ozReIDsT=
+BCV4iMvK-4H-YeH5ErIhZP5azzl5uyriltXwAHHIy8dFrLlg16xP65zpJayKVzP245KHJiIH_Ef=
+9sjn-9Q.jpg?r=3D0f8" alt width=3D"149.33333333333334" border=3D"0" class=3D=
+"outer-radius mobile-100w" style=3D"-ms-interpolation-mode: bicubic; border=
+: none; outline: none; border-collapse: collapse; display: block; border-st=
+yle: none; border-radius: 8px;"></a></td></tr></tbody></table></td><td widt=
+h=3D"6"></td><td><table class=3D"component-image image" width=3D"100%" data=
+-testid=3D"image" cellpadding=3D"0" cellspacing=3D"0"><tbody><tr><td class=
+=3D"cell component-image none" align=3D"center" style=3D"padding-top: 0;"><=
+a href=3D"https://www.netflix.com/title/70252898?g=3D2446f770-5475-4add-a43=
+7-6ba8ddfa9c9b&amp;lkid=3DURL_ROW_4_TITLE_1&amp;lnktrk=3DEVO&amp;trkid=3D13=
+710079" target=3D"_blank" style=3D"color: inherit;"><img src=3D"https://dnm=
+.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABaaUZdyHrGGiu1sA-dUkwcD=
+tHQR8WWEzVD0dvpSbUsbZYy7BZsaZPTNmyJncPlMtRi7QlPm013rmfiQSiQUaLBLBE97z4xB1ch=
+vD.jpg?r=3Dcf6" alt width=3D"149.33333333333334" border=3D"0" class=3D"oute=
+r-radius mobile-100w" style=3D"-ms-interpolation-mode: bicubic; border: non=
+e; outline: none; border-collapse: collapse; display: block; border-style: =
+none; border-radius: 8px;"></a></td></tr></tbody></table></td><td width=3D"=
+6"></td><td><table class=3D"component-image image" width=3D"100%" data-test=
+id=3D"image" cellpadding=3D"0" cellspacing=3D"0"><tbody><tr><td class=3D"ce=
+ll component-image none" align=3D"center" style=3D"padding-top: 0;"><a href=
+=3D"https://www.netflix.com/title/70155571?g=3D2446f770-5475-4add-a437-6ba8=
+ddfa9c9b&amp;lkid=3DURL_ROW_4_TITLE_2&amp;lnktrk=3DEVO&amp;trkid=3D13710079=
+" target=3D"_blank" style=3D"color: inherit;"><img src=3D"https://dnm.nflxi=
+mg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABZ2EkFTLX8BZvYdEIR9m3tDjWb7NJ=
+4-xRvDcFUJgN7OwFp9AzBwjLlxnicpVGmpuUiJg6Nz50qi_twhYOqb1JBOasDdzLCl0pviIDU0s=
+C7EuhC689eaMc6sxGTEY_odrzHwpEubDe7cDnQhmblGC7AeFs4x3R-dSVUswAEO8qhi03Bj9CQ4=
+7xM6CGndww6YYfXJ5hlAQOTvVWP5yc82ggwJBjBdyYqZHZCCkbkuVtE0w8COyqbKB4G86vxMLRb=
+au_9xP107UHvb4ikppKeZnXjB5Aiuuig.jpg?r=3D428" alt width=3D"149.333333333333=
+34" border=3D"0" class=3D"outer-radius mobile-100w" style=3D"-ms-interpolat=
+ion-mode: bicubic; border: none; outline: none; border-collapse: collapse; =
+display: block; border-style: none; border-radius: 8px;"></a></td></tr></tb=
+ody></table></td></tr></tbody></table></td></tr></tbody></table><table clas=
+s=3D"single-button mobile-100w " align=3D"center" width=3D"100%" data-testi=
+d=3D"single-button" cellpadding=3D"0" cellspacing=3D"0"><tbody><tr><td clas=
+s=3D"content-padding" style=3D"padding-left: 20px; padding-right: 20px; pad=
+ding-top: 24px;" align=3D"center"><table class=3D"inner-button border-true"=
+ style=3D"border-width: 2px; border-style: solid; border-radius: 4px; borde=
+r-color: #414141; background-color: #414141; width: 100%;" cellpadding=3D"0=
+" cellspacing=3D"0" width=3D"100%" bgcolor=3D"#414141"><tbody><tr><td class=
+=3D"h5 button-td" align=3D"center" style=3D"font-family: NetflixSans-Bold, =
+Helvetica, Roboto, Segoe UI, sans-serif; font-weight: 700; font-size: 14px;=
+ line-height: 17px; letter-spacing: -0.2px; padding-top: 20px; padding: 14p=
+x 40px; color: #ffffff;"><a class=3D"h5" href=3D"https://www.netflix.com/br=
+owse?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b&amp;lkid=3DURL_VIEW_ALL&amp;l=
+nktrk=3DEVO" style=3D"font-family: NetflixSans-Bold, Helvetica, Roboto, Seg=
+oe UI, sans-serif; font-weight: 700; font-size: 14px; line-height: 17px; le=
+tter-spacing: -0.2px; text-align: center; text-decoration: none; display: b=
+lock; color: #ffffff;">View all TV shows &amp; movies</a></td></tr></tbody>=
+</table></td></tr></tbody></table></td></tr><tr><td align=3D"center" class=
+=3D"footer-shell" style=3D"background-color: #000000;" bgcolor=3D"#000000">=
+<table class=3D"footer" width=3D"100%" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0"><tbody><tr><td align=3D"center" valign=3D"top" class=3D"footer=
+-shell content-padding" style=3D"padding-left: 20px; padding-right: 20px; b=
+ackground-color: #000000;" bgcolor=3D"#000000"><table width=3D"100%" class=
+=3D"spacer-table" data-testid=3D"spacer" cellpadding=3D"0" cellspacing=3D"0=
+"><tbody><tr><td class=3D"spacer" style=3D"font-size: 0; line-height: 0; he=
+ight: 40px;" height=3D"40">=C2=A0</td></tr></tbody></table><table width=3D"=
+100%" cellpadding=3D"0" cellspacing=3D"0"><tbody><tr><td valign=3D"top" cla=
+ss=3D"footer-icon-wrapper" style=3D"padding: 0 20px 0 0;"><table class=3D"c=
+omponent-image image" width=3D"100%" data-testid=3D"image" cellpadding=3D"0=
+" cellspacing=3D"0"><tbody><tr><td class=3D"cell component-image none" alig=
+n=3D"center" style=3D"padding-top: 0;"><img src=3D"https://assets.nflxext.c=
+om/us/email/gem/nflx.png" alt width=3D"24" border=3D"0" class=3D"undefined =
+" style=3D"-ms-interpolation-mode: bicubic; border: none; outline: none; bo=
+rder-collapse: collapse; display: block;"></td></tr></tbody></table></td><t=
+d valign=3D"top" class=3D"footer-copy-wrapper"><table class=3D"footer-table=
+" width=3D"100%" valign=3D"top" cellpadding=3D"0" cellspacing=3D"0"><tbody>=
+<tr><td class=3D"footer-copy-shell"><table align=3D"left" width=3D"100%" cl=
+ass=3D"copy-table footer-copy" data-testid=3D"copy" cellpadding=3D"0" cells=
+pacing=3D"0"><tbody><tr><td align=3D"left" class=3D"copy p1 none" style=3D"=
+font-family: NetflixSans-Regular, Helvetica, Roboto, Segoe UI, sans-serif; =
+font-weight: 400; font-size: 14px; line-height: 18px; letter-spacing: -0.25=
+px; color: #a4a4a4; padding-top: 0;"><span class=3D"ignore-diff">Questions?=
+ Phone 1 800 404 982</span></td></tr></tbody></table><table align=3D"left" =
+width=3D"100%" class=3D"copy-table footer-copy address" data-testid=3D"copy=
+" cellpadding=3D"0" cellspacing=3D"0"><tbody><tr><td align=3D"left" class=
+=3D"copy legal none" style=3D"font-family: NetflixSans-Regular, Helvetica, =
+Roboto, Segoe UI, sans-serif; font-weight: 400; font-size: 11px; line-heigh=
+t: 14px; letter-spacing: -0.1px; color: #a4a4a4; padding-top: 0;"><span cla=
+ss=3D"hide-link" style=3D"cursor: text; text-decoration: none;"><a href=3D"=
+https://help.netflix.com/legal/corpinfo?g=3D2446f770-5475-4add-a437-6ba8ddf=
+a9c9b&amp;lkid=3DURL_CORP_INFO&amp;lnktrk=3DEVO" style=3D"cursor: text; col=
+or: #a4a4a4; text-decoration: none;">Netflix Australia Pty Ltd.</a></span><=
+/td></tr></tbody></table><table align=3D"left" width=3D"100%" class=3D"copy=
+-table " data-testid=3D"copy" cellpadding=3D"0" cellspacing=3D"0"><tbody><t=
+r><td align=3D"left" class=3D"copy p2 none" style=3D"font-family: NetflixSa=
+ns-Regular, Helvetica, Roboto, Segoe UI, sans-serif; font-weight: 400; font=
+-size: 12px; line-height: 15px; letter-spacing: -0.12px; padding-top: 20px;=
+ color: #a9a6a6;"><a class=3D"footer-link" href=3D"https://www.netflix.com/=
+notificationsettings/email?id=3DBQE0AAEBEEo94LLt9iOSV0fb1QYn2tiAkCdJXQs6%2F=
+r8GVTFVfxj2oAIqbQ79L2Hfb0sS9i2i4W2tAlYAHn5gT%2B%2BTF%2BkVKf0arRo5EWs7WozzT3=
+jbk5r6RuYkIUCRsk70ywR4DLk00uMT75mi2gb%2Bz4LH7vREs6HQNA2st63Ir8TI1Ds%2FoBwqb=
+BRPeEaHwtfhuA0BpMq%2F7024BfyAhsG%2BXv6usAYidwMV7A%3D%3D&amp;g=3D2446f770-54=
+75-4add-a437-6ba8ddfa9c9b&amp;mid=3D2&amp;lkid=3DURL_UNSUB&amp;lnktrk=3DEVO=
+" style=3D"text-decoration: underline; line-height: 20px; color: #a4a4a4;">=
+Unsubscribe</a><br><a class=3D"footer-link" href=3D"https://www.netflix.com=
+/TermsOfUse?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b&amp;lkid=3DURL_TERMS&a=
+mp;lnktrk=3DEVO" style=3D"text-decoration: underline; line-height: 20px; co=
+lor: #a4a4a4;">Terms of Use</a><br><a class=3D"footer-link" href=3D"https:/=
+/www.netflix.com/PrivacyPolicy?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b&amp=
+;lkid=3DURL_PRIVACY&amp;lnktrk=3DEVO" style=3D"text-decoration: underline; =
+line-height: 20px; color: #a4a4a4;">Privacy</a><br><a class=3D"footer-link"=
+ href=3D"https://help.netflix.com/help?g=3D2446f770-5475-4add-a437-6ba8ddfa=
+9c9b&amp;lkid=3DURL_HELP&amp;lnktrk=3DEVO" style=3D"text-decoration: underl=
+ine; line-height: 20px; color: #a4a4a4;">Help Centre</a></td></tr></tbody><=
+/table><table align=3D"left" width=3D"100%" class=3D"copy-table footer-copy=
+" data-testid=3D"copy" cellpadding=3D"0" cellspacing=3D"0"><tbody><tr><td a=
+lign=3D"left" class=3D"copy legal none" style=3D"font-family: NetflixSans-R=
+egular, Helvetica, Roboto, Segoe UI, sans-serif; font-weight: 400; font-siz=
+e: 11px; line-height: 14px; letter-spacing: -0.1px; padding-top: 20px; colo=
+r: #a4a4a4;">This message was mailed to <a href=3D"https://www.netflix.com/=
+browse?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b&amp;lkid=3DURL_EMAIL&amp;ln=
+ktrk=3DEVO" class=3D"hide-link ignore-diff" style=3D"cursor: text; color: #=
+a4a4a4; text-decoration: none;">[srijani515@gmail.com]</a> by Netflix as pa=
+rt of your Netflix=C2=A0membership.<br>SRC: <a href=3D"https://www.netflix.=
+com/browse?g=3D2446f770-5475-4add-a437-6ba8ddfa9c9b&amp;lkid=3DURL_SRC&amp;=
+lnktrk=3DEVO" class=3D"hide-link ignore-diff" style=3D"cursor: text; color:=
+ #a4a4a4; text-decoration: none;">62E0498A_2446f770-5475-4add-a437-6ba8ddfa=
+9c9b_en-AU_AU_EVO</a></td></tr></tbody></table><table width=3D"100%" class=
+=3D"spacer-table" data-testid=3D"spacer" cellpadding=3D"0" cellspacing=3D"0=
+"><tbody><tr><td class=3D"spacer" style=3D"font-size: 0; line-height: 0; he=
+ight: 40px;" height=3D"40">=C2=A0</td></tr></tbody></table></td></tr></tbod=
+y></table></td></tr></tbody></table></td></tr></tbody></table></td></tr></t=
+body></table></td></tr></tbody></table><div class=3D"mobile-hide-max gmail-=
+fix-no-inline" style=3D"white-space: 'nowrap'; font: '15px courier'; line-h=
+eight: 0;">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0</=
+div>
+    </body>
+    </html>
+ =20
+------=_Part_1054471_629300484.1697941351112--

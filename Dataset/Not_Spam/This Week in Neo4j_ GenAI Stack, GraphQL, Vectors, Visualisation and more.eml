@@ -1,0 +1,1404 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:8691:b0:4fd:23d3:a27 with SMTP id e17csp429244pxn;
+        Sat, 21 Oct 2023 11:06:29 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEjmWAjvVMZWJgtFhfltOSjRk/O529w3feuFidO4MnkzGdHgBhjQXXc0zjhuknkv0Z1nje4
+X-Received: by 2002:ad4:4ee1:0:b0:656:4a21:2c5a with SMTP id dv1-20020ad44ee1000000b006564a212c5amr7070534qvb.9.1697911589091;
+        Sat, 21 Oct 2023 11:06:29 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697911589; cv=none;
+        d=google.com; s=arc-20160816;
+        b=O5gIgirhniajyZX16YwV3C6RbScX2YpPfUAOoDAbD7bM1I/rE3bEltl+h/033mmsgE
+         hrthPXaQVQLLO5RbyfwZHqJSykXmDv+kWeCEf2WnAqIXM/K/mmnxxhhJoEpCH3MgZc6+
+         t7YiAskOueX0Ehe82QNyC0edAS5qNP1zuhqz+iRw4x/tmG9Tu5CkCihU+aAUtUoEoA6Z
+         kGB3o/RR1AgQkYj2BBZMh98ls7A5XEHaBlRLy6FsJozI9JaApdcrRk2RjLvydWxqcg03
+         nx3+mDKjbccYfUkMzct23LSXMl64eSpWl8F0XBwlOV9gYXyI+sLtmYDlJZxHjcf7ua5M
+         ox4w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:mime-version:subject:message-id:to:reply-to:from
+         :date:dkim-signature:dkim-signature;
+        bh=OtC7ev4+ppoZRoLZTJqi6bNDF/4LOeJAOii0iMKKSSc=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=tMuc1FQUMjf0wI2i6AxK+FFO61ss5O/z7l/6UkV0Ka/gByndET3Dr9aOw+MMWbP2id
+         xrGWLbgQQ2GibLctkJnD/BxlzQAVQJB8LTfjUSMKCYEbJLQ4VIndQIADnYFFddIA0FCG
+         h9PwfW2XwR2eHXYOGletuusHjTd/vndXKrTcYfWat/ZakLx1jCYFRJAnndagpRyqbGBm
+         +BB5etlHv09R6ee0fLmB8gL3pXBoEWOuJDUosFRSHpTYJdJlYsggiWuMsgE7Js5W7Xft
+         GcyuGJTkUBIx1ThECWnAKG9j9fFJ1/51l19yG/OGxmbvMaBfn0hjnoru/saK1qq36rEG
+         +ofg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@neo4j.com header.s=m1 header.b=OiwjrWrB;
+       dkim=pass header.i=@mktomail.com header.s=m1 header.b=d6VSLVcH;
+       spf=pass (google.com: domain of 710-rrc-335.0.218719.0.0.71873.9.14494003@potomac1050.mktomail.com designates 192.28.150.228 as permitted sender) smtp.mailfrom=710-RRC-335.0.218719.0.0.71873.9.14494003@potomac1050.mktomail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=neo4j.com
+Return-Path: <710-RRC-335.0.218719.0.0.71873.9.14494003@potomac1050.mktomail.com>
+Received: from potomac1228.mktomail.com (potomac1228.mktomail.com. [192.28.150.228])
+        by mx.google.com with ESMTPS id o9-20020a05622a138900b0041986d97773si3164303qtk.580.2023.10.21.11.06.28
+        for <srijani515@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 21 Oct 2023 11:06:29 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 710-rrc-335.0.218719.0.0.71873.9.14494003@potomac1050.mktomail.com designates 192.28.150.228 as permitted sender) client-ip=192.28.150.228;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@neo4j.com header.s=m1 header.b=OiwjrWrB;
+       dkim=pass header.i=@mktomail.com header.s=m1 header.b=d6VSLVcH;
+       spf=pass (google.com: domain of 710-rrc-335.0.218719.0.0.71873.9.14494003@potomac1050.mktomail.com designates 192.28.150.228 as permitted sender) smtp.mailfrom=710-RRC-335.0.218719.0.0.71873.9.14494003@potomac1050.mktomail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=neo4j.com
+X-MSFBL: +6R/EM+Q6fi1Aa9CwVQO+I3oeuSmADEXRK/EOJGfc7A=|eyJ1IjoiNzEwLVJSQy0
+	zMzU6MDo3MDY0OTozMTYyMDg6MTM2NDQwODo3MTg3Mzo5OjIxODcxOToxNDQ5NDA
+	wMyIsInIiOiJzcmlqYW5pNTE1QGdtYWlsLmNvbSIsImIiOiJkdnAtMTkyLTI4LTE
+	1MC0yMjgiLCJnIjoiYmctYWItMDEifQ==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1697911587;
+	s=m1; d=neo4j.com; i=@neo4j.com;
+	h=Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=OtC7ev4+ppoZRoLZTJqi6bNDF/4LOeJAOii0iMKKSSc=;
+	b=OiwjrWrB+T9MjFdcReUuC0lut3xCrkfewO0FE1QC3WrJ9LgbR27izT3b6GVJwB4+
+	FtpUE8+tH5vrBsMq/p0Olugy0bHSb6cadEAaJ2Ix62ubB0Nv7N+rjMO8bRWg1qkKv/v
+	z/8lxzLyhZ/IIaBx/+yBMrRMRuvuNNvpPdaWuO5U=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1697911587;
+	s=m1; d=mktomail.com; i=@mktomail.com;
+	h=Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=OtC7ev4+ppoZRoLZTJqi6bNDF/4LOeJAOii0iMKKSSc=;
+	b=d6VSLVcHpluIhoOx8Z/IWKnbc14W8ynD5qBOpGep9X/RoxHlUfKBcz+bhk8yFeEy
+	fo9GpTQ44ngbfxfpOBL5QGM5vorr6gVFeDikjpOadSje4ijLzmzxHE4MfbAHCidyP6Q
+	iZNs0mekxUz1G0ERsouCXIoeD1xWsWswoRdpKPWQ=
+Date: Sat, 21 Oct 2023 13:06:27 -0500 (CDT)
+From: "Alexander Erdl, Neo4j" <noreply@neo4j.com>
+Reply-To: noreply@neo4j.com
+To: srijani515@gmail.com
+Message-ID: <817756332.210368298.1697911587706@abmktmail-batch1e.marketo.org>
+Subject: This Week in Neo4j: GenAI Stack, GraphQL, Vectors, Visualisation
+ and more
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_210368297_316919281.1697911587706"
+X-Binding: bg-ab-01
+X-MarketoID: 710-RRC-335:0:70649:316208:1364408:71873:9:218719:14494003
+X-Mailfrom: 710-RRC-335.0.218719.0.0.71873.9.14494003@potomac1050.mktomail.com
+List-Unsubscribe: <mailto:KRTTKT3UGVVDGTLSGNWEI3TVKRLGY2DFOZAT2PI=.218719.71873.9@unsub-ab.mktomail.com>
+X-MktArchive: false
+X-MSYS-API: {"options":{"open_tracking":false,"click_tracking":false}}
+X-MktMailDKIM: true
+
+------=_Part_210368297_316919281.1697911587706
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Neo4j Developer News
+View it in Your Browser <https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNz=
+bAW-umuek_oGpim8TapqYkmIL4MX22KjJoAW1ehBrsNP2EMQ-Ynj8yYudv9ZU_FkUsQ=3D>
+Welcome to This Week in Neo4j, your weekly fix for news from the world of g=
+raph databases!This is it!=C2=A0NODES 2023 <https://message.neo4j.com/NzEwL=
+VJSQy0zMzUAAAGO8mNzbae53ofaG01Eji9NcA3oEey8D1RgLNYRxHXebmuClotAzoAC2_ER8Cc0=
+_g0agF1WfJk=3D>=C2=A0is finally happening this Thursday.
+Do you have signed up already? Running live across time zones around the gl=
+obe, NODES is featuring over 100 sessions in tracks Application Building, V=
+isualisation as well as AI/ML and an=20
+opening keynote by Hannah Fry on =E2=80=9CThe Joy of=20
+Data=E2=80=9D. You have to be there!
+In other news, we look at how to get started with the GenAI Stack, go into =
+best practices for GraphQL, explain why Vectors and Graph Databases fit tog=
+ether and how to use AI to create Graph Visualisations.
+I hope you enjoy this issue,Alexander Erdl
+COMING UP NEXT WEEK!
+- Live Stream:=C2=A0NODES 2023 <https://message.neo4j.com/NzEwLVJSQy0zMzUAA=
+AGO8mNzbae53ofaG01Eji9NcA3oEey8D1RgLNYRxHXebmuClotAzoAC2_ER8Cc0_g0agF1WfJk=
+=3D>=C2=A0on October 26
+=09-=20
+
+Conferences: Meet us at=C2=A0FOSS4G NA Baltimore <https://message.neo4j.com=
+/NzEwLVJSQy0zMzUAAAGO8mNzbdh4Cyx87zKvz7UF0KnMhcDhUNh0E13sFMbx_4eJVHWKWm6Z88=
+ub18XszrinrjXwOmo=3D>=C2=A0on October=20
+24
+
+
+=09-=20
+
+All Neo4j Events: Webinar, Live demos, and More <https://message.neo4j.com/=
+NzEwLVJSQy0zMzUAAAGO8mNzbJrH_BFbf34ENAPe2d9PXJDYYt7AXSJ1-G8C8DGaAsU2CFkSeqT=
+mU-ESF2QERNS1YiE=3D>.
+
+=09-=20
+
+GraphSummit Series: Get Connected With Graphs <https://message.neo4j.com/Nz=
+EwLVJSQy0zMzUAAAGO8mNzbIAYTHV7PSMzdYWGQPJPpjqDr4VKrKCjTYdJi02qm26kGwGRmhzps=
+Y3AOSCtj8839_M=3D>.=C2=A0Next up: Washington on October 25=C2=A0 <https://m=
+essage.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbff0GeBzk9lMNNzLXiZRS2BElqwCO-3hdh=
+18EWLSDyUtwUIpy_oAmdwejRRa34_o-U0=3D>
+FEATURED NODES SPEAKER:=C2=A0Elena Kohlwey <https://message.neo4j.com/NzEwL=
+VJSQy0zMzUAAAGO8mNzbfcMP4oHnpdut_Ok103l9R_2WNZg8pJueGccKmILxKhhYFjs_gklenCI=
+AvFwd0d88Ak=3D>
+Elena Kohlwey thrives on making intelligent applications that yield Busines=
+s benefits. Graph-based applications with Neo4j are just that!Connect with =
+her on=C2=A0LinkedIn <https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbfc=
+MP4oHnpdut_Ok103l9R_2WNZg8pJueGccKmILxKhhYFjs_gklenCIAvFwd0d88Ak=3D>.
+Join Elena at=C2=A0NODES 2023 <https://message.neo4j.com/NzEwLVJSQy0zMzUAAA=
+GO8mNzbE-0D_cw3MVNRLg2gx5X2dHprBYkUeV-fa-A-z1ebezgu1l-ZR59EgVYxeqWhbG1GWA=
+=3D>. She has been writing user-defined procedures enthusiastically for the=
+ last few years. She will demonstrate why and how user-defined procedures c=
+an be your knight in shining armour regarding full-graph or big-subgraph tr=
+aversals. She was also part of a=C2=A0NODES Speaker Roundtable <https://mes=
+sage.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbKj2rqbMiHI5aa649VjE6nJ6jQmlaQB7RP6U=
+cOv5EusKvjOP1WAUMGguGf6YNF-Lwsc=3D>=C2=A0and gave a little teaser of what t=
+o expect in her session.
+
+ <https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbE-0D_cw3MVNRLg2gx5X2dH=
+prBYkUeV-fa-A-z1ebezgu1l-ZR59EgVYxeqWhbG1GWA=3D>
+Getting Started with GenAI Stack powered with Docker,=20
+LangChain, Neo4j and Ollama <https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO=
+8mNzbPARn2cgGC0pRIkzpf5bTcMJxTq4H-hExVpq5hDS0xU0TzdCwuS7GwjgLWKKmdlLbB0=3D>
+
+After the launch of the GenAI Stack at=C2=A0DockerCon <https://message.neo4=
+j.com/NzEwLVJSQy0zMzUAAAGO8mNzbKcvgvGC8HDVVLfiyeJJxAyA9rB3iyc1r4yxzdt3DXXpz=
+14tURssHm002RQB0r3MtMs=3D>=C2=A0last week, a lot of people want to get star=
+ted with it and Ajeet Raina gives an overview of the components that make t=
+he GenAI Stack and how to use the stack for building and running AI apps ca=
+pable of generating text, code, and other creative content.=E2=80=8B
+GraphQL Development Best Practices <https://message.neo4j.com/NzEwLVJSQy0zM=
+zUAAAGO8mNzbewjz-PUFLuy1zJkRH82-k7Sfdn3EUAjwwQYpGDaZVKsXrHHadQcBrBB-tAzsLH_=
+4es=3D>
+
+GraphQL, on its own, is already a powerful tool with a client-centric appro=
+ach. In this article, Lidia Zuin shares tips and tricks on making the Graph=
+QL development process more efficient and your product better.
+Why Vectors Should Be Stored Together with Knowledge Graph? <https://messag=
+e.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbTPhyPgNo3hKKAF149R9uBgYNcpdKVH-NOfmw4P=
+01x8ctUwqcA8awjZrlkGsR1k73jg=3D>
+
+Fanghua (Joshua) Yu explains in this article why you should consider archit=
+ecture principles when choosing a storage technology for vectors, i.e. embe=
+ddings of text, image and video produced by machine learning models. This i=
+s a crucial step to make solutions based on them ready for production.
+AI Integration for Data Explorer <https://message.neo4j.com/NzEwLVJSQy0zMzU=
+AAAGO8mNzbPON1-4R39tMNJ1cg-jGRGyaTCWqcW3KMuwokIbvww0aamFg_6VJurluhPKu973XSS=
+4=3D>
+
+Sebastian M=C3=BCller shares the latest update to Data Explorer, enabling y=
+ou to engage in a literal conversation with your database, explore content,=
+ query and dynamically select elements, highlight specific entities, craft =
+complex queries for future use=20
+in your apps and notebooks and automatically generate insightful node visua=
+lisations.
+Tweet of the Week:=C2=A0Neo4j <https://message.neo4j.com/NzEwLVJSQy0zMzUAAA=
+GO8mNzbYKUy5edt1KVC-5a754PmXCzlRzSUN__xiCeDbv2ZmHMqBTeNkITlYA4xjn4_6k8ltY=
+=3D>
+
+Shameless self-plug because we are so looking forward to Hannah Fry!
+
+<https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbL8KT8sknR9uL82n3wzcCUl_=
+KWm4JNBZdi2krU2ShFitUCZo5n9H6wdpiIyO8MHx9WE=3D>
+
+Don=E2=80=99t forget to share it if you like it!
+<https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbYKUy5edt1KVC-5a754PmXCz=
+lRzSUN__xiCeDbv2ZmHMqBTeNkITlYA4xjn4_6k8ltY=3D>=C2=A0  <https://message.neo=
+4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbTGG79QaAhclyPTCUV0mQ3dPTICbPdbfZOx9aPhhZl4a=
+6xv9S8hZwSfP6YBN7PDb_dc=3D>=C2=A0  <https://message.neo4j.com/NzEwLVJSQy0zM=
+zUAAAGO8mNzbEcx5vqRkdqux6aZaKCKa8jjexoPJ8zbhtgla5eZT3Marrw9vgRIsxOFbeKk7xl-=
+Efs=3D>=C2=A0  <https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbHhWZcsML=
+4Fm3z0lO8GhzLKfHPGm80ruUKGxwRS2meLp0gzp_LBPMRWtG4OLbUtt2t8=3D>
+=C2=A9 2023 Neo4j, Inc.
+
+neo4j.com <https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbKKntNLi6guk98=
+ou2r8DpZZ20iK7hXtY-ZWTuuKXwDZojcSNlw6etlr0E58UlgPucIo=3D> | Privacy Policy =
+<https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbUmz-UQCUzGo-dflkAhM-SdY=
+Mnjtfuhi7OK9EAZ6FH8dtj3NK6KQEfwBaMRt8cghq3g=3D> | Manage Subscriptions <htt=
+ps://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbWEtPY_irQmKdvjvWI0EVgRsZt6u=
+Z-1ZTtHjE6Zc8r6mpZbPr8k8yfVQgy0ITIRSm7o=3D> | Share Your Blog or Articles <=
+https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbDrW0Sjd8H7_GRtLULBt4l96l=
+_BBKClBKVnr341bo4d7pL9o1WNKcT_VUoLTSC4VoRg=3D>
+
+Nordenski=C3=B6ldsgatan 24, 211 19 Malm=C3=B6, Sweden
+
+Questions? Contact Us <https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbW=
+st79cUCmHOqaTuQ_s6g0O2iPVkQDtdJyCo4_zkbFKUeuM7GDdLBXWMgO0f7W4M__Q=3D>
+
+This email was sent to srijani515@gmail.com. If you no longer wish to recei=
+ve these emails you may unsubscribe here: https://go.neo4j.com/UnsubscribeP=
+age.html?mkt_unsubscribe=3D1&mkt_tok=3DNzEwLVJSQy0zMzUAAAGO8mNzbaM0pDZWxMCo=
+z_7iHJH1HvMohWkwL3q4rMqpwtThBcWJzLQ55h3rlfE0A9jZVScBXHw6ByF0ElLrcEiYKrvCS8Z=
+RZIPmMGr3usc91UQm62c.
+
+------=_Part_210368297_316919281.1697911587706
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html xmlns:o=3D"urn:schemas-microsoft-com:office:office" xmlns:v=3D"urn:sc=
+hemas-microsoft-com:vml">
+<head>=20
+<title>Neo4j Master Email Template</title>=20
+<meta content=3D"text/html; charset=3Dutf-8" http-equiv=3D"Content-Type">=
+=20
+<meta content=3D"text/html; charset=3Dutf-8" http-equiv=3D"Content-Type">=
+=20
+<meta content=3D"width=3Ddevice-width, initial-scale=3D1, minimum-scale=3D1=
+, maximum-scale=3D1" name=3D"viewport">=20
+<meta content=3D"noindex,nofollow" name=3D"robots">=20
+<meta content=3D"IE=3Dedge" http-equiv=3D"X-UA-Compatible">=20
+<!--[if !mso]>
+        <!=3D=3D<![endif]-->=20
+<!--[if gte mso 9]>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:AllowPNG/>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+        <![endif]-->=20
+<!--[if mso]>
+<style> Body,table tr,table td,a, span,table.MsoNormalTable {  font-family:=
+Arial, Helvetica, sans-serif !important;  }</style>
+<!=3D=3D<![endif]-->=20
+<style type=3D"text/css">
+=09       =20
+=09                 /* CLIENT-SPECIFIC STYLES */
+=09                 #outlook a {
+=09                 padding: 0;
+=09                 }
+=09                 /* Force Outlook to provide a "view in browser" message=
+ */
+=09                 .ReadMsgBody {
+=09                 width: 100%;
+=09                 }
+=09                 .ExternalClass {
+=09                 width: 100%;
+=09                 }
+=09                 /* Force Hotmail to display emails at full width */
+=09                 .ExternalClass,
+=09                 .ExternalClass p,
+=09                 .ExternalClass span,
+=09                 .ExternalClass font,
+=09                 .ExternalClass td,
+=09                 .ExternalClass div {
+=09                 line-height: 100%;
+=09                 }
+=09                 /* Force Hotmail to display normal line spacing */
+=09                 /* iOS BLUE LINKS */
+=09                 @-ms-viewport {
+=09                 width: device-width;
+=09                 }
+=09</style>=20
+<style type=3D"text/css">
+=09                 /* CLIENT-SPECIFIC STYLES */
+=09                 #outlook a {
+=09                 padding: 0;
+=09                 }
+=09                 /* Force Outlook to provide a "view in browser" message=
+ */
+=09                 .ReadMsgBody {
+=09                 width: 100%;
+=09                 }
+=09                 .ExternalClass {
+=09                 width: 100%;
+=09                 }
+=09                 /* Force Hotmail to display emails at full width */
+=09                 .ExternalClass,
+=09                 .ExternalClass p,
+=09                 .ExternalClass span,
+=09                 .ExternalClass font,
+=09                 .ExternalClass td,
+=09                 .ExternalClass div {
+=09                 line-height: 100%;
+=09                 }
+=09                 /* Force Hotmail to display normal line spacing */
+=09                 /* iOS BLUE LINKS */
+=09                 @-ms-viewport {
+=09                 width: device-width;
+=09                 }
+=09</style>=20
+<style type=3D"text/css">
+=09                 Body {-webkit-font-smoothing: antialiased !important; -=
+webkit-text-size-adjust: none !important; width: 100% !important; height: 1=
+00% !important; }
+=09                 a[x-apple-data-detectors] {color: inherit !important;te=
+xt-decoration: none !important;font-size: inherit !important;font-family: i=
+nherit !important;font-weight: inherit !important;line-height: inherit !imp=
+ortant;}
+=09                 a {outline: 0;text-decoration: none;}
+=09                 table {border-spacing: 0; mso-table-lspace:0pt; mso-tab=
+le-rspace:0pt;}
+=09                 Body, td, input, textarea, select {
+=09                 font-family: Arial, sans-serif !important;
+=09                 }
+=09                 #para1 p{
+=09                     margin-top: 30px !important;
+=09                     margin-bottom: 0 !important;
+=09                 }
+=09</style>=20
+<style type=3D"text/css">
+=09               @media only screen and (max-width:479px) {
+=09                     .block {
+=09                     width: 100% !important;
+=09                     display: block !important;
+=09                     box-sizing: border-box;
+=09                     clear: both;
+=09                 }
+=09                   .pad-top15{
+=09                       padding-top: 20px;
+=09                   }
+=09                  .deviceWidth {
+=09                     width: 100% !important;
+=09                     min-width: 100% !important;
+=09                 }
+
+=09                   .deviceWidth1 {
+=09                     width: 90% !important;
+=09                     min-width: 90% !important;
+=09                 }
+
+=09                   .extra-space {
+=09                     height: 30px !important;
+=09                 }
+
+=09                   .center {
+=09                     text-align: center !important;
+=09                 }
+
+=09                   .floating {
+=09                     float: none !important;
+=09                     margin: 0 auto !important;
+=09                 }
+
+=09                   .iphn_img img {
+=09                     width: 100% !important;
+=09                 }
+
+=09                   .align-left {
+=09                     text-align: left !important;
+=09                 }
+
+=09                   .hidden-xs {
+=09                     display: none !important;
+=09                 }
+
+=09                   .extra-space {
+=09                     height: 30px !important;
+=09                 }
+
+=09                   .no-pad {
+=09                     padding: 0 !important;
+=09                 }
+
+=09                   .calender-pad {
+=09                     padding-top: 5px !important;
+=09                 }
+
+=09                   .top-pad {
+=09                     padding-top: 12px !important;
+=09                 }
+
+=09                   .position {
+=09                     background-position: center !important;
+=09                 }
+=09                  .m-auto{float:none !important; margin:0 auto !importan=
+t;}
+=09             }
+=09</style>=20
+</head>=20
+<body style=3D"-webkit-font-smoothing: antialiased !important; -webkit-text=
+-size-adjust: none !important; width: 100% !important; height: 100% !import=
+ant; font-family:'Arial',Helvetica,sans-serif; -webkit-font-smoothing: anti=
+aliased; -webkit-text-size-adjust: none; width: 100% !important; height: 10=
+0%; margin: 0; padding: 0;"><style type=3D"text/css">div#emailPreHeader{ di=
+splay: none !important; }</style><div id=3D"emailPreHeader" style=3D"mso-hi=
+de:all; visibility:hidden; opacity:0; color:transparent; mso-line-height-ru=
+le:exactly; line-height:0; font-size:0px; overflow:hidden; border-width:0; =
+display:none !important;">Welcome to This Week in Neo4j: GenAI Stack, Graph=
+QL, Vectors, Visualisation and more</div>=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-spa=
+cing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width:100%;table-lay=
+out:fixed" width=3D"100%">=20
+<tbody>=20
+<tr>=20
+<td bgcolor=3D"#EDF2F8" style=3D"background-color:#edf2f8;">=20
+<!--MAIN TABLE Starts-->=20
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"deviceWidth" style=3D"border-spacing: 0; mso-table-lspace: 0pt; mso-=
+table-rspace: 0pt; margin:0 auto;width:600px;min-width:600px;" width=3D"600=
+">=20
+<tbody>=20
+<tr>=20
+<td class=3D"mktoContainer" id=3D"template-wrapper" style=3D"vertical-align=
+:top;-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-=
+lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word; -webkit-hyphens=
+: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse;" vali=
+gn=3D"top">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"mktoModule" id=3D"Banner" style=3D"border-spacing: 0; mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt; border-collapse: collapse;" width=3D"100%">=
+=20
+<tbody>=20
+<tr>=20
+<td background=3D"https://go.neo4j.com/rs/710-RRC-335/images/neo4j-img-eml-=
+hdr-bg.jpg" bgcolor=3D"#EDF2F8" style=3D"background-color:#edf2f8; backgrou=
+nd-size: cover;background-position: center;">=20
+<!--[if gte mso 9]>
+                                            <v:rect xmlns:v=3D"urn:schemas-=
+microsoft-com:vml" fill=3D"true" stroke=3D"false" style=3D"width:600px;heig=
+ht:130px;">
+                                                <v:fill type=3D"frame" src=
+=3D"https://go.neo4j.com/rs/710-RRC-335/images/neo4j-img-eml-hdr-bg.jpg" co=
+lor=3D"#ffffff" ></v:fill>
+                                                <v:textbox  inset=3D"0,0,0,=
+0">
+                                                    <![endif]-->=20
+<div style=3D"font-size: 0px;line-height: 0px;">=20
+<div>=20
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"deviceWidth1" style=3D"border-spacing: 0; mso-table-lspace: 0pt; mso=
+-table-rspace: 0pt; margin:0 auto;width:580px;" width=3D"580">=20
+<tbody>=20
+<tr>=20
+<td height=3D"0" style=3D"line-height:1px;font-size:1px;">&nbsp;</td>=20
+</tr>=20
+<tr>=20
+<td align=3D"center" style=3D"font-family:Arial,sans-serif;font-size:26px;l=
+ine-height:26px;color:#edf2f8;font-weight:bold;text-align:center;">=20
+<div class=3D"mktoText" id=3D"Banner-Section">
+<p>Neo4j Developer News</p>
+</div> </td>=20
+</tr>=20
+<tr>=20
+<td height=3D"0" style=3D"line-height:1px;font-size:1px;">&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+</div>=20
+</div>=20
+<!--[if gte mso 9]>
+                                                </v:textbox>
+                                            </v:rect>
+                                            <![endif]--> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" class=3D"mktoModule" id=3D"Intro=
+-Sectiond4056b33-c308-43cd-b6cc-754caba5d2ff" style=3D"width:100%;" width=
+=3D"100%">=20
+<tbody>=20
+<tr>=20
+<td bgcolor=3D"#FFFFFF" style=3D"background-color:#ffffff;">=20
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" class=3D"device=
+Width1" style=3D"width:580px; margin: 0 auto; border-collapse: collapse;" w=
+idth=3D"580">=20
+<tbody>=20
+<tr>=20
+<td height=3D"20" style=3D"line-height: 1px; font-size: 1px;">&nbsp;</td>=
+=20
+</tr>=20
+<tr>=20
+<td colspan=3D"3" style=3D"text-align:left;font-family:Arial, Helvetica, sa=
+ns-serif;font-size:14px; color:#30333a;mso-line-height-rule:exactly;line-he=
+ight:21px; text-align: left" valign=3D"top">=20
+<div class=3D"mktoText" id=3D"Intro-Text120464e0-ee6d-4d53-836d-fa854fa03c3=
+9">=20
+<p style=3D"text-align: left;"><span style=3D"color: #028bff;"><a href=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbAW-umuek_oGpim8TapqYkmI=
+L4MX22KjJoAW1ehBrsNP2EMQ-Ynj8yYudv9ZU_FkUsQ=3D" target=3D"_blank" style=3D"=
+color: #028bff;"
+>View it in Your Browser</a></span></p>=20
+<p style=3D"box-sizing: inherit; border-color: currentcolor; --tw-shadow: 0=
+ 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; =
+--tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --t=
+w-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin: 0px 0=
+px 1rem; padding: 0px; font-size: 16px; line-height: 1.5; text-rendering: o=
+ptimizelegibility; color:=20
+#151e29; font-weight: 400; font-family: 'Public Sans', 'Helvetica Neue', he=
+lvetica, roboto, arial, sans-serif; font-style: normal; font-variant-ligatu=
+res: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2;=
+ text-align: start; text-indent: 0px; text-transform: none; widows: 2; word=
+-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; backgro=
+und-color:=20
+#ffffff;"><span style=3D"font-family: arial, helvetica, sans-serif; font-si=
+ze: 18px; color: #333333;">Welcome to This Week in Neo4j, your weekly fix f=
+or news from the world of graph databases!</span><br style=3D"box-sizing: i=
+nherit; border-color: currentcolor; --tw-shadow: 0 0 #0000; --tw-ring-inset=
+: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #=
+fff; --tw-ring-color:=20
+rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shad=
+ow: 0 0 #0000;"><span style=3D"color: #333333; font-size: 18px;"><span styl=
+e=3D"font-family: 'Public Sans', 'Helvetica Neue', helvetica, roboto, arial=
+, sans-serif; font-style: normal; font-variant-ligatures: normal; font-vari=
+ant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; tex=
+t-align: start;=20
+text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webk=
+it-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; =
+float: none; display: inline !important;">This is it!&nbsp;</span><span sty=
+le=3D"color: #028bff;"><a href=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbYGGBzNw8gbas9XSUGvX7Nws=
+e9_PWapJJSUh4O7aiI40-dIrZBgXxmQOtHk6F02MYz4=3D" style=3D"box-sizing: inheri=
+t; border-color: currentcolor; --tw-shadow: 0 0 #0000; --tw-ring-inset: var=
+(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; =
+--tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0=20
+#0000; --tw-ring-shadow: 0 0 #0000; background-color: #ffffff; line-height:=
+ inherit; color: #028bff; text-decoration: none; cursor: pointer; font-fami=
+ly: 'Public Sans', 'Helvetica Neue', helvetica, roboto, arial, sans-serif; =
+font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-v=
+ariant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; =
+text-align: start;=20
+text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webk=
+it-text-stroke-width: 0px; white-space: normal;"
+>NODES 2023</a></span><span style=3D"font-family: 'Public Sans', 'Helvetica=
+ Neue', helvetica, roboto, arial, sans-serif; font-style: normal; font-vari=
+ant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-=
+spacing: normal; orphans: 2; text-align: start;=20
+text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webk=
+it-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; =
+float: none; display: inline !important;">&nbsp;is finally happening this T=
+hursday.</span></span></p>=20
+<p style=3D"box-sizing: inherit; border-color: currentcolor; --tw-shadow: 0=
+ 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; =
+--tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --t=
+w-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin: 0px 0=
+px 1rem; padding: 0px; font-size: 16px; line-height: 1.5; text-rendering: o=
+ptimizelegibility; color:=20
+#151e29; font-weight: 400; font-family: 'Public Sans', 'Helvetica Neue', he=
+lvetica, roboto, arial, sans-serif; font-style: normal; font-variant-ligatu=
+res: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2;=
+ text-align: start; text-indent: 0px; text-transform: none; widows: 2; word=
+-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; backgro=
+und-color:=20
+#ffffff;"><span style=3D"font-family: arial, helvetica, sans-serif; font-si=
+ze: 18px; color: #333333;"><img src=3D"https://go.neo4j.com/rs/710-RRC-335/=
+images/Twin4j 231021 Emoji.jpg?version=3D0" width=3D"05%" height=3D"05%" co=
+nstrain=3D"true" imagepreview=3D"false"><span style=3D"font-style: normal; =
+font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400=
+; letter-spacing: normal; orphans: 2;=20
+text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-=
+spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; backgrou=
+nd-color: #ffffff; float: none; display: inline !important;">Do you have si=
+gned up already? Running live across time zones around the globe, NODES is =
+featuring over 100 sessions in tracks Application Building, Visualisation a=
+s well as AI/ML and an opening keynote by Hannah Fry on =E2=80=9C</span><em=
+ style=3D"box-sizing: inherit; border-color: currentcolor; --tw-shadow: 0 0=
+ #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --=
+tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-=
+ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-style: ita=
+lic; line-height: inherit; color: #151e29;=20
+font-family: 'Public Sans', 'Helvetica Neue', helvetica, roboto, arial, san=
+s-serif; font-size: 16px; font-variant-ligatures: normal; font-variant-caps=
+: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align:=
+ start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0p=
+x; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #=
+ffffff;">The Joy of Data</em><span style=3D"font-style: normal; font-varian=
+t-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-sp=
+acing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transf=
+orm: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; wh=
+ite-space: normal; background-color: #ffffff; float: none; display: inline =
+!important;">=E2=80=9D. You have to be there!</span></span></p>=20
+<p style=3D"box-sizing: inherit; border-color: currentcolor; --tw-shadow: 0=
+ 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; =
+--tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --t=
+w-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin: 0px 0=
+px 1rem; padding: 0px; font-size: 16px; line-height: 1.5; text-rendering: o=
+ptimizelegibility; color:=20
+#151e29; font-weight: 400; font-family: 'Public Sans', 'Helvetica Neue', he=
+lvetica, roboto, arial, sans-serif; font-style: normal; font-variant-ligatu=
+res: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2;=
+ text-align: start; text-indent: 0px; text-transform: none; widows: 2; word=
+-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; backgro=
+und-color:=20
+#ffffff;"><span style=3D"color: #333333; font-family: arial, helvetica, san=
+s-serif; font-size: 18px; font-style: normal; font-variant-ligatures: norma=
+l; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orp=
+hans: 2; text-align: start; text-indent: 0px; text-transform: none; widows:=
+ 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;=
+ background-color:=20
+#ffffff; float: none; display: inline !important;">In other news, we look a=
+t how to get started with the GenAI Stack, go into best practices for Graph=
+QL, explain why Vectors and Graph Databases fit together and how to use AI =
+to create Graph Visualisations.</span></p>=20
+<p style=3D"box-sizing: inherit; border-color: currentcolor; --tw-shadow: 0=
+ 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; =
+--tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --t=
+w-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin: 0px 0=
+px 1rem; padding: 0px; font-size: 16px; line-height: 1.5; text-rendering: o=
+ptimizelegibility; color:=20
+#151e29; font-weight: 400; font-family: 'Nunito Sans'; font-style: normal; =
+font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: =
+normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: no=
+ne; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-spa=
+ce: normal; background-color: #ffffff;"><span style=3D"font-family: arial, =
+helvetica, sans-serif;=20
+color: #333333; font-size: 18px;">I hope you enjoy this issue,<br style=3D"=
+box-sizing: inherit; border-color: currentcolor; --tw-shadow: 0 0 #0000; --=
+tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-of=
+fset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offse=
+t-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; color: #151e29; font-fami=
+ly: 'Nunito Sans';=20
+font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-v=
+ariant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; =
+text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-=
+spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; backgrou=
+nd-color: #ffffff;"><span style=3D"font-style: normal; font-variant-ligatur=
+es: normal;=20
+font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphan=
+s: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2;=
+ word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; ba=
+ckground-color: #ffffff; float: none; display: inline !important;">Alexande=
+r Erdl</span></span></p>=20
+</div> </td>=20
+</tr>=20
+<tr>=20
+<td colspan=3D"3" height=3D"20" style=3D"height:20px;line-height:1px;font-s=
+ize:1px;">&nbsp;</td>=20
+</tr>=20
+<!-- Extra space -->=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<tr>=20
+<td height=3D"30" style=3D"line-height: 1px; font-size: 1px;">&nbsp;</td>=
+=20
+</tr>=20
+</tbody>=20
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" class=3D"mktoModule" id=3D"One-C=
+olumn-Section" style=3D"width:100%;" width=3D"100%">=20
+<tbody>=20
+<tr>=20
+<td bgcolor=3D"#FFFFFF" style=3D"background-color:#ffffff;">=20
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" class=3D"device=
+Width1" style=3D"width:580px; margin: 0 auto; border-collapse: collapse;" w=
+idth=3D"580">=20
+<tbody>=20
+<tr>=20
+<td height=3D"20" style=3D"line-height: 1px; font-size: 1px;">&nbsp;</td>=
+=20
+</tr>=20
+<tr>=20
+<td>=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">=20
+<tbody>=20
+<tr>=20
+<th class=3D"block pad-top15" style=3D"font-weight: normal;text-align: left=
+;" valign=3D"top">=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"margin: 0 =
+auto; border-collapse: collapse;">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-family:Arial,sans-serif; font-size: 18px; color:#30333a; =
+mso-line-height-rule: exactly; line-height: 27px;text-align: left; font-wei=
+ght: bold;" valign=3D"top">=20
+<div class=3D"mktoText" id=3D"one-column-section-heading">
+<p><span style=3D"font-size: 20px;">COMING UP NEXT WEEK!</span><br></p>
+</div> </td>=20
+</tr>=20
+<tr>=20
+<td style=3D"font-family:Arial,sans-serif; font-size: 14px; color:#30333a;m=
+so-line-height-rule: exactly; line-height: 21px;text-align: left; font-weig=
+ht: 400;" valign=3D"top">=20
+<div class=3D"mktoText" id=3D"one-column-section-text">=20
+<ul>=20
+<li><span style=3D"font-family: arial, helvetica, sans-serif; font-size: 18=
+px; color: #333333;"><span style=3D"font-style: normal; font-variant-ligatu=
+res: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: n=
+ormal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none=
+; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space=
+: normal; background-color:=20
+#ffffff; float: none; display: inline !important;">Live Stream:&nbsp;</span=
+></span><span style=3D"color: #333333; font-size: 18px;"><span style=3D"fon=
+t-style: normal; font-variant-ligatures: normal; font-variant-caps: normal;=
+ font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; te=
+xt-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit=
+-text-stroke-width: 0px;=20
+white-space: normal; background-color: #ffffff; float: none; display: inlin=
+e !important;"><a href=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbYGGBzNw8gbas9XSUGvX7Nws=
+e9_PWapJJSUh4O7aiI40-dIrZBgXxmQOtHk6F02MYz4=3D" style=3D"color: #028bff; te=
+xt-decoration: none;" target=3D"_blank"
+>NODES 2023</a></span></span><span style=3D"color: #333333;"><span style=3D=
+"font-style: normal;=20
+font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400=
+; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; t=
+ext-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-widt=
+h: 0px; white-space: normal; background-color: #ffffff; float: none; displa=
+y: inline !important;"><span style=3D"color: #151e29; font-family: 'Public =
+Sans', 'Helvetica Neue',=20
+helvetica, roboto, arial, sans-serif; font-size: 16px; font-style: normal; =
+font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400=
+; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; t=
+ext-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-widt=
+h: 0px; white-space: normal; background-color: #ffffff; float: none; displa=
+y: inline=20
+!important;">&nbsp;<span style=3D"color: #333333; font-size: 18px;">on Octo=
+ber 26</span></span></span></span></li>=20
+<li> <p><span style=3D"font-family: arial, helvetica, sans-serif; font-size=
+: 18px; color: #333333;"><span style=3D"font-style: normal; font-variant-li=
+gatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacin=
+g: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: =
+none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-s=
+pace: normal; background-color:=20
+#ffffff; float: none; display: inline !important;">Conferences:</span></spa=
+n><span style=3D"color: #151e29; font-style: normal; font-variant-ligatures=
+: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: norm=
+al; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; w=
+idows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: n=
+ormal; background-color:=20
+#ffffff; float: none; display: inline !important; font-size: 18px;"> <span =
+style=3D"color: #151e29; font-family: 'Public Sans', 'Helvetica Neue', helv=
+etica, roboto, arial, sans-serif; font-style: normal; font-variant-ligature=
+s: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: nor=
+mal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; =
+widows: 2; word-spacing:=20
+0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color:=
+ #ffffff; float: none; display: inline !important;"><span style=3D"color: #=
+333333;">Meet us at<span style=3D"color: #151e29; font-family: 'Public Sans=
+', 'Helvetica Neue', helvetica, roboto, arial, sans-serif; font-size: 16px;=
+ font-style: normal; font-variant-ligatures: normal; font-variant-caps: nor=
+mal; font-weight: 400;=20
+letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; tex=
+t-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width:=
+ 0px; white-space: normal; background-color: #ffffff; text-decoration-thick=
+ness: initial; text-decoration-style: initial; text-decoration-color: initi=
+al; display: inline !important; float: none;"><span>&nbsp;</span></span></s=
+pan></span></span><span style=3D"color: #151e29; font-style: normal; font-v=
+ariant-ligatures: normal; font-variant-caps: normal; font-weight: 400; lett=
+er-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-tr=
+ansform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px=
+; white-space: normal; background-color: #ffffff; float: none; display: inl=
+ine !important;"><span style=3D"color: #151e29;=20
+font-family: 'Public Sans', 'Helvetica Neue', helvetica, roboto, arial, san=
+s-serif; font-style: normal; font-variant-ligatures: normal; font-variant-c=
+aps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-ali=
+gn: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: =
+0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color:=
+ #ffffff; float: none;=20
+display: inline !important;"><span style=3D"color: #333333;"><span style=3D=
+"font-family: arial, helvetica, sans-serif;"><span style=3D"font-size: 18px=
+;"><a href=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbdh4Cyx87zKvz7UF0KnMhcDh=
+UNh0E13sFMbx_4eJVHWKWm6Z88ub18XszrinrjXwOmo=3D" style=3D"color: #028bff; te=
+xt-decoration: none;" target=3D"_blank"
+>FOSS4G NA Baltimore</a></span><span style=3D"color: #151e29; font-size: 18=
+px; font-style: normal; font-variant-ligatures: normal; font-variant-caps:=
+=20
+normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: l=
+eft; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px; white-space: normal; background-color: #fff=
+fff; text-decoration-thickness: initial; text-decoration-style: initial; te=
+xt-decoration-color: initial; float: none; display: inline !important;">&nb=
+sp;on October 24</span></span></span></span></span><br></p> </li>=20
+<li> <p><span style=3D"font-family: arial, helvetica, sans-serif; font-size=
+: 18px;"><span style=3D"color: #333333;">All Neo4j Events:</span> <a href=
+=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbL7WVvps2YSWsWZl1rsXUIZ1=
+S_ejF_d5Kq06hrpl2FrxcKc9OmSR89IrKowon9CeyjI=3D" target=3D"_blank" style=3D"=
+color: #028bff;=20
+text-decoration: none;"
+>Webinar, Live demos, and More</a>.</span></p> </li>=20
+<li> <p><span style=3D"font-family: arial, helvetica, sans-serif; font-size=
+: 18px;"><span style=3D"color: #333333;">GraphSummit Series:</span> <a href=
+=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbIAYTHV7PSMzdYWGQPJPpjqD=
+r4VKrKCjTYdJi02qm26kGwGRmhzpsY3AOSCtj8839_M=3D" style=3D"color: #028bff; te=
+xt-decoration: none;" target=3D"_blank"
+>Get Connected With Graphs</a>.&nbsp;<span style=3D"color: #151e29; font-fa=
+mily: 'Public Sans', 'Helvetica Neue', helvetica, roboto, arial, sans-serif=
+; font-size:=20
+16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps=
+: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align:=
+ left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px=
+; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #f=
+fffff; text-decoration-thickness: initial; text-decoration-style: initial; =
+text-decoration-color:=20
+initial; display: inline !important; float: none;"><span style=3D"font-size=
+: 18px; font-family: arial, helvetica, sans-serif;">Next up:</span></span><=
+span style=3D"font-family: 'Public Sans', 'Helvetica Neue', helvetica, robo=
+to, arial, sans-serif; font-size: 16px; font-style: normal; font-variant-li=
+gatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacin=
+g: normal; orphans: 2;=20
+text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-s=
+pacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; backgroun=
+d-color: #ffffff; text-decoration-thickness: initial; text-decoration-style=
+: initial; text-decoration-color: initial; float: none; display: inline !im=
+portant; color: #028bff;"><span style=3D"font-size: 18px;"> <a href=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbff0GeBzk9lMNNzLXiZRS2BE=
+lqwCO-3hdh18EWLSDyUtwUIpy_oAmdwejRRa34_o-U0=3D" target=3D"_blank" style=3D"=
+color: #028bff; text-decoration: none;"
+>Washington on October 25&nbsp;</a></span></span></span></p> </li>=20
+</ul>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </th>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<!-- Extra space -->=20
+<tr>=20
+<td height=3D"20" style=3D"line-height: 1px; font-size: 1px;">&nbsp;</td>=
+=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<tr>=20
+<td height=3D"30" style=3D"line-height: 1px; font-size: 1px;">&nbsp;</td>=
+=20
+</tr>=20
+</tbody>=20
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" class=3D"mktoModule" id=3D"One-C=
+olumn-Sectionee582f56-2158-4fe1-a968-cbbf6a19da62" style=3D"width:100%;" wi=
+dth=3D"100%">=20
+<tbody>=20
+<tr>=20
+<td bgcolor=3D"#FFFFFF" style=3D"background-color:#ffffff;">=20
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" class=3D"device=
+Width1" style=3D"width:580px; margin: 0 auto; border-collapse: collapse;" w=
+idth=3D"580">=20
+<tbody>=20
+<tr>=20
+<td height=3D"20" style=3D"line-height: 1px; font-size: 1px;">&nbsp;</td>=
+=20
+</tr>=20
+<tr>=20
+<td>=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">=20
+<tbody>=20
+<tr>=20
+<th class=3D"block pad-top15" style=3D"font-weight: normal;text-align: left=
+;" valign=3D"top">=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"margin: 0 =
+auto; border-collapse: collapse;">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-family:Arial,sans-serif; font-size: 18px; color:#30333a; =
+mso-line-height-rule: exactly; line-height: 27px;text-align: left; font-wei=
+ght: bold;" valign=3D"top">=20
+<div class=3D"mktoText" id=3D"one-column-section-heading3290c4c3-99e0-4f58-=
+ba31-e35479c76223">
+<p><span style=3D"font-size: 20px;">FEATURED NODES SPEAKER:&nbsp;<strong st=
+yle=3D"box-sizing: inherit; border-color: currentcolor; --tw-shadow: 0 0 #0=
+000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-=
+ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-rin=
+g-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-weight: bold;=
+ line-height: inherit;"><a href=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbfcMP4oHnpdut_Ok103l9R_2=
+WNZg8pJueGccKmILxKhhYFjs_gklenCIAvFwd0d88Ak=3D" style=3D"color: #028bff; te=
+xt-decoration: none;" target=3D"_blank"
+>Elena Kohlwey</a></strong></span></p>
+</div> </td>=20
+</tr>=20
+<tr>=20
+<td style=3D"font-family:Arial,sans-serif; font-size: 14px; color:#30333a;m=
+so-line-height-rule: exactly; line-height: 21px;text-align: left; font-weig=
+ht: 400;" valign=3D"top">=20
+<div class=3D"mktoText" id=3D"one-column-section-text354798d4-3f3d-446c-a37=
+b-25d3048c1a35">=20
+<p style=3D"box-sizing: inherit; border-color: currentcolor; --tw-shadow: 0=
+ 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; =
+--tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --t=
+w-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin: 0px 0=
+px 1rem; padding: 0px; font-size: 16px; line-height: 1.5; text-rendering: o=
+ptimizelegibility; color:=20
+#151e29; font-weight: 400; font-family: 'Public Sans', 'Helvetica Neue', he=
+lvetica, roboto, arial, sans-serif; font-style: normal; font-variant-ligatu=
+res: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2;=
+ text-align: start; text-indent: 0px; text-transform: none; widows: 2; word=
+-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; backgro=
+und-color: #ffffff;=20
+text-decoration-thickness: initial; text-decoration-style: initial; text-de=
+coration-color: initial;"><span style=3D"font-family: arial, helvetica, san=
+s-serif; font-size: 18px;">Elena Kohlwey thrives on making intelligent appl=
+ications that yield Business benefits. Graph-based applications with Neo4j =
+are just that!</span><br style=3D"box-sizing: inherit; border-color: curren=
+tcolor; --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ri=
+ng-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(5=
+9, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 =
+0 #0000;"><span style=3D"font-family: arial, helvetica,=20
+sans-serif; font-size: 18px;">Connect with her on&nbsp;<a href=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbfcMP4oHnpdut_Ok103l9R_2=
+WNZg8pJueGccKmILxKhhYFjs_gklenCIAvFwd0d88Ak=3D" style=3D"color: #028bff; te=
+xt-decoration: none;" target=3D"_blank"
+>LinkedIn</a>.</span></p>=20
+<p style=3D"box-sizing: inherit; border-color: currentcolor; --tw-shadow: 0=
+ 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; =
+--tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --t=
+w-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin: 0px 0=
+px 1rem; padding: 0px; font-size: 16px; line-height: 1.5; text-rendering: o=
+ptimizelegibility; color:=20
+#151e29; font-weight: 400; font-family: 'Public Sans', 'Helvetica Neue', he=
+lvetica, roboto, arial, sans-serif; font-style: normal; font-variant-ligatu=
+res: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2;=
+ text-align: start; text-indent: 0px; text-transform: none; widows: 2; word=
+-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; backgro=
+und-color: #ffffff;=20
+text-decoration-thickness: initial; text-decoration-style: initial; text-de=
+coration-color: initial;"><span style=3D"font-family: arial, helvetica, san=
+s-serif; font-size: 18px;">Join Elena at&nbsp;<a href=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbE-0D_cw3MVNRLg2gx5X2dHp=
+rBYkUeV-fa-A-z1ebezgu1l-ZR59EgVYxeqWhbG1GWA=3D" style=3D"color: #028bff; te=
+xt-decoration: none;" target=3D"_blank"
+>NODES 2023</a>. She has been writing user-defined procedures enthusiastica=
+lly for the last few years. She will demonstrate why and how user-defined p=
+rocedures can be your knight in shining armour regarding full-graph or big-=
+subgraph traversals. She was also part of a&nbsp;<a href=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbKj2rqbMiHI5aa649VjE6nJ6=
+jQmlaQB7RP6UcOv5EusKvjOP1WAUMGguGf6YNF-Lwsc=3D" style=3D"color: #028bff; te=
+xt-decoration: none;" target=3D"_blank"
+>NODES Speaker Roundtable</a>&nbsp;and gave a little teaser of what to expe=
+ct in her session.</span></p>=20
+<p><a href=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbE-0D_cw3MVNRLg2gx5X2dHp=
+rBYkUeV-fa-A-z1ebezgu1l-ZR59EgVYxeqWhbG1GWA=3D" target=3D"_blank"
+><span style=3D"font-size: 18px;"><img src=3D"https://go.neo4j.com/rs/710-R=
+RC-335/images/Twin4j 231021 Speaker.jpg?version=3D0" style=3D"max-width: 10=
+0%; display: block; margin-left: auto; margin-right: auto;" constrain=3D"tr=
+ue" imagepreview=3D"false" width=3D"70%" height=3D"70%"></span></a></p>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </th>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<!-- Extra space -->=20
+<tr>=20
+<td height=3D"20" style=3D"line-height: 1px; font-size: 1px;">&nbsp;</td>=
+=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<tr>=20
+<td height=3D"30" style=3D"line-height: 1px; font-size: 1px;">&nbsp;</td>=
+=20
+</tr>=20
+</tbody>=20
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" class=3D"mktoModule" id=3D"One-C=
+olumn-Section3985d7a4-c2b7-42e0-af55-92c73d7685e1" style=3D"width:100%;" wi=
+dth=3D"100%">=20
+<tbody>=20
+<tr>=20
+<td bgcolor=3D"#FFFFFF" style=3D"background-color:#ffffff;">=20
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" class=3D"device=
+Width1" style=3D"width:580px; margin: 0 auto; border-collapse: collapse;" w=
+idth=3D"580">=20
+<tbody>=20
+<tr>=20
+<td height=3D"20" style=3D"line-height: 1px; font-size: 1px;">&nbsp;</td>=
+=20
+</tr>=20
+<tr>=20
+<td>=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">=20
+<tbody>=20
+<tr>=20
+<th class=3D"block pad-top15" style=3D"font-weight: normal;text-align: left=
+;" valign=3D"top">=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"margin: 0 =
+auto; border-collapse: collapse;">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-family:Arial,sans-serif; font-size: 18px; color:#30333a; =
+mso-line-height-rule: exactly; line-height: 27px;text-align: left; font-wei=
+ght: bold;" valign=3D"top">=20
+<div class=3D"mktoText" id=3D"one-column-section-heading77cca2c5-bd7a-4cf4-=
+96d9-aa6ad5703281"></div> </td>=20
+</tr>=20
+<tr>=20
+<td style=3D"font-family:Arial,sans-serif; font-size: 14px; color:#30333a;m=
+so-line-height-rule: exactly; line-height: 21px;text-align: left; font-weig=
+ht: 400;" valign=3D"top">=20
+<div class=3D"mktoText" id=3D"one-column-section-texta02f23fb-823d-442a-b5f=
+a-cfd1d15e6363">=20
+<h5 id=3D"features-2" class=3D"mb-4" style=3D"box-sizing: inherit; border-c=
+olor: currentcolor; --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty=
+, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-c=
+olor: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-rin=
+g-shadow: 0 0 #0000; margin: 0px 0px 1rem; padding: 0px; font-family:=20
+var(--wp--preset--font-family--syne-neo); font-style: normal; font-weight: =
+bold; color: #151e29; text-rendering: optimizelegibility; font-size: 20px; =
+line-height: 1.4; font-variant-ligatures: normal; font-variant-caps: normal=
+; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; =
+text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-wid=
+th: 0px; white-space:=20
+normal; background-color: #ffffff; text-decoration-thickness: initial; text=
+-decoration-style: initial; text-decoration-color: initial;"><span style=3D=
+"font-size: 20px;"><a href=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbPARn2cgGC0pRIkzpf5bTcMJ=
+xTq4H-hExVpq5hDS0xU0TzdCwuS7GwjgLWKKmdlLbB0=3D" style=3D"color: #028bff; te=
+xt-decoration: none;" target=3D"_blank"
+>Getting Started with GenAI Stack powered with Docker, LangChain, Neo4j and=
+ Ollama</a></span></h5>=20
+<p><span style=3D"font-family: arial, helvetica, sans-serif; font-size: 18p=
+x; color: #333333;"><span style=3D"font-style: normal; font-variant-ligatur=
+es: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: no=
+rmal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none=
+; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space=
+: normal; background-color:=20
+#ffffff; text-decoration-thickness: initial; text-decoration-style: initial=
+; text-decoration-color: initial; float: none; display: inline !important;"=
+>After the launch of the GenAI Stack at&nbsp;</span><a href=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbKcvgvGC8HDVVLfiyeJJxAyA=
+9rB3iyc1r4yxzdt3DXXpz14tURssHm002RQB0r3MtMs=3D" style=3D"color: #028bff; te=
+xt-decoration: none;" target=3D"_blank"
+>DockerCon</a><span style=3D"font-style: normal;=20
+font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400=
+; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; =
+text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-wid=
+th: 0px; white-space: normal; background-color: #ffffff; text-decoration-th=
+ickness: initial; text-decoration-style: initial; text-decoration-color: in=
+itial; float: none;=20
+display: inline !important;">&nbsp;last week, a lot of people want to get s=
+tarted with it and Ajeet Raina gives an overview of the components that mak=
+e the GenAI Stack and how to use the stack for building and running AI apps=
+ capable of generating text, code, and other creative content.=E2=80=8B</sp=
+an></span></p>=20
+<h5 id=3D"features-2" class=3D"mb-4" style=3D"box-sizing: inherit; border-c=
+olor: currentcolor; --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty=
+, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-c=
+olor: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-rin=
+g-shadow: 0 0 #0000; margin: 0px 0px 1rem; padding: 0px; font-family:=20
+var(--wp--preset--font-family--syne-neo); font-style: normal; font-weight: =
+bold; color: #151e29; text-rendering: optimizelegibility; font-size: 20px; =
+line-height: 1.4; font-variant-ligatures: normal; font-variant-caps: normal=
+; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; =
+text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-wid=
+th: 0px; white-space:=20
+normal; background-color: #ffffff; text-decoration-thickness: initial; text=
+-decoration-style: initial; text-decoration-color: initial;"><span style=3D=
+"font-size: 20px;"><a href=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbewjz-PUFLuy1zJkRH82-k7S=
+fdn3EUAjwwQYpGDaZVKsXrHHadQcBrBB-tAzsLH_4es=3D" style=3D"color: #028bff; te=
+xt-decoration: none;" target=3D"_blank"
+>GraphQL Development Best Practices</a></span></h5>=20
+<p><span style=3D"color: #333333; font-family: arial, helvetica, sans-serif=
+; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font=
+-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2=
+; text-align: start; text-indent: 0px; text-transform: none; widows: 2; wor=
+d-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; backgr=
+ound-color: #ffffff;=20
+text-decoration-thickness: initial; text-decoration-style: initial; text-de=
+coration-color: initial; float: none; display: inline !important;">GraphQL,=
+ on its own, is already a powerful tool with a client-centric approach. In =
+this article, Lidia Zuin shares tips and tricks on making the GraphQL devel=
+opment process more efficient and your product better.</span></p>=20
+<h5 style=3D"box-sizing: inherit; border-color: currentcolor; --tw-shadow: =
+0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px;=
+ --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --=
+tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin: 0px;=
+ padding: 0px; font-family: var(--wp--preset--font-family--syne-neo); font-=
+style: normal;=20
+font-weight: bold; color: #151e29; text-rendering: optimizelegibility; font=
+-size: 20px; line-height: 1.4; font-variant-ligatures: normal; font-variant=
+-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-=
+indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-te=
+xt-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-=
+decoration-thickness:=20
+initial; text-decoration-style: initial; text-decoration-color: initial;"><=
+span style=3D"font-size: 20px;"><a href=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbTPhyPgNo3hKKAF149R9uBgY=
+NcpdKVH-NOfmw4P01x8ctUwqcA8awjZrlkGsR1k73jg=3D" style=3D"color: #028bff; te=
+xt-decoration: none;" target=3D"_blank"
+>Why Vectors Should Be Stored Together with Knowledge Graph?</a></span></h5=
+>=20
+<p><span style=3D"color: #333333; font-family: arial, helvetica, sans-serif=
+; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font=
+-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2=
+; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word=
+-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; backgro=
+und-color: #ffffff;=20
+text-decoration-thickness: initial; text-decoration-style: initial; text-de=
+coration-color: initial; float: none; display: inline !important;">Fanghua =
+(Joshua) Yu explains in this article why you should consider architecture p=
+rinciples when choosing a storage technology for vectors, i.e. embeddings o=
+f text, image and video produced by machine learning models. This is a cruc=
+ial step to make solutions based on them ready for production.</span></p>=
+=20
+<h5 style=3D"box-sizing: inherit; border-color: currentcolor; --tw-shadow: =
+0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px;=
+ --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --=
+tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin: 0px;=
+ padding: 0px; font-family: var(--wp--preset--font-family--syne-neo); font-=
+style: normal;=20
+font-weight: bold; color: #151e29; text-rendering: optimizelegibility; font=
+-size: 20px; line-height: 1.4; font-variant-ligatures: normal; font-variant=
+-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-=
+indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-te=
+xt-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-=
+decoration-thickness:=20
+initial; text-decoration-style: initial; text-decoration-color: initial;"><=
+span style=3D"font-size: 20px;"><a href=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbF8PTPamCm7ViOUM27iWnfkZ=
+QzvtXmBCyldH78KWUg7DUs1E2MxUPsibqaGVmQXDOQo=3D" style=3D"color: #028bff; te=
+xt-decoration: none;" target=3D"_blank"
+>AI Integration for Data Explorer</a></span></h5>=20
+<p><span style=3D"color: #333333; font-family: arial, helvetica, sans-serif=
+; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font=
+-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2=
+; text-align: start; text-indent: 0px; text-transform: none; widows: 2; wor=
+d-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; backgr=
+ound-color: #ffffff;=20
+text-decoration-thickness: initial; text-decoration-style: initial; text-de=
+coration-color: initial; float: none; display: inline !important;">Sebastia=
+n M=C3=BCller shares the latest update to Data Explorer, enabling you to en=
+gage in a literal conversation with your database, explore content, query a=
+nd dynamically select elements, highlight specific entities, craft complex =
+queries for future use in your apps and notebooks and automatically generat=
+e insightful node visualisations.</span></p>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </th>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<!-- Extra space -->=20
+<tr>=20
+<td height=3D"20" style=3D"line-height: 1px; font-size: 1px;">&nbsp;</td>=
+=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<tr>=20
+<td height=3D"30" style=3D"line-height: 1px; font-size: 1px;">&nbsp;</td>=
+=20
+</tr>=20
+</tbody>=20
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" class=3D"mktoModule" id=3D"Two-C=
+olumn-Section" style=3D"width:100%;" width=3D"100%">=20
+<tbody>=20
+<tr>=20
+<td bgcolor=3D"#FFFFFF" style=3D"background-color:#ffffff;">=20
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" class=3D"device=
+Width1" style=3D"width:580px; margin: 0 auto; border-collapse: collapse;" w=
+idth=3D"580">=20
+<tbody>=20
+<tr>=20
+<td height=3D"20" style=3D"line-height: 1px; font-size: 1px;">&nbsp;</td>=
+=20
+</tr>=20
+<tr>=20
+<td>=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">=20
+<tbody>=20
+<tr>=20
+<th class=3D"block pad-top15" style=3D"font-weight: normal;text-align: left=
+;" valign=3D"top">=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width: 100=
+%; margin: 0 auto; border-collapse: collapse;" width=3D"100%">=20
+<tbody>=20
+<tr>=20
+<td colspan=3D"3" valign=3D"top" style=3D"font-family:Arial,sans-serif; fon=
+t-size: 18px; color:#30333a; mso-line-height-rule: exactly; line-height: 27=
+px;text-align: left; font-weight: bold;">=20
+<div class=3D"mktoText" id=3D"two-column-section-heading">
+<p><span style=3D"font-size: 20px;">Tweet of the Week:&nbsp;<span style=3D"=
+font-family: arial, helvetica, sans-serif;"><a href=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbYKUy5edt1KVC-5a754PmXCz=
+lRzSUN__xiCeDbv2ZmHMqBTeNkITlYA4xjn4_6k8ltY=3D" style=3D"color: #028bff; te=
+xt-decoration: none;" target=3D"_blank"
+>Neo4j</a></span></span></p>=20
+<p><span style=3D"font-size: 18px; font-family: arial, helvetica, sans-seri=
+f; color: #333333;"><span style=3D"font-style: normal; font-variant-ligatur=
+es: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: no=
+rmal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none=
+; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space=
+: normal; background-color: #ffffff; float: none; display: inline !importan=
+t;">Shameless self-plug because we are so looking forward to Hannah Fry!</s=
+pan></span></p>
+</div> </td>=20
+</tr>=20
+<tr>=20
+<td style=3D"font-family:Arial,sans-serif; font-size: 14px; color:#30333a; =
+mso-line-height-rule: exactly; line-height: 21px;text-align: left; font-wei=
+ght: 400;" valign=3D"top">=20
+<div class=3D"mktoText" id=3D"two-column-section-text-left">
+<p><br></p>
+</div> </td>=20
+<td width=3D"20">&nbsp;</td>=20
+<td style=3D"font-family:Arial,sans-serif; font-size: 14px; color:#30333a; =
+mso-line-height-rule: exactly; line-height: 21px;text-align: left; font-wei=
+ght: 400;" valign=3D"top">=20
+<div class=3D"mktoText" id=3D"two-column-section-text-right">
+<p><a href=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbZJVSM4jz2ERoTT-k2wuUrDa=
+i8g7Xs9Obzz2Z5lB8zuqznDq2KjCQQP9BdimOFBHtWU=3D" target=3D"_blank"
+><img src=3D"https://go.neo4j.com/rs/710-RRC-335/images/Twin4j 231021 Tweet=
+.jpg?version=3D0" width=3D"70%" height=3D"70%" constrain=3D"true" imageprev=
+iew=3D"false"></a></p>=20
+<p><span style=3D"color: #333333; font-family: 'Nunito Sans'; font-size: 18=
+px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: =
+normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: s=
+tart; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px;=
+ -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ff=
+ffff; text-decoration-thickness: initial; text-decoration-style: initial; t=
+ext-decoration-color: initial; float: none; display: inline !important;">Do=
+n=E2=80=99t forget to share it if you like it!</span></p>
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </th>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<!-- Extra space -->=20
+<tr>=20
+<td height=3D"20" style=3D"line-height: 1px; font-size: 1px;">&nbsp;</td>=
+=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<tr>=20
+<td height=3D"30" style=3D"line-height: 1px; font-size: 1px;">&nbsp;</td>=
+=20
+</tr>=20
+</tbody>=20
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" class=3D"deviceWidth mktoModule"=
+ id=3D"Community-Section" style=3D"width:100%;" width=3D"100%">=20
+<tbody>=20
+<tr>=20
+<td bgcolor=3D"#EDF2F8" style=3D"background-color:#edf2f8;">=20
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" class=3D"device=
+Width1" style=3D"width:400px; margin: 0 auto; border-collapse: collapse;" w=
+idth=3D"400">=20
+<tbody>=20
+<tr>=20
+<td height=3D"0" style=3D"line-height: 1px; font-size: 1px;">&nbsp;</td>=20
+</tr>=20
+<tr>=20
+<td>=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">=20
+<tbody>=20
+<tr>=20
+<td class=3D"iphn_img" valign=3D"top">=20
+<div class=3D"mktoImg" id=3D"Community-Image" mktolockimgsize=3D"true">
+<center>=20
+<a href=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbdo9cULOZPdoEX1GM_q4vAtS=
+cKNdrE2KxXAO549MHkovLiQBofE33FH3S2OCYTn1DeU=3D" target=3D"_blank"
+><img border=3D"0" src=3D"https://go.neo4j.com/rs/710-RRC-335/images/EmailB=
+anner_NewMember-01.jpg" style=3D"" width=3D"300"></a>=20
+</center>
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<tr>=20
+<td height=3D"20" style=3D"line-height: 1px; font-size: 1px;">&nbsp;</td>=
+=20
+</tr>=20
+<tr>=20
+<td style=3D"text-align: center;" valign=3D"top">=20
+<div class=3D"mktoText" id=3D"Social-Text">
+<div>=20
+<a href=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbYKUy5edt1KVC-5a754PmXCz=
+lRzSUN__xiCeDbv2ZmHMqBTeNkITlYA4xjn4_6k8ltY=3D" style=3D"text-decoration: n=
+one; outline: none; border: none;" target=3D"_blank"
+><img border=3D"0" src=3D"https://go.neo4j.com/rs/710-RRC-335/images/twitte=
+r%402x.png" width=3D"32"></a>&nbsp;=20
+<a href=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbTGG79QaAhclyPTCUV0mQ3dP=
+TICbPdbfZOx9aPhhZl4a6xv9S8hZwSfP6YBN7PDb_dc=3D" style=3D"text-decoration: n=
+one; outline: none; border: none;" target=3D"_blank"
+><img border=3D"0" src=3D"https://go.neo4j.com/rs/710-RRC-335/images/youtub=
+e%402x.png" width=3D"32"></a>&nbsp;=20
+<a href=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbEcx5vqRkdqux6aZaKCKa8jj=
+exoPJ8zbhtgla5eZT3Marrw9vgRIsxOFbeKk7xl-Efs=3D" style=3D"text-decoration: n=
+one; outline: none; border: none;" target=3D"_blank"
+><img border=3D"0" src=3D"https://go.neo4j.com/rs/710-RRC-335/images/facebo=
+ok%402x.png" width=3D"32"></a>&nbsp;=20
+<a href=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbHhWZcsML4Fm3z0lO8GhzLKf=
+HPGm80ruUKGxwRS2meLp0gzp_LBPMRWtG4OLbUtt2t8=3D" style=3D"text-decoration: n=
+one; outline: none; border: none;" target=3D"_blank"
+><img border=3D"0" src=3D"https://go.neo4j.com/rs/710-RRC-335/images/linked=
+in%402x.png" width=3D"32"></a>=20
+</div>
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" class=3D"mktoModule" id=3D"Foote=
+r-Section" style=3D"width:100%;" width=3D"100%">=20
+<tbody>=20
+<tr>=20
+<td bgcolor=3D"#EDF2F8" style=3D"background-color:#edf2f8;">=20
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" class=3D"device=
+Width1" style=3D"width:580px; margin: 0 auto; border-collapse: collapse;" w=
+idth=3D"580">=20
+<tbody>=20
+<tr>=20
+<td>=20
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-family:Arial,sans-serif; font-size:10px; color:#555555; m=
+so-line-height-rule: exactly; line-height: 16px;text-align: center; font-we=
+ight: 400;" valign=3D"top">=20
+<div class=3D"mktoText" id=3D"Footer-Text">
+<p style=3D"font-size: 12px; line-height: 21px;">=C2=A9 2023 Neo4j, Inc.</p=
+>=20
+<p><a href=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbJ2bPhyzXhqCiw0jdckQkE5e=
+Rnfw7lN9H7dG-8pGNF7qgt8yjiIBbW-P22THT-Fs9a0=3D" rel=3D"noopener noreferrer"=
+ style=3D"color: #018bff; text-decoration: none;" target=3D"_blank"
+>neo4j.com</a> | <a href=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbd_a1XktkC-ziHD4Z_dX6DGa=
+E3SnEaJHf_pukPEtWgj9OV8jnJme6GKIwvZStOuqZo4=3D" rel=3D"noopener noreferrer"=
+ style=3D"color: #018bff; text-decoration: none;" target=3D"_blank"
+>Privacy Policy</a> | <a href=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbS-izo_vD1FwONbYWvcjMs1F=
+d8fblzMtUd58gJgF6s4i4i3ScOuAT3qKTrM0hxLG9iw=3D" rel=3D"noopener noreferrer"=
+ style=3D"color: #018bff; text-decoration: none;" target=3D"_blank"
+>Manage Subscriptions</a>
+<!--https://go.neo4j.com/UnsubscribePage.html?mkt_unsubscribe=3D1&mkt_tok=
+=3DNzEwLVJSQy0zMzUAAAGO8mNzbaM0pDZWxMCoz_7iHJH1HvMohWkwL3q4rMqpwtThBcWJzLQ5=
+5h3rlfE0A9jZVScBXHw6ByF0ElLrcEiYKrvCS8ZRZIPmMGr3usc91UQm62c--> | <a href=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbL5lpgrEoVu9sn6h284z5kXf=
+sgZ1yn1d_xmekh5bDb2tLj32th9prV4wco8PToFP9-I=3D" rel=3D"noopener noreferrer"=
+ style=3D"color: #018bff; text-decoration: none;" target=3D"_blank"
+>Share Your Blog or Articles</a></p>=20
+<p>Nordenski=C3=B6ldsgatan 24, 211 19 Malm=C3=B6, Sweden</p>=20
+<p><a href=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbWst79cUCmHOqaTuQ_s6g0O2=
+iPVkQDtdJyCo4_zkbFKUeuM7GDdLBXWMgO0f7W4M__Q=3D" rel=3D"noopener noreferrer"=
+ style=3D"color: #018bff; text-decoration: none;" target=3D"_blank"
+>Questions? Contact Us</a></p>
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<!-- Extra space -->=20
+<tr>=20
+<td height=3D"20" style=3D"line-height: 1px; font-size: 1px;">&nbsp;</td>=
+=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table></td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table> =20
+<a href=3D
+"https://message.neo4j.com/NzEwLVJSQy0zMzUAAAGO8mNzbfVDqFRbX9R0Nd0wm6966fGh=
+rB-cCE8IYBAS5068ONymVLkAiZIRomJd6lbIKRIWdyA=3D"
+></a>
+<img src=3D"https://message.neo4j.com/trk?t=3D1&mid=3DNzEwLVJSQy0zMzUAAAGO8=
+mNzbew1zYwk47zj7pe8i0xpTTFJs51nIpTe9dTBNKHfJT8acpg70bHN1YM3hidxI21ILmY33E5h=
+sHCl-8LYUQp_bWodJ_PnwVneyDe07K8kgVf4e_I4cTsKqdrkdpWvrFsX8yiYQWiJXponvy4Z" w=
+idth=3D"1" height=3D"1" style=3D"display:none !important;" alt=3D"" />
+</body>
+</html>
+------=_Part_210368297_316919281.1697911587706--

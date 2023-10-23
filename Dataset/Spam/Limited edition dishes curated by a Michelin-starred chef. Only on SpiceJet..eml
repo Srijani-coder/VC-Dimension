@@ -1,0 +1,459 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:f00d:b0:4fd:23d3:a27 with SMTP id t13csp1812516pxk;
+        Mon, 2 Oct 2023 23:01:47 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFjGNJf8b+L3r51VjFkFhy0EqIXE1/iOhsZrvMo8Ukvuy9QGy2HFhwkmVLIP3A4FeLJLAfB
+X-Received: by 2002:a0d:d896:0:b0:59f:7caf:f2cf with SMTP id a144-20020a0dd896000000b0059f7caff2cfmr14856522ywe.4.1696312907499;
+        Mon, 02 Oct 2023 23:01:47 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1696312907; cv=none;
+        d=google.com; s=arc-20160816;
+        b=KrFL+IcPgY5kRY1V1z75HfHNhksMoR0+NKyBCWfhYLaJtXjpr/ePyHppou3h8LUTJL
+         kRhzwf+RVv93SMSabfBXyzp82Kj5Hcnds/zEhJnlT7pEBacqp38PXN37eljJOSX8syoY
+         vk1XoqPoiemdxdntBttJVayS08Tl5uHpIkkb03qsXsfrdi1HHfA4jrAhxgnRBAcfaYhn
+         zwA5HhC9QtE65kZ6Aqu72zZHHGh2cLZV9ChLHSpGA+p8nf3ZtTw+vkQgVWd5e37fqOyC
+         UkCmqm7V3UW3tFVnH4GHdrzhBYAbptAivg/SY34m2DU59olCYJm2Jl1U3yjvCiIjPhDo
+         8S/A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:message-id:subject:mime-version:from:date
+         :content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=9tKHkOb58jmWwKvXRgTycbpLsqeFoctfOCpP/cYfpzw=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=GcQdjmcyDaWYQF2gR3z3wO54Q14FyqyUAzQPbC1RfJ+jvqxz4BRqJQM9hvc1iqrCI5
+         +QMwjmOthVYWKWn7r4GzvLjIRpgm5ROfnY/iFsw8mjKfoLHg2PxV8OIcfKZC3mWxx2v/
+         3Iz26fBctYTPAh3U6/h2T/YA7kp/W8saup9DJAu65sP7tZviZRvhnq6+PMXQ8MzFCJeI
+         ZjxpQKR48n3iVtRxIdEBt+ZxszI8lVYWBxkmmO+i20qT3VPYgDLjJZVg7kdnp102GVrQ
+         1dgvH09bVsAlPwQvUB+ug/0uVVOuJJ5L5cOjtSKDivh1krZlWhJbSxMuK0vWPoNHONez
+         muhA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@web-spicejet.com header.s=s1 header.b=HJT6zA0r;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=n9Yc8FN0;
+       spf=pass (google.com: domain of bounces+34557702-9afd-srijani515=gmail.com@em6498.web-spicejet.com designates 159.183.93.228 as permitted sender) smtp.mailfrom="bounces+34557702-9afd-srijani515=gmail.com@em6498.web-spicejet.com"
+Return-Path: <bounces+34557702-9afd-srijani515=gmail.com@em6498.web-spicejet.com>
+Received: from o1244.ptr5280.web-spicejet.com (o1244.ptr5280.web-spicejet.com. [159.183.93.228])
+        by mx.google.com with ESMTPS id p4-20020a81e204000000b005a2045a893dsi244891ywl.254.2023.10.02.23.01.47
+        for <srijani515@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 02 Oct 2023 23:01:47 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+34557702-9afd-srijani515=gmail.com@em6498.web-spicejet.com designates 159.183.93.228 as permitted sender) client-ip=159.183.93.228;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@web-spicejet.com header.s=s1 header.b=HJT6zA0r;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=n9Yc8FN0;
+       spf=pass (google.com: domain of bounces+34557702-9afd-srijani515=gmail.com@em6498.web-spicejet.com designates 159.183.93.228 as permitted sender) smtp.mailfrom="bounces+34557702-9afd-srijani515=gmail.com@em6498.web-spicejet.com"
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=web-spicejet.com;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	x-feedback-id:to:list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=9tKHkOb58jmWwKvXRgTycbpLsqeFoctfOCpP/cYfpzw=;
+	b=HJT6zA0rQQr+dpOp8TY70GIvP4oK1yL0dXEdLp5TAnJpE4/E18xJMIW5m3t6g24C+r7+
+	ubNgC4F1Pl9PmFCQjJ0w9ibjQ5LCYB7nUe7J7yLfcz1omyrRQDQdb5ItfDsZlXlBVY/7tO
+	nSxhfEyJR1TIl3dT7b8a7n0ZseFxnZ4jJSjheEJ63qH8CHjh+/GZQOPvfy0Ak4WQAFS1al
+	qvWL4Ux8mdUd4QJdmPrUmMjOj/uWwpXciG4M/24SDcvugIs6+XJ8gc/KWXDWNOb2t47779
+	h/aVuFiEkhoZ7VpYQma0SZEDWd6WdnJw7X+BJQTaenze9/QTeqAUaQPqxyj2FEWQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	x-feedback-id:to:list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=9tKHkOb58jmWwKvXRgTycbpLsqeFoctfOCpP/cYfpzw=;
+	b=n9Yc8FN0yO8JQLw3gTUf8X/7b/L/BK3OFpGBqnfjsbBjQKO64pVU8pntVTMgYz8OWEbj
+	3b8QlXcwOLN9/zIWSNsgpCR8QxhlWp5JzpytB8WV8cpNGkJy2iF3sIJ6U6k7p/AQVVbIzl
+	KhBUXvx9q96jsC+iUxmVjx0+qX0gWiva0=
+Received: by filterdrecv-7fc64fbc94-swdv8 with SMTP id filterdrecv-7fc64fbc94-swdv8-1-651BAE4A-12C
+        2023-10-03 06:01:47.075988968 +0000 UTC m=+12551130.699925071
+Received: from MzQ1NTc3MDI (unknown)
+	by geopod-ismtpd-8 (SG) with HTTP
+	id RtfhUKY8RbG3G2fvLbstxA
+	for <spicejet@web-spicejet.com>;
+	Tue, 03 Oct 2023 06:01:46.860 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Date: Tue, 03 Oct 2023 06:01:47 +0000 (UTC)
+From: SpiceJet <spicejet@web-spicejet.com>
+Mime-Version: 1.0
+Subject: Limited edition dishes curated by a Michelin-starred chef. Only on
+ SpiceJet.
+Message-ID: <RtfhUKY8RbG3G2fvLbstxA@geopod-ismtpd-8>
+X-Feedback-ID: 34557702:SG
+X-SG-EID: 
+ =?us-ascii?Q?pn+m0cq6NOuOk+qAzXIGfUTgHL+HcXGIZDIUI7Dicls3l3A9VqbfZMsqfwSM1S?=
+ =?us-ascii?Q?5jR8vLR4WvWnrR5yg5hTeB2Cok0EtK9muZyomuJ?=
+ =?us-ascii?Q?1BsLYf6ZicQWzHzn6T0TlMilzP4tmmSppvFR6JC?=
+ =?us-ascii?Q?Isg=2FxExVXcEnOJi6TyjEgfPtTB3SdG7RjRwrZsF?=
+ =?us-ascii?Q?V8SD7ieS8wsOfJEBSkX2oVGsWKd+9yIu9lHQvD2?=
+ =?us-ascii?Q?UY9jlr1ySgBStHCAoKUB0Hhvi1yHJKFyYeXLTV?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb6K42pEDG2VibTggWWd57tTL2d7NS=2F0SWM4PBtrpOC?=
+ =?us-ascii?Q?Md2kWLAs68lx=2FFCt93JHJX5Pk5JGtLUxbNhDOz=2F?=
+ =?us-ascii?Q?MGYGLT62+Vnn5nlIRgJtChC+m4D8IrkYCIS7GND?=
+ =?us-ascii?Q?9wUaUq1MjH7zBLUS9yZIO0XZ0wbjvABSLcz+wT4?=
+ =?us-ascii?Q?T4bfEjrBGjB0TrEo=2FeCpmMuCGREPlWDQjo7UGvu?=
+ =?us-ascii?Q?0RxEQtRksGdM7zU2VuCsOSW9CPqzd2LlB=2Fgh4j9?=
+ =?us-ascii?Q?9ARsLe94FaKCenMi0H8ZJwsIxaWlCaZbOgjp7K5?= =?us-ascii?Q?r8s=3D?=
+To: srijani515@gmail.com
+X-Entity-ID: mfNOtyldiW9zT7MLmytKWw==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em6498=2Eweb-spicejet=2Ecom=3Fsubject=3Dhttps=3A=2F=2Fu3?=
+ =?us-ascii?Q?4557702=2Ect=2Esendgrid=2Enet=2Fwf=2Funsubscribe*?=
+ =?us-ascii?Q?q*upn=3DrWYU-2B0i-2B0Qcz8HINw-2Ff3NK-2FUl?=
+ =?us-ascii?Q?PkrdthebD6Und9AwA-2BH1FOefmsC4Jsv31W1m6?=
+ =?us-ascii?Q?cG6ZZtK3EzI-2B5uGWKZR2r79FClRsal9-2BKRi?=
+ =?us-ascii?Q?xfRsANcmH1rFrqQHRYqrZnAc6PYFO3FIuFXmeQe?=
+ =?us-ascii?Q?v3wG3IiKV4XRhMN2wtkf0-2FpGUNJkPjE-2BSat?=
+ =?us-ascii?Q?WhYjUnN090m2zw4piNP8JvfQAaFTiw1sy9ekNUL?=
+ =?us-ascii?Q?bbvVahKMyA1gsmQcsD9WALJ5qbACyZYum8lcAZp?=
+ =?us-ascii?Q?bGNksyrJbViXUXxAx78VixpfYKsKdBaXzkXXd3t?=
+ =?us-ascii?Q?XeaF-2FECe3lI82juA71fp7wyeAl2RUsIkcOOih?=
+ =?us-ascii?Q?3-2FtZYcy5Hd1k4YJtvzTU0TYyUfhzNnfINRPiT?=
+ =?us-ascii?Q?OA38dVWtLY-2FpbovJvL0udKhTTH75xPngCgqKD?=
+ =?us-ascii?Q?HNk0Nbxr86TDAmw-2FwreAwt6L0HjGynAONvOj5?=
+ =?us-ascii?Q?tslgBQF5zuupt7pcHegHlaRmPhHL9n0dQzZu2Mu?=
+ =?us-ascii?Q?RAYgf1AhacGG503MbzVPo73-2Fv4gMcKBGlDam1?= =?us-ascii?Q?=3E?=
+
+<!DOCTYPE html> <!doctype html=3D""> <html> <head>  <title></title>  <style=
+ type=3D"text/css">*{    line-height:80%;    -ms-text-size-adjust:80%;    -=
+webkit-text-size-adjust:none;    -webkit-text-resize:80%;    text-resize:80=
+%;    }    .appleLinks a {color: #000000;text-decoration: none;}    .Extern=
+alClass {width: 100%;background-color: #ffffff;}    body {width: 100%;backg=
+round-color: #ffffff;margin: 0;padding: 0!important;-webkit-font-smoothing:=
+ antialiased;}    html {-webkit-text-size-adjust: none !important;-ms-text-=
+size-adjust: none !important;}    table {border-collapse: collapse;}    .he=
+ightAuto{height:auto!important}        @media only screen and (max-width: 6=
+40px){    .ft-8{font-size:8px !important;}    .ft-9{font-size:9px !importan=
+t;}    .ft-10{font-size:10px !important;}    .ft-11{font-size:11px !importa=
+nt;}    .ft-12{font-size:12px !important;}    .ft-13{font-size:13px !import=
+ant;}    .ft-15{font-size:15px !important;}    .ht-149{height:149px !import=
+ant;}    .wt-284{width:294px !important;}    }    @media only screen and (m=
+ax-width: 480px) {    .ft-8{font-size:8px !important;}    .ft-9{font-size:9=
+px !important;}    .ft-10{font-size:10px !important;}    .ft-11{font-size:1=
+1px !important;}    .ft-12{font-size:12px !important;}    .ft-13{font-size:=
+13px !important;}    .ft-15{font-size:15px !important;}    .ht-149{height:1=
+49px !important;}    .wt-284{width:294px !important;}    }  </style> </head=
+> <body data-gr-ext-installed=3D"" data-new-gr-c-s-check-loaded=3D"14.1126.=
+0" yahoo=3D"fix"> <center> <table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"margin:0 auto;" width=3D"600">  <tbody>  =
+ <tr>    <td align=3D"center" style=3D"border: 1px solid #484848;" valign=
+=3D"top" width=3D"600">    <center>    <table align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" width=3D"600">     <tbody>      <tr>  =
+     <td align=3D"center" width=3D"600">       <table align=3D"center" cell=
+padding=3D"0" cellspacing=3D"0" width=3D"600">        <tbody>         <tr> =
+         <td align=3D"center" background=3D"https://in1-dashboard-beeplugin=
+uploads3bucket-1odc1qwqrbhul.s3.amazonaws.com/images/K55-K47-486Z/bgimage.j=
+pg" bgcolor=3D"#1b1b1b" height=3D"693" style=3D"background-repeat: no-repea=
+t;" valign=3D"top" width=3D"600"><!--[if gte mso 9]>                 <v:rec=
+t xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" stroke=3D"false" =
+href=3D"https://corporate.spicejet.com/VikasKhanna.aspx?utm_source=3DCT&utm=
+_medium=3DEmail&utm_campaign=3DVikasKhanna" style=3D"width:600px; height:69=
+3px">                 <v:fill type=3D"tile" src=3D"https://in1-dashboard-be=
+epluginuploads3bucket-1odc1qwqrbhul.s3.amazonaws.com/images/K55-K47-486Z/bg=
+image.jpg" color=3D"#1b1b1b" />                 <v:textbox inset=3D"0,0,0,0=
+">                <![endif]-->          <div>          <table align=3D"cent=
+er" cellpadding=3D"0" cellspacing=3D"0" style=3D"margin:0 auto;" width=3D"6=
+00">           <tbody>            <tr>             <td align=3D"center" sty=
+le=3D"margin:0; padding:0;" width=3D"600"><a align=3D"center" href=3D"https=
+://u34557702.ct.sendgrid.net/ls/click?upn=3D5SjtgPrxLiMD-2F7ijF3Td4uTgbnXMh=
+1j0vbzF4YB-2BkI52ULUCxnJB-2Fp9SbaKVGRAf4aK6piFSHK2hG2OXLp7fDfQHOg-2FEgv88AU=
+srGOOb8wsA4rj8jFy6ftVRjqG-2BqLucCr-2ByaLRsgH6okd2kqiCqUmUVv-2B6UTY3FNa-2BRZ=
+MQemxq517NET4nmgOfa-2FE6IfYx68LNLIVVzzxgMTkB4ZtkD36q0loGOVK0rcqmbhxQPg57h2D=
+I7qFdx9GPCaydsw5H-2FGW1d2o0946zSF4cBVE1tCMzTuLBQLJG-2Fz6ngETISYbCaJHvFqM-2F=
+Kav-2Bc59i7xuX8aT8toIJu1X735MQ0kHViteCRhp3zEPaYAWyRzuJk3tnSZ0Qn0yafe1tB5s4-=
+2BHvpuGA7DDVtyfRdbCZqvF-2BbNoKajxtAefmnAZITTag0LlpYSRGdBjrfweNxNiZzUfhhB38L=
+Bc-2FTQ2LSxnXjjuZpkFE-2FCNPcSHTvE-2BL640dMNoPu89H6K1p87FIEK7cE59lSDEAf1muBg=
+SLkkjOO2-2F7g1iTGWl4sIHzfrmvbh-2FdKaGbVFAqWufAp48pCvqKrTsi-2BwNBkG7xlzT7p15=
+usqu6sCBg-3D-3DeCTR_ijSW8RkM-2FIXMlaqj-2FEdh9p8v0SOSA-2FyUc2EIoBfGmbaA1NAX1=
+U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34sY3YXjzUulE5UHW1uoZfOJMQrO38OXQtYbS-2Bn1mg=
+tGHfBraFQBcK2xNF8-2FFQf3ZK2ZxsusEZwOwU8xEyhVJZkwZutGqRW7wvbCY8Pp87RZ6u48u9o=
+cChg47UQUyx1B-2BL7V776JqaGCHyRwZ-2B4CjFVEXY3qfbBnA3Gc8nXk6DahAMBX6DjVCwPbzC=
+od87CQy6R3-2F-2F7XkBDw8LLMwNRmwMKYsfbKO8mg6HYDuxnmMcUzzCsOJeXSor3sz-2BxGN3g=
+PxfdC86t5uvBCx3D3qy6-2Fu1NY5WQTcexUsVsK78xcPsssLxh9w9jtXpuD9obQMFUfzTvvlOnl=
+keNIouyKrhL3-2Fwc-2BGloUNZ0zKYCyghmiiAAmVGYHHq7lspmeCJc7Vfx-2BhIDQT93HNiv-2=
+BC-2BM8-2FwYATTJZNG0yg-3D" style=3D"text-decoration:none; text-align:center=
+; color:#ffffff" target=3D"_blank"><img height=3D"102" src=3D"https://in1-d=
+ashboard-beepluginuploads3bucket-1odc1qwqrbhul.s3.amazonaws.com/images/K55-=
+K47-486Z/logo.png" style=3D"margin: 0; border: 0; padding: 0; display: bloc=
+k; height:102px;" width=3D"600" /> </a></td>            </tr>            <t=
+r style=3D"mso-hide:all;">             <td style=3D"line-height: 1px; font-=
+size: 1px; mso-line-height-rule: exactly; height: 1px;mso-hide:all" width=
+=3D"600"><a align=3D"center" href=3D"https://u34557702.ct.sendgrid.net/ls/c=
+lick?upn=3D5SjtgPrxLiMD-2F7ijF3Td4uTgbnXMh1j0vbzF4YB-2BkI52ULUCxnJB-2Fp9Sba=
+KVGRAf4aK6piFSHK2hG2OXLp7fDfQHOg-2FEgv88AUsrGOOb8wsA4rj8jFy6ftVRjqG-2BqLucC=
+r-2ByaLRsgH6okd2kqiCqUmUVv-2B6UTY3FNa-2BRZMQemxq517NET4nmgOfa-2FE6IfYx68LNL=
+IVVzzxgMTkB4ZtkD36q0loGOVK0rcqmbhxQPg57h2DI7qFdx9GPCaydsw5H-2FGW1d2o0946zSF=
+4cBVE1tCMzTuLBQLJG-2Fz6ngETISYbCaJHvFqM-2FKav-2Bc59i7xuX8aT8toIJu1X735MQ0kH=
+ViteCRhp3zEPaYAWyRzuJk3tnSZ0Qn0yafe1tB5s4-2BHvpuGA7DDVtyfRdbCZqvF-2BbNoKajx=
+tAefmnAZITTag0LlpYSRGdBjrfweNxNiZzUfhhB38LBc-2FTQ2LSxnXjjuZpkFE-2FCNPcSHTvE=
+-2BL640dMNoPu89H6K1p87FIEK7cE59lSDEAf1muBgSLkkjOO2-2F7g1iTGWl4sIHzfrmvbh-2F=
+dKaGbVFAqWufAp48pCvqKrTsi-2BwNBkG7xlzT7p15usqu6sCBg-3D-3DP6vt_ijSW8RkM-2FIX=
+Mlaqj-2FEdh9p8v0SOSA-2FyUc2EIoBfGmbaA1NAX1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34=
+sY3YXjzUulE5UHW1uoZfOJMQrO38OXQtYbS-2Bn1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2ZxsusE=
+ZwOwU8xEyhVJZkwZutGqRW7wvbCY8Pp87RZ6u48u9ocChg47UQUyx1B-2BL7V776JqaGCHyRwZ-=
+2B4CjFVEXY3qfbBnA3Gc8nXk6DahAMBX6DjVCwPbzCod87CQy6R3-2F-2F7XkBDw8LLMwNRmwMK=
+YsfbKP0OcG1mntaCRfG5thZ7dhj5LAO5JHBgEP1fqBZ4rC5B7OF-2B-2B4igZ3naTwy7RAr1lHU=
+R0SMp5waAWoqNx8T-2Fk0xFr6ADgehkv6RDKes6X-2FpVVnPH7bgUDo7IDijhRE1HlyN5jKGcqR=
+t95AQAWQLw3AV3rTCydSb7cyl7DbItmvBE5QE57W0sUof5ubT0NOD0Yg-3D" style=3D"text-=
+decoration:none; text-align:center; color:#ffffff" target=3D"_blank"> </a><=
+/td>            </tr>            <!--[if gte mso 9]>                     <t=
+r>                     <td width=3D"600" style=3D"line-height: 1px; font-si=
+ze: 1px; mso-line-height-rule: exactly; height:1px;">&#xA0;</td>           =
+          </tr>                    <![endif]-->            <tr>            =
+ <td align=3D"center" width=3D"600">             <table align=3D"center" bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:600px; margin=
+:0; border:0; padding:0">              <tbody>               <tr>          =
+      <td align=3D"left" width=3D"30"><a align=3D"center" href=3D"https://u=
+34557702.ct.sendgrid.net/ls/click?upn=3D5SjtgPrxLiMD-2F7ijF3Td4uTgbnXMh1j0v=
+bzF4YB-2BkI52ULUCxnJB-2Fp9SbaKVGRAf4aK6piFSHK2hG2OXLp7fDfQHOg-2FEgv88AUsrGO=
+Ob8wsA4rj8jFy6ftVRjqG-2BqLucCr-2ByaLRsgH6okd2kqiCqUmUVv-2B6UTY3FNa-2BRZMQem=
+xq517NET4nmgOfa-2FE6IfYx68LNLIVVzzxgMTkB4ZtkD36q0loGOVK0rcqmbhxQPg57h2DI7qF=
+dx9GPCaydsw5H-2FGW1d2o0946zSF4cBVE1tCMzTuLBQLJG-2Fz6ngETISYbCaJHvFqM-2FKav-=
+2Bc59i7xuX8aT8toIJu1X735MQ0kHViteCRhp3zEPaYAWyRzuJk3tnSZ0Qn0yafe1tB5s4-2BHv=
+puGA7DDVtyfRdbCZqvF-2BbNoKajxtAefmnAZITTag0LlpYSRGdBjrfweNxNiZzUfhhB38LBc-2=
+FTQ2LSxnXjjuZpkFE-2FCNPcSHTvE-2BL640dMNoPu89H6K1p87FIEK7cE59lSDEAf1muBgSLkk=
+jOO2-2F7g1iTGWl4sIHzfrmvbh-2FdKaGbVFAqWufAp48pCvqKrTsi-2BwNBkG7xlzT7p15usqu=
+6sCBg-3D-3DwEpO_ijSW8RkM-2FIXMlaqj-2FEdh9p8v0SOSA-2FyUc2EIoBfGmbaA1NAX1U-2F=
+Je3q5VVhXCcX93uaKx6BAaTwLDc34sY3YXjzUulE5UHW1uoZfOJMQrO38OXQtYbS-2Bn1mgtGHf=
+BraFQBcK2xNF8-2FFQf3ZK2ZxsusEZwOwU8xEyhVJZkwZutGqRW7wvbCY8Pp87RZ6u48u9ocChg=
+47UQUyx1B-2BL7V776JqaGCHyRwZ-2B4CjFVEXY3qfbBnA3Gc8nXk6DahAMBX6DjVCwPbzCod87=
+CQy6R3-2F-2F7XkBDw8LLMwNRmwMKYsfbKN8AAq8GoypB5mIJz2UHqFLKqaqIFOT09TjwVpOtMm=
+pozSSLoEjfzarMRQKWQQmmqMDCBW6KWjCSLpbsJV9C6bcvB44zSd5ElmXK-2Fn1TXtZ2M7W06ys=
+e3FFAQh-2FbW3WbZmbSDZA8h6Ut9w-2BT9GgvneQRp2ZLugpdyvptE4a67vNgFcO-2FP2Szltde=
+cFWHArF8oo-3D" style=3D"text-decoration:none; text-align:center; color:#fff=
+fff" target=3D"_blank"> </a></td>                <td align=3D"left" style=
+=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; color:#=
+ffffff; font-weight: bold; mso-line-height-rule: exactly; line-height: 100%=
+; text-align:left; font-size:29px; letter-spacing:0" width=3D"570"><a align=
+=3D"center" href=3D"https://u34557702.ct.sendgrid.net/ls/click?upn=3D5SjtgP=
+rxLiMD-2F7ijF3Td4uTgbnXMh1j0vbzF4YB-2BkI52ULUCxnJB-2Fp9SbaKVGRAf4aK6piFSHK2=
+hG2OXLp7fDfQHOg-2FEgv88AUsrGOOb8wsA4rj8jFy6ftVRjqG-2BqLucCr-2ByaLRsgH6okd2k=
+qiCqUmUVv-2B6UTY3FNa-2BRZMQemxq517NET4nmgOfa-2FE6IfYx68LNLIVVzzxgMTkB4ZtkD3=
+6q0loGOVK0rcqmbhxQPg57h2DI7qFdx9GPCaydsw5H-2FGW1d2o0946zSF4cBVE1tCMzTuLBQLJ=
+G-2Fz6ngETISYbCaJHvFqM-2FKav-2Bc59i7xuX8aT8toIJu1X735MQ0kHViteCRhp3zEPaYAWy=
+RzuJk3tnSZ0Qn0yafe1tB5s4-2BHvpuGA7DDVtyfRdbCZqvF-2BbNoKajxtAefmnAZITTag0Llp=
+YSRGdBjrfweNxNiZzUfhhB38LBc-2FTQ2LSxnXjjuZpkFE-2FCNPcSHTvE-2BL640dMNoPu89H6=
+K1p87FIEK7cE59lSDEAf1muBgSLkkjOO2-2F7g1iTGWl4sIHzfrmvbh-2FdKaGbVFAqWufAp48p=
+CvqKrTsi-2BwNBkG7xlzT7p15usqu6sCBg-3D-3DUZul_ijSW8RkM-2FIXMlaqj-2FEdh9p8v0S=
+OSA-2FyUc2EIoBfGmbaA1NAX1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34sY3YXjzUulE5UHW1u=
+oZfOJMQrO38OXQtYbS-2Bn1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2ZxsusEZwOwU8xEyhVJZkwZu=
+tGqRW7wvbCY8Pp87RZ6u48u9ocChg47UQUyx1B-2BL7V776JqaGCHyRwZ-2B4CjFVEXY3qfbBnA=
+3Gc8nXk6DahAMBX6DjVCwPbzCod87CQy6R3-2F-2F7XkBDw8LLMwNRmwMKYsfbKMYmDiEO5y5CR=
+2Q0D-2BIAHwJ9s-2BZQu1WPlPNeV9-2F2Htvhb-2BjEurs4uttm5BoC24UVikQdizHF4pTyIwRw=
+-2FupgkGNWonNzRuut1DYUvoIg8K1Ci-2Bp4jDM5lqs51uiRBVTWTGxE8dB8rmatNyIvWc03bpd=
+vcdaijUNtT-2Brsgo0bwCK7MKaAuKzkE1qerfQRoFzsqo-3D" style=3D"text-decoration:=
+none; text-align:center; color:#ffffff" target=3D"_blank">A DELIGHT FOR YOU=
+R </a></td>               </tr>               <tr>                <td align=
+=3D"left" width=3D"30"><a align=3D"center" href=3D"https://u34557702.ct.sen=
+dgrid.net/ls/click?upn=3D5SjtgPrxLiMD-2F7ijF3Td4uTgbnXMh1j0vbzF4YB-2BkI52UL=
+UCxnJB-2Fp9SbaKVGRAf4aK6piFSHK2hG2OXLp7fDfQHOg-2FEgv88AUsrGOOb8wsA4rj8jFy6f=
+tVRjqG-2BqLucCr-2ByaLRsgH6okd2kqiCqUmUVv-2B6UTY3FNa-2BRZMQemxq517NET4nmgOfa=
+-2FE6IfYx68LNLIVVzzxgMTkB4ZtkD36q0loGOVK0rcqmbhxQPg57h2DI7qFdx9GPCaydsw5H-2=
+FGW1d2o0946zSF4cBVE1tCMzTuLBQLJG-2Fz6ngETISYbCaJHvFqM-2FKav-2Bc59i7xuX8aT8t=
+oIJu1X735MQ0kHViteCRhp3zEPaYAWyRzuJk3tnSZ0Qn0yafe1tB5s4-2BHvpuGA7DDVtyfRdbC=
+ZqvF-2BbNoKajxtAefmnAZITTag0LlpYSRGdBjrfweNxNiZzUfhhB38LBc-2FTQ2LSxnXjjuZpk=
+FE-2FCNPcSHTvE-2BL640dMNoPu89H6K1p87FIEK7cE59lSDEAf1muBgSLkkjOO2-2F7g1iTGWl=
+4sIHzfrmvbh-2FdKaGbVFAqWufAp48pCvqKrTsi-2BwNBkG7xlzT7p15usqu6sCBg-3D-3DP8ql=
+_ijSW8RkM-2FIXMlaqj-2FEdh9p8v0SOSA-2FyUc2EIoBfGmbaA1NAX1U-2FJe3q5VVhXCcX93u=
+aKx6BAaTwLDc34sY3YXjzUulE5UHW1uoZfOJMQrO38OXQtYbS-2Bn1mgtGHfBraFQBcK2xNF8-2=
+FFQf3ZK2ZxsusEZwOwU8xEyhVJZkwZutGqRW7wvbCY8Pp87RZ6u48u9ocChg47UQUyx1B-2BL7V=
+776JqaGCHyRwZ-2B4CjFVEXY3qfbBnA3Gc8nXk6DahAMBX6DjVCwPbzCod87CQy6R3-2F-2F7Xk=
+BDw8LLMwNRmwMKYsfbKOXu5miHg1-2FHAzl78mHUwAA-2FMJa0dRS5GQKYKC4-2F8785qxqnOnL=
+lGFRbMhRcMbBz0z2Ssj9dYSTjkQA30GeQcLSwBHaBp3rOukvzUC06rnNTJtmESG3g7b2MJk6t81=
+43dN065CutLsk7chtskV6wqA-2BNrTJo9P1q4xXzo3ABev5UsrcUwBskCqsO2EW5dGAyoY-3D" =
+style=3D"text-decoration:none; text-align:center; color:#ffffff" target=3D"=
+_blank"> </a></td>                <td align=3D"left" style=3D"margin:0; pad=
+ding:0; font-family:Gotham, Helvetica, sans-serif; color:#ffcb05; font-weig=
+ht: bold; mso-line-height-rule: exactly; line-height: 100%; text-align:left=
+; font-size:40px; letter-spacing:0" width=3D"570"><a align=3D"center" href=
+=3D"https://u34557702.ct.sendgrid.net/ls/click?upn=3D5SjtgPrxLiMD-2F7ijF3Td=
+4uTgbnXMh1j0vbzF4YB-2BkI52ULUCxnJB-2Fp9SbaKVGRAf4aK6piFSHK2hG2OXLp7fDfQHOg-=
+2FEgv88AUsrGOOb8wsA4rj8jFy6ftVRjqG-2BqLucCr-2ByaLRsgH6okd2kqiCqUmUVv-2B6UTY=
+3FNa-2BRZMQemxq517NET4nmgOfa-2FE6IfYx68LNLIVVzzxgMTkB4ZtkD36q0loGOVK0rcqmbh=
+xQPg57h2DI7qFdx9GPCaydsw5H-2FGW1d2o0946zSF4cBVE1tCMzTuLBQLJG-2Fz6ngETISYbCa=
+JHvFqM-2FKav-2Bc59i7xuX8aT8toIJu1X735MQ0kHViteCRhp3zEPaYAWyRzuJk3tnSZ0Qn0ya=
+fe1tB5s4-2BHvpuGA7DDVtyfRdbCZqvF-2BbNoKajxtAefmnAZITTag0LlpYSRGdBjrfweNxNiZ=
+zUfhhB38LBc-2FTQ2LSxnXjjuZpkFE-2FCNPcSHTvE-2BL640dMNoPu89H6K1p87FIEK7cE59lS=
+DEAf1muBgSLkkjOO2-2F7g1iTGWl4sIHzfrmvbh-2FdKaGbVFAqWufAp48pCvqKrTsi-2BwNBkG=
+7xlzT7p15usqu6sCBg-3D-3Dy8RA_ijSW8RkM-2FIXMlaqj-2FEdh9p8v0SOSA-2FyUc2EIoBfG=
+mbaA1NAX1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34sY3YXjzUulE5UHW1uoZfOJMQrO38OXQtY=
+bS-2Bn1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2ZxsusEZwOwU8xEyhVJZkwZutGqRW7wvbCY8Pp87=
+RZ6u48u9ocChg47UQUyx1B-2BL7V776JqaGCHyRwZ-2B4CjFVEXY3qfbBnA3Gc8nXk6DahAMBX6=
+DjVCwPbzCod87CQy6R3-2F-2F7XkBDw8LLMwNRmwMKYsfbKO0WeqKwQ8pHzABwQ4oy-2BQj9zxA=
+blvnd9koSwprc7SOEb0K2vm9bSFlCSW4HTCkv7A1Ysr4kEKJ0-2F-2BKbmj8OnyUnLOq3G3l9jJ=
+6Utv2qbPMgVKnsetp7bENMpPpNCNjcb0gw6oliiAUt1lXmIHIT2ZdyH2GKAVxwLJAGhvtFUMl3k=
+4moYIJVnRB-2Fkpb9mmQd6w-3D" style=3D"text-decoration:none; text-align:cente=
+r; color:#ffffff" target=3D"_blank"><span style=3D"color:#ffcb05">TASTE BUD=
+S.</span> </a></td>               </tr>               <tr>                <=
+td colspan=3D"2" style=3D"line-height: 1px; font-size: 1px; mso-line-height=
+-rule: exactly; height: 8px;" width=3D"600"><a align=3D"center" href=3D"htt=
+ps://u34557702.ct.sendgrid.net/ls/click?upn=3D5SjtgPrxLiMD-2F7ijF3Td4uTgbnX=
+Mh1j0vbzF4YB-2BkI52ULUCxnJB-2Fp9SbaKVGRAf4aK6piFSHK2hG2OXLp7fDfQHOg-2FEgv88=
+AUsrGOOb8wsA4rj8jFy6ftVRjqG-2BqLucCr-2ByaLRsgH6okd2kqiCqUmUVv-2B6UTY3FNa-2B=
+RZMQemxq517NET4nmgOfa-2FE6IfYx68LNLIVVzzxgMTkB4ZtkD36q0loGOVK0rcqmbhxQPg57h=
+2DI7qFdx9GPCaydsw5H-2FGW1d2o0946zSF4cBVE1tCMzTuLBQLJG-2Fz6ngETISYbCaJHvFqM-=
+2FKav-2Bc59i7xuX8aT8toIJu1X735MQ0kHViteCRhp3zEPaYAWyRzuJk3tnSZ0Qn0yafe1tB5s=
+4-2BHvpuGA7DDVtyfRdbCZqvF-2BbNoKajxtAefmnAZITTag0LlpYSRGdBjrfweNxNiZzUfhhB3=
+8LBc-2FTQ2LSxnXjjuZpkFE-2FCNPcSHTvE-2BL640dMNoPu89H6K1p87FIEK7cE59lSDEAf1mu=
+BgSLkkjOO2-2F7g1iTGWl4sIHzfrmvbh-2FdKaGbVFAqWufAp48pCvqKrTsi-2BwNBkG7xlzT7p=
+15usqu6sCBg-3D-3DSMWJ_ijSW8RkM-2FIXMlaqj-2FEdh9p8v0SOSA-2FyUc2EIoBfGmbaA1NA=
+X1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34sY3YXjzUulE5UHW1uoZfOJMQrO38OXQtYbS-2Bn1=
+mgtGHfBraFQBcK2xNF8-2FFQf3ZK2ZxsusEZwOwU8xEyhVJZkwZutGqRW7wvbCY8Pp87RZ6u48u=
+9ocChg47UQUyx1B-2BL7V776JqaGCHyRwZ-2B4CjFVEXY3qfbBnA3Gc8nXk6DahAMBX6DjVCwPb=
+zCod87CQy6R3-2F-2F7XkBDw8LLMwNRmwMKYsfbKMu8N09s5cgMq7dcLP1l0NL10oPi-2BBZQY3=
+CK4DTLZhK59NDmVAZpkpVzVM8E7pjMI3g0VVyokd3RelMXweJQDzfTstZli65GqAhgPQgeZrZQq=
+kcGSTf1w5WoXHgeJyf-2BeHAQPbb85rAS1De1Hx7-2B6jmAn-2FlhpcA16BYBPwAPEKWrYFFmCO=
+lGdagT2qX49UrKBY-3D" style=3D"text-decoration:none; text-align:center; colo=
+r:#ffffff" target=3D"_blank"> </a></td>               </tr>              </=
+tbody>             </table>             </td>            </tr>            <=
+tr style=3D"mso-hide:all">             <td style=3D"line-height: 1px; font-=
+size: 1px; mso-line-height-rule: exactly; height: 420px; mso-hide:all" widt=
+h=3D"600"><a align=3D"center" href=3D"https://u34557702.ct.sendgrid.net/ls/=
+click?upn=3D5SjtgPrxLiMD-2F7ijF3Td4uTgbnXMh1j0vbzF4YB-2BkI52ULUCxnJB-2Fp9Sb=
+aKVGRAf4aK6piFSHK2hG2OXLp7fDfQHOg-2FEgv88AUsrGOOb8wsA4rj8jFy6ftVRjqG-2BqLuc=
+Cr-2ByaLRsgH6okd2kqiCqUmUVv-2B6UTY3FNa-2BRZMQemxq517NET4nmgOfa-2FE6IfYx68LN=
+LIVVzzxgMTkB4ZtkD36q0loGOVK0rcqmbhxQPg57h2DI7qFdx9GPCaydsw5H-2FGW1d2o0946zS=
+F4cBVE1tCMzTuLBQLJG-2Fz6ngETISYbCaJHvFqM-2FKav-2Bc59i7xuX8aT8toIJu1X735MQ0k=
+HViteCRhp3zEPaYAWyRzuJk3tnSZ0Qn0yafe1tB5s4-2BHvpuGA7DDVtyfRdbCZqvF-2BbNoKaj=
+xtAefmnAZITTag0LlpYSRGdBjrfweNxNiZzUfhhB38LBc-2FTQ2LSxnXjjuZpkFE-2FCNPcSHTv=
+E-2BL640dMNoPu89H6K1p87FIEK7cE59lSDEAf1muBgSLkkjOO2-2F7g1iTGWl4sIHzfrmvbh-2=
+FdKaGbVFAqWufAp48pCvqKrTsi-2BwNBkG7xlzT7p15usqu6sCBg-3D-3DPB5r_ijSW8RkM-2FI=
+XMlaqj-2FEdh9p8v0SOSA-2FyUc2EIoBfGmbaA1NAX1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc3=
+4sY3YXjzUulE5UHW1uoZfOJMQrO38OXQtYbS-2Bn1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2Zxsus=
+EZwOwU8xEyhVJZkwZutGqRW7wvbCY8Pp87RZ6u48u9ocChg47UQUyx1B-2BL7V776JqaGCHyRwZ=
+-2B4CjFVEXY3qfbBnA3Gc8nXk6DahAMBX6DjVCwPbzCod87CQy6R3-2F-2F7XkBDw8LLMwNRmwM=
+KYsfbKPg9R42hSG69dqxOsabWvjHOMb9cpi4IMoBkIH8dRmfNfngRaFcIA0UP2k1Y-2FHi2E575=
+z52VbBdJ0GpmKzKk42V2dk1AWf2KoCBAZf6BEXsEdYkX0thCZzN0VI2D-2BLZs8YV4DEspsyQVY=
+LWFxFcmlgkv50UHlrk84hRjCKOebLQavOyebIor-2BfnEEhJCaWJuFk-3D" style=3D"text-d=
+ecoration:none; text-align:center; color:#ffffff" target=3D"_blank"> </a></=
+td>            </tr>            <!--[if gte mso 9]>                     <tr=
+>                     <td width=3D"600" style=3D"line-height: 1px; font-siz=
+e: 1px; mso-line-height-rule: exactly; height: 20px;">&#xA0;</td>          =
+           </tr>                    <![endif]-->           </tbody>        =
+  </table>          </div>          <!--[if gte mso 9]>                 </v=
+:textbox>                 </v:rect>                <![endif]--></td>       =
+  </tr>        </tbody>       </table>       </td>      </tr>      <tr>    =
+   <td align=3D"center" style=3D"background-color:#1b1b1b" valign=3D"top" w=
+idth=3D"600">       <table align=3D"center" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:480px; background-color:#1b1b1b" valign=3D"top">     =
+   <tbody>         <tr>          <td align=3D"center" style=3D"line-height:=
+ 1px; font-size: 1px; mso-line-height-rule: exactly; height: 15px;"> </td> =
+        </tr>         <tr>          <td align=3D"left" style=3D"margin:0; p=
+adding:0; font-family:Gotham, Helvetica, sans-serif; color:#ffffff; font-we=
+ight: bold; mso-line-height-rule: exactly; line-height: 125%; text-align:le=
+ft; font-size:18px; letter-spacing:0" width=3D"480">Presenting four delicio=
+us dishes curated by Michelin-starred chef <font style=3D"color:#ffcb05">Vi=
+kas Khanna</font> for SpiceJet&#39;s on-board menu.</td>         </tr>     =
+    <tr>          <td align=3D"center" style=3D"line-height: 1px; font-size=
+: 1px; mso-line-height-rule: exactly; height: 11px;"> </td>         </tr>  =
+       <tr>          <td align=3D"center" width=3D"480">          <table al=
+ign=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"15=
+0">           <tbody>            <tr>             <td align=3D"center" styl=
+e=3D"background-color: #ffcb05; padding-top: 6px; padding-bottom: 5px; widt=
+h:150px; line-height:100%; height: 30px; border-radius: 15px" valign=3D"mid=
+dle"><a href=3D"https://u34557702.ct.sendgrid.net/ls/click?upn=3D5SjtgPrxLi=
+MD-2F7ijF3Td4uTgbnXMh1j0vbzF4YB-2BkI52ULUCxnJB-2Fp9SbaKVGRAf4aK6piFSHK2hG2O=
+XLp7fDfQHOg-2FEgv88AUsrGOOb8wsA4rj8jFy6ftVRjqG-2BqLucCr-2ByaLRsgH6okd2kqiCq=
+UmUVv-2B6UTY3FNa-2BRZMQemxq517NET4nmgOfa-2FE6IfYx68LNLIVVzzxgMTkB4ZtkD36q0l=
+oGOVK0rcqmbhxQPg57h2DI7qFdx9GPCaydsw5H-2FGW1d2o0946zSF4cBVE1tCMzTuLBQLJG-2F=
+z6ngETISYbCaJHvFqM-2FKav-2Bc59i7xuX8aT8toIJu1X735MQ0kHViteCRhp3zEPaYAWyRzuJ=
+k3tnSZ0Qn0yafe1tB5s4-2BHvpuGA7DDVtyfRdbCZqvF-2BbNoKajxtAefmnAZITTag0LlpYSRG=
+dBjrfweNxNiZzUfhhB38LBc-2FTQ2LSxnXjjuZpkFE-2FCNPcSHTvE-2BL640dMNoPu89H6K1p8=
+7FIEK7cE59lSDEAf1muBgSLkkjOO2-2F7g1iTGWl4sIHzfrmvbh-2FdKaGbVFAqWufAp48pCvqK=
+rTsi-2BwNBkG7xlzT7p15usqu6sCBg-3D-3Dhzlg_ijSW8RkM-2FIXMlaqj-2FEdh9p8v0SOSA-=
+2FyUc2EIoBfGmbaA1NAX1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34sY3YXjzUulE5UHW1uoZfO=
+JMQrO38OXQtYbS-2Bn1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2ZxsusEZwOwU8xEyhVJZkwZutGqR=
+W7wvbCY8Pp87RZ6u48u9ocChg47UQUyx1B-2BL7V776JqaGCHyRwZ-2B4CjFVEXY3qfbBnA3Gc8=
+nXk6DahAMBX6DjVCwPbzCod87CQy6R3-2F-2F7XkBDw8LLMwNRmwMKYsfbKM0AY9nactjGpjFTw=
+cQR1hxUjRcklReIgiYLNEwiKKwytsfF7bUAg7hwhHJbfji5jYX7biOIHxQWI89XrULwyRqmLHY7=
+2qCH7tYTiNP-2BvnE0R-2Bcfe5-2FWDlskxwMNahuiPBWBrfbvr-2FDbU9dYrCF8Jv4T3ikCFT-=
+2Fb6M1d3E-2BFCRuEvGeqcJ198T5HG0WI8Z1YP8-3D" style=3D"color: #000000; displa=
+y: block; font-size: 20px; font-weight: bold; text-align: center; text-deco=
+ration: none; font-family:Gotham, Helvetica, sans-serif; line-height:100%; =
+mso-line-height-rule:exactly; background-color:#ffcb05; border-radius: 30px=
+;">BOOK NOW</a></td>            </tr>           </tbody>          </table> =
+         </td>         </tr>         <tr>          <td align=3D"center" sty=
+le=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exactly; heig=
+ht: 14px; border-bottom:1px dotted #ffcb05"> </td>         </tr>         <t=
+r>          <td align=3D"center" style=3D"line-height: 1px; font-size: 1px;=
+ mso-line-height-rule: exactly; height: 11px;"> </td>         </tr>        =
+ <tr>          <td align=3D"left" style=3D"margin:0; padding:0; font-family=
+:Gotham, Helvetica, sans-serif; color:#ffffff; font-weight: normal; mso-lin=
+e-height-rule: exactly; line-height: 125%; text-align:left; font-size:16px;=
+ letter-spacing:0" width=3D"480">It&#39;s not just any food. It&#39;s a sin=
+ful riot of flavours with a saintly soul that works for a noble cause. Each=
+ of the culinary delights =E2=80=93 Chicken Aloo Bukhara Biryani, Vegetable=
+ Biryani, Chicken Khurchan Roll and Paneer Bhurji Roll =E2=80=93 masterfull=
+y curated by celebrity chef, author and filmmaker <font style=3D"color:#ffc=
+b05">Vikas Khanna</font>, exclusively for SpiceJet.</td>         </tr>     =
+    <tr>          <td align=3D"center" style=3D"line-height: 1px; font-size=
+: 1px; mso-line-height-rule: exactly; height: 16px;"> </td>         </tr>  =
+       <tr>          <td align=3D"left" style=3D"margin:0; padding:0; font-=
+family:Gotham, Helvetica, sans-serif; color:#ffffff; font-weight: normal; m=
+so-line-height-rule: exactly; line-height: 125%; text-align:left; font-size=
+:16px; letter-spacing:0" width=3D"480">After all, they not only satiate you=
+r taste buds but also empower girls in India. For, a part of the proceeds f=
+rom the sale of these new additions go to Mijwan Welfare Society, an NGO th=
+at promotes girl education in India.</td>         </tr>         <tr>       =
+   <td align=3D"center" style=3D"line-height: 1px; font-size: 1px; mso-line=
+-height-rule: exactly; height: 16px;"> </td>         </tr>         <tr>    =
+      <td align=3D"left" style=3D"margin:0; padding:0; font-family:Gotham, =
+Helvetica, sans-serif; color:#ffffff; font-weight: normal; mso-line-height-=
+rule: exactly; line-height: 125%; text-align:left; font-size:16px; letter-s=
+pacing:0" width=3D"480">So, the next time you fly us, savour these delectab=
+le dishes and do your bit for a noble cause.</td>         </tr>         <tr=
+>          <td align=3D"center" style=3D"line-height: 1px; font-size: 1px; =
+mso-line-height-rule: exactly; height: 16px;"> </td>         </tr>         =
+<tr>          <td align=3D"left" style=3D"margin:0; padding:0; font-family:=
+Gotham, Helvetica, sans-serif; color:#ffffff; font-weight: normal; mso-line=
+-height-rule: exactly; line-height: 125%; text-align:left; font-size:16px; =
+letter-spacing:0" width=3D"480">Bon appetit!</td>         </tr>         <tr=
+>          <td align=3D"center" style=3D"line-height: 1px; font-size: 1px; =
+mso-line-height-rule: exactly; height: 30px"> </td>         </tr>        </=
+tbody>       </table>       </td>      </tr>      <tr>       <td align=3D"c=
+enter" style=3D"width:600px; background-color:#ed1c24">       <table align=
+=3D"center" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:600px;text-a=
+lign:center;background-color:#ed1c24;" width=3D"600">        <tbody>       =
+  <tr>          <td colspan=3D"3" style=3D"width:600px;">          <table a=
+lign=3D"center" bgcolor=3D"#ed1c24" cellpadding=3D"0" cellspacing=3D"0" sty=
+le=3D"width:600px;text-align:center;" width=3D"600">           <tbody>     =
+       <tr>             <td align=3D"center" bgcolor=3D"#ed1c24" colspan=3D=
+"2" style=3D"width:600px;" width=3D"600">             <table align=3D"cente=
+r" bgcolor=3D"#ed1c24" cellpadding=3D"0" cellspacing=3D"0" style=3D"width: =
+590px;">              <tbody>               <tr>                <td height=
+=3D"15" style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: ex=
+actly; height: 10px;"> </td>               </tr>               <tr>        =
+        <td style=3D"width:590px;margin:0; padding:0;font-family:Arial, Hel=
+vetica, sans-serif;color:#ffffff;font-weight: normal; mso-line-height-rule:=
+ exactly;line-height: 146%;text-align:center; font-size: 11px;letter-spacin=
+g:0px;background-color:#ed1c24;">Copyright@2023 SpiceJet. All rights reserv=
+ed. *T&C Apply. To be sure that you receive<br />                our e-mail=
+ in your inbox, please add SpiceJet to your address book.</td>             =
+  </tr>               <tr>                <td height=3D"15" style=3D"line-h=
+eight: 1px; font-size: 1px; mso-line-height-rule: exactly; height: 15px;"> =
+</td>               </tr>              </tbody>             </table>       =
+      </td>            </tr>           </tbody>          </table>          =
+</td>         </tr>         <tr>          <td bgcolor=3D"#ffffff" colspan=
+=3D"3" style=3D"width:600px;margin:0; font-family:Arial, Helvetica, sans-se=
+rif;color:#808285;font-weight: bold; mso-line-height-rule: exactly;line-hei=
+ght: 100%;text-align:center; font-size: 11px;letter-spacing:0px;padding-top=
+:10px;padding-bottom:10px;"><a data-track=3D"off" href=3D"https://u34557702=
+.ct.sendgrid.net/wf/unsubscribe?upn=3DrWYU-2B0i-2B0Qcz8HINw-2Ff3NK-2FUlPkrd=
+thebD6Und9AwA-2BH1FOefmsC4Jsv31W1m6cG6ZZtK3EzI-2B5uGWKZR2r79FClRsal9-2BKRix=
+fRsANcmH1rFrqQHRYqrZnAc6PYFO3FIuFXmeQev3wG3IiKV4XRhMN2wtkf0-2FpGUNJkPjE-2BS=
+atWhYjUnN090m2zw4piNP8JvfQAaFTiw1sy9ekNULbbvVahKMyA1gsmQcsD9WALJ5qbACyZYum8=
+lcAZpbGNksyrJbViXUXxAx78VixpfYKsKdBaXzkXXd3tXeaF-2FECe3lKix8RbuU-2FEzhZBsp8=
+nltJzLDaqPJfE6HKTZXl6OgT5txdPcbnwQV4A65SPN0CoGdQocSnuaYOgL4AZBsUlASlEofBQlP=
+WbckQw6G9SAnxl52pohXXE18-2B8lLnisBfbmDDkLqM-2Fi2itJYs7iQzXiH-2Ff52IH7WxcmwT=
+H0gXVh7N33ycOQaixLMernTRiwEUDY34DqkUj-2BxSqkq-2Blw3sfpywD">Unsubscribe</a><=
+/td>         </tr>        </tbody>       </table>       </td>      </tr>   =
+  </tbody>    </table>    </center>    </td>   </tr>  </tbody> </table> </c=
+enter> <img src=3D"https://u34557702.ct.sendgrid.net/wf/open?upn=3DrWYU-2B0=
+i-2B0Qcz8HINw-2Ff3NK-2FUlPkrdthebD6Und9AwA-2BH1FOefmsC4Jsv31W1m6cG6ZZtK3EzI=
+-2B5uGWKZR2r79FClRsal9-2BKRixfRsANcmH1rFrqQHRYqrZnAc6PYFO3FIuFXmeQev3wG3IiK=
+V4XRhMN2wtkf0-2FpGUNJkPjE-2BSatWhYjUnN090m2zw4piNP8JvfQAaFTiw1sy9ekNULbbvVa=
+hKMyA1gsmQcsD9WALJ5qbACyZYum8lcAZpbGNksyrJbViXUXxAx78VixpfYKsKdBaXzkXXd3tXe=
+aF-2FECe3lIyrAdK1xBMPHnoq3CpU-2BpAHuiyPGtqRhmNEJUQbPeKmTxVxlLIqTShK-2BZi5Dd=
+ZathOGuK7-2FZES54c078Ysco5bvy08JSh6KI40qgrl5TNKGmvyRTAG6o9AU3VGw2pjg0-2BWrL=
+6R63y7vvQ1CWoGQpKcladJGb6OGEDDNNfmwHl3HWnXMu9w-2Bgi6uLsvlB4N3lk-3D" alt=3D"=
+" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !important;widt=
+h:1px !important;border-width:0 !important;margin-top:0 !important;margin-b=
+ottom:0 !important;margin-right:0 !important;margin-left:0 !important;paddi=
+ng-top:0 !important;padding-bottom:0 !important;padding-right:0 !important;=
+padding-left:0 !important;"/></body> </html> </!doctype><img  alt=3D"" bord=
+er=3D"0" height=3D"1" width=3D"1" src=3D"https://in1.wizrocketmail.net/r?e=
+=3DKw0Ach8JBWZ6bWp9DSZjfAYICA1jYyw1KS0sNUwBBgBvY2t%2FbiYSC0FVQkc%2BNTwUNDU9=
+IFtVcXQray4uIT88P05%2BXkA%2BPDsoNi47JFwQZ10yLTcvKyFwPEhCWms%2BPnBxdWtkcgQDA=
+ARjamQUZWpgeAMAAQd1dnA8LSg5FEJZR1sjeGhpICAgIG1UVFI2Lz4%2FdSc%3D&c=3D6939000=
+32"></img>

@@ -1,0 +1,1251 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:329a:b0:4fd:23d3:a27 with SMTP id k26csp5583132pxc;
+        Wed, 18 Oct 2023 08:01:56 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHY1NgTRxVP7+Sv5pkzoMZsZKI3FYnwQ/2gZFMwTJ80KIyTGdU3WR7/WGah1m6LrFm+hAUI
+X-Received: by 2002:a05:622a:1704:b0:412:24e6:a492 with SMTP id h4-20020a05622a170400b0041224e6a492mr6345177qtk.60.1697641316422;
+        Wed, 18 Oct 2023 08:01:56 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697641316; cv=none;
+        d=google.com; s=arc-20160816;
+        b=hF3d8dZXsUXelBTTFESa7Hg/Otic1/feCVsjxWIk9mt5uWiOolxfCiKIlR1zUEHQnD
+         ku9fh80pyuVnBIKsV8WNKUsrgQfc2EXXAFfJOw5GHmeYUzH1EkN5mIvIRdWA3yIpD7sn
+         /bpXPXaMWvmA2NqJG1emRQMojvFdyxVmNwxswp0DDQq0WTOTod66LBppG7MkGbwvJB+w
+         aoXnBtY1FZv67g7i5U67DOCiPgIEx5UxNapYAkp7qlmz5uYy5KWw2QMUJYxL41+2nE0N
+         5qTNOrUht5GLCnGivb7KGUjRTcI9vDHMD7teni/ZKN56uS7IwlwuzrQOKMpm7g2kFl2B
+         BG9w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=message-id:list-unsubscribe-post:list-unsubscribe:feedback-id
+         :sender:content-transfer-encoding:mime-version:date:subject:from:to
+         :cfbl-address:dkim-signature:dkim-signature;
+        bh=W+sNSQWIhrxRIazkv8FNdTYsNB2TGf9jezZvX7jHl3g=;
+        fh=1jpT/WKx9w1MSp8pGnZ42S6s7FoxGExtHbOmXF4FNqs=;
+        b=zN9RaWAcgjQFCK7KzGxyXoEEDpmaZnfK4e0WA+u1lV2alSGoHwaEw90UV2uOWR1wFu
+         Qw2bebxwkoz+ulOzGuuZOHWyjXXGVriExcmTRCfIb/q5lwRvDmFZErocsNkgl61EfCcG
+         NuoCch0ByOnhisEe9xRegbwGn7hOsSnGfATZS55ATpHuOh+qimlcrE9kYuDUYfSa4yz5
+         9fpCUk5WfuqmgimDjZu0XdsVDdb6ov6Lw7ZX0PTEZgMso49NUrGySxgEAfGK7xfYXG2H
+         7tiGs0wI4ogZt/NHiACGXyYJBymJ7XTSgwonZLuvZnQ6Xmq4c7t7TvCwZT8CxX2DKGxH
+         ++lg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@s3.csa2.acemsb3.com header.s=dk header.b=F5PWMqFi;
+       dkim=pass header.i=@acems1.com header.s=dk header.b=ydgrC77T;
+       spf=pass (google.com: domain of bounce-910477-1044-4588112-srijani515=gmail.com@s3.csa2.acemsb3.com designates 192.92.97.58 as permitted sender) smtp.mailfrom="bounce-910477-1044-4588112-srijani515=gmail.com@s3.csa2.acemsb3.com"
+Return-Path: <bounce-910477-1044-4588112-srijani515=gmail.com@s3.csa2.acemsb3.com>
+Received: from s3.csa1.acemsb3.com (s3.csa1.acemsb3.com. [192.92.97.58])
+        by mx.google.com with ESMTPS id h14-20020ac85e0e000000b004199160e567si46218qtx.24.2023.10.18.08.01.56
+        for <srijani515@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 18 Oct 2023 08:01:56 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-910477-1044-4588112-srijani515=gmail.com@s3.csa2.acemsb3.com designates 192.92.97.58 as permitted sender) client-ip=192.92.97.58;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@s3.csa2.acemsb3.com header.s=dk header.b=F5PWMqFi;
+       dkim=pass header.i=@acems1.com header.s=dk header.b=ydgrC77T;
+       spf=pass (google.com: domain of bounce-910477-1044-4588112-srijani515=gmail.com@s3.csa2.acemsb3.com designates 192.92.97.58 as permitted sender) smtp.mailfrom="bounce-910477-1044-4588112-srijani515=gmail.com@s3.csa2.acemsb3.com"
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=dk; d=s3.csa2.acemsb3.com;
+ h=To:From:Subject:Date:MIME-Version:Content-Type:Content-Transfer-Encoding:
+ Sender:List-Unsubscribe:List-Unsubscribe-Post:Message-ID;
+ i=personaldevelopmentschool.activehosted.com@s3.csa2.acemsb3.com;
+ bh=W+sNSQWIhrxRIazkv8FNdTYsNB2TGf9jezZvX7jHl3g=;
+ b=F5PWMqFiXgMoeIpUusdG7djQZ8rfrMz1tSyOWVtKPlxMDeZ41kc8La3LF/mVcR6oLVfB6v6NIulv
+   wkxpx0AeJ05QorAhJE2dQQDDmKQFLBuS617ipW5zuVz0GOCda3z/5amBrufLoPebUbTGbt8mv83o
+   FsZrXWHGYUA1CqHUXyU=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=dk; d=acems1.com;
+ h=To:From:Subject:Date:MIME-Version:Content-Type:Content-Transfer-Encoding:
+ Sender:List-Unsubscribe:List-Unsubscribe-Post:Message-ID;
+ bh=W+sNSQWIhrxRIazkv8FNdTYsNB2TGf9jezZvX7jHl3g=;
+ b=ydgrC77TRJTztAHwtr37oVMiexTMOJP0SDNE1epYphzXLkgICBaXrS1E9pGiiI97Oigy6iuRLmee
+   fnOno4tBM0DI917dRlZY7TEU86wnqqw4MIpsuIJsqw/EjV2dyCXLvQJG9DtOZW5l7c0RyLfvpH0N
+   BQOibGyhiOD1Q2r8p9g=
+Received: by s1.acemsrvg.com id h5vpm834rc8k for <srijani515@gmail.com>; Wed, 18 Oct 2023 15:01:24 +0000 (envelope-from <bounce-910477-1044-4588112-srijani515=gmail.com@s3.csa2.acemsb3.com>)
+X-Mailer: ActiveCampaign Mailer
+CFBL-Address: fbl-report@acems1.com; report=arf
+To: "Srijani Chakrabarti" <srijani515@gmail.com>
+From: "Personal Development School - Thais Gibson"
+ <info@personaldeveopmentschool.com>
+Subject: Before You Go!
+Date: Wed, 18 Oct 2023 10:01:18 -0500
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="_=_swift-1493671045652ff33eb3fc44.28342891_=_"
+Content-Transfer-Encoding: 7bit
+X-DKIM-Options: s=dk
+Sender: <personaldevelopmentschool.activehosted.com@s3.csa2.acemsb3.com>
+X-Sender: <personaldevelopmentschool.activehosted.com@s3.csa2.acemsb3.com>
+X-Report-Abuse: Please report abuse to abuse@activecampaign.com
+X-mid: c3JpamFuaTUxNUBnbWFpbC5jb20gLCBjMTA0NCAsIG0xMjEzICwgczYzNjU4ODA
+x-virtual-mta: s1.acemsrvg.com
+Feedback-ID: 910477:910477.1044:s1.acemsrvg.com:activecampaign
+X-250ok-CID: 910477-1044
+List-Unsubscribe: <mailto:unsubscribe-11b3f686bfe40432934b7a767d65edb1-1044-f80b3c5d95b48747dbcb6172ceee3b6e@s3.csa2.acemsb3.com>,
+ <http://email.personaldevelopmentschool.com/box.php?nl=2&c=1044&m=1213&s=f80b3c5d95b48747dbcb6172ceee3b6e&funcml=unsub2&luha=1>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Message-ID: <20231018150124.9771.1077700.swift@email.personaldevelopmentschool.com>
+
+
+--_=_swift-1493671045652ff33eb3fc44.28342891_=_
+Content-Type: text/plain; charset=utf-8
+
+ 
+
+ 
+
+ 
+
+Hello Srijani
+
+Are you ready to feel 
+
+**connected, loved, valued and understood?** For a limited time, you can
+experience all of this and more 
+
+**for free.**
+
+****
+
+**Before you leave our mailing list, you can access everything within
+The Personal Development School for free for 7 days!**
+
+****B****
+
+**y clicking here**
+,
+
+****you will redeem your offer for a 7-Day Free Trial of our All-Access
+Pass. 
+
+There are 
+
+**no commitments**, and you 
+
+**can cancel at any time** before your trial is over at absolutely no
+cost.
+
+**What Is Inside of The Personal Development School?**
+* 
+
+**45+ courses** that include: How to Repair Any Relationship, Discover
+and Fulfill Your Personal Needs, Post-Traumatic Growth, Relationship
+Mastery, Overcome Anxiety, Heal From a Breakup, in-depth courses on
+Attachment Styles, and much more!
+
+* 
+
+**4x weekly Live Q&A webinars** that will allow you to have your
+personal questions answered
+
+* 
+
+**A community of thousands**to connect with through socials, study
+groups, webinars, forums, live chats and more
+
+* 
+
+**Workbooks, quizzes** and other exercises that will allow you to track
+and implement what you've learned
+
+CLICK HERE TO REDEEM YOUR OFFER!
+
+Why wait? Join the community that has been recognized by Time Business
+News
+,
+Yahoo News
+,
+the California Herald
+
+and more at absolutely no risk or cost.
+
+A life filled with happiness, connection and fulfillment is right around
+the corner. 
+
+If you have any questions, you can also reach out to our team at
+info@personaldevelopmentschool.com
+
+See you inside!
+
+With Gratitude,
+
+Thais and The Personal Development School Team
+
+ 
+
+ 
+
+http://email.personaldevelopmentschool.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuZmFjZWJvb2suY29tJTJGUERTVGhhaXNHaWJzb24lMkYlM0Z1dG1fc291cmNlJTNEQWN0aXZlQ2FtcGFpZ24lMjZ1dG1fbWVkaXVtJTNEZW1haWwlMjZ1dG1fY29udGVudCUzREJlZm9yZSUyQllvdSUyQkdvJTI1MjElMjZ1dG1fY2FtcGFpZ24lM0Q3JTJCRGF5JTJCUHJvbW8lMkJQcmUlMkJGbG9zcyUyQiUyNTIzMQ==&sig=4uSBpaavcxT6oa7F4WvhNdFpxNtHNt8PH2So6aSgCrC6&iat=1697641284&a=%7C%7C475800167%7C%7C&account=personaldevelopmentschool%2Eactivehosted%2Ecom&email=baJu%2BoTvgmkQTiRLICPV7ugfZD1iX%2B%2B2gL2XR7SZ3Qb26USr%3A2onGHqLC2tm65lc5Zk5MYCADG0WDkLDQ&s=f80b3c5d95b48747dbcb6172ceee3b6e&i=1044A1213A2A172279 
+
+ 
+
+http://email.personaldevelopmentschool.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ0d2l0dGVyLmNvbSUyRnBkc190aGFpc2dpYnNvbiUzRnV0bV9zb3VyY2UlM0RBY3RpdmVDYW1wYWlnbiUyNnV0bV9tZWRpdW0lM0RlbWFpbCUyNnV0bV9jb250ZW50JTNEQmVmb3JlJTJCWW91JTJCR28lMjUyMSUyNnV0bV9jYW1wYWlnbiUzRDclMkJEYXklMkJQcm9tbyUyQlByZSUyQkZsb3NzJTJCJTI1MjMx&sig=FoCdsKxqpd9c7uiiJkvaHRGABS28cZDitWQ6MMMftPQ3&iat=1697641284&a=%7C%7C475800167%7C%7C&account=personaldevelopmentschool%2Eactivehosted%2Ecom&email=baJu%2BoTvgmkQTiRLICPV7ugfZD1iX%2B%2B2gL2XR7SZ3Qb26USr%3A2onGHqLC2tm65lc5Zk5MYCADG0WDkLDQ&s=f80b3c5d95b48747dbcb6172ceee3b6e&i=1044A1213A2A172280 
+
+ 
+
+http://email.personaldevelopmentschool.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cueW91dHViZS5jb20lMkZjaGFubmVsJTJGVUNIUTRsU2FLUmFwNUh5cnBpdHJUT2hRJTNGdmlld19hcyUzRHN1YnNjcmliZXIlMjZ1dG1fc291cmNlJTNEQWN0aXZlQ2FtcGFpZ24lMjZ1dG1fbWVkaXVtJTNEZW1haWwlMjZ1dG1fY29udGVudCUzREJlZm9yZSUyQllvdSUyQkdvJTI1MjElMjZ1dG1fY2FtcGFpZ24lM0Q3JTJCRGF5JTJCUHJvbW8lMkJQcmUlMkJGbG9zcyUyQiUyNTIzMQ==&sig=Ar7rBPhRFm8EH6rnifqv7J4XSCoeEDu8GVmdDoK3BeNc&iat=1697641284&a=%7C%7C475800167%7C%7C&account=personaldevelopmentschool%2Eactivehosted%2Ecom&email=baJu%2BoTvgmkQTiRLICPV7ugfZD1iX%2B%2B2gL2XR7SZ3Qb26USr%3A2onGHqLC2tm65lc5Zk5MYCADG0WDkLDQ&s=f80b3c5d95b48747dbcb6172ceee3b6e&i=1044A1213A2A172281
+
+ 
+
+http://email.personaldevelopmentschool.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuaW5zdGFncmFtLmNvbSUyRnBlcnNvbmFsZGV2ZWxvcG1lbnRfc2Nob29sJTJGJTNGdXRtX3NvdXJjZSUzREFjdGl2ZUNhbXBhaWduJTI2dXRtX21lZGl1bSUzRGVtYWlsJTI2dXRtX2NvbnRlbnQlM0RCZWZvcmUlMkJZb3UlMkJHbyUyNTIxJTI2dXRtX2NhbXBhaWduJTNENyUyQkRheSUyQlByb21vJTJCUHJlJTJCRmxvc3MlMkIlMjUyMzE=&sig=455zsUUBe2GVxpxzwBxUjPdmiCL86wggjrc73tqs3WYr&iat=1697641284&a=%7C%7C475800167%7C%7C&account=personaldevelopmentschool%2Eactivehosted%2Ecom&email=baJu%2BoTvgmkQTiRLICPV7ugfZD1iX%2B%2B2gL2XR7SZ3Qb26USr%3A2onGHqLC2tm65lc5Zk5MYCADG0WDkLDQ&s=f80b3c5d95b48747dbcb6172ceee3b6e&i=1044A1213A2A172282 
+
+ 
+
+http://email.personaldevelopmentschool.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ1bml2ZXJzaXR5LnBlcnNvbmFsZGV2ZWxvcG1lbnRzY2hvb2wuY29tJTJGJTNGdXRtX3NvdXJjZSUzREFjdGl2ZUNhbXBhaWduJTI2dXRtX21lZGl1bSUzRGVtYWlsJTI2dXRtX2NvbnRlbnQlM0RCZWZvcmUlMkJZb3UlMkJHbyUyNTIxJTI2dXRtX2NhbXBhaWduJTNENyUyQkRheSUyQlByb21vJTJCUHJlJTJCRmxvc3MlMkIlMjUyMzE=&sig=8hxoxhYGsZjKEEW46KJGs4bQJ1Lhymi1DxKrUUN5b8iU&iat=1697641284&a=%7C%7C475800167%7C%7C&account=personaldevelopmentschool%2Eactivehosted%2Ecom&email=baJu%2BoTvgmkQTiRLICPV7ugfZD1iX%2B%2B2gL2XR7SZ3Qb26USr%3A2onGHqLC2tm65lc5Zk5MYCADG0WDkLDQ&s=f80b3c5d95b48747dbcb6172ceee3b6e&i=1044A1213A2A172283 
+
+ 
+
+mailto:info@personaldevelopmentschool.com
+_________________
+
+Sent to srijani515@gmail.com
+
+Unsubscribe:
+http://email.personaldevelopmentschool.com/proc.php?nl=2&amp;c=1044&amp;m=1213&amp;s=f80b3c5d95b48747dbcb6172ceee3b6e&amp;act=unsub
+
+Personal Development School, 999 Edgeley Blvd, Unit 3, Concord, Ontario L4K 5Z4, Canada
+--_=_swift-1493671045652ff33eb3fc44.28342891_=_
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html><html>=0A<head><meta http-equiv=3D"Content-Type" content=3D"=
+text/html; charset=3Dutf-8"><meta http-equiv=3D"Content-Language" content=
+=3D"en-us"><meta name=3D"format-detection" content=3D"telephone=3Dno"><meta=
+ name=3D"format-detection" content=3D"date=3Dno"><meta name=3D"format-detec=
+tion" content=3D"address=3Dno"><meta name=3D"format-detection" content=3D"e=
+mail=3Dno"><meta name=3D"viewport" content=3D"width=3Ddevice-width, minimal=
+-ui, initial-scale=3D1.0, maximum-scale=3D1.0, user-scalable=3D0;"><meta ht=
+tp-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"><style data-ac-keep=3D"t=
+rue"> .ExternalClass { width: 100%; background: inherit; background-color: =
+inherit; } .ExternalClass, .ExternalClass p, .ExternalClass span, .External=
+Class font, .ExternalClass td, .ExternalClass div { line-height: 100%; } .E=
+xternalClass p, .ExternalClass ul, .ExternalClass ol { Margin: 0; } .undore=
+set div p, .undoreset p { margin-bottom: 20px; } div[class^=3D"aolmail_divb=
+ody"] { overflow: auto; } [owa] #ac-footer { padding: 20px 0px !important; =
+background:=0Ainherit; background-color: inherit; } a[x-apple-data-detector=
+s] { color: inherit !important; text-decoration: none !important; font-size=
+: inherit !important; font-family: inherit !important; font-weight: inherit=
+ !important; line-height: inherit !important; } @-ms-viewport { width: devi=
+ce-width; } </style><style data-ac-keep=3D"true">=0A@media only screen and =
+(max-width: 600px) { /*----------------------------------------------------=
+---------------------*\ Abandoned Cart widget \*---------------------------=
+---------------------------------------------*/ .td_abandoned-cart img {dis=
+play: block;padding-right: 0 !important;padding-bottom: 0 !important;width:=
+ 100% !important;max-width: 100% !important;height: auto !important;} body =
+{ padding: 0!important; font-size:1em!important; } * { -webkit-box-sizing: =
+border-box; -moz-box-sizing: border-box; box-sizing: border-box; } *[class]=
+.divbody {-webkit-text-size-adjust:none !important;} *[class].td_picture im=
+g {width:auto !important;} *[class].td_text { line-height: 110%; } *[class]=
+.td_button { width: auto; } /* Collapse all block elements */ :not(.body) t=
+able { display: block!important; float:none!important; border-collapse:coll=
+apse !important; width:100% !important; min-width:100% !important; clear:bo=
+th!important; } :not(.body) thead, :not(.body) tbody,=0A:not(.body) tr { di=
+splay:block!important; float:none!important; width:100% !important; } :not(=
+.body) th, :not(.body) td, :not(.body) p { display:block!important; float:n=
+one!important; width:100% !important; clear:both!important; } /* Remove bro=
+wser default styling for elements */ ul, ol { margin-left: 20px; margin-bot=
+tom: 10px; margin-top: 10px; -webkit-margin-before: 0; -webkit-margin-after=
+: 0; -webkit-padding-start: 0; } /* Set default height for spacer once coll=
+apse */ *[class].spacer { height: auto!important; } a[href^=3Ddate]{ color:=
+inherit !important; text-decoration:none !important;} a[href^=3Dtelephone]{=
+ color:inherit !important; text-decoration:none !important;} a[href^=3Daddr=
+ess]{ color:inherit !important; text-decoration:none !important;} a[href^=
+=3Demail]{ color:inherit !important; text-decoration:none !important;} /* D=
+efault table cell height */ td[height=3D"14"]{height:14px!important;font-si=
+ze:14px!important;line-height:14px!important;}=0Atd[height=3D"0"]{height:0p=
+x!important;font-size:0px!important;line-height:0px!important;} /*---------=
+----------------------------------------------------------------*\ Product =
+Widget \*------------------------------------------------------------------=
+-------*/ .td_product div, .td_product .products-display { float: none !imp=
+ortant; display: block !important; width: 100% !important; Margin-bottom: 2=
+0px !important; } .td_product img { width: 100% !important; max-width: 100%=
+ !important; } /* Default social icons */ *[class].ac-social-icon-16 {width=
+:16px !important; height:16px !important;} *[class].ac-social-icon-24 {widt=
+h:24px !important; height:24px !important;} *[class].ac-social-icon-28 {wid=
+th:28px !important; height:28px !important;} *[class].__ac_social_icons { m=
+argin-right: 0px !important; } }=0A</style><style data-ac-keep=3D"true"> @m=
+edia only screen and (max-width: 320px) { #layout-row8688 { max-height: 0px=
+!important; font-size: 0px!important; display: none!important; visibility: =
+hidden!important; } #layout-row8689 img { width: 100% !important; height: a=
+uto !important; max-width: 320px !important; } #layout-row8693 { max-height=
+: 0px!important; font-size: 0px!important; display: none!important; visibil=
+ity: hidden!important; } #layout-row8695 { max-height: 0px!important; font-=
+size: 0px!important; display: none!important; visibility: hidden!important;=
+ } div.divbody { padding: 20px !important; } table, tbody, td, .divbody { d=
+isplay: table !important; width: 100% !important; max-width: 100% !importan=
+t; } .td_rss .rss-item img.iphone_large_image { width: auto !important; } u=
+ + .body { display: table !important; width: 100vw !important; min-width: 1=
+00vw !important; } u + .body table { display: table !important; width: 100%=
+ !important; min-width: 100% !important; }=0Au + .body td { display: block =
+!important; width: 100% !important; min-width: 100% !important; } u + .body=
+ img { display: inline-block !important; margin: auto !important; width: au=
+to !important; vertical-align: bottom !important; } u + .body center { disp=
+lay: block !important; margin: auto !important; width: 100% !important; min=
+-width: 100% !important; text-align: center !important; } u + .body table._=
+ac_social_table, u + .body table._ac_social_table td, u + .body table._ac_s=
+ocial_table div, u + .body table._ac_social_table a { display: inline-block=
+ !important; margin: auto !important; width: auto !important; min-width: au=
+to !important; text-align: center !important; } u + .body table._ac_social_=
+table img { display: inline-block !important; margin: auto !important; widt=
+h: 32px !important; min-width: 32px !important; max-width: 32px !important;=
+ }=0A}=0A@media only screen and (max-width: 375px) { #layout-row8688 { max-=
+height: 0px!important; font-size: 0px!important; display: none!important; v=
+isibility: hidden!important; } #layout-row8689 img { width: 100% !important=
+; height: auto !important; max-width: 375px !important; } #layout-row8693 {=
+ max-height: 0px!important; font-size: 0px!important; display: none!importa=
+nt; visibility: hidden!important; } #layout-row8695 { max-height: 0px!impor=
+tant; font-size: 0px!important; display: none!important; visibility: hidden=
+!important; } div.divbody { padding: 20px !important; } table, tbody, td, .=
+divbody { display: table !important; width: 100% !important; max-width: 100=
+% !important; } .td_rss .rss-item img.iphone_large_image { width: auto !imp=
+ortant; } u + .body { display: table !important; width: 100vw !important; m=
+in-width: 100vw !important; } u + .body table { display: table !important; =
+width: 100% !important; min-width: 100% !important; } u + .body td { displa=
+y: block=0A!important; width: 100% !important; min-width: 100% !important; =
+} u + .body img { display: inline-block !important; margin: auto !important=
+; width: auto !important; vertical-align: bottom !important; } u + .body ce=
+nter { display: block !important; margin: auto !important; width: 100% !imp=
+ortant; min-width: 100% !important; text-align: center !important; } u + .b=
+ody table._ac_social_table, u + .body table._ac_social_table td, u + .body =
+table._ac_social_table div, u + .body table._ac_social_table a { display: i=
+nline-block !important; margin: auto !important; width: auto !important; mi=
+n-width: auto !important; text-align: center !important; } u + .body table.=
+_ac_social_table img { display: inline-block !important; margin: auto !impo=
+rtant; width: 32px !important; min-width: 32px !important; max-width: 32px =
+!important; }=0A}=0A@media only screen and (max-width: 414px) { #layout-row=
+8688 { max-height: 0px!important; font-size: 0px!important; display: none!i=
+mportant; visibility: hidden!important; } #layout-row8689 img { width: 100%=
+ !important; height: auto !important; max-width: 414px !important; } #layou=
+t-row8693 { max-height: 0px!important; font-size: 0px!important; display: n=
+one!important; visibility: hidden!important; } #layout-row8695 { max-height=
+: 0px!important; font-size: 0px!important; display: none!important; visibil=
+ity: hidden!important; } div.divbody { padding: 20px !important; } table, t=
+body, td, .divbody { display: table !important; width: 100% !important; max=
+-width: 100% !important; } .td_rss .rss-item img.iphone_large_image { width=
+: auto !important; } u + .body { display: table !important; width: 100vw !i=
+mportant; min-width: 100vw !important; } u + .body table { display: table !=
+important; width: 100% !important; min-width: 100% !important; } u + .body =
+td { display: block=0A!important; width: 100% !important; min-width: 100% !=
+important; } u + .body img { display: inline-block !important; margin: auto=
+ !important; width: auto !important; vertical-align: bottom !important; } u=
+ + .body center { display: block !important; margin: auto !important; width=
+: 100% !important; min-width: 100% !important; text-align: center !importan=
+t; } u + .body table._ac_social_table, u + .body table._ac_social_table td,=
+ u + .body table._ac_social_table div, u + .body table._ac_social_table a {=
+ display: inline-block !important; margin: auto !important; width: auto !im=
+portant; min-width: auto !important; text-align: center !important; } u + .=
+body table._ac_social_table img { display: inline-block !important; margin:=
+ auto !important; width: 32px !important; min-width: 32px !important; max-w=
+idth: 32px !important; }=0A}=0A@media only screen and (max-width: 667px) { =
+#layout-row8688 { max-height: 0px!important; font-size: 0px!important; disp=
+lay: none!important; visibility: hidden!important; } #layout-row8689 img { =
+width: 100% !important; height: auto !important; max-width: 667px !importan=
+t; } #layout-row8693 { max-height: 0px!important; font-size: 0px!important;=
+ display: none!important; visibility: hidden!important; } #layout-row8695 {=
+ max-height: 0px!important; font-size: 0px!important; display: none!importa=
+nt; visibility: hidden!important; } div.divbody { padding: 20px !important;=
+ } table, tbody, td, .divbody { display: table !important; width: 100% !imp=
+ortant; max-width: 100% !important; } .td_rss .rss-item img.iphone_large_im=
+age { width: auto !important; } u + .body { display: table !important; widt=
+h: 100vw !important; min-width: 100vw !important; } u + .body table { displ=
+ay: table !important; width: 100% !important; min-width: 100% !important; }=
+ u + .body td { display: block=0A!important; width: 100% !important; min-wi=
+dth: 100% !important; } u + .body img { display: inline-block !important; m=
+argin: auto !important; width: auto !important; vertical-align: bottom !imp=
+ortant; } u + .body center { display: block !important; margin: auto !impor=
+tant; width: 100% !important; min-width: 100% !important; text-align: cente=
+r !important; } u + .body table._ac_social_table, u + .body table._ac_socia=
+l_table td, u + .body table._ac_social_table div, u + .body table._ac_socia=
+l_table a { display: inline-block !important; margin: auto !important; widt=
+h: auto !important; min-width: auto !important; text-align: center !importa=
+nt; } u + .body table._ac_social_table img { display: inline-block !importa=
+nt; margin: auto !important; width: 32px !important; min-width: 32px !impor=
+tant; max-width: 32px !important; }=0A} </style><!--[if !mso]><!-- webfonts=
+ --><!--<![endif]--><!--[if lt mso 12]> <![endif]--><!--[if gte mso 9]>=0A<=
+xml> <o:OfficeDocumentSettings> <o:AllowPNG/> <o:PixelsPerInch>96</o:Pixels=
+PerInch> </o:OfficeDocumentSettings>=0A</xml>=0A<![endif]--></head><body id=
+=3D"ac-designer" class=3D"body" style=3D"font-family: Arial; line-height: 1=
+.1; margin: 0px; background-color: #ffffff; width: 100%; text-align: center=
+;"><div class=3D"divbody" style=3D"margin: 0px; outline: none; padding: 0px=
+; color: #000000; font-family: arial; line-height: 1.1; width: 100%; backgr=
+ound-color: #ffffff; background: #ffffff; text-align: center;"><table class=
+=3D"template-table" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" align=3D"left" style=3D"-ms-text-size-adjust: auto; -webkit-text-=
+size-adjust: 100%; border-collapse: collapse; font-size: 14px; min-width: a=
+uto; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fffff=
+f; background: #ffffff;"><tr style=3D"mso-line-height-rule: exactly;"><td a=
+lign=3D"center" valign=3D"top" width=3D"100%" style=3D"mso-line-height-rule=
+: exactly;"><table class=3D"template-table" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"650" bgcolor=3D"#ffffff" style=3D"-ms-text-size-=
+adjust: auto;=0A-webkit-text-size-adjust: 100%; border-collapse: collapse; =
+font-size: 14px; min-width: auto; mso-table-lspace: 0pt; mso-table-rspace: =
+0pt; max-width: 650px;"><tr style=3D"mso-line-height-rule: exactly;"><td id=
+=3D"layout_table_da893a6ba8eb422ac38a6ae8a82bf36919b6c7a7" valign=3D"top" a=
+lign=3D"center" width=3D"650" style=3D"mso-line-height-rule: exactly;"><tab=
+le cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"layout layout-=
+table root-table" width=3D"650" style=3D"-ms-text-size-adjust: auto; -webki=
+t-text-size-adjust: 100%; border-collapse: collapse; font-size: 14px; min-w=
+idth: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr style=3D"mso=
+-line-height-rule: exactly;"><td id=3D"layout-row-margin8688" valign=3D"top=
+" style=3D"mso-line-height-rule: exactly;"><table width=3D"100%" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: auto;=
+ -webkit-text-size-adjust: 100%; border-collapse: collapse; font-size: 14px=
+; min-width: 100%; mso-table-lspace: 0pt; mso-table-rspace:=0A0pt;"><tr id=
+=3D"layout-row8688" class=3D"layout layout-row widget _widget_spacer " styl=
+e=3D"mso-line-height-rule: exactly;"><td id=3D"layout-row-padding8688" vali=
+gn=3D"top" style=3D"mso-line-height-rule: exactly;"><table width=3D"100%" b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adju=
+st: auto; -webkit-text-size-adjust: 100%; border-collapse: collapse; font-s=
+ize: 14px; min-width: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">=
+<tr style=3D"mso-line-height-rule: exactly;"><td valign=3D"top" height=3D"3=
+0" style=3D"mso-line-height-rule: exactly;"><div class=3D"spacer" style=3D"=
+margin: 0; outline: none; padding: 0; height: 30px;"><table cellpadding=3D"=
+0" cellspacing=3D"0" border=3D"0" width=3D"100%" style=3D"-ms-text-size-adj=
+ust: auto; -webkit-text-size-adjust: 100%; border-collapse: collapse; font-=
+size: 14px; min-width: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"=
+><tr style=3D"mso-line-height-rule: exactly;"><td class=3D"spacer-body" val=
+ign=3D"top" height=3D"30" width=3D"650"=0Astyle=3D"mso-line-height-rule: ex=
+actly;">=C2=A0</td>=0A</tr>=0A</table>=0A</div>=0A</td>=0A</tr>=0A</table>=
+=0A</td>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A<tr style=3D"mso-line-height-=
+rule: exactly;"><td id=3D"layout-row-margin8689" valign=3D"top" style=3D"ms=
+o-line-height-rule: exactly;"><table width=3D"100%" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: auto; -webkit-text=
+-size-adjust: 100%; border-collapse: collapse; font-size: 14px; min-width: =
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr id=3D"layout-row86=
+89" class=3D"layout layout-row widget _widget_picture " align=3D"center" st=
+yle=3D"mso-line-height-rule: exactly;"><td id=3D"layout-row-padding8689" va=
+lign=3D"top" style=3D"mso-line-height-rule: exactly;"><table width=3D"100%"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-ad=
+just: auto; -webkit-text-size-adjust: 100%; border-collapse: collapse; font=
+-size: 14px; min-width: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;=
+"><tr style=3D"mso-line-height-rule: exactly;"><td class=3D"image-td" align=
+=3D"center" valign=3D"top" width=3D"650" style=3D"mso-line-height-rule: exa=
+ctly;"><img=0Asrc=3D"https://personaldevelopmentschool.imgus11.com/public//=
+32314eec9e4e54a166ad7ac8265facae.png?r=3D1237715516" width=3D"358" style=3D=
+"display: block; border: none; outline: none; width: 358px; opacity: 1; max=
+-width: 100%;"></td>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A</table>=0A</td>=
+=0A</tr>=0A<tr style=3D"mso-line-height-rule: exactly;"><td id=3D"layout-ro=
+w-margin8690" valign=3D"top" style=3D"mso-line-height-rule: exactly;"><tabl=
+e width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"=
+-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-collapse=
+: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; mso-ta=
+ble-rspace: 0pt;"><tr id=3D"layout-row8690" class=3D"layout layout-row widg=
+et _widget_spacer " style=3D"mso-line-height-rule: exactly;"><td id=3D"layo=
+ut-row-padding8690" valign=3D"top" style=3D"mso-line-height-rule: exactly;"=
+><table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" sty=
+le=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-co=
+llapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; =
+mso-table-rspace: 0pt;"><tr style=3D"mso-line-height-rule: exactly;"><td va=
+lign=3D"top" height=3D"10" style=3D"mso-line-height-rule: exactly;"><div cl=
+ass=3D"spacer" style=3D"margin: 0; outline: none; padding: 0;=0Aheight: 10p=
+x;"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" =
+style=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border=
+-collapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0p=
+t; mso-table-rspace: 0pt;"><tr style=3D"mso-line-height-rule: exactly;"><td=
+ class=3D"spacer-body" valign=3D"top" height=3D"10" width=3D"650" style=3D"=
+mso-line-height-rule: exactly;">=C2=A0</td>=0A</tr>=0A</table>=0A</div>=0A<=
+/td>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A<tr id=
+=3D"layout-row8694" class=3D"layout layout-row clear-this " style=3D"mso-li=
+ne-height-rule: exactly;"><td id=3D"layout-row-padding8694" valign=3D"top" =
+style=3D"mso-line-height-rule: exactly;"><table width=3D"100%" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: auto; -=
+webkit-text-size-adjust: 100%; border-collapse: collapse; font-size: 14px; =
+min-width: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr style=
+=3D"mso-line-height-rule: exactly;"><td id=3D"layout_table_3612fecff8f780c6=
+d2e89ae103f485fe526f75d5" valign=3D"top" width=3D"25" style=3D"mso-line-hei=
+ght-rule: exactly;"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+ class=3D"layout layout-table " width=3D"25" style=3D"-ms-text-size-adjust:=
+ auto; -webkit-text-size-adjust: 100%; border-collapse: collapse; font-size=
+: 14px; min-width: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr=
+ style=3D"mso-line-height-rule: exactly;"><td id=3D"layout-row-margin8693" =
+valign=3D"top" style=3D"mso-line-height-rule:=0Aexactly;"><table width=3D"1=
+00%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-siz=
+e-adjust: auto; -webkit-text-size-adjust: 100%; border-collapse: collapse; =
+font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; mso-table-rspace: =
+0pt;"><tr id=3D"layout-row8693" class=3D"layout layout-row widget _widget_s=
+pacer " style=3D"mso-line-height-rule: exactly;"><td id=3D"layout-row-paddi=
+ng8693" valign=3D"top" style=3D"mso-line-height-rule: exactly;"><table widt=
+h=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-te=
+xt-size-adjust: auto; -webkit-text-size-adjust: 100%; border-collapse: coll=
+apse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; mso-table-rs=
+pace: 0pt;"><tr style=3D"mso-line-height-rule: exactly;"><td valign=3D"top"=
+ height=3D"450" style=3D"mso-line-height-rule: exactly;"><div class=3D"spac=
+er" style=3D"margin: 0; outline: none; padding: 0; height: 450px;"><table c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" style=3D"-ms=
+-text-size-adjust: auto;=0A-webkit-text-size-adjust: 100%; border-collapse:=
+ collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt;"><tr style=3D"mso-line-height-rule: exactly;"><td class=3D"=
+spacer-body" valign=3D"top" height=3D"450" width=3D"25" style=3D"mso-line-h=
+eight-rule: exactly;">=C2=A0</td>=0A</tr>=0A</table>=0A</div>=0A</td>=0A</t=
+r>=0A</table>=0A</td>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A</table>=0A</td>=
+=0A<td id=3D"layout_table_60f516f75f572a5f7ad0c25d7889533b312ff4ea" valign=
+=3D"top" width=3D"600" style=3D"mso-line-height-rule: exactly;"><table cell=
+padding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"layout layout-table "=
+ width=3D"600" style=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjus=
+t: 100%; border-collapse: collapse; font-size: 14px; min-width: 100%; mso-t=
+able-lspace: 0pt; mso-table-rspace: 0pt;"><tr style=3D"mso-line-height-rule=
+: exactly;"><td id=3D"layout-row-margin8687" valign=3D"top" style=3D"mso-li=
+ne-height-rule: exactly; padding: 0;"><table width=3D"100%" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: auto; -web=
+kit-text-size-adjust: 100%; border-collapse: initial !important; font-size:=
+ 14px; min-width: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr =
+id=3D"layout-row8687" class=3D"layout layout-row widget _widget_text style8=
+687" style=3D"mso-line-height-rule: exactly; margin: 0; padding: 0;"><td id=
+=3D"layout-row-padding8687" valign=3D"top"=0Astyle=3D"mso-line-height-rule:=
+ exactly; padding: 0;"><table width=3D"100%" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" style=3D"-ms-text-size-adjust: auto; -webkit-text-size-a=
+djust: 100%; border-collapse: collapse; font-size: 14px; min-width: 100%; m=
+so-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr style=3D"mso-line-height-=
+rule: exactly;"><td id=3D"text_div8010" class=3D"td_text td_block" valign=
+=3D"top" align=3D"left" width=3D"600" style=3D"line-height: 140%; mso-line-=
+height-rule: exactly; margin: 0; outline: none; padding: 0; color: inherit;=
+ font-size: 12px; font-weight: inherit; line-height: 1.4; text-decoration: =
+inherit; font-family: arial;"> <div style=3D"line-height: 140%; margin: 0; =
+outline: none; padding: 0; color: inherit; font-size: inherit; font-weight:=
+ inherit; line-height: 1.4; text-decoration: inherit; mso-line-height-rule:=
+ exactly;" class=3D"" data-line-height=3D"1.4"><div class=3D"" style=3D"mar=
+gin: 0; outline: none; padding: 0; color: inherit; font-size: inherit; font=
+-weight:=0Ainherit; line-height: inherit; text-decoration: inherit;"></div>=
+=0A<span class=3D"" style=3D"color: inherit; font-size: 16px; font-weight: =
+inherit; line-height: inherit; text-decoration: inherit;"> <div dir=3D"auto=
+" style=3D"margin: 0; outline: none; padding: 0; color: #000000; font-size:=
+ inherit; font-weight: 400; line-height: inherit; text-decoration: inherit;=
+ font-family: arial; font-style: normal; text-align: start;" class=3D""></d=
+iv>=0A <b style=3D"margin: 0; outline: none; padding: 0;" class=3D""></b> <=
+b style=3D"margin: 0; outline: none; padding: 0;" class=3D""></b> <b style=
+=3D"margin: 0; outline: none; padding: 0; font-weight: normal;" class=3D"">=
+</b> <b style=3D"margin: 0; outline: none; padding: 0; font-weight: normal;=
+" class=3D""></b> <b style=3D"margin: 0; outline: none; padding: 0; font-we=
+ight: normal;" class=3D""></b> <b style=3D"margin: 0; outline: none; paddin=
+g: 0; font-weight: normal;" class=3D""></b> <b style=3D"margin: 0; outline:=
+ none; padding: 0; font-weight: normal;" class=3D""> <b style=3D"margin: 0;=
+ outline: none; padding: 0; font-weight: normal;" class=3D""> <b style=3D"m=
+argin: 0; outline: none; padding: 0; font-weight: normal;" class=3D""> <div=
+ style=3D"margin: 0; outline: none; padding: 0; color: #000000; font-size: =
+16px; font-weight: 400; line-height: inherit; text-decoration: inherit; fon=
+t-family: arial; font-style: normal; text-align: start;" class=3D"">Hello S=
+rijani</div>=0A<div style=3D"margin: 0; outline: none; padding: 0; color: #=
+000000; font-size: 16px; font-weight: 400; line-height: inherit; text-decor=
+ation: inherit; font-family: arial; font-style: normal; text-align: start;"=
+ class=3D""><br class=3D""></div>=0A<div style=3D"margin: 0; outline: none;=
+ padding: 0; color: #000000; font-size: 16px; font-weight: 400; line-height=
+: inherit; text-decoration: inherit; font-family: arial; font-style: normal=
+; text-align: start;" class=3D""></div>=0A <div style=3D"margin: 0; outline=
+: none; padding: 0; color: #000000; font-size: 16px; font-weight: 400; line=
+-height: inherit; text-decoration: inherit; font-style: normal; text-align:=
+ -webkit-left; font-family: arial;" class=3D"">Are you ready to feel <b sty=
+le=3D"margin: 0; outline: none; padding: 0;" class=3D"">connected, loved, v=
+alued and understood?</b> For a limited time, you can experience all of thi=
+s and more <b style=3D"margin: 0; outline: none; padding: 0;" class=3D"">fo=
+r free.</b></div>=0A<div style=3D"margin: 0; outline: none; padding: 0; col=
+or: #000000; font-size: 16px; font-weight: 400; line-height: inherit; text-=
+decoration: inherit; font-style: normal; text-align: -webkit-left; font-fam=
+ily: arial;" class=3D""><b style=3D"margin: 0; outline: none; padding: 0;" =
+class=3D""><br class=3D""></b></div>=0A<div style=3D"margin: 0; outline: no=
+ne; padding: 0; color: #000000; font-size: 16px; font-weight: 400; line-hei=
+ght: inherit; text-decoration: inherit; font-style: normal; text-align: -we=
+bkit-left; font-family: arial;" class=3D""><b style=3D"margin: 0; outline: =
+none; padding: 0;" class=3D"">Before you leave our mailing list, you can ac=
+cess everything within The Personal Development School for free for 7 days!=
+</b></div>=0A<span style=3D"color: #000000; font-size: 16px; font-weight: 4=
+00; line-height: inherit; text-decoration: inherit; font-family: arial;" cl=
+ass=3D""><br class=3D""><span style=3D"color: #000000; font-size: inherit; =
+font-weight: inherit; line-height: inherit; text-decoration: inherit; font-=
+family: arial; margin: 0;" class=3D""><a href=3D"http://email.personaldevel=
+opmentschool.com/Prod/link-tracker?redirectUrl=3DaHR0cHMlM0ElMkYlMkZ1bml2ZX=
+JzaXR5LnBlcnNvbmFsZGV2ZWxvcG1lbnRzY2hvb2wuY29tJTJGcGFnZXMlMkY3LWRheS1mcmVlL=
+XRyaWFsJTNGdXRtX3NvdXJjZSUzREFjdGl2ZUNhbXBhaWduJTI2dXRtX21lZGl1bSUzRGVtYWls=
+JTI2dXRtX2NvbnRlbnQlM0RCZWZvcmUlMkJZb3UlMkJHbyUyNTIxJTI2dXRtX2NhbXBhaWduJTN=
+ENyUyQkRheSUyQlByb21vJTJCUHJlJTJCRmxvc3MlMkIlMjUyMzE=3D&sig=3DSnjp87d8SDYvv=
+gveVk2WG7vjQUw3wVwLhhTdi9y5VDV&iat=3D1697641284&a=3D%7C%7C475800167%7C%7C&a=
+ccount=3Dpersonaldevelopmentschool%2Eactivehosted%2Ecom&email=3DbaJu%2BoTvg=
+mkQTiRLICPV7ugfZD1iX%2B%2B2gL2XR7SZ3Qb26USr%3A2onGHqLC2tm65lc5Zk5MYCADG0WDk=
+LDQ&s=3Df80b3c5d95b48747dbcb6172ceee3b6e&i=3D1044A1213A2A172275" target=3D"=
+_blank"=0Adata-saferedirecturl=3D"https://www.google.com/url?q=3Dhttps://pe=
+rsonaldevelopmentschool.lt.acemlnb.com/Prod/link-tracker?notrack%3D1%26notr=
+ack%3D1%26redirectUrl%3DaHR0cHMlM0ElMkYlMkZ1bml2ZXJzaXR5LnBlcnNvbmFsZGV2ZWx=
+vcG1lbnRzY2hvb2wuY29tJTJGcGFnZXMlMkY3LWRheS1mcmVlLXRyaWFsLWFjJTNGdXRtX3NvdX=
+JjZSUzREFjdGl2ZUNhbXBhaWduJTI2dXRtX21lZGl1bSUzRGVtYWlsJTI2dXRtX2NvbnRlbnQlM=
+0RGSVJTVE5BTUUlMkIlMkIlMjUzQSUyQk91ciUyQkZyZWUlMkJHaWZ0JTJCVG8lMkJZb3UlMjUy=
+MSUyQiUyNUYwJTI1OUYlMjU4QyUyNUI4JTI2dXRtX2NhbXBhaWduJTNENyUyQkRheSUyQkZyZWU=
+lMkJHaWZ0JTJCJTI1MjMx%26a%3D475800167%26account%3Dpersonaldevelopmentschool=
+%252Eactivehosted%252Ecom%26email%3DLRRV6glqIfcVPcYsJBrMHi%252FZD%252BmsUFp=
+Jrc5fHf6IoVE%253D%26s%3Dbad97c655476f96a390a72c05a742011%26i%3D751A829A3A16=
+9216&source=3Dgmail&ust=3D1623795483711000&usg=3DAFQjCNEtk2qx73MIFi286rMw2A=
+TYda2QRQ" style=3D"margin: 0; outline: none; padding: 0; color: #390ceb; te=
+xt-decoration: underline; font-style: normal;" data-ac-default-color=3D"1" =
+class=3D""><span style=3D"color:=0Ainherit; font-size: 16px; font-weight: i=
+nherit; line-height: inherit; text-decoration: inherit;" class=3D""><u styl=
+e=3D"margin: 0; outline: none; padding: 0;" class=3D""><b style=3D"margin: =
+0; outline: none; padding: 0;" class=3D"">B</b></u><b style=3D"margin: 0; o=
+utline: none; padding: 0;" class=3D""><u style=3D"margin: 0; outline: none;=
+ padding: 0;" class=3D"">y clicking here</u></b></span></a>,<b style=3D"mar=
+gin: 0; outline: none; padding: 0; font-style: normal;" class=3D""> </b>you=
+ will redeem your offer for a<span style=3D"color: inherit; font-size: inhe=
+rit; font-weight: inherit; line-height: inherit; text-decoration: inherit; =
+font-style: italic;" class=3D""> 7-Day Free Trial of our All-Access Pass</s=
+pan>. <br><br>There are <b style=3D"margin: 0; outline: none; padding: 0; f=
+ont-style: normal;" class=3D"">no commitments</b>, and you <b style=3D"marg=
+in: 0; outline: none; padding: 0; font-style: normal;" class=3D"">can cance=
+l at any time</b> before your trial is over at absolutely no=0Acost.</span>=
+<br class=3D""><br class=3D""><b style=3D"margin: 0; outline: none; padding=
+: 0; font-style: normal; color: #000000; font-family: arial;" class=3D"">Wh=
+at Is Inside of The Personal Development School?</b><br class=3D""><ul styl=
+e=3D"margin: 0 0px 0 40px; padding: 0; font-style: normal; color: #000000; =
+font-family: arial;" class=3D""><li style=3D"display: list-item; line-heigh=
+t: inherit; list-style-type: disc; margin: 0 0px 0 15px;" class=3D""><b sty=
+le=3D"margin: 0; outline: none; padding: 0;" class=3D"">45+ courses</b> tha=
+t include: How to Repair Any Relationship, Discover and Fulfill Your Person=
+al Needs, Post-Traumatic Growth, Relationship Mastery, Overcome Anxiety, He=
+al From a Breakup, in-depth courses on Attachment Styles, and much more!</l=
+i></ul><div style=3D"margin: 0; outline: none; padding: 0; color: inherit; =
+font-size: inherit; font-weight: inherit; line-height: inherit; text-decora=
+tion: inherit;"><br></div>=0A<ul style=3D"margin: 0 0px 0 40px; padding: 0;=
+ font-style: normal; color: #000000; font-family: arial;" class=3D""><li st=
+yle=3D"display: list-item; line-height: inherit; list-style-type: disc; mar=
+gin: 0 0px 0 15px;" class=3D""><b style=3D"margin: 0; outline: none; paddin=
+g: 0;" class=3D"">4x weekly Live Q&A webinars</b> that will allow you to ha=
+ve your personal questions answered</li></ul><div style=3D"margin: 0; outli=
+ne: none; padding: 0; color: inherit; font-size: inherit; font-weight: inhe=
+rit; line-height: inherit; text-decoration: inherit;"><br></div>=0A<ul styl=
+e=3D"margin: 0 0px 0 40px; padding: 0; font-style: normal; color: #000000; =
+font-family: arial;" class=3D""><li style=3D"display: list-item; line-heigh=
+t: inherit; list-style-type: disc; margin: 0 0px 0 15px;" class=3D""><b sty=
+le=3D"margin: 0; outline: none; padding: 0;" class=3D"">A community of thou=
+sands </b>to connect with through socials, study groups, webinars, forums, =
+live chats and more</li></ul><div style=3D"margin: 0; outline: none; paddin=
+g: 0; color: inherit; font-size: inherit; font-weight: inherit; line-height=
+: inherit; text-decoration: inherit;"><br></div>=0A<ul style=3D"margin: 0 0=
+px 0 40px; padding: 0; font-style: normal; color: #000000; font-family: ari=
+al;" class=3D""><li style=3D"display: list-item; line-height: inherit; list=
+-style-type: disc; margin: 0 0px 0 15px;" class=3D""><b style=3D"margin: 0;=
+ outline: none; padding: 0;" class=3D"">Workbooks, quizzes</b> and other ex=
+ercises that will allow you to track and implement what you've learned</li>=
+</ul></span><div style=3D"margin: 0; outline: none; padding: 0; color: #000=
+000; font-size: 16px; font-weight: 400; line-height: inherit; text-decorati=
+on: inherit; font-family: arial; font-style: normal; text-align: start;" cl=
+ass=3D""></div>=0A</b></b></b><div dir=3D"auto" style=3D"margin: 0; outline=
+: none; padding: 0; color: #000000; font-size: inherit; font-weight: 400; l=
+ine-height: inherit; text-decoration: inherit; font-family: arial; font-sty=
+le: normal; text-align: start;" class=3D""></div>=0A </span><div class=3D""=
+ style=3D"margin: 0; outline: none; padding: 0; color: inherit; font-size: =
+inherit; font-weight: inherit; line-height: inherit; text-decoration: inher=
+it;"></div>=0A<div class=3D"" style=3D"margin: 0; outline: none; padding: 0=
+; color: inherit; font-size: inherit; font-weight: inherit; line-height: in=
+herit; text-decoration: inherit;"></div>=0A</div>=0A<!--[if (gte mso 12)&(l=
+te mso 15) ]>=0A<style data-ac-keep=3D"true" data-ac-inline=3D"false"> #tex=
+t_div8010, #text_div8010 div { line-height: 140% !important; };=0A</style>=
+=0A<![endif]--></td>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A</table>=0A</td>=
+=0A</tr>=0A<tr style=3D"mso-line-height-rule: exactly;"><td id=3D"layout-ro=
+w-margin8696" valign=3D"top" style=3D"mso-line-height-rule: exactly; paddin=
+g: 5px;"><table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%;=
+ border-collapse: initial !important; font-size: 14px; min-width: 100%; mso=
+-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr id=3D"layout-row8696" class=
+=3D"layout layout-row widget _widget_button style8696" style=3D"mso-line-he=
+ight-rule: exactly;"><td id=3D"layout-row-padding8696" valign=3D"top" style=
+=3D"mso-line-height-rule: exactly; padding: 5px;"><table width=3D"100%" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust=
+: auto; -webkit-text-size-adjust: 100%; border-collapse: collapse; font-siz=
+e: 14px; min-width: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><t=
+r style=3D"mso-line-height-rule: exactly;"><td class=3D"td_button td_block =
+customizable" valign=3D"top" align=3D"left" width=3D"580"=0Astyle=3D"mso-li=
+ne-height-rule: exactly;"> <div class=3D"button-wrapper" style=3D"margin: 0=
+; outline: none; padding: 0; text-align: center;">=0A<!--[if mso]> <v:round=
+rect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-micro=
+soft-com:office:word" href=3D"http://email.personaldevelopmentschool.com/Pr=
+od/link-tracker?redirectUrl=3DaHR0cHMlM0ElMkYlMkZ1bml2ZXJzaXR5LnBlcnNvbmFsZ=
+GV2ZWxvcG1lbnRzY2hvb2wuY29tJTJGcGFnZXMlMkY3LWRheS1mcmVlLXRyaWFsJTNGdXRtX3Nv=
+dXJjZSUzREFjdGl2ZUNhbXBhaWduJTI2dXRtX21lZGl1bSUzRGVtYWlsJTI2dXRtX2NvbnRlbnQ=
+lM0RCZWZvcmUlMkJZb3UlMkJHbyUyNTIxJTI2dXRtX2NhbXBhaWduJTNENyUyQkRheSUyQlByb2=
+1vJTJCUHJlJTJCRmxvc3MlMkIlMjUyMzE=3D&sig=3DSnjp87d8SDYvvgveVk2WG7vjQUw3wVwL=
+hhTdi9y5VDV&iat=3D1697641284&a=3D%7C%7C475800167%7C%7C&account=3Dpersonalde=
+velopmentschool%2Eactivehosted%2Ecom&email=3DbaJu%2BoTvgmkQTiRLICPV7ugfZD1i=
+X%2B%2B2gL2XR7SZ3Qb26USr%3A2onGHqLC2tm65lc5Zk5MYCADG0WDkLDQ&s=3Df80b3c5d95b=
+48747dbcb6172ceee3b6e&i=3D1044A1213A2A172275" style=3D"v-text-anchor:middle=
+; width:318px; height:59px; " arcsize=3D"6%" strokecolor=3D"#B5B5B5" stroke=
+weight=3D"1pt" fillcolor=3D"#a67cb7" o:button=3D"true" o:allowincell=3D"tru=
+e" o:allowoverlap=3D"false" > <v:textbox inset=3D"2px,2px,2px,2px"> <center=
+ style=3D"color:#ffffff;font-family:Arial; font-size:14px; line-height: 1.1=
+;"><span style=3D"font-weight: 700;">CLICK HERE TO REDEEM YOUR OFFER!</span=
+><br></center> </v:textbox> </v:roundrect>=0A<![endif]--> <a href=3D"http:/=
+/email.personaldevelopmentschool.com/Prod/link-tracker?redirectUrl=3DaHR0cH=
+MlM0ElMkYlMkZ1bml2ZXJzaXR5LnBlcnNvbmFsZGV2ZWxvcG1lbnRzY2hvb2wuY29tJTJGcGFnZ=
+XMlMkY3LWRheS1mcmVlLXRyaWFsJTNGdXRtX3NvdXJjZSUzREFjdGl2ZUNhbXBhaWduJTI2dXRt=
+X21lZGl1bSUzRGVtYWlsJTI2dXRtX2NvbnRlbnQlM0RCZWZvcmUlMkJZb3UlMkJHbyUyNTIxJTI=
+2dXRtX2NhbXBhaWduJTNENyUyQkRheSUyQlByb21vJTJCUHJlJTJCRmxvc3MlMkIlMjUyMzE=3D=
+&sig=3DSnjp87d8SDYvvgveVk2WG7vjQUw3wVwLhhTdi9y5VDV&iat=3D1697641284&a=3D%7C=
+%7C475800167%7C%7C&account=3Dpersonaldevelopmentschool%2Eactivehosted%2Ecom=
+&email=3DbaJu%2BoTvgmkQTiRLICPV7ugfZD1iX%2B%2B2gL2XR7SZ3Qb26USr%3A2onGHqLC2=
+tm65lc5Zk5MYCADG0WDkLDQ&s=3Df80b3c5d95b48747dbcb6172ceee3b6e&i=3D1044A1213A=
+2A172275" style=3D"margin: 0; outline: none; padding: 12px; color: #ffffff;=
+ background: #a67cb7; background-color: #a67cb7; border: 1px solid #B5B5B5;=
+ border-radius: 3px; font-family: Arial; font-size: 14px; display: inline-b=
+lock; line-height: 1.1; text-align: center; text-decoration: none; mso-hide=
+: all;"> <span style=3D"color:#ffffff;font-family:Arial;font-size:14px;"> <=
+span style=3D"font-weight: 700;">CLICK HERE TO REDEEM YOUR OFFER!</span><br=
+></span> </a> </div>=0A=0A</td>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A</tabl=
+e>=0A</td>=0A</tr>=0A<tr style=3D"mso-line-height-rule: exactly;"><td id=3D=
+"layout-row-margin8697" valign=3D"top" style=3D"mso-line-height-rule: exact=
+ly; padding: 0;"><table width=3D"100%" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust:=
+ 100%; border-collapse: initial !important; font-size: 14px; min-width: 100=
+%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr id=3D"layout-row8697"=
+ class=3D"layout layout-row widget _widget_text style8697" style=3D"mso-lin=
+e-height-rule: exactly; margin: 0; padding: 0;"><td id=3D"layout-row-paddin=
+g8697" valign=3D"top" style=3D"mso-line-height-rule: exactly; padding: 0;">=
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;"><tr style=3D"mso-line-height-rule: exactly;"><td id=
+=3D"text_div8019" class=3D"td_text td_block" valign=3D"top" align=3D"left"=
+=0Awidth=3D"600" style=3D"line-height: 140%; mso-line-height-rule: exactly;=
+ margin: 0; outline: none; padding: 0; color: inherit; font-size: 12px; fon=
+t-weight: inherit; line-height: 1.4; text-decoration: inherit; font-family:=
+ arial;"> <div style=3D"line-height: 140%; margin: 0; outline: none; paddin=
+g: 0; color: inherit; font-size: inherit; font-weight: inherit; line-height=
+: 1.4; text-decoration: inherit; mso-line-height-rule: exactly;" class=3D""=
+ data-line-height=3D"1.4"><div class=3D"" style=3D"margin: 0; outline: none=
+; padding: 0; color: inherit; font-size: inherit; font-weight: inherit; lin=
+e-height: inherit; text-decoration: inherit;"></div>=0A<span class=3D"" sty=
+le=3D"color: inherit; font-size: 16px; font-weight: inherit; line-height: i=
+nherit; text-decoration: inherit;"> <div dir=3D"auto" style=3D"margin: 0; o=
+utline: none; padding: 0; color: #000000; font-size: inherit; font-weight: =
+400; line-height: inherit; text-decoration: inherit; font-family: arial; fo=
+nt-style: normal; text-align: start;" class=3D""></div>=0A </span><b style=
+=3D"margin: 0; outline: none; padding: 0;" class=3D""><b style=3D"margin: 0=
+; outline: none; padding: 0; font-family: arial; color: #000000; font-size:=
+ 16px; font-style: normal;" class=3D""><b style=3D"margin: 0; outline: none=
+; padding: 0; font-family: arial; color: #000000;" class=3D""><b style=3D"m=
+argin: 0; outline: none; padding: 0;" class=3D""><b style=3D"margin: 0; out=
+line: none; padding: 0; --tw-shadow: 0 0 transparent; --tw-ring-inset: var(=
+--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; -=
+-tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 transpar=
+ent; --tw-ring-shadow: 0 0 transparent; font-family: arial; color: #000000;=
+ font-size: 16px; font-style: normal;" class=3D""><b style=3D"margin: 0; ou=
+tline: none; padding: 0; --tw-shadow: 0 0 transparent; --tw-ring-inset: var=
+(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; =
+--tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 transpa=
+rent;=0A--tw-ring-shadow: 0 0 transparent; font-family: arial;" class=3D"">=
+<b style=3D"margin: 0; outline: none; padding: 0; --tw-shadow: 0 0 transpar=
+ent; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-=
+ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-o=
+ffset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; font-fami=
+ly: arial;" class=3D""><b style=3D"margin: 0; outline: none; padding: 0; --=
+tw-shadow: 0 0 transparent; --tw-ring-inset: var(--tw-empty, ); --tw-ring-o=
+ffset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,13=
+0,246,0.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0=
+ transparent; font-family: arial;" class=3D""><b style=3D"margin: 0; outlin=
+e: none; padding: 0; --tw-shadow: 0 0 transparent; --tw-ring-inset: var(--t=
+w-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw=
+-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 transparent=
+; --tw-ring-shadow: 0 0=0Atransparent; font-weight: bolder; font-family: ar=
+ial; color: #000000; font-size: 16px; font-style: normal;"><b style=3D"marg=
+in: 0; outline: none; padding: 0; --tw-shadow: 0 0 transparent; --tw-ring-i=
+nset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-colo=
+r: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 =
+0 transparent; --tw-ring-shadow: 0 0 transparent; font-weight: bolder; font=
+-family: arial; color: #000000; font-size: 16px; font-style: normal;"><b st=
+yle=3D"margin: 0; outline: none; padding: 0; --tw-shadow: 0 0 transparent; =
+--tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-=
+offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset=
+-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; font-weight: b=
+older; font-family: arial; color: #000000;"><b style=3D"margin: 0; outline:=
+ none; padding: 0; --tw-shadow: 0 0 transparent; --tw-ring-inset: var(--tw-=
+empty, ); --tw-ring-offset-width:=0A0px; --tw-ring-offset-color: #fff; --tw=
+-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 transparent=
+; --tw-ring-shadow: 0 0 transparent; font-weight: bolder; font-family: aria=
+l;"><b style=3D"margin: 0; outline: none; padding: 0; --tw-shadow: 0 0 tran=
+sparent; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; -=
+-tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ri=
+ng-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; font-=
+weight: bolder; font-family: arial; color: #000000; font-size: 16px; font-s=
+tyle: normal;"><b style=3D"margin: 0; outline: none; padding: 0; --tw-shado=
+w: 0 0 transparent; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-wi=
+dth: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.=
+5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transpa=
+rent; font-weight: bolder; font-family: arial;"><b style=3D"margin: 0; outl=
+ine: none; padding: 0; --tw-shadow: 0 0=0Atransparent; --tw-ring-inset: var=
+(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; =
+--tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 transpa=
+rent; --tw-ring-shadow: 0 0 transparent; font-weight: bolder; font-family: =
+arial;"><b style=3D"margin: 0; outline: none; padding: 0; --tw-shadow: 0 0 =
+transparent; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0p=
+x; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --t=
+w-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; f=
+ont-weight: bolder; font-family: arial;"><b style=3D"margin: 0; outline: no=
+ne; padding: 0; --tw-shadow: 0 0 transparent; --tw-ring-inset: var(--tw-emp=
+ty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring=
+-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 transparent; --t=
+w-ring-shadow: 0 0 transparent; font-weight: bolder; font-family: arial; co=
+lor: #000000; font-size: 16px; font-style:=0Anormal;"><b style=3D"margin: 0=
+; outline: none; padding: 0; --tw-shadow: 0 0 transparent; --tw-ring-inset:=
+ var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #f=
+ff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 tra=
+nsparent; --tw-ring-shadow: 0 0 transparent; font-weight: bolder; font-fami=
+ly: arial; color: #000000; font-size: 16px; font-style: normal;"><b style=
+=3D"margin: 0; outline: none; padding: 0; --tw-shadow: 0 0 transparent; --t=
+w-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-off=
+set-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-sh=
+adow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; font-family: aria=
+l; font-weight: normal; color: #000000; font-size: 16px; font-style: normal=
+;"><b style=3D"margin: 0; outline: none; padding: 0; --tw-shadow: 0 0 trans=
+parent; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --=
+tw-ring-offset-color: #fff; --tw-ring-color:=0Argba(59,130,246,0.5); --tw-r=
+ing-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; font=
+-weight: normal; font-family: arial; color: #000000; font-size: 16px; font-=
+style: normal;"><b style=3D"margin: 0; outline: none; padding: 0; --tw-shad=
+ow: 0 0 transparent; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-w=
+idth: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0=
+.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transp=
+arent; font-family: arial; font-weight: normal; color: #000000; font-size: =
+16px; font-style: normal;"><b style=3D"margin: 0; outline: none; padding: 0=
+; --tw-shadow: 0 0 transparent; --tw-ring-inset: var(--tw-empty, ); --tw-ri=
+ng-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(5=
+9,130,246,0.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow:=
+ 0 0 transparent; font-weight: normal; font-family: arial;"><span style=3D"=
+color: #000000; font-size: inherit; font-weight: inherit;=0Aline-height: in=
+herit; text-decoration: inherit; --tw-shadow: 0 0 transparent; --tw-ring-in=
+set: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color=
+: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0=
+ transparent; --tw-ring-shadow: 0 0 transparent; font-family: arial;"><b st=
+yle=3D"margin: 0; outline: none; padding: 0; --tw-shadow: 0 0 transparent; =
+--tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-=
+offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset=
+-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; font-family: a=
+rial; font-weight: normal; color: #000000; font-size: 16px; font-style: nor=
+mal;"><b style=3D"margin: 0; outline: none; padding: 0; --tw-shadow: 0 0 tr=
+ansparent; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px;=
+ --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-=
+ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0=0Atransparent; f=
+ont-weight: normal; font-family: arial;"><b style=3D"margin: 0; outline: no=
+ne; padding: 0; --tw-shadow: 0 0 transparent; --tw-ring-inset: var(--tw-emp=
+ty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring=
+-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 transparent; --t=
+w-ring-shadow: 0 0 transparent; font-weight: normal; font-family: arial;"><=
+/b></b></b> <b style=3D"margin: 0; outline: none; padding: 0; --tw-shadow: =
+0 0 transparent; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width=
+: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5);=
+ --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparen=
+t; font-weight: normal; font-family: arial; color: #000000; font-size: 16px=
+; font-style: normal;"><b style=3D"margin: 0; outline: none; padding: 0; --=
+tw-shadow: 0 0 transparent; --tw-ring-inset: var(--tw-empty, ); --tw-ring-o=
+ffset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color:=0Argba(59,=
+130,246,0.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0=
+ 0 transparent; font-weight: normal; font-family: arial;"><b style=3D"margi=
+n: 0; outline: none; padding: 0; --tw-shadow: 0 0 transparent; --tw-ring-in=
+set: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color=
+: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0=
+ transparent; --tw-ring-shadow: 0 0 transparent; font-weight: normal; font-=
+family: arial;"><b style=3D"margin: 0; outline: none; padding: 0; --tw-shad=
+ow: 0 0 transparent; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-w=
+idth: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0=
+.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transp=
+arent; font-weight: normal; font-family: arial;"><b style=3D"margin: 0; out=
+line: none; padding: 0; --tw-shadow: 0 0 transparent; --tw-ring-inset: var(=
+--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff;=
+=0A--tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 tran=
+sparent; --tw-ring-shadow: 0 0 transparent; font-weight: normal; font-famil=
+y: arial;"><span style=3D"color: #000000; font-size: inherit; font-weight: =
+inherit; line-height: inherit; text-decoration: inherit; --tw-shadow: 0 0 t=
+ransparent; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px=
+; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw=
+-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; fo=
+nt-family: arial;"> <b style=3D"margin: 0; outline: none; padding: 0; --tw-=
+shadow: 0 0 transparent; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offs=
+et-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,2=
+46,0.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 tr=
+ansparent; font-weight: normal; font-family: arial; color: #000000; font-si=
+ze: 16px; font-style: normal;"><b style=3D"margin: 0; outline: none; paddin=
+g: 0;=0A--tw-shadow: 0 0 transparent; --tw-ring-inset: var(--tw-empty, ); -=
+-tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: =
+rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-s=
+hadow: 0 0 transparent; font-weight: normal; font-family: arial;"><b style=
+=3D"margin: 0; outline: none; padding: 0; --tw-shadow: 0 0 transparent; --t=
+w-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-off=
+set-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-sh=
+adow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; font-weight: norm=
+al; font-family: arial;"><div style=3D"margin: 0; outline: none; padding: 0=
+; color: #000000; font-size: 16px; font-weight: 400; line-height: inherit; =
+text-decoration: inherit; --tw-shadow: 0 0 transparent; --tw-ring-inset: va=
+r(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff;=
+ --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 transp=
+arent;=0A--tw-ring-shadow: 0 0 transparent; font-family: arial; font-style:=
+ normal; text-align: start;"><span style=3D"color: #000000; font-size: inhe=
+rit; font-weight: inherit; line-height: inherit; text-decoration: inherit; =
+--tw-shadow: 0 0 transparent; --tw-ring-inset: var(--tw-empty, ); --tw-ring=
+-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,=
+130,246,0.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0=
+ 0 transparent; font-family: arial;"> <b style=3D"margin: 0; outline: none;=
+ padding: 0; --tw-shadow: 0 0 transparent; --tw-ring-inset: var(--tw-empty,=
+ ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-co=
+lor: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-r=
+ing-shadow: 0 0 transparent; font-weight: normal; font-family: arial; color=
+: #000000; font-size: 16px; font-style: normal;"><b style=3D"margin: 0; out=
+line: none; padding: 0; --tw-shadow: 0 0 transparent; --tw-ring-inset: var(=
+--tw-empty, );=0A--tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff;=
+ --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 transp=
+arent; --tw-ring-shadow: 0 0 transparent; font-weight: normal; font-family:=
+ arial;"><b style=3D"margin: 0; outline: none; padding: 0; --tw-shadow: 0 0=
+ transparent; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0=
+px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --=
+tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; =
+font-weight: normal; font-family: arial;"><span style=3D"color: inherit; fo=
+nt-size: 16px; font-weight: inherit; line-height: inherit; text-decoration:=
+ inherit; --tw-shadow: 0 0 transparent; --tw-ring-inset: var(--tw-empty, );=
+ --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color=
+: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring=
+-shadow: 0 0 transparent; font-family: arial; font-style: normal;"><span st=
+yle=3D"color: #000000;=0Afont-size: inherit; font-weight: inherit; line-hei=
+ght: inherit; text-decoration: inherit; --tw-shadow: 0 0 transparent; --tw-=
+ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offse=
+t-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shad=
+ow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; font-family: arial;=
+">Why wait? Join the community that has been recognized by <a=0Ahref=3D"htt=
+ps://personaldevelopmentschool.lt.acemlnb.com/Prod/link-tracker?notrack=3D1=
+&notrack=3D1&redirectUrl=3DaHR0cHMlM0ElMkYlMkZ0aW1lYnVzaW5lc3NuZXdzLmNvbSUy=
+RnRoYWlzLWdpYnNvbi1jaGFuZ2luZy10aGUtcGVyc29uYWwtZGV2ZWxvcG1lbnQtbGFuZHNjYXB=
+lJTJGJTNGdXRtX3NvdXJjZSUzREFjdGl2ZUNhbXBhaWduJTI2dXRtX21lZGl1bSUzRGVtYWlsJT=
+I2dXRtX2NvbnRlbnQlM0RGSVJTVE5BTUUlMkIlMkIlMjUzQSUyQk91ciUyQkZyZWUlMkJHaWZ0J=
+TJCVG8lMkJZb3UlMjUyMSUyQiUyNUYwJTI1OUYlMjU4QyUyNUI4JTI2dXRtX2NhbXBhaWduJTNE=
+NyUyQkRheSUyQkZyZWUlMkJHaWZ0JTJCJTI1MjMx&a=3D475800167&account=3Dpersonalde=
+velopmentschool%2Eactivehosted%2Ecom&email=3DLRRV6glqIfcVPcYsJBrMHi%2FZD%2B=
+msUFpJrc5fHf6IoVE%3D&s=3Dbad97c655476f96a390a72c05a742011&i=3D751A829A3A169=
+217" target=3D"_blank"=0Adata-saferedirecturl=3D"https://www.google.com/url=
+?q=3Dhttps://personaldevelopmentschool.lt.acemlnb.com/Prod/link-tracker?not=
+rack%3D1%26notrack%3D1%26redirectUrl%3DaHR0cHMlM0ElMkYlMkZ0aW1lYnVzaW5lc3Nu=
+ZXdzLmNvbSUyRnRoYWlzLWdpYnNvbi1jaGFuZ2luZy10aGUtcGVyc29uYWwtZGV2ZWxvcG1lbnQ=
+tbGFuZHNjYXBlJTJGJTNGdXRtX3NvdXJjZSUzREFjdGl2ZUNhbXBhaWduJTI2dXRtX21lZGl1bS=
+UzRGVtYWlsJTI2dXRtX2NvbnRlbnQlM0RGSVJTVE5BTUUlMkIlMkIlMjUzQSUyQk91ciUyQkZyZ=
+WUlMkJHaWZ0JTJCVG8lMkJZb3UlMjUyMSUyQiUyNUYwJTI1OUYlMjU4QyUyNUI4JTI2dXRtX2Nh=
+bXBhaWduJTNENyUyQkRheSUyQkZyZWUlMkJHaWZ0JTJCJTI1MjMx%26a%3D475800167%26acco=
+unt%3Dpersonaldevelopmentschool%252Eactivehosted%252Ecom%26email%3DLRRV6glq=
+IfcVPcYsJBrMHi%252FZD%252BmsUFpJrc5fHf6IoVE%253D%26s%3Dbad97c655476f96a390a=
+72c05a742011%26i%3D751A829A3A169217&source=3Dgmail&ust=3D1623795483711000&u=
+sg=3DAFQjCNHb7RRSfdobVELVVWznlcQMd5-ttA" data-ac-default-color=3D"1" style=
+=3D"margin: 0; outline: none; padding: 0; color: #390ceb; text-decoration: =
+underline; --tw-shadow: 0 0 transparent;=0A--tw-ring-inset: var(--tw-empty,=
+ ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-co=
+lor: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-r=
+ing-shadow: 0 0 transparent; font-family: arial; font-weight: inherit;"><sp=
+an style=3D"color: inherit; font-size: 16px; font-weight: inherit; line-hei=
+ght: inherit; text-decoration: inherit; --tw-shadow: 0 0 transparent; --tw-=
+ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offse=
+t-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shad=
+ow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; font-family: arial;=
+">Time Business News</span></a>, <a=0Ahref=3D"https://personaldevelopmentsc=
+hool.lt.acemlnb.com/Prod/link-tracker?notrack=3D1&notrack=3D1&redirectUrl=
+=3DaHR0cHMlM0ElMkYlMkZpbi5uZXdzLnlhaG9vLmNvbSUyRmxlYXJuLWFjZS1saWZlLXRoYWlz=
+LWdpYnNvbi0xMDE3NDI3NjYuaHRtbCUzRnV0bV9zb3VyY2UlM0RBY3RpdmVDYW1wYWlnbiUyNnV=
+0bV9tZWRpdW0lM0RlbWFpbCUyNnV0bV9jb250ZW50JTNERklSU1ROQU1FJTJCJTJCJTI1M0ElMk=
+JPdXIlMkJGcmVlJTJCR2lmdCUyQlRvJTJCWW91JTI1MjElMkIlMjVGMCUyNTlGJTI1OEMlMjVCO=
+CUyNnV0bV9jYW1wYWlnbiUzRDclMkJEYXklMkJGcmVlJTJCR2lmdCUyQiUyNTIzMQ=3D=3D&a=
+=3D475800167&account=3Dpersonaldevelopmentschool%2Eactivehosted%2Ecom&email=
+=3DLRRV6glqIfcVPcYsJBrMHi%2FZD%2BmsUFpJrc5fHf6IoVE%3D&s=3Dbad97c655476f96a3=
+90a72c05a742011&i=3D751A829A3A169218" target=3D"_blank"=0Adata-saferedirect=
+url=3D"https://www.google.com/url?q=3Dhttps://personaldevelopmentschool.lt.=
+acemlnb.com/Prod/link-tracker?notrack%3D1%26notrack%3D1%26redirectUrl%3DaHR=
+0cHMlM0ElMkYlMkZpbi5uZXdzLnlhaG9vLmNvbSUyRmxlYXJuLWFjZS1saWZlLXRoYWlzLWdpYn=
+Nvbi0xMDE3NDI3NjYuaHRtbCUzRnV0bV9zb3VyY2UlM0RBY3RpdmVDYW1wYWlnbiUyNnV0bV9tZ=
+WRpdW0lM0RlbWFpbCUyNnV0bV9jb250ZW50JTNERklSU1ROQU1FJTJCJTJCJTI1M0ElMkJPdXIl=
+MkJGcmVlJTJCR2lmdCUyQlRvJTJCWW91JTI1MjElMkIlMjVGMCUyNTlGJTI1OEMlMjVCOCUyNnV=
+0bV9jYW1wYWlnbiUzRDclMkJEYXklMkJGcmVlJTJCR2lmdCUyQiUyNTIzMQ%3D%3D%26a%3D475=
+800167%26account%3Dpersonaldevelopmentschool%252Eactivehosted%252Ecom%26ema=
+il%3DLRRV6glqIfcVPcYsJBrMHi%252FZD%252BmsUFpJrc5fHf6IoVE%253D%26s%3Dbad97c6=
+55476f96a390a72c05a742011%26i%3D751A829A3A169218&source=3Dgmail&ust=3D16237=
+95483711000&usg=3DAFQjCNGY8Do5YOGO8PQjF5c4HaJuPayAbQ" data-ac-default-color=
+=3D"1" style=3D"margin: 0; outline: none; padding: 0; color: #390ceb; text-=
+decoration: underline; --tw-shadow: 0 0 transparent; --tw-ring-inset:=0Avar=
+(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; =
+--tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 transpa=
+rent; --tw-ring-shadow: 0 0 transparent; font-family: arial; font-weight: i=
+nherit;"><span style=3D"color: inherit; font-size: 16px; font-weight: inher=
+it; line-height: inherit; text-decoration: inherit; --tw-shadow: 0 0 transp=
+arent; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --t=
+w-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring=
+-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; font-fa=
+mily: arial;">Yahoo News</span></a>, the <a=0Ahref=3D"https://personaldevel=
+opmentschool.lt.acemlnb.com/Prod/link-tracker?notrack=3D1&notrack=3D1&redir=
+ectUrl=3DaHR0cHMlM0ElMkYlMkZ3d3cuY2FsaWZvcm5pYWhlcmFsZC5jb20lMkZsaXZlLWxpZm=
+UtdGhlLWNvcnJlY3Qtd2F5LWEtZ3VpZGUtYnktdGhhaXMtZ2lic29uJTJGJTNGdXRtX3NvdXJjZ=
+SUzREFjdGl2ZUNhbXBhaWduJTI2dXRtX21lZGl1bSUzRGVtYWlsJTI2dXRtX2NvbnRlbnQlM0RG=
+SVJTVE5BTUUlMkIlMkIlMjUzQSUyQk91ciUyQkZyZWUlMkJHaWZ0JTJCVG8lMkJZb3UlMjUyMSU=
+yQiUyNUYwJTI1OUYlMjU4QyUyNUI4JTI2dXRtX2NhbXBhaWduJTNENyUyQkRheSUyQkZyZWUlMk=
+JHaWZ0JTJCJTI1MjMx&a=3D475800167&account=3Dpersonaldevelopmentschool%2Eacti=
+vehosted%2Ecom&email=3DLRRV6glqIfcVPcYsJBrMHi%2FZD%2BmsUFpJrc5fHf6IoVE%3D&s=
+=3Dbad97c655476f96a390a72c05a742011&i=3D751A829A3A169219" target=3D"_blank"=
+=0Adata-saferedirecturl=3D"https://www.google.com/url?q=3Dhttps://personald=
+evelopmentschool.lt.acemlnb.com/Prod/link-tracker?notrack%3D1%26notrack%3D1=
+%26redirectUrl%3DaHR0cHMlM0ElMkYlMkZ3d3cuY2FsaWZvcm5pYWhlcmFsZC5jb20lMkZsaX=
+ZlLWxpZmUtdGhlLWNvcnJlY3Qtd2F5LWEtZ3VpZGUtYnktdGhhaXMtZ2lic29uJTJGJTNGdXRtX=
+3NvdXJjZSUzREFjdGl2ZUNhbXBhaWduJTI2dXRtX21lZGl1bSUzRGVtYWlsJTI2dXRtX2NvbnRl=
+bnQlM0RGSVJTVE5BTUUlMkIlMkIlMjUzQSUyQk91ciUyQkZyZWUlMkJHaWZ0JTJCVG8lMkJZb3U=
+lMjUyMSUyQiUyNUYwJTI1OUYlMjU4QyUyNUI4JTI2dXRtX2NhbXBhaWduJTNENyUyQkRheSUyQk=
+ZyZWUlMkJHaWZ0JTJCJTI1MjMx%26a%3D475800167%26account%3Dpersonaldevelopments=
+chool%252Eactivehosted%252Ecom%26email%3DLRRV6glqIfcVPcYsJBrMHi%252FZD%252B=
+msUFpJrc5fHf6IoVE%253D%26s%3Dbad97c655476f96a390a72c05a742011%26i%3D751A829=
+A3A169219&source=3Dgmail&ust=3D1623795483711000&usg=3DAFQjCNGMJdxSi6hmgV-qC=
+uSk9Niw3RMSrA" data-ac-default-color=3D"1" style=3D"margin: 0; outline: non=
+e; padding: 0; color: #390ceb; text-decoration: underline; --tw-shadow: 0 0=
+ transparent;=0A--tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width:=
+ 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); =
+--tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent=
+; font-family: arial; font-weight: inherit;"><span style=3D"color: inherit;=
+ font-size: 16px; font-weight: inherit; line-height: inherit; text-decorati=
+on: inherit; --tw-shadow: 0 0 transparent; --tw-ring-inset: var(--tw-empty,=
+ ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-co=
+lor: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-r=
+ing-shadow: 0 0 transparent; font-family: arial;">California Herald</span><=
+/a> and more at absolutely no risk or cost.</span><br style=3D""><br style=
+=3D""><span style=3D"color: #000000; font-size: inherit; font-weight: inher=
+it; line-height: inherit; text-decoration: inherit; --tw-shadow: 0 0 transp=
+arent; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --t=
+w-ring-offset-color: #fff;=0A--tw-ring-color: rgba(59,130,246,0.5); --tw-ri=
+ng-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; font-=
+family: arial;">A life filled with happiness, connection and fulfillment is=
+ right around the corner.</span></span></b></b></b> <br><br>If you have any=
+ questions, you can also reach out to our team at <a href=3D"mailto:info@pe=
+rsonaldevelopmentschool.com" target=3D"_blank" data-ac-default-color=3D"1" =
+style=3D"margin: 0; outline: none; padding: 0; color: #390ceb; text-decorat=
+ion: underline; --tw-shadow: 0 0 transparent; --tw-ring-inset: var(--tw-emp=
+ty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring=
+-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 transparent; --t=
+w-ring-shadow: 0 0 transparent; font-family: arial; font-weight: inherit;">=
+<span style=3D"color: ; font-size: inherit; font-weight: inherit; line-heig=
+ht: inherit; text-decoration: inherit;">info@personaldevelopmentschool.com<=
+/span></a></span></div>=0A<div style=3D"margin: 0; outline: none; padding: =
+0; color: #000000; font-size: 16px; font-weight: 400; line-height: inherit;=
+ text-decoration: inherit; --tw-shadow: 0 0 transparent; --tw-ring-inset: v=
+ar(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff=
+; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 trans=
+parent; --tw-ring-shadow: 0 0 transparent; font-family: arial; font-style: =
+normal; text-align: start;"><br style=3D"--tw-shadow:0 0 transparent; --tw-=
+ring-inset:var(--tw-empty, ); --tw-ring-offset-width:0px; --tw-ring-offset-=
+color:#fff; --tw-ring-color:rgba(59,130,246,0.5); --tw-ring-offset-shadow:0=
+ 0 transparent; --tw-ring-shadow:0 0 transparent; font-family: arial; font-=
+weight: inherit; color: #000000;"></div>=0A<div style=3D"margin: 0; outline=
+: none; padding: 0; color: #000000; font-size: 16px; font-weight: 400; line=
+-height: inherit; text-decoration: inherit; --tw-shadow: 0 0 transparent; -=
+-tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-o=
+ffset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-=
+shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; font-family: ar=
+ial; font-style: normal; text-align: start;"><span style=3D"color: #000000;=
+ font-size: inherit; font-weight: inherit; line-height: inherit; text-decor=
+ation: inherit; --tw-shadow: 0 0 transparent; --tw-ring-inset: var(--tw-emp=
+ty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring=
+-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 transparent; --t=
+w-ring-shadow: 0 0 transparent; font-family: arial;">See you inside!<br sty=
+le=3D""><br style=3D"">With Gratitude,</span></div>=0A<div style=3D"margin:=
+ 0; outline: none; padding: 0; color: #000000; font-size: 16px; font-weight=
+: 400; line-height: inherit; text-decoration: inherit; --tw-shadow: 0 0 tra=
+nsparent; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; =
+--tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-r=
+ing-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; font=
+-family: arial; font-style: normal; text-align: start;"><span style=3D"colo=
+r: #000000; font-size: inherit; font-weight: inherit; line-height: inherit;=
+ text-decoration: inherit; --tw-shadow: 0 0 transparent; --tw-ring-inset: v=
+ar(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff=
+; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 trans=
+parent; --tw-ring-shadow: 0 0 transparent; font-family: arial;">Thais and T=
+he Personal Development School Team</span></div>=0A</b></b></b></span></b><=
+/b></b></b></b></span></b></b></b></b></b></b></b></b></b></b></b></b></b><=
+/b></b></b></b></b></b></b></b></b><div dir=3D"auto" style=3D"margin: 0; ou=
+tline: none; padding: 0; color: #000000; font-size: inherit; font-weight: 4=
+00; line-height: inherit; text-decoration: inherit; font-family: arial; fon=
+t-style: normal; text-align: start;" class=3D""></div>=0A <div class=3D"" s=
+tyle=3D"margin: 0; outline: none; padding: 0; color: inherit; font-size: in=
+herit; font-weight: inherit; line-height: inherit; text-decoration: inherit=
+;"></div>=0A<div class=3D"" style=3D"margin: 0; outline: none; padding: 0; =
+color: inherit; font-size: inherit; font-weight: inherit; line-height: inhe=
+rit; text-decoration: inherit;"></div>=0A</div>=0A<!--[if (gte mso 12)&(lte=
+ mso 15) ]>=0A<style data-ac-keep=3D"true" data-ac-inline=3D"false"> #text_=
+div8019, #text_div8019 div { line-height: 140% !important; };=0A</style>=0A=
+<![endif]--></td>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A</table>=0A</td>=0A<=
+/tr>=0A</table>=0A</td>=0A<td id=3D"layout_table_ba843d7ba7e36b8af32fd99963=
+83cdaddd73faad" valign=3D"top" width=3D"25" style=3D"mso-line-height-rule: =
+exactly;"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"=
+layout layout-table " width=3D"25" style=3D"-ms-text-size-adjust: auto; -we=
+bkit-text-size-adjust: 100%; border-collapse: collapse; font-size: 14px; mi=
+n-width: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr style=3D"=
+mso-line-height-rule: exactly;"><td id=3D"layout-row-margin8695" valign=3D"=
+top" style=3D"mso-line-height-rule: exactly;"><table width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: a=
+uto; -webkit-text-size-adjust: 100%; border-collapse: collapse; font-size: =
+14px; min-width: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr i=
+d=3D"layout-row8695" class=3D"layout layout-row widget _widget_spacer " sty=
+le=3D"mso-line-height-rule: exactly;"><td id=3D"layout-row-padding8695" val=
+ign=3D"top" style=3D"mso-line-height-rule: exactly;"><table width=3D"100%"=
+=0Aborder=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-=
+adjust: auto; -webkit-text-size-adjust: 100%; border-collapse: collapse; fo=
+nt-size: 14px; min-width: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0p=
+t;"><tr style=3D"mso-line-height-rule: exactly;"><td valign=3D"top" height=
+=3D"475" style=3D"mso-line-height-rule: exactly;"><div class=3D"spacer" sty=
+le=3D"margin: 0; outline: none; padding: 0; height: 475px;"><table cellpadd=
+ing=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" style=3D"-ms-text-s=
+ize-adjust: auto; -webkit-text-size-adjust: 100%; border-collapse: collapse=
+; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; mso-table-rspace=
+: 0pt;"><tr style=3D"mso-line-height-rule: exactly;"><td class=3D"spacer-bo=
+dy" valign=3D"top" height=3D"475" width=3D"25" style=3D"mso-line-height-rul=
+e: exactly;">=C2=A0</td>=0A</tr>=0A</table>=0A</div>=0A</td>=0A</tr>=0A</ta=
+ble>=0A</td>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A</table>=0A</td>=0A</tr>=
+=0A</table>=0A</td>=0A</tr>=0A<tr style=3D"mso-line-height-rule: exactly;">=
+<td id=3D"layout-row-margin8692" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly;"><table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" style=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 10=
+0%; border-collapse: collapse; font-size: 14px; min-width: 100%; mso-table-=
+lspace: 0pt; mso-table-rspace: 0pt;"><tr id=3D"layout-row8692" class=3D"lay=
+out layout-row widget _widget_spacer " style=3D"mso-line-height-rule: exact=
+ly;"><td id=3D"layout-row-padding8692" valign=3D"top" style=3D"mso-line-hei=
+ght-rule: exactly;"><table width=3D"100%" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" style=3D"-ms-text-size-adjust: auto; -webkit-text-size-adju=
+st: 100%; border-collapse: collapse; font-size: 14px; min-width: 100%; mso-=
+table-lspace: 0pt; mso-table-rspace: 0pt;"><tr style=3D"mso-line-height-rul=
+e: exactly;"><td valign=3D"top" height=3D"10" style=3D"mso-line-height-rule=
+: exactly;"><div class=3D"spacer" style=3D"margin: 0; outline: none; paddin=
+g: 0;=0Aheight: 10px;"><table cellpadding=3D"0" cellspacing=3D"0" border=3D=
+"0" width=3D"100%" style=3D"-ms-text-size-adjust: auto; -webkit-text-size-a=
+djust: 100%; border-collapse: collapse; font-size: 14px; min-width: 100%; m=
+so-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr style=3D"mso-line-height-=
+rule: exactly;"><td class=3D"spacer-body" valign=3D"top" height=3D"10" widt=
+h=3D"650" style=3D"mso-line-height-rule: exactly;">=C2=A0</td>=0A</tr>=0A</=
+table>=0A</div>=0A</td>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A</table>=0A</t=
+d>=0A</tr>=0A<tr style=3D"mso-line-height-rule: exactly;"><td id=3D"layout-=
+row-margin8691" valign=3D"top" style=3D"mso-line-height-rule: exactly; padd=
+ing: 5px;"><table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%;=
+ border-collapse: initial !important; font-size: 14px; min-width: 100%; mso=
+-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr id=3D"layout-row8691" class=
+=3D"layout layout-row widget _widget_social style8691" style=3D"mso-line-he=
+ight-rule: exactly;"><td id=3D"layout-row-padding8691" valign=3D"top" style=
+=3D"mso-line-height-rule: exactly; padding: 5px;"><table width=3D"100%" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust=
+: auto; -webkit-text-size-adjust: 100%; border-collapse: collapse; font-siz=
+e: 14px; min-width: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><t=
+r style=3D"mso-line-height-rule: exactly;"><td style=3D"mso-line-height-rul=
+e: exactly;"><table width=3D"100%" cellspacing=3D"0"=0Acellpadding=3D"0" st=
+yle=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-c=
+ollapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt;=
+ mso-table-rspace: 0pt;"><tr style=3D"mso-line-height-rule: exactly;"><td w=
+idth=3D"650" align=3D"left" style=3D"mso-line-height-rule: exactly;"> <cent=
+er style=3D"margin: 0; outline: none; padding: 0; font-size: 0px;"> <table =
+class=3D"_ac_social_table" cellspacing=3D"0" cellpadding=3D"0" align=3D"cen=
+ter" style=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; b=
+order-collapse: collapse; font-size: 0; min-width: auto!important; mso-tabl=
+e-lspace: 0pt; mso-table-rspace: 0pt; margin: auto!important; display: inli=
+ne-block!important; text-align: center!important;"><tr style=3D"mso-line-he=
+ight-rule: exactly;"><td align=3D"center" valign=3D"middle" width=3D"34" st=
+yle=3D"mso-line-height-rule: exactly; display: inline-block!important; font=
+-size: 0; width: 34px!important;"><div class=3D"__ac_social_icons" style=3D=
+"margin: 0; outline:=0Anone; padding: 0;"><a href=3D"http://email.personald=
+evelopmentschool.com/Prod/link-tracker?redirectUrl=3DaHR0cHMlM0ElMkYlMkZ3d3=
+cuZmFjZWJvb2suY29tJTJGUERTVGhhaXNHaWJzb24lMkYlM0Z1dG1fc291cmNlJTNEQWN0aXZlQ=
+2FtcGFpZ24lMjZ1dG1fbWVkaXVtJTNEZW1haWwlMjZ1dG1fY29udGVudCUzREJlZm9yZSUyQllv=
+dSUyQkdvJTI1MjElMjZ1dG1fY2FtcGFpZ24lM0Q3JTJCRGF5JTJCUHJvbW8lMkJQcmUlMkJGbG9=
+zcyUyQiUyNTIzMQ=3D=3D&sig=3D4uSBpaavcxT6oa7F4WvhNdFpxNtHNt8PH2So6aSgCrC6&ia=
+t=3D1697641284&a=3D%7C%7C475800167%7C%7C&account=3Dpersonaldevelopmentschoo=
+l%2Eactivehosted%2Ecom&email=3DbaJu%2BoTvgmkQTiRLICPV7ugfZD1iX%2B%2B2gL2XR7=
+SZ3Qb26USr%3A2onGHqLC2tm65lc5Zk5MYCADG0WDkLDQ&s=3Df80b3c5d95b48747dbcb6172c=
+eee3b6e&i=3D1044A1213A2A172279" id=3D"facebook" class=3D"__ac_social_icon_l=
+ink" style=3D"margin: 0; outline: none; padding: 0; color: #390ceb;"><img s=
+rc=3D"https://email-personaldevelopmentschool-com.img-us6.com/_social_/flat=
+-outline-dark-round-facebook.png" border=3D"0" alt=3D"Facebook" width=3D"34=
+" style=3D"border: none;"></a></div>=0A</td>=0A<td width=3D"10" style=3D"ms=
+o-line-height-rule: exactly; display: inline-block!important; font-size: 0;=
+ width: 10px!important;">=C2=A0</td>=0A<td align=3D"center" valign=3D"middl=
+e" width=3D"34" style=3D"mso-line-height-rule: exactly; display: inline-blo=
+ck!important; font-size: 0; width: 34px!important;"><div class=3D"__ac_soci=
+al_icons" style=3D"margin: 0; outline: none; padding: 0;"><a href=3D"http:/=
+/email.personaldevelopmentschool.com/Prod/link-tracker?redirectUrl=3DaHR0cH=
+MlM0ElMkYlMkZ0d2l0dGVyLmNvbSUyRnBkc190aGFpc2dpYnNvbiUzRnV0bV9zb3VyY2UlM0RBY=
+3RpdmVDYW1wYWlnbiUyNnV0bV9tZWRpdW0lM0RlbWFpbCUyNnV0bV9jb250ZW50JTNEQmVmb3Jl=
+JTJCWW91JTJCR28lMjUyMSUyNnV0bV9jYW1wYWlnbiUzRDclMkJEYXklMkJQcm9tbyUyQlByZSU=
+yQkZsb3NzJTJCJTI1MjMx&sig=3DFoCdsKxqpd9c7uiiJkvaHRGABS28cZDitWQ6MMMftPQ3&ia=
+t=3D1697641284&a=3D%7C%7C475800167%7C%7C&account=3Dpersonaldevelopmentschoo=
+l%2Eactivehosted%2Ecom&email=3DbaJu%2BoTvgmkQTiRLICPV7ugfZD1iX%2B%2B2gL2XR7=
+SZ3Qb26USr%3A2onGHqLC2tm65lc5Zk5MYCADG0WDkLDQ&s=3Df80b3c5d95b48747dbcb6172c=
+eee3b6e&i=3D1044A1213A2A172280" id=3D"twitter" class=3D"__ac_social_icon_li=
+nk" style=3D"margin: 0; outline: none; padding: 0; color: #390ceb;"><img sr=
+c=3D"https://email-personaldevelopmentschool-com.img-us6.com/_social_/flat-=
+outline-dark-round-twitter.png" border=3D"0" alt=3D"Twitter" width=3D"34" s=
+tyle=3D"border: none;"></a></div>=0A</td>=0A<td width=3D"10" style=3D"mso-l=
+ine-height-rule: exactly; display: inline-block!important; font-size: 0; wi=
+dth: 10px!important;">=C2=A0</td>=0A<td align=3D"center" valign=3D"middle" =
+width=3D"34" style=3D"mso-line-height-rule: exactly; display: inline-block!=
+important; font-size: 0; width: 34px!important;"><div class=3D"__ac_social_=
+icons" style=3D"margin: 0; outline: none; padding: 0;"><a href=3D"http://em=
+ail.personaldevelopmentschool.com/Prod/link-tracker?redirectUrl=3DaHR0cHMlM=
+0ElMkYlMkZ3d3cueW91dHViZS5jb20lMkZjaGFubmVsJTJGVUNIUTRsU2FLUmFwNUh5cnBpdHJU=
+T2hRJTNGdmlld19hcyUzRHN1YnNjcmliZXIlMjZ1dG1fc291cmNlJTNEQWN0aXZlQ2FtcGFpZ24=
+lMjZ1dG1fbWVkaXVtJTNEZW1haWwlMjZ1dG1fY29udGVudCUzREJlZm9yZSUyQllvdSUyQkdvJT=
+I1MjElMjZ1dG1fY2FtcGFpZ24lM0Q3JTJCRGF5JTJCUHJvbW8lMkJQcmUlMkJGbG9zcyUyQiUyN=
+TIzMQ=3D=3D&sig=3DAr7rBPhRFm8EH6rnifqv7J4XSCoeEDu8GVmdDoK3BeNc&iat=3D169764=
+1284&a=3D%7C%7C475800167%7C%7C&account=3Dpersonaldevelopmentschool%2Eactive=
+hosted%2Ecom&email=3DbaJu%2BoTvgmkQTiRLICPV7ugfZD1iX%2B%2B2gL2XR7SZ3Qb26USr=
+%3A2onGHqLC2tm65lc5Zk5MYCADG0WDkLDQ&s=3Df80b3c5d95b48747dbcb6172ceee3b6e&i=
+=3D1044A1213A2A172281" id=3D"youtube" class=3D"__ac_social_icon_link" style=
+=3D"margin: 0; outline: none; padding: 0; color: #390ceb;"><img src=3D"http=
+s://email-personaldevelopmentschool-com.img-us6.com/_social_/flat-outline-d=
+ark-round-youtube.png" border=3D"0" alt=3D"Youtube" width=3D"34" style=3D"b=
+order: none;"></a></div>=0A</td>=0A<td width=3D"10" style=3D"mso-line-heigh=
+t-rule: exactly; display: inline-block!important; font-size: 0; width: 10px=
+!important;">=C2=A0</td>=0A<td align=3D"center" valign=3D"middle" width=3D"=
+34" style=3D"mso-line-height-rule: exactly; display: inline-block!important=
+; font-size: 0; width: 34px!important;"><div class=3D"__ac_social_icons" st=
+yle=3D"margin: 0; outline: none; padding: 0;"><a href=3D"http://email.perso=
+naldevelopmentschool.com/Prod/link-tracker?redirectUrl=3DaHR0cHMlM0ElMkYlMk=
+Z3d3cuaW5zdGFncmFtLmNvbSUyRnBlcnNvbmFsZGV2ZWxvcG1lbnRfc2Nob29sJTJGJTNGdXRtX=
+3NvdXJjZSUzREFjdGl2ZUNhbXBhaWduJTI2dXRtX21lZGl1bSUzRGVtYWlsJTI2dXRtX2NvbnRl=
+bnQlM0RCZWZvcmUlMkJZb3UlMkJHbyUyNTIxJTI2dXRtX2NhbXBhaWduJTNENyUyQkRheSUyQlB=
+yb21vJTJCUHJlJTJCRmxvc3MlMkIlMjUyMzE=3D&sig=3D455zsUUBe2GVxpxzwBxUjPdmiCL86=
+wggjrc73tqs3WYr&iat=3D1697641284&a=3D%7C%7C475800167%7C%7C&account=3Dperson=
+aldevelopmentschool%2Eactivehosted%2Ecom&email=3DbaJu%2BoTvgmkQTiRLICPV7ugf=
+ZD1iX%2B%2B2gL2XR7SZ3Qb26USr%3A2onGHqLC2tm65lc5Zk5MYCADG0WDkLDQ&s=3Df80b3c5=
+d95b48747dbcb6172ceee3b6e&i=3D1044A1213A2A172282" id=3D"instagram" class=3D=
+"__ac_social_icon_link" style=3D"margin: 0; outline: none; padding: 0; colo=
+r: #390ceb;"><img src=3D"https://email-personaldevelopmentschool-com.img-us=
+6.com/_social_/flat-outline-dark-round-instagram.png" border=3D"0" alt=3D"I=
+nstagram" width=3D"34" style=3D"border: none;"></a></div>=0A</td>=0A<td wid=
+th=3D"10" style=3D"mso-line-height-rule: exactly; display: inline-block!imp=
+ortant; font-size: 0; width: 10px!important;">=C2=A0</td>=0A<td align=3D"ce=
+nter" valign=3D"middle" width=3D"34" style=3D"mso-line-height-rule: exactly=
+; display: inline-block!important; font-size: 0; width: 34px!important;"><d=
+iv class=3D"__ac_social_icons" style=3D"margin: 0; outline: none; padding: =
+0;"><a href=3D"http://email.personaldevelopmentschool.com/Prod/link-tracker=
+?redirectUrl=3DaHR0cHMlM0ElMkYlMkZ1bml2ZXJzaXR5LnBlcnNvbmFsZGV2ZWxvcG1lbnRz=
+Y2hvb2wuY29tJTJGJTNGdXRtX3NvdXJjZSUzREFjdGl2ZUNhbXBhaWduJTI2dXRtX21lZGl1bSU=
+zRGVtYWlsJTI2dXRtX2NvbnRlbnQlM0RCZWZvcmUlMkJZb3UlMkJHbyUyNTIxJTI2dXRtX2NhbX=
+BhaWduJTNENyUyQkRheSUyQlByb21vJTJCUHJlJTJCRmxvc3MlMkIlMjUyMzE=3D&sig=3D8hxo=
+xhYGsZjKEEW46KJGs4bQJ1Lhymi1DxKrUUN5b8iU&iat=3D1697641284&a=3D%7C%7C4758001=
+67%7C%7C&account=3Dpersonaldevelopmentschool%2Eactivehosted%2Ecom&email=3Db=
+aJu%2BoTvgmkQTiRLICPV7ugfZD1iX%2B%2B2gL2XR7SZ3Qb26USr%3A2onGHqLC2tm65lc5Zk5=
+MYCADG0WDkLDQ&s=3Df80b3c5d95b48747dbcb6172ceee3b6e&i=3D1044A1213A2A172283" =
+id=3D"website" class=3D"__ac_social_icon_link" style=3D"margin: 0; outline:=
+ none; padding: 0; color: #390ceb;"><img src=3D"https://email-personaldevel=
+opmentschool-com.img-us6.com/_social_/flat-outline-dark-round-website.png" =
+border=3D"0" alt=3D"Website" width=3D"34" style=3D"border: none;"></a></div=
+>=0A</td>=0A<td width=3D"10" style=3D"mso-line-height-rule: exactly; displa=
+y: inline-block!important; font-size: 0; width: 10px!important;">=C2=A0</td=
+>=0A<td align=3D"center" valign=3D"middle" width=3D"34" style=3D"mso-line-h=
+eight-rule: exactly; display: inline-block!important; font-size: 0; width: =
+34px!important;"><div class=3D"__ac_social_icons" style=3D"margin: 0; outli=
+ne: none; padding: 0;"><a href=3D"mailto:info@personaldevelopmentschool.com=
+" id=3D"email" class=3D"__ac_social_icon_link" style=3D"margin: 0; outline:=
+ none; padding: 0; color: #390ceb;"><img src=3D"https://email-personaldevel=
+opmentschool-com.img-us6.com/_social_/flat-outline-dark-round-email.png" bo=
+rder=3D"0" alt=3D"Email" width=3D"34" style=3D"border: none;"></a></div>=0A=
+</td>=0A</tr>=0A</table>=0A</center> </td>=0A </tr>=0A</table>=0A</td>=0A</=
+tr>=0A</table>=0A</td>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A</table>=0A</td=
+>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A</table>=0A</div>=0A<img src=3D"http=
+://email.personaldevelopmentschool.com/Prod/link-tracker?nl=3D2&c=3D1044&m=
+=3D1213&s=3Df80b3c5d95b48747dbcb6172ceee3b6e&l=3Dopen&account=3Dpersonaldev=
+elopmentschool.activehosted.com&a=3D475800167" border=3D"0" width=3D"1" hei=
+ght=3D"1" style=3D"display:block;width:1px!important;min-width:1px!importan=
+t;max-width:1px!important;height:1px!important;border:0;overflow:hidden;" /=
+><br /><div id=3D"ac-footer" style=3D"clear:both;background-color:inherit;b=
+ackground:inherit;min-width:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;=
+padding:20px;color:#000000;font-size:11px;font-family:arial,helvetica,sans-=
+serif;line-height:140%;line-height:1.4;text-align:center;box-sizing:border-=
+box;"><center>Sent to: <span style=3D"font-size:11px;font-family:arial,helv=
+etica,sans-serif;font-weight:normal;text-decoration:none;outline:none;">sri=
+jani515@gmail.com</span><br><br><a href=3D"http://email.personaldevelopment=
+school.com/proc.php?nl=3D2&c=3D1044&m=3D1213&s=3Df80b3c5d95b48747dbcb6172ce=
+ee3b6e&act=3Dunsub"=0Astyle=3D"font-size:11px;font-family:arial,helvetica,s=
+ans-serif;font-weight:bold;text-decoration:underline;"><span style=3D"font-=
+weight:bold;text-decoration:underline;">Unsubscribe</span></a><br><br>Perso=
+nal Development School, 999 Edgeley Blvd, Unit 3, Concord, Ontario L4K 5Z4,=
+ Canada</center></div>=0A<br clear=3D"all" /></body>=0A</html>
+--_=_swift-1493671045652ff33eb3fc44.28342891_=_--
+

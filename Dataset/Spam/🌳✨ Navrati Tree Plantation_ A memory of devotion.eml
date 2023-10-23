@@ -1,0 +1,747 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:c5c8:b0:4fd:23d3:a27 with SMTP id w8csp981150pxt;
+        Fri, 20 Oct 2023 03:14:06 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFNES8Md7A3CFNHwX0lErMTETzI5Rg/j+0fBW+Ff5l9r5O1cG+STO8WEbPkWXnDiyhsycUF
+X-Received: by 2002:a05:6602:26d5:b0:79f:e9ac:f60a with SMTP id g21-20020a05660226d500b0079fe9acf60amr1521446ioo.20.1697796846680;
+        Fri, 20 Oct 2023 03:14:06 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697796846; cv=none;
+        d=google.com; s=arc-20160816;
+        b=WDIj9X6kTdYvVtcU5XuRAt/zRB7auLHiY/kPM/vH8MQqnuprsKz7aZwxdJa4pXcs7c
+         TbX8fTZ+7TVWwMZtkOHUpkaPQh8QriF3WylFGNEh7NTJsTmNooWSA7nIa7QUaGrd9sOs
+         UyQBOfVKq9wKWffMUPxCdjXcRGuHQMZs5uTrva7TWhJl1hhgLhesPMToQTJKXa6+VpoN
+         aUdJFMJoa9uLjMnjX67WjIudGJH1AYSxPhcWF5/BZQ6SuVNx0UBG11BlvHuukh0j8fwc
+         jwHCwf4m/ZQByj6teXq813kOa7Tved0W/k7+1yJkAzr0JXfqsfiXGHCoNg+TC2LiDfqS
+         /wqw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:feedback-id:message-id
+         :list-unsubscribe-post:list-unsubscribe:date:reply-to:to:from
+         :subject:dkim-signature;
+        bh=CygezlIfhnrKqS2Dw9X9ChtdNylB6NZ0vLItCX8C55g=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=v6b4tTLnmI+QpZqSKeSfCTffwKTXdsNckibBnw22ShNE6a4KV3LEjByqL5yUPvEzCo
+         KFk6RN5yv8qMENaaR/+VgnkFE4W5r7j9GLWQweyO0dWmN+J+yWk6Ra/ilvA700pInvBM
+         cfocPewSNI97Ee2GfkD697H7jGYWm1RxFMwiUKHEVgvNYXPcBQfw+3aXiSExyaE9mHkL
+         DmMT3dCIkAdWyCpRg5XLgYrdpg+vQhT7qGttPAioC8dhVwbcL7F5UNL9I5j7VWC/etgU
+         HcW923JVxcJdYH7Gcn5t3QI0wsd/3rVa34kNNEhIY8yHkxwAU0gjQzujPwJ38yfEOSx4
+         tY9w==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@update.growbilliontrees.com header.s=defkas header.b=fT2wfxSp;
+       spf=pass (google.com: domain of return-a5727-305399-305422-32c2dd23=587850885=8@tre.update.growbilliontrees.com designates 103.96.100.19 as permitted sender) smtp.mailfrom="return-a5727-305399-305422-32c2dd23=587850885=8@tre.update.growbilliontrees.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=update.growbilliontrees.com
+Return-Path: <return-a5727-305399-305422-32c2dd23=587850885=8@tre.update.growbilliontrees.com>
+Received: from grw1-19.update.growbilliontrees.com (grw1-19.update.growbilliontrees.com. [103.96.100.19])
+        by mx.google.com with ESMTPS id i19-20020a5d9e53000000b0079fc1166a0asi642255ioi.54.2023.10.20.03.14.06
+        for <srijani515@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 20 Oct 2023 03:14:06 -0700 (PDT)
+Received-SPF: pass (google.com: domain of return-a5727-305399-305422-32c2dd23=587850885=8@tre.update.growbilliontrees.com designates 103.96.100.19 as permitted sender) client-ip=103.96.100.19;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@update.growbilliontrees.com header.s=defkas header.b=fT2wfxSp;
+       spf=pass (google.com: domain of return-a5727-305399-305422-32c2dd23=587850885=8@tre.update.growbilliontrees.com designates 103.96.100.19 as permitted sender) smtp.mailfrom="return-a5727-305399-305422-32c2dd23=587850885=8@tre.update.growbilliontrees.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=update.growbilliontrees.com
+DKIM-Signature: a=rsa-sha256; bh=CygezlIfhnrKqS2Dw9X9ChtdNylB6NZ0vLItCX8C55g=;
+ c=simple/simple; d=update.growbilliontrees.com;
+ h=Subject:From:To:Reply-To:Date:List-Unsubscribe:List-Unsubscribe-Post:X-CampaignID:Message-ID:X-Mailer-Info:Feedback-ID:Content-Type:Content-Transfer-Encoding;
+ s=defkas; t=1697796843; v=1;
+ b=fT2wfxSpdjFJ0Q/UB7/9nf+mqLYcqJ1NMT4wZzG5HbXK06U3BUaYxb/H7v+ydCiM6laZd3sd
+ cpC9Pk9TV5aarJMQSba5zf8zK1n6iPL79d5bNUdCuX6NXth/VXMMwxRkR5N4MEzkKQAnW5FZd5E
+ o1rjHXXYQwDTSnTzOqVpUz8g=
+Subject: =?UTF-8?Q?=F0=9F=8C=B3=E2=9C=A8=20Navrati=20Tree=20Plantati?=
+ =?UTF-8?Q?on=3A=20A=20memory=20of=20devotion?=
+From: "GrowBillionTrees" <info@update.growbilliontrees.com>
+To: srijani515@gmail.com
+Reply-To: care@growbilliontrees.com
+Date: 20 Oct 2023 10:14:03 -0000
+List-Unsubscribe: <https://wbi.update.growbilliontrees.com/ga/unsubscribe/2-587850885-5727-157244-305422-a33fdf033fcafbb-2m27f79bb4>,
+ <mailto:return-a5727-305399-305422-32c2dd23=587850885=8u@tre.update.growbilliontrees.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-CampaignID: s4:305399-6c98b7ef6a3ed8ac
+Message-ID: <mid-362e735d5fa7069f838ec54ee142dd78-101@tre.update.growbilliontrees.com>
+X-Mailer-Info: 11.EWN3IzN.zATNzkTO.MncppWYulWNxUDQn1WYpxmLj9Wb.1gzN4UDM4gTN.z
+ ATN0IjM....
+Feedback-ID: o101:o101c157244:o101s587850885:mlkt5
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html><html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"u=
+rn:schemas-microsoft-com:office:office" lang=3D"en"><head><title></title><m=
+eta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><met=
+a name=3D"viewport" content=3D"width=3Ddevice-width,initial-scale=3D1"><!--=
+[if mso]><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInc=
+h><o:AllowPNG/></o:OfficeDocumentSettings></xml><![endif]--><style>
+*{box-sizing:border-box}body{margin:0;padding:0}a[x-apple-data-detectors]{c=
+olor:inherit!important;text-decoration:inherit!important}#MessageViewBody a=
+{color:inherit;text-decoration:none}p{line-height:inherit}.desktop_hide,.de=
+sktop_hide table{mso-hide:all;display:none;max-height:0;overflow:hidden}.im=
+age_block img+div{display:none} @media (max-width:720px){.mobile_hide{displ=
+ay:none}.row-content{width:100%!important}.stack .column{width:100%;display=
+:block}.mobile_hide{min-height:0;max-height:0;max-width:0;overflow:hidden;f=
+ont-size:0}.desktop_hide,.desktop_hide table{display:table!important;max-he=
+ight:none!important}}
+</style></head><body style=3D"margin:0;background-color:#fff;padding:0;-web=
+kit-text-size-adjust:none;text-size-adjust:none">
+<table class=3D"nl-container" style=3D"mso-table-lspace: 0; mso-table-rspac=
+e: 0; background-color: #fff;" role=3D"presentation" border=3D"0" width=3D"=
+100%" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td>
+<table class=3D"row row-1" style=3D"mso-table-lspace: 0; mso-table-rspace: =
+0; background-color: #d3d3d3;" role=3D"presentation" border=3D"0" width=3D"=
+100%" cellspacing=3D"0" cellpadding=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td>
+<table class=3D"row-content stack" style=3D"mso-table-lspace: 0; mso-table-=
+rspace: 0; background-color: #fff; color: #000; width: 600px; margin: 0 aut=
+o;" role=3D"presentation" border=3D"0" width=3D"600" cellspacing=3D"0" cell=
+padding=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td class=3D"column column-1" style=3D"mso-table-lspace: 0; mso-table-rspac=
+e: 0; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top:=
+ 5px; vertical-align: top; border: 0;" width=3D"100%">
+<table class=3D"image_block block-1" style=3D"mso-table-lspace: 0; mso-tabl=
+e-rspace: 0;" role=3D"presentation" border=3D"0" width=3D"100%" cellspacing=
+=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td class=3D"pad" style=3D"width: 100%; padding-right: 0; padding-left: 0;">
+<div class=3D"alignment" style=3D"line-height: 10px;" align=3D"center"><a s=
+tyle=3D"outline: none;" href=3D"https://wbi.update.growbilliontrees.com/ga/=
+click/2-587850885-5727-157244-305422-473265-2a3502390f-2m27f79bb4" target=
+=3D"_blank" rel=3D"noopener"><img style=3D"display: block; height: auto; bo=
+rder: 0; max-width: 180px; width: 100%;" title=3D"GrowBillionTrees" src=3D"=
+https://gallery.fwusercontent.com/4fb955c2-89bb-3cf2-b161-c57c39501a40/file=
+s/e1ba8d09-b081-4fb1-a72f-59e02c43e1d7/gbt-logo-400.png" alt=3D"GrowBillion=
+Trees" width=3D"180" /></a></div>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"image_block block-2" style=3D"mso-table-lspace: 0; mso-tabl=
+e-rspace: 0;" role=3D"presentation" border=3D"0" width=3D"100%" cellspacing=
+=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td class=3D"pad" style=3D"width: 100%;">
+<div class=3D"alignment" style=3D"line-height: 10px;" align=3D"center"><a s=
+tyle=3D"outline: none;" href=3D"https://wbi.update.growbilliontrees.com/ga/=
+click/2-587850885-5727-157244-305422-473266-42b3c27994-2m27f79bb4" target=
+=3D"_blank" rel=3D"noopener"><img style=3D"display: block; height: auto; bo=
+rder: 0px; max-width: 600px; width: 650px;" title=3D"Kanha Shanti Vanam" sr=
+c=3D"http://d35v1kjypepl16.cloudfront.net/navratri-NL-n-16oct23-1.jpeg" alt=
+=3D"" width=3D"600" /></a></div>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"text_block block-3" style=3D"mso-table-lspace: 0; mso-table=
+-rspace: 0; word-break: break-word;" role=3D"presentation" border=3D"0" wid=
+th=3D"100%" cellspacing=3D"0" cellpadding=3D"10">
+<tbody>
+<tr>
+<td class=3D"pad">
+<div style=3D"font-family: sans-serif;">
+<div class=3D"" style=3D"font-size: 14px; font-family: Arial,'Helvetica Neu=
+e',Helvetica,sans-serif; mso-line-height-alt: 16.8px; color: #000; line-hei=
+ght: 1.2;">
+<p style=3D"text-align: center;" data-sourcepos=3D"3:1-3:52"><span style=3D=
+"font-size: 14pt;"><em><span style=3D"font-family: 'arial black', sans-seri=
+f;"><strong>Plant a Tree in Your Name and Make a Difference &#127795;</stro=
+ng></span></em></span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"text_block block-4" style=3D"mso-table-lspace: 0; mso-table=
+-rspace: 0; word-break: break-word;" role=3D"presentation" border=3D"0" wid=
+th=3D"100%" cellspacing=3D"0" cellpadding=3D"10">
+<tbody>
+<tr>
+<td class=3D"pad">
+<div style=3D"font-family: sans-serif;">
+<div class=3D"" style=3D"font-size: 14px; font-family: Arial,'Helvetica Neu=
+e',Helvetica,sans-serif; mso-line-height-alt: 16.8px; color: #000; line-hei=
+ght: 1.2;">
+<div><span style=3D"font-size: 12pt;">Hello Srijani,</span><br /><br /><spa=
+n style=3D"font-size: 12pt;">As the vibrant and auspicious days of Navratri=
+ dawn upon us, our hearts resonate with joy, devotion, and the timeless tal=
+es of Goddess Durga.</span><br /><br /><span style=3D"font-size: 12pt;">Eac=
+h night, as we celebrate her many forms and virtues, we're reminded of the =
+cycles of life, nature, and the enduring spirit that binds us all.</span><b=
+r /><br /><span style=3D"font-size: 12pt;">This Navratri, let's infuse our =
+celebrations with a touch of green and a promise to the future.</span><br /=
+><br /><span style=3D"font-size: 14pt;"><strong>Navratri Special: Trees of =
+Tribute&#160;</strong></span></div>
+<div><br /><span style=3D"font-size: 12pt;">We're launching a heartfelt tre=
+e plantation drive for Navratri. Beyond the dance, the music, and the color=
+s, let's add a gesture that grows, breathes, and thrives &#8211; a tree tha=
+t stands tall as a testament to your faith and commitment to our Mother Ear=
+th.</span><br /><br /><span style=3D"font-size: 14pt;"><strong>For just Rs =
+199:</strong></span><br /><br /><span style=3D"color: #000000; font-size: 1=
+2pt;">Plant a Tree in your name, or a loved one's.</span></div>
+<div><br /><span style=3D"color: #000000; font-size: 12pt;">Receive a Tree =
+Certificate to commemorate your contribution.</span></div>
+<div>&#160;</div>
+<div>
+<div><span style=3D"color: #000000; font-size: 12pt;">Cherish a beautifully=
+ crafted Greeting Card that tells a story of hope and growth.</span><br /><=
+span style=3D"color: #000000; font-size: 12pt;">Track your tree's journey w=
+ith a Geo-location, connecting you to a piece of land that flourishes becau=
+se of you.</span><br /><br /><span style=3D"color: #000000; font-size: 12pt=
+;">Imagine a world where our festivities not only honor traditions but also=
+ sow seeds for a future filled with green canopies, chirping birds, and the=
+ gentle rustling of leaves.</span><br /><br /><span style=3D"color: #000000=
+; font-size: 12pt;">This Navratri, as you light up your homes, take a momen=
+t to light up the world by planting a symbol of life.</span><br /><br /><sp=
+an style=3D"color: #000000; font-size: 12pt;">Plant Your Navratri Tree Now<=
+/span><br /><br /><span style=3D"color: #000000; font-size: 12pt;">May your=
+ tree grow as a living embodiment of your prayers, and may Goddess Durga sh=
+ower her blessings upon you and your loved ones.</span></div>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"m_6174847594074790458row-8" style=3D"background-color: #d3d=
+3d3;" role=3D"presentation" border=3D"0" width=3D"100%" cellspacing=3D"0" c=
+ellpadding=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td>
+<table class=3D"m_6174847594074790458row-content m_6174847594074790458stack=
+" style=3D"background-color: #fff; color: #000; width: 600px; margin: 0 aut=
+o;" role=3D"presentation" border=3D"0" width=3D"600" cellspacing=3D"0" cell=
+padding=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td class=3D"m_6174847594074790458column m_6174847594074790458column-1" sty=
+le=3D"font-weight: 400; text-align: left; vertical-align: top; border: 0;" =
+width=3D"100%">
+<table class=3D"m_6174847594074790458button_block m_6174847594074790458bloc=
+k-1" role=3D"presentation" border=3D"0" width=3D"100%" cellspacing=3D"0" ce=
+llpadding=3D"10">
+<tbody>
+<tr>
+<td class=3D"m_6174847594074790458pad">
+<div align=3D"center"><span style=3D"font-size: 14pt;"><strong><span style=
+=3D"color: #ffffff;"><em><a style=3D"text-decoration: none; display: inline=
+-block; color: #ffffff; background-color: #3aaee0; border-radius: 4px; widt=
+h: auto; font-weight: 400; padding-top: 5px; padding-bottom: 5px; font-fami=
+ly: 'Helvetica Neue', Helvetica, Arial, sans-serif; text-align: center; wor=
+d-break: keep-all; border: 0px solid transparent;" href=3D"https://wbi.upda=
+te.growbilliontrees.com/ga/click/2-587850885-5727-157244-305422-473266-42b3=
+c27994-2m27f79bb4" target=3D"_blank" rel=3D"noopener"><span style=3D"paddin=
+g-left: 20px; padding-right: 20px; display: inline-block; letter-spacing: n=
+ormal;"><span style=3D"word-break: break-word; line-height: 34px;">Plant Yo=
+ur Navratri Tree Now</span></span></a></em></span></strong></span></div>
+</td>
+</tr>
+<tr>
+<td>
+<table class=3D"text_block block-6" style=3D"mso-table-lspace: 0; mso-table=
+-rspace: 0; word-break: break-word;" role=3D"presentation" border=3D"0" wid=
+th=3D"100%" cellspacing=3D"0" cellpadding=3D"10">
+<tbody>
+<tr>
+<td class=3D"pad">
+<div style=3D"font-family: sans-serif;">
+<div class=3D"" style=3D"font-size: 14px; font-family: Arial,'Helvetica Neu=
+e',Helvetica,sans-serif; mso-line-height-alt: 16.8px; color: #000; line-hei=
+ght: 1.2;">
+<p style=3D"margin: 0; text-align: center; mso-line-height-alt: 16.8px;"><e=
+m><span style=3D"font-size: 16px;"><strong>You can plant more..&#160;</stro=
+ng></span></em></p>
+<table style=3D"background-color: #d3d3d3;" role=3D"presentation" border=3D=
+"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td>
+<table class=3D"m_6174847594074790458row-content m_6174847594074790458stack=
+" style=3D"background-color: #fff; border-radius: 0; color: #000; width: 60=
+0px; margin: 0 auto;" role=3D"presentation" border=3D"0" width=3D"600" cell=
+spacing=3D"0" cellpadding=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td class=3D"m_6174847594074790458column m_6174847594074790458column-1" sty=
+le=3D"font-weight: 400; text-align: left; vertical-align: top; border: 0; p=
+adding: 5px;" width=3D"50%">
+<table class=3D"m_6174847594074790458image_block m_6174847594074790458block=
+-1" role=3D"presentation" border=3D"0" width=3D"100%" cellspacing=3D"0" cel=
+lpadding=3D"0">
+<tbody>
+<tr>
+<td class=3D"m_6174847594074790458pad" style=3D"width: 100%;">
+<div style=3D"line-height: 10px;" align=3D"center"><a style=3D"outline: non=
+e;" href=3D"https://wbi.update.growbilliontrees.com/ga/click/2-587850885-57=
+27-157244-305422-473266-42b3c27994-2m27f79bb4" target=3D"_blank" rel=3D"noo=
+pener"><img class=3D"m_6174847594074790458fullWidth" style=3D"display: bloc=
+k; height: auto; border: 0; max-width: 290px; width: 100%;" title=3D"Trees =
+for Navratri" src=3D"http://d35v1kjypepl16.cloudfront.net/growbilliontree-n=
+-16oct23.jpg" alt=3D"Trees for Navratri" width=3D"290" /></a></div>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"m_6174847594074790458text_block m_6174847594074790458block-=
+2" style=3D"word-break: break-word;" role=3D"presentation" border=3D"0" wid=
+th=3D"100%" cellspacing=3D"0" cellpadding=3D"10">
+<tbody>
+<tr>
+<td class=3D"m_6174847594074790458pad">
+<div style=3D"font-family: Arial,sans-serif;">
+<div style=3D"font-size: 14px; font-family: Arial,'Helvetica Neue',Helvetic=
+a,sans-serif; color: #12344d; line-height: 1.2;">
+<p style=3D"margin: 0; font-size: 16px; text-align: center;"><em>Trees for =
+Navratri</em></p>
+<p style=3D"margin: 0; text-align: center; font-size: 16px;">&#160;</p>
+<p style=3D"margin: 0; text-align: center; font-size: 16px;"><em><span styl=
+e=3D"font-size: 16px;">&#8377; 199</span></em></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class=3D"m_6174847594074790458column" style=3D"font-weight: 400; text-a=
+lign: left; vertical-align: top; border: 0; padding: 5px;" width=3D"50%">
+<table class=3D"m_6174847594074790458image_block m_6174847594074790458block=
+-1" role=3D"presentation" border=3D"0" width=3D"100%" cellspacing=3D"0" cel=
+lpadding=3D"0">
+<tbody>
+<tr>
+<td class=3D"m_6174847594074790458pad" style=3D"width: 100%;">
+<div style=3D"line-height: 10px;" align=3D"center"><a style=3D"outline: non=
+e;" href=3D"https://wbi.update.growbilliontrees.com/ga/click/2-587850885-57=
+27-157244-305422-473267-edb5b60684-2m27f79bb4" target=3D"_blank" rel=3D"noo=
+pener"><img class=3D"m_6174847594074790458fullWidth" style=3D"display: bloc=
+k; height: auto; border: 0; max-width: 290px; width: 100%;" title=3D"Trees =
+for Father's Day (18th Jun)" src=3D"https://cdn.shopify.com/s/files/1/0691/=
+3723/6250/files/grow-billion-trees-for-grandfathers.jpg?v=3D1684741396&amp;=
+width=3D360" alt=3D"Trees for Father's Day (18th Jun)" width=3D"290" /></a>=
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"m_6174847594074790458text_block m_6174847594074790458block-=
+2" style=3D"word-break: break-word;" role=3D"presentation" border=3D"0" wid=
+th=3D"100%" cellspacing=3D"0" cellpadding=3D"10">
+<tbody>
+<tr>
+<td class=3D"m_6174847594074790458pad">
+<div style=3D"font-family: Arial,sans-serif;">
+<div style=3D"font-size: 14px; font-family: Arial,'Helvetica Neue',Helvetic=
+a,sans-serif; color: #12344d; line-height: 1.2;">
+<p style=3D"margin: 0; font-size: 16px; text-align: center;"><em>Trees for =
+Grandfather</em></p>
+<p style=3D"margin: 0; text-align: center; font-size: 16px;">&#160;</p>
+<p style=3D"margin: 0; text-align: center; font-size: 16px;"><em><span styl=
+e=3D"font-size: 16px;">&#8377; 199</span></em></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table style=3D"background-color: #d3d3d3;" role=3D"presentation" border=3D=
+"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td>
+<table class=3D"m_6174847594074790458row-content m_6174847594074790458stack=
+" style=3D"background-color: #fff; border-radius: 0; color: #000; width: 60=
+0px; margin: 0 auto;" role=3D"presentation" border=3D"0" width=3D"600" cell=
+spacing=3D"0" cellpadding=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td class=3D"m_6174847594074790458column m_6174847594074790458column-1" sty=
+le=3D"font-weight: 400; text-align: left; vertical-align: top; border: 0; p=
+adding: 5px;" width=3D"50%">
+<table class=3D"m_6174847594074790458image_block m_6174847594074790458block=
+-1" role=3D"presentation" border=3D"0" width=3D"100%" cellspacing=3D"0" cel=
+lpadding=3D"0">
+<tbody>
+<tr>
+<td class=3D"m_6174847594074790458pad" style=3D"width: 100%;">
+<div style=3D"line-height: 10px;" align=3D"center"><a style=3D"outline: non=
+e;" href=3D"https://wbi.update.growbilliontrees.com/ga/click/2-587850885-57=
+27-157244-305422-473268-ad3e13fd57-2m27f79bb4" target=3D"_blank" rel=3D"noo=
+pener"><img class=3D"m_6174847594074790458fullWidth" style=3D"display: bloc=
+k; height: auto; border: 0; max-width: 290px; width: 100%;" title=3D"Trees =
+for Wedding Anniversary Celebration" src=3D"https://cdn.shopify.com/s/files=
+/1/0691/3723/6250/products/growbilliontree-trees-for-wedding-anniversary-ce=
+lebration.jpg?v=3D1672234339&amp;width=3D360" alt=3D"Trees for Wedding Anni=
+versary Celebration" width=3D"290" /></a></div>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"m_6174847594074790458text_block m_6174847594074790458block-=
+2" style=3D"word-break: break-word;" role=3D"presentation" border=3D"0" wid=
+th=3D"100%" cellspacing=3D"0" cellpadding=3D"10">
+<tbody>
+<tr>
+<td class=3D"m_6174847594074790458pad">
+<div style=3D"font-family: Arial,sans-serif;">
+<div style=3D"font-size: 14px; font-family: Arial,'Helvetica Neue',Helvetic=
+a,sans-serif; color: #12344d; line-height: 1.2;">
+<p style=3D"margin: 0; font-size: 16px; text-align: center;"><em>Trees for =
+Wedding Anniversary</em></p>
+<p style=3D"margin: 0; text-align: center; font-size: 16px;">&#160;</p>
+<p style=3D"margin: 0; text-align: center; font-size: 16px;"><em><span styl=
+e=3D"font-size: 16px;">&#8377; 199</span></em></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class=3D"m_6174847594074790458column" style=3D"font-weight: 400; text-a=
+lign: left; vertical-align: top; border: 0; padding: 5px;" width=3D"50%">
+<table class=3D"m_6174847594074790458image_block m_6174847594074790458block=
+-1" role=3D"presentation" border=3D"0" width=3D"100%" cellspacing=3D"0" cel=
+lpadding=3D"0">
+<tbody>
+<tr>
+<td class=3D"m_6174847594074790458pad" style=3D"width: 100%;">
+<div style=3D"line-height: 10px;" align=3D"center"><a style=3D"outline: non=
+e;" href=3D"https://wbi.update.growbilliontrees.com/ga/click/2-587850885-57=
+27-157244-305422-473269-28e32afef0-2m27f79bb4" target=3D"_blank" rel=3D"noo=
+pener"><img class=3D"m_6174847594074790458fullWidth" style=3D"display: bloc=
+k; height: auto; border: 0; max-width: 290px; width: 100%;" title=3D"Trees =
+for Birthday Celebration" src=3D"https://cdn.shopify.com/s/files/1/0691/372=
+3/6250/products/growbilliontrees-trees-for-birthday.jpg?v=3D1681306170&amp;=
+width=3D360" alt=3D"Trees for Birthday Celebration" width=3D"290" /></a></d=
+iv>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"m_6174847594074790458text_block m_6174847594074790458block-=
+2" style=3D"word-break: break-word;" role=3D"presentation" border=3D"0" wid=
+th=3D"100%" cellspacing=3D"0" cellpadding=3D"10">
+<tbody>
+<tr>
+<td class=3D"m_6174847594074790458pad">
+<div style=3D"font-family: Arial,sans-serif;">
+<div style=3D"font-size: 14px; font-family: Arial,'Helvetica Neue',Helvetic=
+a,sans-serif; color: #12344d; line-height: 1.2;">
+<p style=3D"margin: 0; font-size: 16px; text-align: center;"><em>Trees for =
+Birthday Celebration</em></p>
+<p style=3D"margin: 0; text-align: center; font-size: 16px;">&#160;</p>
+<p style=3D"margin: 0; text-align: center; font-size: 16px;"><em><span styl=
+e=3D"font-size: 16px;">&#8377; 199</span></em></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table style=3D"background-color: #d3d3d3;" role=3D"presentation" border=3D=
+"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td>
+<table class=3D"m_6174847594074790458row-content m_6174847594074790458stack=
+" style=3D"background-color: #fff; border-radius: 0; color: #000; width: 60=
+0px; margin: 0 auto;" role=3D"presentation" border=3D"0" width=3D"600" cell=
+spacing=3D"0" cellpadding=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td class=3D"m_6174847594074790458column m_6174847594074790458column-1" sty=
+le=3D"font-weight: 400; text-align: left; vertical-align: top; border: 0; p=
+adding: 5px;" width=3D"50%">
+<table class=3D"m_6174847594074790458image_block m_6174847594074790458block=
+-1" role=3D"presentation" border=3D"0" width=3D"100%" cellspacing=3D"0" cel=
+lpadding=3D"0">
+<tbody>
+<tr>
+<td class=3D"m_6174847594074790458pad" style=3D"width: 100%;">
+<div style=3D"line-height: 10px;" align=3D"center"><a style=3D"outline: non=
+e;" href=3D"https://wbi.update.growbilliontrees.com/ga/click/2-587850885-57=
+27-157244-305422-473270-e9c5abb451-2m27f79bb4" target=3D"_blank" rel=3D"noo=
+pener"><img class=3D"m_6174847594074790458fullWidth" style=3D"display: bloc=
+k; height: auto; border: 0; max-width: 290px; width: 100%;" title=3D"Trees =
+for Son" src=3D"https://cdn.shopify.com/s/files/1/0691/3723/6250/files/grow=
+-billion-trees-for-son.jpg?v=3D1684753650&amp;width=3D713" alt=3D"Trees for=
+ Son" width=3D"290" /></a></div>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"m_6174847594074790458text_block m_6174847594074790458block-=
+2" style=3D"word-break: break-word;" role=3D"presentation" border=3D"0" wid=
+th=3D"100%" cellspacing=3D"0" cellpadding=3D"10">
+<tbody>
+<tr>
+<td class=3D"m_6174847594074790458pad">
+<div style=3D"font-family: Arial,sans-serif;">
+<div style=3D"font-size: 14px; font-family: Arial,'Helvetica Neue',Helvetic=
+a,sans-serif; color: #12344d; line-height: 1.2;">
+<p style=3D"margin: 0; font-size: 16px; text-align: center;"><em>Trees for =
+Son</em></p>
+<p style=3D"margin: 0; text-align: center; font-size: 16px;">&#160;</p>
+<p style=3D"margin: 0; text-align: center; font-size: 16px;"><em><span styl=
+e=3D"font-size: 16px;">&#8377; 199</span></em></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class=3D"m_6174847594074790458column" style=3D"font-weight: 400; text-a=
+lign: left; vertical-align: top; border: 0; padding: 5px;" width=3D"50%">
+<table class=3D"m_6174847594074790458image_block m_6174847594074790458block=
+-1" role=3D"presentation" border=3D"0" width=3D"100%" cellspacing=3D"0" cel=
+lpadding=3D"0">
+<tbody>
+<tr>
+<td class=3D"m_6174847594074790458pad" style=3D"width: 100%;">
+<div style=3D"line-height: 10px;" align=3D"center"><a style=3D"outline: non=
+e;" href=3D"https://wbi.update.growbilliontrees.com/ga/click/2-587850885-57=
+27-157244-305422-473271-ae70533fee-2m27f79bb4" target=3D"_blank" rel=3D"noo=
+pener"><img class=3D"m_6174847594074790458fullWidth" style=3D"display: bloc=
+k; height: auto; border: 0; max-width: 290px; width: 100%;" title=3D"Trees =
+for Daughter" src=3D"https://cdn.shopify.com/s/files/1/0691/3723/6250/produ=
+cts/grow-billion-trees-for-daughter-on-womens-day-21.jpg?v=3D1677067947&amp=
+;width=3D713" alt=3D"Trees for Daughter" width=3D"290" /></a></div>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"m_6174847594074790458text_block m_6174847594074790458block-=
+2" style=3D"word-break: break-word;" role=3D"presentation" border=3D"0" wid=
+th=3D"100%" cellspacing=3D"0" cellpadding=3D"10">
+<tbody>
+<tr>
+<td class=3D"m_6174847594074790458pad">
+<div style=3D"font-family: Arial,sans-serif;">
+<div style=3D"font-size: 14px; font-family: Arial,'Helvetica Neue',Helvetic=
+a,sans-serif; color: #12344d; line-height: 1.2;">
+<p style=3D"margin: 0; font-size: 16px; text-align: center;"><em>Trees for =
+Daughter</em></p>
+<p style=3D"margin: 0; text-align: center; font-size: 16px;">&#160;</p>
+<p style=3D"margin: 0px; font-size: 16px; text-align: center;"><em><span st=
+yle=3D"font-size: 16px;">&#8377; 199</span></em></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"m_6174847594074790458row-8" style=3D"background-color: #d3d=
+3d3;" role=3D"presentation" border=3D"0" width=3D"100%" cellspacing=3D"0" c=
+ellpadding=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td>
+<table class=3D"m_6174847594074790458row-content m_6174847594074790458stack=
+" style=3D"background-color: #fff; color: #000; width: 600px; margin: 0 aut=
+o;" role=3D"presentation" border=3D"0" width=3D"600" cellspacing=3D"0" cell=
+padding=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td class=3D"m_6174847594074790458column m_6174847594074790458column-1" sty=
+le=3D"font-weight: 400; text-align: left; vertical-align: top; border: 0;" =
+width=3D"100%">
+<table class=3D"m_6174847594074790458button_block m_6174847594074790458bloc=
+k-1" role=3D"presentation" border=3D"0" width=3D"100%" cellspacing=3D"0" ce=
+llpadding=3D"10">
+<tbody>
+<tr>
+<td class=3D"m_6174847594074790458pad">
+<div align=3D"center"><span style=3D"font-size: 14pt;"><strong><span style=
+=3D"color: #ffffff;"><em><a style=3D"text-decoration: none; display: inline=
+-block; color: #ffffff; background-color: #3aaee0; border-radius: 4px; widt=
+h: auto; font-weight: 400; padding-top: 5px; padding-bottom: 5px; font-fami=
+ly: 'Helvetica Neue', Helvetica, Arial, sans-serif; text-align: center; wor=
+d-break: keep-all; border: 0px solid transparent;" href=3D"https://wbi.upda=
+te.growbilliontrees.com/ga/click/2-587850885-5727-157244-305422-473266-42b3=
+c27994-2m27f79bb4" target=3D"_blank" rel=3D"noopener"><span style=3D"paddin=
+g-left: 20px; padding-right: 20px; display: inline-block; letter-spacing: n=
+ormal;"><span style=3D"word-break: break-word; line-height: 34px;">Plant Yo=
+ur Navratri Tree Now</span></span></a></em></span></strong></span></div>
+</td>
+</tr>
+<tr>
+<td>
+<div align=3D"center">
+<div style=3D"text-align: left;"><em style=3D"font-size: 12pt; font-family:=
+ -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Can=
+tarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Stay Blessed and Green,=
+<br /><br />Gouri S<br /><br />Grow Billion Trees Team<br /><br />P.S. Shar=
+e this special initiative with your circle. Together, let's dance to the rh=
+ythm of nature and craft memories that last a lifetime.&#10084;&#65039;&#97=
+52;&#65039;</em></div>
+<span style=3D"padding-left: 20px; padding-right: 20px; font-size: 17px; di=
+splay: inline-block; letter-spacing: normal;"><span style=3D"word-break: br=
+eak-word; line-height: 34px;"><br /></span></span></div>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"m_6174847594074790458text_block" style=3D"word-break: break=
+-word;" role=3D"presentation" border=3D"0" width=3D"100%" cellspacing=3D"0"=
+ cellpadding=3D"10">
+<tbody>
+<tr>
+<td class=3D"m_6174847594074790458pad">
+<div style=3D"font-family: sans-serif;">
+<div style=3D"font-size: 14px; font-family: Helvetica Neue,Helvetica,Arial,=
+sans-serif; color: #12344d; line-height: 1.2;">
+<p style=3D"margin: 0; font-size: 15px; text-align: center;"><span style=3D=
+"color: #000000;"><em><span style=3D"font-size: 10pt;">Help us spread the c=
+ampaign and make our planet sustainable.&#127793;</span></em></span></p>
+<p style=3D"margin: 0; font-size: 15px; text-align: center;">&#160;</p>
+<p style=3D"margin: 0; font-size: 15px; text-align: center;"><span style=3D=
+"color: #000000;"><em><span style=3D"font-size: 10pt;"><u>Please do not mar=
+k it spam,</u> we will try to send u very few similar emails.</span></em></=
+span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" border=3D"0" width=3D"100%" cellspacing=3D"0" =
+cellpadding=3D"10">
+<tbody>
+<tr>
+<td class=3D"m_6174847594074790458pad">
+<div align=3D"center">
+<table role=3D"presentation" border=3D"0" width=3D"100%" cellspacing=3D"0" =
+cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"font-size: 1px; line-height: 1px; border-top: 0 solid #bbb;">&=
+#8202;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" border=3D"0" width=3D"100%" cellspacing=3D"0" =
+cellpadding=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td>
+<table class=3D"m_6174847594074790458row-content m_6174847594074790458stack=
+" style=3D"color: #000; width: 600px; margin: 0 auto;" role=3D"presentation=
+" border=3D"0" width=3D"600" cellspacing=3D"0" cellpadding=3D"0" align=3D"c=
+enter">
+<tbody>
+<tr>
+<td class=3D"m_6174847594074790458column m_6174847594074790458column-1" sty=
+le=3D"font-weight: 400; text-align: left; padding-bottom: 5px; padding-top:=
+ 5px; vertical-align: top; border: 0;" width=3D"100%">
+<table class=3D"m_6174847594074790458text_block m_6174847594074790458block-=
+1" style=3D"word-break: break-word;" role=3D"presentation" border=3D"0" wid=
+th=3D"100%" cellspacing=3D"0" cellpadding=3D"10">
+<tbody>
+<tr>
+<td class=3D"m_6174847594074790458pad">
+<div style=3D"font-family: Arial,sans-serif;">
+<div style=3D"font-size: 10px; font-family: 'Helvetica Neue',Helvetica,Aria=
+l,sans-serif; color: #555; line-height: 1.2;">
+<p style=3D"margin: 0; font-size: 14px; text-align: center;"><span style=3D=
+"color: #000000;"><em><span style=3D"font-size: 8pt;">Message sent by Grow =
+Billion Trees at Hadapsar, Pune, Maharashtra, India.</span></em></span><br =
+/><span style=3D"color: #000000;"><em><span style=3D"font-size: 8pt;"><br /=
+></span></em></span></p>
+<p style=3D"margin: 0; font-size: 14px; text-align: center;"><span style=3D=
+"color: #000000;"><em><span style=3D"font-size: 8pt;">Don't want to receive=
+ emails from us? Manage your email preferences <a style=3D"text-decoration:=
+ underline; color: #000000;" href=3D"https://wbi.update.growbilliontrees.co=
+m/ga/unsubscribe/2-587850885-5727-157244-305422-a33fdf033fcafbb-2m27f79bb4"=
+ target=3D"_blank" rel=3D"noopener">here </a>.</span></em></span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+
+<img src=3D"https://wbi.update.growbilliontrees.com/ga/open/2-587850885-572=
+7-157244-305422-2m27f79bb4" height=3D"2" width=3D"3" alt=3D"">

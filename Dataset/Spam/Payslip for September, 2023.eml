@@ -1,0 +1,288 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:f00d:b0:4fd:23d3:a27 with SMTP id t13csp173814pxk;
+        Sat, 30 Sep 2023 03:32:15 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IG85OxGTMZZsV9BD+Ns0UmkfG6G1nMd40sWiphcsz8d12mC7JcYgsGOh3TuzFKgROMnmzda
+X-Received: by 2002:a05:622a:1a02:b0:40c:58a1:cb40 with SMTP id f2-20020a05622a1a0200b0040c58a1cb40mr8606648qtb.15.1696069935070;
+        Sat, 30 Sep 2023 03:32:15 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1696069935; cv=none;
+        d=google.com; s=arc-20160816;
+        b=XAET4n6b/b8ixHBFpXNWY9W6k0jiwiYl08D6Dd+cjE2I1G6n3tBNLwDLGr6CvwANFy
+         B0NsFPw7NidxCLDI++taqd+mEV0/XwGq75zRDcCGL7So0HCsCnImZmzGnG27SJ1YCjyl
+         lfMAiUFh421RRjSr8pGAlmqEVmE0kMsgy5JFnni3w+V/MKEj5DV1RlYRv17wr2bCaI8O
+         tXwHXpbF0l91+0sjw9hbTQxcJUF+OduQjlyg/sfzG5hUWqLRr8EmJFQyoCAl2Y1pwIAm
+         KeiLYmX9Ap3uNJXj+9YGLJSc/1FuIkmnBTp0p/9z/RVoGcmYkokDqtzmBTusqkPE35QS
+         bHqw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:list-unsubscribe:mime-version:subject:message-id:to
+         :reply-to:from:date:dkim-signature;
+        bh=SzBbf6VUSPjbRA5FiHtZlf/A4y1ynIFiIERzUcbBmo0=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=Gj3nKMlLthrPIPLQHFT68FzvRzi7usTZfG07jG5KzEEgTKXCOCHKEcMRxu0jptVL9f
+         AaKGDOMmDgCS+1oc3oxtZ3vf6LIVAlj0XhlWM/6d2KCwA6+M/PY72pZf7IPhNh5f6Mb3
+         x7yZKikAztkQLDXVkkp8FORFdy5fo+Ac2Gr4UAetDKcAkkXAqRTNQ27jt2UKUkSbGt+i
+         8QaUBctcy/sHH1Pl/5OBCKDnQw1pebohjkKISUoJK/AQ4AO/38NmnOTQhHag2ZFuv4I4
+         a8iGVzNbRecRvh9dZn/u4r9b+CH9i6yCczo3hd5LloU/+mEnSixltRv34u/N4AhWEd7u
+         lwww==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@swiggy.in header.s=fnc header.b=tWbmFo7q;
+       spf=pass (google.com: domain of 16960131686403641-62838-1-gmail.com@trans.swiggy.in designates 103.52.180.242 as permitted sender) smtp.mailfrom=16960131686403641-62838-1-gmail.com@trans.swiggy.in;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=swiggy.in
+Return-Path: <16960131686403641-62838-1-gmail.com@trans.swiggy.in>
+Received: from mail242.delivery.swiggy.in (mail242.delivery.swiggy.in. [103.52.180.242])
+        by mx.google.com with ESMTPS id x22-20020a05622a001600b004198cd73707si155194qtw.427.2023.09.30.03.32.14
+        for <srijani515@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 30 Sep 2023 03:32:15 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 16960131686403641-62838-1-gmail.com@trans.swiggy.in designates 103.52.180.242 as permitted sender) client-ip=103.52.180.242;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@swiggy.in header.s=fnc header.b=tWbmFo7q;
+       spf=pass (google.com: domain of 16960131686403641-62838-1-gmail.com@trans.swiggy.in designates 103.52.180.242 as permitted sender) smtp.mailfrom=16960131686403641-62838-1-gmail.com@trans.swiggy.in;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=swiggy.in
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=swiggy.in; s=fnc;
+	h=feedback-id:list-unsubscribe:content-type:mime-version:subject:message-id:to:
+	 reply-to:from:from:to:subject;
+	bh=SzBbf6VUSPjbRA5FiHtZlf/A4y1ynIFiIERzUcbBmo0=;
+	b=tWbmFo7q50CNNa1vOt0/P0SuF+fwje3Om9pJ3DnJLqefJLFIdLKjOSJdxivTQMug2n/R3Kz2J7XEm
+	 Z/PdnoPICP41jcMDTMAfiEcwNSYFd1fQ7zSVB6eG2uNo/iKkHwvWFmvNRSANIoKhYIZNYTiQvWPMvt
+	 D6BMz66UErZEuMEg=
+Date: Sat, 30 Sep 2023 16:02:14 +0530
+From: swiggy <no-reply@swiggy.in>
+Reply-To: no-reply@swiggy.in
+To: srijani515@gmail.com
+Message-ID: <686468283.1254991.1696069455884@ip-10-12-50-136.ap-south-1.compute.internal>
+Subject: Payslip for September, 2023
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_1254990_1050014352.1696069455884"
+X-CleverTap_META: 20780a44-f59f-4fda-a64e-6b1b49482c55@krp2.n8|1620311680|1696011750|20230930|0|wzrk_default|-2186383|
+X-CLEVERTAP_METADATA: { "X-CLEVERTAP_TARGET_ID" : 1696011750, "X-CLEVERTAP_IID" : { "$numberLong" : "2186383" }, "X-CLEVERTAP_IDN" : { "$numberLong" : "2186383" }, "X-CLEVERTAP_PIVOT" : "wzrk_default" }
+X-InjTime: 1696069932
+List-Unsubscribe: <mailto:16960131686403641-62838@usub.ftrans03.com?subject=Unsubscribe>, <http://trans.swiggy.in/QSXYFJWMDVN?id=62838=Zk8CVAVXDwsJS0JCF0NFRUEWGEURQRcURUJCFRESEEQTExJEE0UXGBEXQkIXQ0VFQQZEFkMIXVULC1cEBHJXCVJaXkpQClpEAAFbVAdSVlRXDg5RAVIBAFQeCkFFQgpLHEdABV0WGUtGXgUFTk0MC05naz1oJ31jKCY0ew5bVBhFAA==>
+Feedback-ID: NjI4Mzg6MjAyMzA5MzBfMTY6:pepipostE
+X-FNCID: 62838-16960131686403641-0
+X-Traffic-Type: 62838-2
+
+------=_Part_1254990_1050014352.1696069455884
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html> <!doctype html=3D""> <html> <head>  <style type=3D"text/css=
+">  </style>  <link href=3D"./Email Template_files/css" rel=3D"stylesheet" =
+/>  <title></title>  <style media=3D"screen" type=3D"text/css">body {      =
+       padding: 0 !important;             margin: 0 !important;            =
+ display: block !important;             min-width: 100% !important;        =
+     width: 100% !important;             background: #ebeef4;             -=
+webkit-text-size-adjust: none         }         a {             color: #193=
+6e7;             text-decoration: none         }         .text-button.t-whi=
+te a {             color: #fefffe;             text-decoration: none       =
+  }         .text-button.t-orange a {             color: #ff7f02;          =
+   text-decoration: none         }         .text-button.t-dark a {         =
+    color: #000001;             text-decoration: none         }         .te=
+xt-button.t-blue a {             color: #1936e7;             text-decoratio=
+n: none         }         .footer-text a {             color: #999b9f;     =
+        text-decoration: none         }         .t-orange a {             c=
+olor: #ff7f02         }         .t-blue a {             color: #1936e7     =
+    }         .t-dark a {             color: #000001         }         .t-w=
+hite a {             color: #fefffe         }         p {             paddi=
+ng: 0 !important;             margin: 0 !important         }         img { =
+            -ms-interpolation-mode: bicubic         }         .mcnPreviewTe=
+xt {             display: none !important         }         @media only scr=
+een and (max-device-width: 600px),         only screen and (max-width: 600p=
+x) {             u+.body .gwfw {                 width: 100% !important;   =
+              width: 100vw !important             }             .m-shell { =
+                width: 100% !important;                 min-width: 100% !im=
+portant             }             .m-center {                 text-align: c=
+enter !important             }             .center {                 margin=
+: 0 auto !important             }             .td {                 width: =
+100% !important;                 min-width: 100% !important             }  =
+           .m-br-15 {                 height: 15px !important             }=
+             .m-td,             .m-hide {                 display: none !im=
+portant;                 width: 0 !important;                 height: 0 !im=
+portant;                 font-size: 0 !important;                 line-heig=
+ht: 0 !important;                 min-height: 0 !important             }   =
+          .m-block {                 display: block !important             =
+}             .fluid-img img {                 width: 100% !important;     =
+            max-width: 100% !important;                 height: auto !impor=
+tant             }             .column {                 float: left !impor=
+tant;                 width: 100% !important;                 display: bloc=
+k !important             }             .content-spacing {                 w=
+idth: 15px !important             }         }  </style> </head> <body class=
+=3D"body" data-gr-ext-installed=3D"" data-new-gr-c-s-check-loaded=3D"14.109=
+1.0" data-new-gr-c-s-loaded=3D"14.1085.0" style=3D"background: rgb(235, 238=
+, 244); text-size-adjust: none; cursor: auto; padding: 0px !important; marg=
+in: 0px !important; display: block !important; min-width: 100% !important; =
+width: 100% !important;"><span class=3D"preheader" style=3D"color:blue; dis=
+play:none !important;height:0; opacity:0; visibility:hidden; width:0">Tap t=
+o see</span> <table bgcolor=3D"#ebeef4" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" class=3D"gwfw" width=3D"100%">  <tbody>   <tr>    <td class=
+=3D"img" style=3D"font-size:0pt; line-height:0pt; text-align:left;" width=
+=3D"7"> </td>    <td align=3D"center" valign=3D"top">    <table border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" class=3D"m-shell" width=3D"600">     =
+<tbody>      <tr>       <td class=3D"td" style=3D"width:600px; min-width:60=
+0px; font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:norma=
+l;">       <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%">        <tbody>         <tr>          <td class=3D"fluid-img" style=
+=3D"font-size:0pt; line-height:0pt; text-align:left;"><a href=3D"http://tra=
+ns.swiggy.in/QSXYFJWMDVN?id=3D62838=3DcE8CVAVXDwsJS1oAVlMHAFcDAVwFAgYNXAMBB=
+wUKVQACAgdSAFIGAAYGWlQOVwRdBVNEFkMIXVULC1cEBHJXCVJaXkpQClpEAAFbVAdSVlRXDg5R=
+AVIBAFQeCkFFQgpLHEdABV0WGUtGXgUFTk0MC05naz1oJ31jKCY0ew5bVBhFAA=3D=3D&fl=3DW=
+0dGFEBfGBdYWVNMQAofFw5VUwBFDFZdCUwMUEUdQg=3D=3D&ext=3DZT1LdzFxZlI5cWEzOTZEU=
+UI5RFNaZ2Vnb0dBZ3hrSkN3MUlDUXNOUUFCQ1FKa1ltRTNGeG9oTGtGRFdGczVCVEVrT0RFN0xu=
+SndUUVVyUHlRdU9TNHVCVjFFV0ZJJTJCT1RNJTJGUGpVOGEzRmNXRmM4UHpZM0xIZ2xNVUJiYmw=
+wemVHaHBabXhyZlFJQkFBTmlhZzE1WjJoaGV3c0RBUlo3ZUNVeEpURU5PMXRHWGtCMVlIQThMU2=
+c1RkZaVlYxVWlOaVpwS2clM0QlM0Qmcj1odHRwcyUzQSUyRiUyRnN3aWdneS5vbmVsaW5rLm1lJ=
+TJGODg4NTY0MjI0JTJGbWNxMG1kOHkmYz02NTI2MTQ0ODAmdG9rZW49QmxkUkF3UlFCZ2dDQWcl=
+M0QlM0QmdHJ5PTEmJGZvbGxvd19yZWRpcmVjdD10cnVl" target=3D"_blank"><img alt=3D=
+""    onerror=3D"this.src=3D'https://res.cloudinary.com/swiggy-merch/image/=
+upload/q_auto:eco/f_webp/v1696060567/Pay_day_Emailer_sept23_Flat125.png'; t=
+his.onerror =3D null" src=3D"https://res.cloudinary.com/swiggy-merch/image/=
+upload/q_auto:eco/f_webp/v1696060567/Pay_day_Emailer_sept23_Flat125.png" st=
+yle=3D"width: 600px; height: 1390px;" /></a><a href=3D"http://trans.swiggy.=
+in/QSXYFJWMDVN?id=3D62838=3DcE8CVAVXDwsJS1dQVVJUXVhQDV0GUQ8AXQNaUVJQBFMCAwt=
+TUgQOXVcCWlQCUAEEUVREFkMIXVULC1cEBHJXCVJaXkpQClpEAAFbVAdSVlRXDg5RAVIBAFQeCk=
+FFQgpLHEdABV0WGUtGXgUFTk0MC05naz1oJ31jKCY0ew5bVBhFAA=3D=3D&fl=3DW0dGFEBfGBd=
+YWVNMQAofFw5VUwBFDFZdCUwMUEUdQg=3D=3D&ext=3DZT1LdzFxZlI5cWEzOTZEUUI5RFNaZ2V=
+nb0dBZ3hrSkN3MUlDUXNOUUFCQ1FKa1ltRTNGeG9oTGtGRFdGczVCVEVrT0RFN0xuSndUUVVyUH=
+lRdU9TNHVCVjFFV0ZJJTJCT1RNJTJGUGpVOGEzRmNXRmM4UHpZM0xIZ2xNVUJiYmwwemVHaHBab=
+XhyZlFJQkFBTmlhZzE1WjJoaGV3c0RBUlo3ZUNVeEpURU5PMXRHWGtCMVlIQThMU2c1RkZaVlYx=
+VWlOaVpwS2clM0QlM0Qmcj1odHRwcyUzQSUyRiUyRnd3dy5yZXNlYXJjaC5uZXQlMkZyJTJGQjl=
+CM1RQViUzRnVzZXJpZCUzRCU1QnVzZXJpZF92YWx1ZSU1RCUyNkluZGlhY2x1c3RlciUzRCU1Qk=
+luZGlhY2x1c3Rlcl92YWx1ZSU1RCUyNnBzZWclM0QlNUJwc2VnX3ZhbHVlJTVEJmM9NjUyNjE0N=
+DgwJnRva2VuPUJsUlJCZ0ZXQWdrR0NnJTNEJTNEJnRyeT0xJiRmb2xsb3dfcmVkaXJlY3Q9dHJ1=
+ZQ=3D=3D" style=3D"color: #1936e7; text-decoration: none;" target=3D"_blank=
+"> </a></td>         </tr>         <tr>          <td class=3D"fluid-img" st=
+yle=3D"font-size:0pt; line-height:0pt; text-align:left;"> </td>         </t=
+r>         <tr>          <td class=3D"fluid-img" style=3D"font-size:0pt; li=
+ne-height:0pt; text-align:left;"> </td>         </tr>         <tr>         =
+ <td class=3D"fluid-img" style=3D"font-size:0pt; line-height:0pt; text-alig=
+n:left;"> </td>         </tr>         <tr>          <td class=3D"img p40-15=
+" style=3D"font-size:0pt; line-height:0pt; text-align:left; padding:40px 15=
+px;">          <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" widt=
+h=3D"100%">           <tbody>            <tr>             <td align=3D"cent=
+er" class=3D"pb-21" style=3D"padding-bottom:21px;">             <table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0">              <tbody>         =
+      <tr>                <td class=3D"img" style=3D"font-size:0pt; line-he=
+ight:0pt; text-align:left;" width=3D"20"><a href=3D"http://trans.swiggy.in/=
+QSXYFJWMDVN?id=3D62838=3DcE8CVAVXDwsJS1tRAgZQAFkEDlIJAFQHUldUUFQDBlIHUlBVAl=
+MDCFdRAwYAAlNVAFVEFkMIXVULC1cEBHJXCVJaXkpQClpEAAFbVAdSVlRXDg5RAVIBAFQeCkFFQ=
+gpLHEdABV0WGUtGXgUFTk0MC05naz1oJ31jKCY0ew5bVBhFAA=3D=3D&fl=3DW0dGFEBfGBdYWV=
+NMQAofFw5VUwBFDFZdCUwMUEUdQg=3D=3D&ext=3DZT1LdzFxZlI5cWEzOTZEUUI5RFNaZ2Vnb0=
+dBZ3hrSkN3MUlDUXNOUUFCQ1FKa1ltRTNGeG9oTGtGRFdGczVCVEVrT0RFN0xuSndUUVVyUHlRd=
+U9TNHVCVjFFV0ZJJTJCT1RNJTJGUGpVOGEzRmNXRmM4UHpZM0xIZ2xNVUJiYmwwemVHaHBabXhy=
+ZlFJQkFBTmlhZzE1WjJoaGV3c0RBUlo3ZUNVeEpURU5PMXRHWGtCMVlIQThMU2c1RkZaVlYxVWl=
+OaVpwS2clM0QlM0Qmcj1odHRwcyUzQSUyRiUyRnd3dy5pbnN0YWdyYW0uY29tJTJGc3dpZ2d5aW=
+5kaWElMkYlM0Z1dG1fc291cmNlJTNEbmV3c2xldHRlciUyNnV0bV9tZWRpdW0lM0RFbWFpbCUyN=
+nV0bV9jYW1wYWlnbiUzREVtYWlsX0luc3RhZ3JhbSZjPTY1MjYxNDQ4MCZ0b2tlbj1HbFZUQWdK=
+VkJnWUVCd1UlM0QmdHJ5PTEmJGZvbGxvd19yZWRpcmVjdD10cnVl" style=3D"color: #1936=
+e7; text-decoration: none;" target=3D"_blank"><img border=3D"0" height=3D"3=
+5" src=3D"https://updates.swiggy.in/imgproxy/img/2037101237/2_11_2_87144dcb=
+-fb8a-47c1-bf2e-30a34eaa6c03.png" style=3D"-ms-interpolation-mode: bicubic;=
+" width=3D"35" /> </a></td>                <td class=3D"img" style=3D"font-=
+size:0pt; line-height:0pt; text-align:left;" width=3D"13"> </td>           =
+     <td class=3D"img" style=3D"font-size:0pt; line-height:0pt; text-align:=
+left;" width=3D"25"><a href=3D"http://trans.swiggy.in/QSXYFJWMDVN?id=3D6283=
+8=3DcE8CVAVXDwsJS1FXB1pWVlRQDgACAw9QBgFaAwEBAgVWClNTBVYECgUGV1tSUQNSWA5EFkM=
+IXVULC1cEBHJXCVJaXkpQClpEAAFbVAdSVlRXDg5RAVIBAFQeCkFFQgpLHEdABV0WGUtGXgUFTk=
+0MC05naz1oJ31jKCY0ew5bVBhFAA=3D=3D&fl=3DW0dGFEBfGBdYWVNMQAofFw5VUwBFDFZdCUw=
+MUEUdQg=3D=3D&ext=3DZT1LdzFxZlI5cWEzOTZEUUI5RFNaZ2Vnb0dBZ3hrSkN3MUlDUXNOUUF=
+CQ1FKa1ltRTNGeG9oTGtGRFdGczVCVEVrT0RFN0xuSndUUVVyUHlRdU9TNHVCVjFFV0ZJJTJCT1=
+RNJTJGUGpVOGEzRmNXRmM4UHpZM0xIZ2xNVUJiYmwwemVHaHBabXhyZlFJQkFBTmlhZzE1WjJoa=
+GV3c0RBUlo3ZUNVeEpURU5PMXRHWGtCMVlIQThMU2c1RkZaVlYxVWlOaVpwS2clM0QlM0Qmcj1o=
+dHRwcyUzQSUyRiUyRnd3dy5mYWNlYm9vay5jb20lMkZzd2lnZ3kuaW4lMkYlM0Z1dG1fc291cmN=
+lJTNEbmV3c2xldHRlciUyNnV0bV9tZWRpdW0lM0RFbWFpbCUyNnV0bV9jYW1wYWlnbiUzREVtYW=
+lsX0ZhY2Vib29rJmM9NjUyNjE0NDgwJnRva2VuPUdsVldBd3RhQXdVQUFnRSUzRCZ0cnk9MSYkZ=
+m9sbG93X3JlZGlyZWN0PXRydWU=3D" style=3D"color: #1936e7; text-decoration: no=
+ne;" target=3D"_blank"><img border=3D"0" height=3D"30" src=3D"https://updat=
+es.swiggy.in/imgproxy/img/2037101238/3_12_3_e35b29b5-25cc-490c-9937-04230c9=
+b1ceb.png" style=3D"-ms-interpolation-mode: bicubic;" width=3D"30" /> </a><=
+/td>                <td class=3D"img" style=3D"font-size:0pt; line-height:0=
+pt; text-align:left;" width=3D"14"> </td>                <td class=3D"img" =
+style=3D"font-size:0pt; line-height:0pt; text-align:left;" width=3D"19"><a =
+href=3D"http://trans.swiggy.in/QSXYFJWMDVN?id=3D62838=3DcE8CVAVXDwsJS1RQB1Z=
+WUQQHWgFXUgQDV1UHUAcDUgZVAVcHAgcODwkHVVsEWgcAVVREFkMIXVULC1cEBHJXCVJaXkpQCl=
+pEAAFbVAdSVlRXDg5RAVIBAFQeCkFFQgpLHEdABV0WGUtGXgUFTk0MC05naz1oJ31jKCY0ew5bV=
+BhFAA=3D=3D&fl=3DW0dGFEBfGBdYWVNMQAofFw5VUwBFDFZdCUwMUEUdQg=3D=3D&ext=3DZT1=
+LdzFxZlI5cWEzOTZEUUI5RFNaZ2Vnb0dBZ3hrSkN3MUlDUXNOUUFCQ1FKa1ltRTNGeG9oTGtGRF=
+dGczVCVEVrT0RFN0xuSndUUVVyUHlRdU9TNHVCVjFFV0ZJJTJCT1RNJTJGUGpVOGEzRmNXRmM4U=
+HpZM0xIZ2xNVUJiYmwwemVHaHBabXhyZlFJQkFBTmlhZzE1WjJoaGV3c0RBUlo3ZUNVeEpURU5P=
+MXRHWGtCMVlIQThMU2c1RkZaVlYxVWlOaVpwS2clM0QlM0Qmcj1odHRwcyUzQSUyRiUyRnd3dy5=
+5b3V0dWJlLmNvbSUyRmNoYW5uZWwlMkZVQ3VlM01VeDhXX2V6bmdGNnVFSXVETUElM0Z1dG1fc2=
+91cmNlJTNEbmV3c2xldHRlciUyNnV0bV9tZWRpdW0lM0RFbWFpbCUyNnV0bV9jYW1wYWlnbiUzR=
+GVtYWlsX3lvdXR1YmUmYz02NTI2MTQ0ODAmdG9rZW49R2xOU0FBRlhCd01OQkElM0QlM0QmdHJ5=
+PTEmJGZvbGxvd19yZWRpcmVjdD10cnVl" style=3D"color: #1936e7; text-decoration:=
+ none;" target=3D"_blank"><img border=3D"0" height=3D"30" src=3D"https://up=
+dates.swiggy.in/imgproxy/img/2037101239/4_13_4_73199d2c-ae94-4162-95d9-5c84=
+16b3cab8.png" style=3D"-ms-interpolation-mode: bicubic;" width=3D"30" /> </=
+a></td>                <td class=3D"img" style=3D"font-size:0pt; line-heigh=
+t:0pt; text-align:left;" width=3D"13"> </td>                <td class=3D"im=
+g" style=3D"font-size:0pt; line-height:0pt; text-align:left;" width=3D"27">=
+<a href=3D"http://trans.swiggy.in/QSXYFJWMDVN?id=3D62838=3DcE8CVAVXDwsJSwcG=
+AgdSU1ACXVEEWAQCU1EEUwcCU1MBBQFTAQYHDgNRUgADBgcBWVVEFkMIXVULC1cEBHJXCVJaXkp=
+QClpEAAFbVAdSVlRXDg5RAVIBAFQeCkFFQgpLHEdABV0WGUtGXgUFTk0MC05naz1oJ31jKCY0ew=
+5bVBhFAA=3D=3D&fl=3DW0dGFEBfGBdYWVNMQAofFw5VUwBFDFZdCUwMUEUdQg=3D=3D&ext=3D=
+ZT1LdzFxZlI5cWEzOTZEUUI5RFNaZ2Vnb0dBZ3hrSkN3MUlDUXNOUUFCQ1FKa1ltRTNGeG9oTGt=
+GRFdGczVCVEVrT0RFN0xuSndUUVVyUHlRdU9TNHVCVjFFV0ZJJTJCT1RNJTJGUGpVOGEzRmNXRm=
+M4UHpZM0xIZ2xNVUJiYmwwemVHaHBabXhyZlFJQkFBTmlhZzE1WjJoaGV3c0RBUlo3ZUNVeEpUR=
+U5PMXRHWGtCMVlIQThMU2c1RkZaVlYxVWlOaVpwS2clM0QlM0Qmcj1odHRwcyUzQSUyRiUyRnR3=
+aXR0ZXIuY29tJTJGU3dpZ2d5JmM9NjUyNjE0NDgwJnRva2VuPUdsQlVCUVphQXdFREJBJTNEJTN=
+EJnRyeT0xJiRmb2xsb3dfcmVkaXJlY3Q9dHJ1ZQ=3D=3D" style=3D"color: #1936e7; tex=
+t-decoration: none;" target=3D"_blank"><img border=3D"0" height=3D"30" src=
+=3D"https://updates.swiggy.in/imgproxy/img/2037101240/5_14_5_5b356ef9-f4d3-=
+416f-a3c7-7b7272b7cb98.png" style=3D"-ms-interpolation-mode: bicubic;" widt=
+h=3D"30" /> </a></td>                <td class=3D"img" style=3D"font-size:0=
+pt; line-height:0pt; text-align:left;" width=3D"13"> </td>                <=
+td class=3D"img" style=3D"font-size:0pt; line-height:0pt; text-align:left;"=
+ width=3D"18"><a href=3D"http://trans.swiggy.in/QSXYFJWMDVN?id=3D62838=3DcE=
+8CVAVXDwsJSwcHB1pTB1AODAQHVAdVVVYAVgEHBFwLCgtXUQYPClJRUlMCUgRTVAdEFkMIXVULC=
+1cEBHJXCVJaXkpQClpEAAFbVAdSVlRXDg5RAVIBAFQeCkFFQgpLHEdABV0WGUtGXgUFTk0MC05n=
+az1oJ31jKCY0ew5bVBhFAA=3D=3D&fl=3DW0dGFEBfGBdYWVNMQAofFw5VUwBFDFZdCUwMUEUdQ=
+g=3D=3D&ext=3DZT1LdzFxZlI5cWEzOTZEUUI5RFNaZ2Vnb0dBZ3hrSkN3MUlDUXNOUUFCQ1FKa=
+1ltRTNGeG9oTGtGRFdGczVCVEVrT0RFN0xuSndUUVVyUHlRdU9TNHVCVjFFV0ZJJTJCT1RNJTJG=
+UGpVOGEzRmNXRmM4UHpZM0xIZ2xNVUJiYmwwemVHaHBabXhyZlFJQkFBTmlhZzE1WjJoaGV3c0R=
+BUlo3ZUNVeEpURU5PMXRHWGtCMVlIQThMU2c1RkZaVlYxVWlOaVpwS2clM0QlM0Qmcj1odHRwcy=
+UzQSUyRiUyRnd3dy5saW5rZWRpbi5jb20lMkZhdXRod2FsbCUzRnRyayUzRHJpcGYlMjZ0cmtJb=
+mZvJTNEQVFHa3cwVTN5QVNXVUFBQUFXX0wtYzlBR1RGRnotT3plaWpDNnIyLUhoank1V3VpdjJC=
+ZWplRjR4MmlELUU2eEV4ZWp5cHdLeDlPM3VSbW1adXJpQlpMNXNrS1l6MGJGRlBuUFV2X2tGV1Z=
+yWXF3NWVNejFPYVNDbjJqVmpNQWF3Z20tS3pVJTNEJTI2b3JpZ2luYWxSZWZlcmVyJTNEaHR0cH=
+MlM0ElMkYlMkZhcHAuYml0bHkuY29tJTJGQmdhajl2M21XMmIlMkZiaXRsaW5rcyUyRjJNMTNvS=
+2clM0ZxdWVyeSUzRGVtYWlsJTI2ZmlsdGVyQWN0aXZlJTNEdHJ1ZSUyNnNlc3Npb25SZWRpcmVj=
+dCUzRGh0dHBzJTNBJTJGJTJGd3d3LmxpbmtlZGluLmNvbSUyRmNvbXBhbnklMkZzd2lnZ3ktaW4=
+lMkYlMjUzRnV0bV9zb3VyY2UlMjUzRG5ld3NsZXR0ZXIlMjUyNnV0bV9tZWRpdW0lMjUzREVtYW=
+lsJTI1MjZ1dG1fY2FtcGFpZ24lMjUzREVtYWlsX0xpbmtlZGluJmM9NjUyNjE0NDgwJnRva2VuP=
+UdsVlNBZ1JRQUFnSEN3YyUzRCZ0cnk9MSYkZm9sbG93X3JlZGlyZWN0PXRydWU=3D" style=3D=
+"color: #1936e7; text-decoration: none;" target=3D"_blank"><img border=3D"0=
+" height=3D"30" src=3D"https://updates.swiggy.in/imgproxy/img/2037101241/6_=
+15_6_b129d633-76c8-4696-8c87-b46ed5a14b79.png" style=3D"-ms-interpolation-m=
+ode: bicubic;" width=3D"30" /> </a></td>               </tr>              <=
+/tbody>             </table>             </td>            </tr>            =
+<tr>             <td class=3D"footer-text" style=3D"color:#999b9f; font-fam=
+ily:Verdana; font-size:12px; line-height:25px; text-align:center; min-width=
+:auto !important;">Don&#39;t want convenience delivered to your inbox? <a c=
+lass=3D"link-dark-blue" href=3D"http://trans.swiggy.in/QSXYFJWMDVN?id=3D628=
+38=3DZk8CVAVXDwsJS0JCF0NFRUEWGEURQRcURUJCFRESEEQTExJEE0UXGBEXQkIXQ0VFQQZEFk=
+MIXVULC1cEBHJXCVJaXkpQClpEAAFbVAdSVlRXDg5RAVIBAFQeCkFFQgpLHEdABV0WGUtGXgUFT=
+k0MC05naz1oJ31jKCY0ew5bVBhFAA=3D=3D?p=3DLHpwIltUExRteilrdX48Pl9SVEYbNTwsdXp=
+oaxACAAxhaWp4dXovZxISWFA5eHJxdyFyaRZeRFk1PyAHODQ1aRIKERZla2p9ZGJhaRJNHRR1Kj=
+s9OC5wawgQE0MtKDkUMz80KkdcRRZ7enAoAikLaRIKEU93eHYlIjcwLkB8XloweHJxd3hiaRJNE=
+Uk%3D&e=3DZmxgewEBAAJvak16YWNkewMBBgFnRWB7ZWlicgEALgZnbWp7Nm5mZlQFCFJ6bjQvN=
+nczfQZVHAI1azB%2Fbm5qeVEFBHQ8KCJ5eTRq&wzrk_ex=3D0" style=3D"color: #1936E7;=
+ text-decoration: none;" target=3D"_blank"><span class=3D"link-dark-blue" s=
+tyle=3D"color:#1936e7; text-decoration:none;">Unsubscribe here</span> </a><=
+/td>            </tr>           </tbody>          </table>          </td>  =
+       </tr>        </tbody>       </table>       </td>      </tr>     </tb=
+ody>    </table>    </td>    <td class=3D"img" style=3D"font-size:0pt; line=
+-height:0pt; text-align:left;" width=3D"7"> </td>   </tr>  </tbody> </table=
+>  <p></p>  <p></p>  <p></p>  <p></p>  <p></p> <p>&nbsp;<br></p>=0A=
+<img id=3D'SBBBB' src=3D'http://trans.swiggy.in/QSXYFJWMDVN?id=3D62838=3DfE=
+8CVAVXDwsJS0JCF0NFRUEWGEURQRcURUJCFRESEEQTExJEE0UXGBEXQkIXQ0VFQQZEFkMIXVULC=
+1cEBHJXCVJaXkpQClpEAAFbVAdSVlRXDg5RAVIBAFQeCkFFQgpLHEdABV0WGUtGXgUFTk0MC05n=
+az1oJ31jKCY0ew5bVBhFAA=3D=3D' /></body> </html> </!doctype><img  alt=3D"" b=
+order=3D"0" height=3D"1" width=3D"1" src=3D"https://in1.wizrocketmail.net/r=
+?e=3DKw1qfR9qa396DQB9DSZgegoGAgxkJCw1ICQsNQABCQJkYmE3FxohLkFDWFs5BTEkODE7Ln=
+JwTQUrPyQuOS4uBV1EWFI%2BOTM%2FPjU8a2RZVEMyPi4wdS0oOVlvWFB1YHB6YWNkewMBBgFnB=
+WB7ZWlicgEAExh1LSg5PAUiIkRfRRZteCUxJTENL1dWUEE7LnA2&c=3D729024768"></img>=
+=0A=
+
+
+------=_Part_1254990_1050014352.1696069455884--

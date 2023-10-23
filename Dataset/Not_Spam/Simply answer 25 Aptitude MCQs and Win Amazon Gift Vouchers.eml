@@ -1,0 +1,332 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:8691:b0:4fd:23d3:a27 with SMTP id e17csp610024pxn;
+        Sat, 21 Oct 2023 21:16:57 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGuXT3gfYNVuDJZCuka98kTM9uJ9ouUhZeBoS7z8Iq3aFZmYqmKXyU3LakIPXiUvXfzLP66
+X-Received: by 2002:a05:6808:1ca:b0:3a7:7bd3:7ab7 with SMTP id x10-20020a05680801ca00b003a77bd37ab7mr6580390oic.51.1697948217744;
+        Sat, 21 Oct 2023 21:16:57 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697948217; cv=none;
+        d=google.com; s=arc-20160816;
+        b=cvzr6IeadNRBQmLDB3hwMIMgg5+SdXYbUUNiRPs/J5g8DmBsDT/d2X+eIxXCkO+uFW
+         xAMcObMh7TEgYhVteJJ6pq+sOMprDCL7xboX0DHGGBfrGoYSeVZp6O0VrVc2qcFl7e8U
+         nK5q/1/4JTezl9Ikjv/SUiVagEuANOBO09ad0o9KbUUyPNQ9ugipw6RSrzL1aH+QukHo
+         koHEtubygFXkxkYt2D8Zn3Kd6P2P1AJ8ojTmKsPTR9VPWhJR6tCEPDvqZ+CRh6rkTel+
+         TSnqlq5h/oLOWmMXHsDx+2/a/Ewb/Tja6z/trC6jJIbCXyWDBBZOZv5rUfFD6MplYrrn
+         cGOA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=subject:to:from:mime-version:ironport-sdr:date:message-id
+         :dkim-signature;
+        bh=sSIwlWflR3fJFznnKSvhMaso6i29cyvSZwCYKsteSLU=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=Z/n30t4ViO78vanPItmIZ5t0bxqFHBcFVM6S69ZotTRrMdshQ+4ysFwgq99Tt0Xfjt
+         p+fZP4xGg70hgBV9Ozre+kxbbOyQNzH1xY2Oz6RHK9/lrpJlaWEvO8OLTQTEkYCEGP+m
+         1Y7hNbpOswuk4CPcPIBxIjiQd2RSBH3JAEW5y63TB00mVRh2yXsRciD9bimivmOVBqa5
+         uC6pA6RSf6pRgUwhXoWk0iyQbcWtI4O5IK7/sQDrIbX+eUWotsGOCF5uAcqOKKg3hoZL
+         8K/G+I8IrLY5VDJd9sB/3yQTx9G0iPAx6+ZcVnEhBTdK0IVCAHF49j5fcm3GW95nlcNl
+         YmVg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@techgig.com header.s=main header.b=KQI3t9K0;
+       spf=pass (google.com: domain of contest@techgig.com designates 219.65.84.12 as permitted sender) smtp.mailfrom=contest@techgig.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=techgig.com
+Return-Path: <contest@techgig.com>
+Received: from mgw12.techgig.com (mgw12.techgig.com. [219.65.84.12])
+        by mx.google.com with ESMTP id s62-20020a632c41000000b005b3e6867a01si4419098pgs.427.2023.10.21.21.16.56
+        for <srijani515@gmail.com>;
+        Sat, 21 Oct 2023 21:16:57 -0700 (PDT)
+Received-SPF: pass (google.com: domain of contest@techgig.com designates 219.65.84.12 as permitted sender) client-ip=219.65.84.12;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@techgig.com header.s=main header.b=KQI3t9K0;
+       spf=pass (google.com: domain of contest@techgig.com designates 219.65.84.12 as permitted sender) smtp.mailfrom=contest@techgig.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=techgig.com
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+  d=techgig.com; i=@techgig.com; q=dns/txt; s=main;
+  t=1697946777; x=1729482777;
+  h=mime-version:from:to:subject:message-id:date;
+  bh=sCy6smPLKe63v/SeoqsvDSkZPbHWnblkGB/Q0EYA9uI=;
+  b=KQI3t9K02gw4/4yQRIDZWGu8yCcYb5sCUwBFO57F14G0BuAqF7HZ31G7
+   9EeptkXtIS+XJLJu4xK2IdVMhLKZ/nd6T1SW9pcdckcoskI8UPYQs4ilB
+   wlrt24zhMTWGRTPh1mKAVenR6iOpVmEa7YALWufMVuYsRCFfcUFBCI68r
+   U=;
+Authentication-Results: mgw12.techgig.com; dkim=none (message not signed) header.i=none
+Message-Id: <84c769$aq1usi@mgw12.techgig.com>
+Date: 22 Oct 2023 03:52:56 +0000
+IronPort-SDR: 1rBnT+gkYhIQLDgo7w/jiIU6fxoYO3+LLuZiQt8ppQxXLzALtzy1AxqXKNkhhH8bECsCl1q5gY
+ 5aN+xNj0BvCQ56132J7wQrdPoGGfr6kg0=
+Received: from tgwebz1ap3042 (HELO localhost) ([172.29.30.42])
+  by mgw12.techgig.com with ESMTP; 22 Oct 2023 03:52:56 +0000
+MIME-Version: 1.0
+Content-type: text/html; charset=iso-8859-1;
+From: TechGig Geek Goddess <contest@techgig.com>
+To: srijani515@gmail.com
+Subject: Simply answer 25 Aptitude MCQs and Win Amazon Gift Vouchers
+X-Feedback-ID: PR36580-BT1274444:srijani515@gmail.com:geekgoddess:TechGig
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<!-- Start matter -->
+<table width="100%" bgcolor="#f7f7f7" cellpadding="0" cellspacing="0" border="0" id="backgroundTable" style="border-collapse: collapse; border-spacing: 0;">
+   <tbody>
+      <tr>
+         <td>
+            <!-- Header -->
+            <table bgcolor="#f7f7f7" width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth-color" style="border-collapse: collapse; border-spacing: 0; background-color:#f7f7f7;">
+               <tbody>
+                  <tr>
+                     <td style="padding:0px; margin:0px; ">
+                        <table bgcolor="#f7f7f7" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth-inner" style="border-collapse: collapse; border-spacing: 0;">
+                           <tbody>
+                              <tr>
+                                 <td style="padding:0 20px;">
+                                    <table bgcolor="#f7f7f7" width="100%" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth" style="border-collapse: collapse; border-spacing: 0;">
+                                       <tbody>
+                                          <tr>
+                                             <td style="line-height: 0;font-size: 0;vertical-align: top;padding: 0px; text-align: left;" height="14"> </td>
+                                          </tr>
+                                          <tr>
+                                             <td style="padding:0px;"> </td>
+                                          </tr>
+                                          <tr>
+                                             <td style="line-height: 0;font-size: 0;vertical-align: top;padding: 0px; text-align: left;" height="14"> </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <table width="600" border="0" align="center" cellpadding="0" cellspacing="0">
+               <tbody>
+                  <tr>
+                     <td valign="bottom">
+                        <div><img src="https://www.techgig.com/files/contest_upload_files/cloud-dev-jam-30sept21-7.png" style="display:block"></div>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td valign="bottom" style="background:#f9f9f9; line-height:0px; font-size:0px;">
+                        <div style="padding:15px 0; text-align:center;"><img src="https://www.techgig.com/files/contest_upload_files/Alllogo.PNG"></div>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td style="background:#8093e0 url('https://www.techgig.com/files/contest_upload_files/geekgodess-bg-071022-1.jpg') no-repeat; height:300px" valign="top">
+                        <h2 style="margin:75px 0 0 25px; padding:0; font-size:24px; color:#fff; font-family:Verdana, Helvetica,sans-serif;   font-weight:700; line-height:36px; "> <span style="font-weight:900; font-size:32px;">Tech Aptitude </span><br>
+Challenge MCQ - 2023</h2>
+                    
+                        <div style="padding:45px 0 0 30px">
+							<a href="https://techgig.com/mail_redirect.php?url=https%3A%2F%2Fwww.techgig.com%2Fgeekgoddess%2Ftech-aptitude-challenge%3Fsolve%3D1%26sourcetype%3DApti_Template3%26utm_source%3DTG_batch%26utm_medium%3Demail%26utm_campaign%3Dgeekgoddess_2023-10-22%26%26auto_login=WVRIbUhQRWdTdUYxblczc3RxeDdwejh1V2E3L044V0VTV2pnK0ovN0J3NEdJUFNQcGcyaDdJYVkrWWxsVGtpYUt5cnlUbVBHWURqYVJHWnMxMm91clE9PQ==%26etoken=WVRIbUhQRWdTdUYxblczc3RxeDdwK1l6YkZYeVQzRU5rZThLYitLVXEzMD0=%26activity_name%3DMTI3NDQ0NA==%26template_type%3D0%26crid%3DcXFzSlZnZ0FBM3huT3Y3SStjcnl0WWJZaHQ3bm5ZczdlemdEaWNzODJPMD0%3D" style="background:#D7263D; color:#fff; text-decoration:none; font-weight:700; border-radius:4px; font-family:Verdana, Helvetica,sans-serif; font-size:13px; padding:12px 13px; display:inline-block">Participate now</a>
+                          
+                        </div>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td style="padding:0; background:#F9F9F9">
+                        <table bgcolor="#F9F9F9" width="100%" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth" style="border-collapse: collapse; border-spacing:0;">
+                           <tbody>
+                              <tr>
+                                 <td style="padding:0px;">
+                                    <table width="100%" border="0" style="border-collapse: collapse; border-spacing: 0;" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td style="margin:0; padding:0; font-size:13px; text-align:left; color:#424242; line-height:19px; font-family: Arial, Helvetica,sans-serif; font-weight:normal; background:#F9F9F9; ">
+                                                <div style="padding:30px 25px">
+                                                <p style="padding:0 0 15px 0; margin:0px; font-size:13px; line-height:22px; font-family:Verdana, Helvetica,sans-serif; font-weight:400; color:#19171A; ">  
+                                                  Hi <span style="font-weight:700;">Srijani Chakrabarti,</span></p>
+	   <p style="padding:0 0 30px 0; margin:0px; font-size:13px; line-height:22px; font-family:Verdana, Helvetica,sans-serif; font-weight:400; color:#19171A;">	Participate in TG3 Tech Aptitude Contest and get a chance to <strong>win an INR 1000 voucher </strong>every week. This contest is exclusively for female developers. Find below a sample question:</p>
+   
+											 
+											<div style="border:#6565C7 solid 1px; border-radius:12px; text-align:center; padding:25px;">
+													<h2 style="padding:0 0 15px 0; margin:0px; font-size:18px; line-height:18px; font-family:Verdana, Helvetica,sans-serif; font-weight:700; color:#19171A;">What is the output of this program?</h2>
+													<code style="padding:0 0 25px 0; margin:0px; font-size:14px; line-height:18px; font-family:Arial, Helvetica,sans-serif; font-weight:400; color:#D7263D;">main { int x,j,k; j=k=6;x=2; x==j*k; printf("%d", x); }</code>
+													
+												 <div style="padding:20px 0 0 0">
+												 <table width="80%" border="0" style="border-collapse: collapse; border-spacing: 0;" cellpadding="0" align="center">
+														<tbody><tr>
+															<td style="width:25%;   text-align:center">
+																<span style="height:22px; width:22px; background:#6565C7; border-radius:22px; display:inline-block; color:#fff; font-family:Verdana, Helvetica,sans-serif; font-weight:700; font-size:13px; line-height:22px; text-align:center; ">
+																	A
+																</span>
+																<span style=" padding:1px 16px;  border-radius:3px; display:inline-block; color:#000000; font-family:Verdana, Helvetica,sans-serif; font-weight:700; font-size:16px; line-height:22px; text-align:center; border:#E6E6FC solid 1px;  margin:0 0 0 4px">
+																	1
+															</span></td>
+															
+															<td style="width:25%;  text-align:center">
+																<span style="height:22px; width:22px; background:#6565C7; border-radius:22px; display:inline-block; color:#fff; font-family:Verdana, Helvetica,sans-serif; font-weight:700; font-size:13px; line-height:22px; text-align:center; ">
+																	A
+																</span>
+																<span style=" padding:1px 16px; border-radius:3px; display:inline-block; color:#000000; font-family:Verdana, Helvetica,sans-serif; font-weight:700; font-size:16px; line-height:22px; text-align:center; border:#E6E6FC solid 1px;  margin:0 0 0 4px">
+																	2
+															</span></td>
+															
+															
+															<td style="width:25%;  text-align:center">
+																<span style="height:22px; width:22px; background:#6565C7; border-radius:22px; display:inline-block; color:#fff; font-family:Verdana, Helvetica,sans-serif; font-weight:700; font-size:13px; line-height:22px; text-align:center; ">
+																	B
+																</span>
+																<span style=" padding:1px 16px;  border-radius:3px; display:inline-block; color:#000000; font-family:Verdana, Helvetica,sans-serif; font-weight:700; font-size:16px; line-height:22px; text-align:center; border:#E6E6FC solid 1px;  margin:0 0 0 4px">
+																	3
+															</span></td>
+															
+															
+															<td style="width:25%; text-align:center">
+																<span style="height:22px; width:22px; background:#6565C7; border-radius:22px; display:inline-block; color:#fff; font-family:Verdana, Helvetica,sans-serif; font-weight:700; font-size:13px; line-height:22px; text-align:center; ">
+																	C
+																</span>
+																<span style=" padding:1px 16px;   border-radius:3px; display:inline-block; color:#000000; font-family:Verdana, Helvetica,sans-serif; font-weight:700; font-size:16px; line-height:22px; text-align:center; border:#E6E6FC solid 1px; margin:0 0 0 4px ">
+																	11
+															</span></td>
+														</tr>
+													</tbody></table>
+													</div>	
+													  
+											</div>
+
+												
+													  <div style="padding:25px 0 0 0; text-align:center">
+							<a href="https://techgig.com/mail_redirect.php?url=https%3A%2F%2Fwww.techgig.com%2Fgeekgoddess%2Ftech-aptitude-challenge%3Fsolve%3D1%26sourcetype%3DApti_Template3%26utm_source%3DTG_batch%26utm_medium%3Demail%26utm_campaign%3Dgeekgoddess_2023-10-22%26%26auto_login=WVRIbUhQRWdTdUYxblczc3RxeDdwejh1V2E3L044V0VTV2pnK0ovN0J3NEdJUFNQcGcyaDdJYVkrWWxsVGtpYUt5cnlUbVBHWURqYVJHWnMxMm91clE9PQ==%26etoken=WVRIbUhQRWdTdUYxblczc3RxeDdwK1l6YkZYeVQzRU5rZThLYitLVXEzMD0=%26activity_name%3DMTI3NDQ0NA==%26template_type%3D0%26crid%3DcXFzSlZnZ0FBM3huT3Y3SStjcnl0WWJZaHQ3bm5ZczdlemdEaWNzODJPMD0%3D" style="background:#D7263D; color:#fff; text-decoration:none; font-weight:700; border-radius:4px; font-family:Verdana, Helvetica,sans-serif; font-size:13px; padding:12px 13px; display:inline-block;">Participate now</a>
+                          
+                        </div>
+												
+                                                
+                                             </div></td>
+                                          </tr>
+										  
+										  <tr>
+										  
+											<td style="border-bottom:#6565C7 solid 1px; background:#F9F9F9"> 
+												<p style="color:#19171A; font-family: Verdana, Helvetica,sans-serif; font-weight:400; font-size:13px; line-height:22px; padding:0 25px 30px 25px;  margin:0px;">This contest is a part of our diversity event - TechGig Geek Goddess. We encourage you to participate in all other activities of this event to win a lot more exciting prizes and get hiring opportunities as well.</p>
+											</td>
+										  </tr>
+										  
+										  <tr>
+										  
+											<td style="background:#F9F9F9">
+												<p style=" color:#19171A; font-family: Verdana, Helvetica,sans-serif; font-weight:400; font-size:13px; line-height:24px; padding:30px 25px;  margin:0px;">Warm Regards, <br> <span style="font-weight:800">Team TechGig Geek Goddess</span> </p>
+											</td>
+										  </tr>
+                                          
+                                         
+                           </tbody>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td bgcolor="#f7f7f7">
+                        <table cellpadding="0" cellspacing="0" border="0" style="width:100%" align="center">
+                           <tbody>
+                              <tr>
+                                 <td colspan="2">
+                                    <table bgcolor="#f7f7f7" width="100%" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth-color" style="border-collapse: collapse; border-spacing: 0; background-color:#f7f7f7;">
+                                       <tbody>
+                                          <tr>
+                                             <td style="padding:0px; margin:0px; ">
+                                                <table bgcolor="#f7f7f7" width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="m_devicewidth-color" style="border-collapse:collapse;border-spacing:0;background-color:#f7f7f7">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td>
+                                                            <table bgcolor="#f7f7f7" width="100%" cellpadding="0" cellspacing="0" border="0" align="center" class="m_devicewidth" style="border-collapse:collapse;border-spacing:0">
+                                                               <tbody>
+                                                                  <tr>
+                                                                     <td style="line-height:0;font-size:0;vertical-align:top;padding:0px;text-align:center" height="24"> </td>
+                                                                  </tr>
+                                                                  <tr>
+                                                                     <td style="padding:0px">
+                                                                        <table class="m_devicewidth" align="left" width="290" border="0" style="border-collapse:collapse;border-spacing:0">
+                                                                           <tbody>
+                                                                              <tr>
+                                                                                 <td style="margin:0;padding:0 0 0 10px;font-size:13px;text-align:left;color:#c2c2c2;line-height:18px;font-family:Arial,Helvetica,sans-serif;font-weight:normal">TechGig.com </td>
+                                                                              </tr>
+                                                                              <tr>
+                                                                                 <td style="line-height:0;font-size:0;vertical-align:top;padding:0px;text-align:center" height="4"> </td>
+                                                                              </tr>
+                                                                              <tr>
+                                                                                 <td style="margin:0;padding:0 0 0 10px;font-size:12px;text-align:left;color:#c2c2c2;line-height:18px;font-family:Arial,Helvetica,sans-serif;font-weight:normal">Times Center, FC - 6, Sector 16 A, Film City,<br>
+                                                                                    Noida - 201301, Uttar Pradesh, India 
+                                                                                 </td>
+                                                                              </tr>
+                                                                           </tbody>
+                                                                        </table>
+                                                                        <table align="right" class="m_devicewidth" width="290" border="0" style="border-collapse:collapse;border-spacing:0">
+                                                                           <tbody>
+                                                                              <tr>
+                                                                                 <td style="padding:0px">
+                                                                                    <table width="100%" border="0" style="border-collapse:collapse;border-spacing:0">
+                                                                                       <tbody>
+                                                                                          <tr>
+                                                                                             <td width="185" class="m_follow" style="padding:0px">
+                                                                                                <table width="100%" border="0" style="border-collapse:collapse;border-spacing:0">
+                                                                                                   <tbody>
+                                                                                                      <tr>
+                                                                                                         <td style="margin:0;padding:0;font-size:13px;text-align:left;color:#c2c2c2;line-height:18px;font-family:Arial,Helvetica,sans-serif;font-weight:normal">Follow Us on</td>
+                                                                                                      </tr>
+                                                                                                      <tr>
+                                                                                                         <td style="line-height:0;font-size:0;vertical-align:top;padding:0px;text-align:center" height="4"> </td>
+                                                                                                      </tr>
+                                                                                                      <tr>
+                                                                                                         <td style="padding:0px;text-align:left"><a style="padding-right:4px" href="http://www.facebook.com/TechGig" target="_blank" rel="noreferrer"><img src="https://www.techgig.com/files/nicUploads/475110113538406.png"></a> <a style="padding-right:4px" href="https://twitter.com/#!/techgigdotcom" target="_blank" rel="noreferrer"><img src="https://www.techgig.com/files/nicUploads/988866088855306.png"></a> <a style="padding-right:4px" href="https://www.linkedin.com/company/techgig-com" target="_blank" rel="noreferrer"><img src="https://www.techgig.com/files/nicUploads/943957694855144.png"></a></td>
+                                                                                                      </tr>
+                                                                                                   </tbody>
+                                                                                                </table>
+                                                                                             </td>
+                                                                                             <td style="padding:0px">
+                                                                                                <table align="right" width="100%" border="0" style="border-collapse:collapse;border-spacing:0">
+                                                                                                   <tbody>
+                                                                                                      <tr>
+                                                                                                         <td style="margin:0;padding:0;font-size:13px;text-align:left;color:#c2c2c2;line-height:18px;font-family:Arial,Helvetica,sans-serif;font-weight:normal">Download App</td>
+                                                                                                      </tr>
+                                                                                                      <tr>
+                                                                                                         <td style="line-height:0;font-size:0;vertical-align:top;padding:0px;text-align:center" height="4"> </td>
+                                                                                                      </tr>
+                                                                                                      <tr>
+                                                                                                         <td style="padding:0px"><a href="https://play.google.com/store/apps/details?id=com.timesgroup.techgig&amp;hl=en&amp;utm_source=Email&amp;utm_medium=app_icon&amp;utm_campaign=TgAppIcon" target="_blank" rel="noreferrer"><img class="m_apps" src="https://www.techgig.com/files/nicUploads/874250402864600.png"></a> </td>
+                                                                                                      </tr>
+                                                                                                   </tbody>
+                                                                                                </table>
+                                                                                             </td>
+                                                                                          </tr>
+                                                                                       </tbody>
+                                                                                    </table>
+                                                                                 </td>
+                                                                              </tr>
+                                                                           </tbody>
+                                                                        </table>
+                                                                     </td>
+                                                                  </tr>
+                                                                  <tr>
+                                                                     <td style="line-height:0;font-size:0;vertical-align:top;padding:0px;text-align:center;border-bottom:1px solid #dadada" height="30"> </td>
+                                                                  </tr>
+                                                                  <tr>
+                                                                     <td style="line-height:0;font-size:0;vertical-align:top;padding:0px;text-align:center" height="7"> </td>
+                                                                  </tr>
+                                                                  <tr>
+                                                                     <td style="margin: 0; padding: 0; font-size: 12px; text-align: left; color:#c2c2c2; line-height: 18px; font-family: Arial, Helvetica, sans-serif; font-weight: normal;">
+                                                                        <p align="center"><span style='text-align:center; font:normal 11px arial; color:#363737; line-height:19px;'>Note: For your privacy and protection, please do not forward this mail to anyone as it allows you to get automatically logged into your account.<br> If you do not want to receive this mailer, <a href='https://techgig.com/block_invitations.php?block_etoken=WVRIbUhQRWdTdUYxblczc3RxeDdwK1l6YkZYeVQzRU5rZThLYitLVXEzMD0=&receiverUid=WVRIbUhQRWdTdUYxblczc3RxeDdwK1l6YkZYeVQzRU5rZThLYitLVXEzMD0=&master_ref_id=MTI3NDQ0NA==&template_type=0&activity_id=MTY2' style='text-decoration:none; font-weight:bold;'>unsubscribe</a>. To make sure this email is not sent to your &quot;junk/bulk&quot; folder,<br />select &quot;Add/save to Address Book&quot; in your email browser and follow the appropriate instructions.</span><div style='display:none;'><img src="https://www.techgig.com/mis/tj_mailer_opened_count_all.php?etoken=WVRIbUhQRWdTdUYxblczc3RxeDdwK1l6YkZYeVQzRU5rZThLYitLVXEzMD0=&activity_name=MTI3NDQ0NA==%26template_type%3D0%26crid%3DcXFzSlZnZ0FBM3huT3Y3SStjcnl0WWJZaHQ3bm5ZczdlemdEaWNzODJPMD0%3D&current_date=2023-10-22&mformat=HTML" style="display:none;"></div></p>
+                                                                     </td>
+                                                                  </tr>
+                                                                  <tr>
+                                                                     <td style="line-height:0;font-size:0;vertical-align:top;padding:0px;text-align:center" height="24"> </td>
+                                                                  </tr>
+                                                               </tbody>
+                                                            </table>
+                                                         </td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </td>
+      </tr>
+   </tbody>
+</table></td></tr></tbody></table>

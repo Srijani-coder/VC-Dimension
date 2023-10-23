@@ -1,0 +1,2288 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:a163:b0:4fd:23d3:a27 with SMTP id r3csp1784583pxe;
+        Sun, 8 Oct 2023 22:30:00 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IF7uYU0w+VkpSzPi3P8E2mskahRBj5l8wQyjOWsCIYTgKd5lpJR0Jfv0R0iY3T26I1jKOCw
+X-Received: by 2002:a05:6a00:1788:b0:68b:e6e0:5047 with SMTP id s8-20020a056a00178800b0068be6e05047mr15341844pfg.14.1696829400049;
+        Sun, 08 Oct 2023 22:30:00 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1696829400; cv=none;
+        d=google.com; s=arc-20160816;
+        b=aUqxBSZFUGGuKqDr5AfXs//VF2RRQWkhtnYmElun3Yhk7ssl3gaMgqodAe8twqgifo
+         nknPTQuTtsxicYJBBZGbqMFDOUHphr/w9Xkmyx4LdGADM/MW81IXj41bAENaBeT7KMFA
+         HjYoSOhGZeW4W3Tpb/MSqPyIOnfmklBVyEfYVoxeMqw1DeuFqXUCws9Y1kPFMBshruy8
+         zCJc10ob88jPDfLgcw3MNEcl8kkcsE28wywXk6tSd7Ydm51pINvsc98ajlKpaPEGznZE
+         GOPx3lEJZxodg3Gy3Aj7mYNG5r9fUxfcxTdWKNLog+iFaHH5xheZkdMqc0IvuXg3xV/U
+         2yrg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:message-id:subject:mime-version:from:date
+         :content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=bH8+9jviW34+3TV3s2hOUB3K7xKHp0EAsuNO5lJJtR4=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=krYS3Ob7KDtFE3K7+pGVKasDM78cIsWK3OKzxMnl8dVFSOv4hM7sNQfJxccS4QoCU2
+         SS+2lE9pQsU/lV8QA4obtdMUS+7h2JochFKNJPA8Ki/kcf/QeFAcU2qDEl7QgrTny70D
+         efFTf1Hw9OzVn3MT5sWLrFNPhnGMRcaJK38PilV0hgmQmtVJOjVkzEGvLJpttLRAPF6D
+         sjk5Gef7EDnS33RGlHWd0MTVpb7DFY87oQ3Kp1WpyDDZa1DbzYzCKONJrnWmG1JfJvO8
+         +SWLaNPj87+yv0MvKgpex4YiCz6jajgzyRw5rFTfPG4wJ/E/BUUkUbbkmIpu+r4c3Kfp
+         gQmw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@web-spicejet.com header.s=s1 header.b=WFmpTLcG;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=pxsi8Umc;
+       spf=pass (google.com: domain of bounces+34557702-9afd-srijani515=gmail.com@em6498.web-spicejet.com designates 159.183.66.36 as permitted sender) smtp.mailfrom="bounces+34557702-9afd-srijani515=gmail.com@em6498.web-spicejet.com"
+Return-Path: <bounces+34557702-9afd-srijani515=gmail.com@em6498.web-spicejet.com>
+Received: from o1242.ptr3396.web-spicejet.com (o1242.ptr3396.web-spicejet.com. [159.183.66.36])
+        by mx.google.com with ESMTPS id p16-20020a056a000b5000b0069ce50e2e34si6455998pfo.290.2023.10.08.22.29.59
+        for <srijani515@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 08 Oct 2023 22:30:00 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+34557702-9afd-srijani515=gmail.com@em6498.web-spicejet.com designates 159.183.66.36 as permitted sender) client-ip=159.183.66.36;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@web-spicejet.com header.s=s1 header.b=WFmpTLcG;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=pxsi8Umc;
+       spf=pass (google.com: domain of bounces+34557702-9afd-srijani515=gmail.com@em6498.web-spicejet.com designates 159.183.66.36 as permitted sender) smtp.mailfrom="bounces+34557702-9afd-srijani515=gmail.com@em6498.web-spicejet.com"
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=web-spicejet.com;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	x-feedback-id:to:list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=bH8+9jviW34+3TV3s2hOUB3K7xKHp0EAsuNO5lJJtR4=;
+	b=WFmpTLcGAFTHlwUu9118RAJHnt+efHsRII3ElpJhMMMPvEkzcXI7I+GqIEcZDwu3Z6XW
+	IZXWaU/XsWmEm+lclB82o5MTuy/jmhdrRagb3tpTFEbJMk9jfTvraphccmQB/gtsfcX8BS
+	NjdVdc+pRb7FgQn/rOzxXvq3f/1NBZfJCuCcA2879EU6USXqGPx99HYGVDdc80gojKqcu7
+	u5zNE7eAULdrUMgIs+U146aZocnkPouRsfN22Uf0QML92eEfvIVIT/w/12tT86TQGkZPep
+	uVHgUk8i6xgCa4GFWBQuMaePdJNTMAoCOIXaXIpF6hy4WwFH9v8oBwIcF7L3vKlA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	x-feedback-id:to:list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=bH8+9jviW34+3TV3s2hOUB3K7xKHp0EAsuNO5lJJtR4=;
+	b=pxsi8Umc0tkL/uFf9/u4q0BzLYJBcBEem6qgUK+ZiTebP7pOTatupmn903DD7ueDHYEm
+	M9zDKqbocltdB5dJX87EAIGPV8r5sbd75yejooTRegaOsTsn/pCyRALshhpVQL+Qq+XwDG
+	Het5HT2lv69AlT3rFJXwYaUnlFbkW5K/A=
+Received: by filterdrecv-66b8c89b99-rxlcr with SMTP id filterdrecv-66b8c89b99-rxlcr-1-65238FD6-5
+        2023-10-09 05:29:58.222247497 +0000 UTC m=+288421.901433605
+Received: from MzQ1NTc3MDI (unknown)
+	by geopod-ismtpd-canary-0 (SG)
+	with HTTP id rG181ihTTkekkJiR2_jc9g
+	for <spicejet@web-spicejet.com>;
+	Mon, 09 Oct 2023 05:29:58.050 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Date: Mon, 09 Oct 2023 05:29:58 +0000 (UTC)
+From: SpiceJet <spicejet@web-spicejet.com>
+Mime-Version: 1.0
+Subject: This long weekend: take a short trip!
+Message-ID: <rG181ihTTkekkJiR2_jc9g@geopod-ismtpd-canary-0>
+X-Feedback-ID: 34557702:SG
+X-SG-EID: 
+ =?us-ascii?Q?pn+m0cq6NOuOk+qAzXIGfUTgHL+HcXGIZDIUI7Dicls3l3A9VqbfZMsqfwSM1S?=
+ =?us-ascii?Q?5jR8vLR4WvWnrR5yg5hTeB2AAsbYkvqj2qcyIHg?=
+ =?us-ascii?Q?oxm5cXbFVsyEz=2FZGKomsXfrz1D+Kv3+V=2FfLqxqf?=
+ =?us-ascii?Q?584JrSfQsXbLbngFMCs8vbSrdp8hoSgMeJnmXV=2F?=
+ =?us-ascii?Q?CsWLf7PNdruUVjaMMeuExHEityA2HGZEiPlPE96?=
+ =?us-ascii?Q?mDTrXd1bSBgjLULVRBHare982SfvNKw0VXrec=2F?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb6K42pEDG2VibTggWWd57tTL2d7NS=2F0SWM4PBtrpOC?=
+ =?us-ascii?Q?Md2kWLAs68lx=2FFCt93JHJX5Pk5JGtLUxbNhDOz=2F?=
+ =?us-ascii?Q?MGYGLT62+Vnn5nlIRgJtChC+m4D8IrkYCIS7GND?=
+ =?us-ascii?Q?9wUaUq1MjGkHHhVAo5VKlmpdnO07YSoouwODZiI?=
+ =?us-ascii?Q?+bslKL18nfC0wdiQpAE=2FkhuKqlOMSz39+a6XsCg?=
+ =?us-ascii?Q?wHIq=2FLXvSYCtHu6frUS9ixNCU65mWy2tivjLS5I?=
+ =?us-ascii?Q?EEuXXt9M3jo4vHazhqgGLb3=2FpoLsm8XwKuI=2FoyM?=
+ =?us-ascii?Q?swY=3D?=
+To: srijani515@gmail.com
+X-Entity-ID: mfNOtyldiW9zT7MLmytKWw==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em6498=2Eweb-spicejet=2Ecom=3Fsubject=3Dhttps=3A=2F=2Fu3?=
+ =?us-ascii?Q?4557702=2Ect=2Esendgrid=2Enet=2Fwf=2Funsubscribe*?=
+ =?us-ascii?Q?q*upn=3DrWYU-2B0i-2B0Qcz8HINw-2Ff3NK-2FUl?=
+ =?us-ascii?Q?PkrdthebD6Und9AwA-2BH1FOefmsC4Jsv31W1m6?=
+ =?us-ascii?Q?cG6ZZtK3EzI-2B5uGWKZR2r79FClRsal9-2BKRi?=
+ =?us-ascii?Q?xfRsANcmH1rFrqQHRYqrZnAc6PYFO3FIuFXmeQe?=
+ =?us-ascii?Q?v3wG3IiKV4XRhHN2LeGgOnTe61jnzsz-2Fk3tt0?=
+ =?us-ascii?Q?-2BQOFp1ilqrXyXURzvdl84axh9Sb8Jzi15tZs2?=
+ =?us-ascii?Q?oRCZAFO4bVVCAg9CJScRHTLTcYqVgYPw6M4jmLe?=
+ =?us-ascii?Q?tru0Pr7Ns15WZ8G9B6yNOyDz8eUu35s5ObopHdJ?=
+ =?us-ascii?Q?eXxtD4JHyGRAnIKrF3cCKsXwNjyWTrE2VQbzJuw?=
+ =?us-ascii?Q?dH5kHmB0UjdSXnf2sS0mg10o2r0tsOra6wqcQSQ?=
+ =?us-ascii?Q?pwUwqslkbQJmn27aUkbI3go7Il0yaWFSDCqHe8q?=
+ =?us-ascii?Q?0QPxH60jlSo85NrMT7TwVDMQE-2BVMWAQdTqdh-?=
+ =?us-ascii?Q?2F5IrzkrCPuko6xp-2F7lnFrgHp20BxWVmnnngl?=
+ =?us-ascii?Q?eojW2tpjsCsqlw-3D=3E?=
+
+<!DOCTYPE html> <!doctype html=3D""> <html> <head>  <title></title>  <style=
+ type=3D"text/css">*{    line-height:80%;    -ms-text-size-adjust:80%;    -=
+webkit-text-size-adjust:none;    -webkit-text-resize:80%;    text-resize:80=
+%;    }    .appleLinks a {color: #000000;text-decoration: none;}    .Extern=
+alClass {width: 100%;background-color: #ffffff;}    body {width: 100%;backg=
+round-color: #ffffff;margin: 0;padding: 0!important;-webkit-font-smoothing:=
+ antialiased;}    html {-webkit-text-size-adjust: none !important;-ms-text-=
+size-adjust: none !important;}    table {border-collapse: collapse;}  </sty=
+le> </head> <body data-gr-ext-installed=3D"" data-new-gr-c-s-check-loaded=
+=3D"14.1130.0"> <center> <table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"margin:0 auto;" width=3D"600">  <tbody>  =
+ <tr>    <td align=3D"center" style=3D"border: 1px solid #484848;" valign=
+=3D"top" width=3D"600">    <center>    <table align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" width=3D"600">     <tbody>      <tr>  =
+     <td align=3D"center" width=3D"600">       <table align=3D"center" cell=
+padding=3D"0" cellspacing=3D"0" width=3D"600">        <tbody>         <tr> =
+         <td align=3D"center" background=3D"https://d1qzvqecfo5h8o.cloudfro=
+nt.net/images/WR9-94R-786Z/SpiceJet/DussehraLongWeekend1.jpg" bgcolor=3D"#1=
+cb2e2" height=3D"460" style=3D"background-repeat: no-repeat;" valign=3D"top=
+" width=3D"600"><!--[if gte mso 9]>                  <v:rect xmlns:v=3D"urn=
+:schemas-microsoft-com:vml" fill=3D"true" stroke=3D"false" href=3D"https://=
+www.spicejet.com/?utm_source=3DCT&utm_medium=3DEmail&utm_campaign=3DDussehr=
+aLongWeekend" style=3D"width:600px; height:460px">                  <v:fill=
+ type=3D"tile" src=3D"https://d1qzvqecfo5h8o.cloudfront.net/images/WR9-94R-=
+786Z/SpiceJet/DussehraLongWeekend1.jpg" color=3D"#1cb2e2" />               =
+   <v:textbox inset=3D"0,0,0,0">                 <![endif]-->          <div=
+>          <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"margin:0 auto;" width=3D"600">           <tbody><!--[if !mso]><!-->   =
+         <tr style=3D"mso-hide:all">             <td style=3D"line-height: =
+1px; font-size: 1px; mso-line-height-rule: exactly; height: 100px; display:=
+block; mso-hide:all"><a align=3D"center" href=3D"https://u34557702.ct.sendg=
+rid.net/ls/click?upn=3D5SjtgPrxLiMD-2F7ijF3Td4uTgbnXMh1j0vbzF4YB-2BkI52ULUC=
+xnJB-2Fp9SbaKVGRAf4aK6piFSHK2hG2OXLp7fDfQHOg-2FEgv88AUsrGOOb8wsA4rj8jFy6ftV=
+RjqG-2BqLucCr-2ByaLRsgH6okd2kqiCqUmUVv-2B6UTY3FNa-2BRZMQemxq517NET4nmgOfa-2=
+FE6IfYx68LNLIVVzzxgMTkB4ZtkD36q0loGOVK0rcqmbhxQPg55lk5JyDioRJUtVs4BCbdnubT9=
+ac4WJ4ywUzUqyB8RjT8MqOvh3xsTqwWVhSfOyZqR-2BgPKRiKfxSQe-2BIefzFqSGCwbJlBgxH1=
+GGrqIT2PX8X06ZEgK4whY5jJLnI-2BUiZv1hlU-2FZqixLA4T5nOB-2BPxqdtXIfLLfsN0v2awX=
+hmbZJu8JgfaoMjG9M1lP7rkIIRBjpOKzpRNaDRFyMn5-2Fh7ttLeWVLkUZE74z62lMMIPyvukAu=
+5x6brShDjKiQorKPhcmpC02salAodOCJl-2BKXVJMLYF1fLkr3Sk-2BssrDq-2FPK7cVlykmkSm=
+Q23lKHZuSxqMlwhRImis7pAWYleudxAQ3cHlfOT_ijSW8RkM-2FIXMlaqj-2FEdh9p8v0SOSA-2=
+FyUc2EIoBfGmbaA1NAX1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34sY3YXjzUulE5UHW1uoZfOJ=
+MQrO38OXQtYbS-2Bn1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2Zxsuly5bvDDi1SqtCBD0aBkAXTWH=
+Uy0kUQk9n00F5Gx6q6aUpeOV5IGdJOES30aWF9WICc6nu-2F18RJu-2Bc4-2BYsm134953z66mf=
+goqcvrwuCsVyK6HB9vBOkGFRkh0cXPGhgnZ6kROk-2BzmwZGqcrzTLBqYnQtUyU5unKSW4RkunI=
+nRDEn23BP4YAuHuWuaQxWhFoCJZaueHJwLAEBdRpbwgdJ-2FpwoRyzCV5TSS1r6-2BlNnCMb-2F=
+xH2GzHGCDzTklf-2FSdwLQYqRzDsehZA1QZASJ1Pbh5XcvMTEdyOKczEpkiZeid4rgjH42murSR=
+z3r-2FI3rIOPgEwFhGOuUoC0c3aq3TV-2Fcdzk-3D" style=3D"text-decoration:none; t=
+ext-align:center; color:#010101" target=3D"_blank"> </a></td>            </=
+tr>            <!--<![endif]--><!--[if gte mso 9]>                      <tr=
+>                      <td style=3D"line-height: 1px; font-size: 1px; mso-l=
+ine-height-rule: exactly; height: 90px; display:block"> </td>              =
+        </tr>                     <![endif]--><!--[if !mso]><!-->          =
+  <tr style=3D"mso-hide:all">             <td align=3D"center" style=3D"mar=
+gin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; color:#010101;=
+ font-weight: bold; mso-line-height-rule: exactly; line-height: 100%; text-=
+align:center; font-size:23px; letter-spacing:0; text-transform:uppercase; m=
+so-hide:all" width=3D"600"><a align=3D"center" href=3D"https://u34557702.ct=
+.sendgrid.net/ls/click?upn=3D5SjtgPrxLiMD-2F7ijF3Td4uTgbnXMh1j0vbzF4YB-2BkI=
+52ULUCxnJB-2Fp9SbaKVGRAf4aK6piFSHK2hG2OXLp7fDfQHOg-2FEgv88AUsrGOOb8wsA4rj8j=
+Fy6ftVRjqG-2BqLucCr-2ByaLRsgH6okd2kqiCqUmUVv-2B6UTY3FNa-2BRZMQemxq517NET4nm=
+gOfa-2FE6IfYx68LNLIVVzzxgMTkB4ZtkD36q0loGOVK0rcqmbhxQPg55lk5JyDioRJUtVs4BCb=
+dnubT9ac4WJ4ywUzUqyB8RjT8MqOvh3xsTqwWVhSfOyZqR-2BgPKRiKfxSQe-2BIefzFqSGCwbJ=
+lBgxH1GGrqIT2PX8X06ZEgK4whY5jJLnI-2BUiZv1hlU-2FZqixLA4T5nOB-2BPxqdtXIfLLfsN=
+0v2awXhmbZJu8JgfaoMjG9M1lP7rkIIRBjpOKzpRNaDRFyMn5-2Fh7ttLeWVLkUZE74z62lMMIP=
+yvukAu5x6brShDjKiQorKPhcmpC02salAodOCJl-2BKXVJMLYF1fLkr3Sk-2BssrDq-2FPK7cVl=
+ykmkSmQ23lKHZuSxqMlwhRImis7pAWYleudxAQ3cHrmse_ijSW8RkM-2FIXMlaqj-2FEdh9p8v0=
+SOSA-2FyUc2EIoBfGmbaA1NAX1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34sY3YXjzUulE5UHW1=
+uoZfOJMQrO38OXQtYbS-2Bn1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2Zxsuly5bvDDi1SqtCBD0aB=
+kAXTWHUy0kUQk9n00F5Gx6q6aUpeOV5IGdJOES30aWF9WICc6nu-2F18RJu-2Bc4-2BYsm13495=
+3z66mfgoqcvrwuCsVyK6HB9vBOkGFRkh0cXPGhgnZ6kROk-2BzmwZGqcrzTLBqYnRjymKvf0VuS=
+vMg45XgB-2FLxkqmGkzS069FMwZla-2Fma8ohyeKlFXICfX7GuTqba4TXtJdcGTlJZNX8UgH0iD=
+xGARBaCGMzdDT4kyQ71gyd3Bl5lIbcunLSYkSoFm3ZYch3qSuqPJ4k5MAq5IfcilCmMUtSBPg-2=
+BbtWBo4jHXN8alcNScsT1VSRkDkEeFIWpBSPLE-3D" style=3D"text-decoration:none; t=
+ext-align:center; color:#010101" target=3D"_blank">  What a way to start<br=
+ />               the festival season! </a></td>            </tr>          =
+  <!--<![endif]--><!--[if gte mso 9]>                     <tr>             =
+         <td width=3D"600" align=3D"center" style=3D"margin:0; padding:0; f=
+ont-family:Gotham, Helvetica, sans-serif; color:#010101; font-weight: bold;=
+ mso-line-height-rule: exactly; line-height: 90%; text-align:center; font-s=
+ize:23px; letter-spacing:0; text-transform:uppercase">                     =
+    What a way to start<br />                         the festival season! =
+                     </td>                     </tr>                     <!=
+[endif]-->            <tr>             <td align=3D"center" style=3D"margin=
+:0; padding:0;" width=3D"600"><a href=3D"https://u34557702.ct.sendgrid.net/=
+ls/click?upn=3D5SjtgPrxLiMD-2F7ijF3Td4uTgbnXMh1j0vbzF4YB-2BkI52ULUCxnJB-2Fp=
+9SbaKVGRAf4aK6piFSHK2hG2OXLp7fDfQHOg-2FEgv88AUsrGOOb8wsA4rj8jFy6ftVRjqG-2Bq=
+LucCr-2ByaLRsgH6okd2kqiCqUmUVv-2B6UTY3FNa-2BRZMQemxq517NET4nmgOfa-2FE6IfYx6=
+8LNLIVVzzxgMTkB4ZtkD36q0loGOVK0rcqmbhxQPg55lk5JyDioRJUtVs4BCbdnubT9ac4WJ4yw=
+UzUqyB8RjT8MqOvh3xsTqwWVhSfOyZqR-2BgPKRiKfxSQe-2BIefzFqSGCwbJlBgxH1GGrqIT2P=
+X8X06ZEgK4whY5jJLnI-2BUiZv1hlU-2FZqixLA4T5nOB-2BPxqdtXIfLLfsN0v2awXhmbZJu8J=
+gfaoMjG9M1lP7rkIIRBjpOKzpRNaDRFyMn5-2Fh7ttLeWVLkUZE74z62lMMIPyvukAu5x6brShD=
+jKiQorKPhcmpC02salAodOCJl-2BKXVJMLYF1fLkr3Sk-2BssrDq-2FPK7cVlykmkSmQ23lKHZu=
+SxqMlwhRImis7pAWYleudxAQ3cHPfyo_ijSW8RkM-2FIXMlaqj-2FEdh9p8v0SOSA-2FyUc2EIo=
+BfGmbaA1NAX1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34sY3YXjzUulE5UHW1uoZfOJMQrO38OX=
+QtYbS-2Bn1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2Zxsuly5bvDDi1SqtCBD0aBkAXTWHUy0kUQk9=
+n00F5Gx6q6aUpeOV5IGdJOES30aWF9WICc6nu-2F18RJu-2Bc4-2BYsm134953z66mfgoqcvrwu=
+CsVyK6HB9vBOkGFRkh0cXPGhgnZ6kROk-2BzmwZGqcrzTLBqYnQ4yDk0C07WbAOxrlcKNHg4m9M=
+gVi8SqrLavRCk-2Fno-2B05oFb4ekQ5Zpulxd6LWI-2F4Yvjqi1l4NnaHManAnQbNttT88fztFm=
+Pqv9ehn9MekecJgqRWhoIh5MmSfKtjSmN9qTdUs5iY11C1c3DgDpzjDEmW7t-2BSY7eNyRRhDqX=
+aYDMSBNNZf-2BVtGnNkDfQx8E37A-3D" style=3D"display:block"><img height=3D"250=
+" src=3D"https://d1qzvqecfo5h8o.cloudfront.net/images/WR9-94R-786Z/SpiceJet=
+/DussehraLongWeekend2.png" style=3D"margin: 0; border: 0; padding: 0; displ=
+ay: block; height:250px;" width=3D"600" /> </a></td>            </tr>      =
+     </tbody>          </table>          </div>          <!--[if gte mso 9]=
+>                  </v:textbox>                  </v:rect>                 =
+<![endif]--></td>         </tr>        </tbody>       </table>       </td> =
+     </tr>      <tr>       <td align=3D"center" width=3D"600">       <table=
+ align=3D"center" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:600px;=
+text-align:center">        <tbody>         <tr>          <td align=3D"cente=
+r" width=3D"600">          <table align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" style=3D"width:360px; text-align:center">           <tbody>    =
+        <tr>             <td align=3D"center" width=3D"90">             <ta=
+ble align=3D"center" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:70p=
+x;text-align:center; border: 1px solid #ed2224">              <tbody>      =
+         <tr>                <td style=3D"background-color:#ed2224; font-fa=
+mily:Gotham, Helvetica, sans-serif; color:#ffffff; font-weight: bold; mso-l=
+ine-height-rule: exactly; line-height:120%; text-align:center; font-size: 1=
+4px; letter-spacing:0; padding-top:2px; padding-bottom:2px; height:23px">OC=
+T</td>               </tr>               <!--[if !mso]><!-->               =
+<tr style=3D"mso-hide:all">                <td style=3D"mso-hide:all; line-=
+height: 1px; font-size: 1px; mso-line-height-rule: exactly; height: 2px; ba=
+ckground-color:#f3f4f5"> </td>               </tr>               <!--<![end=
+if]--><!--[if gte mso 9]>                        <tr>                      =
+  <td style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exac=
+tly; height: 2px; background-color:#f3f4f5"> </td>                        <=
+/tr>                       <![endif]--><!--[if !mso]><!-->               <t=
+r style=3D"mso-hide:all">                <td style=3D"background-color:#f3f=
+4f5; font-family:Gotham, Helvetica, sans-serif; color:#010101; font-weight:=
+ bold; mso-line-height-rule: exactly; line-height:95%; text-align:center; f=
+ont-size: 12px; letter-spacing:0; mso-hide:all">SAT</td>               </tr=
+>               <!--<![endif]--><!--[if gte mso 9]>                        =
+<tr>                        <td style=3D"background-color:#f3f4f5; font-fam=
+ily:Gotham, Helvetica, sans-serif; color:#010101; font-weight: bold; mso-li=
+ne-height-rule: exactly; line-height:90%; text-align:center; font-size: 12p=
+x; letter-spacing:0">SAT</td>                        </tr>                 =
+      <![endif]--><!--[if !mso]><!-->               <tr style=3D"mso-hide:a=
+ll">                <td style=3D"mso-hide:all; line-height: 1px; font-size:=
+ 1px; mso-line-height-rule: exactly; height: 2px; background-color:#f3f4f5"=
+> </td>               </tr>               <!--<![endif]--><!--[if gte mso 9=
+]>                        <tr>                        <td style=3D"line-hei=
+ght: 1px; font-size: 1px; mso-line-height-rule: exactly; height: 1px; backg=
+round-color:#f3f4f5"> </td>                        </tr>                   =
+    <![endif]--><!--[if !mso]><!-->               <tr style=3D"mso-hide:all=
+">                <td style=3D"background-color:#f3f4f5; font-family:Gotham=
+, Helvetica, sans-serif; color:#ed2224; font-weight: bold; mso-line-height-=
+rule: exactly; line-height:90%; text-align:center; font-size: 39px; letter-=
+spacing:0; mso-hide:all">21</td>               </tr>               <!--<![e=
+ndif]--><!--[if gte mso 9]>                        <tr>                    =
+    <td style=3D"background-color:#f3f4f5; font-family:Gotham, Helvetica, s=
+ans-serif; color:#ed2224; font-weight: bold; mso-line-height-rule: exactly;=
+ line-height:88%; text-align:center; font-size: 39px; letter-spacing:0">21<=
+/td>                        </tr>                       <![endif]--><!--[if=
+ !mso]><!-->               <tr style=3D"mso-hide:all">                <td s=
+tyle=3D"mso-hide:all; line-height: 1px; font-size: 1px; mso-line-height-rul=
+e: exactly; height: 2px; background-color:#f3f4f5"> </td>               </t=
+r>               <!--<![endif]--><!--[if gte mso 9]>                       =
+ <tr>                        <td style=3D"line-height: 1px; font-size: 1px;=
+ mso-line-height-rule: exactly; height: 1px; background-color:#f3f4f5"> </t=
+d>                        </tr>                       <![endif]-->         =
+     </tbody>             </table>             </td>             <td align=
+=3D"center" width=3D"90">             <table align=3D"center" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"width:70px;text-align:center; border: 1px=
+ solid #ed2224">              <tbody>               <tr>                <td=
+ style=3D"background-color:#ed2224; font-family:Gotham, Helvetica, sans-ser=
+if; color:#ffffff; font-weight: bold; mso-line-height-rule: exactly; line-h=
+eight:120%; text-align:center; font-size: 14px; letter-spacing:0; padding-t=
+op:2px; padding-bottom:2px; height:23px">OCT</td>               </tr>      =
+         <!--[if !mso]><!-->               <tr style=3D"mso-hide:all">     =
+           <td style=3D"mso-hide:all; line-height: 1px; font-size: 1px; mso=
+-line-height-rule: exactly; height: 2px; background-color:#f3f4f5"> </td>  =
+             </tr>               <!--<![endif]--><!--[if gte mso 9]>       =
+                 <tr>                        <td style=3D"line-height: 1px;=
+ font-size: 1px; mso-line-height-rule: exactly; height: 2px; background-col=
+or:#f3f4f5"> </td>                        </tr>                       <![en=
+dif]--><!--[if !mso]><!-->               <tr style=3D"mso-hide:all">       =
+         <td style=3D"background-color:#f3f4f5; font-family:Gotham, Helveti=
+ca, sans-serif; color:#010101; font-weight: bold; mso-line-height-rule: exa=
+ctly; line-height:95%; text-align:center; font-size: 12px; letter-spacing:0=
+; mso-hide:all">SUN</td>               </tr>               <!--<![endif]-->=
+<!--[if gte mso 9]>                        <tr>                        <td =
+style=3D"background-color:#f3f4f5; font-family:Gotham, Helvetica, sans-seri=
+f; color:#010101; font-weight: bold; mso-line-height-rule: exactly; line-he=
+ight:90%; text-align:center; font-size: 12px; letter-spacing:0">SUN</td>   =
+                     </tr>                       <![endif]--><!--[if !mso]>=
+<!-->               <tr style=3D"mso-hide:all">                <td style=3D=
+"mso-hide:all; line-height: 1px; font-size: 1px; mso-line-height-rule: exac=
+tly; height: 2px; background-color:#f3f4f5"> </td>               </tr>     =
+          <!--<![endif]--><!--[if gte mso 9]>                        <tr>  =
+                      <td style=3D"line-height: 1px; font-size: 1px; mso-li=
+ne-height-rule: exactly; height: 1px; background-color:#f3f4f5"> </td>     =
+                   </tr>                       <![endif]--><!--[if !mso]><!=
+-->               <tr style=3D"mso-hide:all">                <td style=3D"b=
+ackground-color:#f3f4f5; font-family:Gotham, Helvetica, sans-serif; color:#=
+ed2224; font-weight: bold; mso-line-height-rule: exactly; line-height:90%; =
+text-align:center; font-size: 39px; letter-spacing:0; mso-hide:all">22</td>=
+               </tr>               <!--<![endif]--><!--[if gte mso 9]>     =
+                   <tr>                        <td style=3D"background-colo=
+r:#f3f4f5; font-family:Gotham, Helvetica, sans-serif; color:#ed2224; font-w=
+eight: bold; mso-line-height-rule: exactly; line-height:88%; text-align:cen=
+ter; font-size: 39px; letter-spacing:0">22</td>                        </tr=
+>                       <![endif]--><!--[if !mso]><!-->               <tr s=
+tyle=3D"mso-hide:all">                <td style=3D"mso-hide:all; line-heigh=
+t: 1px; font-size: 1px; mso-line-height-rule: exactly; height: 2px; backgro=
+und-color:#f3f4f5"> </td>               </tr>               <!--<![endif]--=
+><!--[if gte mso 9]>                        <tr>                        <td=
+ style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exactly; =
+height: 1px; background-color:#f3f4f5"> </td>                        </tr> =
+                      <![endif]-->              </tbody>             </tabl=
+e>             </td>             <td align=3D"center" width=3D"90">        =
+     <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" style=3D"w=
+idth:70px;text-align:center; border: 1px solid #ffcb05">              <tbod=
+y>               <tr>                <td style=3D"background-color:#ffcb05;=
+ font-family:Gotham, Helvetica, sans-serif; color:#ffffff; font-weight: bol=
+d; mso-line-height-rule: exactly; line-height:120%; text-align:center; font=
+-size: 14px; letter-spacing:0; padding-top:2px; padding-bottom:2px; height:=
+23px">OCT</td>               </tr>               <!--[if !mso]><!-->       =
+        <tr style=3D"mso-hide:all">                <td style=3D"mso-hide:al=
+l; line-height: 1px; font-size: 1px; mso-line-height-rule: exactly; height:=
+ 2px; background-color:#f3f4f5"> </td>               </tr>               <!=
+--<![endif]--><!--[if gte mso 9]>                        <tr>              =
+          <td style=3D"line-height: 1px; font-size: 1px; mso-line-height-ru=
+le: exactly; height: 2px; background-color:#f3f4f5"> </td>                 =
+       </tr>                       <![endif]--><!--[if !mso]><!-->         =
+      <tr style=3D"mso-hide:all">                <td style=3D"background-co=
+lor:#f3f4f5; font-family:Gotham, Helvetica, sans-serif; color:#010101; font=
+-weight: bold; mso-line-height-rule: exactly; line-height:95%; text-align:c=
+enter; font-size: 12px; letter-spacing:0; mso-hide:all">MON</td>           =
+    </tr>               <!--<![endif]--><!--[if gte mso 9]>                =
+        <tr>                        <td style=3D"background-color:#f3f4f5; =
+font-family:Gotham, Helvetica, sans-serif; color:#010101; font-weight: bold=
+; mso-line-height-rule: exactly; line-height:90%; text-align:center; font-s=
+ize: 12px; letter-spacing:0">MON</td>                        </tr>         =
+              <![endif]--><!--[if !mso]><!-->               <tr style=3D"ms=
+o-hide:all">                <td style=3D"mso-hide:all; line-height: 1px; fo=
+nt-size: 1px; mso-line-height-rule: exactly; height: 2px; background-color:=
+#f3f4f5"> </td>               </tr>               <!--<![endif]--><!--[if g=
+te mso 9]>                        <tr>                        <td style=3D"=
+line-height: 1px; font-size: 1px; mso-line-height-rule: exactly; height: 1p=
+x; background-color:#f3f4f5"> </td>                        </tr>           =
+            <![endif]--><!--[if !mso]><!-->               <tr style=3D"mso-=
+hide:all">                <td style=3D"background-color:#f3f4f5; font-famil=
+y:Gotham, Helvetica, sans-serif; color:#ffcb05; font-weight: bold; mso-line=
+-height-rule: exactly; line-height:90%; text-align:center; font-size: 39px;=
+ letter-spacing:0; mso-hide:all">23</td>               </tr>               =
+<!--<![endif]--><!--[if gte mso 9]>                        <tr>            =
+            <td style=3D"background-color:#f3f4f5; font-family:Gotham, Helv=
+etica, sans-serif; color:#ffcb05; font-weight: bold; mso-line-height-rule: =
+exactly; line-height:88%; text-align:center; font-size: 39px; letter-spacin=
+g:0">23</td>                        </tr>                       <![endif]--=
+><!--[if !mso]><!-->               <tr style=3D"mso-hide:all">             =
+   <td style=3D"mso-hide:all; line-height: 1px; font-size: 1px; mso-line-he=
+ight-rule: exactly; height: 2px; background-color:#f3f4f5"> </td>          =
+     </tr>               <!--<![endif]--><!--[if gte mso 9]>               =
+         <tr>                        <td style=3D"line-height: 1px; font-si=
+ze: 1px; mso-line-height-rule: exactly; height: 1px; background-color:#f3f4=
+f5"> </td>                        </tr>                       <![endif]--> =
+             </tbody>             </table>             </td>             <t=
+d align=3D"center" width=3D"90">             <table align=3D"center" cellpa=
+dding=3D"0" cellspacing=3D"0" style=3D"width:70px;text-align:center; border=
+: 1px solid #ed2224">              <tbody>               <tr>              =
+  <td style=3D"background-color:#ed2224; font-family:Gotham, Helvetica, san=
+s-serif; color:#ffffff; font-weight: bold; mso-line-height-rule: exactly; l=
+ine-height:120%; text-align:center; font-size: 14px; letter-spacing:0; padd=
+ing-top:2px; padding-bottom:2px; height:23px">OCT</td>               </tr> =
+              <!--[if !mso]><!-->               <tr style=3D"mso-hide:all">=
+                <td style=3D"mso-hide:all; line-height: 1px; font-size: 1px=
+; mso-line-height-rule: exactly; height: 2px; background-color:#f3f4f5"> </=
+td>               </tr>               <!--<![endif]--><!--[if gte mso 9]>  =
+                      <tr>                        <td style=3D"line-height:=
+ 1px; font-size: 1px; mso-line-height-rule: exactly; height: 2px; backgroun=
+d-color:#f3f4f5"> </td>                        </tr>                       =
+<![endif]--><!--[if !mso]><!-->               <tr style=3D"mso-hide:all">  =
+              <td style=3D"background-color:#f3f4f5; font-family:Gotham, He=
+lvetica, sans-serif; color:#010101; font-weight: bold; mso-line-height-rule=
+: exactly; line-height:95%; text-align:center; font-size: 12px; letter-spac=
+ing:0; mso-hide:all">TUE</td>               </tr>               <!--<![endi=
+f]--><!--[if gte mso 9]>                        <tr>                       =
+ <td style=3D"background-color:#f3f4f5; font-family:Gotham, Helvetica, sans=
+-serif; color:#010101; font-weight: bold; mso-line-height-rule: exactly; li=
+ne-height:90%; text-align:center; font-size: 12px; letter-spacing:0">TUE</t=
+d>                        </tr>                       <![endif]--><!--[if !=
+mso]><!-->               <tr style=3D"mso-hide:all">                <td sty=
+le=3D"mso-hide:all; line-height: 1px; font-size: 1px; mso-line-height-rule:=
+ exactly; height: 2px; background-color:#f3f4f5"> </td>               </tr>=
+               <!--<![endif]--><!--[if gte mso 9]>                        <=
+tr>                        <td style=3D"line-height: 1px; font-size: 1px; m=
+so-line-height-rule: exactly; height: 1px; background-color:#f3f4f5"> </td>=
+                        </tr>                       <![endif]--><!--[if !ms=
+o]><!-->               <tr style=3D"mso-hide:all">                <td style=
+=3D"background-color:#f3f4f5; font-family:Gotham, Helvetica, sans-serif; co=
+lor:#ed2224; font-weight: bold; mso-line-height-rule: exactly; line-height:=
+90%; text-align:center; font-size: 39px; letter-spacing:0; mso-hide:all">24=
+</td>               </tr>               <!--<![endif]--><!--[if gte mso 9]>=
+                        <tr>                        <td style=3D"background=
+-color:#f3f4f5; font-family:Gotham, Helvetica, sans-serif; color:#ed2224; f=
+ont-weight: bold; mso-line-height-rule: exactly; line-height:88%; text-alig=
+n:center; font-size: 39px; letter-spacing:0">24</td>                       =
+ </tr>                       <![endif]--><!--[if !mso]><!-->               =
+<tr style=3D"mso-hide:all">                <td style=3D"mso-hide:all; line-=
+height: 1px; font-size: 1px; mso-line-height-rule: exactly; height: 2px; ba=
+ckground-color:#f3f4f5"> </td>               </tr>               <!--<![end=
+if]--><!--[if gte mso 9]>                        <tr>                      =
+  <td style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exac=
+tly; height: 1px; background-color:#f3f4f5"> </td>                        <=
+/tr>                       <![endif]-->              </tbody>             <=
+/table>             </td>            </tr>            <tr>             <td =
+colspan=3D"4" style=3D"line-height: 1px; font-size: 1px; mso-line-height-ru=
+le: exactly; height: 6px;"> </td>            </tr>            <tr>         =
+    <td colspan=3D"2" style=3D"line-height: 1px; font-size: 1px; mso-line-h=
+eight-rule: exactly;" width=3D"180"> </td>             <td align=3D"center"=
+ style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; c=
+olor:#010101; font-weight: bold; mso-line-height-rule: exactly; line-height=
+:100%; text-align:center; font-size: 9px; letter-spacing:0" width=3D"90">Ta=
+ke a day off</td>             <td style=3D"line-height: 1px; font-size: 1px=
+; mso-line-height-rule: exactly;"> </td>            </tr>            <tr>  =
+           <td colspan=3D"4" style=3D"line-height: 1px; font-size: 1px; mso=
+-line-height-rule: exactly; height: 15px;"> </td>            </tr>         =
+   <tr>             <td align=3D"center" colspan=3D"4" style=3D"margin:0; p=
+adding:0; font-family:Gotham, Helvetica, sans-serif; color:#010101; font-we=
+ight: normal; mso-line-height-rule: exactly; line-height:100%; text-align:c=
+enter; font-size: 14px; letter-spacing:0; text-transform: uppercase" width=
+=3D"360">Dussehra/DURGA PUJA Long Weekend</td>            </tr>            =
+<tr>             <td colspan=3D"4" style=3D"line-height: 1px; font-size: 1p=
+x; mso-line-height-rule: exactly; height: 6px;"> </td>            </tr>    =
+       </tbody>          </table>          </td>         </tr>         <!--=
+[if !mso]><!-->         <tr style=3D"mso-hide:all">          <td style=3D"l=
+ine-height: 1px; font-size: 1px; mso-line-height-rule: exactly; height: 18p=
+x"> </td>         </tr>         <!--<![endif]--><!--[if lte mso 15]>       =
+         <tr>                <td style=3D"line-height: 1px; font-size: 1px;=
+ mso-line-height-rule: exactly; height: 11px">&#xA0;</td>                </=
+tr>                <![endif]--><!--<![endif]--><!--[if gt mso 15]>         =
+        <tr>                <td style=3D"line-height: 1px; font-size: 1px; =
+mso-line-height-rule: exactly; height: 16px">&#xA0;</td>                </t=
+r>               <![endif]--><!--[if !mso]><!-->         <tr style=3D"mso-h=
+ide:all">          <td align=3D"center" style=3D"margin:0; padding:0; font-=
+family:Gotham, Helvetica, sans-serif; color:#010101; font-weight: bold; mso=
+-line-height-rule: exactly; line-height: 110%; text-align:center; font-size=
+: 22px; letter-spacing:0" width=3D"600">Make the most of this break.<br /> =
+         Head out to your favourite holiday destination.</td>         </tr>=
+         <!--<![endif]--><!--[if gte mso 9]>                <tr>           =
+     <td align=3D"center" width=3D"600" style=3D"margin:0; padding:0; font-=
+family:Gotham, Helvetica, sans-serif; color:#010101; font-weight: bold; mso=
+-line-height-rule: exactly; line-height: 95%; text-align:center; font-size:=
+ 22px; letter-spacing:0">                Make the most of this break.<br />=
+Head out to your favourite holiday destination.                </td>       =
+         </tr>               <![endif]--><!--[if !mso]><!-->         <tr st=
+yle=3D"mso-hide:all">          <td style=3D"line-height: 1px; font-size: 1p=
+x; mso-line-height-rule: exactly; height: 16px"> </td>         </tr>       =
+  <!--<![endif]--><!--[if lte mso 15]>                <tr>                <=
+td style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exactly=
+; height: 12px">&#xA0;</td>                </tr>                <![endif]--=
+><!--<![endif]--><!--[if gt mso 15]>                 <tr>                <t=
+d style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exactly;=
+ height: 15px">&#xA0;</td>                </tr>               <![endif]--> =
+        <tr>          <td align=3D"center" width=3D"600">          <table a=
+lign=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+34">           <tbody>            <tr>             <td align=3D"center" sty=
+le=3D"background-color: #ed2224; padding-top: 9px; padding-bottom: 9px; wid=
+th:134px; line-height:100%; height: 20px" valign=3D"middle"><a href=3D"http=
+s://u34557702.ct.sendgrid.net/ls/click?upn=3D5SjtgPrxLiMD-2F7ijF3Td4uTgbnXM=
+h1j0vbzF4YB-2BkI52ULUCxnJB-2Fp9SbaKVGRAf4aK6piFSHK2hG2OXLp7fDfQHOg-2FEgv88A=
+UsrGOOb8wsA4rj8jFy6ftVRjqG-2BqLucCr-2ByaLRsgH6okd2kqiCqUmUVv-2B6UTY3FNa-2BR=
+ZMQemxq517NET4nmgOfa-2FE6IfYx68LNLIVVzzxgMTkB4ZtkD36q0loGOVK0rcqmbhxQPg55lk=
+5JyDioRJUtVs4BCbdnubT9ac4WJ4ywUzUqyB8RjT8MqOvh3xsTqwWVhSfOyZqR-2BgPKRiKfxSQ=
+e-2BIefzFqSGCwbJlBgxH1GGrqIT2PX8X06ZEgK4whY5jJLnI-2BUiZv1hlU-2FZqixLA4T5nOB=
+-2BPxqdtXIfLLfsN0v2awXhmbZJu8JgfaoMjG9M1lP7rkIIRBjpOKzpRNaDRFyMn5-2Fh7ttLeW=
+VLkUZE74z62lMMIPyvukAu5x6brShDjKiQorKPhcmpC02salAodOCJl-2BKXVJMLYF1fLkr3Sk-=
+2BssrDq-2FPK7cVlykmkSmQ23lKHZuSxqMlwhRImis7pAWYleudxAQ3cHWYSw_ijSW8RkM-2FIX=
+Mlaqj-2FEdh9p8v0SOSA-2FyUc2EIoBfGmbaA1NAX1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34=
+sY3YXjzUulE5UHW1uoZfOJMQrO38OXQtYbS-2Bn1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2Zxsuly=
+5bvDDi1SqtCBD0aBkAXTWHUy0kUQk9n00F5Gx6q6aUpeOV5IGdJOES30aWF9WICc6nu-2F18RJu=
+-2Bc4-2BYsm134953z66mfgoqcvrwuCsVyK6HB9vBOkGFRkh0cXPGhgnZ6kROk-2BzmwZGqcrzT=
+LBqYnTwTPMplRXcvWXsf28CKf9VCgP9Mu3WxOIgLw-2BrbKb0-2FpSpYhOvTFimzXq-2F1vCGXY=
+dZlbSc2rTytfunuffczl0aB9R-2FeX5IfKsLyJ5RuqHikr0KiWELiYO2649niFM0KiUDHmcO-2B=
+HhSXp4W3X0MCAVEC-2BRly03Jd-2FFnrroDQkjC0PT90ve2D3ulLztfpX-2B1Wss-3D" style=
+=3D"color: #ffffff; display: block; font-size: 17px; font-weight: bold; tex=
+t-align: center; text-decoration: none; font-family:Gotham, Helvetica, sans=
+-serif; line-height:100%; mso-line-height-rule:exactly; background-color:#e=
+d2224; border-radius: 30px;">BOOK NOW</a></td>            </tr>           <=
+/tbody>          </table>          </td>         </tr>         <tr>        =
+  <td style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exac=
+tly; height: 30px"> </td>         </tr>         <tr>          <td align=3D"=
+center" style=3D"margin:0; padding:0" width=3D"600">          <table align=
+=3D"center" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:570px;text-a=
+lign:center; background-color:#ffcb05">           <tbody><!--[if !mso]><!--=
+>            <tr>             <td style=3D"line-height: 1px; font-size: 1px=
+; mso-line-height-rule: exactly; height: 11px"> </td>            </tr>     =
+       <!--<![endif]--><!--[if lte mso 15]>                    <tr>        =
+            <td style=3D"line-height: 1px; font-size: 1px; mso-line-height-=
+rule: exactly; height: 8px">&#xA0;</td>                    </tr>           =
+         <![endif]--><!--[if gt mso 15]>                     <tr>          =
+          <td style=3D"line-height: 1px; font-size: 1px; mso-line-height-ru=
+le: exactly; height: 11px">&#xA0;</td>                    </tr>            =
+       <![endif]--><!--[if !mso]><!-->            <tr>             <td alig=
+n=3D"center" style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, s=
+ans-serif; color:#010101; font-weight: bold; mso-line-height-rule: exactly;=
+ line-height: 100%; text-align:center; font-size: 18px; letter-spacing:0; t=
+ext-transform: uppercase" valign=3D"top" width=3D"570">Popular destinations=
+ for the long weekend.</td>            </tr>            <!--<![endif]--><!-=
+-[if gte mso 9]>                    <tr>                    <td valign=3D"t=
+op" align=3D"center" width=3D"570" style=3D"margin:0; padding:0; font-famil=
+y:Gotham, Helvetica, sans-serif; color:#010101; font-weight: bold; mso-line=
+-height-rule: exactly; line-height: 99%; text-align:center; font-size: 18px=
+; letter-spacing:0; text-transform: uppercase">                    Popular =
+destinations for the long weekend.                    </td>                =
+    </tr>                   <![endif]--><!--[if !mso]><!-->            <tr>=
+             <td style=3D"line-height: 1px; font-size: 1px; mso-line-height=
+-rule: exactly; height: 10px"> </td>            </tr>            <!--<![end=
+if]--><!--[if lte mso 15]>                    <tr>                    <td s=
+tyle=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exactly; he=
+ight: 7px">&#xA0;</td>                    </tr>                    <![endif=
+]--><!--[if gt mso 15]>                     <tr>                    <td sty=
+le=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exactly; heig=
+ht: 10px">&#xA0;</td>                    </tr>                   <![endif]-=
+->           </tbody>          </table>          </td>         </tr>       =
+  <tr>          <td style=3D"line-height: 1px; font-size: 1px; mso-line-hei=
+ght-rule: exactly; height: 12px"> </td>         </tr>         <tr>         =
+ <td align=3D"center" style=3D"margin:0; padding:0;" width=3D"600"><img hei=
+ght=3D"128" src=3D"https://d1qzvqecfo5h8o.cloudfront.net/images/WR9-94R-786=
+Z/SpiceJet/DussehraLongWeekend3.jpg" style=3D"margin: 0; border: 0; padding=
+: 0; height:128px;" width=3D"600" /></td>         </tr>         <tr>       =
+   <td align=3D"center" width=3D"600">          <table align=3D"center" cel=
+lpadding=3D"0" cellspacing=3D"0" style=3D"width:581px;text-align:center;"> =
+          <tbody>            <tr>             <td align=3D"center" valign=
+=3D"top" width=3D"194">             <table align=3D"center" cellpadding=3D"=
+0" cellspacing=3D"0" style=3D"width:184px;text-align:center" valign=3D"top"=
+>              <tbody><!--[if !mso]><!-->               <tr>               =
+ <td align=3D"center" style=3D"margin:0; padding:0; font-family:Gotham, Hel=
+vetica, sans-serif; color:#f50000; font-weight: bold; mso-line-height-rule:=
+ exactly; line-height: 100%; text-align:center; font-size: 17px; letter-spa=
+cing:0" valign=3D"top" width=3D"184">DUBAI</td>               </tr>        =
+       <!--<![endif]--><!--[if lte mso 15]>                        <tr>    =
+                    <td valign=3D"top" align=3D"center" width=3D"184" style=
+=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; color:#=
+f50000; font-weight: bold; mso-line-height-rule: exactly; line-height: 95%;=
+ text-align:center; font-size: 17px; letter-spacing:0">                    =
+    DUBAI                        </td>                        </tr>        =
+                <![endif]--><!--[if gt mso 15]>                         <tr=
+>                        <td valign=3D"top" align=3D"center" width=3D"184" =
+style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; co=
+lor:#f50000; font-weight: bold; mso-line-height-rule: exactly; line-height:=
+ 100%; text-align:center; font-size: 17px; letter-spacing:0">              =
+          DUBAI                        </td>                        </tr>  =
+                     <![endif]-->               <tr>                <td ali=
+gn=3D"center" width=3D"184">                <table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:62px; margin:0; b=
+order:0; padding:0">                 <tbody><!--[if !mso]><!-->            =
+      <tr>                   <td style=3D"line-height: 1px; font-size: 1px;=
+ mso-line-height-rule: exactly; border-bottom:3px solid #f50000; height:4px=
+" width=3D"62"> </td>                  </tr>                  <!--<![endif]=
+--><!--[if lte mso 15]>                            <tr>                    =
+        <td width=3D"62" style=3D"line-height: 1px; font-size: 1px; mso-lin=
+e-height-rule: exactly; border-bottom:3px solid #f50000; height:2px"> </td>=
+                            </tr>                            <![endif]--><!=
+--[if gt mso 15]>                             <tr>                         =
+   <td width=3D"62" style=3D"line-height: 1px; font-size: 1px; mso-line-hei=
+ght-rule: exactly; border-bottom:3px solid #f50000; height:4px"> </td>     =
+                       </tr>                           <![endif]-->        =
+         </tbody>                </table>                </td>             =
+  </tr>               <!--[if !mso]><!-->               <tr>               =
+ <td style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exact=
+ly; height: 4px;" valign=3D"top"> </td>               </tr>               <=
+!--<![endif]--><!--[if lte mso 15]>                        <tr>            =
+            <td valign=3D"top" style=3D"line-height: 1px; font-size: 1px; m=
+so-line-height-rule: exactly; height: 3px;">&#xA0;</td>                    =
+    </tr>                        <![endif]--><!--[if gt mso 15]>           =
+              <tr>                        <td valign=3D"top" style=3D"line-=
+height: 1px; font-size: 1px; mso-line-height-rule: exactly; height: 4px;">&=
+#xA0;</td>                        </tr>                       <![endif]--><=
+!--[if !mso]><!-->               <tr>                <td align=3D"center" s=
+tyle=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; col=
+or:#000000; font-weight: bold; mso-line-height-rule: exactly; line-height: =
+127%; text-align:center; font-size: 12px; letter-spacing:0" valign=3D"top" =
+width=3D"184">Awe-inspiring architecture, exciting desert sojourns, amazing=
+ shopping & more.</td>               </tr>               <!--<![endif]--><!=
+--[if gte mso 9]>                        <tr>                        <td va=
+lign=3D"top" align=3D"center" width=3D"184" style=3D"margin:0; padding:0; f=
+ont-family:Gotham, Helvetica, sans-serif; color:#000000; font-weight: bold;=
+ mso-line-height-rule: exactly; line-height: 110%; text-align:center; font-=
+size: 12px; letter-spacing:0">                        Awe-inspiring archite=
+cture, exciting desert sojourns, amazing shopping & more.                  =
+      </td>                        </tr>                       <![endif]-->=
+              </tbody>             </table>             </td>             <=
+td align=3D"center" valign=3D"top" width=3D"193">             <table align=
+=3D"center" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:184px;text-a=
+lign:center" valign=3D"top">              <tbody><!--[if !mso]><!-->       =
+        <tr>                <td align=3D"center" style=3D"margin:0; padding=
+:0; font-family:Gotham, Helvetica, sans-serif; color:#ef0013; font-weight: =
+bold; mso-line-height-rule: exactly; line-height: 100%; text-align:center; =
+font-size: 17px; letter-spacing:0" valign=3D"top" width=3D"184">BANGKOK</td=
+>               </tr>               <!--<![endif]--><!--[if lte mso 15]>   =
+                     <tr>                        <td valign=3D"top" align=
+=3D"center" width=3D"184" style=3D"margin:0; padding:0; font-family:Gotham,=
+ Helvetica, sans-serif; color:#ef0013; font-weight: bold; mso-line-height-r=
+ule: exactly; line-height: 95%; text-align:center; font-size: 17px; letter-=
+spacing:0">                        BANGKOK                        </td>    =
+                    </tr>                        <![endif]--><!--[if gt mso=
+ 15]>                         <tr>                        <td valign=3D"top=
+" align=3D"center" width=3D"184" style=3D"margin:0; padding:0; font-family:=
+Gotham, Helvetica, sans-serif; color:#ef0013; font-weight: bold; mso-line-h=
+eight-rule: exactly; line-height: 100%; text-align:center; font-size: 17px;=
+ letter-spacing:0">                        BANGKOK                        <=
+/td>                        </tr>                       <![endif]-->       =
+        <tr>                <td align=3D"center" width=3D"184">            =
+    <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" style=3D"width:62px; margin:0; border:0; padding:0">                 <tbo=
+dy><!--[if !mso]><!-->                  <tr>                   <td style=3D=
+"line-height: 1px; font-size: 1px; mso-line-height-rule: exactly; border-bo=
+ttom:3px solid #f50000; height:4px" width=3D"62"> </td>                  </=
+tr>                  <!--<![endif]--><!--[if lte mso 15]>                  =
+          <tr>                            <td width=3D"62" style=3D"line-he=
+ight: 1px; font-size: 1px; mso-line-height-rule: exactly; border-bottom:3px=
+ solid #f50000; height:2px"> </td>                            </tr>        =
+                    <![endif]--><!--[if gt mso 15]>                        =
+     <tr>                            <td width=3D"62" style=3D"line-height:=
+ 1px; font-size: 1px; mso-line-height-rule: exactly; border-bottom:3px soli=
+d #f50000; height:4px"> </td>                            </tr>             =
+              <![endif]-->                 </tbody>                </table>=
+                </td>               </tr>               <!--[if !mso]><!-->=
+               <tr>                <td style=3D"line-height: 1px; font-size=
+: 1px; mso-line-height-rule: exactly; height: 4px;" valign=3D"top"> </td>  =
+             </tr>               <!--<![endif]--><!--[if lte mso 15]>      =
+                  <tr>                        <td valign=3D"top" style=3D"l=
+ine-height: 1px; font-size: 1px; mso-line-height-rule: exactly; height: 3px=
+;">&#xA0;</td>                        </tr>                        <![endif=
+]--><!--[if gt mso 15]>                         <tr>                       =
+ <td valign=3D"top" style=3D"line-height: 1px; font-size: 1px; mso-line-hei=
+ght-rule: exactly; height: 4px;">&#xA0;</td>                        </tr>  =
+                     <![endif]--><!--[if !mso]><!-->               <tr>    =
+            <td align=3D"center" style=3D"margin:0; padding:0; font-family:=
+Gotham, Helvetica, sans-serif; color:#000000; font-weight: bold; mso-line-h=
+eight-rule: exactly; line-height: 127%; text-align:center; font-size: 12px;=
+ letter-spacing:0" valign=3D"top" width=3D"184">Often called the world&#39;=
+s party capital with hospitality beyond compare.</td>               </tr>  =
+             <!--<![endif]--><!--[if gte mso 9]>                        <tr=
+>                        <td valign=3D"top" align=3D"center" width=3D"184" =
+style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; co=
+lor:#000000; font-weight: bold; mso-line-height-rule: exactly; line-height:=
+ 110%; text-align:center; font-size: 12px; letter-spacing:0">              =
+          Often called the world's party capital with hospitality beyond co=
+mpare.                        </td>                        </tr>           =
+            <![endif]-->              </tbody>             </table>        =
+     </td>             <td align=3D"center" valign=3D"top" width=3D"194">  =
+           <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"width:184px;text-align:center" valign=3D"top">              <tbody><!-=
+-[if !mso]><!-->               <tr>                <td align=3D"center" sty=
+le=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; color=
+:#ef0013; font-weight: bold; mso-line-height-rule: exactly; line-height: 10=
+0%; text-align:center; font-size: 17px; letter-spacing:0" valign=3D"top" wi=
+dth=3D"184">COLOMBO</td>               </tr>               <!--<![endif]-->=
+<!--[if lte mso 15]>                        <tr>                        <td=
+ valign=3D"top" align=3D"center" width=3D"184" style=3D"margin:0; padding:0=
+; font-family:Gotham, Helvetica, sans-serif; color:#ef0013; font-weight: bo=
+ld; mso-line-height-rule: exactly; line-height: 95%; text-align:center; fon=
+t-size: 17px; letter-spacing:0">                        COLOMBO            =
+            </td>                        </tr>                        <![en=
+dif]--><!--[if gt mso 15]>                         <tr>                    =
+    <td valign=3D"top" align=3D"center" width=3D"184" style=3D"margin:0; pa=
+dding:0; font-family:Gotham, Helvetica, sans-serif; color:#ef0013; font-wei=
+ght: bold; mso-line-height-rule: exactly; line-height: 100%; text-align:cen=
+ter; font-size: 17px; letter-spacing:0">                        COLOMBO    =
+                    </td>                        </tr>                     =
+  <![endif]-->               <tr>                <td align=3D"center" width=
+=3D"184">                <table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"width:62px; margin:0; border:0; padding:0=
+">                 <tbody><!--[if !mso]><!-->                  <tr>        =
+           <td style=3D"line-height: 1px; font-size: 1px; mso-line-height-r=
+ule: exactly; border-bottom:3px solid #f50000; height:4px" width=3D"62"> </=
+td>                  </tr>                  <!--<![endif]--><!--[if lte mso=
+ 15]>                            <tr>                            <td width=
+=3D"62" style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: ex=
+actly; border-bottom:3px solid #f50000; height:2px"> </td>                 =
+           </tr>                            <![endif]--><!--[if gt mso 15]>=
+                             <tr>                            <td width=3D"6=
+2" style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exactly=
+; border-bottom:3px solid #f50000; height:4px"> </td>                      =
+      </tr>                           <![endif]-->                 </tbody>=
+                </table>                </td>               </tr>          =
+     <!--[if !mso]><!-->               <tr>                <td style=3D"lin=
+e-height: 1px; font-size: 1px; mso-line-height-rule: exactly; height: 4px;"=
+ valign=3D"top"> </td>               </tr>               <!--<![endif]--><!=
+--[if lte mso 15]>                        <tr>                        <td v=
+align=3D"top" style=3D"line-height: 1px; font-size: 1px; mso-line-height-ru=
+le: exactly; height: 3px;">&#xA0;</td>                        </tr>        =
+                <![endif]--><!--[if gt mso 15]>                         <tr=
+>                        <td valign=3D"top" style=3D"line-height: 1px; font=
+-size: 1px; mso-line-height-rule: exactly; height: 4px;">&#xA0;</td>       =
+                 </tr>                       <![endif]--><!--[if !mso]><!--=
+>               <tr>                <td align=3D"center" style=3D"margin:0;=
+ padding:0; font-family:Gotham, Helvetica, sans-serif; color:#000000; font-=
+weight: bold; mso-line-height-rule: exactly; line-height: 127%; text-align:=
+center; font-size: 12px; letter-spacing:0" valign=3D"top" width=3D"184">Fus=
+ion of history,<br />                culture and coastal<br />             =
+   beauty.</td>               </tr>               <!--<![endif]--><!--[if g=
+te mso 9]>                        <tr>                        <td valign=3D=
+"top" align=3D"center" width=3D"184" style=3D"margin:0; padding:0; font-fam=
+ily:Gotham, Helvetica, sans-serif; color:#000000; font-weight: bold; mso-li=
+ne-height-rule: exactly; line-height: 110%; text-align:center; font-size: 1=
+2px; letter-spacing:0">                        Fusion of history,<br />cult=
+ure and coastal<br />beauty.                        </td>                  =
+      </tr>                       <![endif]-->              </tbody>       =
+      </table>             </td>            </tr>            <!--[if !mso]>=
+<!-->            <tr>             <td colspan=3D"3" style=3D"line-height: 1=
+px; font-size: 1px; mso-line-height-rule: exactly; height: 7px;"> </td>    =
+        </tr>            <!--<![endif]--><!--[if lte mso 15]>              =
+      <tr>                    <td colspan=3D"3" style=3D"line-height: 1px; =
+font-size: 1px; mso-line-height-rule: exactly; height: 5px;">&#xA0;</td>   =
+                 </tr>                    <![endif]--><!--[if gt mso 15]>  =
+                   <tr>                    <td colspan=3D"3" style=3D"line-=
+height: 1px; font-size: 1px; mso-line-height-rule: exactly; height: 7px;">&=
+#xA0;</td>                    </tr>                   <![endif]-->         =
+   <tr>             <td align=3D"center" valign=3D"top" width=3D"194">     =
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100">              <tbody>               <tr>              =
+  <td align=3D"center" style=3D"background-color: #ed1c24; padding-top: 8px=
+; padding-bottom: 8px; border-radius: 20px; width:100px; line-height:100%" =
+valign=3D"middle"><a href=3D"https://u34557702.ct.sendgrid.net/ls/click?upn=
+=3D5SjtgPrxLiMD-2F7ijF3Td4uTgbnXMh1j0vbzF4YB-2BkI52ULUCxnJB-2Fp9SbaKVGRAf4a=
+K6piFSHK2hG2OXLp7fDfQHOg-2FEgv88AUsrGOOb8wsA4rj8jFy6ftVRjqG-2BqLucCr-2ByaLR=
+sgH6okd2kqiCqUmUVv-2B6UTY3FNa-2BRZMQemxq517NET4nmgOfa-2FE6IfYx68LNLIVVzzxgM=
+TkB4ZtkD36q0loGOVK0rcqmbhxQPg55lk5JyDioRJUtVs4BCbdnubT9ac4WJ4ywUzUqyB8RjT8M=
+qOvh3xsTqwWVhSfOyZqR-2BgPKRiKfxSQe-2BIefzFqSGCwbJlBgxH1GGrqIT2PX8X06ZEgK4wh=
+Y5jJLnI-2BUiZv1hlU-2FZqixLA4T5nOB-2BPxqdI9r6VLlC0w7PzUcnAl4TclsgP5p-2B7sYbe=
+TD-2BgN7tm-2FeSzO4nxKyUSP4gszHmTOdzb-2F3VshweL8ZPwVP12pnrHGa5M86GQOs4-2FUMW=
+5WOzy1MVDJMsuG-2Bcvc99XTL3qK2fwjA6QEnUoD-2BxuwTs7c9qttrJtf9xd-2B5wjR1-2B2aO=
+NIX-2F0CRc98QnaeMl1uMMnqpgKYOE8aBkVtXrTjRV1W8R-2BEw-3D-3DaQCg_ijSW8RkM-2FIX=
+Mlaqj-2FEdh9p8v0SOSA-2FyUc2EIoBfGmbaA1NAX1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34=
+sY3YXjzUulE5UHW1uoZfOJMQrO38OXQtYbS-2Bn1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2Zxsuly=
+5bvDDi1SqtCBD0aBkAXTWHUy0kUQk9n00F5Gx6q6aUpeOV5IGdJOES30aWF9WICc6nu-2F18RJu=
+-2Bc4-2BYsm134953z66mfgoqcvrwuCsVyK6HB9vBOkGFRkh0cXPGhgnZ6kROk-2BzmwZGqcrzT=
+LBqYnTZ8ASqZ-2BMva3k7-2B-2BWqwm7IjQI68nHp11ZpAZBiuuYNc6vMyWIRUfu7s-2F4Fn-2F=
+67TygZDOPaE6ZtEzAMKXte-2FWp4q0BdgLP67hWy3P3pZc445EiyxfGuiUQN4bY3xdp1Rl73NBe=
+RX5WyIhYUWvGLR2fZ3AkoCoQQIm7F78ee-2Blb30BK12AGBf-2BcfV8nc1GjUp5Q-3D" style=
+=3D"color: #ffffff; display: block; font-size: 12px; font-weight: bold; tex=
+t-align: center; text-decoration: none; font-family:Gotham, Helvetica, sans=
+-serif; line-height:100%; mso-line-height-rule:exactly; background-color:#e=
+d1c24; border-radius: 30px;">BOOK NOW</a></td>               </tr>         =
+     </tbody>             </table>             </td>             <td align=
+=3D"center" valign=3D"top" width=3D"193">             <table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100">         =
+     <tbody>               <tr>                <td align=3D"center" style=
+=3D"background-color: #ed1c24; padding-top: 8px; padding-bottom: 8px; borde=
+r-radius: 20px; width:100px; line-height:100%" valign=3D"middle"><a href=3D=
+"https://u34557702.ct.sendgrid.net/ls/click?upn=3D5SjtgPrxLiMD-2F7ijF3Td4uT=
+gbnXMh1j0vbzF4YB-2BkI52ULUCxnJB-2Fp9SbaKVGRAf4aK6piFSHK2hG2OXLp7fDfQHOg-2FE=
+gv88AUsrGOOb8wsA4rj8jFy6ftVRjqG-2BqLucCr-2ByaLRsgH6okd2kqiCqUmUVv-2B6UTY3FN=
+a-2BRZMQemxq517NET4nmgOfa-2FE6IfYx68LNLIVVzzxgMTkB4ZtkD36q0loGOVK0rcqmbhxQP=
+g55lk5JyDioRJUtVs4BCbdnubT9ac4WJ4ywUzUqyB8RjT8MqOvh3xsTqwWVhSfOyZqR-2BgPKRi=
+KfxSQe-2BIefzFqSGCwbJlBgxH1GGrqIT2PX8X06ZEgK4whY5jJLnI-2BUiZv1hlU-2FZqixLA4=
+T5nOB-2BPxqdI9r6VLlC0w7PzUcnAl4TclsgP5p-2B7sYbeTD-2BgN7tm-2FeSzO4nxKyUSP4gs=
+zHmTOdzb-2F3VshweL8ZPwVP12pnrHGPO5yHWe9BwDuoUxn7rUQqk3FEe5ThzXt5Y84zQiEGUl3=
+qfR5N3BsNT6oYrw7f6jdMLs4MWp6EeCajh4Tj1AMT-2FNLh0syACskIWQPgu7rOU-2B7SKMsWPJ=
+OeJ89lneWJfvQ-3D-3Dk1Bw_ijSW8RkM-2FIXMlaqj-2FEdh9p8v0SOSA-2FyUc2EIoBfGmbaA1=
+NAX1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34sY3YXjzUulE5UHW1uoZfOJMQrO38OXQtYbS-2B=
+n1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2Zxsuly5bvDDi1SqtCBD0aBkAXTWHUy0kUQk9n00F5Gx6=
+q6aUpeOV5IGdJOES30aWF9WICc6nu-2F18RJu-2Bc4-2BYsm134953z66mfgoqcvrwuCsVyK6HB=
+9vBOkGFRkh0cXPGhgnZ6kROk-2BzmwZGqcrzTLBqYnTokj72VueXgEbFkSS-2BI7g22L5vqni8p=
+re18vD13WDEhWnx1UomVEmUxlNFBgTH6XcHkRLD-2FcaYZGdjWDsHPTYnWsf009BKPM4AvX8Bwy=
+Hv1ROfNIpwD-2B24bBYR7JX8rWUe7joE0jDyvRMSaK4p2pyTSDD3bMqmckHuIzviXojyQoxqAsT=
+NNfa1OcZhHw1qPTE-3D" style=3D"color: #ffffff; display: block; font-size: 12=
+px; font-weight: bold; text-align: center; text-decoration: none; font-fami=
+ly:Gotham, Helvetica, sans-serif; line-height:100%; mso-line-height-rule:ex=
+actly; background-color:#ed1c24; border-radius: 30px;">BOOK NOW</a></td>   =
+            </tr>              </tbody>             </table>             </=
+td>             <td align=3D"center" valign=3D"top" width=3D"194">         =
+    <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" width=3D"100">              <tbody>               <tr>                <td=
+ align=3D"center" style=3D"background-color: #ed1c24; padding-top: 8px; pad=
+ding-bottom: 8px; border-radius: 20px; width:100px; line-height:100%" valig=
+n=3D"middle"><a href=3D"https://u34557702.ct.sendgrid.net/ls/click?upn=3D5S=
+jtgPrxLiMD-2F7ijF3Td4uTgbnXMh1j0vbzF4YB-2BkI52ULUCxnJB-2Fp9SbaKVGRAf4aK6piF=
+SHK2hG2OXLp7fDfQHOg-2FEgv88AUsrGOOb8wsA4rj8jFy6ftVRjqG-2BqLucCr-2ByaLRsgH6o=
+kd2kqiCqUmUVv-2B6UTY3FNa-2BRZMQemxq517NET4nmgOfa-2FE6IfYx68LNLIVVzzxgMTkB4Z=
+tkD36q0loGOVK0rcqmbhxQPg55lk5JyDioRJUtVs4BCbdnubT9ac4WJ4ywUzUqyB8RjT8MqOvh3=
+xsTqwWVhSfOyZqR-2BgPKRiKfxSQe-2BIefzFqSGCwbJlBgxH1GGrqIT2PX8X06ZEgK4whY5jJL=
+nI-2BUiZv1hlU-2FZqixLA4T5nOB-2BPxqdI9r6VLlC0w7PzUcnAl4TclsgP5p-2B7sYbeTD-2B=
+gN7tm-2FeSzO4nxKyUSP4gszHmTOdzb-2F3VshweL8ZPwVP12pnrHNuOovL1V0QKuLbdjlEmNS6=
+n5Vzt02VuK23YZAAE-2Bg3tb-2B6HF9afvngi32wH7N5R3Oz-2F0QgYF9hZCnEETPq82qFhapPP=
+ny0B58AWtZCg3lojFxEgOm7cQKx58DUEXu6ZHg-3D-3DxHOq_ijSW8RkM-2FIXMlaqj-2FEdh9p=
+8v0SOSA-2FyUc2EIoBfGmbaA1NAX1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34sY3YXjzUulE5U=
+HW1uoZfOJMQrO38OXQtYbS-2Bn1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2Zxsuly5bvDDi1SqtCBD=
+0aBkAXTWHUy0kUQk9n00F5Gx6q6aUpeOV5IGdJOES30aWF9WICc6nu-2F18RJu-2Bc4-2BYsm13=
+4953z66mfgoqcvrwuCsVyK6HB9vBOkGFRkh0cXPGhgnZ6kROk-2BzmwZGqcrzTLBqYnTtLH96fz=
+eWnx5NKaIGgA3BXkfK-2BFNaHoDidY5K3jZlt-2BAUysyKk-2FwrMh8NG0umnvulsdizu0iAxSq=
+2TwZUjgyN0ltiS9D-2BdX3nGMmEQV-2B6GRZtG33L05plk7NWllOmqCQrHe1uS3tqPF0A068Czk=
+QOYekeDeyclUtrWA0GbWMz8sJHAz919FjQ-2BTElj3pnPA4-3D" style=3D"color: #ffffff=
+; display: block; font-size: 12px; font-weight: bold; text-align: center; t=
+ext-decoration: none; font-family:Gotham, Helvetica, sans-serif; line-heigh=
+t:100%; mso-line-height-rule:exactly; background-color:#ed1c24; border-radi=
+us: 30px;">BOOK NOW</a></td>               </tr>              </tbody>     =
+        </table>             </td>            </tr>            <tr>        =
+     <td colspan=3D"3" style=3D"line-height: 1px; font-size: 1px; mso-line-=
+height-rule: exactly; height: 14px;"> </td>            </tr>           </tb=
+ody>          </table>          </td>         </tr>         <tr>          <=
+td align=3D"center" style=3D"margin:0; padding:0;" width=3D"600"><img heigh=
+t=3D"128" src=3D"https://d1qzvqecfo5h8o.cloudfront.net/images/WR9-94R-786Z/=
+SpiceJet/RakhiLongWeekend13.jpg" style=3D"margin: 0; border: 0; padding: 0;=
+ height:128px;" width=3D"600" /></td>         </tr>         <tr>          <=
+td align=3D"center" width=3D"600">          <table align=3D"center" cellpad=
+ding=3D"0" cellspacing=3D"0" style=3D"width:581px;text-align:center;">     =
+      <tbody>            <tr>             <td align=3D"center" valign=3D"to=
+p" width=3D"194">             <table align=3D"center" cellpadding=3D"0" cel=
+lspacing=3D"0" style=3D"width:184px;text-align:center" valign=3D"top">     =
+         <tbody><!--[if !mso]><!-->               <tr>                <td a=
+lign=3D"center" style=3D"margin:0; padding:0; font-family:Gotham, Helvetica=
+, sans-serif; color:#ef0013; font-weight: bold; mso-line-height-rule: exact=
+ly; line-height: 100%; text-align:center; font-size: 17px; letter-spacing:0=
+; text-transform:uppercase" valign=3D"top" width=3D"184">SHILLONG</td>     =
+          </tr>               <!--<![endif]--><!--[if lte mso 15]>         =
+               <tr>                        <td valign=3D"top" align=3D"cent=
+er" width=3D"184" style=3D"margin:0; padding:0; font-family:Gotham, Helveti=
+ca, sans-serif; color:#ef0013; font-weight: bold; mso-line-height-rule: exa=
+ctly; line-height: 95%; text-align:center; font-size: 17px; letter-spacing:=
+0; text-transform:uppercase">                        SHILLONG              =
+          </td>                        </tr>                        <![endi=
+f]--><!--[if gt mso 15]>                         <tr>                      =
+  <td valign=3D"top" align=3D"center" width=3D"184" style=3D"margin:0; padd=
+ing:0; font-family:Gotham, Helvetica, sans-serif; color:#ef0013; font-weigh=
+t: bold; mso-line-height-rule: exactly; line-height: 100%; text-align:cente=
+r; font-size: 17px; letter-spacing:0; text-transform:uppercase">           =
+             SHILLONG                        </td>                        <=
+/tr>                       <![endif]-->               <tr>                <=
+td align=3D"center" width=3D"184">                <table align=3D"center" b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:62px; margin=
+:0; border:0; padding:0">                 <tbody><!--[if !mso]><!-->       =
+           <tr>                   <td style=3D"line-height: 1px; font-size:=
+ 1px; mso-line-height-rule: exactly; border-bottom:3px solid #f50000; heigh=
+t:4px" width=3D"62"> </td>                  </tr>                  <!--<![e=
+ndif]--><!--[if lte mso 15]>                            <tr>               =
+             <td width=3D"62" style=3D"line-height: 1px; font-size: 1px; ms=
+o-line-height-rule: exactly; border-bottom:3px solid #f50000; height:2px"> =
+</td>                            </tr>                            <![endif]=
+--><!--[if gt mso 15]>                             <tr>                    =
+        <td width=3D"62" style=3D"line-height: 1px; font-size: 1px; mso-lin=
+e-height-rule: exactly; border-bottom:3px solid #f50000; height:4px"> </td>=
+                            </tr>                           <![endif]-->   =
+              </tbody>                </table>                </td>        =
+       </tr>               <!--[if !mso]><!-->               <tr>          =
+      <td style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: =
+exactly; height: 4px;" valign=3D"top"> </td>               </tr>           =
+    <!--<![endif]--><!--[if lte mso 15]>                        <tr>       =
+                 <td valign=3D"top" style=3D"line-height: 1px; font-size: 1=
+px; mso-line-height-rule: exactly; height: 3px;">&#xA0;</td>               =
+         </tr>                        <![endif]--><!--[if gt mso 15]>      =
+                   <tr>                        <td valign=3D"top" style=3D"=
+line-height: 1px; font-size: 1px; mso-line-height-rule: exactly; height: 4p=
+x;">&#xA0;</td>                        </tr>                       <![endif=
+]--><!--[if !mso]><!-->               <tr>                <td align=3D"cent=
+er" style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-serif=
+; color:#000000; font-weight: bold; mso-line-height-rule: exactly; line-hei=
+ght: 127%; text-align:center; font-size: 12px; letter-spacing:0" valign=3D"=
+top" width=3D"184">Known as Scotland of the<br />                East - rol=
+ling hills, pristine<br />                rivers & vivid culture await.</td=
+>               </tr>               <!--<![endif]--><!--[if gte mso 9]>    =
+                    <tr>                        <td valign=3D"top" align=3D=
+"center" width=3D"184" style=3D"margin:0; padding:0; font-family:Gotham, He=
+lvetica, sans-serif; color:#000000; font-weight: bold; mso-line-height-rule=
+: exactly; line-height: 110%; text-align:center; font-size: 12px; letter-sp=
+acing:0">                        Known as Scotland of the<br />East - rolli=
+ng hills, pristine<br />rivers & vivid culture await.                      =
+  </td>                        </tr>                       <![endif]-->    =
+          </tbody>             </table>             </td>             <td a=
+lign=3D"center" valign=3D"top" width=3D"193">             <table align=3D"c=
+enter" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:184px;text-align:=
+center" valign=3D"top">              <tbody><!--[if !mso]><!-->            =
+   <tr>                <td align=3D"center" style=3D"margin:0; padding:0; f=
+ont-family:Gotham, Helvetica, sans-serif; color:#ef0013; font-weight: bold;=
+ mso-line-height-rule: exactly; line-height: 100%; text-align:center; font-=
+size: 17px; letter-spacing:0; text-transform:uppercase" valign=3D"top" widt=
+h=3D"184">Khajuraho</td>               </tr>               <!--<![endif]-->=
+<!--[if lte mso 15]>                        <tr>                        <td=
+ valign=3D"top" align=3D"center" width=3D"184" style=3D"margin:0; padding:0=
+; font-family:Gotham, Helvetica, sans-serif; color:#ef0013; font-weight: bo=
+ld; mso-line-height-rule: exactly; line-height: 95%; text-align:center; fon=
+t-size: 17px; letter-spacing:0; text-transform:uppercase">                 =
+       Khajuraho                        </td>                        </tr> =
+                       <![endif]--><!--[if gt mso 15]>                     =
+    <tr>                        <td valign=3D"top" align=3D"center" width=
+=3D"184" style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-=
+serif; color:#ef0013; font-weight: bold; mso-line-height-rule: exactly; lin=
+e-height: 100%; text-align:center; font-size: 17px; letter-spacing:0; text-=
+transform:uppercase">                        Khajuraho                     =
+   </td>                        </tr>                       <![endif]-->   =
+            <tr>                <td align=3D"center" width=3D"184">        =
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:62px; margin:0; border:0; padding:0">                =
+ <tbody><!--[if !mso]><!-->                  <tr>                   <td sty=
+le=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exactly; bord=
+er-bottom:3px solid #f50000; height:4px" width=3D"62"> </td>               =
+   </tr>                  <!--<![endif]--><!--[if lte mso 15]>             =
+               <tr>                            <td width=3D"62" style=3D"li=
+ne-height: 1px; font-size: 1px; mso-line-height-rule: exactly; border-botto=
+m:3px solid #f50000; height:2px"> </td>                            </tr>   =
+                         <![endif]--><!--[if gt mso 15]>                   =
+          <tr>                            <td width=3D"62" style=3D"line-he=
+ight: 1px; font-size: 1px; mso-line-height-rule: exactly; border-bottom:3px=
+ solid #f50000; height:4px"> </td>                            </tr>        =
+                   <![endif]-->                 </tbody>                </t=
+able>                </td>               </tr>               <!--[if !mso]>=
+<!-->               <tr>                <td style=3D"line-height: 1px; font=
+-size: 1px; mso-line-height-rule: exactly; height: 4px;" valign=3D"top"> </=
+td>               </tr>               <!--<![endif]--><!--[if lte mso 15]> =
+                       <tr>                        <td valign=3D"top" style=
+=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exactly; height=
+: 3px;">&#xA0;</td>                        </tr>                        <![=
+endif]--><!--[if gt mso 15]>                         <tr>                  =
+      <td valign=3D"top" style=3D"line-height: 1px; font-size: 1px; mso-lin=
+e-height-rule: exactly; height: 4px;">&#xA0;</td>                        </=
+tr>                       <![endif]--><!--[if !mso]><!-->               <tr=
+>                <td align=3D"center" style=3D"margin:0; padding:0; font-fa=
+mily:Gotham, Helvetica, sans-serif; color:#000000; font-weight: bold; mso-l=
+ine-height-rule: exactly; line-height: 127%; text-align:center; font-size: =
+12px; letter-spacing:0" valign=3D"top" width=3D"184">Take a journey within<=
+br />                at this UNESCO World<br />                Heritage Sit=
+e.</td>               </tr>               <!--<![endif]--><!--[if gte mso 9=
+]>                        <tr>                        <td valign=3D"top" al=
+ign=3D"center" width=3D"184" style=3D"margin:0; padding:0; font-family:Goth=
+am, Helvetica, sans-serif; color:#000000; font-weight: bold; mso-line-heigh=
+t-rule: exactly; line-height: 110%; text-align:center; font-size: 12px; let=
+ter-spacing:0">                        Take a journey within<br />at this U=
+NESCO World<br />Heritage Site.                        </td>               =
+         </tr>                       <![endif]-->              </tbody>    =
+         </table>             </td>             <td align=3D"center" valign=
+=3D"top" width=3D"194">             <table align=3D"center" cellpadding=3D"=
+0" cellspacing=3D"0" style=3D"width:184px;text-align:center" valign=3D"top"=
+>              <tbody><!--[if !mso]><!-->               <tr>               =
+ <td align=3D"center" style=3D"margin:0; padding:0; font-family:Gotham, Hel=
+vetica, sans-serif; color:#ef0013; font-weight: bold; mso-line-height-rule:=
+ exactly; line-height: 100%; text-align:center; font-size: 17px; letter-spa=
+cing:0" valign=3D"top" width=3D"184">KUSHINAGAR</td>               </tr>   =
+            <!--<![endif]--><!--[if lte mso 15]>                        <tr=
+>                        <td valign=3D"top" align=3D"center" width=3D"184" =
+style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; co=
+lor:#ef0013; font-weight: bold; mso-line-height-rule: exactly; line-height:=
+ 95%; text-align:center; font-size: 17px; letter-spacing:0">               =
+         KUSHINAGAR                        </td>                        </t=
+r>                        <![endif]--><!--[if gt mso 15]>                  =
+       <tr>                        <td valign=3D"top" align=3D"center" widt=
+h=3D"184" style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans=
+-serif; color:#ef0013; font-weight: bold; mso-line-height-rule: exactly; li=
+ne-height: 100%; text-align:center; font-size: 17px; letter-spacing:0">    =
+                    KUSHINAGAR                        </td>                =
+        </tr>                       <![endif]-->               <tr>        =
+        <td align=3D"center" width=3D"184">                <table align=3D"=
+center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:62p=
+x; margin:0; border:0; padding:0">                 <tbody><!--[if !mso]><!-=
+->                  <tr>                   <td style=3D"line-height: 1px; f=
+ont-size: 1px; mso-line-height-rule: exactly; border-bottom:3px solid #f500=
+00; height:4px" width=3D"62"> </td>                  </tr>                 =
+ <!--<![endif]--><!--[if lte mso 15]>                            <tr>      =
+                      <td width=3D"62" style=3D"line-height: 1px; font-size=
+: 1px; mso-line-height-rule: exactly; border-bottom:3px solid #f50000; heig=
+ht:2px"> </td>                            </tr>                            =
+<![endif]--><!--[if gt mso 15]>                             <tr>           =
+                 <td width=3D"62" style=3D"line-height: 1px; font-size: 1px=
+; mso-line-height-rule: exactly; border-bottom:3px solid #f50000; height:4p=
+x"> </td>                            </tr>                           <![end=
+if]-->                 </tbody>                </table>                </td=
+>               </tr>               <!--[if !mso]><!-->               <tr> =
+               <td style=3D"line-height: 1px; font-size: 1px; mso-line-heig=
+ht-rule: exactly; height: 4px;" valign=3D"top"> </td>               </tr>  =
+             <!--<![endif]--><!--[if lte mso 15]>                        <t=
+r>                        <td valign=3D"top" style=3D"line-height: 1px; fon=
+t-size: 1px; mso-line-height-rule: exactly; height: 3px;">&#xA0;</td>      =
+                  </tr>                        <![endif]--><!--[if gt mso 1=
+5]>                         <tr>                        <td valign=3D"top" =
+style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exactly; h=
+eight: 4px;">&#xA0;</td>                        </tr>                      =
+ <![endif]--><!--[if !mso]><!-->               <tr>                <td alig=
+n=3D"center" style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, s=
+ans-serif; color:#000000; font-weight: bold; mso-line-height-rule: exactly;=
+ line-height: 127%; text-align:center; font-size: 12px; letter-spacing:0" v=
+align=3D"top" width=3D"184">Enlightenment<br />                and liberati=
+on intertwine<br />                in this historic site.</td>             =
+  </tr>               <!--<![endif]--><!--[if gte mso 9]>                  =
+      <tr>                        <td valign=3D"top" align=3D"center" width=
+=3D"184" style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-=
+serif; color:#000000; font-weight: bold; mso-line-height-rule: exactly; lin=
+e-height: 110%; text-align:center; font-size: 12px; letter-spacing:0">     =
+                   Enlightenment<br />and liberation intertwine<br />in thi=
+s historic site.                        </td>                        </tr> =
+                      <![endif]-->              </tbody>             </tabl=
+e>             </td>            </tr>            <!--[if !mso]><!-->       =
+     <tr>             <td colspan=3D"3" style=3D"line-height: 1px; font-siz=
+e: 1px; mso-line-height-rule: exactly; height: 7px;"> </td>            </tr=
+>            <!--<![endif]--><!--[if lte mso 15]>                    <tr>  =
+                  <td colspan=3D"3" style=3D"line-height: 1px; font-size: 1=
+px; mso-line-height-rule: exactly; height: 5px;">&#xA0;</td>               =
+     </tr>                    <![endif]--><!--[if gt mso 15]>              =
+       <tr>                    <td colspan=3D"3" style=3D"line-height: 1px;=
+ font-size: 1px; mso-line-height-rule: exactly; height: 7px;">&#xA0;</td>  =
+                  </tr>                   <![endif]-->            <tr>     =
+        <td align=3D"center" valign=3D"top" width=3D"194">             <tab=
+le align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100">              <tbody>               <tr>                <td align=
+=3D"center" style=3D"background-color: #ed1c24; padding-top: 8px; padding-b=
+ottom: 8px; border-radius: 20px; width:100px; line-height:100%" valign=3D"m=
+iddle"><a href=3D"https://u34557702.ct.sendgrid.net/ls/click?upn=3D5SjtgPrx=
+LiMD-2F7ijF3Td4uTgbnXMh1j0vbzF4YB-2BkI52ULUCxnJB-2Fp9SbaKVGRAf4aK6piFSHK2hG=
+2OXLp7fDfQHOg-2FEgv88AUsrGOOb8wsA4rj8jFy6ftVRjqG-2BqLucCr-2ByaLRsgH6okd2kqi=
+CqUmUVv-2B6UTY3FNa-2BRZMQemxq517NET4nmgOfa-2FE6IfYx68LNLIVVzzxgMTkB4ZtkD36q=
+0loGOVK0rcqmbhxQPg55lk5JyDioRJUtVs4BCbdnubT9ac4WJ4ywUzUqyB8RjT8MqOvh3xsTqwW=
+VhSfOyZqR-2BgPKRiKfxSQe-2BIefzFqSGCwbJlBgxH1GGrqIT2PX8X06ZEgK4whY5jJLnI-2BU=
+iZv1hlU-2FZqixLA4T5nOB-2BPxqdI9r6VLlC0w7PzUcnAl4TclsgP5p-2B7sYbeTD-2BgN7tm-=
+2FeSzO4nxKyUSP4gszHmTOdzb-2F3VshweL8ZPwVP12pnrHJWAatTB7Ybn4IgOH-2FBIgI6GXUK=
+Z9RZ3VFjU0WRFdsxAvFF8pdOfnwhFrT-2FuQFuctJmtPpFGi-2BlLCCV3dDPOrS6qJ7pxu6bH4N=
+dLvkTVZyniro3whvsAfasrItVAFY1tEQ-3D-3DxPYl_ijSW8RkM-2FIXMlaqj-2FEdh9p8v0SOS=
+A-2FyUc2EIoBfGmbaA1NAX1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34sY3YXjzUulE5UHW1uoZ=
+fOJMQrO38OXQtYbS-2Bn1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2Zxsuly5bvDDi1SqtCBD0aBkAX=
+TWHUy0kUQk9n00F5Gx6q6aUpeOV5IGdJOES30aWF9WICc6nu-2F18RJu-2Bc4-2BYsm134953z6=
+6mfgoqcvrwuCsVyK6HB9vBOkGFRkh0cXPGhgnZ6kROk-2BzmwZGqcrzTLBqYnSVm3JyY-2F7HvZ=
+D98Hc8c7-2Bv1fXgHZoDr26wXFTn93sG4DwBJa49mk5F1wUpWK01r4raopYn-2FWd44kTf1Ivp1=
+ZCuOzOkQYJMUUnwnDoHL6vpvWbPlaHV2p30iIIZZSOhr-2BN-2FUrAMzEWMUSlEigKcUNlpI-2B=
+JiRZginvYqxaCHkqlzDpMQ5UoUhOgbnd4z84WuEPE-3D" style=3D"color: #ffffff; disp=
+lay: block; font-size: 12px; font-weight: bold; text-align: center; text-de=
+coration: none; font-family:Gotham, Helvetica, sans-serif; line-height:100%=
+; mso-line-height-rule:exactly; background-color:#ed1c24; border-radius: 30=
+px;">BOOK NOW</a></td>               </tr>              </tbody>           =
+  </table>             </td>             <td align=3D"center" valign=3D"top=
+" width=3D"193">             <table align=3D"center" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" width=3D"100">              <tbody>             =
+  <tr>                <td align=3D"center" style=3D"background-color: #ed1c=
+24; padding-top: 8px; padding-bottom: 8px; border-radius: 20px; width:100px=
+; line-height:100%" valign=3D"middle"><a href=3D"https://u34557702.ct.sendg=
+rid.net/ls/click?upn=3D5SjtgPrxLiMD-2F7ijF3Td4uTgbnXMh1j0vbzF4YB-2BkI52ULUC=
+xnJB-2Fp9SbaKVGRAf4aK6piFSHK2hG2OXLp7fDfQHOg-2FEgv88AUsrGOOb8wsA4rj8jFy6ftV=
+RjqG-2BqLucCr-2ByaLRsgH6okd2kqiCqUmUVv-2B6UTY3FNa-2BRZMQemxq517NET4nmgOfa-2=
+FE6IfYx68LNLIVVzzxgMTkB4ZtkD36q0loGOVK0rcqmbhxQPg55lk5JyDioRJUtVs4BCbdnubT9=
+ac4WJ4ywUzUqyB8RjT8MqOvh3xsTqwWVhSfOyZqR-2BgPKRiKfxSQe-2BIefzFqSGCwbJlBgxH1=
+GGrqIT2PX8X06ZEgK4whY5jJLnI-2BUiZv1hlU-2FZqixLA4T5nOB-2BPxqdI9r6VLlC0w7PzUc=
+nAl4TclsgP5p-2B7sYbeTD-2BgN7tm-2FeSzO4nxKyUSP4gszHmTOdzb-2F3VshweL8ZPwVP12p=
+nrHI1ZVxLlMkYpN7U4zwl6AUnjBbgIOYWv1T8jBdyVoqtXPbq3AXc-2FuS2Yv55o-2BPI8pjpKL=
+S0Sik35HRxfs16ZcMjE8mnotuKCSqQZ5nwYYPLvQryXXz0NByqMS2f7jj5ccw-3D-3Dlb04_ijS=
+W8RkM-2FIXMlaqj-2FEdh9p8v0SOSA-2FyUc2EIoBfGmbaA1NAX1U-2FJe3q5VVhXCcX93uaKx6=
+BAaTwLDc34sY3YXjzUulE5UHW1uoZfOJMQrO38OXQtYbS-2Bn1mgtGHfBraFQBcK2xNF8-2FFQf=
+3ZK2Zxsuly5bvDDi1SqtCBD0aBkAXTWHUy0kUQk9n00F5Gx6q6aUpeOV5IGdJOES30aWF9WICc6=
+nu-2F18RJu-2Bc4-2BYsm134953z66mfgoqcvrwuCsVyK6HB9vBOkGFRkh0cXPGhgnZ6kROk-2B=
+zmwZGqcrzTLBqYnQ8o3yVyN2HIztyWq-2FM82rpAXPx5-2FcgqPH2ynLn620yljODRiqBxQfPK7=
+93Z8vH1MeNqzU8qzT8o-2BZhltmeJYimu9uMIZybxd30cj2JsACNyR03Dw7JmsDOtk1cTuN-2Fj=
+XaXJ93A-2BRzHzU6aWnqsKi6G93-2Fm6Dk9hZTl4qvuU4O3LHzXJvkW4csPNR4Ts64kgmY-3D" =
+style=3D"color: #ffffff; display: block; font-size: 12px; font-weight: bold=
+; text-align: center; text-decoration: none; font-family:Gotham, Helvetica,=
+ sans-serif; line-height:100%; mso-line-height-rule:exactly; background-col=
+or:#ed1c24; border-radius: 30px;">BOOK NOW</a></td>               </tr>    =
+          </tbody>             </table>             </td>             <td a=
+lign=3D"center" valign=3D"top" width=3D"194">             <table align=3D"c=
+enter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100">     =
+         <tbody>               <tr>                <td align=3D"center" sty=
+le=3D"background-color: #ed1c24; padding-top: 8px; padding-bottom: 8px; bor=
+der-radius: 20px; width:100px; line-height:100%" valign=3D"middle"><a href=
+=3D"https://u34557702.ct.sendgrid.net/ls/click?upn=3D5SjtgPrxLiMD-2F7ijF3Td=
+4uTgbnXMh1j0vbzF4YB-2BkI52ULUCxnJB-2Fp9SbaKVGRAf4aK6piFSHK2hG2OXLp7fDfQHOg-=
+2FEgv88AUsrGOOb8wsA4rj8jFy6ftVRjqG-2BqLucCr-2ByaLRsgH6okd2kqiCqUmUVv-2B6UTY=
+3FNa-2BRZMQemxq517NET4nmgOfa-2FE6IfYx68LNLIVVzzxgMTkB4ZtkD36q0loGOVK0rcqmbh=
+xQPg55lk5JyDioRJUtVs4BCbdnubT9ac4WJ4ywUzUqyB8RjT8MqOvh3xsTqwWVhSfOyZqR-2BgP=
+KRiKfxSQe-2BIefzFqSGCwbJlBgxH1GGrqIT2PX8X06ZEgK4whY5jJLnI-2BUiZv1hlU-2FZqix=
+LA4T5nOB-2BPxqdI9r6VLlC0w7PzUcnAl4TclsgP5p-2B7sYbeTD-2BgN7tm-2FeSzO4nxKyUSP=
+4gszHmTOdzb-2F3VshweL8ZPwVP12pnrHOIpqBzisrZIYVL1MM7oRIHP7EzB4D8JkUSmhmOHveC=
+qB2qsm5ve93FQcYfHkF-2B0rz3kJ66yIKJwL2gOjbC9BmR8ocS8VX7eh2oq-2FVkVzTfaq-2FEl=
+7pyxr2LZum9FdrcVOQ-3D-3DlQms_ijSW8RkM-2FIXMlaqj-2FEdh9p8v0SOSA-2FyUc2EIoBfG=
+mbaA1NAX1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34sY3YXjzUulE5UHW1uoZfOJMQrO38OXQtY=
+bS-2Bn1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2Zxsuly5bvDDi1SqtCBD0aBkAXTWHUy0kUQk9n00=
+F5Gx6q6aUpeOV5IGdJOES30aWF9WICc6nu-2F18RJu-2Bc4-2BYsm134953z66mfgoqcvrwuCsV=
+yK6HB9vBOkGFRkh0cXPGhgnZ6kROk-2BzmwZGqcrzTLBqYnRTOQFjKT1F3LT6nZ1szFAes3IV4W=
+8qJXfQnyj0Fg69PqW7JLPI0gjFnGjmj6ANftQ-2FWb2pJOV9qz8EqmiJA4yz4KUVFkoGOeYu9d9=
+w5g0OO9xVmuiZTn5XqvAp1Rj6EYchwPit53q-2BGXetgc26XG25WhiWLW5fXCMj4ga8v-2B-2F6=
+4a-2FBwEVWpA-2B3aMUBv6chGeU-3D" style=3D"color: #ffffff; display: block; fo=
+nt-size: 12px; font-weight: bold; text-align: center; text-decoration: none=
+; font-family:Gotham, Helvetica, sans-serif; line-height:100%; mso-line-hei=
+ght-rule:exactly; background-color:#ed1c24; border-radius: 30px;">BOOK NOW<=
+/a></td>               </tr>              </tbody>             </table>    =
+         </td>            </tr>            <tr>             <td colspan=3D"=
+3" style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exactly=
+; height: 14px;"> </td>            </tr>           </tbody>          </tabl=
+e>          </td>         </tr>         <tr>          <td align=3D"center" =
+style=3D"margin:0; padding:0;" width=3D"600"><img height=3D"128" src=3D"htt=
+ps://d1qzvqecfo5h8o.cloudfront.net/images/WR9-94R-786Z/SpiceJet/RakhiLongWe=
+ekend8.jpg" style=3D"margin: 0; border: 0; padding: 0; height:128px;" width=
+=3D"600" /></td>         </tr>         <tr>          <td align=3D"center" w=
+idth=3D"600">          <table align=3D"center" cellpadding=3D"0" cellspacin=
+g=3D"0" style=3D"width:581px;text-align:center;">           <tbody>        =
+    <tr>             <td align=3D"center" valign=3D"top" width=3D"194">    =
+         <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"width:184px;text-align:center" valign=3D"top">              <tbody><!--=
+[if !mso]><!-->               <tr>                <td align=3D"center" styl=
+e=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; color:=
+#f50000; font-weight: bold; mso-line-height-rule: exactly; line-height: 100=
+%; text-align:center; font-size: 17px; letter-spacing:0" valign=3D"top" wid=
+th=3D"184">SRINAGAR</td>               </tr>               <!--<![endif]-->=
+<!--[if lte mso 15]>                        <tr>                        <td=
+ valign=3D"top" align=3D"center" width=3D"184" style=3D"margin:0; padding:0=
+; font-family:Gotham, Helvetica, sans-serif; color:#f50000; font-weight: bo=
+ld; mso-line-height-rule: exactly; line-height: 95%; text-align:center; fon=
+t-size: 17px; letter-spacing:0">                        SRINAGAR           =
+             </td>                        </tr>                        <![e=
+ndif]--><!--[if gt mso 15]>                         <tr>                   =
+     <td valign=3D"top" align=3D"center" width=3D"184" style=3D"margin:0; p=
+adding:0; font-family:Gotham, Helvetica, sans-serif; color:#f50000; font-we=
+ight: bold; mso-line-height-rule: exactly; line-height: 100%; text-align:ce=
+nter; font-size: 17px; letter-spacing:0">                        SRINAGAR  =
+                      </td>                        </tr>                   =
+    <![endif]-->               <tr>                <td align=3D"center" wid=
+th=3D"184">                <table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"width:62px; margin:0; border:0; padding:0=
+">                 <tbody><!--[if !mso]><!-->                  <tr>        =
+           <td style=3D"line-height: 1px; font-size: 1px; mso-line-height-r=
+ule: exactly; border-bottom:3px solid #f50000; height:4px" width=3D"62"> </=
+td>                  </tr>                  <!--<![endif]--><!--[if lte mso=
+ 15]>                            <tr>                            <td width=
+=3D"62" style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: ex=
+actly; border-bottom:3px solid #f50000; height:2px"> </td>                 =
+           </tr>                            <![endif]--><!--[if gt mso 15]>=
+                             <tr>                            <td width=3D"6=
+2" style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exactly=
+; border-bottom:3px solid #f50000; height:4px"> </td>                      =
+      </tr>                           <![endif]-->                 </tbody>=
+                </table>                </td>               </tr>          =
+     <!--[if !mso]><!-->               <tr>                <td style=3D"lin=
+e-height: 1px; font-size: 1px; mso-line-height-rule: exactly; height: 4px;"=
+ valign=3D"top"> </td>               </tr>               <!--<![endif]--><!=
+--[if lte mso 15]>                        <tr>                        <td v=
+align=3D"top" style=3D"line-height: 1px; font-size: 1px; mso-line-height-ru=
+le: exactly; height: 3px;">&#xA0;</td>                        </tr>        =
+                <![endif]--><!--[if gt mso 15]>                         <tr=
+>                        <td valign=3D"top" style=3D"line-height: 1px; font=
+-size: 1px; mso-line-height-rule: exactly; height: 4px;">&#xA0;</td>       =
+                 </tr>                       <![endif]--><!--[if !mso]><!--=
+>               <tr>                <td align=3D"center" style=3D"margin:0;=
+ padding:0; font-family:Gotham, Helvetica, sans-serif; color:#000000; font-=
+weight: bold; mso-line-height-rule: exactly; line-height: 127%; text-align:=
+center; font-size: 12px; letter-spacing:0" valign=3D"top" width=3D"184">Exp=
+erience Heaven on<br />                Earth in the breathtakingly<br />   =
+             beautiful Kashmir.</td>               </tr>               <!--=
+<![endif]--><!--[if gte mso 9]>                        <tr>                =
+        <td valign=3D"top" align=3D"center" width=3D"184" style=3D"margin:0=
+; padding:0; font-family:Gotham, Helvetica, sans-serif; color:#000000; font=
+-weight: bold; mso-line-height-rule: exactly; line-height: 110%; text-align=
+:center; font-size: 12px; letter-spacing:0">                        Experie=
+nce Heaven on<br />                        Earth in the breathtakingly<br /=
+>                        beautiful Kashmir.                        </td>   =
+                     </tr>                       <![endif]-->              =
+</tbody>             </table>             </td>             <td align=3D"ce=
+nter" valign=3D"top" width=3D"193">             <table align=3D"center" cel=
+lpadding=3D"0" cellspacing=3D"0" style=3D"width:184px;text-align:center" va=
+lign=3D"top">              <tbody><!--[if !mso]><!-->               <tr>   =
+             <td align=3D"center" style=3D"margin:0; padding:0; font-family=
+:Gotham, Helvetica, sans-serif; color:#ef0013; font-weight: bold; mso-line-=
+height-rule: exactly; line-height: 100%; text-align:center; font-size: 17px=
+; letter-spacing:0" valign=3D"top" width=3D"184">LEH</td>               </t=
+r>               <!--<![endif]--><!--[if lte mso 15]>                      =
+  <tr>                        <td valign=3D"top" align=3D"center" width=3D"=
+184" style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-seri=
+f; color:#ef0013; font-weight: bold; mso-line-height-rule: exactly; line-he=
+ight: 95%; text-align:center; font-size: 17px; letter-spacing:0">          =
+              LEH                        </td>                        </tr>=
+                        <![endif]--><!--[if gt mso 15]>                    =
+     <tr>                        <td valign=3D"top" align=3D"center" width=
+=3D"184" style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-=
+serif; color:#f50000; font-weight: bold; mso-line-height-rule: exactly; lin=
+e-height: 100%; text-align:center; font-size: 17px; letter-spacing:0">     =
+                   LEH                        </td>                        =
+</tr>                       <![endif]-->               <tr>                =
+<td align=3D"center" width=3D"184">                <table align=3D"center" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:62px; margi=
+n:0; border:0; padding:0">                 <tbody><!--[if !mso]><!-->      =
+            <tr>                   <td style=3D"line-height: 1px; font-size=
+: 1px; mso-line-height-rule: exactly; border-bottom:3px solid #f50000; heig=
+ht:4px" width=3D"62"> </td>                  </tr>                  <!--<![=
+endif]--><!--[if lte mso 15]>                            <tr>              =
+              <td width=3D"62" style=3D"line-height: 1px; font-size: 1px; m=
+so-line-height-rule: exactly; border-bottom:3px solid #f50000; height:2px">=
+ </td>                            </tr>                            <![endif=
+]--><!--[if gt mso 15]>                             <tr>                   =
+         <td width=3D"62" style=3D"line-height: 1px; font-size: 1px; mso-li=
+ne-height-rule: exactly; border-bottom:3px solid #f50000; height:4px"> </td=
+>                            </tr>                           <![endif]-->  =
+               </tbody>                </table>                </td>       =
+        </tr>               <!--[if !mso]><!-->               <tr>         =
+       <td style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule:=
+ exactly; height: 4px;" valign=3D"top"> </td>               </tr>          =
+     <!--<![endif]--><!--[if lte mso 15]>                        <tr>      =
+                  <td valign=3D"top" style=3D"line-height: 1px; font-size: =
+1px; mso-line-height-rule: exactly; height: 3px;">&#xA0;</td>              =
+          </tr>                        <![endif]--><!--[if gt mso 15]>     =
+                    <tr>                        <td valign=3D"top" style=3D=
+"line-height: 1px; font-size: 1px; mso-line-height-rule: exactly; height: 4=
+px;">&#xA0;</td>                        </tr>                       <![endi=
+f]--><!--[if !mso]><!-->               <tr>                <td align=3D"cen=
+ter" style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-seri=
+f; color:#000000; font-weight: bold; mso-line-height-rule: exactly; line-he=
+ight: 127%; text-align:center; font-size: 12px; letter-spacing:0" valign=3D=
+"top" width=3D"184">Say Juley to Leh!<br />                It tops every tr=
+aveller&#39;s<br />                bucket list, literally.</td>            =
+   </tr>               <!--<![endif]--><!--[if gte mso 9]>                 =
+       <tr>                        <td valign=3D"top" align=3D"center" widt=
+h=3D"184" style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans=
+-serif; color:#000000; font-weight: bold; mso-line-height-rule: exactly; li=
+ne-height: 110%; text-align:center; font-size: 12px; letter-spacing:0">    =
+                    Say Juley to Leh!<br />It tops every traveller's<br />b=
+ucket list, literally.                        </td>                        =
+</tr>                       <![endif]-->              </tbody>             =
+</table>             </td>             <td align=3D"center" valign=3D"top" =
+width=3D"194">             <table align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" style=3D"width:184px;text-align:center" valign=3D"top">        =
+      <tbody><!--[if !mso]><!-->               <tr>                <td alig=
+n=3D"center" style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, s=
+ans-serif; color:#ef0013; font-weight: bold; mso-line-height-rule: exactly;=
+ line-height: 100%; text-align:center; font-size: 17px; letter-spacing:0" v=
+align=3D"top" width=3D"184">DHARAMSHALA</td>               </tr>           =
+    <!--<![endif]--><!--[if lte mso 15]>                        <tr>       =
+                 <td valign=3D"top" align=3D"center" width=3D"184" style=3D=
+"margin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; color:#ef0=
+013; font-weight: bold; mso-line-height-rule: exactly; line-height: 95%; te=
+xt-align:center; font-size: 17px; letter-spacing:0">                       =
+ DHARAMSHALA                        </td>                        </tr>     =
+                   <![endif]--><!--[if gt mso 15]>                         =
+<tr>                        <td valign=3D"top" align=3D"center" width=3D"18=
+4" style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-serif;=
+ color:#f50000; font-weight: bold; mso-line-height-rule: exactly; line-heig=
+ht: 100%; text-align:center; font-size: 17px; letter-spacing:0">           =
+             DHARAMSHALA                        </td>                      =
+  </tr>                       <![endif]-->               <tr>              =
+  <td align=3D"center" width=3D"184">                <table align=3D"center=
+" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:62px; mar=
+gin:0; border:0; padding:0">                 <tbody><!--[if !mso]><!-->    =
+              <tr>                   <td style=3D"line-height: 1px; font-si=
+ze: 1px; mso-line-height-rule: exactly; border-bottom:3px solid #f50000; he=
+ight:4px" width=3D"62"> </td>                  </tr>                  <!--<=
+![endif]--><!--[if lte mso 15]>                            <tr>            =
+                <td width=3D"62" style=3D"line-height: 1px; font-size: 1px;=
+ mso-line-height-rule: exactly; border-bottom:3px solid #f50000; height:2px=
+"> </td>                            </tr>                            <![end=
+if]--><!--[if gt mso 15]>                             <tr>                 =
+           <td width=3D"62" style=3D"line-height: 1px; font-size: 1px; mso-=
+line-height-rule: exactly; border-bottom:3px solid #f50000; height:4px"> </=
+td>                            </tr>                           <![endif]-->=
+                 </tbody>                </table>                </td>     =
+          </tr>               <!--[if !mso]><!-->               <tr>       =
+         <td style=3D"line-height: 1px; font-size: 1px; mso-line-height-rul=
+e: exactly; height: 4px;" valign=3D"top"> </td>               </tr>        =
+       <!--<![endif]--><!--[if lte mso 15]>                        <tr>    =
+                    <td valign=3D"top" style=3D"line-height: 1px; font-size=
+: 1px; mso-line-height-rule: exactly; height: 3px;">&#xA0;</td>            =
+            </tr>                        <![endif]--><!--[if gt mso 15]>   =
+                      <tr>                        <td valign=3D"top" style=
+=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exactly; height=
+: 4px;">&#xA0;</td>                        </tr>                       <![e=
+ndif]--><!--[if !mso]><!-->               <tr>                <td align=3D"=
+center" style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-s=
+erif; color:#000000; font-weight: bold; mso-line-height-rule: exactly; line=
+-height: 127%; text-align:center; font-size: 12px; letter-spacing:0" valign=
+=3D"top" width=3D"184">The idyllic Kangra Valley<br />                and s=
+erene monasteries<br />                are calling you.</td>               =
+</tr>               <!--<![endif]--><!--[if gte mso 9]>                    =
+    <tr>                        <td valign=3D"top" align=3D"center" width=
+=3D"184" style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-=
+serif; color:#000000; font-weight: bold; mso-line-height-rule: exactly; lin=
+e-height: 110%; text-align:center; font-size: 12px; letter-spacing:0">     =
+                   The idyllic Kangra Valley<br />                        a=
+nd serene monasteries<br />                        are calling you.        =
+                </td>                        </tr>                       <!=
+[endif]-->              </tbody>             </table>             </td>    =
+        </tr>            <!--[if !mso]><!-->            <tr>             <t=
+d colspan=3D"3" style=3D"line-height: 1px; font-size: 1px; mso-line-height-=
+rule: exactly; height: 7px;"> </td>            </tr>            <!--<![endi=
+f]--><!--[if lte mso 15]>                    <tr>                    <td co=
+lspan=3D"3" style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule=
+: exactly; height: 5px;">&#xA0;</td>                    </tr>              =
+      <![endif]--><!--[if gt mso 15]>                     <tr>             =
+       <td colspan=3D"3" style=3D"line-height: 1px; font-size: 1px; mso-lin=
+e-height-rule: exactly; height: 7px;">&#xA0;</td>                    </tr> =
+                  <![endif]-->            <tr>             <td align=3D"cen=
+ter" valign=3D"top" width=3D"194">             <table align=3D"center" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100">              <t=
+body>               <tr>                <td align=3D"center" style=3D"backg=
+round-color: #ed1c24; padding-top: 8px; padding-bottom: 8px; border-radius:=
+ 20px; width:100px; line-height:100%" valign=3D"middle"><a href=3D"https://=
+u34557702.ct.sendgrid.net/ls/click?upn=3D5SjtgPrxLiMD-2F7ijF3Td4uTgbnXMh1j0=
+vbzF4YB-2BkI52ULUCxnJB-2Fp9SbaKVGRAf4aK6piFSHK2hG2OXLp7fDfQHOg-2FEgv88AUsrG=
+OOb8wsA4rj8jFy6ftVRjqG-2BqLucCr-2ByaLRsgH6okd2kqiCqUmUVv-2B6UTY3FNa-2BRZMQe=
+mxq517NET4nmgOfa-2FE6IfYx68LNLIVVzzxgMTkB4ZtkD36q0loGOVK0rcqmbhxQPg55lk5JyD=
+ioRJUtVs4BCbdnubT9ac4WJ4ywUzUqyB8RjT8MqOvh3xsTqwWVhSfOyZqR-2BgPKRiKfxSQe-2B=
+IefzFqSGCwbJlBgxH1GGrqIT2PX8X06ZEgK4whY5jJLnI-2BUiZv1hlU-2FZqixLA4T5nOB-2BP=
+xqdI9r6VLlC0w7PzUcnAl4TclsgP5p-2B7sYbeTD-2BgN7tm-2FeSzO4nxKyUSP4gszHmTOdzb-=
+2F3VshweL8ZPwVP12pnrHLc1kGGj0-2BuYk-2FzQwYeRRIAdMUiAJy-2FKjH6xy-2B7m5FlptEy=
+-2Fmg8KgLHMeU0G4ijzwf44H57d4DaCv0siavpWOaWGr9sdx7m3Ax7oyJWTj4oinxc-2BlVSbVU=
+dhNVL2GQxCXQ-3D-3DTssj_ijSW8RkM-2FIXMlaqj-2FEdh9p8v0SOSA-2FyUc2EIoBfGmbaA1N=
+AX1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34sY3YXjzUulE5UHW1uoZfOJMQrO38OXQtYbS-2Bn=
+1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2Zxsuly5bvDDi1SqtCBD0aBkAXTWHUy0kUQk9n00F5Gx6q=
+6aUpeOV5IGdJOES30aWF9WICc6nu-2F18RJu-2Bc4-2BYsm134953z66mfgoqcvrwuCsVyK6HB9=
+vBOkGFRkh0cXPGhgnZ6kROk-2BzmwZGqcrzTLBqYnSPT4SzWTINQT3dMubeh0Zzsq9rj9hfA6cp=
+IpCAHFuYuXaTaCCafOhH-2Fvs-2Fay738bqzXnHO7xEp7Ej1mcUjdh9BAG6WMxnWF-2Bf9Bro1h=
+i7Or986PY499D6fe4yQmFAHNGj4Q-2FigZwx7oa7JvQObKTdRaqnEhal0so4zh2VTAxxJWFd9OO=
+9OXL-2B9sAz9JgIo5EM-3D" style=3D"color: #ffffff; display: block; font-size:=
+ 12px; font-weight: bold; text-align: center; text-decoration: none; font-f=
+amily:Gotham, Helvetica, sans-serif; line-height:100%; mso-line-height-rule=
+:exactly; background-color:#ed1c24; border-radius: 30px;">BOOK NOW</a></td>=
+               </tr>              </tbody>             </table>            =
+ </td>             <td align=3D"center" valign=3D"top" width=3D"193">      =
+       <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100">              <tbody>               <tr>              =
+  <td align=3D"center" style=3D"background-color: #ed1c24; padding-top: 8px=
+; padding-bottom: 8px; border-radius: 20px; width:100px; line-height:100%" =
+valign=3D"middle"><a href=3D"https://u34557702.ct.sendgrid.net/ls/click?upn=
+=3D5SjtgPrxLiMD-2F7ijF3Td4uTgbnXMh1j0vbzF4YB-2BkI52ULUCxnJB-2Fp9SbaKVGRAf4a=
+K6piFSHK2hG2OXLp7fDfQHOg-2FEgv88AUsrGOOb8wsA4rj8jFy6ftVRjqG-2BqLucCr-2ByaLR=
+sgH6okd2kqiCqUmUVv-2B6UTY3FNa-2BRZMQemxq517NET4nmgOfa-2FE6IfYx68LNLIVVzzxgM=
+TkB4ZtkD36q0loGOVK0rcqmbhxQPg55lk5JyDioRJUtVs4BCbdnubT9ac4WJ4ywUzUqyB8RjT8M=
+qOvh3xsTqwWVhSfOyZqR-2BgPKRiKfxSQe-2BIefzFqSGCwbJlBgxH1GGrqIT2PX8X06ZEgK4wh=
+Y5jJLnI-2BUiZv1hlU-2FZqixLA4T5nOB-2BPxqdI9r6VLlC0w7PzUcnAl4TclsgP5p-2B7sYbe=
+TD-2BgN7tm-2FeSzO4nxKyUSP4gszHmTOdzb-2F3VshweL8ZPwVP12pnrHGWRE6200n8IDRYtUv=
+G6EnLr7n639OK9faeqwhdbQ-2F0-2FV9wYFNPbSU-2BHjfEqif0KdLUyfns-2Fqgkphe6Fu1CDR=
+k1qX5HkfkC4CCQLD-2FLz4EsP8Cn2_ijSW8RkM-2FIXMlaqj-2FEdh9p8v0SOSA-2FyUc2EIoBf=
+GmbaA1NAX1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34sY3YXjzUulE5UHW1uoZfOJMQrO38OXQt=
+YbS-2Bn1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2Zxsuly5bvDDi1SqtCBD0aBkAXTWHUy0kUQk9n0=
+0F5Gx6q6aUpeOV5IGdJOES30aWF9WICc6nu-2F18RJu-2Bc4-2BYsm134953z66mfgoqcvrwuCs=
+VyK6HB9vBOkGFRkh0cXPGhgnZ6kROk-2BzmwZGqcrzTLBqYnS8jcuibOdjPIw6aKvNCH-2FS-2F=
+EiyYnt-2FA3i9Z-2BudqjVmClhrj2n9JdCFVADY50IA8d4xvU-2BeTDTUK7iXzSt2LyQVlLOLaO=
+8aLF1xyK3x1pjHU3nYkZduEZyejf0ApVoQERzv3MhnD4tJtyk9CFirsUb3a1e-2BQ3H5f2t7nNH=
+VT-2FQPZji1Fi0OZrxmqUSvzMBuR0o-3D" style=3D"color: #ffffff; display: block;=
+ font-size: 12px; font-weight: bold; text-align: center; text-decoration: n=
+one; font-family:Gotham, Helvetica, sans-serif; line-height:100%; mso-line-=
+height-rule:exactly; background-color:#ed1c24; border-radius: 30px;">BOOK N=
+OW</a></td>               </tr>              </tbody>             </table> =
+            </td>             <td align=3D"center" valign=3D"top" width=3D"=
+194">             <table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" width=3D"100">              <tbody>               <tr>     =
+           <td align=3D"center" style=3D"background-color: #ed1c24; padding=
+-top: 8px; padding-bottom: 8px; border-radius: 20px; width:100px; line-heig=
+ht:100%" valign=3D"middle"><a href=3D"https://u34557702.ct.sendgrid.net/ls/=
+click?upn=3D5SjtgPrxLiMD-2F7ijF3Td4uTgbnXMh1j0vbzF4YB-2BkI52ULUCxnJB-2Fp9Sb=
+aKVGRAf4aK6piFSHK2hG2OXLp7fDfQHOg-2FEgv88AUsrGOOb8wsA4rj8jFy6ftVRjqG-2BqLuc=
+Cr-2ByaLRsgH6okd2kqiCqUmUVv-2B6UTY3FNa-2BRZMQemxq517NET4nmgOfa-2FE6IfYx68LN=
+LIVVzzxgMTkB4ZtkD36q0loGOVK0rcqmbhxQPg55lk5JyDioRJUtVs4BCbdnubT9ac4WJ4ywUzU=
+qyB8RjT8MqOvh3xsTqwWVhSfOyZqR-2BgPKRiKfxSQe-2BIefzFqSGCwbJlBgxH1GGrqIT2PX8X=
+06ZEgK4whY5jJLnI-2BUiZv1hlU-2FZqixLA4T5nOB-2BPxqdI9r6VLlC0w7PzUcnAl4TclsgP5=
+p-2B7sYbeTD-2BgN7tm-2FeSzO4nxKyUSP4gszHmTOdzb-2F3VshweL8ZPwVP12pnrHPulQWcSs=
+dAHrJ1gY9zoFAgxeHruAnzvl1hMp377IFVD6F8El4RzgJ0Dpp4FUGjFWS-2BDK8VX144OYuyIHR=
+eg02DAOntdQzUNoeeJs23cm6ujKaPluPQJtmmkhtIUz9gKZQ-3D-3DEv4Q_ijSW8RkM-2FIXMla=
+qj-2FEdh9p8v0SOSA-2FyUc2EIoBfGmbaA1NAX1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34sY3=
+YXjzUulE5UHW1uoZfOJMQrO38OXQtYbS-2Bn1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2Zxsuly5bv=
+DDi1SqtCBD0aBkAXTWHUy0kUQk9n00F5Gx6q6aUpeOV5IGdJOES30aWF9WICc6nu-2F18RJu-2B=
+c4-2BYsm134953z66mfgoqcvrwuCsVyK6HB9vBOkGFRkh0cXPGhgnZ6kROk-2BzmwZGqcrzTLBq=
+YnTzOf5Q-2FsN0bG0jjVY-2F4ryccLSet77ffkJ3raxZCFWue5tNYYZgElLowZE-2Bz4N-2BpDr=
+Z83U7hX5RVHG-2Bc0Bi7SjsWB40pwp-2BCcsrVXgUsvQJrty12sh13VLCISws6zX2wHxZzbmxrT=
+bhvFsHMe5nWc1QdDWfyvO-2FEJi3e2u1kLJMe39ZZVldy9vyL2JmQiz7z-2BE-3D" style=3D"=
+color: #ffffff; display: block; font-size: 12px; font-weight: bold; text-al=
+ign: center; text-decoration: none; font-family:Gotham, Helvetica, sans-ser=
+if; line-height:100%; mso-line-height-rule:exactly; background-color:#ed1c2=
+4; border-radius: 30px;">BOOK NOW</a></td>               </tr>             =
+ </tbody>             </table>             </td>            </tr>          =
+  <tr>             <td colspan=3D"3" style=3D"line-height: 1px; font-size: =
+1px; mso-line-height-rule: exactly; height: 14px;"> </td>            </tr> =
+          </tbody>          </table>          </td>         </tr>         <=
+tr>          <td align=3D"center" style=3D"margin:0; padding:0;" width=3D"6=
+00"><img height=3D"127" src=3D"https://d1qzvqecfo5h8o.cloudfront.net/images=
+/WR9-94R-786Z/SpiceJet/RakhiLongWeekend10.jpg" style=3D"margin: 0; border: =
+0; padding: 0; height:127px;" width=3D"600" /></td>         </tr>         <=
+tr>          <td align=3D"center" width=3D"600">          <table align=3D"c=
+enter" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:581px;text-align:=
+center;">           <tbody>            <tr>             <td align=3D"center=
+" valign=3D"top" width=3D"194">             <table align=3D"center" cellpad=
+ding=3D"0" cellspacing=3D"0" style=3D"width:184px;text-align:center" valign=
+=3D"top">              <tbody><!--[if !mso]><!-->               <tr>       =
+         <td align=3D"center" style=3D"margin:0; padding:0; font-family:Got=
+ham, Helvetica, sans-serif; color:#ef0013; font-weight: bold; mso-line-heig=
+ht-rule: exactly; line-height: 100%; text-align:center; font-size: 17px; le=
+tter-spacing:0" valign=3D"top" width=3D"184">GOA</td>               </tr>  =
+             <!--<![endif]--><!--[if lte mso 15]>                        <t=
+r>                        <td valign=3D"top" align=3D"center" width=3D"184"=
+ style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; c=
+olor:#ef0013; font-weight: bold; mso-line-height-rule: exactly; line-height=
+: 95%; text-align:center; font-size: 17px; letter-spacing:0">              =
+          GOA                        </td>                        </tr>    =
+                    <![endif]--><!--[if gt mso 15]>                        =
+ <tr>                        <td valign=3D"top" align=3D"center" width=3D"1=
+84" style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-serif=
+; color:#f50000; font-weight: bold; mso-line-height-rule: exactly; line-hei=
+ght: 100%; text-align:center; font-size: 17px; letter-spacing:0">          =
+              GOA                        </td>                        </tr>=
+                       <![endif]-->               <tr>                <td a=
+lign=3D"center" width=3D"184">                <table align=3D"center" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:62px; margin:0; =
+border:0; padding:0">                 <tbody><!--[if !mso]><!-->           =
+       <tr>                   <td style=3D"line-height: 1px; font-size: 1px=
+; mso-line-height-rule: exactly; border-bottom:3px solid #f50000; height:4p=
+x" width=3D"62"> </td>                  </tr>                  <!--<![endif=
+]--><!--[if lte mso 15]>                            <tr>                   =
+         <td width=3D"62" style=3D"line-height: 1px; font-size: 1px; mso-li=
+ne-height-rule: exactly; border-bottom:3px solid #f50000; height:2px"> </td=
+>                            </tr>                            <![endif]--><=
+!--[if gt mso 15]>                             <tr>                        =
+    <td width=3D"62" style=3D"line-height: 1px; font-size: 1px; mso-line-he=
+ight-rule: exactly; border-bottom:3px solid #f50000; height:4px"> </td>    =
+                        </tr>                           <![endif]-->       =
+          </tbody>                </table>                </td>            =
+   </tr>               <!--[if !mso]><!-->               <tr>              =
+  <td style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exac=
+tly; height: 4px;" valign=3D"top"> </td>               </tr>               =
+<!--<![endif]--><!--[if lte mso 15]>                        <tr>           =
+             <td valign=3D"top" style=3D"line-height: 1px; font-size: 1px; =
+mso-line-height-rule: exactly; height: 3px;">&#xA0;</td>                   =
+     </tr>                        <![endif]--><!--[if gt mso 15]>          =
+               <tr>                        <td valign=3D"top" style=3D"line=
+-height: 1px; font-size: 1px; mso-line-height-rule: exactly; height: 4px;">=
+&#xA0;</td>                        </tr>                       <![endif]-->=
+<!--[if !mso]><!-->               <tr>                <td align=3D"center" =
+style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; co=
+lor:#000000; font-weight: bold; mso-line-height-rule: exactly; line-height:=
+ 127%; text-align:center; font-size: 12px; letter-spacing:0" valign=3D"top"=
+ width=3D"184">Beaches and night life -<br />                party 24 X 7</=
+td>               </tr>               <!--<![endif]--><!--[if gte mso 9]>  =
+                      <tr>                        <td valign=3D"top" align=
+=3D"center" width=3D"184" style=3D"margin:0; padding:0; font-family:Gotham,=
+ Helvetica, sans-serif; color:#000000; font-weight: bold; mso-line-height-r=
+ule: exactly; line-height: 110%; text-align:center; font-size: 12px; letter=
+-spacing:0">                        Beaches and night life -<br />party 24 =
+X 7</td>                        </tr>                       <![endif]-->   =
+           </tbody>             </table>             </td>             <td =
+align=3D"center" valign=3D"top" width=3D"193">             <table align=3D"=
+center" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:184px;text-align=
+:center" valign=3D"top">              <tbody><!--[if !mso]><!-->           =
+    <tr>                <td align=3D"center" style=3D"margin:0; padding:0; =
+font-family:Gotham, Helvetica, sans-serif; color:#ef0013; font-weight: bold=
+; mso-line-height-rule: exactly; line-height: 100%; text-align:center; font=
+-size: 17px; letter-spacing:0" valign=3D"top" width=3D"184">HAVELOCK</td>  =
+             </tr>               <!--<![endif]--><!--[if lte mso 15]>      =
+                  <tr>                        <td valign=3D"top" align=3D"c=
+enter" width=3D"184" style=3D"margin:0; padding:0; font-family:Gotham, Helv=
+etica, sans-serif; color:#ef0013; font-weight: bold; mso-line-height-rule: =
+exactly; line-height: 95%; text-align:center; font-size: 17px; letter-spaci=
+ng:0">                        HAVELOCK                        </td>        =
+                </tr>                        <![endif]--><!--[if gt mso 15]=
+>                         <tr>                        <td valign=3D"top" al=
+ign=3D"center" width=3D"184" style=3D"margin:0; padding:0; font-family:Goth=
+am, Helvetica, sans-serif; color:#f50000; font-weight: bold; mso-line-heigh=
+t-rule: exactly; line-height: 100%; text-align:center; font-size: 17px; let=
+ter-spacing:0">                        HAVELOCK                        </td=
+>                        </tr>                       <![endif]-->          =
+     <tr>                <td align=3D"center" width=3D"184">               =
+ <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" s=
+tyle=3D"width:62px; margin:0; border:0; padding:0">                 <tbody>=
+<!--[if !mso]><!-->                  <tr>                   <td style=3D"li=
+ne-height: 1px; font-size: 1px; mso-line-height-rule: exactly; border-botto=
+m:3px solid #f50000; height:4px" width=3D"62"> </td>                  </tr>=
+                  <!--<![endif]--><!--[if lte mso 15]>                     =
+       <tr>                            <td width=3D"62" style=3D"line-heigh=
+t: 1px; font-size: 1px; mso-line-height-rule: exactly; border-bottom:3px so=
+lid #f50000; height:2px"> </td>                            </tr>           =
+                 <![endif]--><!--[if gt mso 15]>                           =
+  <tr>                            <td width=3D"62" style=3D"line-height: 1p=
+x; font-size: 1px; mso-line-height-rule: exactly; border-bottom:3px solid #=
+f50000; height:4px"> </td>                            </tr>                =
+           <![endif]-->                 </tbody>                </table>   =
+             </td>               </tr>               <!--[if !mso]><!-->   =
+            <tr>                <td style=3D"line-height: 1px; font-size: 1=
+px; mso-line-height-rule: exactly; height: 4px;" valign=3D"top"> </td>     =
+          </tr>               <!--<![endif]--><!--[if lte mso 15]>         =
+               <tr>                        <td valign=3D"top" style=3D"line=
+-height: 1px; font-size: 1px; mso-line-height-rule: exactly; height: 3px;">=
+&#xA0;</td>                        </tr>                        <![endif]--=
+><!--[if gt mso 15]>                         <tr>                        <t=
+d valign=3D"top" style=3D"line-height: 1px; font-size: 1px; mso-line-height=
+-rule: exactly; height: 4px;">&#xA0;</td>                        </tr>     =
+                  <![endif]--><!--[if !mso]><!-->               <tr>       =
+         <td align=3D"center" style=3D"margin:0; padding:0; font-family:Got=
+ham, Helvetica, sans-serif; color:#000000; font-weight: bold; mso-line-heig=
+ht-rule: exactly; line-height: 127%; text-align:center; font-size: 12px; le=
+tter-spacing:0" valign=3D"top" width=3D"184">Experience the sheer beauty<br=
+ />                of the Andaman Islands<br />                and discover=
+ serenity.</td>               </tr>               <!--<![endif]--><!--[if g=
+te mso 9]>                        <tr>                        <td valign=3D=
+"top" align=3D"center" width=3D"184" style=3D"margin:0; padding:0; font-fam=
+ily:Gotham, Helvetica, sans-serif; color:#000000; font-weight: bold; mso-li=
+ne-height-rule: exactly; line-height: 110%; text-align:center; font-size: 1=
+2px; letter-spacing:0">                        Experience the sheer beauty<=
+br />of the Andaman Islands<br />and discover serenity.                    =
+    </td>                        </tr>                       <![endif]-->  =
+            </tbody>             </table>             </td>             <td=
+ align=3D"center" valign=3D"top" width=3D"194">             <table align=3D=
+"center" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:184px;text-alig=
+n:center" valign=3D"top">              <tbody><!--[if !mso]><!-->          =
+     <tr>                <td align=3D"center" style=3D"margin:0; padding:0;=
+ font-family:Gotham, Helvetica, sans-serif; color:#ef0013; font-weight: bol=
+d; mso-line-height-rule: exactly; line-height: 100%; text-align:center; fon=
+t-size: 17px; letter-spacing:0" valign=3D"top" width=3D"184">KOCHI</td>    =
+           </tr>               <!--<![endif]--><!--[if lte mso 15]>        =
+                <tr>                        <td valign=3D"top" align=3D"cen=
+ter" width=3D"184" style=3D"margin:0; padding:0; font-family:Gotham, Helvet=
+ica, sans-serif; color:#ef0013; font-weight: bold; mso-line-height-rule: ex=
+actly; line-height: 95%; text-align:center; font-size: 17px; letter-spacing=
+:0">                        KOCHI                        </td>             =
+           </tr>                        <![endif]--><!--[if gt mso 15]>    =
+                     <tr>                        <td valign=3D"top" align=
+=3D"center" width=3D"184" style=3D"margin:0; padding:0; font-family:Gotham,=
+ Helvetica, sans-serif; color:#f50000; font-weight: bold; mso-line-height-r=
+ule: exactly; line-height: 100%; text-align:center; font-size: 17px; letter=
+-spacing:0">                        KOCHI                        </td>     =
+                   </tr>                       <![endif]-->               <=
+tr>                <td align=3D"center" width=3D"184">                <tabl=
+e align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"width:62px; margin:0; border:0; padding:0">                 <tbody><!--=
+[if !mso]><!-->                  <tr>                   <td style=3D"line-h=
+eight: 1px; font-size: 1px; mso-line-height-rule: exactly; border-bottom:3p=
+x solid #f50000; height:4px" width=3D"62"> </td>                  </tr>    =
+              <!--<![endif]--><!--[if lte mso 15]>                         =
+   <tr>                            <td width=3D"62" style=3D"line-height: 1=
+px; font-size: 1px; mso-line-height-rule: exactly; border-bottom:3px solid =
+#f50000; height:2px"> </td>                            </tr>               =
+             <![endif]--><!--[if gt mso 15]>                             <t=
+r>                            <td width=3D"62" style=3D"line-height: 1px; f=
+ont-size: 1px; mso-line-height-rule: exactly; border-bottom:3px solid #f500=
+00; height:4px"> </td>                            </tr>                    =
+       <![endif]-->                 </tbody>                </table>       =
+         </td>               </tr>               <!--[if !mso]><!-->       =
+        <tr>                <td style=3D"line-height: 1px; font-size: 1px; =
+mso-line-height-rule: exactly; height: 4px;" valign=3D"top"> </td>         =
+      </tr>               <!--<![endif]--><!--[if lte mso 15]>             =
+           <tr>                        <td valign=3D"top" style=3D"line-hei=
+ght: 1px; font-size: 1px; mso-line-height-rule: exactly; height: 3px;">&#xA=
+0;</td>                        </tr>                        <![endif]--><!-=
+-[if gt mso 15]>                         <tr>                        <td va=
+lign=3D"top" style=3D"line-height: 1px; font-size: 1px; mso-line-height-rul=
+e: exactly; height: 4px;">&#xA0;</td>                        </tr>         =
+              <![endif]--><!--[if !mso]><!-->               <tr>           =
+     <td align=3D"center" style=3D"margin:0; padding:0; font-family:Gotham,=
+ Helvetica, sans-serif; color:#000000; font-weight: bold; mso-line-height-r=
+ule: exactly; line-height: 127%; text-align:center; font-size: 12px; letter=
+-spacing:0" valign=3D"top" width=3D"184">Dive right into God&#39;s own<br /=
+>                country, explore beaches,<br />                backwaters,=
+ and more.</td>               </tr>               <!--<![endif]--><!--[if g=
+te mso 9]>                        <tr>                        <td valign=3D=
+"top" align=3D"center" width=3D"184" style=3D"margin:0; padding:0; font-fam=
+ily:Gotham, Helvetica, sans-serif; color:#000000; font-weight: bold; mso-li=
+ne-height-rule: exactly; line-height: 110%; text-align:center; font-size: 1=
+2px; letter-spacing:0">                        Dive right into God's own<br=
+ />country, explore beaches,<br />backwaters, and more.                    =
+    </td>                        </tr>                       <![endif]-->  =
+            </tbody>             </table>             </td>            </tr=
+>            <!--[if !mso]><!-->            <tr>             <td colspan=3D=
+"3" style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exactl=
+y; height: 7px;"> </td>            </tr>            <!--<![endif]--><!--[if=
+ lte mso 15]>                    <tr>                    <td colspan=3D"3" =
+style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exactly; h=
+eight: 5px;">&#xA0;</td>                    </tr>                    <![end=
+if]--><!--[if gt mso 15]>                     <tr>                    <td c=
+olspan=3D"3" style=3D"line-height: 1px; font-size: 1px; mso-line-height-rul=
+e: exactly; height: 7px;">&#xA0;</td>                    </tr>             =
+      <![endif]-->            <tr>             <td align=3D"center" valign=
+=3D"top" width=3D"194">             <table align=3D"center" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" width=3D"100">              <tbody>      =
+         <tr>                <td align=3D"center" style=3D"background-color=
+: #ed1c24; padding-top: 8px; padding-bottom: 8px; border-radius: 20px; widt=
+h:100px; line-height:100%" valign=3D"middle"><a href=3D"https://u34557702.c=
+t.sendgrid.net/ls/click?upn=3D5SjtgPrxLiMD-2F7ijF3Td4uTgbnXMh1j0vbzF4YB-2Bk=
+I52ULUCxnJB-2Fp9SbaKVGRAf4aK6piFSHK2hG2OXLp7fDfQHOg-2FEgv88AUsrGOOb8wsA4rj8=
+jFy6ftVRjqG-2BqLucCr-2ByaLRsgH6okd2kqiCqUmUVv-2B6UTY3FNa-2BRZMQemxq517NET4n=
+mgOfa-2FE6IfYx68LNLIVVzzxgMTkB4ZtkD36q0loGOVK0rcqmbhxQPg55lk5JyDioRJUtVs4BC=
+bdnubT9ac4WJ4ywUzUqyB8RjT8MqOvh3xsTqwWVhSfOyZqR-2BgPKRiKfxSQe-2BIefzFqSGCwb=
+JlBgxH1GGrqIT2PX8X06ZEgK4whY5jJLnI-2BUiZv1hlU-2FZqixLA4T5nOB-2BPxqdI9r6VLlC=
+0w7PzUcnAl4TclsgP5p-2B7sYbeTD-2BgN7tm-2FeSzO4nxKyUSP4gszHmTOdzb-2F3VshweL8Z=
+PwVP12pnrHAj5pJnIs837T8g5hGcFpicYjodcsYccXRHKTKQv3qjiJ5VOmXOLA7yrK8l3ITe-2F=
+x8WAyT1lRUL4hrWbo-2BMA5ojSvFv-2Bs54BlTKVZg7zG4n-2FrjcT_ijSW8RkM-2FIXMlaqj-2=
+FEdh9p8v0SOSA-2FyUc2EIoBfGmbaA1NAX1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34sY3YXjz=
+UulE5UHW1uoZfOJMQrO38OXQtYbS-2Bn1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2Zxsuly5bvDDi1=
+SqtCBD0aBkAXTWHUy0kUQk9n00F5Gx6q6aUpeOV5IGdJOES30aWF9WICc6nu-2F18RJu-2Bc4-2=
+BYsm134953z66mfgoqcvrwuCsVyK6HB9vBOkGFRkh0cXPGhgnZ6kROk-2BzmwZGqcrzTLBqYnS-=
+2FMPrvF3ucXBFOUgM2w0KQbyaMyrq8ii-2BAmFlPrf-2BT3SkW8nEvEFzIz4T0y9Vt4tOfuCt2l=
+FXXywOrhDk2mokhEPo7GPqivpLyIwOr-2Fhg8LEpOPmdU27R0cvvysVg9qrqph5GTyXt8GS1kKd=
+mVjhGEVlRXT-2BMPlco-2FDPIbUoh52N-2FVZvqO6-2FTJNwMwxmlJyIU-3D" style=3D"colo=
+r: #ffffff; display: block; font-size: 12px; font-weight: bold; text-align:=
+ center; text-decoration: none; font-family:Gotham, Helvetica, sans-serif; =
+line-height:100%; mso-line-height-rule:exactly; background-color:#ed1c24; b=
+order-radius: 30px;">BOOK NOW</a></td>               </tr>              </t=
+body>             </table>             </td>             <td align=3D"cente=
+r" valign=3D"top" width=3D"193">             <table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100">              <tbo=
+dy>               <tr>                <td align=3D"center" style=3D"backgro=
+und-color: #ed1c24; padding-top: 8px; padding-bottom: 8px; border-radius: 2=
+0px; width:100px; line-height:100%" valign=3D"middle"><a href=3D"https://u3=
+4557702.ct.sendgrid.net/ls/click?upn=3D5SjtgPrxLiMD-2F7ijF3Td4uTgbnXMh1j0vb=
+zF4YB-2BkI52ULUCxnJB-2Fp9SbaKVGRAf4aK6piFSHK2hG2OXLp7fDfQHOg-2FEgv88AUsrGOO=
+b8wsA4rj8jFy6ftVRjqG-2BqLucCr-2ByaLRsgH6okd2kqiCqUmUVv-2B6UTY3FNa-2BRZMQemx=
+q517NET4nmgOfa-2FE6IfYx68LNLIVVzzxgMTkB4ZtkD36q0loGOVK0rcqmbhxQPg55lk5JyDio=
+RJUtVs4BCbdnubT9ac4WJ4ywUzUqyB8RjT8MqOvh3xsTqwWVhSfOyZqR-2BgPKRiKfxSQe-2BIe=
+fzFqSGCwbJlBgxH1GGrqIT2PX8X06ZEgK4whY5jJLnI-2BUiZv1hlU-2FZqixLA4T5nOB-2BPxq=
+dI9r6VLlC0w7PzUcnAl4TclsgP5p-2B7sYbeTD-2BgN7tm-2FeSzO4nxKyUSP4gszHmTOdzb-2F=
+3VshweL8ZPwVP12pnrHEcsxCEgLF0n-2FK9PmEaqM6rlBogMAdKNnxsHOFg-2Fs-2ByocO3Dj96=
+-2F4Owd3DUObLibrsk66QjFz5qiRGVmXKlIqIQDo-2B0r-2Bu0AT0CickQrEoNBUTZ27D9w-2Fx=
+zEdeNeBGreFA-3D-3DvXAh_ijSW8RkM-2FIXMlaqj-2FEdh9p8v0SOSA-2FyUc2EIoBfGmbaA1N=
+AX1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34sY3YXjzUulE5UHW1uoZfOJMQrO38OXQtYbS-2Bn=
+1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2Zxsuly5bvDDi1SqtCBD0aBkAXTWHUy0kUQk9n00F5Gx6q=
+6aUpeOV5IGdJOES30aWF9WICc6nu-2F18RJu-2Bc4-2BYsm134953z66mfgoqcvrwuCsVyK6HB9=
+vBOkGFRkh0cXPGhgnZ6kROk-2BzmwZGqcrzTLBqYnTGJVyGvVh52DQztMm6lUOq3c9DJ1p1fTa6=
+BHIAgMZhKPhwqj9to2cSQAHPt-2BfK2hN4PoNhPv02iV9C7aRc6Ba-2FTfc0vGNnJ2je-2BLAJ4=
+tU0-2BeJd3VDDwjCLP8PfexCsEyJ94p9uq0rvZkgWqRNWOwgy-2F2SvRNd2Sf7J9eKB1ltwitNI=
+LlJHtRxiu5AjRLZhxhE-3D" style=3D"color: #ffffff; display: block; font-size:=
+ 12px; font-weight: bold; text-align: center; text-decoration: none; font-f=
+amily:Gotham, Helvetica, sans-serif; line-height:100%; mso-line-height-rule=
+:exactly; background-color:#ed1c24; border-radius: 30px;">BOOK NOW</a></td>=
+               </tr>              </tbody>             </table>            =
+ </td>             <td align=3D"center" valign=3D"top" width=3D"194">      =
+       <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100">              <tbody>               <tr>              =
+  <td align=3D"center" style=3D"background-color: #ed1c24; padding-top: 8px=
+; padding-bottom: 8px; border-radius: 20px; width:100px; line-height:100%" =
+valign=3D"middle"><a href=3D"https://u34557702.ct.sendgrid.net/ls/click?upn=
+=3D5SjtgPrxLiMD-2F7ijF3Td4uTgbnXMh1j0vbzF4YB-2BkI52ULUCxnJB-2Fp9SbaKVGRAf4a=
+K6piFSHK2hG2OXLp7fDfQHOg-2FEgv88AUsrGOOb8wsA4rj8jFy6ftVRjqG-2BqLucCr-2ByaLR=
+sgH6okd2kqiCqUmUVv-2B6UTY3FNa-2BRZMQemxq517NET4nmgOfa-2FE6IfYx68LNLIVVzzxgM=
+TkB4ZtkD36q0loGOVK0rcqmbhxQPg55lk5JyDioRJUtVs4BCbdnubT9ac4WJ4ywUzUqyB8RjT8M=
+qOvh3xsTqwWVhSfOyZqR-2BgPKRiKfxSQe-2BIefzFqSGCwbJlBgxH1GGrqIT2PX8X06ZEgK4wh=
+Y5jJLnI-2BUiZv1hlU-2FZqixLA4T5nOB-2BPxqdI9r6VLlC0w7PzUcnAl4TclsgP5p-2B7sYbe=
+TD-2BgN7tm-2FeSzO4nxKyUSP4gszHmTOdzb-2F3VshweL8ZPwVP12pnrHGh9y52aDzCA6esB4r=
+gZKT6kZJbatHX8xFc74i9-2BwNvQx7OaW0tcN3-2BZnuP6tIScm83fQss-2FE4v7J8aBKyf9G7E=
+zseraTSGsUSnI3WNCuUuhhmdkhqKaH1z4klGaA4m7LQ-3D-3DWjjA_ijSW8RkM-2FIXMlaqj-2F=
+Edh9p8v0SOSA-2FyUc2EIoBfGmbaA1NAX1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34sY3YXjzU=
+ulE5UHW1uoZfOJMQrO38OXQtYbS-2Bn1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2Zxsuly5bvDDi1S=
+qtCBD0aBkAXTWHUy0kUQk9n00F5Gx6q6aUpeOV5IGdJOES30aWF9WICc6nu-2F18RJu-2Bc4-2B=
+Ysm134953z66mfgoqcvrwuCsVyK6HB9vBOkGFRkh0cXPGhgnZ6kROk-2BzmwZGqcrzTLBqYnRkD=
+6GIU3mhy6wk1M-2BsbfufMjOSAvFZNvJ1u0mU97ZCP1Xm1y5RwcZ8JzL90GV0BemdJ0o7WW0qDY=
+6dnBRoIdppmKiCyYleBfDGwyIf4JSlKwRIM-2BhVpsTUofCpno5iJr5ClEwBm-2BD4xAvP6Xjhu=
+8v6NjguOlgF2OzSxWTjgGWYlx2lLObAB9Ryib7Jl8S0Qxk-3D" style=3D"color: #ffffff;=
+ display: block; font-size: 12px; font-weight: bold; text-align: center; te=
+xt-decoration: none; font-family:Gotham, Helvetica, sans-serif; line-height=
+:100%; mso-line-height-rule:exactly; background-color:#ed1c24; border-radiu=
+s: 30px;">BOOK NOW</a></td>               </tr>              </tbody>      =
+       </table>             </td>            </tr>            <tr>         =
+    <td colspan=3D"3" style=3D"line-height: 1px; font-size: 1px; mso-line-h=
+eight-rule: exactly; height: 14px;"> </td>            </tr>           </tbo=
+dy>          </table>          </td>         </tr>         <tr>          <t=
+d align=3D"center" style=3D"margin:0; padding:0;" width=3D"600"><img height=
+=3D"128" src=3D"https://d1qzvqecfo5h8o.cloudfront.net/images/WR9-94R-786Z/S=
+piceJet/RakhiLongWeekend11.jpg" style=3D"margin: 0; border: 0; padding: 0; =
+height:128px;" width=3D"600" /></td>         </tr>         <tr>          <t=
+d align=3D"center" width=3D"600">          <table align=3D"center" cellpadd=
+ing=3D"0" cellspacing=3D"0" style=3D"width:581px;text-align:center;">      =
+     <tbody>            <tr>             <td align=3D"center" valign=3D"top=
+" width=3D"194">             <table align=3D"center" cellpadding=3D"0" cell=
+spacing=3D"0" style=3D"width:184px;text-align:center" valign=3D"top">      =
+        <tbody><!--[if !mso]><!-->               <tr>                <td al=
+ign=3D"center" style=3D"margin:0; padding:0; font-family:Gotham, Helvetica,=
+ sans-serif; color:#ef0013; font-weight: bold; mso-line-height-rule: exactl=
+y; line-height: 100%; text-align:center; font-size: 17px; letter-spacing:0"=
+ valign=3D"top" width=3D"184">AMRITSAR</td>               </tr>            =
+   <!--<![endif]--><!--[if lte mso 15]>                        <tr>        =
+                <td valign=3D"top" align=3D"center" width=3D"184" style=3D"=
+margin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; color:#ef00=
+13; font-weight: bold; mso-line-height-rule: exactly; line-height: 95%; tex=
+t-align:center; font-size: 17px; letter-spacing:0">                        =
+AMRITSAR                        </td>                        </tr>         =
+               <![endif]--><!--[if gt mso 15]>                         <tr>=
+                        <td valign=3D"top" align=3D"center" width=3D"184" s=
+tyle=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; col=
+or:#f50000; font-weight: bold; mso-line-height-rule: exactly; line-height: =
+100%; text-align:center; font-size: 17px; letter-spacing:0">               =
+         AMRITSAR                        </td>                        </tr>=
+                       <![endif]-->               <tr>                <td a=
+lign=3D"center" width=3D"184">                <table align=3D"center" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:62px; margin:0; =
+border:0; padding:0">                 <tbody><!--[if !mso]><!-->           =
+       <tr>                   <td style=3D"line-height: 1px; font-size: 1px=
+; mso-line-height-rule: exactly; border-bottom:3px solid #f50000; height:4p=
+x" width=3D"62"> </td>                  </tr>                  <!--<![endif=
+]--><!--[if lte mso 15]>                            <tr>                   =
+         <td width=3D"62" style=3D"line-height: 1px; font-size: 1px; mso-li=
+ne-height-rule: exactly; border-bottom:3px solid #f50000; height:2px"> </td=
+>                            </tr>                            <![endif]--><=
+!--[if gt mso 15]>                             <tr>                        =
+    <td width=3D"62" style=3D"line-height: 1px; font-size: 1px; mso-line-he=
+ight-rule: exactly; border-bottom:3px solid #f50000; height:4px"> </td>    =
+                        </tr>                           <![endif]-->       =
+          </tbody>                </table>                </td>            =
+   </tr>               <!--[if !mso]><!-->               <tr>              =
+  <td style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exac=
+tly; height: 4px;" valign=3D"top"> </td>               </tr>               =
+<!--<![endif]--><!--[if lte mso 15]>                        <tr>           =
+             <td valign=3D"top" style=3D"line-height: 1px; font-size: 1px; =
+mso-line-height-rule: exactly; height: 3px;">&#xA0;</td>                   =
+     </tr>                        <![endif]--><!--[if gt mso 15]>          =
+               <tr>                        <td valign=3D"top" style=3D"line=
+-height: 1px; font-size: 1px; mso-line-height-rule: exactly; height: 4px;">=
+&#xA0;</td>                        </tr>                       <![endif]-->=
+<!--[if !mso]><!-->               <tr>                <td align=3D"center" =
+style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; co=
+lor:#000000; font-weight: bold; mso-line-height-rule: exactly; line-height:=
+ 127%; text-align:center; font-size: 12px; letter-spacing:0" valign=3D"top"=
+ width=3D"184">Visit the holy city, explore<br />                the colour=
+ful culture and<br />                its amazing food.</td>               <=
+/tr>               <!--<![endif]--><!--[if gte mso 9]>                     =
+   <tr>                        <td valign=3D"top" align=3D"center" width=3D=
+"184" style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-ser=
+if; color:#000000; font-weight: bold; mso-line-height-rule: exactly; line-h=
+eight: 110%; text-align:center; font-size: 12px; letter-spacing:0">        =
+                Visit the holy city, explore<br />the colourful culture and=
+<br />its amazing food.                        </td>                       =
+ </tr>                       <![endif]-->              </tbody>            =
+ </table>             </td>             <td align=3D"center" valign=3D"top"=
+ width=3D"193">             <table align=3D"center" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"width:184px;text-align:center" valign=3D"top">       =
+       <tbody><!--[if !mso]><!-->               <tr>                <td ali=
+gn=3D"center" style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, =
+sans-serif; color:#ef0013; font-weight: bold; mso-line-height-rule: exactly=
+; line-height: 100%; text-align:center; font-size: 17px; letter-spacing:0" =
+valign=3D"top" width=3D"184">MADURAI</td>               </tr>              =
+ <!--<![endif]--><!--[if lte mso 15]>                        <tr>          =
+              <td valign=3D"top" align=3D"center" width=3D"184" style=3D"ma=
+rgin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; color:#ef0013=
+; font-weight: bold; mso-line-height-rule: exactly; line-height: 95%; text-=
+align:center; font-size: 17px; letter-spacing:0">                        MA=
+DURAI                        </td>                        </tr>            =
+            <![endif]--><!--[if gt mso 15]>                         <tr>   =
+                     <td valign=3D"top" align=3D"center" width=3D"184" styl=
+e=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; color:=
+#f50000; font-weight: bold; mso-line-height-rule: exactly; line-height: 100=
+%; text-align:center; font-size: 17px; letter-spacing:0">                  =
+      MADURAI                        </td>                        </tr>    =
+                   <![endif]-->               <tr>                <td align=
+=3D"center" width=3D"184">                <table align=3D"center" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:62px; margin:0; bord=
+er:0; padding:0">                 <tbody><!--[if !mso]><!-->               =
+   <tr>                   <td style=3D"line-height: 1px; font-size: 1px; ms=
+o-line-height-rule: exactly; border-bottom:3px solid #f50000; height:4px" w=
+idth=3D"62"> </td>                  </tr>                  <!--<![endif]-->=
+<!--[if lte mso 15]>                            <tr>                       =
+     <td width=3D"62" style=3D"line-height: 1px; font-size: 1px; mso-line-h=
+eight-rule: exactly; border-bottom:3px solid #f50000; height:2px"> </td>   =
+                         </tr>                            <![endif]--><!--[=
+if gt mso 15]>                             <tr>                            =
+<td width=3D"62" style=3D"line-height: 1px; font-size: 1px; mso-line-height=
+-rule: exactly; border-bottom:3px solid #f50000; height:4px"> </td>        =
+                    </tr>                           <![endif]-->           =
+      </tbody>                </table>                </td>               <=
+/tr>               <!--[if !mso]><!-->               <tr>                <t=
+d style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exactly;=
+ height: 4px;" valign=3D"top"> </td>               </tr>               <!--=
+<![endif]--><!--[if lte mso 15]>                        <tr>               =
+         <td valign=3D"top" style=3D"line-height: 1px; font-size: 1px; mso-=
+line-height-rule: exactly; height: 3px;">&#xA0;</td>                       =
+ </tr>                        <![endif]--><!--[if gt mso 15]>              =
+           <tr>                        <td valign=3D"top" style=3D"line-hei=
+ght: 1px; font-size: 1px; mso-line-height-rule: exactly; height: 4px;">&#xA=
+0;</td>                        </tr>                       <![endif]--><!--=
+[if !mso]><!-->               <tr>                <td align=3D"center" styl=
+e=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; color:=
+#000000; font-weight: bold; mso-line-height-rule: exactly; line-height: 127=
+%; text-align:center; font-size: 12px; letter-spacing:0" valign=3D"top" wid=
+th=3D"184">Intricate temple architecture,<br />                museums and =
+regional<br />                delicacies await.</td>               </tr>   =
+            <!--<![endif]--><!--[if gte mso 9]>                        <tr>=
+                        <td valign=3D"top" align=3D"center" width=3D"184" s=
+tyle=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; col=
+or:#000000; font-weight: bold; mso-line-height-rule: exactly; line-height: =
+110%; text-align:center; font-size: 12px; letter-spacing:0">               =
+         Intricate temple architecture,<br />museums and regional<br />deli=
+cacies await.                        </td>                        </tr>    =
+                   <![endif]-->              </tbody>             </table> =
+            </td>             <td align=3D"center" valign=3D"top" width=3D"=
+194">             <table align=3D"center" cellpadding=3D"0" cellspacing=3D"=
+0" style=3D"width:184px;text-align:center" valign=3D"top">              <tb=
+ody><!--[if !mso]><!-->               <tr>                <td align=3D"cent=
+er" style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-serif=
+; color:#ef0013; font-weight: bold; mso-line-height-rule: exactly; line-hei=
+ght: 100%; text-align:center; font-size: 17px; letter-spacing:0" valign=3D"=
+top" width=3D"184">GUWAHATI</td>               </tr>               <!--<![e=
+ndif]--><!--[if lte mso 15]>                        <tr>                   =
+     <td valign=3D"top" align=3D"center" width=3D"184" style=3D"margin:0; p=
+adding:0; font-family:Gotham, Helvetica, sans-serif; color:#ef0013; font-we=
+ight: bold; mso-line-height-rule: exactly; line-height: 95%; text-align:cen=
+ter; font-size: 17px; letter-spacing:0">                        GUWAHATI   =
+                     </td>                        </tr>                    =
+    <![endif]--><!--[if gt mso 15]>                         <tr>           =
+             <td valign=3D"top" align=3D"center" width=3D"184" style=3D"mar=
+gin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; color:#f50000;=
+ font-weight: bold; mso-line-height-rule: exactly; line-height: 100%; text-=
+align:center; font-size: 17px; letter-spacing:0">                        GU=
+WAHATI                        </td>                        </tr>           =
+            <![endif]-->               <tr>                <td align=3D"cen=
+ter" width=3D"184">                <table align=3D"center" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" style=3D"width:62px; margin:0; border:0; p=
+adding:0">                 <tbody><!--[if !mso]><!-->                  <tr>=
+                   <td style=3D"line-height: 1px; font-size: 1px; mso-line-=
+height-rule: exactly; border-bottom:3px solid #f50000; height:4px" width=3D=
+"62"> </td>                  </tr>                  <!--<![endif]--><!--[if=
+ lte mso 15]>                            <tr>                            <t=
+d width=3D"62" style=3D"line-height: 1px; font-size: 1px; mso-line-height-r=
+ule: exactly; border-bottom:3px solid #f50000; height:2px"> </td>          =
+                  </tr>                            <![endif]--><!--[if gt m=
+so 15]>                             <tr>                            <td wid=
+th=3D"62" style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: =
+exactly; border-bottom:3px solid #f50000; height:4px"> </td>               =
+             </tr>                           <![endif]-->                 <=
+/tbody>                </table>                </td>               </tr>   =
+            <!--[if !mso]><!-->               <tr>                <td style=
+=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exactly; height=
+: 4px;" valign=3D"top"> </td>               </tr>               <!--<![endi=
+f]--><!--[if lte mso 15]>                        <tr>                      =
+  <td valign=3D"top" style=3D"line-height: 1px; font-size: 1px; mso-line-he=
+ight-rule: exactly; height: 3px;">&#xA0;</td>                        </tr> =
+                       <![endif]--><!--[if gt mso 15]>                     =
+    <tr>                        <td valign=3D"top" style=3D"line-height: 1p=
+x; font-size: 1px; mso-line-height-rule: exactly; height: 4px;">&#xA0;</td>=
+                        </tr>                       <![endif]--><!--[if !ms=
+o]><!-->               <tr>                <td align=3D"center" style=3D"ma=
+rgin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; color:#000000=
+; font-weight: bold; mso-line-height-rule: exactly; line-height: 127%; text=
+-align:center; font-size: 12px; letter-spacing:0" valign=3D"top" width=3D"1=
+84">The gateway to the<br />                North East and to nature&#39;s<=
+br />                untouched beauty.</td>               </tr>            =
+   <!--<![endif]--><!--[if gte mso 9]>                        <tr>         =
+               <td valign=3D"top" align=3D"center" width=3D"184" style=3D"m=
+argin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; color:#00000=
+0; font-weight: bold; mso-line-height-rule: exactly; line-height: 110%; tex=
+t-align:center; font-size: 12px; letter-spacing:0">                        =
+The gateway to the<br />North East and to nature's<br />untouched beauty.  =
+                      </td>                        </tr>                   =
+    <![endif]-->              </tbody>             </table>             </t=
+d>            </tr>            <!--[if !mso]><!-->            <tr>         =
+    <td colspan=3D"3" style=3D"line-height: 1px; font-size: 1px; mso-line-h=
+eight-rule: exactly; height: 7px;"> </td>            </tr>            <!--<=
+![endif]--><!--[if lte mso 15]>                    <tr>                    =
+<td colspan=3D"3" style=3D"line-height: 1px; font-size: 1px; mso-line-heigh=
+t-rule: exactly; height: 5px;">&#xA0;</td>                    </tr>        =
+            <![endif]--><!--[if gt mso 15]>                     <tr>       =
+             <td colspan=3D"3" style=3D"line-height: 1px; font-size: 1px; m=
+so-line-height-rule: exactly; height: 7px;">&#xA0;</td>                    =
+</tr>                   <![endif]-->            <tr>             <td align=
+=3D"center" valign=3D"top" width=3D"194">             <table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100">         =
+     <tbody>               <tr>                <td align=3D"center" style=
+=3D"background-color: #ed1c24; padding-top: 8px; padding-bottom: 8px; borde=
+r-radius: 20px; width:100px; line-height:100%" valign=3D"middle"><a href=3D=
+"https://u34557702.ct.sendgrid.net/ls/click?upn=3D5SjtgPrxLiMD-2F7ijF3Td4uT=
+gbnXMh1j0vbzF4YB-2BkI52ULUCxnJB-2Fp9SbaKVGRAf4aK6piFSHK2hG2OXLp7fDfQHOg-2FE=
+gv88AUsrGOOb8wsA4rj8jFy6ftVRjqG-2BqLucCr-2ByaLRsgH6okd2kqiCqUmUVv-2B6UTY3FN=
+a-2BRZMQemxq517NET4nmgOfa-2FE6IfYx68LNLIVVzzxgMTkB4ZtkD36q0loGOVK0rcqmbhxQP=
+g55lk5JyDioRJUtVs4BCbdnubT9ac4WJ4ywUzUqyB8RjT8MqOvh3xsTqwWVhSfOyZqR-2BgPKRi=
+KfxSQe-2BIefzFqSGCwbJlBgxH1GGrqIT2PX8X06ZEgK4whY5jJLnI-2BUiZv1hlU-2FZqixLA4=
+T5nOB-2BPxqdI9r6VLlC0w7PzUcnAl4TclsgP5p-2B7sYbeTD-2BgN7tm-2FeSzO4nxKyUSP4gs=
+zHmTOdzb-2F3VshweL8ZPwVP12pnrHNHVrcAYt8nRE06cNQS9xF3KKx3zJECAFiJdbiNvlJxN4r=
+gcu7-2BK-2BpLOPfVGgvLbI4nN6i-2FfNhPjYTI0z1DCMfdry-2Fdz-2FHw4a73HGz-2BGg3U7w=
+nHm_ijSW8RkM-2FIXMlaqj-2FEdh9p8v0SOSA-2FyUc2EIoBfGmbaA1NAX1U-2FJe3q5VVhXCcX=
+93uaKx6BAaTwLDc34sY3YXjzUulE5UHW1uoZfOJMQrO38OXQtYbS-2Bn1mgtGHfBraFQBcK2xNF=
+8-2FFQf3ZK2Zxsuly5bvDDi1SqtCBD0aBkAXTWHUy0kUQk9n00F5Gx6q6aUpeOV5IGdJOES30aW=
+F9WICc6nu-2F18RJu-2Bc4-2BYsm134953z66mfgoqcvrwuCsVyK6HB9vBOkGFRkh0cXPGhgnZ6=
+kROk-2BzmwZGqcrzTLBqYnSxN5dQgCO5GFLopiPQgu3TGtImykA3GDp-2FR0jV9tvsNy3nQXPZt=
+zZ4CIHBD7SjfHxJEOYAUVtFpZgWQhYCgG4uwt5SQBJYn-2FH-2FoLoisRdTDder3kCb6NtiJUQZ=
+5v1fk5QpQ1KSPeHVOAhepK2vni350Br0c0Neev50xgWd5w2HEU1SPIOzZ61dJQ3dpyuyFqQ-3D"=
+ style=3D"color: #ffffff; display: block; font-size: 12px; font-weight: bol=
+d; text-align: center; text-decoration: none; font-family:Gotham, Helvetica=
+, sans-serif; line-height:100%; mso-line-height-rule:exactly; background-co=
+lor:#ed1c24; border-radius: 30px;">BOOK NOW</a></td>               </tr>   =
+           </tbody>             </table>             </td>             <td =
+align=3D"center" valign=3D"top" width=3D"193">             <table align=3D"=
+center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100">    =
+          <tbody>               <tr>                <td align=3D"center" st=
+yle=3D"background-color: #ed1c24; padding-top: 8px; padding-bottom: 8px; bo=
+rder-radius: 20px; width:100px; line-height:100%" valign=3D"middle"><a href=
+=3D"https://u34557702.ct.sendgrid.net/ls/click?upn=3D5SjtgPrxLiMD-2F7ijF3Td=
+4uTgbnXMh1j0vbzF4YB-2BkI52ULUCxnJB-2Fp9SbaKVGRAf4aK6piFSHK2hG2OXLp7fDfQHOg-=
+2FEgv88AUsrGOOb8wsA4rj8jFy6ftVRjqG-2BqLucCr-2ByaLRsgH6okd2kqiCqUmUVv-2B6UTY=
+3FNa-2BRZMQemxq517NET4nmgOfa-2FE6IfYx68LNLIVVzzxgMTkB4ZtkD36q0loGOVK0rcqmbh=
+xQPg55lk5JyDioRJUtVs4BCbdnubT9ac4WJ4ywUzUqyB8RjT8MqOvh3xsTqwWVhSfOyZqR-2BgP=
+KRiKfxSQe-2BIefzFqSGCwbJlBgxH1GGrqIT2PX8X06ZEgK4whY5jJLnI-2BUiZv1hlU-2FZqix=
+LA4T5nOB-2BPxqdI9r6VLlC0w7PzUcnAl4TclsgP5p-2B7sYbeTD-2BgN7tm-2FeSzO4nxKyUSP=
+4gszHmTOdzb-2F3VshweL8ZPwVP12pnrHPvWy1oOIIE0O0fUAPAgWjME3gLxzFw27L2TgnfHiRE=
+fIv3jmrITDY3-2BzZ1V8h1CWk2v-2FiUjFFTGUT86uuQwZKdXSRj7E8XYZ-2BHpyHmxoHlxDHLU=
+VjeEEtFTPk8xW3d-2Fiw-3D-3DeVY2_ijSW8RkM-2FIXMlaqj-2FEdh9p8v0SOSA-2FyUc2EIoB=
+fGmbaA1NAX1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34sY3YXjzUulE5UHW1uoZfOJMQrO38OXQ=
+tYbS-2Bn1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2Zxsuly5bvDDi1SqtCBD0aBkAXTWHUy0kUQk9n=
+00F5Gx6q6aUpeOV5IGdJOES30aWF9WICc6nu-2F18RJu-2Bc4-2BYsm134953z66mfgoqcvrwuC=
+sVyK6HB9vBOkGFRkh0cXPGhgnZ6kROk-2BzmwZGqcrzTLBqYnTQrJfDtVSjp8xUNmYyPKicw0az=
+bmgJh85d39g-2FqZDbcoPVOZJJqEbmxbTzXG8tIU52-2FJqFG2K5mo5ganzO-2BtZCs3EKr7dV3=
+cPpLeHgcVo9E8aTYj9hNeg4wl6CelYe2PFXDb7sqgaViX3jhJpKFei836p0TJSDVd-2FwnVTnOr=
+Ce640zxfv7Tt4Ei2R8xVXUnUc-3D" style=3D"color: #ffffff; display: block; font=
+-size: 12px; font-weight: bold; text-align: center; text-decoration: none; =
+font-family:Gotham, Helvetica, sans-serif; line-height:100%; mso-line-heigh=
+t-rule:exactly; background-color:#ed1c24; border-radius: 30px;">BOOK NOW</a=
+></td>               </tr>              </tbody>             </table>      =
+       </td>             <td align=3D"center" valign=3D"top" width=3D"194">=
+             <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"100">              <tbody>               <tr>          =
+      <td align=3D"center" style=3D"background-color: #ed1c24; padding-top:=
+ 8px; padding-bottom: 8px; border-radius: 20px; width:100px; line-height:10=
+0%" valign=3D"middle"><a href=3D"https://u34557702.ct.sendgrid.net/ls/click=
+?upn=3D5SjtgPrxLiMD-2F7ijF3Td4uTgbnXMh1j0vbzF4YB-2BkI52ULUCxnJB-2Fp9SbaKVGR=
+Af4aK6piFSHK2hG2OXLp7fDfQHOg-2FEgv88AUsrGOOb8wsA4rj8jFy6ftVRjqG-2BqLucCr-2B=
+yaLRsgH6okd2kqiCqUmUVv-2B6UTY3FNa-2BRZMQemxq517NET4nmgOfa-2FE6IfYx68LNLIVVz=
+zxgMTkB4ZtkD36q0loGOVK0rcqmbhxQPg55lk5JyDioRJUtVs4BCbdnubT9ac4WJ4ywUzUqyB8R=
+jT8MqOvh3xsTqwWVhSfOyZqR-2BgPKRiKfxSQe-2BIefzFqSGCwbJlBgxH1GGrqIT2PX8X06ZEg=
+K4whY5jJLnI-2BUiZv1hlU-2FZqixLA4T5nOB-2BPxqdI9r6VLlC0w7PzUcnAl4TclsgP5p-2B7=
+sYbeTD-2BgN7tm-2FeSzO4nxKyUSP4gszHmTOdzb-2F3VshweL8ZPwVP12pnrHOD6E3ejDOSxlJ=
+atBJ-2FmrdJJH5N3sWpvsdZo8YPDtUrPvtsxXZOUdpLFPFySAb7-2BHD-2FK9ok3mFQnxjESFQ2=
+fGLq6v751gcnrQd18zDDKk17IWInj_ijSW8RkM-2FIXMlaqj-2FEdh9p8v0SOSA-2FyUc2EIoBf=
+GmbaA1NAX1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34sY3YXjzUulE5UHW1uoZfOJMQrO38OXQt=
+YbS-2Bn1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2Zxsuly5bvDDi1SqtCBD0aBkAXTWHUy0kUQk9n0=
+0F5Gx6q6aUpeOV5IGdJOES30aWF9WICc6nu-2F18RJu-2Bc4-2BYsm134953z66mfgoqcvrwuCs=
+VyK6HB9vBOkGFRkh0cXPGhgnZ6kROk-2BzmwZGqcrzTLBqYnQJAxsHDthSPf-2BOuoFQW9YjUpw=
+KE7Cg0tagRnpJhIeAi9uT-2B4QI-2BhXR19rSmEYoE7s741-2F8FrdHCjH0s4dNqNCnishWAduP=
+WFusWqXHuQaRvtyDwFyLg8aBoY6jTvCkPiC74aOJDS6R0SZwLnWJRuyUv5LB-2Fe9e1YNT8rTd3=
+NckYrx1tIGLucdQlV3TEjymwZg-3D" style=3D"color: #ffffff; display: block; fon=
+t-size: 12px; font-weight: bold; text-align: center; text-decoration: none;=
+ font-family:Gotham, Helvetica, sans-serif; line-height:100%; mso-line-heig=
+ht-rule:exactly; background-color:#ed1c24; border-radius: 30px;">BOOK NOW</=
+a></td>               </tr>              </tbody>             </table>     =
+        </td>            </tr>            <tr>             <td colspan=3D"3=
+" style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exactly;=
+ height: 14px;"> </td>            </tr>           </tbody>          </table=
+>          </td>         </tr>         <tr>          <td align=3D"center" s=
+tyle=3D"margin:0; padding:0;" width=3D"600"><img height=3D"127" src=3D"http=
+s://d1qzvqecfo5h8o.cloudfront.net/images/WR9-94R-786Z/SpiceJet/RakhiLongWee=
+kend12.jpg" style=3D"margin: 0; border: 0; padding: 0; height:127px;" width=
+=3D"600" /></td>         </tr>         <!--[if !mso]><!-->         <tr>    =
+      <td align=3D"center" style=3D"line-height: 1px; font-size: 1px; mso-l=
+ine-height-rule: exactly; height: 2px;" width=3D"600"> </td>         </tr> =
+        <!--<![endif]--><!--[if lte mso 15]>                <tr>           =
+     <td align=3D"center" width=3D"600" style=3D"line-height: 1px; font-siz=
+e: 1px; mso-line-height-rule: exactly; height: 2px;">&#xA0;</td>           =
+     </tr>                <![endif]--><!--[if gt mso 15]>                 <=
+tr>                <td align=3D"center" width=3D"600" style=3D"line-height:=
+ 1px; font-size: 1px; mso-line-height-rule: exactly; height: 2px;">&#xA0;</=
+td>                </tr>               <![endif]-->         <tr>          <=
+td align=3D"center" width=3D"600">          <table align=3D"center" cellpad=
+ding=3D"0" cellspacing=3D"0" style=3D"width:581px;text-align:center;">     =
+      <tbody>            <tr>             <td align=3D"center" valign=3D"to=
+p" width=3D"194">             <table align=3D"center" cellpadding=3D"0" cel=
+lspacing=3D"0" style=3D"width:184px;text-align:center" valign=3D"top">     =
+         <tbody><!--[if !mso]><!-->               <tr>                <td a=
+lign=3D"center" style=3D"margin:0; padding:0; font-family:Gotham, Helvetica=
+, sans-serif; color:#ef0013; font-weight: bold; mso-line-height-rule: exact=
+ly; line-height: 100%; text-align:center; font-size: 17px; letter-spacing:0=
+" valign=3D"top" width=3D"184">BAGDOGRA</td>               </tr>           =
+    <!--<![endif]--><!--[if lte mso 15]>                        <tr>       =
+                 <td valign=3D"top" align=3D"center" width=3D"184" style=3D=
+"margin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; color:#ef0=
+013; font-weight: bold; mso-line-height-rule: exactly; line-height: 95%; te=
+xt-align:center; font-size: 17px; letter-spacing:0">                       =
+ BAGDOGRA                        </td>                        </tr>        =
+                <![endif]--><!--[if gt mso 15]>                         <tr=
+>                        <td valign=3D"top" align=3D"center" width=3D"184" =
+style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; co=
+lor:#f50000; font-weight: bold; mso-line-height-rule: exactly; line-height:=
+ 100%; text-align:center; font-size: 17px; letter-spacing:0">              =
+          BAGDOGRA                        </td>                        </tr=
+>                       <![endif]-->               <tr>                <td =
+align=3D"center" width=3D"184">                <table align=3D"center" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:62px; margin:0;=
+ border:0; padding:0">                 <tbody><!--[if !mso]><!-->          =
+        <tr>                   <td style=3D"line-height: 1px; font-size: 1p=
+x; mso-line-height-rule: exactly; border-bottom:3px solid #f50000; height:4=
+px" width=3D"62"> </td>                  </tr>                  <!--<![endi=
+f]--><!--[if lte mso 15]>                            <tr>                  =
+          <td width=3D"62" style=3D"line-height: 1px; font-size: 1px; mso-l=
+ine-height-rule: exactly; border-bottom:3px solid #f50000; height:2px"> </t=
+d>                            </tr>                            <![endif]-->=
+<!--[if gt mso 15]>                             <tr>                       =
+     <td width=3D"62" style=3D"line-height: 1px; font-size: 1px; mso-line-h=
+eight-rule: exactly; border-bottom:3px solid #f50000; height:4px"> </td>   =
+                         </tr>                           <![endif]-->      =
+           </tbody>                </table>                </td>           =
+    </tr>               <!--[if !mso]><!-->               <tr>             =
+   <td style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exa=
+ctly; height: 4px;" valign=3D"top"> </td>               </tr>              =
+ <!--<![endif]--><!--[if lte mso 15]>                        <tr>          =
+              <td valign=3D"top" style=3D"line-height: 1px; font-size: 1px;=
+ mso-line-height-rule: exactly; height: 3px;">&#xA0;</td>                  =
+      </tr>                        <![endif]--><!--[if gt mso 15]>         =
+                <tr>                        <td valign=3D"top" style=3D"lin=
+e-height: 1px; font-size: 1px; mso-line-height-rule: exactly; height: 4px;"=
+>&#xA0;</td>                        </tr>                       <![endif]--=
+><!--[if !mso]><!-->               <tr>                <td align=3D"center"=
+ style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; c=
+olor:#000000; font-weight: bold; mso-line-height-rule: exactly; line-height=
+: 127%; text-align:center; font-size: 12px; letter-spacing:0" valign=3D"top=
+" width=3D"184">Darjeeling and Sikkim<br />                are a welcome di=
+stance<br />                away from this travel hub.</td>               <=
+/tr>               <!--<![endif]--><!--[if gte mso 9]>                     =
+   <tr>                        <td valign=3D"top" align=3D"center" width=3D=
+"184" style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-ser=
+if; color:#000000; font-weight: bold; mso-line-height-rule: exactly; line-h=
+eight: 110%; text-align:center; font-size: 12px; letter-spacing:0">        =
+                Darjeeling and Sikkim<br />are a welcome distance<br />away=
+ from this travel hub.                        </td>                        =
+</tr>                       <![endif]-->              </tbody>             =
+</table>             </td>             <td align=3D"center" valign=3D"top" =
+width=3D"193">             <table align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" style=3D"width:184px;text-align:center" valign=3D"top">        =
+      <tbody><!--[if !mso]><!-->               <tr>                <td alig=
+n=3D"center" style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, s=
+ans-serif; color:#ef0013; font-weight: bold; mso-line-height-rule: exactly;=
+ line-height: 100%; text-align:center; font-size: 17px; letter-spacing:0" v=
+align=3D"top" width=3D"184">VARANASI</td>               </tr>              =
+ <!--<![endif]--><!--[if lte mso 15]>                        <tr>          =
+              <td valign=3D"top" align=3D"center" width=3D"184" style=3D"ma=
+rgin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; color:#ef0013=
+; font-weight: bold; mso-line-height-rule: exactly; line-height: 95%; text-=
+align:center; font-size: 17px; letter-spacing:0">                        VA=
+RANASI                        </td>                        </tr>           =
+             <![endif]--><!--[if gt mso 15]>                         <tr>  =
+                      <td valign=3D"top" align=3D"center" width=3D"184" sty=
+le=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; color=
+:#f50000; font-weight: bold; mso-line-height-rule: exactly; line-height: 10=
+0%; text-align:center; font-size: 17px; letter-spacing:0">                 =
+       VARANASI                        </td>                        </tr>  =
+                     <![endif]-->               <tr>                <td ali=
+gn=3D"center" width=3D"184">                <table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:62px; margin:0; b=
+order:0; padding:0">                 <tbody><!--[if !mso]><!-->            =
+      <tr>                   <td style=3D"line-height: 1px; font-size: 1px;=
+ mso-line-height-rule: exactly; border-bottom:3px solid #f50000; height:4px=
+" width=3D"62"> </td>                  </tr>                  <!--<![endif]=
+--><!--[if lte mso 15]>                            <tr>                    =
+        <td width=3D"62" style=3D"line-height: 1px; font-size: 1px; mso-lin=
+e-height-rule: exactly; border-bottom:3px solid #f50000; height:2px"> </td>=
+                            </tr>                            <![endif]--><!=
+--[if gt mso 15]>                             <tr>                         =
+   <td width=3D"62" style=3D"line-height: 1px; font-size: 1px; mso-line-hei=
+ght-rule: exactly; border-bottom:3px solid #f50000; height:4px"> </td>     =
+                       </tr>                           <![endif]-->        =
+         </tbody>                </table>                </td>             =
+  </tr>               <!--[if !mso]><!-->               <tr>               =
+ <td style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exact=
+ly; height: 4px;" valign=3D"top"> </td>               </tr>               <=
+!--<![endif]--><!--[if lte mso 15]>                        <tr>            =
+            <td valign=3D"top" style=3D"line-height: 1px; font-size: 1px; m=
+so-line-height-rule: exactly; height: 3px;">&#xA0;</td>                    =
+    </tr>                        <![endif]--><!--[if gt mso 15]>           =
+              <tr>                        <td valign=3D"top" style=3D"line-=
+height: 1px; font-size: 1px; mso-line-height-rule: exactly; height: 4px;">&=
+#xA0;</td>                        </tr>                       <![endif]--><=
+!--[if !mso]><!-->               <tr>                <td align=3D"center" s=
+tyle=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; col=
+or:#000000; font-weight: bold; mso-line-height-rule: exactly; line-height: =
+127%; text-align:center; font-size: 12px; letter-spacing:0" valign=3D"top" =
+width=3D"184">Where the river of<br />                spirituality flows th=
+rough<br />                the heart of tradition.</td>               </tr>=
+               <!--<![endif]--><!--[if gte mso 9]>                        <=
+tr>                        <td valign=3D"top" align=3D"center" width=3D"184=
+" style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-serif; =
+color:#000000; font-weight: bold; mso-line-height-rule: exactly; line-heigh=
+t: 110%; text-align:center; font-size: 12px; letter-spacing:0">            =
+            Where the river of<br />spirituality flows through<br />the hea=
+rt of tradition.                        </td>                        </tr> =
+                      <![endif]-->              </tbody>             </tabl=
+e>             </td>             <td align=3D"center" valign=3D"top" width=
+=3D"194">             <table align=3D"center" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:184px;text-align:center" valign=3D"top">             =
+ <tbody><!--[if !mso]><!-->               <tr>                <td align=3D"=
+center" style=3D"margin:0; padding:0; font-family:Gotham, Helvetica, sans-s=
+erif; color:#ef0013; font-weight: bold; mso-line-height-rule: exactly; line=
+-height: 100%; text-align:center; font-size: 17px; letter-spacing:0" valign=
+=3D"top" width=3D"184">PUNE</td>               </tr>               <!--<![e=
+ndif]--><!--[if lte mso 15]>                        <tr>                   =
+     <td valign=3D"top" align=3D"center" width=3D"184" style=3D"margin:0; p=
+adding:0; font-family:Gotham, Helvetica, sans-serif; color:#ef0013; font-we=
+ight: bold; mso-line-height-rule: exactly; line-height: 95%; text-align:cen=
+ter; font-size: 17px; letter-spacing:0">                        PUNE       =
+                 </td>                        </tr>                        =
+<![endif]--><!--[if gt mso 15]>                         <tr>               =
+         <td valign=3D"top" align=3D"center" width=3D"184" style=3D"margin:=
+0; padding:0; font-family:Gotham, Helvetica, sans-serif; color:#f50000; fon=
+t-weight: bold; mso-line-height-rule: exactly; line-height: 100%; text-alig=
+n:center; font-size: 17px; letter-spacing:0">                        PUNE  =
+                      </td>                        </tr>                   =
+    <![endif]-->               <tr>                <td align=3D"center" wid=
+th=3D"184">                <table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"width:62px; margin:0; border:0; padding:0=
+">                 <tbody><!--[if !mso]><!-->                  <tr>        =
+           <td style=3D"line-height: 1px; font-size: 1px; mso-line-height-r=
+ule: exactly; border-bottom:3px solid #f50000; height:4px" width=3D"62"> </=
+td>                  </tr>                  <!--<![endif]--><!--[if lte mso=
+ 15]>                            <tr>                            <td width=
+=3D"62" style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: ex=
+actly; border-bottom:3px solid #f50000; height:2px"> </td>                 =
+           </tr>                            <![endif]--><!--[if gt mso 15]>=
+                             <tr>                            <td width=3D"6=
+2" style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exactly=
+; border-bottom:3px solid #f50000; height:4px"> </td>                      =
+      </tr>                           <![endif]-->                 </tbody>=
+                </table>                </td>               </tr>          =
+     <!--[if !mso]><!-->               <tr>                <td style=3D"lin=
+e-height: 1px; font-size: 1px; mso-line-height-rule: exactly; height: 4px;"=
+ valign=3D"top"> </td>               </tr>               <!--<![endif]--><!=
+--[if lte mso 15]>                        <tr>                        <td v=
+align=3D"top" style=3D"line-height: 1px; font-size: 1px; mso-line-height-ru=
+le: exactly; height: 3px;">&#xA0;</td>                        </tr>        =
+                <![endif]--><!--[if gt mso 15]>                         <tr=
+>                        <td valign=3D"top" style=3D"line-height: 1px; font=
+-size: 1px; mso-line-height-rule: exactly; height: 4px;">&#xA0;</td>       =
+                 </tr>                       <![endif]--><!--[if !mso]><!--=
+>               <tr>                <td align=3D"center" style=3D"margin:0;=
+ padding:0; font-family:Gotham, Helvetica, sans-serif; color:#000000; font-=
+weight: bold; mso-line-height-rule: exactly; line-height: 127%; text-align:=
+center; font-size: 12px; letter-spacing:0" valign=3D"top" width=3D"184">The=
+ city of Peshwas,<br />                Pune wears its rich heritage<br />  =
+              with pride.</td>               </tr>               <!--<![end=
+if]--><!--[if gte mso 9]>                        <tr>                      =
+  <td valign=3D"top" align=3D"center" width=3D"184" style=3D"margin:0; padd=
+ing:0; font-family:Gotham, Helvetica, sans-serif; color:#000000; font-weigh=
+t: bold; mso-line-height-rule: exactly; line-height: 110%; text-align:cente=
+r; font-size: 12px; letter-spacing:0">                        The city of P=
+eshwas,<br />Pune wears its rich heritage<br />with pride.                 =
+       </td>                        </tr>                       <![endif]--=
+>              </tbody>             </table>             </td>            <=
+/tr>            <!--[if !mso]><!-->            <tr>             <td colspan=
+=3D"3" style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exa=
+ctly; height: 7px;"> </td>            </tr>            <!--<![endif]--><!--=
+[if lte mso 15]>                    <tr>                    <td colspan=3D"=
+3" style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exactly=
+; height: 5px;">&#xA0;</td>                    </tr>                    <![=
+endif]--><!--[if gt mso 15]>                     <tr>                    <t=
+d colspan=3D"3" style=3D"line-height: 1px; font-size: 1px; mso-line-height-=
+rule: exactly; height: 7px;">&#xA0;</td>                    </tr>          =
+         <![endif]-->            <tr>             <td align=3D"center" vali=
+gn=3D"top" width=3D"194">             <table align=3D"center" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" width=3D"100">              <tbody>    =
+           <tr>                <td align=3D"center" style=3D"background-col=
+or: #ed1c24; padding-top: 8px; padding-bottom: 8px; border-radius: 20px; wi=
+dth:100px; line-height:100%" valign=3D"middle"><a href=3D"https://u34557702=
+.ct.sendgrid.net/ls/click?upn=3D5SjtgPrxLiMD-2F7ijF3Td4uTgbnXMh1j0vbzF4YB-2=
+BkI52ULUCxnJB-2Fp9SbaKVGRAf4aK6piFSHK2hG2OXLp7fDfQHOg-2FEgv88AUsrGOOb8wsA4r=
+j8jFy6ftVRjqG-2BqLucCr-2ByaLRsgH6okd2kqiCqUmUVv-2B6UTY3FNa-2BRZMQemxq517NET=
+4nmgOfa-2FE6IfYx68LNLIVVzzxgMTkB4ZtkD36q0loGOVK0rcqmbhxQPg55lk5JyDioRJUtVs4=
+BCbdnubT9ac4WJ4ywUzUqyB8RjT8MqOvh3xsTqwWVhSfOyZqR-2BgPKRiKfxSQe-2BIefzFqSGC=
+wbJlBgxH1GGrqIT2PX8X06ZEgK4whY5jJLnI-2BUiZv1hlU-2FZqixLA4T5nOB-2BPxqdI9r6VL=
+lC0w7PzUcnAl4TclsgP5p-2B7sYbeTD-2BgN7tm-2FeSzO4nxKyUSP4gszHmTOdzb-2F3VshweL=
+8ZPwVP12pnrHDzdJw1tsVWgwLl3VKWnqZlgv-2Bpu7VK1u2F6kRGnPneQwuUesd9eiJqjR0IRqV=
+NVHngzjw5HJy8wj0BrSQDgQYVS8hW78PW44-2Ff2ahZAoNPTGcafek7FF-2FQJhZIOtRwBwg-3D=
+-3Dt3-1_ijSW8RkM-2FIXMlaqj-2FEdh9p8v0SOSA-2FyUc2EIoBfGmbaA1NAX1U-2FJe3q5VVh=
+XCcX93uaKx6BAaTwLDc34sY3YXjzUulE5UHW1uoZfOJMQrO38OXQtYbS-2Bn1mgtGHfBraFQBcK=
+2xNF8-2FFQf3ZK2Zxsuly5bvDDi1SqtCBD0aBkAXTWHUy0kUQk9n00F5Gx6q6aUpeOV5IGdJOES=
+30aWF9WICc6nu-2F18RJu-2Bc4-2BYsm134953z66mfgoqcvrwuCsVyK6HB9vBOkGFRkh0cXPGh=
+gnZ6kROk-2BzmwZGqcrzTLBqYnTXNDdS-2FeIDIXd8Hv9WY3rkLEX7FK8WmPMDA96G1HMaX2VRx=
+HU6Ar2EXFTK6oobG-2B5ZY3hipBvHtkqgD6RNJ8z8lFWzpflGp-2Ff0UMn55rvW5S7Kesea3UFc=
+XH4D8NJ3lIm4QR-2BgCqaHXe4-2BIHa-2BSsTfvhTG6aW5J6KgV9PBcstX5oq-2FszjuDvfWcjl=
+kaZiY5ws-3D" style=3D"color: #ffffff; display: block; font-size: 12px; font=
+-weight: bold; text-align: center; text-decoration: none; font-family:Gotha=
+m, Helvetica, sans-serif; line-height:100%; mso-line-height-rule:exactly; b=
+ackground-color:#ed1c24; border-radius: 30px;">BOOK NOW</a></td>           =
+    </tr>              </tbody>             </table>             </td>     =
+        <td align=3D"center" valign=3D"top" width=3D"193">             <tab=
+le align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100">              <tbody>               <tr>                <td align=
+=3D"center" style=3D"background-color: #ed1c24; padding-top: 8px; padding-b=
+ottom: 8px; border-radius: 20px; width:100px; line-height:100%" valign=3D"m=
+iddle"><a href=3D"https://u34557702.ct.sendgrid.net/ls/click?upn=3D5SjtgPrx=
+LiMD-2F7ijF3Td4uTgbnXMh1j0vbzF4YB-2BkI52ULUCxnJB-2Fp9SbaKVGRAf4aK6piFSHK2hG=
+2OXLp7fDfQHOg-2FEgv88AUsrGOOb8wsA4rj8jFy6ftVRjqG-2BqLucCr-2ByaLRsgH6okd2kqi=
+CqUmUVv-2B6UTY3FNa-2BRZMQemxq517NET4nmgOfa-2FE6IfYx68LNLIVVzzxgMTkB4ZtkD36q=
+0loGOVK0rcqmbhxQPg55lk5JyDioRJUtVs4BCbdnubT9ac4WJ4ywUzUqyB8RjT8MqOvh3xsTqwW=
+VhSfOyZqR-2BgPKRiKfxSQe-2BIefzFqSGCwbJlBgxH1GGrqIT2PX8X06ZEgK4whY5jJLnI-2BU=
+iZv1hlU-2FZqixLA4T5nOB-2BPxqdI9r6VLlC0w7PzUcnAl4TclsgP5p-2B7sYbeTD-2BgN7tm-=
+2FeSzO4nxKyUSP4gszHmTOdzb-2F3VshweL8ZPwVP12pnrHLyQbFR-2FJSFMuD0d-2F-2BUqZmx=
+Y2NVbI5qlDycxL4oFnfpl17uLaKbSNRjf7XE5gyHmMxrcks45cmhTBCa6ys7L2StbDyeDXtnuE6=
+PJhBGaXjLVl7BsIHgevYAAGunhvyw-2Fww-3D-3D6I-o_ijSW8RkM-2FIXMlaqj-2FEdh9p8v0S=
+OSA-2FyUc2EIoBfGmbaA1NAX1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34sY3YXjzUulE5UHW1u=
+oZfOJMQrO38OXQtYbS-2Bn1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2Zxsuly5bvDDi1SqtCBD0aBk=
+AXTWHUy0kUQk9n00F5Gx6q6aUpeOV5IGdJOES30aWF9WICc6nu-2F18RJu-2Bc4-2BYsm134953=
+z66mfgoqcvrwuCsVyK6HB9vBOkGFRkh0cXPGhgnZ6kROk-2BzmwZGqcrzTLBqYnQTL15kkJJ82i=
+o6XZvMqrJx-2Fn-2FdaQN5eSW0LJ-2FXqgAwgJMK0ZmPJqxsJinjPuNy7SxZezm-2BJWFnmqGFs=
+8IVYQy6mEFtjwWL-2F38c4pa70uOFsGiGNn9aMz9Aty57DlTGymGFNBCbGcPH2i-2BoDL9E43Ki=
+96tN1SDvhkXl11i7BD-2FjFsOIn67-2FRdWu9ESBfcrUIzU-3D" style=3D"color: #ffffff=
+; display: block; font-size: 12px; font-weight: bold; text-align: center; t=
+ext-decoration: none; font-family:Gotham, Helvetica, sans-serif; line-heigh=
+t:100%; mso-line-height-rule:exactly; background-color:#ed1c24; border-radi=
+us: 30px;">BOOK NOW</a></td>               </tr>              </tbody>     =
+        </table>             </td>             <td align=3D"center" valign=
+=3D"top" width=3D"194">             <table align=3D"center" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" width=3D"100">              <tbody>      =
+         <tr>                <td align=3D"center" style=3D"background-color=
+: #ed1c24; padding-top: 8px; padding-bottom: 8px; border-radius: 20px; widt=
+h:100px; line-height:100%" valign=3D"middle"><a href=3D"https://u34557702.c=
+t.sendgrid.net/ls/click?upn=3D5SjtgPrxLiMD-2F7ijF3Td4uTgbnXMh1j0vbzF4YB-2Bk=
+I52ULUCxnJB-2Fp9SbaKVGRAf4aK6piFSHK2hG2OXLp7fDfQHOg-2FEgv88AUsrGOOb8wsA4rj8=
+jFy6ftVRjqG-2BqLucCr-2ByaLRsgH6okd2kqiCqUmUVv-2B6UTY3FNa-2BRZMQemxq517NET4n=
+mgOfa-2FE6IfYx68LNLIVVzzxgMTkB4ZtkD36q0loGOVK0rcqmbhxQPg55lk5JyDioRJUtVs4BC=
+bdnubT9ac4WJ4ywUzUqyB8RjT8MqOvh3xsTqwWVhSfOyZqR-2BgPKRiKfxSQe-2BIefzFqSGCwb=
+JlBgxH1GGrqIT2PX8X06ZEgK4whY5jJLnI-2BUiZv1hlU-2FZqixLA4T5nOB-2BPxqdI9r6VLlC=
+0w7PzUcnAl4TclsgP5p-2B7sYbeTD-2BgN7tm-2FeSzO4nxKyUSP4gszHmTOdzb-2F3VshweL8Z=
+PwVP12pnrHK95BxbNfEvgTQAeFu4nyk7QCv1E-2Ffte2tJwp23vLpTPAhKkzkuqLfj5aQnlKuR4=
+m6Ph39VVj5Q1Y7WuNs72AECZar7Q7FvFe0Fl5YQgO0sqbzpNrh5b5tTFRa-2FcHo6mbg-3D-3DS=
+S3g_ijSW8RkM-2FIXMlaqj-2FEdh9p8v0SOSA-2FyUc2EIoBfGmbaA1NAX1U-2FJe3q5VVhXCcX=
+93uaKx6BAaTwLDc34sY3YXjzUulE5UHW1uoZfOJMQrO38OXQtYbS-2Bn1mgtGHfBraFQBcK2xNF=
+8-2FFQf3ZK2Zxsuly5bvDDi1SqtCBD0aBkAXTWHUy0kUQk9n00F5Gx6q6aUpeOV5IGdJOES30aW=
+F9WICc6nu-2F18RJu-2Bc4-2BYsm134953z66mfgoqcvrwuCsVyK6HB9vBOkGFRkh0cXPGhgnZ6=
+kROk-2BzmwZGqcrzTLBqYnTk8QiGfGcuhHPbQVhOZf1S0IH5OOFUJahdKX8vHcouoWje5Ws4liV=
+LFKx-2FdHsWhqe4Aaxe-2ByI1PpaL3rAQwkNSqlUcxkAiL0FTqKnqZhNLMP7LpMonrUSvg0SMWz=
+cZUmMPx-2BPeSCKrjA2ft-2BXUBSXZYPmt8qCOFUh1rq9m1zuYd7gq6YiC31Z-2FJ9BuNS5cyzE=
+-3D" style=3D"color: #ffffff; display: block; font-size: 12px; font-weight:=
+ bold; text-align: center; text-decoration: none; font-family:Gotham, Helve=
+tica, sans-serif; line-height:100%; mso-line-height-rule:exactly; backgroun=
+d-color:#ed1c24; border-radius: 30px;">BOOK NOW</a></td>               </tr=
+>              </tbody>             </table>             </td>            <=
+/tr>            <tr>             <td colspan=3D"3" style=3D"line-height: 1p=
+x; font-size: 1px; mso-line-height-rule: exactly; height: 14px;"> </td>    =
+        </tr>           </tbody>          </table>          </td>         <=
+/tr>         <tr>          <td height=3D"18" style=3D"line-height: 1px; fon=
+t-size: 1px; mso-line-height-rule: exactly; height: 18px;"> </td>         <=
+/tr>        </tbody>       </table>       </td>      </tr>      <tr>       =
+<td align=3D"center" style=3D"background-color:#ed1b24" valign=3D"top" widt=
+h=3D"600">       <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0=
+" style=3D"width:580px;text-align:center; background-color:#ed1b24; border-=
+radius: 10px" width=3D"580">        <tbody>         <tr>          <td align=
+=3D"center" style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule=
+: exactly; height: 5px;"> </td>         </tr>         <tr>          <td ali=
+gn=3D"center" style=3D"font-family:Gotham, Helvetica, sans-serif;color:#fff=
+fff;font-weight: normal; mso-line-height-rule: exactly;line-height: 100%;te=
+xt-align:center;font-size: 18px; letter-spacing:0px; padding-top:8px; paddi=
+ng-bottom:8px;background-color:#ed1b24;border-radius: 20px" valign=3D"top">=
+<a href=3D"https://u34557702.ct.sendgrid.net/ls/click?upn=3D5SjtgPrxLiMD-2F=
+7ijF3Td4uTgbnXMh1j0vbzF4YB-2BkI52ULUCxnJB-2Fp9SbaKVGRAf4aK6piFSHK2hG2OXLp7f=
+DfQHOg-2FEgv88AUsrGOOb8wsA4rj8jFy6ftVRjqG-2BqLucCr-2ByaLRsgH6okd2kqiCqUmUVv=
+-2B6UTY3FNa-2BRZMQemxq517NET4nmgOfa-2FE6IfYx68LNLIVVzzxgMTkB4ZtkD36q0loGOVK=
+0rcqmbhxQPg55lk5JyDioRJUtVs4BCbdnubT9ac4WJ4ywUzUqyB8RjT8MqOvh3xsTqwWVhSfOyZ=
+qR-2BgPKRiKfxSQe-2BIefzFqSGCwbJlBgxH1GGrqIT2PX8X06ZEgK4whY5jJLnI-2BUiZv2prw=
+3g8kxRaVPlxh5GT4VrBMicq6ewEdUvi8RR1ALmbVpwzxq1MU-2FL3pZ1YWaUE-2FLYkZbnn9lOV=
+vHfiVb9nCi8vw9b0VUdHEWabKnH1zKDmFzTW0S6ZyADdaHGo9O7lbs-3DOkNm_ijSW8RkM-2FIX=
+Mlaqj-2FEdh9p8v0SOSA-2FyUc2EIoBfGmbaA1NAX1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34=
+sY3YXjzUulE5UHW1uoZfOJMQrO38OXQtYbS-2Bn1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2Zxsuly=
+5bvDDi1SqtCBD0aBkAXTWHUy0kUQk9n00F5Gx6q6aUpeOV5IGdJOES30aWF9WICc6nu-2F18RJu=
+-2Bc4-2BYsm134953z66mfgoqcvrwuCsVyK6HB9vBOkGFRkh0cXPGhgnZ6kROk-2BzmwZGqcrzT=
+LBqYnQOpygdNCPf-2F9Vnz-2BEgu67XyAfSh94LH08bPcvY3UbUv5gjw96LxOSuY7OgoZmGwJXI=
+ucizSHxsJBmo82uyBlWYyWpZja1JEOM7cF55hSsZfN2VTDkkHmtiyDfxfb-2Bz5EjkHcmc8Agdx=
+aQ3SZCAY62l1cDokOQrBjHikTqrCBvbKM8mciMstyx9fL71uFcC1CU-3D" style=3D"color:#=
+ffffff; background-color:#ed1b24; line-height:99%;font-weight:bold;text-dec=
+oration:none;">www.spicejet.com</a> | <a href=3D"tel:+911244983410" style=
+=3D"color:#ffffff; background-color:#ed1b24; line-height:99%; font-weight:b=
+old; text-decoration:none;">+91-124-4983410.</a></td>         </tr>        =
+ <tr>          <td align=3D"center" style=3D"line-height: 1px; font-size: 1=
+px; mso-line-height-rule: exactly; height: 5px;"> </td>         </tr>      =
+  </tbody>       </table>       </td>      </tr>      <tr>       <td align=
+=3D"center" style=3D"background-color:#ed1b24" width=3D"600">       <table =
+align=3D"center" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:600px; =
+background-color:#ed1b24;">        <tbody>         <tr>          <td align=
+=3D"center" width=3D"600">          <table align=3D"center" cellpadding=3D"=
+0" cellspacing=3D"0" style=3D"width: 590px; background-color:#ed1b24">     =
+      <tbody>            <tr>             <td height=3D"10" style=3D"line-h=
+eight: 1px; font-size: 1px; mso-line-height-rule: exactly; height: 10px;"> =
+</td>            </tr>            <tr>             <td style=3D"width:590px=
+;margin:0; padding:0;font-family:Arial, Helvetica, sans-serif;color:#ffffff=
+;font-weight: normal; mso-line-height-rule: exactly;line-height: 146%;text-=
+align:center; font-size: 11px;letter-spacing:0px;background-color:#ec1c24;"=
+>Copyright@2023 SpiceJet. All rights reserved. *T&C Apply. To be sure that =
+you receive<br />             our e-mail in your inbox, please add SpiceJet=
+ to your address book.</td>            </tr>            <tr>             <t=
+d height=3D"15" style=3D"line-height: 1px; font-size: 1px; mso-line-height-=
+rule: exactly; height: 15px;"> </td>            </tr>           </tbody>   =
+       </table>          </td>         </tr>         <tr>          <td styl=
+e=3D"width:600px;margin:0; font-family:Arial, Helvetica, sans-serif;color:#=
+808285;font-weight: bold; mso-line-height-rule: exactly;line-height: 100%;t=
+ext-align:center; font-size: 11px;letter-spacing:0px;padding-top:10px;paddi=
+ng-bottom:10px; background-color:#ffffff"><a data-track=3D"off" href=3D"htt=
+ps://u34557702.ct.sendgrid.net/wf/unsubscribe?upn=3DrWYU-2B0i-2B0Qcz8HINw-2=
+Ff3NK-2FUlPkrdthebD6Und9AwA-2BH1FOefmsC4Jsv31W1m6cG6ZZtK3EzI-2B5uGWKZR2r79F=
+ClRsal9-2BKRixfRsANcmH1rFrqQHRYqrZnAc6PYFO3FIuFXmeQev3wG3IiKV4XRhHN2LeGgOnT=
+e61jnzsz-2Fk3tt0-2BQOFp1ilqrXyXURzvdl84axh9Sb8Jzi15tZs2oRCZAFO4bVVCAg9CJScR=
+HTLTcYqVgYPw6M4jmLetru0Pr7Ns15WZ8G9B6yNOyDz8eUu35s5ObopHdJeXxtD4JHyGQdH3wHL=
+4WoYP0PKiuZLGQ4Sjt5xUoqJHWnuER88x5Se94SpUhA7DLFPKkEaB2PGkJqAoO-2FR6geM7ETt5=
+xPU5qy-2FXLm-2B1DlsA8EDUJx-2F5j4F1XommnsqqfK1YX7IpuSDcDyunEO6UNRJN7L-2Fe2Qd=
+R-2FWtjfPzDNJWsKIZlIBMhIyhPU-2BBdFPjSR-2BazxL86W4Yp8-3D">Unsubscribe</a></t=
+d>         </tr>        </tbody>       </table>       </td>      </tr>     =
+</tbody>    </table>    </center>    </td>   </tr>  </tbody> </table> </cen=
+ter> <grammarly-desktop-integration data-grammarly-shadow-root=3D"true"></g=
+rammarly-desktop-integration><img src=3D"https://u34557702.ct.sendgrid.net/=
+wf/open?upn=3DrWYU-2B0i-2B0Qcz8HINw-2Ff3NK-2FUlPkrdthebD6Und9AwA-2BH1FOefms=
+C4Jsv31W1m6cG6ZZtK3EzI-2B5uGWKZR2r79FClRsal9-2BKRixfRsANcmH1rFrqQHRYqrZnAc6=
+PYFO3FIuFXmeQev3wG3IiKV4XRhHN2LeGgOnTe61jnzsz-2Fk3tt0-2BQOFp1ilqrXyXURzvdl8=
+4axh9Sb8Jzi15tZs2oRCZAFO4bVVCAg9CJScRHTLTcYqVgYPw6M4jmLetru0Pr7Ns15WZ8G9B6y=
+NOyDz8eUu35s5ObopHdJeXxtD4JHyGT8y8vMlW7z4dJ9k7NffoIm-2Fk80b-2Fsj39gPxoxSeVZ=
+8XN-2BNi8YqCzegOdXRrZ-2BuW0TnOGjcEyozRPxTEbyjLLrAB9T-2B2VBWzHUbnmhiPGX0Wuso=
+djHkxTTKTRjo50XXSj85cIHH3uo15c44ArWHHGXA9CilEnE9wn1QaU6l1-2B-2B080FkWYRFIVD=
+m-2F2RC8G76Kx4-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"=
+height:1px !important;width:1px !important;border-width:0 !important;margin=
+-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;marg=
+in-left:0 !important;padding-top:0 !important;padding-bottom:0 !important;p=
+adding-right:0 !important;padding-left:0 !important;"/></body> </html> </!d=
+octype><img  alt=3D"" border=3D"0" height=3D"1" width=3D"1" src=3D"https://=
+in1.wizrocketmail.net/r?e=3DKw0Ach8JBWZ6bWp9DSZjfAYICA1jYyw1KS0sNUwBBgBvY2t=
+%2FbiYSC0FVQkc%2BNTwUNDU9IFtVcXQray4uIT88P05%2BXkA%2BPDsoNi47JFwQZ10yLTcvKy=
+FwPEhCWms%2BPnBxdWtkcgQIAwNmb2sUZWpgeAMAAQ11dnA8LSg5FEJZR1sjeGhpICAgIG1UVFI=
+2Lz4%2FdSc%3D&c=3D695233280"></img>

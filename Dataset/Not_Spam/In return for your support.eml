@@ -1,0 +1,1470 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:8691:b0:4fd:23d3:a27 with SMTP id e17csp566926pxn;
+        Sat, 21 Oct 2023 18:30:17 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEKaDo/dW9JJQhGpFL749W51TWJoSnD9Cxbr+a3f9Xt+BcteRv74nxFziTIAve4g/aUoIjN
+X-Received: by 2002:a05:622a:60c:b0:41c:dc6c:c86f with SMTP id z12-20020a05622a060c00b0041cdc6cc86fmr6194446qta.47.1697938216730;
+        Sat, 21 Oct 2023 18:30:16 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697938216; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ydZIODjwLzTZvphyoS1eGjFQ5iPnZsNWYZZwg093JJ2vjZ/2T8UkHfEW87I98JXREl
+         vE6LqIfFTDWKIZ7CmxB11BEhk5BKLO7GV+C1CaCT5WpcMcN/3rMRscAK0SXYcS1PBJ03
+         J9+nbSfH8Xq9/+8Gno/7ZCL48z27kS6/xrNKPEtEbGvAPXhO5/w9V2+fSo5TuoWzSr/0
+         yVRNKa3yd7/C33Qie1gsssN8iFAaWbWnf1pYQbyEMTYU+vwFIVctyT3dEDXgW/vv/VyK
+         +5nCatSscm1lY2QQqn4Zjv2MTI9/9YSr8DNtdSFDvB5z+z8b/u2SbxmQ3vkRiy/3a8N/
+         46uw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:subject:message-id:to:from:date:sender:dkim-signature
+         :dkim-signature;
+        bh=8krBzESIEMjZ/6ljvZYjGCVmjuL/dnq35EBxNqK252M=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=WsndnXUxN90jRb2/45bdJ13E11ds+0Up2FUkiX6w+KhG+HPJ8rIsAGSuVWOPL35Ncs
+         9gC2mqyFSFkZDlxVa1Q0wAg/chorTWyX7byN6EuOg+6TP+zC4BiG9CNx465YA+j0zETi
+         tiMdX4Ezxn5y1XoO7KOIafz4G1p7CoHaMsPKNy7GzleYaCKXXRjDut1UESkx5B6oYmos
+         JVbYhYrqAUdqkoR9cIXsT2K2vyuBXJVfg1KmrwISRcpZh9YaauxP/uTv28N4ncg4WQ4E
+         dSD16XBF1y7+8Z1U+AClR8WTZ3A0ztnx25R44D7Qrox2no+YcmGMCA0umgt8rqwx6T2D
+         4EOA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@market.temuemail.com header.s=ka header.b=MUMOzHJR;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=TNbyXUtl;
+       spf=pass (google.com: domain of bounce+760bfb.3556c3-srijani515=gmail.com@market.temuemail.com designates 159.112.250.102 as permitted sender) smtp.mailfrom="bounce+760bfb.3556c3-srijani515=gmail.com@market.temuemail.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=market.temuemail.com
+Return-Path: <bounce+760bfb.3556c3-srijani515=gmail.com@market.temuemail.com>
+Received: from m250-102.rdns-1.mailgun.net (m250-102.rdns-1.mailgun.net. [159.112.250.102])
+        by mx.google.com with UTF8SMTPS id d9-20020ac85ac9000000b00403f3141703si3667775qtd.619.2023.10.21.18.30.16
+        for <srijani515@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 21 Oct 2023 18:30:16 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce+760bfb.3556c3-srijani515=gmail.com@market.temuemail.com designates 159.112.250.102 as permitted sender) client-ip=159.112.250.102;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@market.temuemail.com header.s=ka header.b=MUMOzHJR;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=TNbyXUtl;
+       spf=pass (google.com: domain of bounce+760bfb.3556c3-srijani515=gmail.com@market.temuemail.com designates 159.112.250.102 as permitted sender) smtp.mailfrom="bounce+760bfb.3556c3-srijani515=gmail.com@market.temuemail.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=market.temuemail.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=market.temuemail.com;
+ q=dns/txt; s=ka; t=1697938216; x=1697945416; h=X-Feedback-Id: Content-Type:
+ MIME-Version: Subject: Subject: Message-ID: To: To: From: From: Date: Sender:
+ Sender: X-Feedback-Id; bh=8krBzESIEMjZ/6ljvZYjGCVmjuL/dnq35EBxNqK252M=;
+ b=MUMOzHJRvCtEnP3FCslsYq0kWN4WTVqYDUpseLr7MkEHZgR7ouxNofyxDXw7RALN41ldABYF958RxHZTlKSgOgPPzPsl/omlqrLGSkb2uFNCgcFJ+1ofdc6FLAuhs8Y1XDrVbC3PCYfHMpkBz3YgqEIO679W1jlEGmYCu+rOY8c=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org;
+ q=dns/txt; s=mg; t=1697938216; x=1697945416; h=X-Feedback-Id: Content-Type:
+ MIME-Version: Subject: Subject: Message-ID: To: To: From: From: Date: Sender:
+ Sender: X-Feedback-Id; bh=8krBzESIEMjZ/6ljvZYjGCVmjuL/dnq35EBxNqK252M=;
+ b=TNbyXUtlJwNI8NKkXY8y5SF5adMueV8CGKFLZiFKgXJegWzTauL+fs7VUM4Nomq7d1mkCMTjNKNntobCrZW/+B8bQ6O+4dqjxPZyP82GYfsV4E7sxdBeImSeucXbOKusj1B0aZE93ubJX8BhCdet+8Y4q1m+5W3o+GbSsUlSuuI=
+X-Feedback-Id: email@market.temuemail.com::63f57aa6f6c7c40c42ac82fd:mailgun
+X-Mailgun-Sending-Ip: 159.112.250.102
+X-Mailgun-Sid: WyI3NjA3MyIsInNyaWphbmk1MTVAZ21haWwuY29tIiwiMzU1NmMzIl0=
+Received: from bg-doha-consumer-59mcj (<unknown> [20.119.76.169]) by 7cc2480908e5 with
+ SMTP id 65347b285bd78af66cebdb09 (version=TLS1.2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Sun, 22 Oct 2023 01:30:16 GMT
+Sender: email@market.temuemail.com
+Date: Sun, 22 Oct 2023 01:30:16 +0000 (UTC)
+From: Temu <email@market.temuemail.com>
+To: srijani515@gmail.com
+Message-ID: <1208850426.12692759.1697938216292@bg-doha-consumer-59mcj>
+Subject: In return for your support
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_12692757_1216508588.1697938216292"
+X-Feedback-Id: bg_msg_mail@temu.com::57a4ec89ea8e43169cd67f8dedef97b4:mailgun
+X-Mailgun-Variables: {"my-var":"{\"route_id\":\"CgI2WRIIeTFVanhvUlQaIF9hO27O2xibCCZg9uKsmZqaZzT4xkID6tLDyXcRUoVLMAI=\",\"mail_gun_sign_id\":\"mail_gun_046536d0-9d67-4901-aef5-42ee1a53bd48\",\"mail_gun_sign\":\"0A023659120830426443317854331A40D4782508B029A20866C643A5D93875313BAEF61212063B7C1D06147AFAD4E5E4D5988E3EECFD84934F781195D5B52D925084DBA7E2071B48DBDE3CC00EA93EFD3002\",\"msg_id\":\"12-20231022-09-B-658119080990384128-449-5YBwV4vH\"}"}
+
+------=_Part_12692757_1216508588.1697938216292
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_12692756_2121714172.1697938216292"
+
+------=_Part_12692756_2121714172.1697938216292
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+-----------------------------------------------------------------------
+Temu
+-----------------------------------------------------------------------
+
+To properly view the full message content, please open this email in a high=
+ version mail client or browser.
+
+Visit this website to see our recommended products: https://app.temu.com/mb=
+s_landing_goods.html?_bg_fs=3D1&_x_cid=3Dtextmail&_p_landing=3D1&_x_src=3Dm=
+ail&msgid=3D12-20231022-09-B-658119080990384128-449-5YBwV4vH
+
+-----------------------------------------------------------------------
+
+Unsubscribe
+https://www.temu.com/bgms_unsubscribe_email.html?_p_landing=3D1&_x_src=3Dma=
+il1&_x_cid=3Dtextmail&_x_sid=3Dunsubscribe&msgid=3D12-20231022-09-B-6581190=
+80990384128-449-5YBwV4vH
+
+Terms & Conditions
+https://www.temu.com/terms-of-use.html?_p_landing=3D1&_x_src=3Dmail&_x_cid=
+=3Dtextmail&msgid=3D12-20231022-09-B-658119080990384128-449-5YBwV4vH
+
+Privacy & Cookie Policy
+https://www.temu.com/bgp_private_policy.html?_p_landing=3D1&_x_src=3Dmail&_=
+x_cid=3Dtextmail&msgid=3D12-20231022-09-B-658119080990384128-449-5YBwV4vH
+
+-----------------------------------------------------------------------We'v=
+e prepared the 3 FOR AU$10 deal for you! =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+=C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =
+=E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+=C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =
+=E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+=C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =
+=E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+=C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =
+=E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+=C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =
+=E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+=C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =
+=E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+=C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =
+=E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+=C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =
+=E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+=C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =
+=E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+=C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =
+=E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+=C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =
+=E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+=C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =
+=E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+=C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =
+=E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+=C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =
+=E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+=C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =
+=E2=80=8C =C2=A0 =E2=80=87 =C2=AD=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD=
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =C2=AD We've prepared the 3 FOR AU$10 dea=
+l for you! If you used your Google, Facebook, Apple, or Twitter account det=
+ails to login to Temu, then you will need to change your password details t=
+here Click the shopping cart icon from your Temu app or Temu Click the shop=
+ping cart icon from your Temu app or Temu Organization Namec Select your re=
+turn and refund methods =E2=85=A1 We suggest you check the tracking informa=
+tion on the My orders page for more details, as it is updated regularly Cre=
+dits in your Temu account will never expire com to checkout com homepage ar=
+e always updated with our latest promotions Sign in to Temu app or Temu Ref=
+und timelineOnce we issue your refund, it takes additional time for your fi=
+nancial institution to make funds available in your account Intellectual Pr=
+operty: Temu respects the intellectual property rights of others and takes =
+claims of infringement and/or misappropriation very seriously com, you can =
+click Categories in the navigation menu at the top of the page, and select =
+Womens Curve + Plus from the dropdown list Temus RoleTemu is a marketplace =
+where third-party sellers can sell their goods directly to consumers At Tem=
+u, inclusion and diversity is one of our core values and we are constantly =
+trying to enhance our offerings so that we continue to enable our customers=
+ to enjoy the best quality, flexibility, and choice in their product select=
+ion For security purposes, you may be prompted to enter your password or ve=
+rify your original email address before you can edit We are sorry that you =
+are not able to find the item that you want in your size If you enabled tex=
+t or email notifications for your order, you can click on the links there t=
+o track your refund status as well Your credit balance may be suspended due=
+ to one of the following reasons:1 3 To protect yourself, we recommend that=
+ you do not respond to these messages or calls, and avoid clicking on links=
+ in emails or text messages from unknown sources com along with your contac=
+t information, the product page, and a screenshot of the offer For the seco=
+nd and subsequent refunds from the same order, you can use the return label=
+ we provide and pay a US$7 2 Also, sellers and customers can access their o=
+wn transaction records by logging into their Temu accounts From your app, j=
+ust go to the items product details page Click Edit next to the Mobile phon=
+e number line to make changes to your information Follow the instructions o=
+n the screen and select I want to cancel item(s)5 Required Legal ProcessCon=
+sistent with the applicable laws, regulations, terms and our Privacy & Cook=
+ie Policy, Temu will not produce information pertaining to sellers or custo=
+mers without a valid legal and binding process (such as a court order, sear=
+ch warrant or subpoena) properly served 2 External linksLinks to external s=
+ites are not permitted For more details about your coupons, you can go to y=
+our Temu account page from the Temu app or Temu We are looking for more sel=
+lers and logistics partners to join us to bring more affordable quality pro=
+ducts to consumers You are currently disputing the payment of an order, and=
+ the dispute is still being processed Requests from Law Enforcement Requiri=
+ng Non-Domestic RecordsRequests from law enforcement requiring non-domestic=
+ records should be issued pursuant to applicable laws Statute of Limitation=
+s Reasonably clear and sufficient contact details so that we can contact yo=
+u (i The purpose of these Temu Community Guidelines (the Guidelines) is to =
+ensure a relevant and beneficial experience for all Temu users You and Temu=
+ agree that regardless of any statute or law to the contrary, any claim ari=
+sing out of or related to the Services must commence within one (1) year af=
+ter the cause of action accrues If the address is confirmed, most packages =
+are usually found to be accidentally misplaced 3 Temu App1 Print and tape y=
+our return label we provided to the outside of your return package You can =
+subscribe to an item to be notified when it is back in stock from the Temu =
+mobile app Credits in your Temu account will never expire Some pieces might=
+ fit differently depending on the styles, such as oversized sweatshirts and=
+ t-shirts which run bigger than the general guidelines Records and Informat=
+ion AccessBefore submitting legal process to Temu, please check publicly-av=
+ailable records on the Temu platform (including but not limited to Temu web=
+site, mobile app, or other Temu-branded online market platform(s)) 2 Temu i=
+s committed to offering the most affordable quality products to enable you =
+fulfill your dreams in an inclusive environment For security purposes, you =
+may be prompted to enter your password or verify your original phone number=
+ before you can edit Other sites and servicesThe Service may contain links =
+to websites, mobile applications, and other online services operated by thi=
+rd parties We can assure you that all of our payment links have PCI certifi=
+cations and we work with major payment providers like Visa, Mastercard, Pay=
+pal, Apple Pay, and Google Pay, which all have stringent consumer protectio=
+n policies and state-of-the-art technology in place to protect our customer=
+s payment data It may also be possible that:-Someone may have misspelled th=
+eir email address when registering for an account on Temu-Someone may have =
+created a Temu account using your email address-Someone may have placed an =
+order from a computer where you were signed into TemuIf you suspect fraudul=
+ent activity, we recommend that you immediately change your account passwor=
+d to secure your account and prevent future unauthorized orders You receive=
+d any messages from an unknown number offering financial service or a part-=
+time job, and were asked to fill in personal information (e 3 However, we c=
+urrently do not accept resale certificate of any kind com or your Temu app,=
+2 Make your selection and click Submit Just go to Your orders on Temu - Kee=
+p track of your credit card: who is authorized to use it, and who has acces=
+s to it Our Temu app and Temu Why is my order taking longer to process than=
+ normal?Our warehouse normally processes all orders within 1-3 days Transac=
+tional data, such as information relating to or needed to complete your ord=
+ers on or through the Service, including order numbers and transaction hist=
+ory You will not be able to redeem your Temu credits for cash com and go to=
+ your account page2 com Internet/computer safety- Change your passwords on =
+a regular basis Click Sign out Please call your bank for additional assista=
+nce We suggest that you contact your card issuer for any further informatio=
+n In this case, credits may already be deducted from your credit balance an=
+d applied to the pending order payment =E2=80=8A =E2=80=8A =E2=80=8A =E2=80=
+=8A =E2=80=8A =E2=80=8A =E2=80=8A =E2=80=8A =E2=80=8A NOTE: This is an auto=
+matically generated email, please do not reply. Office address: Suite 355, =
+31 St. James Avenue Boston, Massachusetts -02116, USA Return address:=C2=A0=
+Click to view our return addresses. If you want to return items, please req=
+uest a return and use Temu=E2=80=99s label. Click to view more details. Ple=
+ase contact customer service if you have any questions. Privacy & Cookie Po=
+licy=C2=A0|=C2=A0Terms & Conditions=C2=A0|=C2=A0Unsubscribe If you have alr=
+eady placed an order, the best way for you to get help is through the Temu =
+app or Temu Free ShippingYes, your shipping cost is on Temu! Standard shipp=
+ing is free on almost all orders com Then, click Submit Marketing data, suc=
+h as your preferences for receiving our marketing communications and detail=
+s about your engagement with them What is Temus policy on information discl=
+osure requests?Please understand that Temu takes a cautious approach on rec=
+ord disclosure relating to customers personal information and will not disc=
+lose any such records unless required by law Labor: Temu has a zero toleran=
+ce policy for the use of forced, indentured, or penal labor Temu App or Tem=
+u Go to Your orders2 Youll receive an email confirmation once your order ha=
+s been successfully placed The Temu community features to which these Guide=
+lines apply include, without limitation, reviews; helpful votes; wishlists =
+and other lists; profile pages; customized products; and review violation r=
+eports Timing varies depending on your financial institution and can take u=
+p to 30 days Sometimes a package can be marked as delivered when the courie=
+r is able to arrive at your address, but fails to make the delivery when th=
+ey arent able to reach you 4 S However, profanity and obscene language are =
+not permitted may not be eligible for our Price Adjustment Policy Can I ret=
+urn any product I bought on Temu?Almost all items you bought on Temu are el=
+igible for return and refund if you are not satisfied with them, with just =
+a few exceptions:- Clothing items that are worn, washed, damaged, with tags=
+, packaging or hygiene sticker removed or in an incomplete set If you have =
+already returned items from an order and would like to return additional it=
+ems from that same order, you can still do it as long as the 90-day window =
+has not expired You and Temu agree to cooperate in good faith with AAA to i=
+mplement the Batch Arbitration process including the payment of single fili=
+ng and administrative fees for batches of Requests, as well as any steps to=
+ minimize the time and costs of arbitration, which may include: (1) the app=
+ointment of a discovery special master to assist the arbitrator in the reso=
+lution of discovery disputes; and (2) the adoption of an expedited calendar=
+ of the arbitration proceedings Proceed to checkout and select Continue as =
+a guest We and our affiliates provide technical and operational support for=
+ our marketplace app and act as payment collection agent for the Seller for=
+ the limited purpose of accepting funds from you From there, you can see wh=
+ich sizes/colors are available and, if inventory is running low, you may al=
+so see an alert that tells you exactly how many items are left From your ap=
+p, just go to the items product details page Click your username > select N=
+ame > delete your old name and enter your new name 5 You can subscribe to a=
+n item to be notified when it is back in stock from the Temu mobile app com=
+ homepage are always updated with our latest promotions Information or reco=
+rds such as Temu policies (including but not limited to Terms of Use, Priva=
+cy & Cookie Policy), seller names, customer reviews, products images and de=
+scription, are publicly available on Temus platform Comments written in a m=
+ix of languages are not permitted, even though some Temu sites and apps sup=
+port multiple languages For example, we dont allow reviews written in Germa=
+n on Temu Sign in to Temu app or Temu If there is no need to return your it=
+em, then your final step is simply to select your refund method Dont worry-=
+if you havent received your package, there are a few things that we can do:=
+1 When you place an order, our system will automatically apply the optimal =
+coupon that helps you maximize your savings Follow the onscreen instruction=
+s to fill out your payment and shipping details as usual to complete your o=
+rder To protect yourself, we recommend that you do not respond to these mes=
+sages or calls, and avoid clicking on links in emails or text messages from=
+ unknown sources Temu will provide BAI in response to subpoenas, search war=
+rants, or court orders In addition to the other uses included in this secti=
+on, we may use the Cookies and similar technologies described above for the=
+ following purposes:Technical operation If Temu determines that an item is =
+prohibited or otherwise unfit for sale on Temu, we may, at our sole discret=
+ion, take one or more enforcement actions, such as issuing warnings, limiti=
+ng access, or removing listings, against the seller(s) (2) If a counter-not=
+ice is received by the Temu, Temu will send a copy of the counter-notice to=
+ the original complaining party informing that person that Temu may replace=
+ the removed material or cease disabling it in 10 business days Click All a=
+t the top of the list6 There are a few reasons why your credit balance may =
+be smaller which include, but are not limited to:- You may have a pending t=
+ransaction for an order that was submitted but hasnt been paid yet Almost a=
+ll items you bought on Temu are eligible for return and refund if you are n=
+ot satisfied with them, with just a few exceptions: (i) clothing items that=
+ are worn, washed, damaged, with tags, packaging or hygiene sticker removed=
+ or in incomplete set; (ii) items that are labelled as non-returnable; and =
+(iii) free gifts Content that advocates or threatens physical or financial =
+harm to yourself or others, such as terrorism, is not permitted Check your =
+email inbox to retrieve your order confirmation email from temu@order By en=
+tering into these Terms, you hereby provide your irrevocable consent to suc=
+h monitoring 3 If you need to return your item(s), you will have the option=
+ to choose your return method For security reasons, your credit balance may=
+ be temporarily suspended Where can I find the return label after applying?=
+You can find your return label in two different locations in Your Orders- C=
+lick on All Orders=E2=86=92Print a return label and start return=E2=86=92cl=
+ick on Print return label- You may also click Returns=E2=86=92Print return =
+label=E2=86=92to download and print your return label For searches that you=
+ would like to track on desktop, you can click the orange Save button to ge=
+t notified when new items that fit your search are posted If you originally=
+ signed in with your Facebook, Google, Twitter, or Apple login details, you=
+ will have to login through this method only com The first return for EVERY=
+ order is free Follow the instructions on your screen to create your new Te=
+mu account Temu is committed to offering the most affordable quality produc=
+ts to enable you fulfill your dreams in an inclusive environment
+------=_Part_12692756_2121714172.1697938216292
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html><html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:=
+schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:offi=
+ce"><head><title></title><!--[if !mso]><!--><meta http-equiv=3D"X-UA-Compat=
+ible" content=3D"IE=3Dedge"><!--<![endif]--><meta http-equiv=3D"Content-Typ=
+e" content=3D"text/html; charset=3DUTF-8"><meta name=3D"viewport" content=
+=3D"width=3Ddevice-width,initial-scale=3D1"><style type=3D"text/css">#outlo=
+ok a { padding:0; }
+      body { margin:0;padding:0;-webkit-text-size-adjust:100%;-ms-text-size=
+-adjust:100%; }
+      table, td { border-collapse:collapse;mso-table-lspace:0pt;mso-table-r=
+space:0pt; }
+      img { border:0;height:auto;line-height:100%; outline:none;text-decora=
+tion:none;-ms-interpolation-mode:bicubic; }
+      p { display:block;margin:13px 0; }</style><!--[if mso]>
+    <noscript>
+    <xml>
+    <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+    </xml>
+    </noscript>
+    <![endif]--><!--[if lte mso 11]>
+    <style type=3D"text/css">
+      .mj-outlook-group-fix { width:100% !important; }
+    </style>
+    <![endif]--><!--[if !mso]><!--><link href=3D"https://fonts.googleapis.c=
+om/css?family=3DDroid+Sans:300,400,500,700" rel=3D"stylesheet" type=3D"text=
+/css"><link href=3D"https://fonts.googleapis.com/css?family=3DRoboto:300,40=
+0,500,700" rel=3D"stylesheet" type=3D"text/css"><link href=3D"https://fonts=
+.googleapis.com/css?family=3DUbuntu:300,400,500,700" rel=3D"stylesheet" typ=
+e=3D"text/css"><style type=3D"text/css">@import url(https://fonts.googleapi=
+s.com/css?family=3DDroid+Sans:300,400,500,700);
+@import url(https://fonts.googleapis.com/css?family=3DRoboto:300,400,500,70=
+0);
+@import url(https://fonts.googleapis.com/css?family=3DUbuntu:300,400,500,70=
+0);</style><!--<![endif]--><style type=3D"text/css">@media only screen and =
+(min-width:480px) {
+        .mj-column-per-100 { width:100% !important; max-width: 100%; }
+      }</style><style media=3D"screen and (min-width:480px)">.moz-text-html=
+ .mj-column-per-100 { width:100% !important; max-width: 100%; }</style><sty=
+le type=3D"text/css">@media only screen and (max-width:480px) {
+      table.mj-full-width-mobile { width: 100% !important; }
+      td.mj-full-width-mobile { width: auto !important; }
+    }</style><style type=3D"text/css">.hidden_module {
+                  padding: 0px !important;
+                  height: 0px !important;
+                  overflow: hidden !important;
+                }
+                .hidden_module img {
+                  visibility: hidden !important;
+                  opacity: 0 !important;
+                  display: none !important;
+                }
+               =20
+.hiddenImg img {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    display: none !important;
+}=20
+
+
+                  .email-container {
+                    background: url(https://aimg.kwcdn.com/upload_aimg/temu=
+/landing/30d24058-a501-4cca-b840-cf345a447fbf.png.slim.png) !important;
+                    max-width: 600px !important;
+                    margin: 0 auto !important;
+                  }</style><link href=3D"https://api-us.temu.com/callback/d=
+oha/track/css/cd?tracking_point=3D2&msgid=3D12-20231022-09-B-65811908099038=
+4128-449-5YBwV4vH&_p_landing=3D1&_x_src=3Dmail&sign=3D874EA7D65927A2F200E5E=
+1BD8A4BDDCB71AAB6E208923269A9B437C6F0406F57977FEA10B0DF1C1B4943CA1A773F6551=
+F5943BAD52AC16F033D8A14CA2AA14DF6EEFD738B98A222EF5062EA404C037193F92E20D046=
+6EAF6FFFDDFD0862EB51F29AA1EBEC20B5299745B6C76E87AED4843BE8DA9BEA861AA60F9ED=
+999CA3979BD932B8791B66802B8C4CB8223F3F56AF7A55EDEE4503BF31EB2DD09FCF46927B"=
+ rel=3D"stylesheet" type=3D"text/css"><style>@media screen and (max-width: =
+480px) {
+    .mb_nor_dt {
+        background-image: url("https://api-us.temu.com/callback/doha/dot?ty=
+=3Dmb&msgid=3D12-20231022-09-B-658119080990384128-449-5YBwV4vH&_p_landing=
+=3D1&_x_src=3Dmail&sign=3D874EA7D65927A2F200E5E1BD8A4BDDCB71AAB6E208923269A=
+9B437C6F0406F570D1D9378FDF7C6330793417474C73253001E391989720F1D0B3D5F42D6BF=
+08BE7C7988462A22AC039979728C98CC298E5B4D881A93C7750821BF1E0364D0EAA2778F943=
+70B33BEDB6761B993926D0010E268D7940D0EF30FDEBC91B0FAFDA63A");
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .mb_nor_dt {
+        background-image: url("https://api-us.temu.com/callback/doha/dot?ty=
+=3Ddt&msgid=3D12-20231022-09-B-658119080990384128-449-5YBwV4vH&_p_landing=
+=3D1&_x_src=3Dmail&sign=3D874EA7D65927A2F200E5E1BD8A4BDDCB71AAB6E208923269A=
+9B437C6F0406F57D73598F8863E2167731799A6E5539259001E391989720F1D0B3D5F42D6BF=
+08BE7C7988462A22AC039979728C98CC298E5B4D881A93C7750821BF1E0364D0EAA2778F943=
+70B33BEDB6761B993926D0010E268D7940D0EF30FDEBC91B0FAFDA63A");
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .dk_nor_ndk {
+        background-image: url("https://api-us.temu.com/callback/doha/dot?ty=
+=3Ddk&msgid=3D12-20231022-09-B-658119080990384128-449-5YBwV4vH&_p_landing=
+=3D1&_x_src=3Dmail&sign=3D874EA7D65927A2F200E5E1BD8A4BDDCB71AAB6E208923269A=
+9B437C6F0406F571CB83045AC5C6D306EE60B4498EC1263001E391989720F1D0B3D5F42D6BF=
+08BE7C7988462A22AC039979728C98CC298E5B4D881A93C7750821BF1E0364D0EAA2778F943=
+70B33BEDB6761B993926D0010E268D7940D0EF30FDEBC91B0FAFDA63A");
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .dk_nor_ndk {
+        background-image: url("https://api-us.temu.com/callback/doha/dot?ty=
+=3Dndk&msgid=3D12-20231022-09-B-658119080990384128-449-5YBwV4vH&_p_landing=
+=3D1&_x_src=3Dmail&sign=3D874EA7D65927A2F200E5E1BD8A4BDDCB71AAB6E208923269A=
+9B437C6F0406F5795597CF320392A38CE670655594385D63E3BCB46CA8253A751E2D3E29106=
+FE590EAA18CE35A0B11D64A1B1BE36B9C44F8B72D9EBD05AE3DD21C86D4FAFDB9244C4E875C=
+5D4F77BDFF90DBB7674BE7643D37A055A30E05767C8730D69A96DB536B157AF370C28CF6916=
+7A8408BF75D083");
+    }
+}</style></head><body style=3D"word-spacing:normal;"><div class=3D"email-co=
+ntainer"><!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"email-block-outlook node-idx-content.chil=
+dren.[0]-outlook node-type-section-outlook" role=3D"presentation" style=3D"=
+width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px=
+;mso-line-height-rule:exactly;"><![endif]--><div class=3D"email-block node-=
+idx-content.children.[0] node-type-section" style=3D"margin:0px auto;max-wi=
+dth:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" role=3D"presentation" style=3D"width:100%;"><tbody><tr><td style=
+=3D"direction:ltr;font-size:0px;padding:0px;text-align:center;"><!--[if mso=
+ | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0"><tr><td class=3D"" style=3D"vertical-align:top;width:600px;" ><![=
+endif]--><div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"fon=
+t-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-alig=
+n:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+role=3D"presentation" width=3D"100%"><tbody><tr><td style=3D"border:none;ve=
+rtical-align:top;padding:0px;"><table border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td align=3D"le=
+ft" style=3D"font-size:0px;padding:0px;word-break:break-word;"><!--[if mso =
+| IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0"><tr><td height=3D"0px" style=3D"vertical-align:top;height:0px;"><!=
+[endif]--><div style=3D"font-family:-apple-system, BlinkMacSystemFont, &#x2=
+7;Segoe UI&#x27;, &#x27;Roboto&#x27;, &#x27;Oxygen&#x27;, &#x27;Ubuntu&#x27=
+;, &#x27;Cantarell&#x27;, &#x27;Fira Sans&#x27;, &#x27;Droid Sans&#x27;,&#x=
+27;Helvetica Neue&#x27;, sans-serif;font-size:0px;font-weight:400;line-heig=
+ht:1.7;text-align:left;color:#000000;height:0px;"><div dir=3D"ltr" style=3D=
+"opacity: 0;text-align: left;display: none;visibility: none; width: 0; heig=
+ht: 0; font-size: 0px;">We&#39;ve prepared the 3 FOR AU$10 deal for you! &#=
+847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &z=
+wnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &n=
+bsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#=
+8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &=
+shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#8=
+47; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zw=
+nj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nb=
+sp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8=
+199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &s=
+hy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#84=
+7; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwn=
+j; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbs=
+p; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#81=
+99; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &sh=
+y;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847=
+; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj=
+; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp=
+; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#819=
+9; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy=
+;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847;=
+ &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj;=
+ &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp;=
+ &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199=
+; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;=
+&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; =
+&zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; =
+&nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; =
+&#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199;=
+ &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&=
+#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &=
+zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &=
+nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &=
+#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; =
+&shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#=
+847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &z=
+wnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &n=
+bsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#=
+8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &=
+shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#8=
+47; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zw=
+nj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nb=
+sp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8=
+199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &s=
+hy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#84=
+7; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwn=
+j; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbs=
+p; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#81=
+99; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &sh=
+y;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847=
+; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj=
+; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp=
+; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#819=
+9; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy=
+;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847;=
+ &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj;=
+ &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp;=
+ &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199=
+; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;=
+&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; =
+&zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; =
+&nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; =
+&#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199;=
+ &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&=
+#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &=
+zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &=
+nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &=
+#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; =
+&shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#=
+847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &z=
+wnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &n=
+bsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#=
+8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &=
+shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#8=
+47; &zwnj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;&#847; &zw=
+nj; &nbsp; &#8199; &shy;&#847; &zwnj; &nbsp; &#8199; &shy;</div></div><!--[=
+if mso | IE]></td></tr></table><![endif]--></td></tr><tr><td align=3D"left"=
+ style=3D"font-size:0px;padding:0px;word-break:break-word;"><div style=3D"f=
+ont-family:-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, &#x27;R=
+oboto&#x27;, &#x27;Oxygen&#x27;, &#x27;Ubuntu&#x27;, &#x27;Cantarell&#x27;,=
+ &#x27;Fira Sans&#x27;, &#x27;Droid Sans&#x27;,&#x27;Helvetica Neue&#x27;, =
+sans-serif;font-size:14px;font-weight:400;line-height:1.7;text-align:left;c=
+olor:#000000;"><table dir=3D"ltr" cellPadding=3D"0" cellSpacing=3D"0" width=
+=3D"100%" border=3D"0"><tbody><tr style=3D"color:#423f40;font-size:10px;ver=
+tical-align:top;line-height:16px"><td align=3D"left" width=3D"100%" style=
+=3D"padding:5px 0px"><span dir=3D"ltr">We&#39;ve prepared the 3 FOR AU$10 d=
+eal for you!</span></td></tr></tbody></table></div></td></tr><tr><td align=
+=3D"center" style=3D"font-size:0px;padding:10px 0px 10px 0px;word-break:bre=
+ak-word;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"p=
+resentation" style=3D"border-collapse:collapse;border-spacing:0px;"><tbody>=
+<tr><td style=3D"width:50px;"><a href=3D"https://app.temu.com/index.html?_x=
+_mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&msgid=3D12-20231022-09-B-65811=
+9080990384128-449-5YBwV4vH&_p_landing=3D1&_x_src=3Dmail&site_id=3D103&local=
+e_override=3D12~en~AUD&mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&_x_sid=
+=3Dheader" target=3D"_blank"><img height=3D"auto" src=3D"https://aimg.kwcdn=
+.com/upload_aimg/email/45e11d4c-3b8e-4f67-9a53-788b80c9a90c.png.slim.png" s=
+tyle=3D"border:0;display:block;outline:none;text-decoration:none;height:aut=
+o;width:100%;font-size:13px;" width=3D"50"></a></td></tr></tbody></table></=
+td></tr><tr><td align=3D"left" class=3D"hiddenImg" style=3D"font-size:0px;p=
+adding:0px;word-break:break-word;"><table border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;bor=
+der-spacing:0px;"><tbody><tr><td style=3D"width:1px;"><img height=3D"1" src=
+=3D"https://api-us.temu.com/callback/doha/open/track?tracking_point=3D1&msg=
+id=3D12-20231022-09-B-658119080990384128-449-5YBwV4vH&_p_landing=3D1&_x_src=
+=3Dmail&sign=3D874EA7D65927A2F200E5E1BD8A4BDDCB71AAB6E208923269A9B437C6F040=
+6F578414A9E058B4879FD0DC17BE9809F7451026C706619C30CF3C03AF463A3EA19AA16784F=
+F3428CD0641D6390172B54D21B47A427FB6A666AF3950CC840860555678ECC01ACFE25C0E3F=
+C8FC1109AFBCAEF30B3144D5692B8BD672F4558E321C1381562F3B8B9885EF4511290D259CD=
+89543F03250221FE3763E85F50F52B59EAE" style=3D"border:0;display:block;outlin=
+e:none;text-decoration:none;height:1px;width:100%;font-size:13px;" width=3D=
+"1"></td></tr></tbody></table></td></tr><tr><td align=3D"left" style=3D"fon=
+t-size:0px;padding:0;word-break:break-word;"><!--[if mso | IE]><table role=
+=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td =
+height=3D"0" style=3D"vertical-align:top;height:0;"><![endif]--><div style=
+=3D"font-family:-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, &#=
+x27;Roboto&#x27;, &#x27;Oxygen&#x27;, &#x27;Ubuntu&#x27;, &#x27;Cantarell&#=
+x27;, &#x27;Fira Sans&#x27;, &#x27;Droid Sans&#x27;,&#x27;Helvetica Neue&#x=
+27;, sans-serif;font-size:0;font-weight:400;line-height:1.7;text-align:left=
+;color:#000000;height:0;"><div class=3D"mb_nor_dt" style=3D"width:0px;heigh=
+t:0px;visibility:hidden;opacity:0"></div><div class=3D"dk_nor_ndk" style=3D=
+"width:0px;height:0px;visibility:hidden;opacity:0"></div><picture style=3D"=
+width:0px;height:0px;visibility:hidden;opacity:0"><source srcSet=3D"https:/=
+/api-us.temu.com/callback/doha/dot?ty=3Dmsol&msgid=3D12-20231022-09-B-65811=
+9080990384128-449-5YBwV4vH&_p_landing=3D1&_x_src=3Dmail&sign=3D874EA7D65927=
+A2F200E5E1BD8A4BDDCB71AAB6E208923269A9B437C6F0406F578FCBB43944C931C6F13596F=
+049072B465BD005E5739E27C3C2F9ECA7CD5ED38CB47A427FB6A666AF3950CC840860555678=
+ECC01ACFE25C0E3FC8FC1109AFBCAEF30B3144D5692B8BD672F4558E321C1381562F3B8B988=
+5EF4511290D259CD89543F03250221FE3763E85F50F52B59EAE" media=3D"(min-width: 0=
+)"><img style=3D"width:0px;height:0px;visibility:hidden;opacity:0" src=3D"h=
+ttps://aimg.kwcdn.com/upload_aimg/message/abf860ab-1365-46ea-9c54-feb88b7fc=
+6b3.gif.slim.gif"></picture></div><!--[if mso | IE]></td></tr></table><![en=
+dif]--></td></tr><tr><td align=3D"center" style=3D"font-size:0px;padding:0;=
+word-break:break-word;"><!--[if mso | IE]><table role=3D"presentation" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td height=3D"0" style=3D"=
+vertical-align:top;height:0;"><![endif]--><div style=3D"font-family:-apple-=
+system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, &#x27;Roboto&#x27;, &#x27=
+;Oxygen&#x27;, &#x27;Ubuntu&#x27;, &#x27;Cantarell&#x27;, &#x27;Fira Sans&#=
+x27;, &#x27;Droid Sans&#x27;,&#x27;Helvetica Neue&#x27;, sans-serif;font-si=
+ze:0px;font-weight:400;line-height:1.7;text-align:center;color:#000000;heig=
+ht:0;"><div dir=3D"ltr" style=3D"padding:0px 0px 0px 0px;font-size:0;height=
+:0;display:none;visibility:hidden">If you used your Google, Facebook, Apple=
+, or Twitter account details to login to Temu, then you will need to change=
+ your password details there Click the shopping cart icon from your Temu ap=
+p or Temu Click the shopping cart icon from your Temu app or Temu Organizat=
+ion Namec Select your return and refund methods =E2=85=A1 We suggest you ch=
+eck the tracking information on the My orders page for more details, as it =
+is updated regularly Credits in your Temu account will never expire com to =
+checkout com homepage are always updated with our latest promotions Sign in=
+ to Temu app or Temu Refund timelineOnce we issue your refund, it takes add=
+itional time for your financial institution to make funds available in your=
+ account Intellectual Property: Temu respects the intellectual property rig=
+hts of others and takes claims of infringement and/or misappropriation very=
+ seriously com, you can click Categories in the navigation menu at the top =
+of the page, and select Womens Curve + Plus from the dropdown list Temus Ro=
+leTemu is a marketplace where third-party sellers can sell their goods dire=
+ctly to consumers At Temu, inclusion and diversity is one of our core value=
+s and we are constantly trying to enhance our offerings so that we continue=
+ to enable our customers to enjoy the best quality, flexibility, and choice=
+ in their product selection For security purposes, you may be prompted to e=
+nter your password or verify your original email address before you can edi=
+t We are sorry that you are not able to find the item that you want in your=
+ size If you enabled text or email notifications for your order, you can cl=
+ick on the links there to track your refund status as well Your credit bala=
+nce may be suspended due to one of the following reasons:1 3 To protect you=
+rself, we recommend that you do not respond to these messages or calls, and=
+ avoid clicking on links in emails or text messages from unknown sources co=
+m along with your contact information, the product page, and a screenshot o=
+f the offer For the second and subsequent refunds from the same order, you =
+can use the return label we provide and pay a US$7 2 Also, sellers and cust=
+omers can access their own transaction records by logging into their Temu a=
+ccounts From your app, just go to the items product details page Click Edit=
+ next to the Mobile phone number line to make changes to your information F=
+ollow the instructions on the screen and select I want to cancel item(s)5 R=
+equired Legal ProcessConsistent with the applicable laws, regulations, term=
+s and our Privacy &amp; Cookie Policy, Temu will not produce information pe=
+rtaining to sellers or customers without a valid legal and binding process =
+(such as a court order, search warrant or subpoena) properly served 2 Exter=
+nal linksLinks to external sites are not permitted For more details about y=
+our coupons, you can go to your Temu account page from the Temu app or Temu=
+ We are looking for more sellers and logistics partners to join us to bring=
+ more affordable quality products to consumers You are currently disputing =
+the payment of an order, and the dispute is still being processed Requests =
+from Law Enforcement Requiring Non-Domestic RecordsRequests from law enforc=
+ement requiring non-domestic records should be issued pursuant to applicabl=
+e laws Statute of Limitations Reasonably clear and sufficient contact detai=
+ls so that we can contact you (i The purpose of these Temu Community Guidel=
+ines (the Guidelines) is to ensure a relevant and beneficial experience for=
+ all Temu users You and Temu agree that regardless of any statute or law to=
+ the contrary, any claim arising out of or related to the Services must com=
+mence within one (1) year after the cause of action accrues If the address =
+is confirmed, most packages are usually found to be accidentally misplaced =
+3 Temu App1 Print and tape your return label we provided to the outside of =
+your return package You can subscribe to an item to be notified when it is =
+back in stock from the Temu mobile app Credits in your Temu account will ne=
+ver expire Some pieces might fit differently depending on the styles, such =
+as oversized sweatshirts and t-shirts which run bigger than the general gui=
+delines Records and Information AccessBefore submitting legal process to Te=
+mu, please check publicly-available records on the Temu platform (including=
+ but not limited to Temu website, mobile app, or other Temu-branded online =
+market platform(s)) 2 Temu is committed to offering the most affordable qua=
+lity products to enable you fulfill your dreams in an inclusive environment=
+ For security purposes, you may be prompted to enter your password or verif=
+y your original phone number before you can edit Other sites and servicesTh=
+e Service may contain links to websites, mobile applications, and other onl=
+ine services operated by third parties We can assure you that all of our pa=
+yment links have PCI certifications and we work with major payment provider=
+s like Visa, Mastercard, Paypal, Apple Pay, and Google Pay, which all have =
+stringent consumer protection policies and state-of-the-art technology in p=
+lace to protect our customers payment data It may also be possible that:-So=
+meone may have misspelled their email address when registering for an accou=
+nt on Temu-Someone may have created a Temu account using your email address=
+-Someone may have placed an order from a computer where you were signed int=
+o TemuIf you suspect fraudulent activity, we recommend that you immediately=
+ change your account password to secure your account and prevent future una=
+uthorized orders You received any messages from an unknown number offering =
+financial service or a part-time job, and were asked to fill in personal in=
+formation (e 3 However, we currently do not accept resale certificate of an=
+y kind com or your Temu app,2 Make your selection and click Submit Just go =
+to Your orders on Temu - Keep track of your credit card: who is authorized =
+to use it, and who has access to it Our Temu app and Temu Why is my order t=
+aking longer to process than normal?Our warehouse normally processes all or=
+ders within 1-3 days Transactional data, such as information relating to or=
+ needed to complete your orders on or through the Service, including order =
+numbers and transaction history You will not be able to redeem your Temu cr=
+edits for cash com and go to your account page2 com Internet/computer safet=
+y- Change your passwords on a regular basis Click Sign out Please call your=
+ bank for additional assistance We suggest that you contact your card issue=
+r for any further information In this case, credits may already be deducted=
+ from your credit balance and applied to the pending order payment</div></d=
+iv><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody></tabl=
+e></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![en=
+dif]--></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table>=
+<![endif]--><div style=3D"width:0px;height:0px;visibility:hidden;opacity:0"=
+ class=3D"pvi"></div><!--[if mso | IE]><table align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" class=3D"email-block-outlook node-idx-=
+content.children.[1]-outlook node-type-wrapper-outlook" role=3D"presentatio=
+n" style=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;f=
+ont-size:0px;mso-line-height-rule:exactly;"><![endif]--><div class=3D"email=
+-block node-idx-content.children.[1] node-type-wrapper" style=3D"margin:0px=
+ auto;max-width:600px;"><table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" role=3D"presentation" style=3D"width:100%;"><tbody><t=
+r><td style=3D"border:none;direction:ltr;font-size:0px;padding:0px 0px 0px =
+0px;text-align:center;"><!--[if mso | IE]><table role=3D"presentation" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td align=3D"left" class=
+=3D"" width=3D"600px" ><![endif]--><table cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%" border=3D"0" style=3D"color:#000000;font-family:-apple-sy=
+stem, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, &#x27;Roboto&#x27;, &#x27;O=
+xygen&#x27;, &#x27;Ubuntu&#x27;, &#x27;Cantarell&#x27;, &#x27;Fira Sans&#x2=
+7;, &#x27;Droid Sans&#x27;,&#x27;Helvetica Neue&#x27;, sans-serif;font-size=
+:13px;line-height:22px;table-layout:auto;width:100%;border:none;"><tr style=
+=3D"width:100%"><td style=3D"width:19.44%;font-size:0;line-height:1"><a hre=
+f=3D"https://app.temu.com/category.html?opt_id=3D95&amp;_x_mmid=3Da7984addf=
+4584640b8ffe78c13e1bbabCHN1&msgid=3D12-20231022-09-B-658119080990384128-449=
+-5YBwV4vH&_p_landing=3D1&_x_src=3Dmail&site_id=3D103&locale_override=3D12~e=
+n~AUD&mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&amp;_x_sid=3Dcategory_sho=
+es" style=3D"display:block"><img width=3D"100%" src=3D"https://aimg.kwcdn.c=
+om/shark-push/1e29824a08/139fdecc7848d8d3fe51b5189362935d.jpg?imageMogr2/cu=
+t/175x72x0x0"></a></td><td style=3D"width:27.77%;font-size:0;line-height:1"=
+><a href=3D"https://app.temu.com/category.html?opt_id=3D36&amp;_x_mmid=3Da7=
+984addf4584640b8ffe78c13e1bbabCHN1&msgid=3D12-20231022-09-B-658119080990384=
+128-449-5YBwV4vH&_p_landing=3D1&_x_src=3Dmail&site_id=3D103&locale_override=
+=3D12~en~AUD&mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&amp;_x_sid=3Dcateg=
+ory_homekitchen" style=3D"display:block"><img width=3D"100%" src=3D"https:/=
+/aimg.kwcdn.com/shark-push/1e29824a08/139fdecc7848d8d3fe51b5189362935d.jpg?=
+imageMogr2/cut/250x72x175x0"></a></td><td style=3D"width:24.22%;font-size:0=
+;line-height:1"><a href=3D"https://app.temu.com/category.html?opt_id=3D248&=
+amp;_x_mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&msgid=3D12-20231022-09-B=
+-658119080990384128-449-5YBwV4vH&_p_landing=3D1&_x_src=3Dmail&site_id=3D103=
+&locale_override=3D12~en~AUD&mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&am=
+p;_x_sid=3Dcategory_electronics" style=3D"display:block"><img width=3D"100%=
+" src=3D"https://aimg.kwcdn.com/shark-push/1e29824a08/139fdecc7848d8d3fe51b=
+5189362935d.jpg?imageMogr2/cut/218x72x425x0"></a></td><td style=3D"width:28=
+.55%;font-size:0;line-height:1"><a href=3D"https://app.temu.com/index.html?=
+_x_mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&msgid=3D12-20231022-09-B-658=
+119080990384128-449-5YBwV4vH&_p_landing=3D1&_x_src=3Dmail&site_id=3D103&loc=
+ale_override=3D12~en~AUD&mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&amp;_x=
+_sid=3Dnewarrivals" style=3D"display:block"><img width=3D"100%" src=3D"http=
+s://aimg.kwcdn.com/shark-push/1e29824a08/139fdecc7848d8d3fe51b5189362935d.j=
+pg?imageMogr2/cut/257x72x643x0"></a></td></tr></table><!--[if mso | IE]></t=
+d></tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE=
+]></td></tr></table><table align=3D"center" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px;" w=
+idth=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-heigh=
+t-rule:exactly;"><![endif]--><div style=3D"margin:0px auto;max-width:600px;=
+"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+role=3D"presentation" style=3D"width:100%;"><tbody><tr><td style=3D"directi=
+on:ltr;font-size:0px;padding:0px;text-align:left;"><!--[if mso | IE]><table=
+ role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr=
+><td class=3D"" style=3D"vertical-align:top;width:600px;" ><![endif]--><div=
+ class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0px;te=
+xt-align:left;direction:ltr;display:inline-block;vertical-align:top;width:1=
+00%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"vertical-align:top;" width=3D"100%"><tbody><tr><td style=
+=3D"font-size:0px;padding:   ;word-break:break-word;"><div style=3D"height:=
+10px;line-height:10px;">&#8202;</div></td></tr></tbody></table></div><!--[i=
+f mso | IE]></td></tr></table><![endif]--></td></tr></tbody></table></div><=
+!--[if mso | IE]></td></tr></table><table align=3D"center" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" class=3D"email-block-outlook node-idx-cont=
+ent.children.[3]-outlook node-type-wrapper-outlook" role=3D"presentation" s=
+tyle=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-=
+size:0px;mso-line-height-rule:exactly;"><![endif]--><div class=3D"email-blo=
+ck node-idx-content.children.[3] node-type-wrapper" style=3D"margin:0px aut=
+o;max-width:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" role=3D"presentation" style=3D"width:100%;"><tbody><tr><t=
+d style=3D"border:none;direction:ltr;font-size:0px;padding:0px 0px 0px 0px;=
+text-align:center;"><!--[if mso | IE]><table role=3D"presentation" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vert=
+ical-align:top;width:600px;" ><![endif]--><div class=3D"mj-column-per-100 m=
+j-outlook-group-fix" style=3D"font-size:0px;text-align:left;direction:ltr;d=
+isplay:inline-block;vertical-align:top;width:100%;"><table border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbod=
+y><tr><td style=3D"vertical-align:top;padding:0px 0px 0px 0px;"><table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D=
+"100%"><tbody><tr><td align=3D"center" style=3D"font-size:0px;padding:0px 0=
+px 0px 0px;word-break:break-word;"><table border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;bor=
+der-spacing:0px;"><tbody><tr><td style=3D"width:600px;"><a href=3D"https://=
+app.temu.com/mbs_landing_goods.html?_bg_fs=3D1&strategy=3Dau3for10&_x_mmid=
+=3Da7984addf4584640b8ffe78c13e1bbabCHN1&msgid=3D12-20231022-09-B-6581190809=
+90384128-449-5YBwV4vH&_p_landing=3D1&_x_src=3Dmail&site_id=3D103&locale_ove=
+rride=3D12~en~AUD&mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&_x_sid=3DBM" =
+target=3D"_blank"><img height=3D"auto" src=3D"https://aimg.kwcdn.com/shark-=
+push/1eed5118f0/3b92b1e040d5fd04f48acc3cdc066f30.gif" style=3D"border:0;dis=
+play:block;outline:none;text-decoration:none;height:auto;width:100%;font-si=
+ze:13px;" width=3D"600"></a></td></tr></tbody></table></td></tr></tbody></t=
+able></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><!=
+[endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></tab=
+le><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ class=3D"" role=3D"presentation" style=3D"width:600px;" width=3D"600" ><tr=
+><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;">=
+<![endif]--><div style=3D"margin:0px auto;max-width:600px;"><table align=3D=
+"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentat=
+ion" style=3D"width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:=
+0px;padding:0px;text-align:left;"><!--[if mso | IE]><table role=3D"presenta=
+tion" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" s=
+tyle=3D"vertical-align:top;width:600px;" ><![endif]--><div class=3D"mj-colu=
+mn-per-100 mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;dir=
+ection:ltr;display:inline-block;vertical-align:top;width:100%;"><table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D=
+"vertical-align:top;" width=3D"100%"><tbody><tr><td style=3D"font-size:0px;=
+padding:   ;word-break:break-word;"><div style=3D"height:10px;line-height:1=
+0px;">&#8202;</div></td></tr></tbody></table></div><!--[if mso | IE]></td><=
+/tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]><=
+/td></tr></table><table align=3D"center" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" class=3D"email-block-outlook node-idx-content.children.[5]-o=
+utlook node-type-wrapper-outlook" role=3D"presentation" style=3D"width:600p=
+x;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-=
+height-rule:exactly;"><![endif]--><div class=3D"email-block node-idx-conten=
+t.children.[5] node-type-wrapper" style=3D"margin:0px auto;max-width:600px;=
+"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+role=3D"presentation" style=3D"width:100%;"><tbody><tr><td style=3D"border:=
+none;direction:ltr;font-size:0px;padding:0px 0px 0px 0px;text-align:center;=
+"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-align:top;wid=
+th:600px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-group-fi=
+x" style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-bloc=
+k;vertical-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td style=3D=
+"vertical-align:top;padding:0px 0px 0px 0px;"><table border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr>=
+<td align=3D"center" style=3D"font-size:0px;padding:0px 0px 0px 0px;word-br=
+eak:break-word;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"border-collapse:collapse;border-spacing:0px;">=
+<tbody><tr><td style=3D"width:600px;"><a href=3D"https://app.temu.com/mbs_l=
+anding_goods.html?_bg_fs=3D1&strategy=3Dbestsellers0104&_x_mmid=3Da7984addf=
+4584640b8ffe78c13e1bbabCHN1&msgid=3D12-20231022-09-B-658119080990384128-449=
+-5YBwV4vH&_p_landing=3D1&_x_src=3Dmail&site_id=3D103&locale_override=3D12~e=
+n~AUD&mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&_x_sid=3DFL_TOP_PICKS" ta=
+rget=3D"_blank"><img height=3D"auto" src=3D"https://aimg.kwcdn.com/shark-pu=
+sh/1eed5118f0/0c3b1340b88069967ddeb63134b3eab8.jpg" style=3D"border:0;displ=
+ay:block;outline:none;text-decoration:none;height:auto;width:100%;font-size=
+:13px;" width=3D"600"></a></td></tr></tbody></table></td></tr></tbody></tab=
+le></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![e=
+ndif]--></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table=
+><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" c=
+lass=3D"email-block-outlook node-idx-content.children.[6]-outlook node-type=
+-section-outlook" role=3D"presentation" style=3D"width:600px;" width=3D"600=
+" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exac=
+tly;"><![endif]--><div class=3D"email-block node-idx-content.children.[6] n=
+ode-type-section" style=3D"margin:0px auto;max-width:600px;"><table align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" style=3D"width:100%;"><tbody><tr><td style=3D"border:none;direction=
+:ltr;font-size:0px;padding:0px;text-align:center;"><!--[if mso | IE]><table=
+ role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr=
+><td class=3D"" style=3D"vertical-align:top;width:600px;" ><![endif]--><div=
+ class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0px;te=
+xt-align:left;direction:ltr;display:inline-block;vertical-align:top;width:1=
+00%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"vertical-align:top;" width=3D"100%"><tbody><tr><td style=
+=3D"font-size:0px;word-break:break-word;"><div style=3D"height:10px;line-he=
+ight:10px;">&#8202;</div></td></tr><tr><td align=3D"center" style=3D"font-s=
+ize:0px;padding:0px;word-break:break-word;"><table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"border-collapse:col=
+lapse;border-spacing:0px;"><tbody><tr><td style=3D"width:600px;"><a href=3D=
+"https://app.temu.com/mbs_landing_goods.html?_bg_fs=3D1&rule_id=3Ddiscount_=
+amt_20&main_goods_ids=3D%5B601099519193121%2C%20601099514472426%2C%20601099=
+520884790%2C%20601099520309294%2C%20601099514032626%2C%20601099523130191%5D=
+&main_goods_prices=3D%5B2649%2C%202699%2C%203517%2C%202519%2C%203099%2C%202=
+681%5D&scene=3Dclick_rec_pool&floor_topic=3DSave%20at%20least%20AU%2420&_x_=
+mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&site_id=3D103&locale_override=
+=3D12~en~AUD&mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&msgid=3D12-2023102=
+2-09-B-658119080990384128-449-5YBwV4vH&_p_landing=3D1&_x_src=3Dmail" target=
+=3D"_blank"><img height=3D"auto" src=3D"https://aid.kwcdn.com/maleonn/stati=
+c/v2/231018-1902449436.png?imageAuto/normal/id/a9077845-09b8-470c-bb60-0803=
+988e29fe/format/png" style=3D"border:0;display:block;outline:none;text-deco=
+ration:none;height:auto;width:100%;font-size:13px;" width=3D"600"></a></td>=
+</tr></tbody></table></td></tr><tr><td style=3D"font-size:0px;word-break:br=
+eak-word;"><div style=3D"height:10px;line-height:10px;">&#8202;</div></td><=
+/tr><tr><td align=3D"center" style=3D"font-size:0px;padding:0;word-break:br=
+eak-word;"><table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" border=
+=3D"0" style=3D"color:#000000;font-family:-apple-system, BlinkMacSystemFont=
+, &#x27;Segoe UI&#x27;, &#x27;Roboto&#x27;, &#x27;Oxygen&#x27;, &#x27;Ubunt=
+u&#x27;, &#x27;Cantarell&#x27;, &#x27;Fira Sans&#x27;, &#x27;Droid Sans&#x2=
+7;,&#x27;Helvetica Neue&#x27;, sans-serif;font-size:13px;line-height:22px;t=
+able-layout:auto;width:100%;border:none;"><tr style=3D"width:100%"><td styl=
+e=3D"width:33.33%;padding:0px 8.66px 0px 0px;line-height:1;font-size:0px"><=
+a href=3D"https://app.temu.com/mbs_landing_goods.html?_bg_fs=3D1&amp;_x_mmi=
+d=3Da7984addf4584640b8ffe78c13e1bbabCHN1&amp;msgid=3D12-20231022-09-B-65811=
+9080990384128-449-5YBwV4vH&_p_landing=3D1&_x_src=3Dmail&amp;goods_price=3D2=
+649&amp;locale_override=3D12~en~AUD&amp;site_id=3D103&amp;mmid=3Da7984addf4=
+584640b8ffe78c13e1bbabCHN1&amp;goods_id=3D601099519193121&amp;rule_id=3Ddis=
+count_amt_20&amp;_p_goodsid=3D601099519193121&amp;scene=3Dclick_rec_pool&am=
+p;floor_topic=3DSave%20at%20least%20AU%2420&amp;_x_sid=3DGOODS_LIST1"><img =
+src=3D"https://aid.kwcdn.com/maleonn/static/v2/231021-2385387338.png?imageA=
+uto/normal/id/34dddbbc-b5af-425a-a453-d9bbec40ef00/format/png" width=3D"100=
+%" style=3D"display:block;border:0;height:auto;width:100%;text-decoration:n=
+one;outline:none;object-fit:contain"></a></td><td style=3D"width:33.33%;pad=
+ding:0px 4.33px 0px 4.33px;line-height:1;font-size:0px"><a href=3D"https://=
+app.temu.com/mbs_landing_goods.html?_bg_fs=3D1&amp;_x_mmid=3Da7984addf45846=
+40b8ffe78c13e1bbabCHN1&amp;msgid=3D12-20231022-09-B-658119080990384128-449-=
+5YBwV4vH&_p_landing=3D1&_x_src=3Dmail&amp;goods_price=3D2699&amp;locale_ove=
+rride=3D12~en~AUD&amp;site_id=3D103&amp;mmid=3Da7984addf4584640b8ffe78c13e1=
+bbabCHN1&amp;goods_id=3D601099514472426&amp;rule_id=3Ddiscount_amt_20&amp;_=
+p_goodsid=3D601099514472426&amp;scene=3Dclick_rec_pool&amp;floor_topic=3DSa=
+ve%20at%20least%20AU%2420&amp;_x_sid=3DGOODS_LIST1"><img src=3D"https://aid=
+.kwcdn.com/maleonn/static/v2/231019-1355766129.png?imageAuto/normal/id/cc3b=
+aab9-c472-418d-b506-114e4f44d040/format/png" width=3D"100%" style=3D"displa=
+y:block;border:0;height:auto;width:100%;text-decoration:none;outline:none;o=
+bject-fit:contain"></a></td><td style=3D"width:33.33%;padding:0px 0px 0px 8=
+.66px;line-height:1;font-size:0px"><a href=3D"https://app.temu.com/mbs_land=
+ing_goods.html?_bg_fs=3D1&amp;_x_mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN=
+1&amp;msgid=3D12-20231022-09-B-658119080990384128-449-5YBwV4vH&_p_landing=
+=3D1&_x_src=3Dmail&amp;goods_price=3D3517&amp;locale_override=3D12~en~AUD&a=
+mp;site_id=3D103&amp;mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&amp;goods_=
+id=3D601099520884790&amp;rule_id=3Ddiscount_amt_20&amp;_p_goodsid=3D6010995=
+20884790&amp;scene=3Dclick_rec_pool&amp;floor_topic=3DSave%20at%20least%20A=
+U%2420&amp;_x_sid=3DGOODS_LIST1"><img src=3D"https://aid.kwcdn.com/maleonn/=
+static/v2/231022-3456556402.png?imageAuto/normal/id/cb4f0f13-03ce-463b-9bb8=
+-4c1c77949bbf/format/png" width=3D"100%" style=3D"display:block;border:0;he=
+ight:auto;width:100%;text-decoration:none;outline:none;object-fit:contain">=
+</a></td></tr><tr><td style=3D"padding:11.5px 0px 11.5px 0px;line-height:1;=
+font-size:0px" colSpan=3D"3"></td></tr><tr style=3D"width:100%"><td style=
+=3D"width:33.33%;padding:0px 8.66px 0px 0px;line-height:1;font-size:0px"><a=
+ href=3D"https://app.temu.com/mbs_landing_goods.html?_bg_fs=3D1&amp;_x_mmid=
+=3Da7984addf4584640b8ffe78c13e1bbabCHN1&amp;msgid=3D12-20231022-09-B-658119=
+080990384128-449-5YBwV4vH&_p_landing=3D1&_x_src=3Dmail&amp;goods_price=3D25=
+19&amp;locale_override=3D12~en~AUD&amp;site_id=3D103&amp;mmid=3Da7984addf45=
+84640b8ffe78c13e1bbabCHN1&amp;goods_id=3D601099520309294&amp;rule_id=3Ddisc=
+ount_amt_20&amp;_p_goodsid=3D601099520309294&amp;scene=3Dclick_rec_pool&amp=
+;floor_topic=3DSave%20at%20least%20AU%2420&amp;_x_sid=3DGOODS_LIST1"><img s=
+rc=3D"https://aid.kwcdn.com/maleonn/static/v2/231022-2776763797.png?imageAu=
+to/normal/id/75ffc216-8ec2-4a61-81de-32629b162136/format/png" width=3D"100%=
+" style=3D"display:block;border:0;height:auto;width:100%;text-decoration:no=
+ne;outline:none;object-fit:contain"></a></td><td style=3D"width:33.33%;padd=
+ing:0px 4.33px 0px 4.33px;line-height:1;font-size:0px"><a href=3D"https://a=
+pp.temu.com/mbs_landing_goods.html?_bg_fs=3D1&amp;_x_mmid=3Da7984addf458464=
+0b8ffe78c13e1bbabCHN1&amp;msgid=3D12-20231022-09-B-658119080990384128-449-5=
+YBwV4vH&_p_landing=3D1&_x_src=3Dmail&amp;goods_price=3D3099&amp;locale_over=
+ride=3D12~en~AUD&amp;site_id=3D103&amp;mmid=3Da7984addf4584640b8ffe78c13e1b=
+babCHN1&amp;goods_id=3D601099514032626&amp;rule_id=3Ddiscount_amt_20&amp;_p=
+_goodsid=3D601099514032626&amp;scene=3Dclick_rec_pool&amp;floor_topic=3DSav=
+e%20at%20least%20AU%2420&amp;_x_sid=3DGOODS_LIST1"><img src=3D"https://aid.=
+kwcdn.com/maleonn/static/v2/231019-3603258212.png?imageAuto/normal/id/cdb6a=
+d9e-40f1-408b-9800-ed296a234d01/format/png" width=3D"100%" style=3D"display=
+:block;border:0;height:auto;width:100%;text-decoration:none;outline:none;ob=
+ject-fit:contain"></a></td><td style=3D"width:33.33%;padding:0px 0px 0px 8.=
+66px;line-height:1;font-size:0px"><a href=3D"https://app.temu.com/mbs_landi=
+ng_goods.html?_bg_fs=3D1&amp;_x_mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1=
+&amp;msgid=3D12-20231022-09-B-658119080990384128-449-5YBwV4vH&_p_landing=3D=
+1&_x_src=3Dmail&amp;goods_price=3D2681&amp;locale_override=3D12~en~AUD&amp;=
+site_id=3D103&amp;mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&amp;goods_id=
+=3D601099523130191&amp;rule_id=3Ddiscount_amt_20&amp;_p_goodsid=3D601099523=
+130191&amp;scene=3Dclick_rec_pool&amp;floor_topic=3DSave%20at%20least%20AU%=
+2420&amp;_x_sid=3DGOODS_LIST1"><img src=3D"https://aid.kwcdn.com/maleonn/st=
+atic/v2/231021-1501415953.png?imageAuto/normal/id/3fa11f4c-c532-4392-9797-0=
+e8d6c8182f2/format/png" width=3D"100%" style=3D"display:block;border:0;heig=
+ht:auto;width:100%;text-decoration:none;outline:none;object-fit:contain"></=
+a></td></tr></table></td></tr><tr><td style=3D"font-size:0px;word-break:bre=
+ak-word;"><div style=3D"height:10px;line-height:10px;">&#8202;</div></td></=
+tr><tr><td align=3D"center" style=3D"font-size:0px;padding:0px;word-break:b=
+reak-word;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D=
+"presentation" style=3D"border-collapse:collapse;border-spacing:0px;"><tbod=
+y><tr><td style=3D"width:600px;"><a href=3D"https://app.temu.com/mbs_landin=
+g_goods.html?_bg_fs=3D1&rule_id=3Dopt1_28&main_goods_ids=3D%5B6010995119740=
+33%2C%20601099518631167%2C%20601099519291607%2C%20601099516686117%2C%206010=
+99516142892%2C%20601099517298772%5D&main_goods_prices=3D%5B3419%2C%202879%2=
+C%202649%2C%202199%2C%205297%2C%203548%5D&scene=3Dclick_rec_pool&floor_topi=
+c=3DWOMEN%27S%20CLOTHING&_x_mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&sit=
+e_id=3D103&locale_override=3D12~en~AUD&mmid=3Da7984addf4584640b8ffe78c13e1b=
+babCHN1&msgid=3D12-20231022-09-B-658119080990384128-449-5YBwV4vH&_p_landing=
+=3D1&_x_src=3Dmail" target=3D"_blank"><img height=3D"auto" src=3D"https://a=
+id.kwcdn.com/maleonn/static/v1/230727-3188752874.png?imageAuto/normal/id/bc=
+db3e5e-b7ad-4f78-8cf2-cb158b4cafbd/format/png" style=3D"border:0;display:bl=
+ock;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px=
+;" width=3D"600"></a></td></tr></tbody></table></td></tr><tr><td style=3D"f=
+ont-size:0px;word-break:break-word;"><div style=3D"height:10px;line-height:=
+10px;">&#8202;</div></td></tr><tr><td align=3D"center" style=3D"font-size:0=
+px;padding:0;word-break:break-word;"><table cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%" border=3D"0" style=3D"color:#000000;font-family:-appl=
+e-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, &#x27;Roboto&#x27;, &#x=
+27;Oxygen&#x27;, &#x27;Ubuntu&#x27;, &#x27;Cantarell&#x27;, &#x27;Fira Sans=
+&#x27;, &#x27;Droid Sans&#x27;,&#x27;Helvetica Neue&#x27;, sans-serif;font-=
+size:13px;line-height:22px;table-layout:auto;width:100%;border:none;"><tr s=
+tyle=3D"width:100%"><td style=3D"width:33.33%;padding:0px 8.66px 0px 0px;li=
+ne-height:1;font-size:0px"><a href=3D"https://app.temu.com/mbs_landing_good=
+s.html?_bg_fs=3D1&amp;_x_mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&amp;ms=
+gid=3D12-20231022-09-B-658119080990384128-449-5YBwV4vH&_p_landing=3D1&_x_sr=
+c=3Dmail&amp;goods_price=3D3419&amp;locale_override=3D12~en~AUD&amp;site_id=
+=3D103&amp;mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&amp;goods_id=3D60109=
+9511974033&amp;rule_id=3Dopt1_28&amp;_p_goodsid=3D601099511974033&amp;scene=
+=3Dclick_rec_pool&amp;floor_topic=3DWOMEN%27S%20CLOTHING&amp;_x_sid=3DGOODS=
+_LIST2"><img src=3D"https://aid.kwcdn.com/maleonn/static/v2/231020-10356195=
+17.png?imageAuto/normal/id/57397054-6185-4e80-b7b7-9bf84f6a51d2/format/png"=
+ width=3D"100%" style=3D"display:block;border:0;height:auto;width:100%;text=
+-decoration:none;outline:none;object-fit:contain"></a></td><td style=3D"wid=
+th:33.33%;padding:0px 4.33px 0px 4.33px;line-height:1;font-size:0px"><a hre=
+f=3D"https://app.temu.com/mbs_landing_goods.html?_bg_fs=3D1&amp;_x_mmid=3Da=
+7984addf4584640b8ffe78c13e1bbabCHN1&amp;msgid=3D12-20231022-09-B-6581190809=
+90384128-449-5YBwV4vH&_p_landing=3D1&_x_src=3Dmail&amp;goods_price=3D2879&a=
+mp;locale_override=3D12~en~AUD&amp;site_id=3D103&amp;mmid=3Da7984addf458464=
+0b8ffe78c13e1bbabCHN1&amp;goods_id=3D601099518631167&amp;rule_id=3Dopt1_28&=
+amp;_p_goodsid=3D601099518631167&amp;scene=3Dclick_rec_pool&amp;floor_topic=
+=3DWOMEN%27S%20CLOTHING&amp;_x_sid=3DGOODS_LIST2"><img src=3D"https://aid.k=
+wcdn.com/maleonn/static/v2/231021-3603394611.png?imageAuto/normal/id/e8cf11=
+a6-e1f6-4ca6-b3bd-52c41b2efa3d/format/png" width=3D"100%" style=3D"display:=
+block;border:0;height:auto;width:100%;text-decoration:none;outline:none;obj=
+ect-fit:contain"></a></td><td style=3D"width:33.33%;padding:0px 0px 0px 8.6=
+6px;line-height:1;font-size:0px"><a href=3D"https://app.temu.com/mbs_landin=
+g_goods.html?_bg_fs=3D1&amp;_x_mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&=
+amp;msgid=3D12-20231022-09-B-658119080990384128-449-5YBwV4vH&_p_landing=3D1=
+&_x_src=3Dmail&amp;goods_price=3D2649&amp;locale_override=3D12~en~AUD&amp;s=
+ite_id=3D103&amp;mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&amp;goods_id=
+=3D601099519291607&amp;rule_id=3Dopt1_28&amp;_p_goodsid=3D601099519291607&a=
+mp;scene=3Dclick_rec_pool&amp;floor_topic=3DWOMEN%27S%20CLOTHING&amp;_x_sid=
+=3DGOODS_LIST2"><img src=3D"https://aid.kwcdn.com/maleonn/static/v2/231022-=
+3659309496.png?imageAuto/normal/id/9a339ca6-f025-47f6-90b2-6043c3def6e6/for=
+mat/png" width=3D"100%" style=3D"display:block;border:0;height:auto;width:1=
+00%;text-decoration:none;outline:none;object-fit:contain"></a></td></tr><tr=
+><td style=3D"padding:11.5px 0px 11.5px 0px;line-height:1;font-size:0px" co=
+lSpan=3D"3"></td></tr><tr style=3D"width:100%"><td style=3D"width:33.33%;pa=
+dding:0px 8.66px 0px 0px;line-height:1;font-size:0px"><a href=3D"https://ap=
+p.temu.com/mbs_landing_goods.html?_bg_fs=3D1&amp;_x_mmid=3Da7984addf4584640=
+b8ffe78c13e1bbabCHN1&amp;msgid=3D12-20231022-09-B-658119080990384128-449-5Y=
+BwV4vH&_p_landing=3D1&_x_src=3Dmail&amp;goods_price=3D2199&amp;locale_overr=
+ide=3D12~en~AUD&amp;site_id=3D103&amp;mmid=3Da7984addf4584640b8ffe78c13e1bb=
+abCHN1&amp;goods_id=3D601099516686117&amp;rule_id=3Dopt1_28&amp;_p_goodsid=
+=3D601099516686117&amp;scene=3Dclick_rec_pool&amp;floor_topic=3DWOMEN%27S%2=
+0CLOTHING&amp;_x_sid=3DGOODS_LIST2"><img src=3D"https://aid.kwcdn.com/maleo=
+nn/static/v2/231020-381799732.png?imageAuto/normal/id/a82a2332-17bc-470e-9b=
+f6-a165b2fa1204/format/png" width=3D"100%" style=3D"display:block;border:0;=
+height:auto;width:100%;text-decoration:none;outline:none;object-fit:contain=
+"></a></td><td style=3D"width:33.33%;padding:0px 4.33px 0px 4.33px;line-hei=
+ght:1;font-size:0px"><a href=3D"https://app.temu.com/mbs_landing_goods.html=
+?_bg_fs=3D1&amp;_x_mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&amp;msgid=3D=
+12-20231022-09-B-658119080990384128-449-5YBwV4vH&_p_landing=3D1&_x_src=3Dma=
+il&amp;goods_price=3D5297&amp;locale_override=3D12~en~AUD&amp;site_id=3D103=
+&amp;mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&amp;goods_id=3D60109951614=
+2892&amp;rule_id=3Dopt1_28&amp;_p_goodsid=3D601099516142892&amp;scene=3Dcli=
+ck_rec_pool&amp;floor_topic=3DWOMEN%27S%20CLOTHING&amp;_x_sid=3DGOODS_LIST2=
+"><img src=3D"https://aid.kwcdn.com/maleonn/static/v2/231020-3521064997.png=
+?imageAuto/normal/id/82520071-16bd-4401-9509-ec267a93368a/format/png" width=
+=3D"100%" style=3D"display:block;border:0;height:auto;width:100%;text-decor=
+ation:none;outline:none;object-fit:contain"></a></td><td style=3D"width:33.=
+33%;padding:0px 0px 0px 8.66px;line-height:1;font-size:0px"><a href=3D"http=
+s://app.temu.com/mbs_landing_goods.html?_bg_fs=3D1&amp;_x_mmid=3Da7984addf4=
+584640b8ffe78c13e1bbabCHN1&amp;msgid=3D12-20231022-09-B-658119080990384128-=
+449-5YBwV4vH&_p_landing=3D1&_x_src=3Dmail&amp;goods_price=3D3548&amp;locale=
+_override=3D12~en~AUD&amp;site_id=3D103&amp;mmid=3Da7984addf4584640b8ffe78c=
+13e1bbabCHN1&amp;goods_id=3D601099517298772&amp;rule_id=3Dopt1_28&amp;_p_go=
+odsid=3D601099517298772&amp;scene=3Dclick_rec_pool&amp;floor_topic=3DWOMEN%=
+27S%20CLOTHING&amp;_x_sid=3DGOODS_LIST2"><img src=3D"https://aid.kwcdn.com/=
+maleonn/static/v2/231022-3212406055.png?imageAuto/normal/id/ec334660-d21d-4=
+364-9fa6-ae806468ab5b/format/png" width=3D"100%" style=3D"display:block;bor=
+der:0;height:auto;width:100%;text-decoration:none;outline:none;object-fit:c=
+ontain"></a></td></tr></table></td></tr><tr><td style=3D"font-size:0px;word=
+-break:break-word;"><div style=3D"height:10px;line-height:10px;">&#8202;</d=
+iv></td></tr><tr><td align=3D"center" style=3D"font-size:0px;padding:0px;wo=
+rd-break:break-word;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" role=3D"presentation" style=3D"border-collapse:collapse;border-spacing:0=
+px;"><tbody><tr><td style=3D"width:600px;"><a href=3D"https://app.temu.com/=
+mbs_landing_goods.html?_bg_fs=3D1&rule_id=3Ddiscount_70&main_goods_ids=3D%5=
+B601099522629273%2C%20601099521368569%2C%20601099524854922%2C%2060109952662=
+6428%2C%20601099518324369%2C%20601099520242479%5D&main_goods_prices=3D%5B30=
+59%2C%202846%2C%203144%2C%203909%2C%202846%2C%202719%5D&scene=3Dclick_rec_p=
+ool&floor_topic=3D70%25%20OFF%20or%20more&_x_mmid=3Da7984addf4584640b8ffe78=
+c13e1bbabCHN1&site_id=3D103&locale_override=3D12~en~AUD&mmid=3Da7984addf458=
+4640b8ffe78c13e1bbabCHN1&msgid=3D12-20231022-09-B-658119080990384128-449-5Y=
+BwV4vH&_p_landing=3D1&_x_src=3Dmail" target=3D"_blank"><img height=3D"auto"=
+ src=3D"https://aid.kwcdn.com/maleonn/static/v1/230621-3468863155.png?image=
+Auto/normal/id/52a840f5-0bd0-4ec8-a43c-99ffeca63a4e/format/png" style=3D"bo=
+rder:0;display:block;outline:none;text-decoration:none;height:auto;width:10=
+0%;font-size:13px;" width=3D"600"></a></td></tr></tbody></table></td></tr><=
+tr><td style=3D"font-size:0px;word-break:break-word;"><div style=3D"height:=
+10px;line-height:10px;">&#8202;</div></td></tr><tr><td align=3D"center" sty=
+le=3D"font-size:0px;padding:0;word-break:break-word;"><table cellpadding=3D=
+"0" cellspacing=3D"0" width=3D"100%" border=3D"0" style=3D"color:#000000;fo=
+nt-family:-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, &#x27;Ro=
+boto&#x27;, &#x27;Oxygen&#x27;, &#x27;Ubuntu&#x27;, &#x27;Cantarell&#x27;, =
+&#x27;Fira Sans&#x27;, &#x27;Droid Sans&#x27;,&#x27;Helvetica Neue&#x27;, s=
+ans-serif;font-size:13px;line-height:22px;table-layout:auto;width:100%;bord=
+er:none;"><tr style=3D"width:100%"><td style=3D"width:33.33%;padding:0px 8.=
+66px 0px 0px;line-height:1;font-size:0px"><a href=3D"https://app.temu.com/m=
+bs_landing_goods.html?_bg_fs=3D1&amp;_x_mmid=3Da7984addf4584640b8ffe78c13e1=
+bbabCHN1&amp;msgid=3D12-20231022-09-B-658119080990384128-449-5YBwV4vH&_p_la=
+nding=3D1&_x_src=3Dmail&amp;goods_price=3D3059&amp;locale_override=3D12~en~=
+AUD&amp;site_id=3D103&amp;mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&amp;g=
+oods_id=3D601099522629273&amp;rule_id=3Ddiscount_70&amp;_p_goodsid=3D601099=
+522629273&amp;scene=3Dclick_rec_pool&amp;floor_topic=3D70%25%20OFF%20or%20m=
+ore&amp;_x_sid=3DGOODS_LIST3"><img src=3D"https://aid.kwcdn.com/maleonn/sta=
+tic/v2/231021-3653009303.png?imageAuto/normal/id/d75b056a-2785-4964-ada3-b6=
+60e8603768/format/png" width=3D"100%" style=3D"display:block;border:0;heigh=
+t:auto;width:100%;text-decoration:none;outline:none;object-fit:contain"></a=
+></td><td style=3D"width:33.33%;padding:0px 4.33px 0px 4.33px;line-height:1=
+;font-size:0px"><a href=3D"https://app.temu.com/mbs_landing_goods.html?_bg_=
+fs=3D1&amp;_x_mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&amp;msgid=3D12-20=
+231022-09-B-658119080990384128-449-5YBwV4vH&_p_landing=3D1&_x_src=3Dmail&am=
+p;goods_price=3D2846&amp;locale_override=3D12~en~AUD&amp;site_id=3D103&amp;=
+mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&amp;goods_id=3D601099521368569&=
+amp;rule_id=3Ddiscount_70&amp;_p_goodsid=3D601099521368569&amp;scene=3Dclic=
+k_rec_pool&amp;floor_topic=3D70%25%20OFF%20or%20more&amp;_x_sid=3DGOODS_LIS=
+T3"><img src=3D"https://aid.kwcdn.com/maleonn/static/v2/231019-2095926104.p=
+ng?imageAuto/normal/id/78aa6771-defc-49ce-86a3-40b49f840c4b/format/png" wid=
+th=3D"100%" style=3D"display:block;border:0;height:auto;width:100%;text-dec=
+oration:none;outline:none;object-fit:contain"></a></td><td style=3D"width:3=
+3.33%;padding:0px 0px 0px 8.66px;line-height:1;font-size:0px"><a href=3D"ht=
+tps://app.temu.com/mbs_landing_goods.html?_bg_fs=3D1&amp;_x_mmid=3Da7984add=
+f4584640b8ffe78c13e1bbabCHN1&amp;msgid=3D12-20231022-09-B-65811908099038412=
+8-449-5YBwV4vH&_p_landing=3D1&_x_src=3Dmail&amp;goods_price=3D3144&amp;loca=
+le_override=3D12~en~AUD&amp;site_id=3D103&amp;mmid=3Da7984addf4584640b8ffe7=
+8c13e1bbabCHN1&amp;goods_id=3D601099524854922&amp;rule_id=3Ddiscount_70&amp=
+;_p_goodsid=3D601099524854922&amp;scene=3Dclick_rec_pool&amp;floor_topic=3D=
+70%25%20OFF%20or%20more&amp;_x_sid=3DGOODS_LIST3"><img src=3D"https://aid.k=
+wcdn.com/maleonn/static/v2/231021-4102981700.png?imageAuto/normal/id/7dd79f=
+01-7fad-48c0-9810-fef0faa7d139/format/png" width=3D"100%" style=3D"display:=
+block;border:0;height:auto;width:100%;text-decoration:none;outline:none;obj=
+ect-fit:contain"></a></td></tr><tr><td style=3D"padding:11.5px 0px 11.5px 0=
+px;line-height:1;font-size:0px" colSpan=3D"3"></td></tr><tr style=3D"width:=
+100%"><td style=3D"width:33.33%;padding:0px 8.66px 0px 0px;line-height:1;fo=
+nt-size:0px"><a href=3D"https://app.temu.com/mbs_landing_goods.html?_bg_fs=
+=3D1&amp;_x_mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&amp;msgid=3D12-2023=
+1022-09-B-658119080990384128-449-5YBwV4vH&_p_landing=3D1&_x_src=3Dmail&amp;=
+goods_price=3D3909&amp;locale_override=3D12~en~AUD&amp;site_id=3D103&amp;mm=
+id=3Da7984addf4584640b8ffe78c13e1bbabCHN1&amp;goods_id=3D601099526626428&am=
+p;rule_id=3Ddiscount_70&amp;_p_goodsid=3D601099526626428&amp;scene=3Dclick_=
+rec_pool&amp;floor_topic=3D70%25%20OFF%20or%20more&amp;_x_sid=3DGOODS_LIST3=
+"><img src=3D"https://aid.kwcdn.com/maleonn/static/v2/231021-2937420437.png=
+?imageAuto/normal/id/47ee8f06-1cb3-4c2f-80d0-6f18a495840c/format/png" width=
+=3D"100%" style=3D"display:block;border:0;height:auto;width:100%;text-decor=
+ation:none;outline:none;object-fit:contain"></a></td><td style=3D"width:33.=
+33%;padding:0px 4.33px 0px 4.33px;line-height:1;font-size:0px"><a href=3D"h=
+ttps://app.temu.com/mbs_landing_goods.html?_bg_fs=3D1&amp;_x_mmid=3Da7984ad=
+df4584640b8ffe78c13e1bbabCHN1&amp;msgid=3D12-20231022-09-B-6581190809903841=
+28-449-5YBwV4vH&_p_landing=3D1&_x_src=3Dmail&amp;goods_price=3D2846&amp;loc=
+ale_override=3D12~en~AUD&amp;site_id=3D103&amp;mmid=3Da7984addf4584640b8ffe=
+78c13e1bbabCHN1&amp;goods_id=3D601099518324369&amp;rule_id=3Ddiscount_70&am=
+p;_p_goodsid=3D601099518324369&amp;scene=3Dclick_rec_pool&amp;floor_topic=
+=3D70%25%20OFF%20or%20more&amp;_x_sid=3DGOODS_LIST3"><img src=3D"https://ai=
+d.kwcdn.com/maleonn/static/v2/231021-4235533400.png?imageAuto/normal/id/d35=
+f721a-c1bc-472c-b7cc-ed007cfc6bcb/format/png" width=3D"100%" style=3D"displ=
+ay:block;border:0;height:auto;width:100%;text-decoration:none;outline:none;=
+object-fit:contain"></a></td><td style=3D"width:33.33%;padding:0px 0px 0px =
+8.66px;line-height:1;font-size:0px"><a href=3D"https://app.temu.com/mbs_lan=
+ding_goods.html?_bg_fs=3D1&amp;_x_mmid=3Da7984addf4584640b8ffe78c13e1bbabCH=
+N1&amp;msgid=3D12-20231022-09-B-658119080990384128-449-5YBwV4vH&_p_landing=
+=3D1&_x_src=3Dmail&amp;goods_price=3D2719&amp;locale_override=3D12~en~AUD&a=
+mp;site_id=3D103&amp;mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&amp;goods_=
+id=3D601099520242479&amp;rule_id=3Ddiscount_70&amp;_p_goodsid=3D60109952024=
+2479&amp;scene=3Dclick_rec_pool&amp;floor_topic=3D70%25%20OFF%20or%20more&a=
+mp;_x_sid=3DGOODS_LIST3"><img src=3D"https://aid.kwcdn.com/maleonn/static/v=
+2/231021-2154216747.png?imageAuto/normal/id/924a0fe2-7698-463e-b7d9-658d0b0=
+5572a/format/png" width=3D"100%" style=3D"display:block;border:0;height:aut=
+o;width:100%;text-decoration:none;outline:none;object-fit:contain"></a></td=
+></tr></table></td></tr></tbody></table></div><!--[if mso | IE]></td></tr><=
+/table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td><=
+/tr></table><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px;" width=3D"=
+600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:e=
+xactly;"><![endif]--><div style=3D"margin:0px auto;max-width:600px;"><table=
+ align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"=
+presentation" style=3D"width:100%;"><tbody><tr><td style=3D"direction:ltr;f=
+ont-size:0px;padding:0px;text-align:left;"><!--[if mso | IE]><table role=3D=
+"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td cla=
+ss=3D"" style=3D"vertical-align:top;width:600px;" ><![endif]--><div class=
+=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0px;text-ali=
+gn:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">=
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"vertical-align:top;" width=3D"100%"><tbody><tr><td style=3D"fon=
+t-size:0px;padding:   ;word-break:break-word;"><div style=3D"height:10px;li=
+ne-height:10px;">&#8202;</div></td></tr></tbody></table></div><!--[if mso |=
+ IE]></td></tr></table><![endif]--></td></tr></tbody></table></div><!--[if =
+mso | IE]></td></tr></table><table align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"email-block-outlook node-idx-content.chi=
+ldren.[8]-outlook node-type-wrapper-outlook" role=3D"presentation" style=3D=
+"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0p=
+x;mso-line-height-rule:exactly;"><![endif]--><div class=3D"email-block node=
+-idx-content.children.[8] node-type-wrapper" style=3D"margin:0px auto;max-w=
+idth:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" role=3D"presentation" style=3D"width:100%;"><tbody><tr><td style=
+=3D"border:none;direction:ltr;font-size:0px;padding:0px 0px 0px 0px;text-al=
+ign:center;"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-alig=
+n:top;width:600px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook=
+-group-fix" style=3D"font-size:0px;text-align:left;direction:ltr;display:in=
+line-block;vertical-align:top;width:100%;"><table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><t=
+d style=3D"vertical-align:top;padding:0px 0px 0px 0px;"><table border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><=
+tbody><tr><td align=3D"center" style=3D"font-size:0px;padding:0px 0px 0px 0=
+px;word-break:break-word;"><table border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;border-spac=
+ing:0px;"><tbody><tr><td style=3D"width:600px;"><a href=3D"https://www.temu=
+.com/download.html?_x_src=3Dmail&_x_campaign=3Dauto_send_mail&_x_cid=3Dauto=
+_send_mail_1030&_x_mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&site_id=3D10=
+3&locale_override=3D12~en~AUD&mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&m=
+sgid=3D12-20231022-09-B-658119080990384128-449-5YBwV4vH&_p_landing=3D1&_x_s=
+rc=3Dmail&_x_sid=3DDOWNLOAD_2" target=3D"_blank"><img height=3D"auto" src=
+=3D"https://aimg.kwcdn.com/shark-push/1e78ea468f/dfcbb2f714901ccee361f293a8=
+560cd0.jpg" style=3D"border:0;display:block;outline:none;text-decoration:no=
+ne;height:auto;width:100%;font-size:13px;" width=3D"600"></a></td></tr></tb=
+ody></table></td></tr></tbody></table></td></tr></tbody></table></div><!--[=
+if mso | IE]></td></tr></table><![endif]--></td></tr></tbody></table></div>=
+<!--[if mso | IE]></td></tr></table><table align=3D"center" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" class=3D"email-block-outlook node-idx-con=
+tent.children.[9]-outlook node-type-section-outlook" role=3D"presentation" =
+style=3D"width:600px;" width=3D"600" bgcolor=3D"#F9F9F9" ><tr><td style=3D"=
+line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><d=
+iv class=3D"email-block node-idx-content.children.[9] node-type-section" st=
+yle=3D"background:#F9F9F9;background-color:#F9F9F9;margin:0px auto;max-widt=
+h:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"background:#F9F9F9;background-color:=
+#F9F9F9;width:100%;"><tbody><tr><td style=3D"border:none;direction:ltr;font=
+-size:0px;padding:20px 0px 24px 0px;text-align:center;"><!--[if mso | IE]><=
+table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+"><tr><td class=3D"" style=3D"vertical-align:top;width:600px;" ><![endif]--=
+><div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0=
+px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;wi=
+dth:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"=
+presentation" width=3D"100%"><tbody><tr><td style=3D"border:none;vertical-a=
+lign:top;padding:0px;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" width=3D"100%"><tbody><tr><td align=3D"center" st=
+yle=3D"font-size:0px;padding:0px;word-break:break-word;"><div style=3D"font=
+-family:-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, &#x27;Robo=
+to&#x27;, &#x27;Oxygen&#x27;, &#x27;Ubuntu&#x27;, &#x27;Cantarell&#x27;, &#=
+x27;Fira Sans&#x27;, &#x27;Droid Sans&#x27;,&#x27;Helvetica Neue&#x27;, san=
+s-serif;font-size:10px;font-weight:400;line-height:1.4;text-align:center;co=
+lor:rgba(0,0,0,0.7);"><span dir=3D"ltr">NOTE: This is an automatically gene=
+rated email, please do not reply.</span></div></td></tr><tr><td align=3D"ce=
+nter" style=3D"font-size:0px;padding:0px;word-break:break-word;"><div style=
+=3D"font-family:-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, &#=
+x27;Roboto&#x27;, &#x27;Oxygen&#x27;, &#x27;Ubuntu&#x27;, &#x27;Cantarell&#=
+x27;, &#x27;Fira Sans&#x27;, &#x27;Droid Sans&#x27;,&#x27;Helvetica Neue&#x=
+27;, sans-serif;font-size:10px;font-weight:400;line-height:1.4;text-align:c=
+enter;color:rgba(0,0,0,0.7);"><span dir=3D"ltr">Office address: Suite 355, =
+31 St. James Avenue Boston,</span></div></td></tr><tr><td align=3D"center" =
+style=3D"font-size:0px;padding:0px;word-break:break-word;"><div style=3D"fo=
+nt-family:-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, &#x27;Ro=
+boto&#x27;, &#x27;Oxygen&#x27;, &#x27;Ubuntu&#x27;, &#x27;Cantarell&#x27;, =
+&#x27;Fira Sans&#x27;, &#x27;Droid Sans&#x27;,&#x27;Helvetica Neue&#x27;, s=
+ans-serif;font-size:10px;font-weight:400;line-height:1.4;text-align:center;=
+color:rgba(0,0,0,0.7);"><span dir=3D"ltr">Massachusetts -02116, USA</span><=
+/div></td></tr><tr><td align=3D"center" style=3D"font-size:0px;padding:12px=
+ 0px 0px 0px;word-break:break-word;"><div style=3D"font-family:-apple-syste=
+m, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, &#x27;Roboto&#x27;, &#x27;Oxyg=
+en&#x27;, &#x27;Ubuntu&#x27;, &#x27;Cantarell&#x27;, &#x27;Fira Sans&#x27;,=
+ &#x27;Droid Sans&#x27;,&#x27;Helvetica Neue&#x27;, sans-serif;font-size:10=
+px;font-weight:400;line-height:1.4;text-align:center;color:rgba(0,0,0,0.7);=
+"><span dir=3D"ltr">Return address:=C2=A0<a href=3D"https://app.temu.com/cm=
+sg_transit.html?_cmsg_biz=3D3003&amp;_cmsg_channel=3Dmail&amp;_cmsg_locale=
+=3D12~en~AUD&amp;_x_mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&msgid=3D12-=
+20231022-09-B-658119080990384128-449-5YBwV4vH&_p_landing=3D1&_x_src=3Dmail&=
+site_id=3D103&locale_override=3D12~en~AUD&mmid=3Da7984addf4584640b8ffe78c13=
+e1bbabCHN1" style=3D"color:#FB7701;text-decoration:underline;font-size:10px=
+">Click to view our return addresses.</a></span></div></td></tr><tr><td ali=
+gn=3D"center" style=3D"font-size:0px;padding:0px;word-break:break-word;"><d=
+iv style=3D"font-family:-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#=
+x27;, &#x27;Roboto&#x27;, &#x27;Oxygen&#x27;, &#x27;Ubuntu&#x27;, &#x27;Can=
+tarell&#x27;, &#x27;Fira Sans&#x27;, &#x27;Droid Sans&#x27;,&#x27;Helvetica=
+ Neue&#x27;, sans-serif;font-size:10px;font-weight:400;line-height:1.4;text=
+-align:center;color:rgba(0,0,0,0.7);"><span dir=3D"ltr">If you want to retu=
+rn items, please request a return and use Temu=E2=80=99s label.</span></div=
+></td></tr><tr><td align=3D"center" style=3D"font-size:0px;padding:0px;word=
+-break:break-word;"><div style=3D"font-family:-apple-system, BlinkMacSystem=
+Font, &#x27;Segoe UI&#x27;, &#x27;Roboto&#x27;, &#x27;Oxygen&#x27;, &#x27;U=
+buntu&#x27;, &#x27;Cantarell&#x27;, &#x27;Fira Sans&#x27;, &#x27;Droid Sans=
+&#x27;,&#x27;Helvetica Neue&#x27;, sans-serif;font-size:10px;font-weight:40=
+0;line-height:1.4;text-align:center;color:rgba(0,0,0,0.7);"><a dir=3D"ltr" =
+href=3D"https://app.temu.com/cmsg_transit.html?_cmsg_biz=3D9004&amp;_cmsg_c=
+hannel=3Dmail&amp;_cmsg_locale=3D12~en~AUD&amp;_x_mmid=3Da7984addf4584640b8=
+ffe78c13e1bbabCHN1&msgid=3D12-20231022-09-B-658119080990384128-449-5YBwV4vH=
+&_p_landing=3D1&_x_src=3Dmail&site_id=3D103&locale_override=3D12~en~AUD&mmi=
+d=3Da7984addf4584640b8ffe78c13e1bbabCHN1" style=3D"color:#FB7701;text-decor=
+ation:underline;font-size:10px">Click to view more details.</a></div></td><=
+/tr><tr><td align=3D"center" style=3D"font-size:0px;padding:12px 0px 0px 0p=
+x;word-break:break-word;"><div style=3D"font-family:-apple-system, BlinkMac=
+SystemFont, &#x27;Segoe UI&#x27;, &#x27;Roboto&#x27;, &#x27;Oxygen&#x27;, &=
+#x27;Ubuntu&#x27;, &#x27;Cantarell&#x27;, &#x27;Fira Sans&#x27;, &#x27;Droi=
+d Sans&#x27;,&#x27;Helvetica Neue&#x27;, sans-serif;font-size:10px;font-wei=
+ght:400;line-height:1.4;text-align:center;color:rgba(0,0,0,0.7);"><span dir=
+=3D"ltr">Please contact <a href=3D"https://www.temu.com/support-center.html=
+?_x_mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&msgid=3D12-20231022-09-B-65=
+8119080990384128-449-5YBwV4vH&_p_landing=3D1&_x_src=3Dmail&site_id=3D103&lo=
+cale_override=3D12~en~AUD&mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1" styl=
+e=3D"color:rgba(0,0,0,0.7);text-decoration:underline">customer service</a> =
+if you have any questions.</span></div></td></tr><tr><td align=3D"center" s=
+tyle=3D"font-size:0px;padding:12px 0px 0px 0px;word-break:break-word;"><div=
+ style=3D"font-family:-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x2=
+7;, &#x27;Roboto&#x27;, &#x27;Oxygen&#x27;, &#x27;Ubuntu&#x27;, &#x27;Canta=
+rell&#x27;, &#x27;Fira Sans&#x27;, &#x27;Droid Sans&#x27;,&#x27;Helvetica N=
+eue&#x27;, sans-serif;font-size:13px;font-weight:400;line-height:22px;text-=
+align:center;color:rgba(0,0,0,0.9);"><span dir=3D"ltr"><a href=3D"https://w=
+ww.temu.com/bgp_private_policy.html?_x_mmid=3Da7984addf4584640b8ffe78c13e1b=
+babCHN1&msgid=3D12-20231022-09-B-658119080990384128-449-5YBwV4vH&_p_landing=
+=3D1&_x_src=3Dmail&site_id=3D103&locale_override=3D12~en~AUD&mmid=3Da7984ad=
+df4584640b8ffe78c13e1bbabCHN1" style=3D"font-size:10px;color:rgba(0,0,0,0.9=
+);text-decoration:underline;line-height:12px">Privacy &amp; Cookie Policy</=
+a>=C2=A0|=C2=A0<a href=3D"https://www.temu.com/bgp_terms_policy.html?_x_mmi=
+d=3Da7984addf4584640b8ffe78c13e1bbabCHN1&msgid=3D12-20231022-09-B-658119080=
+990384128-449-5YBwV4vH&_p_landing=3D1&_x_src=3Dmail&site_id=3D103&locale_ov=
+erride=3D12~en~AUD&mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1" style=3D"fo=
+nt-size:10px;color:rgba(0,0,0,0.9);text-decoration:underline;line-height:12=
+px">Terms &amp; Conditions</a>=C2=A0|=C2=A0<a href=3D"https://www.temu.com/=
+bgms_unsubscribe_email.html?_x_mmid=3Da7984addf4584640b8ffe78c13e1bbabCHN1&=
+msgid=3D12-20231022-09-B-658119080990384128-449-5YBwV4vH&_p_landing=3D1&_x_=
+src=3Dmail&site_id=3D103&locale_override=3D12~en~AUD&mmid=3Da7984addf458464=
+0b8ffe78c13e1bbabCHN1&amp;_x_sid=3Dunsubscribe" style=3D"font-size:10px;col=
+or:rgba(0,0,0,0.9);text-decoration:underline;line-height:12px">Unsubscribe<=
+/a></span></div></td></tr><tr><td align=3D"center" style=3D"font-size:0px;p=
+adding:0;word-break:break-word;"><!--[if mso | IE]><table role=3D"presentat=
+ion" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td height=3D"0" =
+style=3D"vertical-align:top;height:0;"><![endif]--><div style=3D"font-famil=
+y:-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, &#x27;Roboto&#x2=
+7;, &#x27;Oxygen&#x27;, &#x27;Ubuntu&#x27;, &#x27;Cantarell&#x27;, &#x27;Fi=
+ra Sans&#x27;, &#x27;Droid Sans&#x27;,&#x27;Helvetica Neue&#x27;, sans-seri=
+f;font-size:0px;font-weight:400;line-height:1.7;text-align:center;color:#00=
+0000;height:0;"><div dir=3D"ltr" style=3D"padding:0px 0px 0px 0px;font-size=
+:0;height:0;display:none;visibility:hidden">If you have already placed an o=
+rder, the best way for you to get help is through the Temu app or Temu Free=
+ ShippingYes, your shipping cost is on Temu! Standard shipping is free on a=
+lmost all orders com Then, click Submit Marketing data, such as your prefer=
+ences for receiving our marketing communications and details about your eng=
+agement with them What is Temus policy on information disclosure requests?P=
+lease understand that Temu takes a cautious approach on record disclosure r=
+elating to customers personal information and will not disclose any such re=
+cords unless required by law Labor: Temu has a zero tolerance policy for th=
+e use of forced, indentured, or penal labor Temu App or Temu Go to Your ord=
+ers2 Youll receive an email confirmation once your order has been successfu=
+lly placed The Temu community features to which these Guidelines apply incl=
+ude, without limitation, reviews; helpful votes; wishlists and other lists;=
+ profile pages; customized products; and review violation reports Timing va=
+ries depending on your financial institution and can take up to 30 days Som=
+etimes a package can be marked as delivered when the courier is able to arr=
+ive at your address, but fails to make the delivery when they arent able to=
+ reach you 4 S However, profanity and obscene language are not permitted ma=
+y not be eligible for our Price Adjustment Policy Can I return any product =
+I bought on Temu?Almost all items you bought on Temu are eligible for retur=
+n and refund if you are not satisfied with them, with just a few exceptions=
+:- Clothing items that are worn, washed, damaged, with tags, packaging or h=
+ygiene sticker removed or in an incomplete set If you have already returned=
+ items from an order and would like to return additional items from that sa=
+me order, you can still do it as long as the 90-day window has not expired =
+You and Temu agree to cooperate in good faith with AAA to implement the Bat=
+ch Arbitration process including the payment of single filing and administr=
+ative fees for batches of Requests, as well as any steps to minimize the ti=
+me and costs of arbitration, which may include: (1) the appointment of a di=
+scovery special master to assist the arbitrator in the resolution of discov=
+ery disputes; and (2) the adoption of an expedited calendar of the arbitrat=
+ion proceedings Proceed to checkout and select Continue as a guest We and o=
+ur affiliates provide technical and operational support for our marketplace=
+ app and act as payment collection agent for the Seller for the limited pur=
+pose of accepting funds from you From there, you can see which sizes/colors=
+ are available and, if inventory is running low, you may also see an alert =
+that tells you exactly how many items are left From your app, just go to th=
+e items product details page Click your username &gt; select Name &gt; dele=
+te your old name and enter your new name 5 You can subscribe to an item to =
+be notified when it is back in stock from the Temu mobile app com homepage =
+are always updated with our latest promotions Information or records such a=
+s Temu policies (including but not limited to Terms of Use, Privacy &amp; C=
+ookie Policy), seller names, customer reviews, products images and descript=
+ion, are publicly available on Temus platform Comments written in a mix of =
+languages are not permitted, even though some Temu sites and apps support m=
+ultiple languages For example, we dont allow reviews written in German on T=
+emu Sign in to Temu app or Temu If there is no need to return your item, th=
+en your final step is simply to select your refund method Dont worry-if you=
+ havent received your package, there are a few things that we can do:1 When=
+ you place an order, our system will automatically apply the optimal coupon=
+ that helps you maximize your savings Follow the onscreen instructions to f=
+ill out your payment and shipping details as usual to complete your order T=
+o protect yourself, we recommend that you do not respond to these messages =
+or calls, and avoid clicking on links in emails or text messages from unkno=
+wn sources Temu will provide BAI in response to subpoenas, search warrants,=
+ or court orders In addition to the other uses included in this section, we=
+ may use the Cookies and similar technologies described above for the follo=
+wing purposes:Technical operation If Temu determines that an item is prohib=
+ited or otherwise unfit for sale on Temu, we may, at our sole discretion, t=
+ake one or more enforcement actions, such as issuing warnings, limiting acc=
+ess, or removing listings, against the seller(s) (2) If a counter-notice is=
+ received by the Temu, Temu will send a copy of the counter-notice to the o=
+riginal complaining party informing that person that Temu may replace the r=
+emoved material or cease disabling it in 10 business days Click All at the =
+top of the list6 There are a few reasons why your credit balance may be sma=
+ller which include, but are not limited to:- You may have a pending transac=
+tion for an order that was submitted but hasnt been paid yet Almost all ite=
+ms you bought on Temu are eligible for return and refund if you are not sat=
+isfied with them, with just a few exceptions: (i) clothing items that are w=
+orn, washed, damaged, with tags, packaging or hygiene sticker removed or in=
+ incomplete set; (ii) items that are labelled as non-returnable; and (iii) =
+free gifts Content that advocates or threatens physical or financial harm t=
+o yourself or others, such as terrorism, is not permitted Check your email =
+inbox to retrieve your order confirmation email from temu@order By entering=
+ into these Terms, you hereby provide your irrevocable consent to such moni=
+toring 3 If you need to return your item(s), you will have the option to ch=
+oose your return method For security reasons, your credit balance may be te=
+mporarily suspended Where can I find the return label after applying?You ca=
+n find your return label in two different locations in Your Orders- Click o=
+n All Orders=E2=86=92Print a return label and start return=E2=86=92click on=
+ Print return label- You may also click Returns=E2=86=92Print return label=
+=E2=86=92to download and print your return label For searches that you woul=
+d like to track on desktop, you can click the orange Save button to get not=
+ified when new items that fit your search are posted If you originally sign=
+ed in with your Facebook, Google, Twitter, or Apple login details, you will=
+ have to login through this method only com The first return for EVERY orde=
+r is free Follow the instructions on your screen to create your new Temu ac=
+count Temu is committed to offering the most affordable quality products to=
+ enable you fulfill your dreams in an inclusive environment</div></div><!--=
+[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody></table></td>=
+</tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]-->=
+</td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endi=
+f]--> <!-- =E2=84=A2 --><!-- 108042 --></div></body></html>
+------=_Part_12692756_2121714172.1697938216292--
+
+------=_Part_12692757_1216508588.1697938216292--

@@ -1,0 +1,218 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:8691:b0:4fd:23d3:a27 with SMTP id e17csp597896pxn;
+        Sat, 21 Oct 2023 20:29:13 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGZgBnRZVdoMq9e6H6nbFrjIwrOjWZTpHUWUkDLII4E9RSje/jHJz6r1y3fxQMPVOAKGp8/
+X-Received: by 2002:a05:6808:1586:b0:3ae:5c48:6f41 with SMTP id t6-20020a056808158600b003ae5c486f41mr7313484oiw.28.1697945353622;
+        Sat, 21 Oct 2023 20:29:13 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697945353; cv=none;
+        d=google.com; s=arc-20160816;
+        b=gjSlWDWGiIb2BWWRDNJkCMSZZj/WJCW8n0/oiQg86ioVyaIYTg1HiSCWACRh/cFGVQ
+         v3K/dMWkU5S0s1qzEJvdXpp6WDpnQVOF9s4zdMeQR+9OkeuTI4fpDDHRHVvUhhodmmNy
+         PM3JyKXFBx7vVORhcAQ8mLgv9maj5oftflXuF2IFD5piNbGSeM0fykxCP7BW14fq0gxS
+         LlZ6f+ATxmByrdDGZGJkFw+bsUG0C9+T68I+O4JvJb/voUQK6+GuRWvU/5iBOOKlOu1A
+         9qDieE5kjdiNGupwJRq4ZHD5p1vtsKDPEAeq1qnaWfS60Wfwwwfe4pxjIKKaz3Z6QV+T
+         HaWg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=subject:to:from:mime-version:ironport-sdr:date:message-id
+         :dkim-signature;
+        bh=Vyijp2hXa+xIqsOxroVE1PivbW1p/jzTLTgRpebTYE0=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=aWUK+SMQ5FqHMumv7/RRmB5/CRjMJFyGT7N+m32aoLLPDAUDqtIW7Eic2b68xfVeC0
+         WClejzbjvrIqP8helAJiVplunNIgoXj1wTF3QmpSaLdkYFHEJwHOvWqNUuPOeKH4rgDp
+         8UXhmiuVkt6zTqA0V5vLVqqWF7qjm+r4s8rC7UeRI937eF5nwbRf/64dJj2MxgP0KJvD
+         mJf63hyiK0t2fQiScOhmq5CCyjM2DbfuGMuvZc8vvH56jpVgjq8BnhgqYsJiii92U+QD
+         Pp1uwmd9PyY+9JoBLMzD1q2/t8i69DW93RRnY43ZjAeC/hvLHUsn9V4VKikir4+ajdAN
+         w0fw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@techgig.com header.s=main header.b=w7RT699s;
+       spf=pass (google.com: domain of expertspeak@techgig.com designates 219.65.84.12 as permitted sender) smtp.mailfrom=expertspeak@techgig.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=techgig.com
+Return-Path: <expertspeak@techgig.com>
+Received: from mgw12.techgig.com (mgw12.techgig.com. [219.65.84.12])
+        by mx.google.com with ESMTP id 139-20020a630091000000b0058556a636dbsi4281411pga.434.2023.10.21.20.29.12
+        for <srijani515@gmail.com>;
+        Sat, 21 Oct 2023 20:29:13 -0700 (PDT)
+Received-SPF: pass (google.com: domain of expertspeak@techgig.com designates 219.65.84.12 as permitted sender) client-ip=219.65.84.12;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@techgig.com header.s=main header.b=w7RT699s;
+       spf=pass (google.com: domain of expertspeak@techgig.com designates 219.65.84.12 as permitted sender) smtp.mailfrom=expertspeak@techgig.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=techgig.com
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+  d=techgig.com; i=@techgig.com; q=dns/txt; s=main;
+  t=1697943913; x=1729479913;
+  h=mime-version:from:to:subject:message-id:date;
+  bh=vfYUvAUKYVziOUK7RyoYkULronKIUzTN97vDvH+kLr4=;
+  b=w7RT699srxVWd7GdC869ZFBGafDBpnRZde2nPKPA/NUfNPnxHuwWHe9R
+   M+N162f+FxOINzeceEredqBNw8NIisH75SBIx3y4TIysaYFCp6HqYUt6h
+   0Wprqgn6Dny7WUTbZE/+e4jH3SjVx6iUlKt1pgi0S6kCkeukPxjxdq77c
+   Y=;
+Authentication-Results: mgw12.techgig.com; dkim=none (message not signed) header.i=none
+Message-Id: <84c769$apr9rj@mgw12.techgig.com>
+Date: 22 Oct 2023 03:05:04 +0000
+IronPort-SDR: 9OswIocolZ4IULhN+bT/srZhYe6lIxrZsYSuzzq1XX5L7IE5pRqMlmJjj3fJO5eC/75Qx0cSw3
+ bJC5iK4TY7yWEmLql9Mvb9K4iyeyHSf/w=
+Received: from tgwebz1ap3042 (HELO localhost) ([172.29.30.42])
+  by mgw12.techgig.com with ESMTP; 22 Oct 2023 03:05:04 +0000
+MIME-Version: 1.0
+Content-type: text/html; charset=iso-8859-1;
+From: TechGig Webinar <expertspeak@techgig.com>
+To: srijani515@gmail.com
+Subject: [FREE WEBINAR] The Future of Industries: How Generative AI is Set to Transform Technology & Product Development.
+X-Feedback-ID: PR36917-BT1274401:srijani515@gmail.com:webinar:TechGig
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title></title>
+<table width="100%" bgcolor="#f7f7f7" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;border-spacing:0">
+  <tbody>
+    <tr>
+      <td>
+        <table width="600" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tbody>
+            
+            <tr>
+              <td style="background:#f7f7f7;padding:0;text-align:center">
+                <div style="padding:15px 0;text-align:center">
+                  <img src="https://www.techgig.com/files/contest_upload_files/techgig-logo-300922.png">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">
+				  <a href="https://techgig.com/mail_redirect.php?url=https%3A%2F%2Fwww.techgig.com%2Fwebinar%2FThe-Future-of-Industries-How-Generative-AI-is-Set-to-Transform-Technology-Product-Development-2365%3Fev_src%3Dwb_linkedin%26utm_source%3DTG_batch%26utm_medium%3Demail%26utm_campaign%3Dwebinar_2023-10-22%26%26auto_login=WVRIbUhQRWdTdUYxblczc3RxeDdwejh1V2E3L044V0VTV2pnK0ovN0J3N0pqSlcvZHlvdXJlNmx0MWFDYUJsNUtZTHlaQTM2Uk5NQ1BUMWRNckVVWEE9PQ==%26etoken=WVRIbUhQRWdTdUYxblczc3RxeDdwK1l6YkZYeVQzRU5rZThLYitLVXEzMD0=%26activity_name%3DMTI3NDQwMQ==%26template_type%3D0%26crid%3DYi9abFlUVDNWZjFmVGc3cHZRLzBUZz09" target="_blank"><img src="https://www.techgig.com/files/contest_upload_files/salesforce-191023-1.jpg" style="display:block"></a>
+              </td>
+            </tr>
+            <tr>
+            </tr><tr>
+              <td style="background:#fff; padding:20px;">
+				 
+					 
+                  <p style="padding:0 0 20px 0;margin:0;font-size:14px;line-height:14px;font-family:Arial,Helvetica,sans-serif;font-weight:700;color:#4A4548; ">Hi Srijani Chakrabarti,</p>
+                  <p style="padding:0 0 20px 0;margin:0;font-size:13px;line-height:20px;font-family:Arial,Helvetica,sans-serif;font-weight:400;color:#4A4548;  ">We would like to invite you to a FREE Webinar session on the topic <strong>The Future of Industries: How Generative AI is Set to Transform Technology &amp; Product Development.</strong></p>
+				  
+				  
+				  <div style="padding:0 0 30px 0">
+                          <a href="https://techgig.com/mail_redirect.php?url=https%3A%2F%2Fwww.techgig.com%2Fwebinar%2FThe-Future-of-Industries-How-Generative-AI-is-Set-to-Transform-Technology-Product-Development-2365%3Fev_src%3Dwb_linkedin%26utm_source%3DTG_batch%26utm_medium%3Demail%26utm_campaign%3Dwebinar_2023-10-22%26%26auto_login=WVRIbUhQRWdTdUYxblczc3RxeDdwejh1V2E3L044V0VTV2pnK0ovN0J3N0pqSlcvZHlvdXJlNmx0MWFDYUJsNUtZTHlaQTM2Uk5NQ1BUMWRNckVVWEE9PQ==%26etoken=WVRIbUhQRWdTdUYxblczc3RxeDdwK1l6YkZYeVQzRU5rZThLYitLVXEzMD0=%26activity_name%3DMTI3NDQwMQ==%26template_type%3D0%26crid%3DYi9abFlUVDNWZjFmVGc3cHZRLzBUZz09" style="margin:0;padding:10px 17px;display:inline-block;color:#fff;font-size:13px;line-height:14px;font-family:Arial,Helvetica,sans-serif;text-align:center;font-weight:700;text-decoration:none;background:#0B5CAB;border-radius:26px" target="_blank">
+                            Save My Spot </a>
+                        </div>
+						
+						
+               
+			   <h3 style="padding:0 0 10px 0;margin:0;font-size:20px;line-height:30px;font-family:Arial,Helvetica,sans-serif;font-weight:700;
+			   color:#000B23;  "><img src="https://www.techgig.com/files/contest_upload_files/salesforce-191023-2.png" style="margin-right:10px; vertical-align:middle"> Description</h3>
+			   
+			    <p style="padding:0 0 20px 0;margin:0;font-size:13px;line-height:20px;font-family:Arial,Helvetica,sans-serif;font-weight:400;color:#4A4548;  ">What if your code could change the world? Well, here at Salesforce, the #1 AI CRM can.
+
+Generative AI is a transformative force in technology and product development, impacting various industries and applications. Our technology and product teams are building the future of business through Data + AI + CRM + Trust. Guided by our core values, they create cutting-edge, AI-first technologies that connect the world and strengthen relationships between customers and communities. They turn problems into solutions and engineer the industry's most trusted AI CRM....<a href="https://techgig.com/mail_redirect.php?url=https%3A%2F%2Fwww.techgig.com%2Fwebinar%2FThe-Future-of-Industries-How-Generative-AI-is-Set-to-Transform-Technology-Product-Development-2365%3Fev_src%3Dwb_linkedin%26utm_source%3DTG_batch%26utm_medium%3Demail%26utm_campaign%3Dwebinar_2023-10-22%26%26auto_login=WVRIbUhQRWdTdUYxblczc3RxeDdwejh1V2E3L044V0VTV2pnK0ovN0J3N0pqSlcvZHlvdXJlNmx0MWFDYUJsNUtZTHlaQTM2Uk5NQ1BUMWRNckVVWEE9PQ==%26etoken=WVRIbUhQRWdTdUYxblczc3RxeDdwK1l6YkZYeVQzRU5rZThLYitLVXEzMD0=%26activity_name%3DMTI3NDQwMQ==%26template_type%3D0%26crid%3DYi9abFlUVDNWZjFmVGc3cHZRLzBUZz09" style="color:#0B5CAB; text-decoration:none;">Read More </a></p>
+				
+				
+			    <h3 style="padding:0 0 10px 0;margin:0;font-size:20px;line-height:30px;font-family:Arial,Helvetica,sans-serif;font-weight:700;
+			   color:#000B23;  "><img src="https://www.techgig.com/files/contest_upload_files/salesforce-191023-3.png" style="margin-right:10px; vertical-align:middle"> Speaker Detail</h3>
+			   
+					 
+						
+						 
+            
+                  <div style="background:#EAF5F5; padding:20px; border-radius:8px;">
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                      <tbody><tr>
+                        <td style="width:105px; padding:0 0 0 0" valign="top">
+                          <img src="https://www.techgig.com/files/contest_upload_files/salesforce-191023-4.png">
+                        </td>
+                        <td style=" padding:0 0 0 10px">
+                          
+				 
+						  
+                          <p style="font-family:Arial,Helvetica,sans-serif;font-weight:400;line-height:20px;font-size:13px;padding:0;margin:0;color:#4A4548"><strong>Ramesh</strong> Ramesh has over 20 years of technology and product development experience in enterprise software, including leading development in Finance Services Platforms, e-commerce, and industry-specific applications. Currently, he is leading the industry's cloud team of technologists responsible for creating all Industries cloud vertical products....<a href="https://techgig.com/mail_redirect.php?url=https%3A%2F%2Fwww.techgig.com%2Fwebinar%2FThe-Future-of-Industries-How-Generative-AI-is-Set-to-Transform-Technology-Product-Development-2365%3Fev_src%3Dwb_linkedin%26utm_source%3DTG_batch%26utm_medium%3Demail%26utm_campaign%3Dwebinar_2023-10-22%26%26auto_login=WVRIbUhQRWdTdUYxblczc3RxeDdwejh1V2E3L044V0VTV2pnK0ovN0J3N0pqSlcvZHlvdXJlNmx0MWFDYUJsNUtZTHlaQTM2Uk5NQ1BUMWRNckVVWEE9PQ==%26etoken=WVRIbUhQRWdTdUYxblczc3RxeDdwK1l6YkZYeVQzRU5rZThLYitLVXEzMD0=%26activity_name%3DMTI3NDQwMQ==%26template_type%3D0%26crid%3DYi9abFlUVDNWZjFmVGc3cHZRLzBUZz09" style="color:#0B5CAB; font-weight:700; text-decoration:none;">Read more </a>
+                          </p>
+						  
+						   <div style="padding:15px 0 0 0">
+                          <a href="https://techgig.com/mail_redirect.php?url=https%3A%2F%2Fwww.techgig.com%2Fwebinar%2FThe-Future-of-Industries-How-Generative-AI-is-Set-to-Transform-Technology-Product-Development-2365%3Fev_src%3Dwb_linkedin%26utm_source%3DTG_batch%26utm_medium%3Demail%26utm_campaign%3Dwebinar_2023-10-22%26%26auto_login=WVRIbUhQRWdTdUYxblczc3RxeDdwejh1V2E3L044V0VTV2pnK0ovN0J3N0pqSlcvZHlvdXJlNmx0MWFDYUJsNUtZTHlaQTM2Uk5NQ1BUMWRNckVVWEE9PQ==%26etoken=WVRIbUhQRWdTdUYxblczc3RxeDdwK1l6YkZYeVQzRU5rZThLYitLVXEzMD0=%26activity_name%3DMTI3NDQwMQ==%26template_type%3D0%26crid%3DYi9abFlUVDNWZjFmVGc3cHZRLzBUZz09" style="margin:0;padding:10px 17px;display:inline-block;color:#fff;font-size:13px;line-height:14px;font-family:Arial,Helvetica,sans-serif;text-align:center;font-weight:700;text-decoration:none;background:#0B5CAB;border-radius:26px" target="_blank">
+                            Save My Spot </a>
+                        </div>
+                        </td>
+                      </tr>
+					   
+					  
+					 
+                    </tbody></table>
+                  </div>
+                
+					<div style="padding:20px 0 0 0">
+						  <h3 style="padding:0 0 10px 0;margin:0;font-size:20px;line-height:30px;font-family:Arial,Helvetica,sans-serif;font-weight:700;
+			   color:#000B23;  "><img src="https://www.techgig.com/files/contest_upload_files/salesforce-191023-6.png" style="margin-right:10px; vertical-align:middle"> Key points of discussion</h3>
+						
+						<ul style="font-family:Arial,Helvetica,sans-serif;font-weight:400;line-height:20px;font-size:13px;padding:10px 0 0 20px;margin:0;color:#4A4548">
+						<li>The behind-the-scenes Salesforce Industries Product Engineering team.
+
+
+</li>
+<li>An in-depth analysis of Generative AI and Cloud Technology. </li>
+
+<li>How to navigate the challenges and opportunities around Generative AI and product development.</li>
+						</ul>
+						 
+					 
+					 
+					  <div style="padding:15px 0 0 0">
+                          <a href="https://techgig.com/mail_redirect.php?url=https%3A%2F%2Fwww.techgig.com%2Fwebinar%2FThe-Future-of-Industries-How-Generative-AI-is-Set-to-Transform-Technology-Product-Development-2365%3Fev_src%3Dwb_linkedin%26utm_source%3DTG_batch%26utm_medium%3Demail%26utm_campaign%3Dwebinar_2023-10-22%26%26auto_login=WVRIbUhQRWdTdUYxblczc3RxeDdwejh1V2E3L044V0VTV2pnK0ovN0J3N0pqSlcvZHlvdXJlNmx0MWFDYUJsNUtZTHlaQTM2Uk5NQ1BUMWRNckVVWEE9PQ==%26etoken=WVRIbUhQRWdTdUYxblczc3RxeDdwK1l6YkZYeVQzRU5rZThLYitLVXEzMD0=%26activity_name%3DMTI3NDQwMQ==%26template_type%3D0%26crid%3DYi9abFlUVDNWZjFmVGc3cHZRLzBUZz09" style="margin:0;padding:10px 17px;display:inline-block;color:#fff;font-size:13px;line-height:14px;font-family:Arial,Helvetica,sans-serif;text-align:center;font-weight:700;text-decoration:none;background:#0B5CAB;border-radius:26px" target="_blank">
+                            Save My Spot </a>
+                        </div>
+					 
+					 
+							 <p style="padding:30px 0 0 0;margin:0;font-size:13px;line-height:24px;font-family:Arial,Helvetica,sans-serif;font-weight:400;color:#4A4548;   ">Warm Regards <br>
+                  <span style="font-weight:700">Team TechGig</span>
+                </p>
+					</div>
+			
+				
+				 
+				 
+              </td>
+            </tr>
+           
+              <tr><td style="background:#f7f7f7;padding:10px 0">
+                <table cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px" align="center">
+                  <tbody><tr>
+                    <td style="width:300px">
+                      <p style="padding:0;margin:0;font-size:12px;line-height:18px;font-family:Arial,Helvetica,sans-serif;font-weight:400;color:#c2c2c2">
+                        <span style="font-size:13px">TechGig</span>
+                        <br>Times Center, FC - 6, Sector 16 A, Film City, <br>Noida - 201301, Uttar Pradesh, India
+                      </p>
+                    </td>
+                    <td style="width:200px">
+                      <p style="padding:0;margin:0;font-size:13px;line-height:18px;font-family:Arial,Helvetica,sans-serif;font-weight:400;color:#c2c2c2">Follow Us on <br>
+                        <a style="padding-right:4px;text-decoration:none" href="http://www.facebook.com/TechGig" target="_blank" rel="noreferrer">
+                          <img src="https://www.techgig.com/files/nicUploads/475110113538406.png">
+                        </a>
+                        <a style="padding-right:4px;text-decoration:none" href="https://twitter.com/#!/techgigdotcom" target="_blank" rel="noreferrer">
+                          <img src="https://www.techgig.com/files/nicUploads/988866088855306.png">
+                        </a>
+                        <a style="padding-right:4px;text-decoration:none" href="https://www.linkedin.com/company/techgig-com" target="_blank" rel="noreferrer">
+                          <img src="https://www.techgig.com/files/nicUploads/943957694855144.png">
+                        </a>
+                    </p></td>
+                    <td style="width:100px">
+                      <p style="padding:0;margin:0;font-size:13px;line-height:18px;font-family:Arial,Helvetica,sans-serif;font-weight:400;color:#c2c2c2">Download App <br>
+                        <a href="https://play.google.com/store/apps/details?id=com.timesgroup.techgig&amp;hl=en&amp;utm_source=Email&amp;utm_medium=app_icon&amp;utm_campaign=TgAppIcon" target="_blank" rel="noreferrer">
+                          <img class="m_apps" src="https://www.techgig.com/files/nicUploads/874250402864600.png">
+                        </a>
+                    </p></td>
+                  </tr>
+                  <tr>
+                    <td colspan="3" style="height:10px"></td>
+                  </tr>
+                  <tr>
+                    <td colspan="3" style="border-top:1px solid #dadada;margin:0;padding:0;font-size:12px;text-align:left;color:#c2c2c2;line-height:18px;font-family:Arial,Helvetica,sans-serif;font-weight:400">
+                      <p align="center" style="padding:10px 0;margin:0"><span style='text-align:center; font:normal 11px arial; color:#363737; line-height:19px;'>Note: For your privacy and protection, please do not forward this mail to anyone as it allows you to get automatically logged into your account.<br> If you do not want to receive this mailer, <a href='https://techgig.com/block_invitations.php?block_etoken=WVRIbUhQRWdTdUYxblczc3RxeDdwK1l6YkZYeVQzRU5rZThLYitLVXEzMD0=&receiverUid=WVRIbUhQRWdTdUYxblczc3RxeDdwK1l6YkZYeVQzRU5rZThLYitLVXEzMD0=&master_ref_id=MTI3NDQwMQ==&template_type=0&activity_id=MQ==' style='text-decoration:none; font-weight:bold;'>unsubscribe</a>. To make sure this email is not sent to your &quot;junk/bulk&quot; folder,<br />select &quot;Add/save to Address Book&quot; in your email browser and follow the appropriate instructions.</span><div style='display:none;'><img src="https://www.techgig.com/mis/tj_mailer_opened_count_all.php?etoken=WVRIbUhQRWdTdUYxblczc3RxeDdwK1l6YkZYeVQzRU5rZThLYitLVXEzMD0=&activity_name=MTI3NDQwMQ==%26template_type%3D0%26crid%3DYi9abFlUVDNWZjFmVGc3cHZRLzBUZz09&current_date=2023-10-22&mformat=HTML" style="display:none;"></div></p>
+                    </td>
+                  </tr>
+                </tbody></table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>

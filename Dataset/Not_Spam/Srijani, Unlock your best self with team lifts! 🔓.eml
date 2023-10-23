@@ -1,0 +1,676 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:8691:b0:4fd:23d3:a27 with SMTP id e17csp237108pxn;
+        Sat, 21 Oct 2023 04:24:36 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHdmn2TUvp7syfqvjYsPovTW5EefEW2dNKqclnIG1YJ1E0x2JiZMBiSOD83CexoEWBqo3J0
+X-Received: by 2002:a67:e0c6:0:b0:457:e862:8bc1 with SMTP id m6-20020a67e0c6000000b00457e8628bc1mr3884100vsl.2.1697887476311;
+        Sat, 21 Oct 2023 04:24:36 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697887476; cv=none;
+        d=google.com; s=arc-20160816;
+        b=gD1QoF6uSoigDW8VxOOzAHJssVnIllkiMvlY6seK7INHDCguEA4w6Pkik5XZyuXpFO
+         ws3+ZkOPdS/dvn5vT1QHSarhYjyiSNQUjJSr8ltcwvtExiZz8fbUEa1pF/23fmIpXR0o
+         JKAh+B9evo9UU7guos6YtmlkVbtjLt12xf/Oqjhr+KClkmSg1f7mhvcDgn0LgPulAOuU
+         8s49MYGsUMuiFgfs+SK3NFhYRoz8uD1we+27bWC3NPiO6RanLFsJ9zZ4uuTFVxn0DDbs
+         dQYy8ILsSgkhcpju6tor6/BqoOKLVAl9nLr8Yv5L4kCf3CkmJ5IlVBfs7DvCUlWm2jZz
+         eQbg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=uBeKNX++Tg+v8mSvcdSqw2xeNlXFHMzcO/ZvyE+Aifw=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=o3wpgyOMIzV92+nDx/lp7A1ebnr5dnzQLqRbQ9WjxaNNSELN9oolKv5M1YiOnYVAMD
+         nAI0OIQhw6pK779wzALrqEqd+1FB8NhWJX2ejQXTcvIy+eyHoqrm0hhlC7PmxTUH4qyx
+         dX/UFx8WlsJVTwieiWsWx7u+pfL5IFJ4fTevJtySeGAoa2ekxURamEI5qgi4j0SdL+ep
+         ygdZHTwXwk7EM76X+JCx+8FX7/2Q5kLxKnDc3++J6OKsIUiSlU4lkT6FT5oyFUrEEIQn
+         iYebOn5wfWAekksGIJ8jYLpe12xogPOJa1Z58eSkevO8Mw/zrGgvyucWlyGrMMKJhW6I
+         /PCg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@info.amberstudent.com header.s=m1 header.b=ETTGF1om;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=axiaNGO6;
+       spf=pass (google.com: domain of bounces+21995400-5bbd-srijani515=gmail.com@em.info.amberstudent.com designates 149.72.148.96 as permitted sender) smtp.mailfrom="bounces+21995400-5bbd-srijani515=gmail.com@em.info.amberstudent.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=info.amberstudent.com
+Return-Path: <bounces+21995400-5bbd-srijani515=gmail.com@em.info.amberstudent.com>
+Received: from o529.em.info.amberstudent.com (o529.em.info.amberstudent.com. [149.72.148.96])
+        by mx.google.com with ESMTPS id y11-20020a056214016b00b006563bd1457fsi2762137qvs.183.2023.10.21.04.24.36
+        for <srijani515@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 21 Oct 2023 04:24:36 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+21995400-5bbd-srijani515=gmail.com@em.info.amberstudent.com designates 149.72.148.96 as permitted sender) client-ip=149.72.148.96;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@info.amberstudent.com header.s=m1 header.b=ETTGF1om;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=axiaNGO6;
+       spf=pass (google.com: domain of bounces+21995400-5bbd-srijani515=gmail.com@em.info.amberstudent.com designates 149.72.148.96 as permitted sender) smtp.mailfrom="bounces+21995400-5bbd-srijani515=gmail.com@em.info.amberstudent.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=info.amberstudent.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=info.amberstudent.com;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	reply-to:x-feedback-id:to:list-unsubscribe:cc:content-type:from:subject:to;
+	s=m1; bh=uBeKNX++Tg+v8mSvcdSqw2xeNlXFHMzcO/ZvyE+Aifw=;
+	b=ETTGF1omnhm1BFN2IkWV9x257MtxsynWDr3UO3U4lMM4c0mOWUvQvsZDFP7EnMHBkxVs
+	eB1LTbqa1j3i5dfEvQAczYjL3CzCuD/3ht9eu+KDrYjoXmB443JMcPISoLSVtSqcispA0r
+	LMWkHnNVTNK9dS5ilUuctOceVHncQhxX0wWxcaHgoW5kHBoTz2VtTkvRHW8yS4y2dkvR2z
+	gYyh88gL8n8IKmES6UG/TmgKVWZwXtNL7S67BSVZ4TELUlFmGDwaVqW8QZhGwGcSn1NyH/
+	VDaFDqTsWCBgqZttiey9qgPmJfTaCaBp4sMnkrt3Te0wGbURou05X8xses7g4JEw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	reply-to:x-feedback-id:to:list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=uBeKNX++Tg+v8mSvcdSqw2xeNlXFHMzcO/ZvyE+Aifw=;
+	b=axiaNGO6K6KfE05qABxckoO75FXVpgJRK3YLMJTlALmJtMVmROQGKD89sNTvCQd3LfTE
+	4VTxiIDJ/DMiuc9ACKNuQWiSxWT4AqVZahERopfLXAw2lp1gN2Jn5e5/CtYdzvD+KYLdYG
+	6lSEEwrxrNI3EIIqBTu57+F8g62zUPLuI=
+Received: by filterdrecv-77b4dd87c-mlg4x with SMTP id filterdrecv-77b4dd87c-mlg4x-1-6533B0B7-52
+        2023-10-21 11:06:31.862193433 +0000 UTC m=+318320.164600327
+Received: from MjE5OTU0MDA (unknown)
+	by geopod-ismtpd-21 (SG) with HTTP
+	id Uocj7QM5TU6TIyMYlYViJQ
+	Sat, 21 Oct 2023 11:06:31.843 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=iso-8859-1
+Date: Sat, 21 Oct 2023 11:24:35 +0000 (UTC)
+From: amberstudent <partners@info.amberstudent.com>
+Mime-Version: 1.0
+Message-ID: <Uocj7QM5TU6TIyMYlYViJQ@geopod-ismtpd-21>
+Subject: Srijani, Unlock your best self with team lifts! =?UTF-8?B?8J+Ukw==?=
+Reply-To: contact@amberstudent.com
+x-campaignid: 6532872d48aa06b9136aaf0b
+X-Feedback-ID: 21995400:SG
+X-SG-EID: 
+ =?us-ascii?Q?X=2Fs8cQzQ49EFiJdFoE4C3rlDZuQWvj=2F4BHZTXnHzDWRsNQrM5xYGJIVRaygjFe?=
+ =?us-ascii?Q?LYy2vN0Uk4oWP0szMy3OSrlS5lQv1frThd4bC+z?=
+ =?us-ascii?Q?PEnQvphqCNrv=2F2uFSaPMk7V1kfTizSF=2FVTLxCw5?=
+ =?us-ascii?Q?4LYzRgThozG5E451nlLdZbKnI3FbCukUYD4g1+c?=
+ =?us-ascii?Q?KVafAUgT5sDWUqr0j6H8I=2F9ERy=2FBo0zSmrEgfo7?=
+ =?us-ascii?Q?boEyxyHDjZHxp6HQz80aAU5s4gUHA0VJtmcj1do?=
+ =?us-ascii?Q?9LAONVfgDHz4Tpdz1vWkQ=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8raWjw0ZPf1VmjsCkspi=2FLLOU4s1O=2FltgRw+mIxfi?=
+ =?us-ascii?Q?9vnvw2XZp423KLX7v4xpBpRJ2cK5JBzrKuLCouG?=
+ =?us-ascii?Q?H=2Fik+eMn0Fx2GuJGR5D291u1KOXVA40wcxMRyqS?=
+ =?us-ascii?Q?sxEpEdhZlxBe4vV4o3xzBLGr=2F2N2O4w62kryvC=2F?=
+ =?us-ascii?Q?0BGNbNF0BpTWGPVd7rMV59wGGRlV1W=2FBcMxVwsC?=
+ =?us-ascii?Q?32GdOQo3oovUv7hgjTlFC31Gd6b1JrLexctpBA3?=
+ =?us-ascii?Q?QLndKbMMLD5E7al0ZylGkojlGLaBS4C5f3uwgii?=
+ =?us-ascii?Q?jOhSKyr7D4T0ur8Q01c+=2F76Z4ks3Twa+rV38ZaO?=
+ =?us-ascii?Q?seHyEsisL8SNyKnndpmmFgiWIJ=2FzDcD4scI5RQK?=
+ =?us-ascii?Q?ferBHlXict?=
+To: srijani515@gmail.com
+X-Entity-ID: mihBddra93flUOqtqNDfOg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em=2Einfo=2Eamberstudent=2Ecom=3Fsubject=3Dhttps=3A=2F=2Fl?=
+ =?us-ascii?Q?ink=2Eamberstudent=2Ecom=2Fss=2Fsu=2FeJIYLEdj4mTb?=
+ =?us-ascii?Q?QhEF1t4iUg=2F40m=2FIc8OBR3aQTyDHx9KE8Ygcg=2Fu?=
+ =?us-ascii?Q?m=2FUNitdfJmBPGzlBqz-2f3YSMjTL3h2yERjdDLM?=
+ =?us-ascii?Q?xOlsfY=3E?=
+
+<!DOCTYPE html>
+
+<html lang=3D"en" xmlns:o=3D"urn:schemas-microsoft-com:office:office" xmlns=
+:v=3D"urn:schemas-microsoft-com:vml"><head><title></title><meta content=3D"=
+text/html; charset=3Dutf-8" http-equiv=3D"Content-Type"/><meta content=3D"w=
+idth=3Ddevice-width,initial-scale=3D1" name=3D"viewport"/><!--[if mso]><xml=
+><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch><o:AllowPNG=
+/></o:OfficeDocumentSettings></xml><![endif]--><!--[if !mso]><!--><link hre=
+f=3D"https://fonts.googleapis.com/css2?family=3DMontserrat:wght@100;400;700=
+;900&display=3Dswap" rel=3D"stylesheet" type=3D"text/css"/><link href=3D"ht=
+tps://app-cdn.moengage.com/fonts/ProximaNova/ProximaNova.css" rel=3D"styles=
+heet" type=3D"text/css"/><!--<![endif]--><style>
+*{box-sizing:border-box}body{margin:0;padding:0}a[x-apple-data-detectors]{c=
+olor:inherit!important;text-decoration:inherit!important}#MessageViewBody a=
+{color:inherit;text-decoration:none}p{line-height:inherit}.desktop_hide,.de=
+sktop_hide table{mso-hide:all;display:none;max-height:0;overflow:hidden}.im=
+age_block img+div{display:none} @media (max-width:620px){.social_block.desk=
+top_hide .social-table{display:inline-block!important}.image_block img.full=
+Width{max-width:100%!important}.mobile_hide{display:none}.row-content{width=
+:100%!important}.mobile_hide{min-height:0;max-height:0;max-width:0;overflow=
+:hidden;font-size:0}.desktop_hide,.desktop_hide table{display:table!importa=
+nt;max-height:none!important}.row-2 .column-1 .block-3.button_block a,.row-=
+2 .column-1 .block-3.button_block div,.row-2 .column-1 .block-3.button_bloc=
+k span,.row-2 .column-1 .block-6.button_block a,.row-2 .column-1 .block-6.b=
+utton_block div,.row-2 .column-1 .block-6.button_block span{line-height:32p=
+x!important}.row-2 .column-1 .block-6.button_block .alignment a,.row-2 .col=
+umn-1 .block-6.button_block .alignment div{width:85%!important}.row-2 .colu=
+mn-1 .block-3.button_block .alignment a,.row-2 .column-1 .block-3.button_bl=
+ock .alignment div{width:90%!important}}
+</style><meta content=3D"noindex, nofollow, noarchive" name=3D"robots"/><me=
+ta content=3D"noindex, nofollow, noarchive" name=3D"googlebot"/></head><bod=
+y style=3D"=09
+                        margin: 0;=09
+                        background-color: #fff;=09
+                        padding: 0;=09
+                        -webkit-text-size-adjust: none;=09
+                        text-size-adjust: none;=09
+                        "><table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" class=3D"nl-container" role=3D"presentation" style=3D"mso-table-lspa=
+ce:0;mso-table-rspace:0;background-color:#fff" width=3D"100%"><tbody><tr><t=
+d><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+class=3D"row row-1" role=3D"presentation" style=3D"mso-table-lspace:0;mso-t=
+able-rspace:0" width=3D"100%"><tbody><tr><td><table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"row-content" role=3D"pr=
+esentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;background-color=
+:#fff;border-radius:0;color:#000;width:600px;margin:0 auto" width=3D"600"><=
+tbody><tr><td class=3D"column column-1" style=3D"mso-table-lspace:0;mso-tab=
+le-rspace:0;font-weight:400;text-align:left;vertical-align:top;border-top:0=
+;border-right:0;border-bottom:0;border-left:0" width=3D"100%"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"image_block block-1" ro=
+le=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0" width=
+=3D"100%"><tbody><tr><td class=3D"pad" style=3D"width:100%;padding-right:0;=
+padding-left:0"><div align=3D"center" class=3D"alignment" style=3D"line-hei=
+ght:10px"><a href=3D"https://link.amberstudent.com/ss/c/oPLlMbFpb4_XKTwzrXp=
+Z0tB15C58xKn-bg-ckw7QqPzPuiVfURuvUkUjTrfzvdT8aoqkMI-smgJmcyxRkF_QthzkETCvow=
+5eOvwJFLynp9VgylkXcDQpjlVG04VGGvXj_3Vbvi1qCwRF2Xy-N_kz4sgmowJLqSPYOV00zt9S8=
+kb6mvKi6c0oWWivD9UZ5i53F0vS05UrBvR_qwVDVonyIu5zFurYSIoMDhPV6601lqw5m_goxi8S=
+j2a1mAD3AnXbk6PZSwvkDOXzY5pdQxqQlBto_H2c0uY5tSW1HQrA_MSuqj0HFIzH5c-WRZj8ku4=
+wxHzgTWAFArIs2ZBxtoRlrZtLS03Nk39-WELMua3oIr3AoffmUNkniqA9eHyb71hJPB1jARi4mo=
+914BaZu-cwospShr7DdGcMVWPG3gF39ztMxCy3Wm2gv0z-ifnMIBmU73wsQcP4fuXfAbniLs36N=
+iUsZ6ji-n8f7FdjHPAGiMWwLSRhetZTxnmkGhAMR1jM86_xrAMVvb-HTtys9ii4t5VNjncJAHbP=
+VnfqoKE08TIwOSQRglV9yYc4ra_WE7ceKjqYr9ySx8IgkO7m1Ktj6nsI59D1FZbyGw-TxgedDgI=
+rbaCD5gU5Z3_X-N2Trzny1NoCFa0lrNDhKYixsvUaNcKX7E3vpKDi3Mt4RQl4ub3_WWx1dKxABY=
+cY7H2BIX0uIpFq51MwVVmigONYTa5tf7B4TnXeGGgSpaxpmrSKkFKgEPZftVwkLm-Gv2WHkrSiO=
+s8EgLOgi1xh2BJfEfka2QwT-c3rPmoXVqpyvm-BBHX-pJE2nl2z0PbpSe-pscoqp5e-Px4mXZJx=
+Yh96W6s_cnLLu6BzhUP_osSSoA5K3H6l2JSVvJtk2h9AhCpeRwHGxOXqoTStx4-4Pr_5l3JhTg/=
+40m/Ic8OBR3aQTyDHx9KE8Ygcg/h0/oWWWx0uGjM5cimtneSxXfGtBtwWAYl3lT04lubspW-8" =
+style=3D"outline:none" tabindex=3D"-1" target=3D"_blank"><img class=3D"full=
+Width" src=3D"https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrator=
+s/f7683d20-2948-460f-8f91-a13fe519b593/1DALK8INN6DG3X7NYXABET8R/team-lift-h=
+eader%20%281%29.png" style=3D"display:block;height:auto;border:0;max-width:=
+600px;width:100%" width=3D"600"/></a></div></td></tr></tbody></table></td><=
+/tr></tbody></table></td></tr></tbody></table><table align=3D"center" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"row row-2" role=3D"pre=
+sentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;background-color:=
+#fff" width=3D"100%"><tbody><tr><td><table align=3D"center" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" class=3D"row-content" role=3D"presentatio=
+n" style=3D"mso-table-lspace:0;mso-table-rspace:0;background-color:#fff;bor=
+der-bottom:0 solid #fff;border-left:0 solid #000;border-radius:10px 10px 2p=
+x 2px;border-right:0 solid #000;border-top:0 solid #000;color:#000;width:60=
+0px;margin:0 auto" width=3D"600"><tbody><tr><td class=3D"column column-1" s=
+tyle=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:le=
+ft;vertical-align:top;border-top:0;border-right:0;border-bottom:0;border-le=
+ft:0" width=3D"100%"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" class=3D"html_block block-1" role=3D"presentation" style=3D"mso-table-lsp=
+ace:0;mso-table-rspace:0" width=3D"100%"><tbody><tr><td class=3D"pad"><div =
+align=3D"center" style=3D"font-family:Helvetica Neue,Helvetica,Arial,sans-s=
+erif;text-align:center"><span style=3D"display:none=20
+!important;=20
+visibility:hidden;=20
+mso-hide:all;=20
+font-size:1px;=20
+color:#ffffff;
+ line-height:1px;
+ max-height:0px;=20
+max-width:0px;=20
+opacity:0;=20
+overflow:hidden;">Quick, get started!</span></div></td></tr></tbody></table=
+><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"text_bloc=
+k block-2" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspa=
+ce:0;word-break:break-word" width=3D"100%"><tbody><tr><td class=3D"pad" sty=
+le=3D"padding-left:5px;padding-right:5px;padding-top:5px"><div style=3D"fon=
+t-family:sans-serif"><div class=3D"" style=3D"font-size:14px;font-family:Pr=
+oxima-Nova,sans-serif;mso-line-height-alt:25.2px;color:#555;line-height:1.8=
+"><p style=3D"margin:0;text-align:center;mso-line-height-alt:28.8px"><span =
+style=3D"font-size:16px;">With Jamie Elston from Teamlifts, you can now ele=
+vate your wellness journey with an exclusive <strong>50% discount</strong>.=
+ Get personalized attention and constant support 24x7.=A0</span></p></div><=
+/div></td></tr></tbody></table><table border=3D"0" cellpadding=3D"10" cells=
+pacing=3D"0" class=3D"button_block block-3" role=3D"presentation" style=3D"=
+mso-table-lspace:0;mso-table-rspace:0" width=3D"100%"><tbody><tr><td class=
+=3D"pad"><div align=3D"center" class=3D"alignment"><!--[if mso]><v:roundrec=
+t xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsof=
+t-com:office:word" href=3D"https://l.linklyhq.com/l/1tk5p" style=3D"height:=
+42px;width:435px;v-text-anchor:middle;" arcsize=3D"10%" stroke=3D"false" fi=
+llcolor=3D"#ed3a56"><w:anchorlock/><v:textbox inset=3D"0px,0px,0px,0px"><ce=
+nter style=3D"color:#ffffff; font-family:'Trebuchet MS', Tahoma, sans-serif=
+; font-size:16px"><![endif]--><a href=3D"https://link.amberstudent.com/ss/c=
+/oPLlMbFpb4_XKTwzrXpZ0tB15C58xKn-bg-ckw7QqPzPuiVfURuvUkUjTrfzvdT8f0Xb-oY_5Q=
+xeGYH_xc5eYGCcZYFUXGGC_oIQiykhi9dW84XpFSFvqrHpnF5vfnT24Pb9UqSLKRzJudc0QTJ9P=
+IoemUvl9R3XCysFQlkGsUA9uBNuRjNmW550PcdeRk1sWHprg5-SH8Pr2Rze8IUNT7BwX2kMZXqP=
+br9mesVIEBEDjTOJUTwcmNWbeis4HRcB2UafljhsI4o-tR2XOLgThcXCyrPkpE00mT5li9_MqTR=
+4DDI4IuKpsflwx3kk-8pLcm_h2FrinAQqwAcxxSATbIAojKsUtiYp7UvFFyqswR_E5P5rPYhkzb=
+eTE3fD4feChydnKy1E0_hNxxOYF9NSsrK_8lADBV8WyWUcx9wV9DZe98ZfwEotinP6q2flgQGU2=
+yJRIFbyIDKKiCr8MCtJreQ8QNVMY5cC1Cr5pU2ZEEBjFyo6qBeRdcVDlLWLeEDhbHkWsHgBVFgs=
+r-VYngXwsh2nnrV2L5IZ_Q9oz49twpIW1DVL6QQ53dw-iR9gO-yJFS_m5LuUYmP2v91OEVCMc2Q=
+IZcRyt_UYVwPnyVlEJfKzfAybgOlsNl6iNVm5zTyNqRPsRJqEiieP1AzUXwTDm1XOFAuL9p1O1n=
+8nIIBThnvrOHUaeIZwZ2GEp3V2cyjWLLwUarwHq-q0dO62CVO6xA/40m/Ic8OBR3aQTyDHx9KE8=
+Ygcg/h1/Jzq-EcqoCUiKuCl0kHHumaQI5W58DlMBROCHVhfEALg" style=3D"text-decorati=
+on:none;display:block;color:#ffffff;background-color:#ed3a56;border-radius:=
+4px;width:75%;border-top:0px solid transparent;font-weight:400;border-right=
+:0px solid transparent;border-bottom:0px solid transparent;border-left:0px =
+solid transparent;padding-top:5px;padding-bottom:5px;font-family:'Montserra=
+t', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', =
+Tahoma, sans-serif;font-size:16px;text-align:center;mso-border-alt:none;wor=
+d-break:keep-all;" target=3D"_blank"><span style=3D"padding-left:20px;paddi=
+ng-right:20px;font-size:16px;display:inline-block;letter-spacing:normal;"><=
+span style=3D"word-break: break-word; line-height: 32px;"><strong>Start You=
+r Journey!</strong></span></span></a><!--[if mso]></center></v:textbox></v:=
+roundrect><![endif]--></div></td></tr></tbody></table><table border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" class=3D"image_block block-4" role=3D"pr=
+esentation" style=3D"mso-table-lspace:0;mso-table-rspace:0" width=3D"100%">=
+<tbody><tr><td class=3D"pad" style=3D"padding-bottom:5px;padding-top:5px;wi=
+dth:100%"><div align=3D"center" class=3D"alignment" style=3D"line-height:10=
+px"><a href=3D"https://link.amberstudent.com/ss/c/oPLlMbFpb4_XKTwzrXpZ0tB15=
+C58xKn-bg-ckw7QqPzPuiVfURuvUkUjTrfzvdT87gbWR11FEDguSzBkXrewKUaF8IJAFhB6EWta=
+InGKuoZYUjlSSfBj5M9tMg0-K366VbHP8PdrLibpw5z1RhEJs5gKRTN0_S-tq17g9IyMkBNFlKx=
+7qhHlMyyttFbgQMlzDCVMAN74PgHMBIo-rn6OAz63Wf6fi74DielTQeaR4LNbmuJQ11AxIB3MNi=
+DvR6erVkR7VCTigoAtA1WVSPUx2cKnKVkevA843-dwpXcBldpnRDJc1Pz3Pi4wZTpGkgq5AIGao=
+PzzoFC5IgBm6pOLW3X6G7mVXx1Xuc9jCNZnMZfdG9YYO8dW9zKirdL4CGupgtFVzUhCSEERv-Tv=
+euwPs8rJdlBAB5zFcAx3fjm9GEAqzEWG8FsFVuCVRzaeyX-vXA_bm4IOCwzFz9O-4otFuPHSEcq=
+gMm4njl2LdUKhmoSfcYY4e1Czm13pIixRWFMeTd-2nNXQfUbwABeSPFEon3mcaZnXrxfw8vl5lh=
+irPGvnAogDQ2sPUXP8rgEhm8TYb95kEQdVt_xbM6iIyGn8jFNlxDL-45XA9mX_QFsU3o9mqaWQO=
+grBE8B1SSSZsieZD3h3YMzfG7cuPDNb7DFHLZiH6D5LGH4Q3lM7Ru-1GC-MJpDEP3vh3ayu6WCp=
+aFZT7oB1Fyh07CNDeWIH-sUHBQ/40m/Ic8OBR3aQTyDHx9KE8Ygcg/h2/URgXxgx3bpjvx_HoNQ=
+TFSGSM5HHsZMkeq65wu3Mefp8" style=3D"outline:none" tabindex=3D"-1" target=3D=
+"_blank"><img src=3D"https://d15k2d11r6t6rl.cloudfront.net/public/users/Int=
+egrators/f7683d20-2948-460f-8f91-a13fe519b593/1DALK8INN6DG3X7NYXABET8R/Team=
+-lifts%20%281%29.png" style=3D"display:block;height:auto;border:0;max-width=
+:600px;width:100%" width=3D"600"/></a></div></td></tr></tbody></table><tabl=
+e border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"text_block bloc=
+k-5" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;w=
+ord-break:break-word" width=3D"100%"><tbody><tr><td class=3D"pad" style=3D"=
+padding-bottom:5px;padding-left:5px;padding-right:5px;padding-top:10px"><di=
+v style=3D"font-family:sans-serif"><div class=3D"" style=3D"font-size:14px;=
+font-family:Proxima-Nova,sans-serif;mso-line-height-alt:25.2px;color:#555;l=
+ine-height:1.8"><p style=3D"margin:0;font-size:16px;text-align:center;mso-l=
+ine-height-alt:28.8px"> Wherever you are in the world, the <strong>path to =
+a mentally and physically healthier you</strong> is more accessible than ev=
+er. Don't miss out on this fantastic deal to invest in your fitness and wel=
+l being with Jamie.</p></div></div></td></tr></tbody></table><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"button_block block-6" r=
+ole=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0" width=
+=3D"100%"><tbody><tr><td class=3D"pad" style=3D"padding-bottom:20px;padding=
+-left:10px;padding-right:10px;padding-top:10px;text-align:center"><div alig=
+n=3D"center" class=3D"alignment"><!--[if mso]><v:roundrect xmlns:v=3D"urn:s=
+chemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word"=
+ href=3D"https://l.linklyhq.com/l/1tk5p" style=3D"height:42px;width:435px;v=
+-text-anchor:middle;" arcsize=3D"10%" stroke=3D"false" fillcolor=3D"#ed3a56=
+"><w:anchorlock/><v:textbox inset=3D"0px,0px,0px,0px"><center style=3D"colo=
+r:#ffffff; font-family:'Trebuchet MS', Tahoma, sans-serif; font-size:16px">=
+<![endif]--><a href=3D"https://link.amberstudent.com/ss/c/oPLlMbFpb4_XKTwzr=
+XpZ0tB15C58xKn-bg-ckw7QqPzPuiVfURuvUkUjTrfzvdT86JrMaal3HXvLGuleo6tvg_3CK_wO=
+ut4XFN0J77NzlevNhk3D_ibrjfmAcSUOK5NBpHH_C8s4DP9jn7IlixEUXvguQp2E3qvhDL3UVfj=
+xQKz_b4t9n77hSqZZprVaRw3Uzn-e5LbdOAG-dR2cMXMROg3FE_gHAQzTAcZRyIEpTNvwTsluY-=
+mlj_EaCf2LpUpTK7tKyst8tjSOUQboy-Q4y9BdGio_1CaF390o9fUf-vSZ9nCRLPKeVOdM1E8wK=
+sfdr6uN6O_HZQ4o2yhuT38CT3hWwXqxKNXZUKDJEn3fImtCmsrgX4QRMgKFCVtuS0xGO0ECSixV=
+NRZeTdHExHEJdiw3_haIu9620S42ZTxbwf-e2JS3w5IxxaEPc8Lj30Sk-LUmGifwRNLo60kakRX=
+0pNUK1pF_XVMeZTE2kF_n0Vs9egQgJf3YkvJbBoSWpBtm9ucoOCi5VhfkpO4yB22gfNoLt0gNi4=
+Xjud-w3urE9CXdgkzd-K1bYdh-grVIEcAu_vlogtelgpR6rii-JjSVm9RSQlg7bjkr2iwDErbWR=
+u8oMzJtf_uHrsbZfTKZ24CFxen8KMb9HPPKIh0dT7-cpyR7NAgPxisC-nkvFU_25I0rXOk9rKkG=
+lNC77ABuWG7JVNbfo4T6LMz4ccnjPk7BTA/40m/Ic8OBR3aQTyDHx9KE8Ygcg/h3/gwv28Avfxz=
+7S8YvGYl-wB2vY-prQ4pGHPyEoQZ9Ogjw" style=3D"text-decoration:none;display:bl=
+ock;color:#ffffff;background-color:#ed3a56;border-radius:4px;width:75%;bord=
+er-top:0px solid transparent;font-weight:400;border-right:0px solid transpa=
+rent;border-bottom:0px solid transparent;border-left:0px solid transparent;=
+padding-top:5px;padding-bottom:5px;font-family:'Montserrat', 'Trebuchet MS'=
+, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif=
+;font-size:16px;text-align:center;mso-border-alt:none;word-break:keep-all;"=
+ target=3D"_blank"><span style=3D"padding-left:20px;padding-right:20px;font=
+-size:16px;display:inline-block;letter-spacing:normal;"><span style=3D"word=
+-break: break-word; line-height: 32px;"><strong>Transform Today</strong></s=
+pan></span></a><!--[if mso]></center></v:textbox></v:roundrect><![endif]-->=
+</div></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody=
+></table><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" class=3D"row row-3" role=3D"presentation" style=3D"mso-table-lspace:=
+0;mso-table-rspace:0" width=3D"100%"><tbody><tr><td><table align=3D"center"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"row-content" rol=
+e=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;backgroun=
+d-color:#fdf2f2;border-radius:0;color:#000;width:600px;margin:0 auto" width=
+=3D"600"><tbody><tr><td class=3D"column column-1" style=3D"mso-table-lspace=
+:0;mso-table-rspace:0;font-weight:400;text-align:left;padding-bottom:5px;pa=
+dding-top:10px;vertical-align:top;border-top:0;border-right:0;border-bottom=
+:0;border-left:0" width=3D"25%"><table border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" class=3D"image_block block-1" role=3D"presentation" style=3D"m=
+so-table-lspace:0;mso-table-rspace:0" width=3D"100%"><tbody><tr><td class=
+=3D"pad" style=3D"width:100%"><div align=3D"center" class=3D"alignment" sty=
+le=3D"line-height:10px"><img src=3D"https://d15k2d11r6t6rl.cloudfront.net/p=
+ublic/users/Integrators/f7683d20-2948-460f-8f91-a13fe519b593/1DALK8INN6DG3X=
+7NYXABET8R/X1.png" style=3D"display:block;height:auto;border:0;max-width:25=
+px;width:100%" width=3D"25"/></div></td></tr></tbody></table><table border=
+=3D"0" cellpadding=3D"10" cellspacing=3D"0" class=3D"paragraph_block block-=
+2" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;wor=
+d-break:break-word" width=3D"100%"><tbody><tr><td class=3D"pad"><div style=
+=3D"color:#000;direction:ltr;font-family:Inter,sans-serif;font-size:14px;fo=
+nt-weight:700;letter-spacing:0;line-height:120%;text-align:center;mso-line-=
+height-alt:16.8px"><p style=3D"margin:0"><strong>Safe</strong></p></div></t=
+d></tr></tbody></table></td><td class=3D"column column-2" style=3D"mso-tabl=
+e-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;padding-botto=
+m:5px;padding-top:10px;vertical-align:top;border-top:0;border-right:0;borde=
+r-bottom:0;border-left:0" width=3D"25%"><table border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" class=3D"image_block block-1" role=3D"presentation" st=
+yle=3D"mso-table-lspace:0;mso-table-rspace:0" width=3D"100%"><tbody><tr><td=
+ class=3D"pad" style=3D"width:100%"><div align=3D"center" class=3D"alignmen=
+t" style=3D"line-height:10px"><img src=3D"https://d15k2d11r6t6rl.cloudfront=
+.net/public/users/Integrators/f7683d20-2948-460f-8f91-a13fe519b593/1DALK8IN=
+N6DG3X7NYXABET8R/X2.png" style=3D"display:block;height:auto;border:0;max-wi=
+dth:27px;width:100%" width=3D"27"/></div></td></tr></tbody></table><table b=
+order=3D"0" cellpadding=3D"10" cellspacing=3D"0" class=3D"paragraph_block b=
+lock-2" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:=
+0;word-break:break-word" width=3D"100%"><tbody><tr><td class=3D"pad"><div s=
+tyle=3D"color:#000;direction:ltr;font-family:Inter,sans-serif;font-size:14p=
+x;font-weight:700;letter-spacing:0;line-height:120%;text-align:center;mso-l=
+ine-height-alt:16.8px"><p style=3D"margin:0"><strong>Easy</strong></p></div=
+></td></tr></tbody></table></td><td class=3D"column column-3" style=3D"mso-=
+table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;padding-b=
+ottom:5px;padding-top:10px;vertical-align:top;border-top:0;border-right:0;b=
+order-bottom:0;border-left:0" width=3D"25%"><table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"image_block block-1" role=3D"presentation=
+" style=3D"mso-table-lspace:0;mso-table-rspace:0" width=3D"100%"><tbody><tr=
+><td class=3D"pad" style=3D"width:100%"><div align=3D"center" class=3D"alig=
+nment" style=3D"line-height:10px"><img src=3D"https://d15k2d11r6t6rl.cloudf=
+ront.net/public/users/Integrators/f7683d20-2948-460f-8f91-a13fe519b593/1DAL=
+K8INN6DG3X7NYXABET8R/X3.png" style=3D"display:block;height:auto;border:0;ma=
+x-width:31px;width:100%" width=3D"31"/></div></td></tr></tbody></table><tab=
+le border=3D"0" cellpadding=3D"10" cellspacing=3D"0" class=3D"paragraph_blo=
+ck block-2" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rsp=
+ace:0;word-break:break-word" width=3D"100%"><tbody><tr><td class=3D"pad"><d=
+iv style=3D"color:#000;direction:ltr;font-family:Inter,sans-serif;font-size=
+:14px;font-weight:700;letter-spacing:0;line-height:120%;text-align:center;m=
+so-line-height-alt:16.8px"><p style=3D"margin:0"><strong>Quick</strong></p>=
+</div></td></tr></tbody></table></td><td class=3D"column column-4" style=3D=
+"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;padd=
+ing-bottom:5px;padding-top:10px;vertical-align:top;border-top:0;border-righ=
+t:0;border-bottom:0;border-left:0" width=3D"25%"><table border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" class=3D"image_block block-1" role=3D"present=
+ation" style=3D"mso-table-lspace:0;mso-table-rspace:0" width=3D"100%"><tbod=
+y><tr><td class=3D"pad" style=3D"width:100%"><div align=3D"center" class=3D=
+"alignment" style=3D"line-height:10px"><img src=3D"https://d15k2d11r6t6rl.c=
+loudfront.net/public/users/Integrators/f7683d20-2948-460f-8f91-a13fe519b593=
+/1DALK8INN6DG3X7NYXABET8R/X4_1.png" style=3D"display:block;height:auto;bord=
+er:0;max-width:35px;width:100%" width=3D"35"/></div></td></tr></tbody></tab=
+le><table border=3D"0" cellpadding=3D"10" cellspacing=3D"0" class=3D"paragr=
+aph_block block-2" role=3D"presentation" style=3D"mso-table-lspace:0;mso-ta=
+ble-rspace:0;word-break:break-word" width=3D"100%"><tbody><tr><td class=3D"=
+pad"><div style=3D"color:#000;direction:ltr;font-family:Inter,sans-serif;fo=
+nt-size:14px;font-weight:700;letter-spacing:0;line-height:120%;text-align:c=
+enter;mso-line-height-alt:16.8px"><p style=3D"margin:0"><strong>2M+ Beds</s=
+trong></p></div></td></tr></tbody></table></td></tr></tbody></table></td></=
+tr></tbody></table><table align=3D"center" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"row row-4" role=3D"presentation" style=3D"mso-tab=
+le-lspace:0;mso-table-rspace:0;background-color:#fff" width=3D"100%"><tbody=
+><tr><td><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" class=3D"row-content" role=3D"presentation" style=3D"mso-table-lspac=
+e:0;mso-table-rspace:0;background-color:#fff;border-radius:0;color:#000;wid=
+th:600px;margin:0 auto" width=3D"600"><tbody><tr><td class=3D"column column=
+-1" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-ali=
+gn:left;padding-bottom:5px;padding-top:5px;vertical-align:top;border-top:0;=
+border-right:0;border-bottom:0;border-left:0" width=3D"50%"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"heading_block block-1" =
+role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0" width=
+=3D"100%"><tbody><tr><td class=3D"pad" style=3D"padding-bottom:4px;padding-=
+left:30px;padding-right:10px;padding-top:20px;text-align:center;width:100%"=
+><h1 style=3D"margin:0;color:#0c1014;direction:ltr;font-family:Inter,sans-s=
+erif;font-size:18px;font-weight:700;letter-spacing:normal;line-height:120%;=
+text-align:left;margin-top:0;margin-bottom:0"><span class=3D"tinyMce-placeh=
+older">Follow Us=A0</span></h1></td></tr></tbody></table><table border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" class=3D"paragraph_block block-2" rol=
+e=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-brea=
+k:break-word" width=3D"100%"><tbody><tr><td class=3D"pad" style=3D"padding-=
+bottom:20px;padding-left:30px;padding-right:10px;padding-top:14px"><div sty=
+le=3D"color:#464444;direction:ltr;font-family:Inter,sans-serif;font-size:12=
+px;font-weight:400;letter-spacing:0;line-height:120%;text-align:left;mso-li=
+ne-height-alt:14.399999999999999px"><p style=3D"margin:0;margin-bottom:7px"=
+>Let's Get Social!</p><p style=3D"margin:0;margin-bottom:7px">Follow us and=
+ stay on</p><p style=3D"margin:0;margin-bottom:7px">top of study abroad</p>=
+<p style=3D"margin:0">news & exciting giveaways.</p></div></td></tr></tbody=
+></table></td><td class=3D"column column-2" style=3D"mso-table-lspace:0;mso=
+-table-rspace:0;font-weight:400;text-align:left;padding-bottom:5px;padding-=
+top:5px;vertical-align:top;border-top:0;border-right:0;border-bottom:0;bord=
+er-left:0" width=3D"50%"><table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" class=3D"heading_block block-1" role=3D"presentation" style=3D"mso-t=
+able-lspace:0;mso-table-rspace:0" width=3D"100%"><tbody><tr><td class=3D"pa=
+d" style=3D"padding-bottom:4px;padding-left:35px;padding-right:10px;padding=
+-top:20px;text-align:center;width:100%"><h1 style=3D"margin:0;color:#0c1014=
+;direction:ltr;font-family:Inter,sans-serif;font-size:18px;font-weight:700;=
+letter-spacing:normal;line-height:120%;text-align:left;margin-top:0;margin-=
+bottom:0"><span class=3D"tinyMce-placeholder">Contact Us</span></h1></td></=
+tr></tbody></table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+class=3D"paragraph_block block-2" role=3D"presentation" style=3D"mso-table-=
+lspace:0;mso-table-rspace:0;word-break:break-word" width=3D"100%"><tbody><t=
+r><td class=3D"pad" style=3D"padding-bottom:10px;padding-left:35px;padding-=
+right:10px;padding-top:10px"><div style=3D"color:#464444;direction:ltr;font=
+-family:Inter,sans-serif;font-size:12px;font-weight:400;letter-spacing:0;li=
+ne-height:180%;text-align:left;mso-line-height-alt:21.6px"><p style=3D"marg=
+in:0;margin-bottom:7px">Stuck with a question?</p><p style=3D"margin:0;marg=
+in-bottom:7px">Connect with us at:</p><p style=3D"margin:0"><strong><a data=
+-token-index=3D"1" href=3D"mailto:contact@amberstudent.com" rel=3D"noopener=
+ noreferrer" style=3D"text-decoration: none; color: #464444;" target=3D"_bl=
+ank" title=3D"contact@amberstudent.com">contact@amberstudent.com</a></stron=
+g></p></div></td></tr></tbody></table><table border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" class=3D"paragraph_block block-3" role=3D"presentation" =
+style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word" width=
+=3D"100%"><tbody><tr><td class=3D"pad" style=3D"padding-bottom:10px;padding=
+-left:35px;padding-right:10px"><div style=3D"color:#ed3a56;direction:ltr;fo=
+nt-family:Inter,sans-serif;font-size:12px;font-weight:400;letter-spacing:0;=
+line-height:120%;text-align:left;mso-line-height-alt:14.399999999999999px">=
+<p style=3D"margin:0"><strong><a href=3D"https://link.amberstudent.com/ss/c=
+/oPLlMbFpb4_XKTwzrXpZ0tB15C58xKn-bg-ckw7QqPzPuiVfURuvUkUjTrfzvdT8PGRQIeB0lX=
+bnbwvPMYx7KNC2g4DVTjemw4jVJAxQZ0PKM9g3pvNDUOUj12Efv3mIgQkqKuMKZbx4Zuh2f6FeN=
+hLluZ5xSjHm5mdsfO2aQQ8tTgQWSmc6287HWoynLA3PEQbZfc8PglzNrsPsfL-ttXrgZ_L7gz4d=
+hgnYdQnyXPzvMiokUJsWWLmfkvQtma8ELBe4t8v1umBXZZZX9Gpbbx3UiEmMoPEbDhpdWHxYj6m=
+H9Mrf9J2fyKWlKO3ripCttWBplhAaMIKdgLGj4IaGYYfeI8hDEpB72M4BDVD9lXTn07les_Z5cx=
+LMey0r_vFogUXIB2JfMc4ydLhKRvuoMlvvBn3zI3T2qD6H0ni2vLeB9iTWPhDBs7wSq5aY5LnBH=
+KvDQwbomuVQDqceTHs9Vxd3jA2Ug_mEG3VkDo3qSz0xuW2zD3WFSZRY0Qa7sKnMQC87sdcDst-W=
+yauTI_ZenAIAjZ52HfVdr7qeeFmFfy2-kBzy7TyBmyT5esbBloPrK8HNKCYzPfXbCRBWXX4s9Xj=
+1iWQqitK9z44xhFXUqhC70EUEMawnoRyY_PN60c3Dahn8NPmLAaI1dodUhUasxl2OLjTaVGMWsq=
+jnuVHTMtZTzxM8X9sz41gKTWgvlGhxAVTywlxhqqah-PK7eNLOD1rp3jkRQaXgrfHNEVDnKwYE1=
+vgDLT-LhtYaWddGpC192qldQipQ2o3JkMA_E41l2goWB7Az6ujklgRqy_NCBRoTiFrisGuCFRa7=
+8pE3pGz8Deeu_PDdAIuvBfNW02lmXprhLCUBY_MErmth7Q74BfE/40m/Ic8OBR3aQTyDHx9KE8Y=
+gcg/h4/LGXwxIQniRb1Ne9iiHMZs7sVbjIQCqtRHDuq5A4ndZI" rel=3D"noopener" style=
+=3D"text-decoration: none; color: #ed3a56;" target=3D"_blank" title=3D"ambe=
+rstudent">amberstudent.com</a></strong></p></div></td></tr></tbody></table>=
+</td></tr></tbody></table></td></tr></tbody></table><table align=3D"center"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"row row-5" role=
+=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0" width=3D"=
+100%"><tbody><tr><td><table align=3D"center" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" class=3D"row-content" role=3D"presentation" style=3D"mso=
+-table-lspace:0;mso-table-rspace:0;background-color:#fff;border-radius:0;co=
+lor:#000;width:600px;margin:0 auto" width=3D"600"><tbody><tr><td class=3D"c=
+olumn column-1" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:=
+400;text-align:left;padding-right:50px;padding-top:5px;vertical-align:top;b=
+order-top:0;border-right:0;border-bottom:0;border-left:0" width=3D"50%"><ta=
+ble border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"social_block =
+block-1" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace=
+:0" width=3D"100%"><tbody><tr><td class=3D"pad" style=3D"padding-left:25px;=
+text-align:left;padding-right:0"><div align=3D"left" class=3D"alignment"><t=
+able border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"social-table=
+" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;disp=
+lay:inline-block" width=3D"140.5px"><tbody><tr><td style=3D"padding:0 14px =
+0 0"><a href=3D"https://link.amberstudent.com/ss/c/oPLlMbFpb4_XKTwzrXpZ0tB1=
+5C58xKn-bg-ckw7QqPzPuiVfURuvUkUjTrfzvdT8HN16Yfosjx-5OEOFM3pNyAh18n4dhBdfovt=
+LlDGYXGZw_evwW18-GIiMbsPyB8lDz_qJJ07cWpBuRkr1i11KkOQbVbMgPQB1bhPe0PtaBIohCU=
+PgBIH0AEAYshoxzzG1uUUpoFB6Rvv--4pEdMCY_WqLxTgs4JLjiUYSNzhf_89UBY2oAWVlcOzq8=
+Go7bWzNN6QSYO5Hyb-GEy578sSomAJCOEALo_UuTc1EMHhTLzXDtqcr2vNlX-9VyOgbU0R3qV0S=
+xkFvTX7lzATCeVuzW51-3dkcP5_4c-JLP_8WDuGZcOHkszjg6clVGdU9hW8RNYlI7Jt_dqffSOs=
+xwdtBnkHAJHS_x9FgvfHpqc0iXurM2IbCg14qHxIpoDsgSeDE-65J78voii7Oatb-Gom2KL3P3R=
+e_l95x1PIU27SZPvK_LcIaqks191R-TdP4oQtq8euXt0-OJ9Rb8Qqm0e8sjYkf4CEyA5qECARRq=
+wL-1u6Imo7p95DQeDbYP4Unb7eA8BPW50JWZdaCEwzZWGv5mhNOhobD5DHf6vtAUG6umMwgDkO0=
+iD2b4KrSC5cWnuG9nRqh7cALvdJucRLzeMuFcVFLcLVLPpXsEaCBfk-5sZkqHu1FXuweaN_CMya=
+vpp1p0DR5a7IuEEnleTEjPOe65F0V7eDiXJIPofMmakfc6Bo/40m/Ic8OBR3aQTyDHx9KE8Ygcg=
+/h5/btc1jBvRIHw5yci3guy0JSp3XMeOM9wAswGIiCHRt6U" target=3D"_blank"><img alt=
+=3D"facebook" height=3D"32" src=3D"https://d15k2d11r6t6rl.cloudfront.net/pu=
+blic/users/Integrators/f7683d20-2948-460f-8f91-a13fe519b593/1DALK8INN6DG3X7=
+NYXABET8R/Facebook_white.png" style=3D"display:block;height:auto;border:0" =
+title=3D"facebook" width=3D"34"/></a></td><td style=3D"padding:0 14px 0 0">=
+<a href=3D"https://link.amberstudent.com/ss/c/oPLlMbFpb4_XKTwzrXpZ0tB15C58x=
+Kn-bg-ckw7QqPzPuiVfURuvUkUjTrfzvdT8x9qLCm-BqRXYaOtDEvgCxwrDk4q2pMfmvSOsgh8U=
+IDMvhXs6erHjYVjSOn83JNCZNoykKZsA4wDlbxqxX5V8-CrME4QaXY5LPvSgEnI1h9tuSZV3ylK=
+xzsvKSY-fKEthr6H5CiPgMAoWLNJtbkPkrauNTKOoP2crCaKQ4YUKu1sO1rXXuER9fEVaUe29Vv=
+op_LWBHB7m5Lbx2u0n7qrvBKZFlHQxpak2BGYA3c-QJ2r5OSRkaeBwcLblgHL-XTPtDA4oxdVFT=
+zsxv7_EVVyA0wWqHJ_8IFl68kEQ3PS8WzASXJvHmCAVY8B_dB50es3CCJjce09dUTabnTv9Zdsv=
+sMph0htp4jjHlYVChFajzO8wpqB8GXGRzLGVqDi5nOQGbqhwCV76dK3gqzyX55EbBWWZ4dQINqA=
+oeRHSKfsObxY3xt44lbpdmdMJF7Vpm1x4CeEiX38s100iOKTi8bosc_m3eowlVfAkZ0DegaY6ZA=
+QdHZuXXnh-AufQ9N0hZVTe9r3UaZ8N1S1gVtQ1U2lVxZhPKj6TeUWYeOn6bMkD9f7ke1tujecJ4=
+5pXBTBurQILjAx2f9bhlYD9CHK666CYlgmXVQI6J5Xvdgx_JkdALO23FrZWCYkmhnMfwpu9glZd=
+fadiU_n19lwYu8j4oKwutvf1v2Js8d1BXOC1WNkvW-lzQVSZ_25kjHvnz5YZWohBHmRaDf7-Zqd=
+T0MoLeQkEmn2ibVwHcimB-8dPlI5RFSNnbIDURPgNIAeA1AcKyfXO/40m/Ic8OBR3aQTyDHx9KE=
+8Ygcg/h6/vTJm5-LKtYPfnCyx22mnwEo65f0MKm7i1WnKMsZsINs" target=3D"_blank"><im=
+g alt=3D"Instagram" height=3D"32" src=3D"https://d15k2d11r6t6rl.cloudfront.=
+net/public/users/Integrators/f7683d20-2948-460f-8f91-a13fe519b593/1DALK8INN=
+6DG3X7NYXABET8R/Instagram_white.png" style=3D"display:block;height:auto;bor=
+der:0" title=3D"Instagram" width=3D"32.5"/></a></td><td style=3D"padding:0 =
+14px 0 0"><a href=3D"https://link.amberstudent.com/ss/c/oPLlMbFpb4_XKTwzrXp=
+Z0tB15C58xKn-bg-ckw7QqPzPuiVfURuvUkUjTrfzvdT8Q3OL_V_MldtviSrDsZFx_DQlyIE6r0=
+k8w5SmZqtxVIZwEFfl7xCzNmQIbcjl4f3YIrVOP3CWmZXO8e9CQVb5NblFaJnZdhs0VLDJYtTd8=
+w4WW1dxEKmYVPYicAl11UDOYSM3hihsQ7EeUkBS6kRGQEkO7wD24TPx_N6WxixK4r6yiMDDg5jg=
+lE2WsiRT09ATAtoxERXJTby0T_HhOaQ4Q90BlftNSIN3FsFeijlRoyQCt8LM5bU0Yc0cDiD8EH9=
+RKk4hMFrbDfUMggTnGzfoAhQuQgSxg9gtC0tvi9rRZAtP_RMAfcVyrhq9m1AMVQuE2HKDCNLBaS=
+LH_Xcf-VHOahAMp-PiSfkIzeLAeJ5NfWwtRj4GZA66kd_7C7h-e2aiYqho37kDnHXDtXVPZI5fO=
+L9vRvlH2-OPZbApZPOr-53PbAkeUeJpHGJxry5zfIR4Z9Y05AXHz3hOz1snxwj0-GpASqQHddkh=
+4NdexaCK32kJGWnD0a3rLkzF9Nilx3TFQ5io2roVD5Z5v_p5uAbuV6qxoq8DIIX78FUdAVrykWt=
+Kw8PsK1dyAzclSt_d4D_Gsq62jhDhdaoRmDbvSdYM-QSLESsOrp5R_JpS-uKRFTfhe5gtLcFbXY=
+Jn_l_Ua8hK2yoX8p-AB-K6vxavvbksEoYk2TCgjuR1ucvGr_9jx5_4rCjgGoLhd5l415KEAzv2w=
+JAt8Duo4Kg4shmulxqG1L14pHvKzzovi_oal78ETUhsiF6GH4JJkCoOkMyyGc_dv_13ShUNxYb4=
+UQNwERUNlQ/40m/Ic8OBR3aQTyDHx9KE8Ygcg/h7/CQ4QLKkULC4fpeMTPHCSDt38tJUsHvwhuS=
+osmVI7zpY" target=3D"_blank"><img alt=3D"Linkedin" height=3D"32" src=3D"htt=
+ps://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/f7683d20-2948-4=
+60f-8f91-a13fe519b593/1DALK8INN6DG3X7NYXABET8R/linkedin.png" style=3D"displ=
+ay:block;height:auto;border:0" title=3D"Linkedin" width=3D"32"/></a></td></=
+tr></tbody></table></div></td></tr></tbody></table></td><td class=3D"column=
+ column-2" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;t=
+ext-align:left;padding-bottom:5px;padding-top:5px;vertical-align:top;border=
+-top:0;border-right:0;border-bottom:0;border-left:0" width=3D"25%"><table b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"image_block block-=
+1" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0" wi=
+dth=3D"100%"><tbody><tr><td class=3D"pad" style=3D"width:100%;padding-right=
+:0;padding-left:0"><div align=3D"right" class=3D"alignment" style=3D"line-h=
+eight:10px"><a href=3D"https://link.amberstudent.com/ss/c/oPLlMbFpb4_XKTwzr=
+XpZ0tB15C58xKn-bg-ckw7QqPzPuiVfURuvUkUjTrfzvdT8mF4C4zIpxwVm_oofwBcIvJk8RSeN=
+flb_KXsXsGj0tz3jclPzvRe-zW0JdF7AAULB3YnTyOvMfmevRJLsfDyG7yHduaRNcH0kpkL9Qa3=
+NCT3j_fkEWus1X_oM2PbXrkUKuVvAZXecZznEHNMD1JVG9OYat8D5UrM01hF568y_Uae6ADIuIj=
+FbT75JpH_0SPpu4FGp08HGUksUEdYKaZJz0ibDUZ3b27zw_zEvcvtT5WjEUNd0A2GB2pTQ-gFCn=
+-5NteqtYbAs7TbbndK8PxXtuJom4hsUvmHW2WhgtTi64LppWi1h1km5jYLrmk8WEfyFqRRphlcl=
+ZZdsqC0yVGtsjmOF9KJdJqnv_c3lg4_lB0WeZ2ne5GzWxWFi4hpmp174lQ0rv-SBU6dH0AWAwRX=
+tfyibcfe9CEqIKxZM0hzfbDMsU27ubb-4R5VQ5NkuD9ROpcKCMcjzMfqxZnOFsj61V_MdNXmp3j=
+2jGJZdr8fTGBAmkTyBLFje6Joym-1gnzqi9PeEK1-KbaOZ4z60wJV5g9P1zU1dTDlaa_HrPzUN2=
+PkML6R2mBmKryEJOt9wiX9TW8vOvrRwxTZGDnBsBD285HEp802qnoTsns-tfdG0R5zonK6Zvoun=
+5_PMFWZ5bAVJsiU5Wiow13mMDSB0AUsjr_XthMBIHLXIIsC7A3DqGEFjNGXwKjXqySBwehdfH5Z=
+y/40m/Ic8OBR3aQTyDHx9KE8Ygcg/h8/rARl36RfbqZ0o9dZgWaWhTpzF5NGjHC-7FOSnfYIZr8=
+" style=3D"outline:none" tabindex=3D"-1" target=3D"_blank"><img src=3D"http=
+s://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/f7683d20-2948-46=
+0f-8f91-a13fe519b593/1DALK8INN6DG3X7NYXABET8R/Store%20Name%3DGoogle%20Play%=
+2C%20Badge%20Color%20Type%3DBlack%2C%20Language%3DEN_1.png" style=3D"displa=
+y:block;height:auto;border:0;max-width:120px;width:100%" width=3D"120"/></a=
+></div></td></tr></tbody></table></td><td class=3D"column column-3" style=
+=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;p=
+adding-bottom:5px;padding-top:5px;vertical-align:top;border-top:0;border-ri=
+ght:0;border-bottom:0;border-left:0" width=3D"25%"><table border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" class=3D"image_block block-1" role=3D"prese=
+ntation" style=3D"mso-table-lspace:0;mso-table-rspace:0" width=3D"100%"><tb=
+ody><tr><td class=3D"pad" style=3D"padding-left:5px;padding-right:5px;width=
+:100%"><div align=3D"left" class=3D"alignment" style=3D"line-height:10px"><=
+a href=3D"https://link.amberstudent.com/ss/c/oPLlMbFpb4_XKTwzrXpZ0tB15C58xK=
+n-bg-ckw7QqPzPuiVfURuvUkUjTrfzvdT8MlrJjMYL8QeeA5uVxK_gBOy7OCKM-uPfJHuJ8bxWf=
+LkYQtPUuP8PwbdBPnawhoh33tFZOyXRToYFs9PrTLdVYpXaKWrctL0UEzIaUwtiX3JI1itUWf2e=
+foxIh3uRKRLSZKVEKcmuWa2lRepxkbp4-kgg8Jhv3iZoe-qAPV-XxlXca2SbeqNH21tiRzRUHIu=
+xZP2OjDyWn_qzQvfQWMSR0vPDCQGsfF834dD-EebeBH3b51W_l4YU0h8Ptzzfx4H8O0b2hlh_F3=
+Ymri8iOjaxnpSxxV3_kmvudGt8a4WVErM7TzhyNBDtuf4eagBo7kPItBrGVfbf3O0LmeGiRxnnd=
+pyTaKmfnY_4XTa2XDVC84keOd4z1PuRiSv5rV-Ft1kX5g0ds6bKeR9KGj8Yuy7WeviKzYyQgCBL=
+z8W79wxmlAohymjicl0w2N9lWiEdqH6nvPOqwo_fqLl9g6xwD_euhFr2rVVaAbxy_mkWPCTVTVV=
+s8PhORBVQAO9m_Yggiuug9uzVWKuaWpKNNkqMrnbA3bIk1tM_QhG8tfhsPS5SShFdRMtNuWOtAr=
+wn_1nYxlEdsHG0upuspZrFCdxzYGxNIyBKkPSHYMdwvFylQ-5zorZV49gePSRSlsAHF1dNWyrRM=
+2CmNSQJ8_KFf18q2fjvu0WPUWjY5nJuWzWm8mmDsHoVAR1tARuHvMpVP9KIb07c/40m/Ic8OBR3=
+aQTyDHx9KE8Ygcg/h9/h_adMC-VWoAB0ovSLYZd7FmpzPrKYEyS9_-v7pDjq_4" style=3D"ou=
+tline:none" tabindex=3D"-1" target=3D"_blank"><img src=3D"https://d15k2d11r=
+6t6rl.cloudfront.net/public/users/Integrators/f7683d20-2948-460f-8f91-a13fe=
+519b593/1DALK8INN6DG3X7NYXABET8R/Store%20Name%3DApple%20App%20Store%2C%20Ba=
+dge%20Color%20Type%3DBlack%2C%20Language%3DEN_1.png" style=3D"display:block=
+;height:auto;border:0;max-width:105px;width:100%" width=3D"105"/></a></div>=
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></tab=
+le><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ class=3D"row row-6" role=3D"presentation" style=3D"mso-table-lspace:0;mso-=
+table-rspace:0;background-color:#fff" width=3D"100%"><tbody><tr><td><table =
+align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"=
+row-content" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rs=
+pace:0;background-color:#fff;color:#000;width:600px;margin:0 auto" width=3D=
+"600"><tbody><tr><td class=3D"column column-1" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0;font-weight:400;text-align:left;padding-bottom:15px;vert=
+ical-align:top;border-top:0;border-right:0;border-bottom:0;border-left:0" w=
+idth=3D"100%"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=
+=3D"text_block block-1" role=3D"presentation" style=3D"mso-table-lspace:0;m=
+so-table-rspace:0;word-break:break-word" width=3D"100%"><tbody><tr><td clas=
+s=3D"pad" style=3D"padding-bottom:10px;padding-left:15px;padding-right:15px=
+;padding-top:15px"><div style=3D"font-family:sans-serif"><div class=3D"" st=
+yle=3D"font-size:14px;font-family:Inter,sans-serif;mso-line-height-alt:25.2=
+px;color:#665e5e;line-height:1.8"><p style=3D"margin:0;font-size:12px;text-=
+align:center;mso-line-height-alt:21.6px"><span style=3D"color:#7d7d7d;"><sp=
+an style=3D"font-size:12px;">Policies, offers, features & information are s=
+ubject to availability and may </span><span style=3D"background-color:trans=
+parent;">vary property to property.</span></span></p><p style=3D"margin:0;f=
+ont-size:12px;text-align:center;mso-line-height-alt:21.6px"><span style=3D"=
+color:#4b4b4b;"><strong style=3D"font-family:Inter,sans-serif;font-family:I=
+nter,sans-serif;background-color:transparent"><span style=3D"">=A9 2023 Amb=
+erStudent. All rights reserved.</span></strong></span></p></div></div></td>=
+</tr></tbody></table><table border=3D"0" cellpadding=3D"10" cellspacing=3D"=
+0" class=3D"text_block block-2" role=3D"presentation" style=3D"mso-table-ls=
+pace:0;mso-table-rspace:0;word-break:break-word" width=3D"100%"><tbody><tr>=
+<td class=3D"pad"><div style=3D"font-family:sans-serif"><div class=3D"" sty=
+le=3D"font-size:14px;font-family:Helvetica Neue,Helvetica,Arial,sans-serif;=
+mso-line-height-alt:16.8px;color:#665e5e;line-height:1.2"><p style=3D"margi=
+n:0;font-size:12px;text-align:center;mso-line-height-alt:14.399999999999999=
+px"><span style=3D"font-size:14px;color:#939393;"><a href=3D"https://link.a=
+mberstudent.com/ss/c/oPLlMbFpb4_XKTwzrXpZ0tB15C58xKn-bg-ckw7QqPzPuiVfURuvUk=
+UjTrfzvdT8Hez-P4I1ULJoF4z9f12Usz6tM9wFB1zInxd3jcp7dsChUYER-UTNdU0UzA1LMqKkb=
+R4m8xylPxRIrhSpOAS27krbsJQlDgpQzexvkpGBBu19yevs47PaF_YPZ9bZN41CIKG1yNMlIvcO=
+3EOGZyc4y0-qck6W-k2IaiA4nCYtta3TV01OcJl35JHTkpU9nuL1FExRZOw9wJPFQbaJFhDDIu-=
+l3GV2mg7_toqcYb2tZ0CXNnP9mvaBrNiY2r9gzszR_YvQboOtaxYN6XqIChdzmp5yT0cWVNUlPg=
+_UEM0cY_FUZoUD3YpstjvvIfJ523wszhNXL00Bbb90uZM6BlHax8b8XBkV3LhNvWD9Vsr-gUtDo=
+rRxrnxjC-gv1duekJ9_aObDXJSbBPH_elMQd3lQPNmeJ_D2hjb3DOQzWXcKQa8DQYa40FD3r1-o=
+LjOdO5CVNM--EQA3ZzMiTpdg36g6RjIOpgeVT6qputuHlhsuw-kSq2vOzrasQow6xiCOnqfsFlp=
+eDZWWmYYVJPaZxFbPz9HLATh6WL4OTPGfO1M_pNhz4t3Epy22uSBxS_Y4iTwuCo8XKjDeOgAqU7=
+MmyXmbODZfVPFDLrHjwux2o988YHDtkUA3dXOJqGLDH4U2SLbaLOQye54Vb3MIWNf_Lg3Y-w/40=
+m/Ic8OBR3aQTyDHx9KE8Ygcg/h10/vtVy-NKfKPxDahhKx8H-oHscOby7DOc4jkcjjILYh60" r=
+el=3D"noopener" style=3D"text-decoration:underline;color:#939393;" target=
+=3D"_blank">Contact Us</a>=A0 =A0=A0<a href=3D"https://link.amberstudent.co=
+m/ss/c/oPLlMbFpb4_XKTwzrXpZ0tB15C58xKn-bg-ckw7QqPzPuiVfURuvUkUjTrfzvdT8fXk1=
+Lknels3MGjEv3K7cDlgtBiYIrTRCYQC4Jll_nqB-Dzf9lWvbZp3fSc0Dh9cGr0tZ7tCsdAZAewW=
+67Gn2cj3tuVD6or1mERI0v9XL8npWkM8FRP7fQt8gZ7l_wseIcWXDi9Bnh-uArHi6itdKIKsXkb=
+6CF5fnFhd1yUSUOy1-Mxjos0aTU4V65tPyLHh9Yb6hH7bisV5AL2jCFOzG7OIMpaeqMKrM-h14C=
+ra1BlRDiPrNax0jiA-ehsvwvoF45bMCRM0H2BIsnh_iGCin1Q6fLDvgXZewA3OX2ADlXj6vTeoF=
+Cuab-3VrP0av3suvkVeX6C7rFB7FwP_xOVRTH_ees1AQlsM2VC8k0NBfZD2NFnaZXO6ToDIpAAS=
+N74riAKQRrlRkckwR86s2Ctgr66KBXnPjjyiRpTdhY3uYL15YMTY_ARD2WaWwF5M_mdG_vI7JSd=
+9VGyKbfcEDcEQ59p3aL9_Y47TkHzHyRRJA8qHHR94NdlMqTAs8Lt2LARVhGJ0IL7sIvYVs7fXh4=
+aD2pRUXV6eOGvN19QwN9m7XFHyVJL1c8jZu9d8mPxTcNv-KkRR-e435mcFM7igWM-LDNo9Ku7OQ=
+m6UmDLY8TnN-LVrHeYkIquxTArEYZiTANinprBmpV6qAJByzIkNzfnRrxA/40m/Ic8OBR3aQTyD=
+Hx9KE8Ygcg/h11/bdzfzPERlx1IC1VQeXVPe4fVvJNH0fK2UzQRe43Byq0" rel=3D"noopener=
+" style=3D"text-decoration:underline;color:#939393;" target=3D"_blank">Term=
+s</a>=A0 =A0 =A0<a href=3D"https://link.amberstudent.com/ss/c/oPLlMbFpb4_XK=
+TwzrXpZ0tB15C58xKn-bg-ckw7QqPzPuiVfURuvUkUjTrfzvdT8T8dRsrM6IGXsTbo-aOeAP0qS=
+6sZqGZjTbYjlz0BHy1JqVTQ9LOh6srDbemgJIfaxAcFE-JOIiraAaF1RmewCP0qk3eehLpfMG_1=
+2buNIU-SwIdOq8nneWAxX4bcoUG2JszHxaQ9lmLIsivZN_8plMLe3NdbR8UQFQjhuED2SvHMVZk=
+nQUiQDJGDb2JUpexGsWx17f8CFuFuVTfbTrNl-22bkjwGdI-xskmpqBA2Talan2098vBcyAgplK=
+BNQi1ePrsBVvDvr1_nNJfvIWNQOaB3oaQjJeQaGtgGfFVc2Yt5rXxnyih-V3FBYVN-GAJ2wR_Bl=
+r8Szz9-7JhVVbUGWvZ-Ryi2CcWb9LsQzFLgE0yUhfhu9JyaW_yEi2q6sm2wyJtcoJ4QL7Nhghrf=
+ITdxMcDaNSLt_qyGiIzY3tRdyLSWx08c-OUAjh2PPQ1XuTNPFX8ZQVJMymncrCd2lfGwmyIrP2j=
+EMGeaaZQK1eP9Ncp0wlSNWY5DhqQHX55fJOc86xrvqkTC2Yike0K3S4e543X5nLVtogIoVzV83q=
+lLY_iXO__wnWLWNEbRoNHxxhLYwfBDBdqTm0HXG7rs2-RYcHFkrjVH23cppdLfxYowMVbvbSMtd=
+HJKZhXgGbWmsbCPLj_P_nLrGFacnULz6948iVw/40m/Ic8OBR3aQTyDHx9KE8Ygcg/h12/Hd5go=
+dQ0nmKnscJXpftGinNc7k4Zr9DFIWuymKHOurE" rel=3D"noopener" style=3D"text-deco=
+ration:underline;color:#939393;" target=3D"_blank">Privacy</a></span></p></=
+div></div></td></tr></tbody></table><table border=3D"0" cellpadding=3D"10" =
+cellspacing=3D"0" class=3D"paragraph_block block-3" role=3D"presentation" s=
+tyle=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word" width=
+=3D"100%"><tbody><tr><td class=3D"pad"><div style=3D"color:#939393;directio=
+n:ltr;font-family:Helvetica Neue,Helvetica,Arial,sans-serif;font-size:12px;=
+font-weight:400;letter-spacing:0;line-height:120%;text-align:center;mso-lin=
+e-height-alt:14.399999999999999px"><p style=3D"margin:0"><strong><a href=3D=
+"https://link.amberstudent.com/ss/su/eJIYLEdj4mTbQhEF1t4iUg/40m/Ic8OBR3aQTy=
+DHx9KE8Ygcg/uh/DMdrNqF-KzRhxzWkUT3eZ5ntPHT6L4PEVAKZXMbbsdo" rel=3D"noopener=
+" style=3D"text-decoration: underline; color: #939393;" target=3D"_blank">U=
+nsubscribe</a>=A0here if you no longer wish to receive our emails. We'll mi=
+ss you.</strong></p></div></td></tr></tbody></table></td></tr></tbody></tab=
+le></td></tr></tbody></table></td></tr></tbody></table><!-- End --><img src=
+=3D"https://link.amberstudent.com/ss/o/eJIYLEdj4mTbQhEF1t4iUg/40m/Ic8OBR3aQ=
+TyDHx9KE8Ygcg/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body></html><i=
+mg src=3D"https://email-10.moengage.com/v1/emailopen?app_id=3D%40%24xy%2A%4=
+0%21hA%C3%92%2A%7D%C3%91%C3%83%C2%A6%C3%A4%04%1B%16%C2%85%C3%9C%C2%AE%C2%86=
+%C2%BB%C3%89r%C2%9B%12%C3%87%C2%9D%60%C2%A8%C3%9C%C3%BB%C2%A1%C2%91%5C%C2%B=
+D%C2%A7o&user_id=3D%40%24xy%2A%40%21hK%C2%9C%C2%A5%C2%8B%C2%98%C2%BC%C2%B5%=
+C3%99%7By%232k%C2%AE%C2%AC%07%C2%A8%3A%C3%BE%16%2B%3B%C2%B4%C3%A8%19%15%C2%=
+B9DAgX%C2%93&cid=3D%40%24xy%2A%40%21h%0Fg%5Cx%C3%83%0CSK%21%C3%86%C3%A2%C2%=
+87%C2%A7U%29%C2%B6Dz%26%2BR%C2%BB%C2%B9%0E%19%08%C3%8FE%C3%A3%1A%C2%9B%C2%B=
+1%0C%2Cd%1C%C3%A2%C3%9C%3Aa%C3%88%15%C3%9A%29%C3%99.%C2%A0t%C2%BF7%26%C3%8C=
+%26%C2%81%5E%C2%A8W%C3%95R1a%C2%8D%12%2B%7B%C2%85%C3%91%3E%21D%C3%B8%C2%BB%=
+1F3%C2%8C%C3%BA%C2%B3%C3%A8p%C3%BE%C2%91e%C2%B9z&track_a=3D1DALK8INN6DG3X7N=
+YXABET8R&track_c=3D6532872d48aa06b9136aaf0b_F_T_EM_AB_0_P_0_TIME_2023-10-21=
++11%3A06%3A23.127162_L_0&track_u=3D63b90e82b10dac63a6d40c5d&em=3Dsrijani515=
+%40gmail.com" alt=3D"" style=3D"display:none;width:1px;height:1px;" height=
+=3D"1" width=3D"1">

@@ -1,0 +1,971 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:329a:b0:4fd:23d3:a27 with SMTP id k26csp144600pxc;
+        Tue, 10 Oct 2023 08:52:11 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGmdNC+36TLSCS8CnMPcONgeCiXlneMoXIclR+FLIY6gXGl2TK1EPlqtEsb6H3hlo0+iXng
+X-Received: by 2002:a05:6214:43ca:b0:64f:5261:55e9 with SMTP id oi10-20020a05621443ca00b0064f526155e9mr22339277qvb.41.1696953130866;
+        Tue, 10 Oct 2023 08:52:10 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1696953130; cv=none;
+        d=google.com; s=arc-20160816;
+        b=zTej8CHGyzDrZkWWsA5ZctxYT/8waimGB2DFaTV8JQg3TSUgMDM719u850o49BBUpO
+         tF2ITVm4D2LUvIjLMW/ADjCL0cUUUfG5BJQ2hFz2SF5Kcev7OlFbUPaherA79ezdvjuO
+         R7OFU5EUe6R8h5uf9qt2E9vDOPkqdLIqiu+40Xuv8qdOhxmxhvMb971+r8mraNjXhXgt
+         JZkJQ2RQeZT3ZdLFZmX+ouug4HyYLEk9pPFrTQ8YdC2BUYm7vo+2QH4BasEK3gYFtlgC
+         WGPc9JAY6/TygB+A05/YlZxlo/mIC62R/oSuJAv0TnOG3kRTRsFc0OG8e793jr6WN59G
+         1jNw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:precedence:feedback-id:content-transfer-encoding
+         :mime-version:subject:message-id:to:from:date:dkim-signature
+         :dkim-signature;
+        bh=0W0bra10aJJTSITMfIVMDMBy+eR7s/tyhMOvj5POjjE=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=RNSuRiA/szxWbbZuAJNTT+gAUxJsnSph/koE1lqFd/0aH9pKfk+GNFIOPT9HXaZ2B1
+         CzEeM8GuIPa5w3KdFnbdlXkRtbRqODLzY8LbsfdhDmLhbR1hLZcDu833hC2fmZPEUOS1
+         xux7Jevh54PrSRtTGaDGcgguSI1N2VUBtO5XBTv5l+C+BzRby5GjOsj5TUjiasNmMzxH
+         hl0+SDzR3WtW7b1UMEbx8doCjTwm7SvNPpTC0WFV9StLo/wzhpZfcy9JGPXd5dWqliFn
+         GsjYfU70abxHPuLBhN7pZ5JFGWtgCESHfVeWplERDRoUMMobI6RU5otdZbBWi3FLWn1q
+         dUZw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@dellemc.ind.in header.s=sable.cloud2 header.b=5krRk6H4;
+       dkim=pass header.i=@cloud2.em.secureserver.net header.s=nov01em header.b=eUlWUisy;
+       spf=pass (google.com: domain of spc2_22821.5730.1.7fd160498f1dd00fd28f01566a194dec@bounces.cloud2.em.dellemc.ind.in designates 72.167.172.40 as permitted sender) smtp.mailfrom=spc2_22821.5730.1.7fd160498f1dd00fd28f01566a194dec@bounces.cloud2.em.dellemc.ind.in;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=dellemc.ind.in
+Return-Path: <spc2_22821.5730.1.7fd160498f1dd00fd28f01566a194dec@bounces.cloud2.em.dellemc.ind.in>
+Received: from m40.cloud2.em.secureserver.net (m40.cloud2.em.secureserver.net. [72.167.172.40])
+        by mx.google.com with ESMTPS id d4-20020a0cdb04000000b0065d067f07casi7856321qvk.134.2023.10.10.08.52.10
+        for <srijani515@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 10 Oct 2023 08:52:10 -0700 (PDT)
+Received-SPF: pass (google.com: domain of spc2_22821.5730.1.7fd160498f1dd00fd28f01566a194dec@bounces.cloud2.em.dellemc.ind.in designates 72.167.172.40 as permitted sender) client-ip=72.167.172.40;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@dellemc.ind.in header.s=sable.cloud2 header.b=5krRk6H4;
+       dkim=pass header.i=@cloud2.em.secureserver.net header.s=nov01em header.b=eUlWUisy;
+       spf=pass (google.com: domain of spc2_22821.5730.1.7fd160498f1dd00fd28f01566a194dec@bounces.cloud2.em.dellemc.ind.in designates 72.167.172.40 as permitted sender) smtp.mailfrom=spc2_22821.5730.1.7fd160498f1dd00fd28f01566a194dec@bounces.cloud2.em.dellemc.ind.in;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=dellemc.ind.in
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=sable.cloud2; d=dellemc.ind.in;
+ h=Date:From:To:Message-ID:Subject:Mime-Version:Content-Type:
+ Content-Transfer-Encoding:List-Unsubscribe; i=hrteam@dellemc.ind.in;
+ bh=0W0bra10aJJTSITMfIVMDMBy+eR7s/tyhMOvj5POjjE=;
+ b=5krRk6H4tN94GmGqcc/bGNUY/YsR+nP0PN0itxqv/JQjAKU3Zc+44ZwYCBRwrdS0VuEoJrgYT8Ab
+   GRocmrFEkyab/UizIiimjGjUkpMaxER8n+1gTQ2T73nHVly5+XlQZV5WlcGhZjP0Pdd3m+bCxy4r
+   BhoUhcp/GmwNCOc01OFFhLou04kC4gPcH/zJahCwftxwLpaRbEuY+zsPRxu4ue2BVWqzwqJfFpa8
+   L0QhW3+eOqORcljXUWcZaRxR7EePBHo18m0TUpFNTu3+2Su7yJXExKpJt8ucMuW3VBoYLLXx6dHT
+   St5oibPEffsGbizhs8Ar4HgC+8qKXLBZlWJKUQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=nov01em; d=cloud2.em.secureserver.net;
+ h=Date:From:To:Message-ID:Subject:Mime-Version:Content-Type:
+ Content-Transfer-Encoding:List-Unsubscribe;
+ bh=0W0bra10aJJTSITMfIVMDMBy+eR7s/tyhMOvj5POjjE=;
+ b=eUlWUisygWecSKA8807C69T0z9u+yZlAqtv/Bf6EqhKowJuYncHr2wpVnG8P1C8z+Xi/t1tr360g
+   0nXWRWFPi0xdu2pz+h8UDfuMc0UdJYfW8fm70eQT4gFV27Pi52VIikCBskaEQVBM+j4taAcCCwhm
+   pnTLeLsGZZXeE5RAN5JL2O8bdy7BTwAcv2JXv1R+lWBJwS306FhWKlp6+mvrxGf6cjwTx3JaeLBc
+   191PlRu5xtUAngWZDhCpvubQf68qZPkPYv8N7IxyeB/x5fXYZUsmOuIOI5sPgTVffMZV1XSBRXHf
+   712ylfSNnNmIbYR6rpiemvHWWghE6b9DTrvG3g==
+Received: by m40.cloud2.em.secureserver.net id h4lpik35ir0g for <srijani515@gmail.com>; Tue, 10 Oct 2023 15:35:37 +0000 (envelope-from <spc2_22821.5730.1.7fd160498f1dd00fd28f01566a194dec@bounces.cloud2.em.dellemc.ind.in>)
+Return-Path: <spc2_22821.5730.1.7fd160498f1dd00fd28f01566a194dec@bounces.cloud2.em.dellemc.ind.in>
+Date: Tue, 10 Oct 2023 15:35:37 +0000
+From: EMC DELL <hrteam@dellemc.ind.in>
+To: srijani515@gmail.com
+Message-ID: <6s1.22821.5586.5730.1696952137.6327908.5W5@ip-100-69-142-140.ec2.internal.mail>
+Subject: DELL EMC  HIRING INTIMATIONFor the position of  Software Engineer 
+ Level 1 Date :11-10-2023 WEDNESDAY
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_65256f4999830_7fc941615043e"
+Content-Transfer-Encoding: 7bit
+X-Personalized-By: Temple
+X-Mimiaid: 5730-176394631-69ecda9c-75a3-478f-bc8b-96d928e604f1-9bd9a0f3f3dbde5df112c8104ce2673a7f7eabcc
+X-Member-ID: 69ecda9c-75a3-478f-bc8b-96d928e604f1
+Feedback-ID: u10270284:m176394631:madmimi
+Precedence: bulk
+X-Sable-ID: spc2_22821.5730.1.7fd160498f1dd00fd28f01566a194dec
+X-Report-Abuse: You can also report abuse here:
+ https://email.cloud2.secureclick.net/abuse/new?id=22821.5730.1.7fd160498f1dd00fd28f01566a194dec
+X-Virtual-MTA: m40
+List-Unsubscribe: <mailto:spc2_22821.5730.1.7fd160498f1dd00fd28f01566a194dec@unsubscribes.cloud2.em.secureserver.net?subject=Unsubscribe
+ 22821.5730.1.7fd160498f1dd00fd28f01566a194dec>
+
+
+----==_mimepart_65256f4999830_7fc941615043e
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+|=0D
+  |=0D
+ |=0D
+=0D
+ =0D
+ =0D
+Dear Applicant =0D
+----------=0D
+Greetings =0D
+----------=0D
+Hope you are doing good , =0D
+----------=0D
+=0D
+Dell Technologies helps organizations and individuals build a brighter di=
+gital tomorrow. Our company is made up of more than 150,000 people, locat=
+ed in over 180 locations around the world. We=E2=80=99re proud to be a di=
+verse and inclusive team and have an endless passion for our mission to d=
+rive human progress. What=E2=80=99s most important to us is that you are =
+respected, feel like you can be yourself and have the opportunity to do t=
+he best work of your life -- while still having a life.=0D
+=0D
+We offer excellent benefits, bonus programs, flexible work arrangements, =
+a variety of career development opportunities, employee resource groups, =
+and much more. We started with computers, but we didn=E2=80=99t stop ther=
+e. We are helping customers move into the future with multi-cloud, AI and=
+ machine learning through the most innovative technology and services por=
+tfolio for the data era. Join us and become a part of what=E2=80=99s next=
+ in technology, starting today.=0D
+=0D
+You can also learn more about us by reading our latest Diversity and Incl=
+usion Report and our plan to make the world a better place by 2030.=0D
+=0D
+As a Software Engineer 1,=0D
+=0D
+You will be responsible for developing & Testing sophisticated systems an=
+d software basis the customer=E2=80=99s business goals, needs and general=
+ business environment creating software solutions.=0D
+=0D
+You will:=0D
+=0D
+=E2=80=A2 Contribute to the design and architecture of new or re-engineer=
+ed software/storage environments and includes Testing of Software and sys=
+tems for Testing .=0D
+=0D
+=E2=80=A2 Prepare written software/storage specifications for sophisticat=
+ed products from architectural diagrams and documents=0D
+=0D
+=E2=80=A2 Build and review design, functional, technical and/or user docu=
+mentation, as needed=0D
+=0D
+=E2=80=A2 Develop, review and implement test strategies for software prod=
+ucts and systems Take the first step towards your dream career Every Dell=
+ Technologies team member brings something unique to the table. Here=E2=80=
+=99s what we are looking for with this role:=0D
+=0D
+POSITION: SOFTWARE ENGINEER LEVEL 1 =0D
+----------=0D
+PACKAGE: 4,80,000 /- to 5,60,000/- =0D
+----------=0D
+Location: BANGALORE, HYDERABAD, PUNE, MUMBAI, KOLKATA, DELHI, NOIDA, CHEN=
+NAI, COIMBATORE, BHUBANESHWAR.=0D
+----------=0D
+Here with we have sent you the updated Test link which will be active fro=
+m 1.00 p.m to 8.00 p.m on 11-10-2023 WEDNESDAY=0D
+----------=0D
+=0D
+Do share your updated resume : recruitmentteam@dellemc.co=0D
+=0D
+Test Link :https://email.cloud2.secureclick.net/c/22821?id=3D5730.15.1.28=
+f8ece9168cbdf66bd494664a69f350 =0D
+=0D
+----------=0D
+=0D
+Aptitude : 30 Questions=0D
+=0D
+Java: 30 Mcq's & 1 Program=0D
+=0D
+Testing: 30 Mcq's & 3 Test cases .=0D
+=0D
+Technical option attend either Java or Testing The Test link will be acti=
+ve from 1.00 p.m. to 8.00 p.m. There will be 1 aptitude test ,and 1 test =
+paper on Java and 1 on Testing , Aptitude is mandatory for all , You can =
+select any one of the Technical option either Java or Testing.=0D
+=0D
+For each and every test paper the instructions is given clearly on the he=
+ading.=0D
+=0D
+NOTE:=0D
+=0D
+----------=0D
+Those who have already attended in past 45 days need not appear again. =0D=
+
+----------=0D
+ |=0D
+  |=0D
+ |=0D
+=0D
+ =0D
+ =0D
+=0D
+ |=0D
+  |=0D
+ |=0D
+=0D
+ =0D
+ =0D
+Do share your details before 12.00 p.m on 11th October Wednesday to the H=
+R of Dell Ms.SUSHMA in 7396801582 in whats app , failing to share your te=
+st will not be activated.=0D
+----------=0D
+=0D
+NAME:=0D
+=0D
+MAIL ID:=0D
+=0D
+YEAR OF PASSING:=0D
+=0D
+HIGHEST QUALIFICATION:=0D
+=0D
+DEPARTMENT:=0D
+=0D
+FRESHER OR EXPERIENCED:=0D
+=0D
+Location Applying for:=0D
+=0D
+Percentage in 10th:=0D
+=0D
+A clear current selfie of yours:=0D
+=0D
+Sharing irrelavant images will not be entertained.=0D
+=0D
+On sharing the above details the HR would acknowledge your details and ac=
+tivate your test link and you can take your test .=0D
+=0D
+Do understand the Interview process from the initial stage to final round=
+ is been conducted virtually .=0D
+=0D
+So the applicant and participant verification is mandatory .=0D
+=0D
+Sharing the same image again and again gives an impression that there are=
+ chances of malpractice in test and interview.=0D
+=0D
+As its well-known that , we are again in a position to face COVID restric=
+tions again and there are chances for remote work model .=0D
+=0D
+In such case for remote login , you would be in Video login .=0D
+=0D
+So only professionals who are not hesitated and restricted and who are no=
+t Gender Restricted alone will be considered and can be a part of this vi=
+rtual mode of interview.=0D
+=0D
+Expecting your cooperation in all regards.=0D
+=0D
+Warm regards,=0D
+=0D
+Global Recruitment Team=0D
+=0D
+DELL Inc.=0D
+=0D
+2401 Green lawn Boulevard=0D
+=0D
+Round Rock, Texas,=0D
+=0D
+United States 78682=0D
+=0D
+Disclaimer:: This email and any files transmitted with it are intended so=
+lely for the person or the entity to whom they are addressed and may cont=
+ain information which is Confidential and Privileged. which belongs to re=
+ceiver and our organization DELL Technologies, Any misuse of the informat=
+ion contained in this email, including but not limited to re transmission=
+ or dissemination of the said information by person or entities other tha=
+n the intended recipient is unauthorized and strictly prohibited. If you =
+are not the intended recipient of this email, please delete this email an=
+d contact the sender immediately.=0D
+=0D
+ |=0D
+  |=0D
+ |=0D
+=0D
+ =0D
+ =0D
+=0D
+ |=0D
+  |=0D
+ |=0D
+=0D
+ DELL Inc. 2401 Green lawn Boulevard Round Rock, Texas, United States 786=
+82=0D
+unsubscribe ( https://gem.godaddy.com/opt_out?pact=3D5730-176394631-69ecd=
+a9c-75a3-478f-bc8b-96d928e604f1-9bd9a0f3f3dbde5df112c8104ce2673a7f7eabcc =
+)=0D
+=0D
+ =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
+
+----==_mimepart_65256f4999830_7fc941615043e
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.o=
+rg/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns=3D"http://www.w3.org/1999=
+/xhtml" style=3D"background: #CA70E0; min-height: 100%">=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">=0D
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width">=0D
+=0D
+    =0D
+=0D
+    <link rel=3D"preconnect" href=3D"https://fonts.gstatic.com">=0D
+=0D
+=0D
+  <style>@font-face { font-family: 'Archivo Black'; font-style: normal; f=
+ont-weight: 400; font-display: swap; src: url(https://fonts.gstatic.com/s=
+/archivoblack/v21/HTxqL289NzCGg4MzN6KJ7eW6OYs.ttf) format('truetype'); }@=
+font-face { font-family: 'Libre Baskerville'; font-style: normal; font-we=
+ight: 400; font-display: swap; src: url(https://fonts.gstatic.com/s/libre=
+baskerville/v14/kmKnZrc3Hgbbcjq75U4uslyuy4kn0pNe.ttf) format('truetype');=
+ }</style><style>only screen and (max-width: 712px) { .small-float-center=
+ { margin: 0 auto !important; float: none !important; text-align: center =
+!important; }.small-text-center { text-align: center !important; }.small-=
+text-left { text-align: left !important; }.small-text-right { text-align:=
+ right !important; }.hide-for-large { display: block !important; width: a=
+uto !important; overflow: visible !important; max-height: none !important=
+; font-size: inherit !important; line-height: inherit !important; }table.=
+body table.container .hide-for-large { display: table !important; width: =
+100% !important; }table.body table.container .row.hide-for-large { displa=
+y: table !important; width: 100% !important; }table.body table.container =
+=2Ecallout-inner.hide-for-large { display: table-cell !important; width: 10=
+0% !important; }table.body table.container .show-for-large { display: non=
+e !important; width: 0; mso-hide: all; overflow: hidden; }table.body img =
+{ width: auto; height: auto; }table.body center { min-width: 0 !important=
+; }table.body .container { width: 95% !important; }table.body .columns { =
+height: auto !important; -moz-box-sizing: border-box; -webkit-box-sizing:=
+ border-box; box-sizing: border-box; padding-left: 26px !important; paddi=
+ng-right: 26px !important; }table.body .column { height: auto !important;=
+ -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing:=
+ border-box; padding-left: 26px !important; padding-right: 26px !importan=
+t; }table.body .columns .column { padding-left: 0 !important; padding-rig=
+ht: 0 !important; }table.body .columns .columns { padding-left: 0 !import=
+ant; padding-right: 0 !important; }table.body .column .column { padding-l=
+eft: 0 !important; padding-right: 0 !important; }table.body .column .colu=
+mns { padding-left: 0 !important; padding-right: 0 !important; }table.bod=
+y .collapse .columns { padding-left: 0 !important; padding-right: 0 !impo=
+rtant; }table.body .collapse .column { padding-left: 0 !important; paddin=
+g-right: 0 !important; }td.small-1 { display: inline-block !important; wi=
+dth: 8.333333% !important; }th.small-1 { display: inline-block !important=
+; width: 8.333333% !important; }td.small-2 { display: inline-block !impor=
+tant; width: 16.666666% !important; }th.small-2 { display: inline-block !=
+important; width: 16.666666% !important; }td.small-3 { display: inline-bl=
+ock !important; width: 25% !important; }th.small-3 { display: inline-bloc=
+k !important; width: 25% !important; }td.small-4 { display: inline-block =
+!important; width: 33.333333% !important; }th.small-4 { display: inline-b=
+lock !important; width: 33.333333% !important; }td.small-5 { display: inl=
+ine-block !important; width: 41.666666% !important; }th.small-5 { display=
+: inline-block !important; width: 41.666666% !important; }td.small-6 { di=
+splay: inline-block !important; width: 50% !important; }th.small-6 { disp=
+lay: inline-block !important; width: 50% !important; }td.small-7 { displa=
+y: inline-block !important; width: 58.333333% !important; }th.small-7 { d=
+isplay: inline-block !important; width: 58.333333% !important; }td.small-=
+8 { display: inline-block !important; width: 66.666666% !important; }th.s=
+mall-8 { display: inline-block !important; width: 66.666666% !important; =
+}td.small-9 { display: inline-block !important; width: 75% !important; }t=
+h.small-9 { display: inline-block !important; width: 75% !important; }td.=
+small-10 { display: inline-block !important; width: 83.333333% !important=
+; }th.small-10 { display: inline-block !important; width: 83.333333% !imp=
+ortant; }td.small-11 { display: inline-block !important; width: 91.666666=
+% !important; }th.small-11 { display: inline-block !important; width: 91.=
+666666% !important; }td.small-12 { display: inline-block !important; widt=
+h: 100% !important; }th.small-12 { display: inline-block !important; widt=
+h: 100% !important; }.columns td.small-12 { display: block !important; wi=
+dth: 100% !important; }.column td.small-12 { display: block !important; w=
+idth: 100% !important; }.columns th.small-12 { display: block !important;=
+ width: 100% !important; }.column th.small-12 { display: block !important=
+; width: 100% !important; }table.body td.small-offset-1 { margin-left: 8.=
+333333% !important; }table.body th.small-offset-1 { margin-left: 8.333333=
+% !important; }table.body td.small-offset-2 { margin-left: 16.666666% !im=
+portant; }table.body th.small-offset-2 { margin-left: 16.666666% !importa=
+nt; }table.body td.small-offset-3 { margin-left: 25% !important; }table.b=
+ody th.small-offset-3 { margin-left: 25% !important; }table.body td.small=
+-offset-4 { margin-left: 33.333333% !important; }table.body th.small-offs=
+et-4 { margin-left: 33.333333% !important; }table.body td.small-offset-5 =
+{ margin-left: 41.666666% !important; }table.body th.small-offset-5 { mar=
+gin-left: 41.666666% !important; }table.body td.small-offset-6 { margin-l=
+eft: 50% !important; }table.body th.small-offset-6 { margin-left: 50% !im=
+portant; }table.body td.small-offset-7 { margin-left: 58.333333% !importa=
+nt; }table.body th.small-offset-7 { margin-left: 58.333333% !important; }=
+table.body td.small-offset-8 { margin-left: 66.666666% !important; }table=
+=2Ebody th.small-offset-8 { margin-left: 66.666666% !important; }table.body=
+ td.small-offset-9 { margin-left: 75% !important; }table.body th.small-of=
+fset-9 { margin-left: 75% !important; }table.body td.small-offset-10 { ma=
+rgin-left: 83.333333% !important; }table.body th.small-offset-10 { margin=
+-left: 83.333333% !important; }table.body td.small-offset-11 { margin-lef=
+t: 91.666666% !important; }table.body th.small-offset-11 { margin-left: 9=
+1.666666% !important; }table.body table.columns td.expander { display: no=
+ne !important; }table.body table.columns th.expander { display: none !imp=
+ortant; }table.body .right-text-pad { padding-left: 10px !important; }tab=
+le.body .text-pad-right { padding-left: 10px !important; }table.body .lef=
+t-text-pad { padding-right: 10px !important; }table.body .text-pad-left {=
+ padding-right: 10px !important; }table.menu { width: 100% !important; }t=
+able.menu td { width: auto !important; display: inline-block !important; =
+}table.menu th { width: auto !important; display: inline-block !important=
+; }table.menu.vertical td { display: block !important; }table.menu.vertic=
+al th { display: block !important; }table.menu.small-vertical td { displa=
+y: block !important; }table.menu.small-vertical th { display: block !impo=
+rtant; }table.menu[align=3D"center"] { width: auto !important; }table.but=
+ton.small-expand { width: 100% !important; }table.button.small-expanded {=
+ width: 100% !important; }table.button.small-expand table { width: 100%; =
+}table.button.small-expanded table { width: 100%; }table.button.small-exp=
+and table a { text-align: center !important; width: 100% !important; padd=
+ing-left: 0 !important; padding-right: 0 !important; }table.button.small-=
+expanded table a { text-align: center !important; width: 100% !important;=
+ padding-left: 0 !important; padding-right: 0 !important; }table.button.s=
+mall-expand center { min-width: 0; }table.button.small-expanded center { =
+min-width: 0; } }</style></head>=0D
+=0D
+  <body style=3D"width: 100% !important; min-width: 100%; -webkit-text-si=
+ze-adjust: 100%; -ms-text-size-adjust: 100%; -moz-box-sizing: border-box;=
+ -webkit-box-sizing: border-box; box-sizing: border-box; color: #fff; fon=
+t-family: &#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; fo=
+nt-weight: normal; text-align: left; line-height: 150%; font-size: 17px; =
+margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding=
+-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;"><p style=3D=
+"mso-hide:all;font-size:0px;background-color:transparent;position:absolut=
+e;height:1px"><img src=3D"https://email.cloud2.secureclick.net/view?id=3D=
+22821.5730.1.7fd160498f1dd00fd28f01566a194dec" alt=3D"" border=3D"0" widt=
+h=3D"0" height=3D"0"></p>=0D
+    <table class=3D"body" data-made-with-foundation=3D"" style=3D"backgro=
+und: #CA70E0; border-collapse: collapse; border-spacing: 0; color: #fff; =
+font-family: &#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif;=
+ font-size: 17px; font-weight: normal; height: 100%; line-height: 150%; m=
+argin: 0; padding: 0; text-align: left; vertical-align: top; width: 100%"=
+ bgcolor=3D"#CA70E0">=0D
+      <tr style=3D"padding: 0; text-align: left; vertical-align: top" ali=
+gn=3D"left">=0D
+        <td class=3D"center" align=3D"center" valign=3D"top" style=3D"-mo=
+z-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !import=
+ant; color: #fff; font-family: &#39;Libre Baskerville&#39;,&#39;Times New=
+ Roman&#39;,serif; font-size: 17px; font-weight: normal; hyphens: auto; l=
+ine-height: 150%; margin: 0; padding: 0; text-align: left; vertical-align=
+: top; word-wrap: break-word">=0D
+            <table class=3D"container--header container" align=3D"center"=
+ style=3D"background: none; border-collapse: collapse; border-spacing: 0;=
+ margin: 12px auto 0; padding: 0; text-align: inherit; vertical-align: to=
+p; width: 686px" background=3D"https://go.madmimi.com/none"><tbody><tr st=
+yle=3D"padding: 0; text-align: left; vertical-align: top" align=3D"left">=
+<td style=3D"-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: =
+collapse !important; color: #fff; font-family: &#39;Libre Baskerville&#39=
+;,&#39;Times New Roman&#39;,serif; font-size: 17px; font-weight: normal; =
+hyphens: auto; line-height: 150%; margin: 0; padding: 0; text-align: left=
+; vertical-align: top; word-wrap: break-word" align=3D"left" valign=3D"to=
+p">=0D
+              =0D
+        <header class=3D"header-center">=0D
+          <img src=3D"https://img1.wsimg.com/isteam/ip/fbc9fa11-89ab-4ac4=
+-b148-c053f3b471fc/images.png" class=3D"logo float-center" style=3D"outli=
+ne: none; text-decoration: none; -ms-interpolation-mode: bicubic; width: =
+auto; max-width: 100%; clear: both; display: block; float: none; max-heig=
+ht: 130px; text-align: center; margin-top: 0; margin-right: auto; margin-=
+bottom: 0; margin-left: auto;" align=3D"none">=0D
+        </header>=0D
+                  </td></tr></tbody></table>=0D
+          <table class=3D"container--body container" align=3D"center" sty=
+le=3D"background: #3A86BD none; border: 1px solid #03a62b; border-collaps=
+e: initial; border-radius: 10px; border-spacing: 0; margin: 24px auto 0; =
+overflow: hidden; padding: 0; text-align: inherit; vertical-align: top; w=
+idth: 686px" bgcolor=3D"#3A86BD" background=3D"https://go.madmimi.com/non=
+e"><tbody><tr style=3D"padding: 0; text-align: left; vertical-align: top"=
+ align=3D"left"><td style=3D"-moz-hyphens: auto; -webkit-hyphens: auto; b=
+order-collapse: collapse !important; color: #fff; font-family: &#39;Libre=
+ Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17px; font-=
+weight: normal; hyphens: auto; line-height: 150%; margin: 0; padding: 0; =
+text-align: left; vertical-align: top; word-wrap: break-word" align=3D"le=
+ft" valign=3D"top">=0D
+            =0D
+          <table class=3D"collapse row" style=3D"border-collapse: collaps=
+e; border-spacing: 0; display: table; padding: 0; position: relative; tex=
+t-align: left; vertical-align: top; width: 100%"><tbody><tr style=3D"padd=
+ing: 0; text-align: left; vertical-align: top" align=3D"left">=0D
+            <th class=3D"small-12 large-12 columns first last" style=3D"c=
+olor: #fff; font-family: &#39;Libre Baskerville&#39;,&#39;Times New Roman=
+&#39;,serif; font-size: 17px; font-weight: normal; line-height: 150%; mar=
+gin: 0 auto; padding: 0 0 26px; text-align: left; width: 699px" align=3D"=
+left"><table style=3D"border-collapse: collapse; border-spacing: 0; paddi=
+ng: 0; text-align: left; vertical-align: top; width: 100%"><tr style=3D"p=
+adding: 0; text-align: left; vertical-align: top" align=3D"left">=0D
+<th style=3D"color: #fff; font-family: &#39;Libre Baskerville&#39;,&#39;T=
+imes New Roman&#39;,serif; font-size: 17px; font-weight: normal; line-hei=
+ght: 150%; margin: 0; padding: 0; text-align: left" align=3D"left">=0D
+              =0D
+          =0D
+            <img src=3D"https://img1.wsimg.com/isteam/ip/fbc9fa11-89ab-4a=
+c4-b148-c053f3b471fc/Dell-1.png/:/cr=3Dt:0%25,l:0%25,w:100%25,h:100%25/rs=
+=3Dw:686" alt=3D"" class=3D"banner" style=3D"outline: none; text-decorati=
+on: none; -ms-interpolation-mode: bicubic; width: 100% !important; max-wi=
+dth: 100%; clear: both; display: block;">=0D
+          =0D
+        =0D
+            </th>=0D
+<th class=3D"expander" style=3D"color: #fff; font-family: &#39;Libre Bask=
+erville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17px; font-weigh=
+t: normal; line-height: 150%; margin: 0; padding: 0; text-align: left; vi=
+sibility: hidden; width: 0" align=3D"left"></th>=0D
+</tr></table></th>=0D
+          </tr></tbody></table>=0D
+        =0D
+          <table class=3D"row" style=3D"border-collapse: collapse; border=
+-spacing: 0; display: table; padding: 0; position: relative; text-align: =
+left; vertical-align: top; width: 100%"><tbody><tr style=3D"padding: 0; t=
+ext-align: left; vertical-align: top" align=3D"left">=0D
+            <th class=3D"small-12 large-12 columns first last" style=3D"c=
+olor: #fff; font-family: &#39;Libre Baskerville&#39;,&#39;Times New Roman=
+&#39;,serif; font-size: 17px; font-weight: normal; line-height: 150%; mar=
+gin: 0 auto; padding: 0 26px 26px; text-align: left; width: 660px" align=3D=
+"left"><table style=3D"border-collapse: collapse; border-spacing: 0; padd=
+ing: 0; text-align: left; vertical-align: top; width: 100%"><tr style=3D"=
+padding: 0; text-align: left; vertical-align: top" align=3D"left">=0D
+<th style=3D"color: #fff; font-family: &#39;Libre Baskerville&#39;,&#39;T=
+imes New Roman&#39;,serif; font-size: 17px; font-weight: normal; line-hei=
+ght: 150%; margin: 0; padding: 0; text-align: left" align=3D"left">=0D
+              <h4 dir=3D"auto" style=3D"color: inherit; font-family: &#39=
+;Archivo Black&#39;,&#39;Helvetica Neue&#39;,Helvetica,Roboto,Arial,sans-=
+serif; font-size: 24px; font-weight: 700; line-height: 150%; margin: 0 0 =
+10px; padding: 0; text-align: start; word-wrap: normal" align=3D"start">D=
+ear Applicant </h4>=0D
+<h4 dir=3D"auto" style=3D"color: inherit; font-family: &#39;Archivo Black=
+&#39;,&#39;Helvetica Neue&#39;,Helvetica,Roboto,Arial,sans-serif; font-si=
+ze: 24px; font-weight: 700; line-height: 150%; margin: 0 0 10px; padding:=
+ 0; text-align: start; word-wrap: normal" align=3D"start">Greetings </h4>=
+=0D
+<h4 dir=3D"auto" style=3D"color: inherit; font-family: &#39;Archivo Black=
+&#39;,&#39;Helvetica Neue&#39;,Helvetica,Roboto,Arial,sans-serif; font-si=
+ze: 24px; font-weight: 700; line-height: 150%; margin: 0 0 10px; padding:=
+ 0; text-align: start; word-wrap: normal" align=3D"start">Hope you are do=
+ing good , </h4>=0D
+=0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">Dell Technologies helps organizations=
+ and individuals build a brighter digital tomorrow. Our company is made u=
+p of more than 150,000 people, located in over 180 locations around the w=
+orld. We=E2=80=99re proud to be a diverse and inclusive team and have an =
+endless passion for our mission to drive human progress.  What=E2=80=99s =
+most important to us is that you are respected, feel like you can be your=
+self and have the opportunity to do the best work of your life -- while s=
+till having a life. </p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">We offer excellent benefits, bonus pr=
+ograms, flexible work arrangements, a variety of career development oppor=
+tunities, employee resource groups, and much more.  We started with compu=
+ters, but we didn=E2=80=99t stop there. We are helping customers move int=
+o the future with multi-cloud, AI and machine learning through the most i=
+nnovative technology and services portfolio for the data era. Join us and=
+ become a part of what=E2=80=99s next in technology, starting today.</p>=0D=
+
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">You can also learn more about us by r=
+eading our latest Diversity and Inclusion Report and our plan to make the=
+ world a better place by 2030.</p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">As a  Software Engineer 1, </p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">You will be responsible for developin=
+g &amp; Testing sophisticated systems and software basis the customer=E2=80=
+=99s business goals, needs and general business environment creating soft=
+ware solutions. </p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">You will: </p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">=E2=80=A2 Contribute to the design an=
+d architecture of new or re-engineered software/storage environments and =
+includes Testing of Software and systems for Testing .</p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">=E2=80=A2 Prepare written software/st=
+orage specifications for sophisticated products from architectural diagra=
+ms and documents  </p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">=E2=80=A2 Build and review design, fu=
+nctional, technical and/or user documentation, as needed  </p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">=E2=80=A2 Develop, review and impleme=
+nt test strategies for software products and systems   Take the first ste=
+p towards your dream career Every Dell Technologies team member brings so=
+mething unique to the table. Here=E2=80=99s what we are looking for with =
+this role: </p>=0D
+        <h4 dir=3D"auto" style=3D"color: inherit; font-family: &#39;Archi=
+vo Black&#39;,&#39;Helvetica Neue&#39;,Helvetica,Roboto,Arial,sans-serif;=
+ font-size: 24px; font-weight: 700; line-height: 150%; margin: 0 0 10px; =
+padding: 0; text-align: start; word-wrap: normal" align=3D"start">POSITIO=
+N: SOFTWARE ENGINEER LEVEL 1  </h4>=0D
+<h4 dir=3D"auto" style=3D"color: inherit; font-family: &#39;Archivo Black=
+&#39;,&#39;Helvetica Neue&#39;,Helvetica,Roboto,Arial,sans-serif; font-si=
+ze: 24px; font-weight: 700; line-height: 150%; margin: 0 0 10px; padding:=
+ 0; text-align: start; word-wrap: normal" align=3D"start">PACKAGE: 4,80,0=
+00 /- to 5,60,000/-  </h4>=0D
+<h4 dir=3D"auto" style=3D"color: inherit; font-family: &#39;Archivo Black=
+&#39;,&#39;Helvetica Neue&#39;,Helvetica,Roboto,Arial,sans-serif; font-si=
+ze: 24px; font-weight: 700; line-height: 150%; margin: 0 0 10px; padding:=
+ 0; text-align: start; word-wrap: normal" align=3D"start">Location: BANGA=
+LORE, HYDERABAD, PUNE, MUMBAI, KOLKATA, DELHI, NOIDA, CHENNAI, COIMBATORE=
+, BHUBANESHWAR.</h4>=0D
+<h4 dir=3D"auto" style=3D"color: inherit; font-family: &#39;Archivo Black=
+&#39;,&#39;Helvetica Neue&#39;,Helvetica,Roboto,Arial,sans-serif; font-si=
+ze: 24px; font-weight: 700; line-height: 150%; margin: 0 0 10px; padding:=
+ 0; text-align: start; word-wrap: normal" align=3D"start">Here with we ha=
+ve sent you the updated Test link which will be active from 1.00 p.m to 8=
+=2E00 p.m on 11-10-2023 WEDNESDAY</h4>=0D
+=0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start"><span style=3D"font-weight: bold">Do =
+share your updated resume :  </span><span style=3D"font-weight: bold; tex=
+t-decoration: underline">recruitmentteam@dellemc.co</span></p>=0D
+        <h4 dir=3D"auto" style=3D"color: inherit; font-family: &#39;Archi=
+vo Black&#39;,&#39;Helvetica Neue&#39;,Helvetica,Roboto,Arial,sans-serif;=
+ font-size: 24px; font-weight: 700; line-height: 150%; margin: 0 0 10px; =
+padding: 0; text-align: start; word-wrap: normal" align=3D"start">=0D
+<span style=3D"font-weight: bold">Test Link :</span><span style=3D"font-w=
+eight: bold; text-decoration: underline">https://ncf2023.in/m/login?r=3D%=
+2Fdell-recruitment-drive-1 </span>=0D
+</h4>=0D
+=0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start"><span style=3D"font-weight: bold">Apt=
+itude : 30 Questions </span></p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start"><span style=3D"font-weight: bold">Jav=
+a: 30 Mcq's &amp; 1 Program</span></p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start"><span style=3D"font-weight: bold">Tes=
+ting: 30 Mcq's &amp; 3 Test cases</span> . </p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">Technical option attend either Java o=
+r Testing  The Test link will be active from 1.00 p.m. to 8.00 p.m. There=
+ will be 1 aptitude test ,and 1 test paper on Java and 1 on Testing , Apt=
+itude is mandatory for all , You can select any one of the Technical opti=
+on either Java or Testing.</p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">For each and every test paper the ins=
+tructions is given clearly on the heading.</p>=0D
+        <h4 dir=3D"auto" style=3D"color: inherit; font-family: &#39;Archi=
+vo Black&#39;,&#39;Helvetica Neue&#39;,Helvetica,Roboto,Arial,sans-serif;=
+ font-size: 24px; font-weight: 700; line-height: 150%; margin: 0 0 10px; =
+padding: 0; text-align: start; word-wrap: normal" align=3D"start">=0D
+<span style=3D"font-weight: bold; text-decoration: underline">NOTE:</span=
+>=0D
+</h4>=0D
+<h4 dir=3D"auto" style=3D"color: inherit; font-family: &#39;Archivo Black=
+&#39;,&#39;Helvetica Neue&#39;,Helvetica,Roboto,Arial,sans-serif; font-si=
+ze: 24px; font-weight: 700; line-height: 150%; margin: 0; padding: 0; tex=
+t-align: start; word-wrap: normal" align=3D"start">Those who have already=
+ attended in past 45 days need not appear again. </h4>=0D
+            </th>=0D
+<th class=3D"expander" style=3D"color: #fff; font-family: &#39;Libre Bask=
+erville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17px; font-weigh=
+t: normal; line-height: 150%; margin: 0; padding: 0; text-align: left; vi=
+sibility: hidden; width: 0" align=3D"left"></th>=0D
+</tr></table></th>=0D
+          </tr></tbody></table>=0D
+        =0D
+          <table class=3D"row" style=3D"border-collapse: collapse; border=
+-spacing: 0; display: table; padding: 0; position: relative; text-align: =
+left; vertical-align: top; width: 100%"><tbody><tr style=3D"padding: 0; t=
+ext-align: left; vertical-align: top" align=3D"left">=0D
+            <th class=3D"small-12 large-12 columns first last" style=3D"c=
+olor: #fff; font-family: &#39;Libre Baskerville&#39;,&#39;Times New Roman=
+&#39;,serif; font-size: 17px; font-weight: normal; line-height: 150%; mar=
+gin: 0 auto; padding: 0 26px 26px; text-align: left; width: 660px" align=3D=
+"left"><table style=3D"border-collapse: collapse; border-spacing: 0; padd=
+ing: 0; text-align: left; vertical-align: top; width: 100%"><tr style=3D"=
+padding: 0; text-align: left; vertical-align: top" align=3D"left">=0D
+<th style=3D"color: #fff; font-family: &#39;Libre Baskerville&#39;,&#39;T=
+imes New Roman&#39;,serif; font-size: 17px; font-weight: normal; line-hei=
+ght: 150%; margin: 0; padding: 0; text-align: left" align=3D"left">=0D
+              =0D
+          <div class=3D"image">=0D
+            <img src=3D"https://img1.wsimg.com/isteam/ip/fbc9fa11-89ab-4a=
+c4-b148-c053f3b471fc/unnamed.jpg/:/rs=3Dw:686" alt=3D"" style=3D"outline:=
+ none; text-decoration: none; -ms-interpolation-mode: bicubic; width: aut=
+o; max-width: 100%; clear: both; display: block;">=0D
+          </div>=0D
+        =0D
+            </th>=0D
+<th class=3D"expander" style=3D"color: #fff; font-family: &#39;Libre Bask=
+erville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17px; font-weigh=
+t: normal; line-height: 150%; margin: 0; padding: 0; text-align: left; vi=
+sibility: hidden; width: 0" align=3D"left"></th>=0D
+</tr></table></th>=0D
+          </tr></tbody></table>=0D
+        =0D
+          <table class=3D"row" style=3D"border-collapse: collapse; border=
+-spacing: 0; display: table; padding: 0; position: relative; text-align: =
+left; vertical-align: top; width: 100%"><tbody><tr style=3D"padding: 0; t=
+ext-align: left; vertical-align: top" align=3D"left">=0D
+            <th class=3D"small-12 large-12 columns first last" style=3D"c=
+olor: #fff; font-family: &#39;Libre Baskerville&#39;,&#39;Times New Roman=
+&#39;,serif; font-size: 17px; font-weight: normal; line-height: 150%; mar=
+gin: 0 auto; padding: 0 26px 26px; text-align: left; width: 660px" align=3D=
+"left"><table style=3D"border-collapse: collapse; border-spacing: 0; padd=
+ing: 0; text-align: left; vertical-align: top; width: 100%"><tr style=3D"=
+padding: 0; text-align: left; vertical-align: top" align=3D"left">=0D
+<th style=3D"color: #fff; font-family: &#39;Libre Baskerville&#39;,&#39;T=
+imes New Roman&#39;,serif; font-size: 17px; font-weight: normal; line-hei=
+ght: 150%; margin: 0; padding: 0; text-align: left" align=3D"left">=0D
+              <h4 dir=3D"auto" style=3D"color: inherit; font-family: &#39=
+;Archivo Black&#39;,&#39;Helvetica Neue&#39;,Helvetica,Roboto,Arial,sans-=
+serif; font-size: 24px; font-weight: 700; line-height: 150%; margin: 0 0 =
+10px; padding: 0; text-align: start; word-wrap: normal" align=3D"start">D=
+o share your details before 12.00 p.m on 11th October Wednesday  to the H=
+R of Dell Ms.SUSHMA  in 7396801582 in whats app , failing to share your t=
+est will not be activated.</h4>=0D
+=0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">NAME: </p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">MAIL ID: </p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">YEAR OF PASSING: </p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">HIGHEST QUALIFICATION: </p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">DEPARTMENT: </p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">FRESHER OR EXPERIENCED: </p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">Location Applying for:</p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">Percentage in 10th: </p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">A clear current selfie of yours: </p>=
+=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">Sharing irrelavant images will not be=
+ entertained.</p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">On sharing the above details the HR w=
+ould acknowledge your details and activate your test link and you can tak=
+e your test . </p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">Do understand the Interview process f=
+rom the initial stage to final round is been conducted virtually . </p>=0D=
+
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">So the applicant and participant veri=
+fication is mandatory . </p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">Sharing the same image again and agai=
+n gives an impression that there are chances of malpractice in test and i=
+nterview. </p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">As its well-known that , we are again=
+ in a position to face COVID restrictions again and there are chances for=
+ remote work model . </p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">In such case for remote login , you w=
+ould be in Video login . </p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">So only professionals who are not hes=
+itated and restricted and who are not Gender Restricted alone will be con=
+sidered and can be a part of this virtual mode of interview.</p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">Expecting your cooperation in all reg=
+ards.  </p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start"> </p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">Warm regards,  </p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">Global Recruitment Team  </p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">DELL Inc.  </p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">2401 Green lawn Boulevard  </p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">Round Rock, Texas, </p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;=
+ text-align: start" align=3D"start">United States  78682  </p>=0D
+        =0D
+          <p dir=3D"auto" class=3D"" style=3D"color: #fff; font-family: &=
+#39;Libre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17=
+px; font-weight: normal; line-height: 150%; margin: 0; padding: 0; text-a=
+lign: start" align=3D"start">Disclaimer::  This email and any files trans=
+mitted with it are intended solely for the person or the entity to whom t=
+hey are addressed and may contain information which is Confidential and P=
+rivileged. which belongs to receiver and our organization DELL Technologi=
+es, Any misuse of the information contained in this email, including but =
+not limited to re transmission or dissemination of the said information b=
+y person or entities other than the intended recipient is unauthorized an=
+d strictly prohibited. If you are not the intended recipient of this emai=
+l, please delete this email and contact the sender immediately.</p>=0D
+        =0D
+            </th>=0D
+<th class=3D"expander" style=3D"color: #fff; font-family: &#39;Libre Bask=
+erville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17px; font-weigh=
+t: normal; line-height: 150%; margin: 0; padding: 0; text-align: left; vi=
+sibility: hidden; width: 0" align=3D"left"></th>=0D
+</tr></table></th>=0D
+          </tr></tbody></table>=0D
+                  </td></tr></tbody></table>=0D
+          <table class=3D"container--footer container" align=3D"center" s=
+tyle=3D"background: none; border-collapse: collapse; border-spacing: 0; m=
+argin: 0 auto; padding: 0; text-align: inherit; vertical-align: top; widt=
+h: 686px" background=3D"https://go.madmimi.com/none"><tbody><tr style=3D"=
+padding: 0; text-align: left; vertical-align: top" align=3D"left"><td sty=
+le=3D"-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collaps=
+e !important; color: #fff; font-family: &#39;Libre Baskerville&#39;,&#39;=
+Times New Roman&#39;,serif; font-size: 17px; font-weight: normal; hyphens=
+: auto; line-height: 150%; margin: 0; padding: 16px; text-align: left; ve=
+rtical-align: top; word-wrap: break-word" align=3D"left" valign=3D"top">=0D=
+
+            =0D
+        <div class=3D"footer" style=3D"color: #fff; font-size: 80%; paddi=
+ng-bottom: 5px; text-align: center" align=3D"center">=0D
+          =0D
+          <table class=3D"row" style=3D"border-collapse: collapse; border=
+-spacing: 0; display: table; padding: 0; position: relative; text-align: =
+left; vertical-align: top; width: 100%"><tbody><tr style=3D"padding: 0; t=
+ext-align: left; vertical-align: top" align=3D"left">=0D
+            <th class=3D"small-12 large-12 columns first last" style=3D"c=
+olor: #fff; font-family: &#39;Libre Baskerville&#39;,&#39;Times New Roman=
+&#39;,serif; font-size: 17px; font-weight: normal; line-height: 150%; mar=
+gin: 0 auto; padding: 0 26px 26px; text-align: left; width: 660px" align=3D=
+"left"><table style=3D"border-collapse: collapse; border-spacing: 0; padd=
+ing: 0; text-align: left; vertical-align: top; width: 100%"><tr style=3D"=
+padding: 0; text-align: left; vertical-align: top" align=3D"left">=0D
+<th style=3D"color: #fff; font-family: &#39;Libre Baskerville&#39;,&#39;T=
+imes New Roman&#39;,serif; font-size: 17px; font-weight: normal; line-hei=
+ght: 150%; margin: 0; padding: 0; text-align: left" align=3D"left">=0D
+              <center style=3D"min-width: 608px; width: 100%"></center>=0D=
+
+            </th>=0D
+<th class=3D"expander" style=3D"color: #fff; font-family: &#39;Libre Bask=
+erville&#39;,&#39;Times New Roman&#39;,serif; font-size: 17px; font-weigh=
+t: normal; line-height: 150%; margin: 0; padding: 0; text-align: left; vi=
+sibility: hidden; width: 0" align=3D"left"></th>=0D
+</tr></table></th>=0D
+          </tr></tbody></table>=0D
+        =0D
+          DELL Inc.   2401 Green lawn Boulevard   Round Rock, Texas,  Uni=
+ted States  78682=0D
+          <a target=3D"_blank" style=3D"color: #fff; font-family: &#39;Li=
+bre Baskerville&#39;,&#39;Times New Roman&#39;,serif; font-weight: normal=
+; line-height: 150%; margin: 0; padding: 0; text-align: left; text-decora=
+tion: underline" href=3D"https://gem.godaddy.com/opt_out?pact=3D5730-1763=
+94631-69ecda9c-75a3-478f-bc8b-96d928e604f1-9bd9a0f3f3dbde5df112c8104ce267=
+3a7f7eabcc">unsubscribe</a>=0D
+        </div>=0D
+                </td></tr></tbody></table>=0D
+        </td>=0D
+      </tr>=0D
+    </table>=0D
+    =0D
+    <div style=3D"display: none; font: 15px courier; white-space: nowrap"=
+> =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </div>=0D=
+
+  </body>=0D
+</html>=
+
+----==_mimepart_65256f4999830_7fc941615043e--

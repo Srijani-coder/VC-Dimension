@@ -1,0 +1,444 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:329a:b0:4fd:23d3:a27 with SMTP id k26csp729183pxc;
+        Wed, 11 Oct 2023 05:08:29 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEmDGmk4Gy5+Dj1c9MvamWJvy4Skf335dROEmtUbYMSGt9ejDVRa18hPNqSgXhsXWMWV9QC
+X-Received: by 2002:a17:902:8f8b:b0:1c5:f0fd:51be with SMTP id z11-20020a1709028f8b00b001c5f0fd51bemr19418279plo.69.1697026109345;
+        Wed, 11 Oct 2023 05:08:29 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697026109; cv=none;
+        d=google.com; s=arc-20160816;
+        b=r5gXrFoTB/3pRTIE7WyMXMWXFVIzGWAPSM9m1KmMfF8Oq9cBOB59ccVVaaKcPemc15
+         SdcK3xHGqNmNX8UsXyuDeeRrIlaqCc5j26aCORIFIuSPKMW0Ng+7LhCxPhymx4/Ei9Xf
+         MR4PFffoMfcTrB0l7gdgmLff2pQM48/gIf/3eM7zJRPf58K5nRJ8MYNJ2p2/qM6KNgAc
+         RZkitr6V8p9xBZXT1v+5PcpNNB5Ey355XTAhKVfiXULmsDct4gfipRodfSe0Xj5KWvRh
+         5e4oOAipuFbsabBbYIdXfKkvrGX6aiucx/KI4bLYwaxrhX+eqsASl4sjFNdrcqDd0Y6Y
+         lB1g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=precedence:mime-version:subject:message-id:to:reply-to:from:date
+         :ironport-hdrordr:ironport-data:ironport-sdr:dkim-signature
+         :domainkey-signature;
+        bh=mTilUN/8WjhH6kr71SKIN+rwlzXRGeyKml8YqGnZfjg=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=xNbcx720Sz9NTxYkol5B5j7i9BDhTQQ03OpBpV1mHlJ8FZaB8NvgH90yh+58MxcLa+
+         0u6F6JioRbVCj6jQ8LqpKBCIs2Dqp9pt2bqhvFzVY5axyeAB4SkdiAunUld/lKG2OAd1
+         7dR3hLVnLqXJL7/z/DNAN2ME4WhBYx4CMim+3yQL621jCd1a8XOjgj9YT65FzyugudAC
+         CrgLdd3xwLfg2Jio7ZTRMq9RxKE9vfkaV6yHzJJ+55ZFzm5jHp3Jkn+GL2zTQ8Px+eR4
+         rc8XiaigSzLDKatg1CcSLE71JeOf1llBZp0Y0wziICnJimDv1Rm2ER5eVHBIzLeTa8Ks
+         u2Rw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@timesjobs.com header.s=main header.b=H3DJXBUU;
+       spf=pass (google.com: domain of mail@timesjobs.com designates 219.65.84.186 as permitted sender) smtp.mailfrom=mail@timesjobs.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=timesjobs.com
+Return-Path: <mail@timesjobs.com>
+Received: from mgw06.timesjobs.com (mgw06.timesjobs.com. [219.65.84.186])
+        by mx.google.com with ESMTPS id l15-20020a170902f68f00b001c61a231d33si3417863plg.292.2023.10.11.05.08.28
+        for <srijani515@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 11 Oct 2023 05:08:29 -0700 (PDT)
+Received-SPF: pass (google.com: domain of mail@timesjobs.com designates 219.65.84.186 as permitted sender) client-ip=219.65.84.186;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@timesjobs.com header.s=main header.b=H3DJXBUU;
+       spf=pass (google.com: domain of mail@timesjobs.com designates 219.65.84.186 as permitted sender) smtp.mailfrom=mail@timesjobs.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=timesjobs.com
+DomainKey-Signature: s=main; d=timesjobs.com; c=nofws; q=dns;
+  h=Authentication-Results:IronPort-SDR:IronPort-Data:
+   IronPort-HdrOrdr:Received:Date:From:Reply-To:To:
+   Message-ID:Subject:MIME-Version:Content-Type:Precedence;
+  b=eyWlC7xfx9XDGv/E/mWsk247cFLLrEHI9Q5q5AzzecVCXIs84aFiizv7
+   dBUO1yLply1n4CSGt9/8lGuTBQwlsfx9o0qCalBU+CkLmthe/xAiDcRJ8
+   Vru0NFGtiVVHxZV0m44EeSWxTgmkWHm5pr1wHnvrkddsMIzJRgR2JcbY5
+   E=;
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+  d=timesjobs.com; s=main;
+  h=date:from:reply-to:to:message-id:subject:mime-version;
+  bh=0NkFKFRGrczy7uDzqrPRLoU4v0qLTowYFAwQgh6SKTM=;
+  b=H3DJXBUUaW7YnTYAl9+1U6ZT5p6+BQAkkVelLtldgsa1PRZ104D4SAco
+   P3BhWJhSd8MUFtuks2bsC68fQk1VOz07UOaI/n8Nxp1KhljvmENeGxPJu
+   kpPxhod6t5SSipSa624CaBaYur9ul6fGvAiXI4auAMzZw+a7v5C/GT/v9
+   w=;
+Authentication-Results: mgw06.timesjobs.com; dkim=none (message not signed) header.i=none; spf=Fail smtp.mailfrom=mail@timesjobs.com; dmarc=fail (p=reject dis=none) d=timesjobs.com
+IronPort-SDR: ORViCe63LbDFkAls2auViI/sr0sfiIvpvd5BKCPsftEHGm6O1kV7ifKEd/6QK5AZVqP5coQ4BX
+ 4mXPgp26Hlwg==
+IronPort-Data: =?us-ascii?q?A9a23=3A5h0g26385XvXeLBn8fbD5a5zkn2cJEfYwER7X?=
+ =?us-ascii?q?KvMYLTBsI5bpzVWnTEbXGHSM//fN2X9eNFzbIS+oE0GsJaBy4VlGQU5+CA2R?=
+ =?us-ascii?q?RqmiyZl6fd1j6vI0qn7wvTrFCqL0u1FAjX+BJFtJpPjjkf1WlTRhSEUOZCgH?=
+ =?us-ascii?q?tIQOsadUsxCbVMMpBMatP5Ws7VRbriEITSOK1jlVdva+6UzMbI+stJ+Gjp8B?=
+ =?us-ascii?q?6mr8HuDsBlu0Q70sGDSZdgT1LPfvyBKVtRFdOfucj2hHtY88uySHrmZiuvou?=
+ =?us-ascii?q?DyEuU5xVbtJkZ6iGqEOarvbPAymlntTVrOghRJZ4Cc1187XMdJFNh8N1WTQx?=
+ =?us-ascii?q?oghoDlKndnqIeszBYXXguUfWh9ZTngjFaJD8b7DZ3O4tKSuI+fuG5f366wxV?=
+ =?us-ascii?q?gdsbMtHp6AuXT4myBDRExhVBjjrug586OPTpjFQu/ke?=
+IronPort-HdrOrdr: =?us-ascii?q?A9a23=3ATctYbK+IUE2IzAfvP3duk+DBI+orL9Y04l?=
+ =?us-ascii?q?Q7vn2ZKCY0TiX2rauTdZggvyMc6wxxZJhDo7+90fK7MBDhHPdOiOEs1NGZMT?=
+ =?us-ascii?q?UO01HHEGgN1+ff/wE=3D?=
+Received: from unknown (HELO 172.29.75.147) ([172.29.75.147])
+  by mgw06.timesjobs.com with ESMTP; 11 Oct 2023 17:38:11 +0530
+Date: Wed, 11 Oct 2023 17:38:11 +0530 (IST)
+From: University of Petroleum and Energy Studies <mail@timesjobs.com>
+Reply-To: no-reply@timesjobs.com
+To: srijani515@gmail.com
+Message-ID: <95b80abf-a114-4a09-ade3-a533b4145040@extramailer.com>
+Subject: MBA (Online) in Business Analytics- Apply now!
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_657_500352874.1697026091767"
+Precedence: bulk
+
+------=_Part_657_500352874.1697026091767
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+ <head>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8" =
+/>
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1" />=20
+  <title>UPES</title>=20
+ </head>
+ <body>
+  <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" style=3D"widt=
+h: 100%;">=20
+   <tbody>=20
+    <tr>=20
+     <td align=3D"center" style=3D"font-family: Arial, Helvetica, sans-seri=
+f; font-size: 11px; height: 30px; padding: 0px 0px 10px 0px;">=20
+      <div style=3D"padding-top: 10px; color: #999;">
+       View this mailer in=20
+       <a style=3D"color: #999;" href=3D"http://mailbomber02.tbsl.in/mailbo=
+mber/ect?encCid=3D62O__SLASH__yXclqmI%3DMTczMjk2&amp;email=3Dv__PLUS__dKMRp=
+Fpzg%3Dc3JpamFuaTUxNUBnbWFpbC5jb20%3D&amp;encBid=3DQj3ncL__PLUS__xEPg%3DMTE=
+%3D&amp;enclink=3DQxqrkzEp__PLUS__D0%3DaHR0cHM6Ly90aW1lc2pvYnNtYWlsZXIuaW4v=
+YXVnMjMvdXBlc19iYV8xMWF1ZzIzLw%3D%3D&amp;listCounter=3D32658--121643" targe=
+t=3D"_blank"> Browser</a>
+      </div> </td>=20
+    </tr>=20
+   </tbody>=20
+  </table>=20
+  <table align=3D"center" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" =
+style=3D"max-width: 700px; border: 1px solid #cccccc; width: 100%;">=20
+   <tbody>=20
+    <tr>=20
+     <td style=3D"text-align: center;"><a href=3D"http://mailbomber02.tbsl.=
+in/mailbomber/ect?encCid=3D62O__SLASH__yXclqmI%3DMTczMjk2&amp;email=3Dv__PL=
+US__dKMRpFpzg%3Dc3JpamFuaTUxNUBnbWFpbC5jb20%3D&amp;encBid=3DQj3ncL__PLUS__x=
+EPg%3DMTE%3D&amp;enclink=3DanMA27AMrdg%3DaHR0cHM6Ly9tYWlsZXIudGltZXNqb2JzLm=
+NvbS9tYWlsZXJzL21haWxlcnNuZXcuaHRtbD9jb21w__NEWLINE__YW55TmFtZT11cGVzX2JhXz=
+ExYXVnMjMmbmFtZT1TcmlqYW5pJmVtYWlsPXNyaWphbmk1MTVAZ21h__NEWLINE__aWwuY29tJm=
+1vYmlsZT05MTg2MTc0OTc0NzgmbG9jYXRpb249S29sa2F0YSZjYW1waWQ9OFNrTlA5__NEWLINE=
+__TktObTQlM0RNVGN6TWprMiZjcm1pZD1WSE1oYl9fU0xBU0hfX0RGZ3QwJTNETVRJd05qWSUzR=
+A%3D%3D&amp;listCounter=3D32658--121643" target=3D"_blank"><img src=3D"http=
+s://timesjobsmailer.in/aug23/upes_ba_11aug23/images/banner-01.jpg" alt=3D""=
+ width=3D"100%" /></a></td>=20
+    </tr>=20
+    <!--<tr>
+=09    <td bgcolor=3D"#FFFFFF" style=3D"padding: 8px; font-family: Gotham, =
+'Helvetica Neue', Helvetica, Arial, 'sans-serif'; font-size: 18px;  text-al=
+ign: center;  color: #000; font-weight: bold; ">Learning and Development Ac=
+ademy by Grant Thornton Bharat is pleased to launch two new certifications<=
+/td></tr>-->=20
+    <tr>=20
+     <td style=3D"padding: 0px;">=20
+      <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"cent=
+er" style=3D"width: 100%;">=20
+       <tbody>=20
+        <tr>=20
+         <td style=3D"text-align: center; font-size: 20px; color: #fff; fon=
+t-family: Gotham, 'Helvetica Neue', Helvetica, Arial, sans-serif; padding: =
+8px; font-weight: bold; background: #0d548d;">Show your Interest</td>=20
+        </tr>=20
+        <tr>=20
+         <td bgcolor=3D"#FFFFFF">&nbsp;</td>=20
+        </tr>=20
+        <tr>=20
+         <td>=20
+          <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"=
+width: 100%;">=20
+           <tbody>=20
+            <tr>=20
+             <td height=3D"15" bgcolor=3D"#FFFFFF"></td>=20
+            </tr>=20
+            <tr>=20
+             <td align=3D"left" valign=3D"top" bgcolor=3D"#FFFFFF">=20
+              <table border=3D"0" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" style=3D"width: 100%;">=20
+               <tbody>=20
+                <tr>=20
+                 <td bgcolor=3D"" height=3D"36" align=3D"left" valign=3D"to=
+p">=20
+                  <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" s=
+tyle=3D"width: 100%;">=20
+                   <tbody>=20
+                    <tr>=20
+                     <td>=20
+                      <table align=3D"left" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" style=3D"width: 100%;">=20
+                       <tbody>=20
+                        <tr>=20
+                         <td></td>=20
+                         <td>=20
+                          <table border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" style=3D"width: 205px;">=20
+                           <tbody>=20
+                            <tr>=20
+                             <td></td>=20
+                            </tr>=20
+                           </tbody>=20
+                          </table> </td>=20
+                         <td></td>=20
+                        </tr>=20
+                       </tbody>=20
+                      </table> </td>=20
+                    </tr>=20
+                    <tr>=20
+                     <td align=3D"center" bgcolor=3D"">
+                      <form action=3D"https://mailer.timesjobs.com/mailers/=
+mailersnew.html?companyName=3Dupes_ba_11aug23&amp;name=3DSrijani&amp;email=
+=3Dsrijani515@gmail.com&amp;mobile=3DXXXXXXX97478&amp;location=3DKolkata&am=
+p;fromEmail=3Dtimesjobs@timesjobs.com" method=3D"post" name=3D"upes_ba_11au=
+g23" id=3D"upes_ba_11aug23" onsubmit=3D"return validateForm(this)">=20
+                       <table align=3D"left" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" style=3D"width: 320px;">=20
+                        <tbody>=20
+                         <tr>=20
+                          <td width=3D"242" style=3D"padding-left: 15px;">=
+=20
+                           <table align=3D"left" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"width: 100%;">=20
+                            <tbody>=20
+                             <tr>=20
+                              <td>=20
+                               <table border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" align=3D"left" style=3D"width: 220px;">=20
+                                <tbody>=20
+                                 <tr>=20
+                                  <td>=20
+                                   <table border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0" style=3D"width: 99%;">=20
+                                    <tbody>=20
+                                     <tr>=20
+                                      <td width=3D"35">=20
+                                       <div style=3D"background: #0d548d;">
+                                        <img src=3D"https://timesjobsmailer=
+.in/aug23/upes_ba_11aug23/images/user-icon.png" />
+                                       </div> </td>=20
+                                      <td width=3D"220px" height=3D"28" sty=
+le=3D"font-family: 'Segoe UI', Arial; font-size: 13px; color: #494949; back=
+ground: #ffffff;">=20
+                                       <div style=3D"background: #FFF; colo=
+r: #333; width: 220px; height: 21px; border: #6d8795 solid 1px; font-family=
+: Arial, Helvetica, sans-serif; font-size: 12px; padding: 4px;">
+                                        Srijani
+                                       </div> </td>=20
+                                     </tr>=20
+                                    </tbody>=20
+                                   </table> </td>=20
+                                 </tr>=20
+                                </tbody>=20
+                               </table> </td>=20
+                             </tr>=20
+                             <tr>=20
+                              <td>&nbsp;</td>=20
+                             </tr>=20
+                             <tr>=20
+                              <td height=3D"20">=20
+                               <table border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" style=3D"width: 84%;">=20
+                                <tbody>=20
+                                 <tr>=20
+                                  <td width=3D"42">=20
+                                   <div style=3D"background: #0d548d;">
+                                    <img src=3D"https://timesjobsmailer.in/=
+aug23/upes_ba_11aug23/images/email-icon.png" />
+                                   </div> </td>=20
+                                  <td width=3D"220" height=3D"28" style=3D"=
+font-family: 'Segoe UI', Arial; font-size: 13px; color: #333333; background=
+: #ffffff;">=20
+                                   <div style=3D"background: #FFF; color: #=
+333; width: 220px; height: 21px; border: #6d8795 solid 1px; font-family: Ar=
+ial, Helvetica, sans-serif; font-size: 12px; padding: 4px;">
+                                    <a style=3D"text-decoration: none; colo=
+r: #333;">srijani515@gmail.com</a>
+                                   </div> </td>=20
+                                 </tr>=20
+                                </tbody>=20
+                               </table> </td>=20
+                             </tr>=20
+                             <tr>=20
+                              <td height=3D"10">&nbsp;</td>=20
+                             </tr>=20
+                            </tbody>=20
+                           </table> </td>=20
+                         </tr>=20
+                        </tbody>=20
+                       </table>=20
+                       <table align=3D"left" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" style=3D"width: 300px;">=20
+                        <tbody>=20
+                         <tr>=20
+                          <td style=3D"padding-left: 15px;"></td>=20
+                          <td>=20
+                           <table align=3D"left" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"width: 79%;">=20
+                            <tbody>=20
+                             <tr>=20
+                              <td>=20
+                               <table border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" style=3D"width: 100%;">=20
+                                <tbody>=20
+                                 <tr>=20
+                                  <td width=3D"12%" align=3D"left" valign=
+=3D"top">=20
+                                   <div style=3D"background: #0d548d;">
+                                    <img src=3D"https://timesjobsmailer.in/=
+aug23/upes_ba_11aug23/images/mobile-icon.png" />
+                                   </div> </td>=20
+                                  <td width=3D"88%" height=3D"28" style=3D"=
+font-family: 'Segoe UI', Arial; font-size: 13px; color: #333333; background=
+: #ffffff;">=20
+                                   <div style=3D"background: #FFF; color: #=
+333; width: 220px; height: 21px; border: #6d8795 solid 1px; font-family: Ar=
+ial, Helvetica, sans-serif; font-size: 12px; padding: 4px;">
+                                    <a style=3D"text-decoration: none; colo=
+r: #333;">XXXXXXX97478</a>
+                                   </div> </td>=20
+                                 </tr>=20
+                                </tbody>=20
+                               </table> </td>=20
+                             </tr>=20
+                             <tr>=20
+                              <td>&nbsp;</td>=20
+                             </tr>=20
+                             <tr>=20
+                              <td height=3D"20">=20
+                               <table border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" style=3D"width: 90%;">=20
+                                <tbody>=20
+                                 <tr>=20
+                                  <td width=3D"39">=20
+                                   <div style=3D"background: #0d548d;">
+                                    <img src=3D"https://timesjobsmailer.in/=
+aug23/upes_ba_11aug23/images/location-icon.png" />
+                                   </div> </td>=20
+                                  <td width=3D"210" height=3D"28" style=3D"=
+font-family: 'Segoe UI', Arial; font-size: 13px; color: #494949; background=
+: #ffffff;">=20
+                                   <div style=3D"background: #FFF; color: #=
+333; width: 220px; height: 21px; border: #6d8795 solid 1px; font-family: Ar=
+ial, Helvetica, sans-serif; font-size: 12px; padding: 4px;">
+                                    Kolkata
+                                   </div> </td>=20
+                                 </tr>=20
+                                </tbody>=20
+                               </table> </td>=20
+                             </tr>=20
+                             <tr>=20
+                              <td valign=3D"top">&nbsp;</td>=20
+                             </tr>=20
+                             <tr></tr>=20
+                            </tbody>=20
+                           </table> </td>=20
+                         </tr>=20
+                        </tbody>=20
+                       </table>=20
+                       <div style=3D"clear: both;"></div>=20
+                       <table border=3D"0" align=3D"center" cellpadding=3D"=
+0" cellspacing=3D"0" style=3D"width: 60%;">=20
+                        <tbody>=20
+                         <tr>=20
+                          <td valign=3D"top" width=3D"52%" style=3D"padding=
+: 10px;"><input type=3D"hidden" value=3D"name-email-mobile-location" id=3D"=
+imt" name=3D"imt" /> <input type=3D"hidden" value=3D"" name=3D"fieldParams"=
+ id=3D"fieldParams" /> <input type=3D"hidden" value=3D"yes" name=3D"isNewMa=
+iler" id=3D"isNewMailer" /> <input type=3D"hidden" value=3D"upes_ba_11aug23=
+" name=3D"mailerCompanyName" id=3D"mailerCompanyName" /> <input type=3D"hid=
+den" value=3D"upes_ba_11aug23" name=3D"mailerDescription" id=3D"mailerDescr=
+iption" /> <input type=3D"hidden" value=3D"${param.source}" name=3D"source"=
+ id=3D"source" /> <input type=3D"hidden" value=3D"${param.sourcetype}" name=
+=3D"sourcetype" id=3D"sourcetype" /> <input type=3D"hidden" value=3D"${para=
+m.campid}" name=3D"campid" id=3D"campid" /> <input type=3D"hidden" value=3D=
+"${param.crmid}" name=3D"crmid" id=3D"crmid" /> <a href=3D"http://mailbombe=
+r02.tbsl.in/mailbomber/ect?encCid=3D62O__SLASH__yXclqmI%3DMTczMjk2&amp;emai=
+l=3Dv__PLUS__dKMRpFpzg%3Dc3JpamFuaTUxNUBnbWFpbC5jb20%3D&amp;encBid=3DQj3ncL=
+__PLUS__xEPg%3DMTE%3D&amp;enclink=3DDnUQgYVnZUs%3DaHR0cHM6Ly9tYWlsZXIudGltZ=
+XNqb2JzLmNvbS9tYWlsZXJzL21haWxlcnNuZXcuaHRtbD9jb21w__NEWLINE__YW55TmFtZT11c=
+GVzX2JhXzExYXVnMjMmbmFtZT1TcmlqYW5pJmVtYWlsPXNyaWphbmk1MTVAZ21h__NEWLINE__a=
+WwuY29tJm1vYmlsZT05MTg2MTc0OTc0NzgmbG9jYXRpb249S29sa2F0YSZmcm9tRW1haWw9dGlt=
+__NEWLINE__ZXNqb2JzQHRpbWVzam9icy5jb20maW10PW5hbWUtZW1haWwtbW9iaWxlLWxvY2F0=
+aW9uJmZpZWxk__NEWLINE__UGFyYW1zPSZpc05ld01haWxlcj15ZXMmbWFpbGVyQ29tcGFueU5h=
+bWU9dXBlc19iYV8xMWF1ZzIz__NEWLINE__Jm1haWxlckRlc2NyaXB0aW9uPXVwZXNfYmFfMTFh=
+dWcyMyZjYW1waWQ9N1B0YkhZQ0NIX19QTFVT__NEWLINE__X19FJTNETVRjek1qazImY3JtaWQ9=
+dEgzZ0JuR2RMekUlM0RNVEl3TmpZJTNE&amp;listCounter=3D32658--121643" target=3D=
+"_blank" style=3D"background: #0d548d; color: #fff; font-weight: bold; font=
+-size: 20px; padding: 2px 10px; width: 160px; display: block; font-family: =
+calibri; border: none; float: left; text-align: center; line-height: 35px; =
+text-decoration: none;"> I am Interested</a></td>=20
+                          <td width=3D"48%" style=3D"padding: 10px;"><a hre=
+f=3D"http://mailbomber02.tbsl.in/mailbomber/ect?encCid=3D62O__SLASH__yXclqm=
+I%3DMTczMjk2&amp;email=3Dv__PLUS__dKMRpFpzg%3Dc3JpamFuaTUxNUBnbWFpbC5jb20%3=
+D&amp;encBid=3DQj3ncL__PLUS__xEPg%3DMTE%3D&amp;enclink=3DGPePBhEQU9s%3DaHR0=
+cHM6Ly9tYWlsZXIudGltZXNqb2JzLmNvbS9tYWlsZXJzL21haWxlcnNuZXcuaHRtbD9jb21w__N=
+EWLINE__YW55TmFtZT11cGVzX2JhXzExYXVnMjMmbmFtZT1TcmlqYW5pJmVtYWlsPXNyaWphbmk=
+1MTVAZ21h__NEWLINE__aWwuY29tJm1vYmlsZT05MTg2MTc0OTc0NzgmbG9jYXRpb249S29sa2F=
+0YSZjYW1waWQ9UFFKcjFZ__NEWLINE__WndXSDQlM0RNVGN6TWprMiZjcm1pZD12N1VCMzFfX1B=
+MVVNfX1ZuYm8lM0RNVEl3TmpZJTNE&amp;listCounter=3D32658--121643" target=3D"_b=
+lank" style=3D"color: #2d2d2d; font-size: 14px; width: 130px; padding: 12px=
+ 12px; background: #ccc; font-family: calibri; border: none; display: block=
+; float: left; text-decoration: underline; text-align: center;"> Edit your =
+details</a></td>=20
+                         </tr>=20
+                        </tbody>=20
+                       </table>=20
+                      </form></td>=20
+                    </tr>=20
+                   </tbody>=20
+                  </table> </td>=20
+                </tr>=20
+               </tbody>=20
+              </table> </td>=20
+            </tr>=20
+           </tbody>=20
+          </table> </td>=20
+        </tr>=20
+        <tr>=20
+         <td bgcolor=3D"#FFFFFF" style=3D"text-align: center;">&nbsp;</td>=
+=20
+        </tr>=20
+       </tbody>=20
+      </table> </td>=20
+    </tr>=20
+    <tr>=20
+     <td height=3D"20"></td>=20
+    </tr>=20
+   </tbody>=20
+  </table>=20
+  <table border=3D"0" align=3D"center" cellpadding=3D"2" cellspacing=3D"0" =
+style=3D"font-family: Arial, Helvetica, sans-serif; font-size: 12px; color:=
+ #b8b8b8; width: 100%;">=20
+   <tbody>=20
+    <tr>=20
+     <td align=3D"center" style=3D"font-family: Arial, Helvetica, sans-seri=
+f; font-size: 10px; color: #b8b8b8;">You are receiving this email as you ar=
+e a registered user of <a href=3D"http://mailbomber02.tbsl.in/mailbomber/ec=
+t?encCid=3D62O__SLASH__yXclqmI%3DMTczMjk2&amp;email=3Dv__PLUS__dKMRpFpzg%3D=
+c3JpamFuaTUxNUBnbWFpbC5jb20%3D&amp;encBid=3DQj3ncL__PLUS__xEPg%3DMTE%3D&amp=
+;enclink=3DIP6j06__PLUS__bzpA%3DaHR0cDovL3d3dy50aW1lc2pvYnMuY29tLw%3D%3D&am=
+p;listCounter=3D32658--121643" target=3D"_blank" style=3D"color: #718cda; t=
+ext-decoration: none;">TimesJobs.com</a></td>=20
+    </tr>=20
+    <tr>=20
+     <td align=3D"center" style=3D"font-family: Arial, Helvetica, sans-seri=
+f; font-size: 10px; color: #b8b8b8;">Not interested in newsletters anymore?=
+ <a href=3D"http://mailbomber02.tbsl.in/mailbomber/ect?encCid=3D62O__SLASH_=
+_yXclqmI%3DMTczMjk2&amp;email=3Dv__PLUS__dKMRpFpzg%3Dc3JpamFuaTUxNUBnbWFpbC=
+5jb20%3D&amp;encBid=3DQj3ncL__PLUS__xEPg%3DMTE%3D&amp;enclink=3DNmqWahEqbvc=
+%3DaHR0cDovL3d3dy50aW1lc2pvYnMuY29tL2NhbmRpZGF0ZS91bnN1YnNjcmliZS5odG1sP21h=
+aWx0__NEWLINE__eXBlPXByb21v&amp;listCounter=3D32658--121643" style=3D"color=
+: #718cda; text-decoration: none;" target=3D"_blank">Manage Subscription. <=
+br /> </a></td>=20
+    </tr>=20
+   </tbody>=20
+  </table>
+ </body>
+</html><img src=3D'http://mailbomber02.tbsl.in/mailbomber/eot?email=3Dv__PL=
+US__dKMRpFpzg%3Dc3JpamFuaTUxNUBnbWFpbC5jb20%3D&encCid=3D62O__SLASH__yXclqmI=
+%3DMTczMjk2&encBid=3DQj3ncL__PLUS__xEPg%3DMTE%3D' />
+------=_Part_657_500352874.1697026091767--

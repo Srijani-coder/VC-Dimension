@@ -1,0 +1,197 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:8691:b0:4fd:23d3:a27 with SMTP id e17csp501612pxn;
+        Sat, 21 Oct 2023 14:42:33 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IG/+CraJSYxqhXKFYLSYr/QAQFbcZdniBRO5+SrHLIw4JKBOWyqFAZOrg/QSEBuMzuAzXDw
+X-Received: by 2002:ac8:7d51:0:b0:415:138e:d858 with SMTP id h17-20020ac87d51000000b00415138ed858mr5677201qtb.60.1697924552942;
+        Sat, 21 Oct 2023 14:42:32 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697924552; cv=none;
+        d=google.com; s=arc-20160816;
+        b=w+m8vu9NqgWXVbq2E2grgPFyx8w7zNjH7PHY+VSZJ6UflQOYmqcFNdBt19e4o0L76C
+         NMAgfPKJjsla7r469nqKhEPe6gGpgL2SXveEUIuJQs5ggVKDPLplsvcWf4HkHUsDrTZD
+         q/TVr1blCAQ4GpaLDoqPY68XAWHQhd4FNhZ6SRX967gw4C2RC7WixuqGbwMQK6oE4TaA
+         GMKFOoDMioEKJ2X5GrrM3tmjq/7vWdWASBxRsP8vhQRGogLhTfQY5ou8ZGpiT0y0Dkz2
+         HowQens0kL2ruoI+KV0AzfFWtmjyA5fDHWPVFJMRaeFRLcKzWaZ+yq7rUfq+rSyxE3f/
+         AkWQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:list-unsubscribe:mime-version:to:reply-to:from:subject
+         :date:message-id:dkim-signature;
+        bh=s8JXlyr4Ors7O88Vce7uWU+xavgkW8p9aAKpY7Vv9Xs=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=D/fJSA7ctNflVByi/kK2ocSosEYE+Z6NP3FuSb98p2x7/lILUOZt+qBzX4JEdcVCRK
+         UBAbA0IhxaNboj5NZJwVvk3r/VR3uMdq6zmX8WqDkruqlQca9ahA6loTq5h9gUH+Z/ln
+         7yKBZTasiLMyBW1l+yeZS7c3xzlVXt6ongMugqlqIt26cCEoojhUU6z9WFcK3ZI/QI7O
+         8WQ9SRNSi4sztfVL69fD192vbm7+aQwN7X46Fckb15M9AYAWklSLayVsgPoxdccUje8y
+         KRbe+D8RE7qczL/9ecCzSFRcV1pou+vQKA2T1rYteaEk0tLT5KDtkcj7EtBttDOlNFrG
+         B1MQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@astromary.com header.s=mail header.b=UselYV2S;
+       spf=pass (google.com: domain of mary_feedback@astromary.com designates 158.69.39.133 as permitted sender) smtp.mailfrom=mary_feedback@astromary.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=astromary.com
+Return-Path: <mary_feedback@astromary.com>
+Received: from s3.astromarymails.com (s3.astromarymails.com. [158.69.39.133])
+        by mx.google.com with ESMTPS id y12-20020a05622a004c00b003f9ae403acasi3335069qtw.263.2023.10.21.14.42.32
+        for <srijani515@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 21 Oct 2023 14:42:32 -0700 (PDT)
+Received-SPF: pass (google.com: domain of mary_feedback@astromary.com designates 158.69.39.133 as permitted sender) client-ip=158.69.39.133;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@astromary.com header.s=mail header.b=UselYV2S;
+       spf=pass (google.com: domain of mary_feedback@astromary.com designates 158.69.39.133 as permitted sender) smtp.mailfrom=mary_feedback@astromary.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=astromary.com
+Received: from [127.0.0.1] (unknown [172.16.0.98])
+	by s3.astromarymails.com (Postfix) with ESMTP id 8124B7706
+	for <srijani515@gmail.com>; Sat, 21 Oct 2023 17:42:32 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=astromary.com;
+	s=mail; t=1697924552;
+	bh=3A6XTh+eup9KcmT1Pdw7nbXTr5dsBYrYTFaVFkW16M0=;
+	h=Date:Subject:From:Reply-To:To:List-Unsubscribe;
+	b=UselYV2SuzvV/AEvjmDnQOV2Qr6Sjs3Ojsn1S7slvfw0SRWzokHQ59TMP8Rn3qUgY
+	 knoltQRJJfVX44k2cetlaEsFwJiAFF6l+T2L5A9gCO72uM5So9b04K/cjUqdWur0AT
+	 RJDPBb4EaHi/wOxMjQ19TI8+24yd+kjIYPXA4Rao=
+Message-ID: <40ca26fa0e139477c7f99b8c8dfa589a@swift.generated>
+Date: Sat, 21 Oct 2023 17:42:32 -0400
+Subject: Srijani, this is your last opportunity to start a new chapter of your
+ life !
+From: Mary <mary@astromary.com>
+Reply-To: mary@astromary.com
+To: srijani515@gmail.com
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="_=_swift_v4_1697924552_75f18dc1b0b96be31f8168da1c142e03_=_"
+List-Unsubscribe: <mailto:unsubscribe@astromary.com>,
+ <https://www.astromary.com/list_unsubscribe.php?email=srijani515@gmail.com&token=057DF5CAFB9A067FC0BE0B0E2E812518&mid=1944>
+Feedback-ID: T_FENGSHUI_RELOCATION2023_R2:1F942133E57628D4539974AE736E9451::astromary
+
+
+--_=_swift_v4_1697924552_75f18dc1b0b96be31f8168da1c142e03_=_
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+
+
+Dear Srijani,
+The situation is serious !
+I have already written t=
+o you twice because the luck is turning into your favor during this month o=
+f October, but you did not beleive me. A big change is coming into your ast=
+ral sky and this in regards to : relocation, a trip or a change of interior=
+ design that you are going to perform in one month.
+This is the last time=
+ I warn you about this change that is going to strongly impact your life, S=
+rijani, because afterwards it is going to be too late for you to act, but d=
+o not worry, I am going to guide you all the way through this important eve=
+nt, I will explain to you on another more detailed page what you will have =
+to do step by step and what you will need to avoid.
+https://www.astromary=
+.com/TFRC/V4ioLP
+Srijani, this month of October is a period of luck for y=
+ou, and it is not finished yet, therefore I am giving you one last opportun=
+ity to seize it. Especially since I have had a revelation this night that p=
+ushed me to reexamine your astral sky and I have noticed a second very, ver=
+y rare transit that is going to make this evolution easier for you . Srijan=
+i, I am so excited that you are entering this stage of your life !
+It is =
+extremely important that you understand that it is a period of change for y=
+ou, it will also allow you to properly prepare this year 2024, that is comi=
+ng and that is going to be very beneficial for you.
+You are really at the=
+ stage of your life when you need to evolve personally on all the levels.=
+
+I need to talk to you urgently about this change of place and this desir=
+e to strengthen yourself in a different place, I am sure you too you have f=
+elt it because our destinies are connected, Srijani. We need to discuss it,=
+ you can click on this link to access your detailed page, which can change =
+your life path, because it is the last time when I give you this occasion, =
+see you right away, Srijani :
+https://www.astromary.com/TFRC/V4ioLP
+You=
+r Professional Astrologer and Friend,Mary
+If you don't want to receive an=
+y further emails from me please unsubscribe here=20
+            : No more e=
+mails pleaseYou can write to me at the following address: Mary ATOLL 76 Bou=
+levard Jean-Jacques Bosc, 33130 BEGLES - France
+
+--_=_swift_v4_1697924552_75f18dc1b0b96be31f8168da1c142e03_=_
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+<head><style>a[x-apple-data-detectors] {
+     =
+           color: inherit !important;
+                text-decoration: no=
+ne !important;
+                font-size: inherit !important;
+         =
+       font-family: inherit !important;
+                font-weight: inhe=
+rit !important;
+                line-height: inherit !important;
+      =
+          }</style></head>
+<body>
+<div style=3D"max-width: 500px; margi=
+n: auto;">
+<div align=3D"left"><img src=3D"https://www.astromary.com/asse=
+ts/medias/pictures/banner-email-2023-2.jpg" alt=3D"" /></div>
+<p>Dear Sri=
+jani,</p>
+<p><strong>The situation is serious !</strong></p>
+<p>I have =
+already written to you twice because the luck is turning into your favor du=
+ring this month of October, but you did not beleive me. A big change is com=
+ing into your astral sky and this in regards to : <strong>relocation, a tri=
+p or a change of interior design that you are going to perform in one month=
+.</strong></p>
+<p>This is the last time I warn you about this change that=
+ is going to strongly impact your life, Srijani, because afterwards it is g=
+oing to be too late for you to act, but do not worry, I am going to guide y=
+ou all the way through this important event, I will explain to you on anoth=
+er more detailed page what you will have to do step by step and what you wi=
+ll need to avoid.</p>
+<div style=3D"display: flex;"><a style=3D"display: =
+inline-block; font-size: 1.5em; margin: 10px auto 20px; text-align: center;=
+ color: #0b7f02;" href=3D"https://www.astromary.com/TFRC/V4ioLP"><u>https:/=
+/www.astromary.com/TFRC/V4ioLP</u></a></div>
+<p>Srijani, this month of Oc=
+tober is a period of luck for you, and it is not finished yet, therefore I =
+am giving you one last opportunity to seize it. Especially since I have had=
+ a revelation this night that pushed me to reexamine your astral sky and I =
+have noticed a second very, very rare transit that is going to make this ev=
+olution easier for you . Srijani, I am so excited that you are entering thi=
+s stage of your life !</p>
+<p>It is extremely important that you understa=
+nd that it is a period of change for you, it will also allow you to properl=
+y prepare this year 2024, that is coming and that is going to be very benef=
+icial for you.</p>
+<p>You are really at the stage of your life when you n=
+eed to evolve personally on all the levels.</p>
+<p>I need to talk to you =
+urgently about this change of place and this desire to strengthen yourself =
+in a different place, I am sure you too you have felt it because our destin=
+ies are connected, Srijani. We need to discuss it, you can click on this li=
+nk to access your detailed page, which can change your life path, because <=
+strong>it is the last time when I give you this occasion,</strong> see you =
+right away, Srijani :</p>
+<div style=3D"display: flex;"><a style=3D"displ=
+ay: inline-block; font-size: 1.5em; margin: 10px auto 20px; text-align: cen=
+ter; color: #0b7f02;" href=3D"https://www.astromary.com/TFRC/V4ioLP"><u>htt=
+ps://www.astromary.com/TFRC/V4ioLP</u></a></div>
+<p>Your Professional Ast=
+rologer and Friend,<br />Mary</p>
+<br/><br/><img width=3D"108" height=3D"=
+73" alt=3D"mary_signature" aria-hidden=3D"true" src=3D"https://www.astromar=
+y.com/tracker.php?customer_token=3D057DF5CAFB9A067FC0BE0B0E2E812518&mailing=
+_token=3D1F942133E57628D4539974AE736E9451" /><br/><br/><br/><span>If you do=
+n't want to receive any further emails from me please unsubscribe here=20
+ =
+           : <a href=3D"https://www.astromary.com/unsubscribe.php?token=3D0=
+57DF5CAFB9A067FC0BE0B0E2E812518&mid=3D1944">No more emails please</span></a=
+><br><br><span style=3D"font-size:10px">You can write to me at the followin=
+g address: Mary ATOLL 76 Boulevard Jean-Jacques Bosc, 33130 BEGLES - France=
+</span></div></body></html>
+
+--_=_swift_v4_1697924552_75f18dc1b0b96be31f8168da1c142e03_=_--
+

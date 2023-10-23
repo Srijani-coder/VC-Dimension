@@ -1,0 +1,895 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:8691:b0:4fd:23d3:a27 with SMTP id e17csp453559pxn;
+        Sat, 21 Oct 2023 12:15:02 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IG9f629idF1slo5518IeBK0wzh+0XyXpom+7w8ZJbwhyHOyHEKI9qrC+q+JgI/Ho9F3ID6S
+X-Received: by 2002:a05:6a00:1796:b0:6bd:d884:df00 with SMTP id s22-20020a056a00179600b006bdd884df00mr6649325pfg.9.1697915702085;
+        Sat, 21 Oct 2023 12:15:02 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697915702; cv=none;
+        d=google.com; s=arc-20160816;
+        b=QhY4LO7di2np+JMCGsgHgnwDXV8T1hBzoSZvE6AckgFbMSA8Fr+f2PmbTQwXNXqOms
+         t1gJGLmbODJShaYv/ccsnPrj0RINy0HUDJdQz9cKQBa1GrVUT9tgxYpRi/yrKLQdg6Xu
+         r6S6ke9BUmWW4eLryc7w2RiYG/8zUQiIHXlex2tjUW7wXElKSUEo4KNVcLRV5GcJ7SyF
+         yqXabmCwCYmr79ymHmA2kfIlJPAAycIShscolQ/jhHVwkGj/VowbwVdp5SmhmD35/u4l
+         a4a9ER0nXJdRQqQD5h63SK0XRcXByVBFCc0TcsIR7OWkFRVGKpcCIQyehk8RmD2afKR2
+         e4rQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:from:message-id:list-unsubscribe-post:reply-to:subject
+         :list-unsubscribe:preheader:mime-version:date:to:dkim-signature;
+        bh=BKQwC42rSO5S3rcwqz+X1dmTA2E3sDeo1yi1U+JTgq0=;
+        fh=Aqe6xtJ2ccSlx9NnrUD9c7Fd7YTQfaNQx9hKYnhgjDI=;
+        b=SeE2y4Ml26tB1LhhBhnAXSImUi4HjtbM1CPh/Hpv58fg2XaYzbuovUcTFxcgeRKJN8
+         jVinhGGSInAVuWbLbI1Gouhvism0h+D8Z+GUycuzyHjutqGozw2I4tSWU9WkIYkL1iJ3
+         c/vzX0ZLbJCi9bY5gW8JdusgHZaEdjePmLL+yiRvGUjJyB/QMX+MHZEa4FSDWZ9Cm/CH
+         pK0sI+3JvpdwkyZk+3wlvON3W/OffFxCkHdqS/41H4/eBa+79Mdp/3ZOnQ+zNaIpAXTW
+         0ntGeVLZ/r8vtlTtQuoCglQ+TelOY4CHxcF//uSXPX9WqEUzR7mN/dG1SKjHyBlTOM9R
+         eoHw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@indeed.com header.s=sp2210 header.b=hamt4APC;
+       spf=pass (google.com: domain of msprvs1=19658vbzglgxh=bounces-294276@bounces.indeed.com designates 156.70.53.21 as permitted sender) smtp.mailfrom="msprvs1=19658VBzGlgxH=bounces-294276@bounces.indeed.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=indeed.com
+Return-Path: <msprvs1=19658VBzGlgxH=bounces-294276@bounces.indeed.com>
+Received: from mta-70-53-21.indeed.com.sparkpostmail.com (mta-70-53-21.indeed.com.sparkpostmail.com. [156.70.53.21])
+        by mx.google.com with ESMTPS id z11-20020aa7990b000000b0068e3950c705si3902257pff.24.2023.10.21.12.15.01
+        for <srijani515@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 21 Oct 2023 12:15:02 -0700 (PDT)
+Received-SPF: pass (google.com: domain of msprvs1=19658vbzglgxh=bounces-294276@bounces.indeed.com designates 156.70.53.21 as permitted sender) client-ip=156.70.53.21;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@indeed.com header.s=sp2210 header.b=hamt4APC;
+       spf=pass (google.com: domain of msprvs1=19658vbzglgxh=bounces-294276@bounces.indeed.com designates 156.70.53.21 as permitted sender) smtp.mailfrom="msprvs1=19658VBzGlgxH=bounces-294276@bounces.indeed.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=indeed.com
+X-MSFBL: +kVAva7XnxmhKzZEXAoPolneyJoH/p2rPHYGDHAwJaY=|eyJjdXN0b21lcl9pZCI
+	6IjI5NDI3NiIsInRlbmFudF9pZCI6InNwYyIsInIiOiJzcmlqYW5pNTE1QGdtYWl
+	sLmNvbSIsIm1lc3NhZ2VfaWQiOiI2NTMxMzUyMzM0NjVkOTEzYmE3OCIsInN1YmF
+	jY291bnRfaWQiOiIwIn0=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=indeed.com;
+	s=sp2210; t=1697915701; i=@indeed.com;
+	bh=BKQwC42rSO5S3rcwqz+X1dmTA2E3sDeo1yi1U+JTgq0=;
+	h=To:Date:Content-Type:List-Unsubscribe:Subject:
+	 List-Unsubscribe-Post:Message-ID:From:From:To:Cc:Subject;
+	b=hamt4APCbfmXI3b9bgzOq1VYEcu2zbbQ2NvA9KFgDfxpp5585az2xTwu172Z+SZNS
+	 y53cOUc7RBCw/1IA/mo4Zikorh61mfJJxcKiwZZzRDDCwvM+vFMfuR3xauBwlHqcvt
+	 c7zxWLEpNK9r2ZvQ3S+k/+YivCUQZD/tlymV6au0pZ1+ENmd9zLFpKw+7oJMPH2pAA
+	 Y/eq1605FBY+Qgvb8d6BP2pheAxyBucdbPIZZjGDVJIhmJrIANv/672pbjBptcz/cb
+	 O7pKHEMbzs2ZwsMU+9m7/SciJYVsqJXHGi01zL+H+37gv/QRFrGcmE4TNxw/gEvnAi
+	 kNAhqdkOaiLVw==
+To: <srijani515@gmail.com>
+Date: Sat, 21 Oct 2023 19:15:01 +0000
+Content-Type: multipart/alternative; boundary="_----6H8jtPZ9JH01A1XwN5IQyA===_4B/87-13684-53324356"
+MIME-Version: 1.0
+Preheader: Apply to jobs at Sunglass Culture, LifeBook Ltd and Reedsy 
+X-Indeed-FBL: 64b2e1eb147b7a5da4c6ec7a:2:03110cbf70cab82f2e1a89e7ef2afa9d3a33ceaea2650caf
+List-Unsubscribe: <https://subscriptions.indeed.com/alerts/cancel?token=CkBqjnpiB3Lp3oErEoNgPFuJd4Qo-1tE4Ywq6T1b_26RBF4toR6AmOOX2ZadTpDAyHm3sxH2btNEil6QyHGjAN5bEiAzjbo78mBW5fPO5wDdAR7QsRHaxI2rQcvzIcMdg7ga2RoQrBigShMUNI9Vmwtm7o50tA%3D%3D&co=&hl=en&tmtk=1hd9qj0mvlrjq802&subId=64b2e1eb147b7a5da4c6ec7a&rgtk=&from=listunsubpost>
+Subject: Sunglass Culture is hiring for Ecommerce / website assitant + 14 new Freelance jobs 
+Reply-To: Indeed <do-not-reply@indeed.com>
+X-Indeed-Content-Type: JOBALERT
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Message-ID: <1hd9qj0mvlrjq802.1697915701545.Railgunner@railgun--railgunner-jobsearchrailclipservice-54b768f4c7-d28nz>
+From: "Indeed" <alert@indeed.com>
+X-Indeed-Client-App: RailgunnerDaemon
+X-Indeed-TK: 1hd9qj299r563802
+x-campaign-id: JOBALERT
+Feedback-ID: JOBALERT:RailgunnerDaemon:Indeed
+
+--_----6H8jtPZ9JH01A1XwN5IQyA===_4B/87-13684-53324356
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="UTF-8"
+
+Indeed Job Alert=0A14 new Freelance vacancies=0A=0AJobs 1-14 of 14 new jobs=
+=0ASee matching results on Indeed: https://au.indeed.com/jobs=3Fq=3DFreelan=
+ce&amp;hl=3Den&amp;from=3Dja&amp;radius=3D50&amp;alid=3D64b2e1eb147b7a5da4c=
+6ec7a&amp;tmtk=3D1hd9qj0mvlrjq802&amp;utm_campaign=3Djob_alerts&amp;utm_med=
+ium=3Demail&amp;utm_source=3Djobseeker_emails&amp;of=3D1&amp;fr=3Dt=0A=0A=
+=0AEcommerce / website assitant=0ASunglass Culture - Remote=0A$22 - $31 an =
+hour=0ARemote=0AEasily apply to this job=0ASunglass Culture Australia has a=
+ website assistant role with flexibility to work from home in your own hour=
+s . Loading of new sunglass model including graphics.=0A2 days ago=0Ahttps:=
+//au.indeed.com/rc/clk/dl=3Fjk=3D0e44ab55c7d1f9ef&amp;from=3Dja&amp;qd=3DRn=
+ZhMybXSk4M3QtTVGXWoRnqdTrkXQ-nGMs-qjWLDk0Aefo9SvhTzD0S4xauH9Tm3-PEttLtUMwth=
+8yMbzQLDA&amp;rd=3DAbLHrm6GRQMtYBMzyEs2L1_MKnaSAFGAsD6kfERFt3g&amp;tk=3D1hd=
+9qj0mvlrjq802&amp;alid=3D64b2e1eb147b7a5da4c6ec7a=0A=0AFreelance Interviewe=
+r=0ALifeBook Ltd - Sandringham VIC=0AThe role of the LifeBook Memoirs Inter=
+viewer is to help capture amazing stories about a person=E2=80=99s life. Yo=
+u will facilitate a life journey unfolding, by building=E2=80=A6=0A2 days a=
+go=0Ahttps://au.indeed.com/rc/clk/dl=3Fjk=3D1c4ddd5bbdbf9caa&amp;from=3Dja&=
+amp;qd=3DRnZhMybXSk4M3QtTVGXWoRnqdTrkXQ-nGMs-qjWLDk0Aefo9SvhTzD0S4xauH9Tm3-=
+PEttLtUMwth8yMbzQLDA&amp;rd=3DKaXlx5fp5X_mVf8_2PYUAl_MKnaSAFGAsD6kfERFt3g&a=
+mp;tk=3D1hd9qj0mvlrjq802&amp;alid=3D64b2e1eb147b7a5da4c6ec7a=0A=0AFreelance=
+ Book Translator=0AReedsy - Remote=0A$38,000 - $50,000 a year=0ARemote=0AEa=
+sily apply to this job=0AWe are seeking experienced book translators to wor=
+k directly with authors and help them share their stories in a different la=
+nguage.=0AJust posted=0Ahttps://au.indeed.com/rc/clk/dl=3Fjk=3Dc74afc2bba76=
+9177&amp;from=3Dja&amp;qd=3DRnZhMybXSk4M3QtTVGXWoRnqdTrkXQ-nGMs-qjWLDk0Aefo=
+9SvhTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&amp;rd=3DwRw4VfvjpFhMaapCW_-ezV_MKn=
+aSAFGAsD6kfERFt3g&amp;tk=3D1hd9qj0mvlrjq802&amp;alid=3D64b2e1eb147b7a5da4c6=
+ec7a=0A=0AVCE (Year 11 - 12) Online Tutor - Remote Melbourne=0AArc Tutoring=
+ - Remote=0A$35 an hour=0AResponsive employer=0ARemote=0AEasily apply to th=
+is job=0AArc Tutoring, a tutoring company based in Australia, is currently =
+seeking experienced tutors/registered teachers to conduct tutoring sessions=
+ for VCE students=E2=80=A6=0A2 days ago=0Ahttps://au.indeed.com/rc/clk/dl=
+=3Fjk=3D07bdea16289866eb&amp;from=3Dja&amp;qd=3DRnZhMybXSk4M3QtTVGXWoRnqdTr=
+kXQ-nGMs-qjWLDk0Aefo9SvhTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&amp;rd=3DXz_BPd=
+8uwD7p5SZJpoZayl_MKnaSAFGAsD6kfERFt3g&amp;tk=3D1hd9qj0mvlrjq802&amp;alid=3D=
+64b2e1eb147b7a5da4c6ec7a=0A=0ABack-End Web Developer (Perch Runway)=0AActua=
+lise Design - Sydney NSW=0AActualise Design is looking for freelance/contra=
+ct web developers experienced in Perch Runway to assist with overflow and p=
+roject work.=0A2 days ago=0Ahttps://au.indeed.com/rc/clk/dl=3Fjk=3D43525978=
+1a6851ee&amp;from=3Dja&amp;qd=3DRnZhMybXSk4M3QtTVGXWoRnqdTrkXQ-nGMs-qjWLDk0=
+Aefo9SvhTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&amp;rd=3DDn5EjwaJvCkTRHgaEfgs71=
+_MKnaSAFGAsD6kfERFt3g&amp;tk=3D1hd9qj0mvlrjq802&amp;alid=3D64b2e1eb147b7a5d=
+a4c6ec7a=0A=0AComputer Technician=0Afreelancing project - Woolner NT=0A$74.=
+46 - $75.45 an hour=0AEasily apply to this job=0AAre you great at repairing=
+ PC's and laptops=3F Want to work for one of the world's biggest technology=
+ companies=3F Are you located in or close to Woolner, NT.=0A4 days ago=0Aht=
+tps://au.indeed.com/rc/clk/dl=3Fjk=3D1a198d3573cbe998&amp;from=3Dja&amp;qd=
+=3DRnZhMybXSk4M3QtTVGXWoRnqdTrkXQ-nGMs-qjWLDk0Aefo9SvhTzD0S4xauH9Tm3-PEttLt=
+UMwth8yMbzQLDA&amp;rd=3Dx5SUCvphgkEZUN6bPKxzIl_MKnaSAFGAsD6kfERFt3g&amp;tk=
+=3D1hd9qj0mvlrjq802&amp;alid=3D64b2e1eb147b7a5da4c6ec7a=0A=0ALanguage teach=
+er - Arabic=0ALanguage Trainers - Melbourne VIC=0AEasily apply to this job=
+=0AThis is a freelance part-time position and we are not able to sponsor yo=
+ur visa. Language Trainers is a successful language training company workin=
+g with=E2=80=A6=0AJust posted=0Ahttps://au.indeed.com/rc/clk/dl=3Fjk=3Db4c0=
+a119c76040e5&amp;from=3Dja&amp;qd=3DRnZhMybXSk4M3QtTVGXWoRnqdTrkXQ-nGMs-qjW=
+LDk0Aefo9SvhTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&amp;rd=3Db-LNusZqTw0q6FqZCS=
+Vm33EwqdD0vnOb9P51Phyha6c&amp;tk=3D1hd9qj0mvlrjq802&amp;alid=3D64b2e1eb147b=
+7a5da4c6ec7a=0A=0ASinging/Vocal Teacher=0AMusic Eternal - Eternal Arts Coll=
+ective Pty Ltd - Seacliff SA=0A$24 - $56 an hour=0AEasily apply to this job=
+=0A=E2=99=AC CAN YOU TEACH SINGING=3F =E2=99=AC. Join Music Eternal's Exclu=
+sive Teacher Network! We're on a mission to revolutionise music education, =
+and we want YOU to be a part of=E2=80=A6=0AJust posted=0Ahttps://au.indeed.=
+com/rc/clk/dl=3Fjk=3D8ec0016942115261&amp;from=3Dja&amp;qd=3DRnZhMybXSk4M3Q=
+tTVGXWoRnqdTrkXQ-nGMs-qjWLDk0Aefo9SvhTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&am=
+p;rd=3Datk-kgV92m6TJ3g-AHTrAV_MKnaSAFGAsD6kfERFt3g&amp;tk=3D1hd9qj0mvlrjq80=
+2&amp;alid=3D64b2e1eb147b7a5da4c6ec7a=0A=0AELICOS Teacher needed=0AScots En=
+glish College - Eveleigh NSW=0A$57.77 an hour=0AEasily apply to this job=0A=
+Located at South Eveleigh, on the fringe of Sydney=E2=80=99s CBD, our moder=
+n campus is just moments away from Redfern Station and is bounded by the su=
+burbs of=E2=80=A6=0A1 day ago=0Ahttps://au.indeed.com/rc/clk/dl=3Fjk=3D8027=
+6ba42e581142&amp;from=3Dja&amp;qd=3DRnZhMybXSk4M3QtTVGXWoRnqdTrkXQ-nGMs-qjW=
+LDk0Aefo9SvhTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&amp;rd=3DdpmJoNLQjjouthj8GZ=
+XYuX2LhTYP0op_TBenMVhVTPM&amp;tk=3D1hd9qj0mvlrjq802&amp;alid=3D64b2e1eb147b=
+7a5da4c6ec7a=0A=0AMulticultural Artist=0AMulticultural Minds - Remote=0ARem=
+ote=0AEasily apply to this job=0AMulticultural Minds is book dedicated to r=
+aising awareness of *multicultural mental health*. The book is filled with =
+real stories about multicultural mental=E2=80=A6=0A4 days ago=0Ahttps://au.=
+indeed.com/rc/clk/dl=3Fjk=3D8c72c6290b8b4b94&amp;from=3Dja&amp;qd=3DRnZhMyb=
+XSk4M3QtTVGXWoRnqdTrkXQ-nGMs-qjWLDk0Aefo9SvhTzD0S4xauH9Tm3-PEttLtUMwth8yMbz=
+QLDA&amp;rd=3DGZFcyHBScz1y0mDksF1mpF_MKnaSAFGAsD6kfERFt3g&amp;tk=3D1hd9qj0m=
+vlrjq802&amp;alid=3D64b2e1eb147b7a5da4c6ec7a=0A=0AFreelance Book Designer=
+=0AReedsy - Remote=0A$38,000 - $50,000 a year=0ARemote=0AEasily apply to th=
+is job=0AWe are seeking talented book designers with expertise in cover des=
+ign, interior book design, illustration, and/or production management of bo=
+oks.=0A2 days ago=0Ahttps://au.indeed.com/rc/clk/dl=3Fjk=3De24f7a4584da9bef=
+&amp;from=3Dja&amp;qd=3DRnZhMybXSk4M3QtTVGXWoRnqdTrkXQ-nGMs-qjWLDk0Aefo9Svh=
+TzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&amp;rd=3Dv1-HcdjGhgpDNCskhCHpOQbXCHXgJE=
+VMrHKBS2mW9rM&amp;tk=3D1hd9qj0mvlrjq802&amp;alid=3D64b2e1eb147b7a5da4c6ec7a=
+=0A=0ACarpenter=0AVanable Fitouts - Waterloo NSW=0A$30 - $50 an hour=0AEasi=
+ly apply to this job=0AWe're currently looking for carpenters and / or cabi=
+netry makers to assist across several van conversions. Expertise and experi=
+ence will be rewarded but is not=E2=80=A6=0A3 days ago=0Ahttps://au.indeed.=
+com/rc/clk/dl=3Fjk=3Dbf99bfbab777cca5&amp;from=3Dja&amp;qd=3DRnZhMybXSk4M3Q=
+tTVGXWoRnqdTrkXQ-nGMs-qjWLDk0Aefo9SvhTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&am=
+p;rd=3D3FzvDAJyvvQaIs2wadfcQwbXCHXgJEVMrHKBS2mW9rM&amp;tk=3D1hd9qj0mvlrjq80=
+2&amp;alid=3D64b2e1eb147b7a5da4c6ec7a=0A=0ALanguage teacher - Portuguese=0A=
+Language Trainers - Melbourne VIC=0AEasily apply to this job=0AThis is a fr=
+eelance part-time position and we are not able to sponsor your visa. Langua=
+ge Trainers is a successful language training company working with=E2=80=A6=
+=0A2 days ago=0Ahttps://au.indeed.com/rc/clk/dl=3Fjk=3D28a64a31905e0ec4&amp=
+;from=3Dja&amp;qd=3DRnZhMybXSk4M3QtTVGXWoRnqdTrkXQ-nGMs-qjWLDk0Aefo9SvhTzD0=
+S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&amp;rd=3DqKn6IXruhgCHY7EGUyIb7x1nad7mHeJIvv=
+NS1DT4gjQ&amp;tk=3D1hd9qj0mvlrjq802&amp;alid=3D64b2e1eb147b7a5da4c6ec7a=0A=
+=0AMulticultural Storyteller=0AMulticultural Minds - Remote=0ARemote=0AEasi=
+ly apply to this job=0AMulticultural Minds is book dedicated to raising awa=
+reness of *multicultural mental health*. The book is filled with real stori=
+es about multicultural mental=E2=80=A6=0A4 days ago=0Ahttps://au.indeed.com=
+/rc/clk/dl=3Fjk=3D3049ae5bcc39c645&amp;from=3Dja&amp;qd=3DRnZhMybXSk4M3QtTV=
+GXWoRnqdTrkXQ-nGMs-qjWLDk0Aefo9SvhTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&amp;r=
+d=3DygDGoLTm66_A3NwZ9yDcQQbXCHXgJEVMrHKBS2mW9rM&amp;tk=3D1hd9qj0mvlrjq802&a=
+mp;alid=3D64b2e1eb147b7a5da4c6ec7a=0A=0A=0A=0ADo not share this email=0AThi=
+s email contains secure links that are personalised for you. Please do not =
+share this email or links with others.=0A=0ASalaries estimated if unavailab=
+le. When a job posting doesn't include a salary, we estimate it by looking =
+at similar jobs. Estimated salaries are not endorsed by the companies offer=
+ing those positions and may vary from actual salaries.=0A=0A=C2=A9 2023 Ind=
+eed Ireland Operations, Ltd. =0AIndeed Ireland Operations Limited, Block B,=
+ Capital Dock, 80 Sir John Rogerson's Quay, Grand Canal Dock, Dublin, 2, D0=
+2 HE36 =0APrivacy Policy: https://au.indeed.com/legal=3Fhl=3Den#privacy =0A=
+Terms: https://au.indeed.com/legal=3Fhl=3Den =0AHelp Centre: https://suppor=
+t.indeed.com/hc/en-au =0AManage email settings: https://subscriptions.indee=
+d.com=3Ftoken=3DCkDihToS6-BpBAtN31nkpytp7AZ267pauvtGGUPSZ2GeGbU-26sAWITZ9gJ=
+B-2K3WkTWq64UmY1aXUnjwJhf1IVnEiBtihaWYI-34Cb0khsc89Qa3SFf1nXtvvcrh_0f8RUqJB=
+oQa-g3Ilyr7z_SaYNb6zylmg%3D%3D&amp;co=3DAU&amp;hl=3Den&amp;tmtk=3D1hd9qj0mv=
+lrjq802&amp;from=3Dja =0AUnsubscribe from this email: https://subscriptions=
+.indeed.com/alerts/cancel=3Ftoken=3DCkDihToS6-BpBAtN31nkpytp7AZ267pauvtGGU=
+PSZ2GeGbU-26sAWITZ9gJB-2K3WkTWq64UmY1aXUnjwJhf1IVnEiBtihaWYI-34Cb0khsc89Qa3=
+SFf1nXtvvcrh_0f8RUqJBoQa-g3Ilyr7z_SaYNb6zylmg%3D%3D&amp;co=3DAU&amp;hl=3Den=
+&amp;tmtk=3D1hd9qj0mvlrjq802&amp;subId=3D64b2e1eb147b7a5da4c6ec7a&amp;rgtk=
+=3D1hd9qj22cr56380b&amp;from=3Dja
+--_----6H8jtPZ9JH01A1XwN5IQyA===_4B/87-13684-53324356
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">=0A    <html lang=3D"en" xmln=
+s=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microsoft-com:vml=
+" xmlns:o=3D"urn:schemas-microsoft-com:office:office"><head><title>Indeed J=
+ob Alerts Email</title><meta http-equiv=3D"Content-Type" content=3D"text/ht=
+ml; charset=3Dutf-8"/><meta name=3D"viewport" content=3D"width=3Ddevice-wid=
+th, initial-scale=3D1"/><meta http-equiv=3D"X-UA-Compatible" content=3D"IE=
+=3Dedge"/><style type=3D"text/css">=0A    /* CLIENT-SPECIFIC STYLES */=0A  =
+  body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust=
+: 100%;}=0A    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }=
+=0A    img { -ms-interpolation-mode: bicubic; }=0A=0A    /* RESET STYLES */=
+=0A    img { border: 0; height: auto; line-height: 100%; outline: none; tex=
+t-decoration: none; }=0A    table { border-collapse: collapse !important; }=
+=0A    body { height: 100% !important; Margin: 0 !important; padding: 0 !im=
+portant; width: 100% !important; }=0A=0A    table, td, .notice, .downshift-=
+link {=0A        font-family:'Noto Sans', Helvetica, Arial, sans-serif !imp=
+ortant;=0A    }=0A=0A    .terms-link {=0A        color: #2557A7 !important;=
+=0A        font-size: 12px !important;=0A    }=0A    .footer-box a {=0A    =
+    font-size:12px !important;=0A    }=0A=0A    .cta a {=0A        width:29=
+8px !important;=0A    }=0A=0A    @media only screen and (max-width:530px) {=
+=0A        =0A    .indeed-logo .jecl-Icon-img {=0A        width: 84px !impo=
+rtant;=0A    }=0A        =0A        =0A    .jecl-cmpwar-colorBar {=0A      =
+  padding: 24px 48px 32px !important;=0A    }=0A        =0A    .jecl-cmpwar=
+-botSeparator {=0A        padding: 32px 48px 24px !important;=0A    }=0A   =
+     =0A    .jecl-cmpwar-companyName {=0A        padding: 0 48px 24px !impo=
+rtant;=0A    }=0A        =0A    .jecl-cmpwar-footer {=0A        padding: 0 =
+24px 32px !important;=0A    }=0A        =0A    .jecl-cmpwar-title {=0A     =
+   padding: 32px 48px 0 !important;=0A    }=0A        =0A    .jecl-cmpwar-s=
+ubtitle {=0A        padding: 16px 48px 4px !important;=0A    }=0A        =
+=0A    .jecl-cmpwar-starCTA {=0A        width: 122 !important;=0A        he=
+ight: 44 !important;=0A    }=0A    =0A        =0A    .r-v {=0A        line-=
+height: 26px !important;=0A        font-size: 20px !important;=0A    }=0A  =
+      =0A        .r-0 {=0A            display: block !important;=0A        =
+    padding: 0 !important;=0A            Margin: 0px 0 0 !important;=0A    =
+    }=0A        .r-1, .r-2, .r-3, .r-4 {=0A            display: block !impo=
+rtant;=0A            padding: 0 !important;=0A            Margin: 32px 0 0 =
+!important;=0A        }=0A        .r-5 {=0A            display: none !impor=
+tant;=0A        }=0A        .r-6 br {=0A            display: none !importan=
+t;=0A        }=0A    =0A        =0A        =0A    .r-a {=0A        padding:=
+ 24px 0 0 !important;=0A    }=0A        =0A    .r-x {=0A        padding: 0 =
+16px 32px !important;=0A    }=0A        =0A    .r-w {=0A        padding: 24=
+px 16px 16px !important;=0A    }=0A        =0A        =0A    .r-m {=0A     =
+   padding: 0px 0px 24px !important;=0A    }=0A        =0A    .r-l {=0A    =
+    font-size: 16px !important;=0A    }=0A    =0A=0A    }=0A=0A    @media o=
+nly screen and (max-width:530px) {=0A        #responsive_css_ping {=0A     =
+       background-image: url(https://subscriptions.indeed.com/imgping=3Falu=
+idhash=3D9a97c50e279877a8a69f25b06c8d18cf&alert=3D64b2e1eb147b7a5da4c6ec7a&=
+tk=3D1hd9qj0mvlrjq802&type=3Djaresponsive);=0A        }=0A=0A        .outer=
+-box {=0A            padding:0 8px !important;=0A        }=0A=0A        .co=
+ntent-box {=0A            padding:32px 16px 0 !important;=0A        }=0A=0A=
+        .has-downshift-content-box {=0A            padding:16px 16px 0px !i=
+mportant;=0A        }=0A=0A        .cta a, .prominent-promo a {=0A         =
+   width:100% !important;=0A            box-sizing:border-box !important;=
+=0A        }=0A=0A        .show-when-mobile {=0A            display: block!=
+important;=0A            max-height:none !important;=0A        }=0A=0A     =
+   .prominent-promo-container {=0A            padding-bottom: 0 !important;=
+=0A        }=0A        .prominent-promo {=0A            display: block !imp=
+ortant;=0A            width: 100% !important;=0A            padding: 0 0 16=
+px !important;=0A        }=0A=0A        .prominent-promo a {=0A            =
+display: block !important;=0A        }=0A        /* Targeting Gmail/Inbox *=
+/=0A        u + #body a {=0A            color: inherit;=0A            text-=
+decoration: none;=0A        }=0A    }=0A=0A    @media only screen and (max-=
+width: 414px) {=0A        u ~ div .main {=0A            min-width: 100vw;=
+=0A        }=0A    }=0A    </style><!--[if gte mso 9]><xml> <o:OfficeDocume=
+ntSettings> <o:AllowPNG/> <o:PixelsPerInch>96</o:PixelsPerInch> </o:OfficeD=
+ocumentSettings> </xml><![endif]--> <!--[if !mso]> <!----><style type=3D"te=
+xt/css">@import url('https://fonts.googleapis.com/css2=3Ffamily=3DNoto+Sans=
+:wght@400;700&display=3Dswap')</style><!-- <![endif]--></head><body id=3D"b=
+ody" class=3D"body" style=3D"background-color:#F3F2F1;Margin:0;padding:0"><=
+div style=3D"display:none;max-height:0px;overflow:hidden">Apply to jobs at =
+Sunglass Culture, LifeBook Ltd and Reedsy </div><div style=3D"display:none;=
+max-height:0px;overflow:hidden">=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C =C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0 =E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0 =C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C =C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0 =E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0 =C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C =C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+ =E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0 =E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0 =E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0 =E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0</div><div id=3D"responsive_css_ping"></div><div=
+ class=3D"full-wrap" style=3D"font-family:'Noto Sans', Helvetica, Arial, sa=
+ns-serif;direction:ltr"><img alt=3D"" src=3D"https://subscriptions.indeed.c=
+om/imgping=3Ftype=3Dja&amp;tk=3D1hd9qj0mvlrjq802&amp;&amp;aluidhash=3D64b2e=
+1eb147b7a5da4c6ec7a" style=3D"height:1.25rem;width:1px"/><table class=3D"ma=
+in" width=3D"100%" cellPadding=3D"0" cellSpacing=3D"0" style=3D"background-=
+color:#F3F2F1" border=3D"0"><tr><td class=3D"outer-box" style=3D"background=
+-color:#F3F2F1;padding:0 8px" align=3D"center"><!--[if (gte mso 9)|(IE)]> <=
+table width=3D"600" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"> <tr> =
+<td> <![endif]--><table width=3D"100%" cellPadding=3D"0" cellSpacing=3D"0" =
+style=3D"max-width:600px;padding:0 0 15px 0;Margin-top:24px;border:0"><tr><=
+td align=3D"LEFT" style=3D"padding:0 0 13px 0" class=3D"indeed-logo-left je=
+cl-Icon-wrapper"><a href=3D"https://clk.indeed.com/hp=3Fco=3DAU&utm_campaig=
+n=3Djob_alerts&utm_medium=3Demail&utm_source=3Djobseeker_emails&from=3Dja&t=
+k=3D1hd9qj0mvlrjq802"><img class=3D"jecl-Icon-img" src=3D"https://subscript=
+ions.indeed.com/static/images/logos/indeed_retina@2x.png" alt=3D"Indeed hom=
+epage" width=3D"100" style=3D"display:block"/></a></td><td class=3D"r-y" st=
+yle=3D"width:44px"><a href=3D"https://clk.indeed.com/messages=3Ftk=3D1hd9qj=
+0mvlrjq802&co=3DAU&hl=3Den"><img style=3D"width:44px" src=3D"https://subscr=
+iptions.indeed.com/static/images/ja/icon-messages-aurora-updated.png" alt=
+=3D"see messages" width=3D"44"/></a></td><td class=3D"r-z" style=3D"padding=
+:0 0 0 10px;width:44px"><a href=3D"https://clk.indeed.com/notifications=3Ff=
+rom=3Dja&tk=3D1hd9qj0mvlrjq802&co=3DAU&hl=3Den"><img style=3D"width:44px" s=
+rc=3D"https://subscriptions.indeed.com/static/images/ja/icon-notification-a=
+urora.png" alt=3D"see notifications" width=3D"44"/></a></td></tr></table><t=
+able class=3D"width-600" style=3D"max-width:600px;background-color:#FFFFFF"=
+ width=3D"100%" cellPadding=3D"0" cellSpacing=3D"0" border=3D"0"><tr><td cl=
+ass=3D"content-box" style=3D"padding:50px 50px 0"><table width=3D"100%" cel=
+lPadding=3D"0" cellSpacing=3D"0" border=3D"0"><tr><td><table class=3D"job-a=
+lerts" width=3D"100%" cellPadding=3D"0" cellSpacing=3D"0"><tr><td class=3D"=
+section-header"><table width=3D"100%" cellPadding=3D"0" cellSpacing=3D"0"><=
+tr><td><table width=3D"100%" cellPadding=3D"0" cellSpacing=3D"0"><tr><td><h=
+1 align=3D"center" style=3D"align:center;color:#2D2D2D;font-size:28px;font-=
+weight:bold;line-height:36px;Margin:0" class=3D"r-v">14 new Freelance vacan=
+cies</h1></td></tr><tr><td style=3D"padding:16px 0 24px"><p class=3D"r-11" =
+align=3D"center" style=3D"font-size:14px;line-height:20px;color:#767676;Mar=
+gin:0">These job ads match your saved job alert &sup1;</p></td></tr><tr><td=
+ style=3D"border-bottom:1px solid #E4E2E0;font-size:1px;Margin:0">&nbsp;</t=
+d></tr></table></td></tr></table></td></tr></table></td></tr></table></td><=
+/tr><tr><td class=3D"r-w" style=3D"padding:24px 50px 16px"><table width=3D"=
+100%" cellPadding=3D"0" cellSpacing=3D"0" style=3D"border-width:0"><tr><td =
+style=3D"padding:0px 0px 32px" class=3D"r-m" align=3D"left"><a href=3D"http=
+s://au.indeed.com/rc/clk/dl=3Fjk=3D0e44ab55c7d1f9ef&from=3Dja&qd=3DRnZhMybX=
+Sk4M3QtTVGXWoRnqdTrkXQ-nGMs-qjWLDk0Aefo9SvhTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQ=
+LDA&rd=3DAbLHrm6GRQMtYBMzyEs2L1_MKnaSAFGAsD6kfERFt3g&tk=3D1hd9qj0mvlrjq802&=
+alid=3D64b2e1eb147b7a5da4c6ec7a" style=3D"display:block;text-decoration:non=
+e"><table width=3D"100%" cellPadding=3D"0" cellSpacing=3D"0"><tr><td class=
+=3D"r-l" style=3D"padding:0 0 4px" align=3D"left"><a href=3D"https://au.ind=
+eed.com/rc/clk/dl=3Fjk=3D0e44ab55c7d1f9ef&from=3Dja&qd=3DRnZhMybXSk4M3QtTVG=
+XWoRnqdTrkXQ-nGMs-qjWLDk0Aefo9SvhTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&rd=3DA=
+bLHrm6GRQMtYBMzyEs2L1_MKnaSAFGAsD6kfERFt3g&tk=3D1hd9qj0mvlrjq802&alid=3D64b=
+2e1eb147b7a5da4c6ec7a" style=3D"display:block;text-decoration:underline;fon=
+t-size:16px;line-height:20px;font-weight:bold;color:#2D2D2D">Ecommerce / we=
+bsite assitant</a></td></tr><tr><td class=3D"r-o" align=3D"left" style=3D"f=
+ont-size:14px;line-height:20px;font-weight:400;color:#2D2D2D;padding:0 0 4p=
+x"><span class=3D"r-p" style=3D"font-size:14px;line-height:20px;font-weight=
+:700;color:#2D2D2D">Sunglass Culture=C2=A0</span><span class=3D"r-q" style=
+=3D"display:inline !important;color:#767676;font-size:14px">- Remote</span>=
+</td></tr><tr><td align=3D"left" style=3D"font-size:14px;line-height:20px;f=
+ont-weight:400;color:#4B4B4B">Remote</td></tr><tr><td class=3D"r-u" style=
+=3D"color:#2D2D2D;font-size:14px;line-height:20px;padding:0 0 4px">$22 - $3=
+1 an hour</td></tr><tr><td style=3D"font-size:14px;line-height:20px;color:#=
+2D2D2D;padding:0 0 4px"><img style=3D"vertical-align:middle;padding:0 4px 2=
+px 0" src=3D"https://subscriptions.indeed.com/static/images/ja/icon-easily-=
+apply.png" alt=3D"" width=3D"20"/>Easily apply to this job</td></tr><tr><td=
+ class=3D"r-n" align=3D"left" style=3D"font-size:14px;line-height:20px;colo=
+r:#595959;padding:0 0 4px">Sunglass Culture Australia has a website assista=
+nt role with flexibility to work from home in your own hours . Loading of n=
+ew sunglass model including graphics.</td></tr><tr><td class=3D"r-s" style=
+=3D"color:#767676;font-size:14px;line-height:20px;padding:0 4px 0 0">2 days=
+ ago</td></tr></table></a></td></tr><tr><td style=3D"padding:0px 0px 32px" =
+class=3D"r-m" align=3D"left"><a href=3D"https://au.indeed.com/rc/clk/dl=3Fj=
+k=3D1c4ddd5bbdbf9caa&from=3Dja&qd=3DRnZhMybXSk4M3QtTVGXWoRnqdTrkXQ-nGMs-qjW=
+LDk0Aefo9SvhTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&rd=3DKaXlx5fp5X_mVf8_2PYUAl=
+_MKnaSAFGAsD6kfERFt3g&tk=3D1hd9qj0mvlrjq802&alid=3D64b2e1eb147b7a5da4c6ec7a=
+" style=3D"display:block;text-decoration:none"><table width=3D"100%" cellPa=
+dding=3D"0" cellSpacing=3D"0"><tr><td class=3D"r-l" style=3D"padding:0 0 4p=
+x" align=3D"left"><a href=3D"https://au.indeed.com/rc/clk/dl=3Fjk=3D1c4ddd5=
+bbdbf9caa&from=3Dja&qd=3DRnZhMybXSk4M3QtTVGXWoRnqdTrkXQ-nGMs-qjWLDk0Aefo9Sv=
+hTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&rd=3DKaXlx5fp5X_mVf8_2PYUAl_MKnaSAFGAs=
+D6kfERFt3g&tk=3D1hd9qj0mvlrjq802&alid=3D64b2e1eb147b7a5da4c6ec7a" style=3D"=
+display:block;text-decoration:underline;font-size:16px;line-height:20px;fon=
+t-weight:bold;color:#2D2D2D">Freelance Interviewer</a></td></tr><tr><td cla=
+ss=3D"r-o" align=3D"left" style=3D"font-size:14px;line-height:20px;font-wei=
+ght:400;color:#2D2D2D;padding:0 0 4px"><span class=3D"r-p" style=3D"font-si=
+ze:14px;line-height:20px;font-weight:700;color:#2D2D2D">LifeBook Ltd=C2=A0<=
+/span><span class=3D"r-q" style=3D"display:inline !important;color:#767676;=
+font-size:14px">- Sandringham VIC</span></td></tr><tr><td class=3D"r-n" ali=
+gn=3D"left" style=3D"font-size:14px;line-height:20px;color:#595959;padding:=
+0 0 4px">The role of the LifeBook Memoirs Interviewer is to help capture am=
+azing stories about a person=E2=80=99s life. You will facilitate a life jou=
+rney unfolding, by building=E2=80=A6</td></tr><tr><td class=3D"r-s" style=
+=3D"color:#767676;font-size:14px;line-height:20px;padding:0 4px 0 0">2 days=
+ ago</td></tr></table></a></td></tr><tr><td style=3D"padding:0px 0px 32px" =
+class=3D"r-m" align=3D"left"><a href=3D"https://au.indeed.com/rc/clk/dl=3Fj=
+k=3Dc74afc2bba769177&from=3Dja&qd=3DRnZhMybXSk4M3QtTVGXWoRnqdTrkXQ-nGMs-qjW=
+LDk0Aefo9SvhTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&rd=3DwRw4VfvjpFhMaapCW_-ezV=
+_MKnaSAFGAsD6kfERFt3g&tk=3D1hd9qj0mvlrjq802&alid=3D64b2e1eb147b7a5da4c6ec7a=
+" style=3D"display:block;text-decoration:none"><table width=3D"100%" cellPa=
+dding=3D"0" cellSpacing=3D"0"><tr><td class=3D"r-l" style=3D"padding:0 0 4p=
+x" align=3D"left"><a href=3D"https://au.indeed.com/rc/clk/dl=3Fjk=3Dc74afc2=
+bba769177&from=3Dja&qd=3DRnZhMybXSk4M3QtTVGXWoRnqdTrkXQ-nGMs-qjWLDk0Aefo9Sv=
+hTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&rd=3DwRw4VfvjpFhMaapCW_-ezV_MKnaSAFGAs=
+D6kfERFt3g&tk=3D1hd9qj0mvlrjq802&alid=3D64b2e1eb147b7a5da4c6ec7a" style=3D"=
+display:block;text-decoration:underline;font-size:16px;line-height:20px;fon=
+t-weight:bold;color:#2D2D2D">Freelance Book Translator</a></td></tr><tr><td=
+ class=3D"r-o" align=3D"left" style=3D"font-size:14px;line-height:20px;font=
+-weight:400;color:#2D2D2D;padding:0 0 4px"><span class=3D"r-p" style=3D"fon=
+t-size:14px;line-height:20px;font-weight:700;color:#2D2D2D">Reedsy=C2=A0</s=
+pan><span class=3D"r-q" style=3D"display:inline !important;color:#767676;fo=
+nt-size:14px">- Remote</span></td></tr><tr><td align=3D"left" style=3D"font=
+-size:14px;line-height:20px;font-weight:400;color:#4B4B4B">Remote</td></tr>=
+<tr><td class=3D"r-u" style=3D"color:#2D2D2D;font-size:14px;line-height:20p=
+x;padding:0 0 4px">$38,000 - $50,000 a year</td></tr><tr><td style=3D"font-=
+size:14px;line-height:20px;color:#2D2D2D;padding:0 0 4px"><img style=3D"ver=
+tical-align:middle;padding:0 4px 2px 0" src=3D"https://subscriptions.indeed=
+.com/static/images/ja/icon-easily-apply.png" alt=3D"" width=3D"20"/>Easily=
+ apply to this job</td></tr><tr><td class=3D"r-n" align=3D"left" style=3D"f=
+ont-size:14px;line-height:20px;color:#595959;padding:0 0 4px">We are seekin=
+g experienced book translators to work directly with authors and help them =
+share their stories in a different language.</td></tr><tr><td class=3D"r-s"=
+ style=3D"color:#767676;font-size:14px;line-height:20px;padding:0 4px 0 0">=
+Just posted</td></tr></table></a></td></tr><tr><td style=3D"padding:0px 0px=
+ 32px" class=3D"r-m" align=3D"left"><a href=3D"https://au.indeed.com/rc/clk=
+/dl=3Fjk=3D07bdea16289866eb&from=3Dja&qd=3DRnZhMybXSk4M3QtTVGXWoRnqdTrkXQ-n=
+GMs-qjWLDk0Aefo9SvhTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&rd=3DXz_BPd8uwD7p5SZ=
+JpoZayl_MKnaSAFGAsD6kfERFt3g&tk=3D1hd9qj0mvlrjq802&alid=3D64b2e1eb147b7a5da=
+4c6ec7a" style=3D"display:block;text-decoration:none"><table width=3D"100%"=
+ cellPadding=3D"0" cellSpacing=3D"0"><tr><td class=3D"r-l" style=3D"padding=
+:0 0 4px" align=3D"left"><a href=3D"https://au.indeed.com/rc/clk/dl=3Fjk=3D=
+07bdea16289866eb&from=3Dja&qd=3DRnZhMybXSk4M3QtTVGXWoRnqdTrkXQ-nGMs-qjWLDk0=
+Aefo9SvhTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&rd=3DXz_BPd8uwD7p5SZJpoZayl_MKn=
+aSAFGAsD6kfERFt3g&tk=3D1hd9qj0mvlrjq802&alid=3D64b2e1eb147b7a5da4c6ec7a" st=
+yle=3D"display:block;text-decoration:underline;font-size:16px;line-height:2=
+0px;font-weight:bold;color:#2D2D2D">VCE (Year 11 - 12) Online Tutor - Remot=
+e Melbourne</a></td></tr><tr><td class=3D"r-o" align=3D"left" style=3D"font=
+-size:14px;line-height:20px;font-weight:400;color:#2D2D2D;padding:0 0 4px">=
+<span class=3D"r-p" style=3D"font-size:14px;line-height:20px;font-weight:70=
+0;color:#2D2D2D">Arc Tutoring=C2=A0</span><span class=3D"r-q" style=3D"disp=
+lay:inline !important;color:#767676;font-size:14px">- Remote</span></td></t=
+r><tr><td align=3D"left" style=3D"font-size:14px;line-height:20px;font-weig=
+ht:400;color:#4B4B4B">Remote</td></tr><tr><td class=3D"r-u" style=3D"color:=
+#2D2D2D;font-size:14px;line-height:20px;padding:0 0 4px">$35 an hour</td></=
+tr><tr><td style=3D"font-size:14px;line-height:20px;color:#2D2D2D;padding:0=
+ 0 4px"><img style=3D"vertical-align:middle;padding:0 4px 2px 0" src=3D"htt=
+ps://subscriptions.indeed.com/static/images/ja/icon-easily-apply.png" alt=
+=3D"" width=3D"20"/>Easily apply to this job</td></tr><tr><td style=3D"font=
+-size:14px;line-height:20px;color:#2D2D2D;padding:0 0 4px"><img style=3D"ve=
+rtical-align:middle;padding:0 4px 0 0" src=3D"https://subscriptions.indeed.=
+com/static/images/ja/icon-responsive-emp-aurora.png" alt=3D"" width=3D"14"/=
+>Responsive employer</td></tr><tr><td class=3D"r-n" align=3D"left" style=3D=
+"font-size:14px;line-height:20px;color:#595959;padding:0 0 4px">Arc Tutorin=
+g, a tutoring company based in Australia, is currently seeking experienced =
+tutors/registered teachers to conduct tutoring sessions for VCE students=E2=
+=80=A6</td></tr><tr><td class=3D"r-s" style=3D"color:#767676;font-size:14px=
+;line-height:20px;padding:0 4px 0 0">2 days ago</td></tr></table></a></td><=
+/tr><tr><td style=3D"padding:0px 0px 32px" class=3D"r-m" align=3D"left"><a =
+href=3D"https://au.indeed.com/rc/clk/dl=3Fjk=3D435259781a6851ee&from=3Dja&q=
+d=3DRnZhMybXSk4M3QtTVGXWoRnqdTrkXQ-nGMs-qjWLDk0Aefo9SvhTzD0S4xauH9Tm3-PEttL=
+tUMwth8yMbzQLDA&rd=3DDn5EjwaJvCkTRHgaEfgs71_MKnaSAFGAsD6kfERFt3g&tk=3D1hd9q=
+j0mvlrjq802&alid=3D64b2e1eb147b7a5da4c6ec7a" style=3D"display:block;text-de=
+coration:none"><table width=3D"100%" cellPadding=3D"0" cellSpacing=3D"0"><t=
+r><td class=3D"r-l" style=3D"padding:0 0 4px" align=3D"left"><a href=3D"htt=
+ps://au.indeed.com/rc/clk/dl=3Fjk=3D435259781a6851ee&from=3Dja&qd=3DRnZhMyb=
+XSk4M3QtTVGXWoRnqdTrkXQ-nGMs-qjWLDk0Aefo9SvhTzD0S4xauH9Tm3-PEttLtUMwth8yMbz=
+QLDA&rd=3DDn5EjwaJvCkTRHgaEfgs71_MKnaSAFGAsD6kfERFt3g&tk=3D1hd9qj0mvlrjq802=
+&alid=3D64b2e1eb147b7a5da4c6ec7a" style=3D"display:block;text-decoration:un=
+derline;font-size:16px;line-height:20px;font-weight:bold;color:#2D2D2D">Bac=
+k-End Web Developer (Perch Runway)</a></td></tr><tr><td class=3D"r-o" align=
+=3D"left" style=3D"font-size:14px;line-height:20px;font-weight:400;color:#2=
+D2D2D;padding:0 0 4px"><span class=3D"r-p" style=3D"font-size:14px;line-hei=
+ght:20px;font-weight:700;color:#2D2D2D">Actualise Design=C2=A0</span><span =
+class=3D"r-q" style=3D"display:inline !important;color:#767676;font-size:14=
+px">- Sydney NSW</span></td></tr><tr><td class=3D"r-n" align=3D"left" style=
+=3D"font-size:14px;line-height:20px;color:#595959;padding:0 0 4px">Actualis=
+e Design is looking for freelance/contract web developers experienced in Pe=
+rch Runway to assist with overflow and project work.</td></tr><tr><td class=
+=3D"r-s" style=3D"color:#767676;font-size:14px;line-height:20px;padding:0 4=
+px 0 0">2 days ago</td></tr></table></a></td></tr><tr><td style=3D"padding:=
+0px 0px 32px" class=3D"r-m" align=3D"left"><a href=3D"https://au.indeed.com=
+/rc/clk/dl=3Fjk=3D1a198d3573cbe998&from=3Dja&qd=3DRnZhMybXSk4M3QtTVGXWoRnqd=
+TrkXQ-nGMs-qjWLDk0Aefo9SvhTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&rd=3Dx5SUCvph=
+gkEZUN6bPKxzIl_MKnaSAFGAsD6kfERFt3g&tk=3D1hd9qj0mvlrjq802&alid=3D64b2e1eb14=
+7b7a5da4c6ec7a" style=3D"display:block;text-decoration:none"><table width=
+=3D"100%" cellPadding=3D"0" cellSpacing=3D"0"><tr><td class=3D"r-l" style=
+=3D"padding:0 0 4px" align=3D"left"><a href=3D"https://au.indeed.com/rc/clk=
+/dl=3Fjk=3D1a198d3573cbe998&from=3Dja&qd=3DRnZhMybXSk4M3QtTVGXWoRnqdTrkXQ-n=
+GMs-qjWLDk0Aefo9SvhTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&rd=3Dx5SUCvphgkEZUN6=
+bPKxzIl_MKnaSAFGAsD6kfERFt3g&tk=3D1hd9qj0mvlrjq802&alid=3D64b2e1eb147b7a5da=
+4c6ec7a" style=3D"display:block;text-decoration:underline;font-size:16px;li=
+ne-height:20px;font-weight:bold;color:#2D2D2D">Computer Technician</a></td>=
+</tr><tr><td class=3D"r-o" align=3D"left" style=3D"font-size:14px;line-heig=
+ht:20px;font-weight:400;color:#2D2D2D;padding:0 0 4px"><span class=3D"r-p" =
+style=3D"font-size:14px;line-height:20px;font-weight:700;color:#2D2D2D">fre=
+elancing project=C2=A0</span><span class=3D"r-q" style=3D"display:inline !i=
+mportant;color:#767676;font-size:14px">- Woolner NT</span></td></tr><tr><td=
+ class=3D"r-u" style=3D"color:#2D2D2D;font-size:14px;line-height:20px;paddi=
+ng:0 0 4px">$74.46 - $75.45 an hour</td></tr><tr><td style=3D"font-size:14p=
+x;line-height:20px;color:#2D2D2D;padding:0 0 4px"><img style=3D"vertical-al=
+ign:middle;padding:0 4px 2px 0" src=3D"https://subscriptions.indeed.com/sta=
+tic/images/ja/icon-easily-apply.png" alt=3D"" width=3D"20"/>Easily apply to=
+ this job</td></tr><tr><td class=3D"r-n" align=3D"left" style=3D"font-size:=
+14px;line-height:20px;color:#595959;padding:0 0 4px">Are you great at repai=
+ring PC's and laptops=3F Want to work for one of the world's biggest techno=
+logy companies=3F Are you located in or close to Woolner, NT.</td></tr><tr>=
+<td class=3D"r-s" style=3D"color:#767676;font-size:14px;line-height:20px;pa=
+dding:0 4px 0 0">4 days ago</td></tr></table></a></td></tr><tr><td style=3D=
+"padding:0px 0px 32px" class=3D"r-m" align=3D"left"><a href=3D"https://au.i=
+ndeed.com/rc/clk/dl=3Fjk=3Db4c0a119c76040e5&from=3Dja&qd=3DRnZhMybXSk4M3QtT=
+VGXWoRnqdTrkXQ-nGMs-qjWLDk0Aefo9SvhTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&rd=
+=3Db-LNusZqTw0q6FqZCSVm33EwqdD0vnOb9P51Phyha6c&tk=3D1hd9qj0mvlrjq802&alid=
+=3D64b2e1eb147b7a5da4c6ec7a" style=3D"display:block;text-decoration:none"><=
+table width=3D"100%" cellPadding=3D"0" cellSpacing=3D"0"><tr><td class=3D"r=
+-l" style=3D"padding:0 0 4px" align=3D"left"><a href=3D"https://au.indeed.c=
+om/rc/clk/dl=3Fjk=3Db4c0a119c76040e5&from=3Dja&qd=3DRnZhMybXSk4M3QtTVGXWoRn=
+qdTrkXQ-nGMs-qjWLDk0Aefo9SvhTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&rd=3Db-LNus=
+ZqTw0q6FqZCSVm33EwqdD0vnOb9P51Phyha6c&tk=3D1hd9qj0mvlrjq802&alid=3D64b2e1eb=
+147b7a5da4c6ec7a" style=3D"display:block;text-decoration:underline;font-siz=
+e:16px;line-height:20px;font-weight:bold;color:#2D2D2D">Language teacher - =
+Arabic</a></td></tr><tr><td class=3D"r-o" align=3D"left" style=3D"font-size=
+:14px;line-height:20px;font-weight:400;color:#2D2D2D;padding:0 0 4px"><span=
+ class=3D"r-p" style=3D"font-size:14px;line-height:20px;font-weight:700;col=
+or:#2D2D2D">Language Trainers=C2=A0</span><span class=3D"jecl-jc-companyRat=
+ing" style=3D"white-space:nowrap;color:#2D2D2D;font-size:14px;line-height:1=
+6px">=C2=A04.7</span><span>=C2=A0<img class=3D"jecl-starreview-companyRevie=
+wStars" src=3D"https://subscriptions.indeed.com/static/images/ja/star_auror=
+a_grey.png" width=3D"14" border=3D"0" alt=3D"4.7/5 rating"/>=C2=A0</span><s=
+pan class=3D"r-q" style=3D"display:inline !important;color:#767676;font-siz=
+e:14px">- Melbourne VIC</span></td></tr><tr><td style=3D"font-size:14px;lin=
+e-height:20px;color:#2D2D2D;padding:0 0 4px"><img style=3D"vertical-align:m=
+iddle;padding:0 4px 2px 0" src=3D"https://subscriptions.indeed.com/static/i=
+mages/ja/icon-easily-apply.png" alt=3D"" width=3D"20"/>Easily apply to this=
+ job</td></tr><tr><td class=3D"r-n" align=3D"left" style=3D"font-size:14px;=
+line-height:20px;color:#595959;padding:0 0 4px">This is a freelance part-ti=
+me position and we are not able to sponsor your visa. Language Trainers is =
+a successful language training company working with=E2=80=A6</td></tr><tr><=
+td class=3D"r-s" style=3D"color:#767676;font-size:14px;line-height:20px;pad=
+ding:0 4px 0 0">Just posted</td></tr></table></a></td></tr><tr><td style=3D=
+"padding:0px 0px 32px" class=3D"r-m" align=3D"left"><a href=3D"https://au.i=
+ndeed.com/rc/clk/dl=3Fjk=3D8ec0016942115261&from=3Dja&qd=3DRnZhMybXSk4M3QtT=
+VGXWoRnqdTrkXQ-nGMs-qjWLDk0Aefo9SvhTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&rd=
+=3Datk-kgV92m6TJ3g-AHTrAV_MKnaSAFGAsD6kfERFt3g&tk=3D1hd9qj0mvlrjq802&alid=
+=3D64b2e1eb147b7a5da4c6ec7a" style=3D"display:block;text-decoration:none"><=
+table width=3D"100%" cellPadding=3D"0" cellSpacing=3D"0"><tr><td class=3D"r=
+-l" style=3D"padding:0 0 4px" align=3D"left"><a href=3D"https://au.indeed.c=
+om/rc/clk/dl=3Fjk=3D8ec0016942115261&from=3Dja&qd=3DRnZhMybXSk4M3QtTVGXWoRn=
+qdTrkXQ-nGMs-qjWLDk0Aefo9SvhTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&rd=3Datk-kg=
+V92m6TJ3g-AHTrAV_MKnaSAFGAsD6kfERFt3g&tk=3D1hd9qj0mvlrjq802&alid=3D64b2e1eb=
+147b7a5da4c6ec7a" style=3D"display:block;text-decoration:underline;font-siz=
+e:16px;line-height:20px;font-weight:bold;color:#2D2D2D">Singing/Vocal Teach=
+er</a></td></tr><tr><td class=3D"r-o" align=3D"left" style=3D"font-size:14p=
+x;line-height:20px;font-weight:400;color:#2D2D2D;padding:0 0 4px"><span cla=
+ss=3D"r-p" style=3D"font-size:14px;line-height:20px;font-weight:700;color:#=
+2D2D2D">Music Eternal - Eternal Arts Collective Pty Ltd=C2=A0</span><span c=
+lass=3D"r-q" style=3D"display:inline !important;color:#767676;font-size:14p=
+x">- Seacliff SA</span></td></tr><tr><td class=3D"r-u" style=3D"color:#2D2D=
+2D;font-size:14px;line-height:20px;padding:0 0 4px">$24 - $56 an hour</td><=
+/tr><tr><td style=3D"font-size:14px;line-height:20px;color:#2D2D2D;padding:=
+0 0 4px"><img style=3D"vertical-align:middle;padding:0 4px 2px 0" src=3D"ht=
+tps://subscriptions.indeed.com/static/images/ja/icon-easily-apply.png" alt=
+=3D"" width=3D"20"/>Easily apply to this job</td></tr><tr><td class=3D"r-n"=
+ align=3D"left" style=3D"font-size:14px;line-height:20px;color:#595959;padd=
+ing:0 0 4px">=E2=99=AC CAN YOU TEACH SINGING=3F =E2=99=AC. Join Music Etern=
+al's Exclusive Teacher Network! We're on a mission to revolutionise music e=
+ducation, and we want YOU to be a part of=E2=80=A6</td></tr><tr><td class=
+=3D"r-s" style=3D"color:#767676;font-size:14px;line-height:20px;padding:0 4=
+px 0 0">Just posted</td></tr></table></a></td></tr><tr><td style=3D"padding=
+:0px 0px 32px" class=3D"r-m" align=3D"left"><a href=3D"https://au.indeed.co=
+m/rc/clk/dl=3Fjk=3D80276ba42e581142&from=3Dja&qd=3DRnZhMybXSk4M3QtTVGXWoRnq=
+dTrkXQ-nGMs-qjWLDk0Aefo9SvhTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&rd=3DdpmJoNL=
+Qjjouthj8GZXYuX2LhTYP0op_TBenMVhVTPM&tk=3D1hd9qj0mvlrjq802&alid=3D64b2e1eb1=
+47b7a5da4c6ec7a" style=3D"display:block;text-decoration:none"><table width=
+=3D"100%" cellPadding=3D"0" cellSpacing=3D"0"><tr><td class=3D"r-l" style=
+=3D"padding:0 0 4px" align=3D"left"><a href=3D"https://au.indeed.com/rc/clk=
+/dl=3Fjk=3D80276ba42e581142&from=3Dja&qd=3DRnZhMybXSk4M3QtTVGXWoRnqdTrkXQ-n=
+GMs-qjWLDk0Aefo9SvhTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&rd=3DdpmJoNLQjjouthj=
+8GZXYuX2LhTYP0op_TBenMVhVTPM&tk=3D1hd9qj0mvlrjq802&alid=3D64b2e1eb147b7a5da=
+4c6ec7a" style=3D"display:block;text-decoration:underline;font-size:16px;li=
+ne-height:20px;font-weight:bold;color:#2D2D2D">ELICOS Teacher needed</a></t=
+d></tr><tr><td class=3D"r-o" align=3D"left" style=3D"font-size:14px;line-he=
+ight:20px;font-weight:400;color:#2D2D2D;padding:0 0 4px"><span class=3D"r-p=
+" style=3D"font-size:14px;line-height:20px;font-weight:700;color:#2D2D2D">S=
+cots English College=C2=A0</span><span class=3D"jecl-jc-companyRating" styl=
+e=3D"white-space:nowrap;color:#2D2D2D;font-size:14px;line-height:16px">=C2=
+=A03.3</span><span>=C2=A0<img class=3D"jecl-starreview-companyReviewStars" =
+src=3D"https://subscriptions.indeed.com/static/images/ja/star_aurora_grey.p=
+ng" width=3D"14" border=3D"0" alt=3D"3.3/5 rating"/>=C2=A0</span><span clas=
+s=3D"r-q" style=3D"display:inline !important;color:#767676;font-size:14px">=
+- Eveleigh NSW</span></td></tr><tr><td class=3D"r-u" style=3D"color:#2D2D2D=
+;font-size:14px;line-height:20px;padding:0 0 4px">$57.77 an hour</td></tr><=
+tr><td style=3D"font-size:14px;line-height:20px;color:#2D2D2D;padding:0 0 4=
+px"><img style=3D"vertical-align:middle;padding:0 4px 2px 0" src=3D"https:/=
+/subscriptions.indeed.com/static/images/ja/icon-easily-apply.png" alt=3D"" =
+width=3D"20"/>Easily apply to this job</td></tr><tr><td class=3D"r-n" align=
+=3D"left" style=3D"font-size:14px;line-height:20px;color:#595959;padding:0 =
+0 4px">Located at South Eveleigh, on the fringe of Sydney=E2=80=99s CBD, ou=
+r modern campus is just moments away from Redfern Station and is bounded by=
+ the suburbs of=E2=80=A6</td></tr><tr><td class=3D"r-s" style=3D"color:#767=
+676;font-size:14px;line-height:20px;padding:0 4px 0 0">1 day ago</td></tr><=
+/table></a></td></tr><tr><td style=3D"padding:0px 0px 32px" class=3D"r-m" a=
+lign=3D"left"><a href=3D"https://au.indeed.com/rc/clk/dl=3Fjk=3D8c72c6290b8=
+b4b94&from=3Dja&qd=3DRnZhMybXSk4M3QtTVGXWoRnqdTrkXQ-nGMs-qjWLDk0Aefo9SvhTzD=
+0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&rd=3DGZFcyHBScz1y0mDksF1mpF_MKnaSAFGAsD6kf=
+ERFt3g&tk=3D1hd9qj0mvlrjq802&alid=3D64b2e1eb147b7a5da4c6ec7a" style=3D"disp=
+lay:block;text-decoration:none"><table width=3D"100%" cellPadding=3D"0" cel=
+lSpacing=3D"0"><tr><td class=3D"r-l" style=3D"padding:0 0 4px" align=3D"lef=
+t"><a href=3D"https://au.indeed.com/rc/clk/dl=3Fjk=3D8c72c6290b8b4b94&from=
+=3Dja&qd=3DRnZhMybXSk4M3QtTVGXWoRnqdTrkXQ-nGMs-qjWLDk0Aefo9SvhTzD0S4xauH9Tm=
+3-PEttLtUMwth8yMbzQLDA&rd=3DGZFcyHBScz1y0mDksF1mpF_MKnaSAFGAsD6kfERFt3g&tk=
+=3D1hd9qj0mvlrjq802&alid=3D64b2e1eb147b7a5da4c6ec7a" style=3D"display:block=
+;text-decoration:underline;font-size:16px;line-height:20px;font-weight:bold=
+;color:#2D2D2D">Multicultural Artist</a></td></tr><tr><td class=3D"r-o" ali=
+gn=3D"left" style=3D"font-size:14px;line-height:20px;font-weight:400;color:=
+#2D2D2D;padding:0 0 4px"><span class=3D"r-p" style=3D"font-size:14px;line-h=
+eight:20px;font-weight:700;color:#2D2D2D">Multicultural Minds=C2=A0</span><=
+span class=3D"r-q" style=3D"display:inline !important;color:#767676;font-si=
+ze:14px">- Remote</span></td></tr><tr><td align=3D"left" style=3D"font-size=
+:14px;line-height:20px;font-weight:400;color:#4B4B4B">Remote</td></tr><tr><=
+td style=3D"font-size:14px;line-height:20px;color:#2D2D2D;padding:0 0 4px">=
+<img style=3D"vertical-align:middle;padding:0 4px 2px 0" src=3D"https://sub=
+scriptions.indeed.com/static/images/ja/icon-easily-apply.png" alt=3D"" widt=
+h=3D"20"/>Easily apply to this job</td></tr><tr><td class=3D"r-n" align=3D"=
+left" style=3D"font-size:14px;line-height:20px;color:#595959;padding:0 0 4p=
+x">Multicultural Minds is book dedicated to raising awareness of *multicult=
+ural mental health*. The book is filled with real stories about multicultur=
+al mental=E2=80=A6</td></tr><tr><td class=3D"r-s" style=3D"color:#767676;fo=
+nt-size:14px;line-height:20px;padding:0 4px 0 0">4 days ago</td></tr></tabl=
+e></a></td></tr><tr><td style=3D"padding:0px 0px 32px" class=3D"r-m" align=
+=3D"left"><a href=3D"https://au.indeed.com/rc/clk/dl=3Fjk=3De24f7a4584da9be=
+f&from=3Dja&qd=3DRnZhMybXSk4M3QtTVGXWoRnqdTrkXQ-nGMs-qjWLDk0Aefo9SvhTzD0S4x=
+auH9Tm3-PEttLtUMwth8yMbzQLDA&rd=3Dv1-HcdjGhgpDNCskhCHpOQbXCHXgJEVMrHKBS2mW9=
+rM&tk=3D1hd9qj0mvlrjq802&alid=3D64b2e1eb147b7a5da4c6ec7a" style=3D"display:=
+block;text-decoration:none"><table width=3D"100%" cellPadding=3D"0" cellSpa=
+cing=3D"0"><tr><td class=3D"r-l" style=3D"padding:0 0 4px" align=3D"left"><=
+a href=3D"https://au.indeed.com/rc/clk/dl=3Fjk=3De24f7a4584da9bef&from=3Dja=
+&qd=3DRnZhMybXSk4M3QtTVGXWoRnqdTrkXQ-nGMs-qjWLDk0Aefo9SvhTzD0S4xauH9Tm3-PEt=
+tLtUMwth8yMbzQLDA&rd=3Dv1-HcdjGhgpDNCskhCHpOQbXCHXgJEVMrHKBS2mW9rM&tk=3D1hd=
+9qj0mvlrjq802&alid=3D64b2e1eb147b7a5da4c6ec7a" style=3D"display:block;text-=
+decoration:underline;font-size:16px;line-height:20px;font-weight:bold;color=
+:#2D2D2D">Freelance Book Designer</a></td></tr><tr><td class=3D"r-o" align=
+=3D"left" style=3D"font-size:14px;line-height:20px;font-weight:400;color:#2=
+D2D2D;padding:0 0 4px"><span class=3D"r-p" style=3D"font-size:14px;line-hei=
+ght:20px;font-weight:700;color:#2D2D2D">Reedsy=C2=A0</span><span class=3D"r=
+-q" style=3D"display:inline !important;color:#767676;font-size:14px">- Remo=
+te</span></td></tr><tr><td align=3D"left" style=3D"font-size:14px;line-heig=
+ht:20px;font-weight:400;color:#4B4B4B">Remote</td></tr><tr><td class=3D"r-u=
+" style=3D"color:#2D2D2D;font-size:14px;line-height:20px;padding:0 0 4px">$=
+38,000 - $50,000 a year</td></tr><tr><td style=3D"font-size:14px;line-heigh=
+t:20px;color:#2D2D2D;padding:0 0 4px"><img style=3D"vertical-align:middle;p=
+adding:0 4px 2px 0" src=3D"https://subscriptions.indeed.com/static/images/j=
+a/icon-easily-apply.png" alt=3D"" width=3D"20"/>Easily apply to this job</t=
+d></tr><tr><td class=3D"r-n" align=3D"left" style=3D"font-size:14px;line-he=
+ight:20px;color:#595959;padding:0 0 4px">We are seeking talented book desig=
+ners with expertise in cover design, interior book design, illustration, an=
+d/or production management of books.</td></tr><tr><td class=3D"r-s" style=
+=3D"color:#767676;font-size:14px;line-height:20px;padding:0 4px 0 0">2 days=
+ ago</td></tr></table></a></td></tr><tr><td style=3D"padding:0px 0px 32px" =
+class=3D"r-m" align=3D"left"><a href=3D"https://au.indeed.com/rc/clk/dl=3Fj=
+k=3Dbf99bfbab777cca5&from=3Dja&qd=3DRnZhMybXSk4M3QtTVGXWoRnqdTrkXQ-nGMs-qjW=
+LDk0Aefo9SvhTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&rd=3D3FzvDAJyvvQaIs2wadfcQw=
+bXCHXgJEVMrHKBS2mW9rM&tk=3D1hd9qj0mvlrjq802&alid=3D64b2e1eb147b7a5da4c6ec7a=
+" style=3D"display:block;text-decoration:none"><table width=3D"100%" cellPa=
+dding=3D"0" cellSpacing=3D"0"><tr><td class=3D"r-l" style=3D"padding:0 0 4p=
+x" align=3D"left"><a href=3D"https://au.indeed.com/rc/clk/dl=3Fjk=3Dbf99bfb=
+ab777cca5&from=3Dja&qd=3DRnZhMybXSk4M3QtTVGXWoRnqdTrkXQ-nGMs-qjWLDk0Aefo9Sv=
+hTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&rd=3D3FzvDAJyvvQaIs2wadfcQwbXCHXgJEVMr=
+HKBS2mW9rM&tk=3D1hd9qj0mvlrjq802&alid=3D64b2e1eb147b7a5da4c6ec7a" style=3D"=
+display:block;text-decoration:underline;font-size:16px;line-height:20px;fon=
+t-weight:bold;color:#2D2D2D">Carpenter</a></td></tr><tr><td class=3D"r-o" a=
+lign=3D"left" style=3D"font-size:14px;line-height:20px;font-weight:400;colo=
+r:#2D2D2D;padding:0 0 4px"><span class=3D"r-p" style=3D"font-size:14px;line=
+-height:20px;font-weight:700;color:#2D2D2D">Vanable Fitouts=C2=A0</span><sp=
+an class=3D"r-q" style=3D"display:inline !important;color:#767676;font-size=
+:14px">- Waterloo NSW</span></td></tr><tr><td class=3D"r-u" style=3D"color:=
+#2D2D2D;font-size:14px;line-height:20px;padding:0 0 4px">$30 - $50 an hour<=
+/td></tr><tr><td style=3D"font-size:14px;line-height:20px;color:#2D2D2D;pad=
+ding:0 0 4px"><img style=3D"vertical-align:middle;padding:0 4px 2px 0" src=
+=3D"https://subscriptions.indeed.com/static/images/ja/icon-easily-apply.png=
+" alt=3D"" width=3D"20"/>Easily apply to this job</td></tr><tr><td class=3D=
+"r-n" align=3D"left" style=3D"font-size:14px;line-height:20px;color:#595959=
+;padding:0 0 4px">We're currently looking for carpenters and / or cabinetry=
+ makers to assist across several van conversions. Expertise and experience =
+will be rewarded but is not=E2=80=A6</td></tr><tr><td class=3D"r-s" style=
+=3D"color:#767676;font-size:14px;line-height:20px;padding:0 4px 0 0">3 days=
+ ago</td></tr></table></a></td></tr><tr><td style=3D"padding:0px 0px 32px" =
+class=3D"r-m" align=3D"left"><a href=3D"https://au.indeed.com/rc/clk/dl=3Fj=
+k=3D28a64a31905e0ec4&from=3Dja&qd=3DRnZhMybXSk4M3QtTVGXWoRnqdTrkXQ-nGMs-qjW=
+LDk0Aefo9SvhTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&rd=3DqKn6IXruhgCHY7EGUyIb7x=
+1nad7mHeJIvvNS1DT4gjQ&tk=3D1hd9qj0mvlrjq802&alid=3D64b2e1eb147b7a5da4c6ec7a=
+" style=3D"display:block;text-decoration:none"><table width=3D"100%" cellPa=
+dding=3D"0" cellSpacing=3D"0"><tr><td class=3D"r-l" style=3D"padding:0 0 4p=
+x" align=3D"left"><a href=3D"https://au.indeed.com/rc/clk/dl=3Fjk=3D28a64a3=
+1905e0ec4&from=3Dja&qd=3DRnZhMybXSk4M3QtTVGXWoRnqdTrkXQ-nGMs-qjWLDk0Aefo9Sv=
+hTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&rd=3DqKn6IXruhgCHY7EGUyIb7x1nad7mHeJIv=
+vNS1DT4gjQ&tk=3D1hd9qj0mvlrjq802&alid=3D64b2e1eb147b7a5da4c6ec7a" style=3D"=
+display:block;text-decoration:underline;font-size:16px;line-height:20px;fon=
+t-weight:bold;color:#2D2D2D">Language teacher - Portuguese</a></td></tr><tr=
+><td class=3D"r-o" align=3D"left" style=3D"font-size:14px;line-height:20px;=
+font-weight:400;color:#2D2D2D;padding:0 0 4px"><span class=3D"r-p" style=3D=
+"font-size:14px;line-height:20px;font-weight:700;color:#2D2D2D">Language Tr=
+ainers=C2=A0</span><span class=3D"jecl-jc-companyRating" style=3D"white-spa=
+ce:nowrap;color:#2D2D2D;font-size:14px;line-height:16px">=C2=A04.7</span><s=
+pan>=C2=A0<img class=3D"jecl-starreview-companyReviewStars" src=3D"https://=
+subscriptions.indeed.com/static/images/ja/star_aurora_grey.png" width=3D"14=
+" border=3D"0" alt=3D"4.7/5 rating"/>=C2=A0</span><span class=3D"r-q" style=
+=3D"display:inline !important;color:#767676;font-size:14px">- Melbourne VIC=
+</span></td></tr><tr><td style=3D"font-size:14px;line-height:20px;color:#2D=
+2D2D;padding:0 0 4px"><img style=3D"vertical-align:middle;padding:0 4px 2px=
+ 0" src=3D"https://subscriptions.indeed.com/static/images/ja/icon-easily-ap=
+ply.png" alt=3D"" width=3D"20"/>Easily apply to this job</td></tr><tr><td c=
+lass=3D"r-n" align=3D"left" style=3D"font-size:14px;line-height:20px;color:=
+#595959;padding:0 0 4px">This is a freelance part-time position and we are =
+not able to sponsor your visa. Language Trainers is a successful language t=
+raining company working with=E2=80=A6</td></tr><tr><td class=3D"r-s" style=
+=3D"color:#767676;font-size:14px;line-height:20px;padding:0 4px 0 0">2 days=
+ ago</td></tr></table></a></td></tr><tr><td style=3D"padding:0px 0px 32px" =
+class=3D"r-m" align=3D"left"><a href=3D"https://au.indeed.com/rc/clk/dl=3Fj=
+k=3D3049ae5bcc39c645&from=3Dja&qd=3DRnZhMybXSk4M3QtTVGXWoRnqdTrkXQ-nGMs-qjW=
+LDk0Aefo9SvhTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&rd=3DygDGoLTm66_A3NwZ9yDcQQ=
+bXCHXgJEVMrHKBS2mW9rM&tk=3D1hd9qj0mvlrjq802&alid=3D64b2e1eb147b7a5da4c6ec7a=
+" style=3D"display:block;text-decoration:none"><table width=3D"100%" cellPa=
+dding=3D"0" cellSpacing=3D"0"><tr><td class=3D"r-l" style=3D"padding:0 0 4p=
+x" align=3D"left"><a href=3D"https://au.indeed.com/rc/clk/dl=3Fjk=3D3049ae5=
+bcc39c645&from=3Dja&qd=3DRnZhMybXSk4M3QtTVGXWoRnqdTrkXQ-nGMs-qjWLDk0Aefo9Sv=
+hTzD0S4xauH9Tm3-PEttLtUMwth8yMbzQLDA&rd=3DygDGoLTm66_A3NwZ9yDcQQbXCHXgJEVMr=
+HKBS2mW9rM&tk=3D1hd9qj0mvlrjq802&alid=3D64b2e1eb147b7a5da4c6ec7a" style=3D"=
+display:block;text-decoration:underline;font-size:16px;line-height:20px;fon=
+t-weight:bold;color:#2D2D2D">Multicultural Storyteller</a></td></tr><tr><td=
+ class=3D"r-o" align=3D"left" style=3D"font-size:14px;line-height:20px;font=
+-weight:400;color:#2D2D2D;padding:0 0 4px"><span class=3D"r-p" style=3D"fon=
+t-size:14px;line-height:20px;font-weight:700;color:#2D2D2D">Multicultural M=
+inds=C2=A0</span><span class=3D"r-q" style=3D"display:inline !important;col=
+or:#767676;font-size:14px">- Remote</span></td></tr><tr><td align=3D"left" =
+style=3D"font-size:14px;line-height:20px;font-weight:400;color:#4B4B4B">Rem=
+ote</td></tr><tr><td style=3D"font-size:14px;line-height:20px;color:#2D2D2D=
+;padding:0 0 4px"><img style=3D"vertical-align:middle;padding:0 4px 2px 0" =
+src=3D"https://subscriptions.indeed.com/static/images/ja/icon-easily-apply.=
+png" alt=3D"" width=3D"20"/>Easily apply to this job</td></tr><tr><td class=
+=3D"r-n" align=3D"left" style=3D"font-size:14px;line-height:20px;color:#595=
+959;padding:0 0 4px">Multicultural Minds is book dedicated to raising aware=
+ness of *multicultural mental health*. The book is filled with real stories=
+ about multicultural mental=E2=80=A6</td></tr><tr><td class=3D"r-s" style=
+=3D"color:#767676;font-size:14px;line-height:20px;padding:0 4px 0 0">4 days=
+ ago</td></tr></table></a></td></tr></table></td></tr><tr><td class=3D"r-x"=
+ style=3D"padding:0 50px 32px"><table cellPadding=3D"0" cellSpacing=3D"0" s=
+tyle=3D"width:100%;border:0;border-spacing:0"><tr><td valign=3D"top"><div a=
+lign=3D"center"> <!--[if mso]><v:roundrect xmlns:v=3D"urn:schemas-microsoft=
+-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word" href=3D"https:/=
+/au.indeed.com/jobs=3Fq=3DFreelance&hl=3Den&from=3Dja&radius=3D50&alid=3D64=
+b2e1eb147b7a5da4c6ec7a&tmtk=3D1hd9qj0mvlrjq802&utm_campaign=3Djob_alerts&ut=
+m_medium=3Demail&utm_source=3Djobseeker_emails&of=3D1&fr=3Dt" title=3D"link=
+ to view all jobs" style=3D"height:48px; width:304px; v-text-anchor: middle=
+;" arcsize=3D"18%" strokecolor=3D"#FFFFFF" strokeweight=3D"1.5pt" fillcolor=
+=3D"#2557A7" > <w:anchorlock/> <center style=3D"color:#FFFFFF; font-family:=
+'Noto Sans', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold=
+;"> View more jobs </center> </v:roundrect><![endif]--> <a class=3D"" href=
+=3D"https://au.indeed.com/jobs=3Fq=3DFreelance&hl=3Den&from=3Dja&radius=3D5=
+0&alid=3D64b2e1eb147b7a5da4c6ec7a&tmtk=3D1hd9qj0mvlrjq802&utm_campaign=3Djo=
+b_alerts&utm_medium=3Demail&utm_source=3Djobseeker_emails&of=3D1&fr=3Dt" st=
+yle=3D"mso-hide:all;background-color:#2557A7;border:#FFFFFF solid 2px;borde=
+r-radius:8px;color:#FFFFFF;display:inline-block;font-family:'Noto Sans', He=
+lvetica, Arial, sans-serif;font-size:16px;font-weight:bold;line-height:48px=
+;text-align:center;text-decoration:none;width:304px;height:48px;-webkit-tex=
+t-size-adjust:none">View more jobs</a></div></td></tr><tr><td class=3D"r-a"=
+ style=3D"padding:24px 48px 0"><p align=3D"center" style=3D"font-size:14px;=
+color:#2D2D2D;Margin:0">View jobs: <a href=3D"https://au.indeed.com/jobs=3F=
+q=3DFreelance&hl=3Den&from=3Dja&radius=3D50&alid=3D64b2e1eb147b7a5da4c6ec7a=
+&tmtk=3D1hd9qj0mvlrjq802&utm_campaign=3Djob_alerts&utm_medium=3Demail&utm_s=
+ource=3Djobseeker_emails&of=3D1&fr=3Db&fromage=3D1" style=3D"color:#2557A7;=
+font-size:14px;font-weight:normal;text-decoration:underline">since yesterda=
+y</a> - <a href=3D"https://au.indeed.com/jobs=3Fq=3DFreelance&hl=3Den&from=
+=3Dja&radius=3D50&alid=3D64b2e1eb147b7a5da4c6ec7a&tmtk=3D1hd9qj0mvlrjq802&u=
+tm_campaign=3Djob_alerts&utm_medium=3Demail&utm_source=3Djobseeker_emails&o=
+f=3D1&fr=3Db&fromage=3D7" style=3D"color:#2557A7;font-size:14px;font-weight=
+:normal;text-decoration:underline">for last 7 days</a></p></td></tr></table=
+></td></tr><tr><td><table width=3D"100%" cellPadding=3D"0" cellSpacing=3D"0=
+" role=3D"presentation" border=3D"0"><tr><td><table width=3D"100%" cellPadd=
+ing=3D"0" cellSpacing=3D"0" role=3D"presentation" border=3D"0"><tr><td styl=
+e=3D"background-color:#F2F2F2;height:2px;display:block">=E2=80=8C</td></tr>=
+</table></td></tr><tr><td class=3D"jecl-cmpwar-title" style=3D"text-align:c=
+enter;padding:48px 60px 0"><span><p style=3D"font-family:'Noto Sans', Helve=
+tica, Arial, sans-serif;font-size:24px;line-height:28px;font-weight:bold;le=
+tter-spacing:0.06px;color:#2D2D2D;Margin:0">Would you like to help other jo=
+b seekers=3F</p></span></td></tr><tr><td><table width=3D"100%" cellPadding=
+=3D"0" cellSpacing=3D"0" role=3D"presentation" border=3D"0"><tr><td align=
+=3D"center" class=3D"jecl-cmpwar-colorBar" style=3D"padding:24px 60px 32px"=
+><table width=3D"100%" cellPadding=3D"0" cellSpacing=3D"0" role=3D"presenta=
+tion" border=3D"0"><tr><td align=3D"center" style=3D"background-color:#E4E2=
+E0;height:1px;font-size:1px;display:block">&zwnj;</td></tr></table></td></t=
+r><tr><td class=3D"jecl-cmpwar-companyLogo" align=3D"center"><img role=3D"i=
+mg" src=3D"https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/e108=
+58f8bf680cbc12bff0244c842427" alt=3D"" width=3D"60" height=3D"60" style=3D"=
+height:auto;line-height:100%;outline:none;text-decoration:none;Margin:0" bo=
+rder=3D"0"/></td></tr><tr><td align=3D"center" class=3D"jecl-cmpwar-subtitl=
+e" style=3D"padding:24px 60px 4px"><span><span style=3D"font-family:'Noto S=
+ans', Helvetica, Arial, sans-serif;font-size:14px;line-height:20px;color:#4=
+24242;font-weight:400;Margin:0">Rate your experience working at</span></spa=
+n></td></tr><tr><td align=3D"center" class=3D"jecl-cmpwar-companyName" styl=
+e=3D"padding:0 60px 24px"><span><span style=3D"color:#2D2D2D;font-size:24px=
+;line-height:28px;font-family:'Noto Sans', Helvetica, Arial, sans-serif;tex=
+t-decoration:none !important;font-weight:700;letter-spacing:-0.1px;Margin:0=
+">McDonald's</span></span></td></tr><tr><td align=3D"center"><span><a href=
+=3D"https://au.indeed.com/cmp/_/jaclick=3Frd=3DAAAAAENPWEfF2vvv3%2By0clR283=
+0J5UDQ9QHQl9mWJ1v8J0SFXJEoaNWEJP0VuwK0VqW8dvU41TMMHyzylicHBPjMMQTtpne9gIK0M=
+6FjXwglSGftmHMDOR7JvkMaF7qEodV5IzTSHFat8cv1g2PbjiKjM57aKUtxXajCapTdp4fzrx5D=
+K20%3D&campaignid=3Dac1976ja1-6-1-t1&tmtk=3D1hd9qj0mvlrjq802&acctCmpTkn=3D0=
+00000009b6c6c35c70444a82d0aabf9ed89490c182fba42eac8a19ce48f0af97920729a24f3=
+15dad27449f4ef45b4ca" style=3D"color:#2A2226;text-decoration:none"><img src=
+=3D"https://subscriptions.indeed.com/static/images/ja/WAR_stars_aurora.png"=
+ alt=3D"Write a review" class=3D"jecl-cmpwar-starCTA" width=3D"122" height=
+=3D"44" border=3D"0" style=3D"line-height:100%;outline:none;text-decoration=
+:none;Margin:0"/></a></span></td></tr></table></td></tr><tr><td class=3D"je=
+cl-cmpwar-botSeparator" style=3D"padding:48px 60px"><table width=3D"100%" c=
+ellPadding=3D"0" cellSpacing=3D"0" role=3D"presentation" border=3D"0"><tr><=
+td style=3D"background-color:#F2F2F2;height:2px;font-size:2px;display:block=
+">=E2=80=8C</td></tr></table></td></tr><tr><td class=3D"jecl-cmpwar-footer"=
+ align=3D"center" style=3D"width:370px;Margin:0 auto;padding:0 0 48px 0"><s=
+pan><p style=3D"font-family:'Noto Sans', Helvetica, Arial, sans-serif;Margi=
+n:0;font-size:14px;font-weight:400;line-height:22px;letter-spacing:-0.12px;=
+color:#000000">Your review helps other job seekers determine if this compan=
+y is the right fit.</p></span></td></tr></table></td></tr></table><table cl=
+ass=3D"width-550" width=3D"100%" cellPadding=3D"0" cellSpacing=3D"0" style=
+=3D"max-width:550px;background-color:#F2F2F2;border:0"><tr><td class=3D"foo=
+ter-box" style=3D"padding:24px 4px"><table cellPadding=3D"0" cellSpacing=3D=
+"0" style=3D"max-width:425px;border:0" align=3D"center"><tr><td align=3D"ce=
+nter"><a href=3D"https://subscriptions.indeed.com/update/64b2e1eb147b7a5da4=
+c6ec7a=3Ftoken=3DCkDihToS6-BpBAtN31nkpytp7AZ267pauvtGGUPSZ2GeGbU-26sAWITZ9g=
+JB-2K3WkTWq64UmY1aXUnjwJhf1IVnEiBtihaWYI-34Cb0khsc89Qa3SFf1nXtvvcrh_0f8RUqJ=
+BoQa-g3Ilyr7z_SaYNb6zylmg%3D%3D&co=3DAU&hl=3Den&tmtk=3D1hd9qj0mvlrjq802&fro=
+m=3DjaEditAlert" style=3D"align:CENTER;color:#2557A7;font-family:'Noto Sans=
+', Helvetica, Arial, sans-serif;font-size:12px;font-weight:normal;letter-sp=
+acing:-0.12px;line-height:36px;padding:0 0 20px;text-decoration:underline">=
+Edit this job alert</a></td></tr><tr><td class=3D"jecl-Disclaimer-text" ali=
+gn=3D"center" style=3D"font-family:'Helvetica Neue', Helvetica, Arial, 'Lib=
+eration Sans', Roboto, Noto, sans-serif;font-size:12px;line-height:16px;col=
+or:#424242;padding:32px 0 0;Margin:0 auto"><strong>Do not share this email<=
+/strong></td></tr><tr><td class=3D"jecl-Disclaimer-text" align=3D"center" s=
+tyle=3D"font-family:'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', =
+Roboto, Noto, sans-serif;font-size:12px;line-height:16px;color:#424242;padd=
+ing:0;Margin:0 auto">This email contains secure links that are personalised=
+ for you. Please do not share this email or links with others.</td></tr><tr=
+><td class=3D"jecl-Disclaimer-text" align=3D"center" style=3D"font-family:'=
+Helvetica Neue', Helvetica, Arial, 'Liberation Sans', Roboto, Noto, sans-se=
+rif;font-size:12px;line-height:16px;color:#424242;padding:32px 0 0;Margin:0=
+ auto">Salaries estimated if unavailable. When a job posting doesn't includ=
+e a salary, we estimate it by looking at similar jobs. Estimated salaries a=
+re not endorsed by the companies offering those positions and may vary from=
+ actual salaries.</td></tr><tr><td class=3D"jecl-Disclaimer-text" align=3D"=
+center" style=3D"font-family:'Helvetica Neue', Helvetica, Arial, 'Liberatio=
+n Sans', Roboto, Noto, sans-serif;font-size:12px;line-height:16px;color:#42=
+4242;padding:32px 0 0;Margin:0 auto">&sup1; Displayed here are Job Ads that=
+ match the job alert query you saved. Indeed may be compensated by these em=
+ployers, helping keep Indeed free for job seekers. Indeed ranks Job Ads bas=
+ed on a combination of employer bids and relevance, such as your search ter=
+ms and other activity on Indeed. For more information, see the <a style=3D"=
+text-decoration:underline;color:#085FF7;" class=3D"terms-link" href=3D"http=
+s://au.indeed.com/legal=3Fhl=3Den">Indeed Terms of Service</a></td></tr></t=
+able><table class=3D"jecl-Footer" width=3D"100%" cellPadding=3D"0" cellSpac=
+ing=3D"0" style=3D"font-size:12px;color:#424242;line-height:22px;Margin:0 a=
+uto;border:0"><tr><td class=3D"r-7" lang=3D"en" align=3D"center" style=3D"p=
+adding:48px 0px 0px">=C2=A9 2023 Indeed Ireland Operations, Ltd.</td></tr><=
+tr><td class=3D"r-8" lang=3D"en" align=3D"center" style=3D"padding:0px">Ind=
+eed Ireland Operations Limited, Block B, Capital Dock, 80 Sir John Rogerson=
+'s Quay, Grand Canal Dock, Dublin, 2, D02 HE36</td></tr><tr><td class=3D"r-=
+6" align=3D"center" style=3D"padding:48px 0px 64px"><a href=3D"https://au.i=
+ndeed.com/legal=3Fhl=3Den#privacy" title=3D"Privacy Policy" style=3D"color:=
+#2557A7;text-decoration:underline" class=3D"r-0">Privacy Policy</a><span cl=
+ass=3D"r-5"> | </span><a href=3D"https://au.indeed.com/legal=3Fhl=3Den" tit=
+le=3D"Terms" style=3D"color:#2557A7;text-decoration:underline" class=3D"r-1=
+">Terms</a><span class=3D"r-5"> | </span><a href=3D"https://support.indeed.=
+com/hc/en-au" title=3D"Help Centre" style=3D"color:#2557A7;text-decoration:=
+underline" class=3D"r-2">Help Centre</a><br/><a href=3D"https://subscriptio=
+ns.indeed.com=3Ftoken=3DCkDihToS6-BpBAtN31nkpytp7AZ267pauvtGGUPSZ2GeGbU-26s=
+AWITZ9gJB-2K3WkTWq64UmY1aXUnjwJhf1IVnEiBtihaWYI-34Cb0khsc89Qa3SFf1nXtvvcrh_=
+0f8RUqJBoQa-g3Ilyr7z_SaYNb6zylmg%3D%3D&co=3DAU&hl=3Den&tmtk=3D1hd9qj0mvlrjq=
+802&from=3Dja" title=3D"Manage email settings" style=3D"color:#2557A7;text-=
+decoration:underline" class=3D"r-3">Manage email settings</a><span class=3D=
+"r-5"> | </span><a href=3D"https://subscriptions.indeed.com/alerts/cancel=
+=3Ftoken=3DCkDihToS6-BpBAtN31nkpytp7AZ267pauvtGGUPSZ2GeGbU-26sAWITZ9gJB-2K3=
+WkTWq64UmY1aXUnjwJhf1IVnEiBtihaWYI-34Cb0khsc89Qa3SFf1nXtvvcrh_0f8RUqJBoQa-g=
+3Ilyr7z_SaYNb6zylmg%3D%3D&co=3DAU&hl=3Den&tmtk=3D1hd9qj0mvlrjq802&subId=3D6=
+4b2e1eb147b7a5da4c6ec7a&rgtk=3D1hd9qj22cr56380b&from=3Dja" title=3D"Unsubsc=
+ribe from this email" style=3D"color:#2557A7;text-decoration:underline" cla=
+ss=3D"r-4">Unsubscribe from this email</a></td></tr></table></td></tr></tab=
+le><!--[if (gte mso 9)|(IE)]> </td> </tr> </table> <![endif]--></td></tr></=
+table><img alt=3D"" src=3D"https://subscriptions.indeed.com/imgping=3Ftype=
+=3Djafull&amp;tk=3D1hd9qj0mvlrjq802&amp;aluidhash=3D64b2e1eb147b7a5da4c6ec7=
+a&amp;clipped=3Dfalse" style=3D"height:1.25rem;width:1px"/></div></body></h=
+tml>
+--_----6H8jtPZ9JH01A1XwN5IQyA===_4B/87-13684-53324356--
+

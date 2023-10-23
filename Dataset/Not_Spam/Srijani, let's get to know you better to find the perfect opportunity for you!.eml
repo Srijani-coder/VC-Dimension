@@ -1,0 +1,222 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:8691:b0:4fd:23d3:a27 with SMTP id e17csp661717pxn;
+        Sun, 22 Oct 2023 00:32:20 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHcoCpR+4qLxjv35A5FxeNixAGScSzazypglKggHKmkUqeqVWVcO8QPJxfNGEeUFIP7MyEl
+X-Received: by 2002:a05:622a:53:b0:412:2d6d:932a with SMTP id y19-20020a05622a005300b004122d6d932amr8352018qtw.56.1697959939993;
+        Sun, 22 Oct 2023 00:32:19 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697959939; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Ai6MxYX8N9znlmhX35lveAsAoAj6PVp92dxNnWWIcDGpWQfEoYf+yvrx8WjIqlLE68
+         kTeDAl01YLQTAXHX37CqVz/M1p/8LvdnHFHD9CgjEa0hQbIIMYXYx+UvPUDilnQyIxQ5
+         pUu0UY1ziIxOWT0Me7L8I7tEYbA8KAF8WyBIbqnMeMhKduBztgDVLj+zdyHMZuQ6WACf
+         fgdPrxpR3NncKCjocLB0FK2tFheVDxga7QnAjgvaQB6XRLj/gCd9xXHtSTObSm80G91Z
+         VjDBJQLYFIa/y/od9p3nvJIJiks4M8nn4nZTU/w8V4Vonp+yr59cirrf+oMbwKRWf2d6
+         0+pQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:list-unsubscribe:precedence:feedback-id:subject:message-id
+         :mime-version:from:date:dkim-signature:dkim-signature;
+        bh=UO3nYl8HXBGeVQePCNmtKGD8bEnP4VK1GjhCtCqiNfQ=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=j11efPeHVaMb46YLptoEyq0dAaP72CcsgcQXWqNVVo00jjo0a8vcjLOrCgmI15px4j
+         IGHRvHu38kQgFDuEQ/lEfW+klKQOkuvVJ9H/7bVQHN8XZQict3zVOgunfLwfh0E0LDHm
+         xkG9NXK0/mtJ1ACCTUwQKBpRihgGrzHI6dOm9H4xIQ6yldfwWOoXf8H46a+nqQIUBY2l
+         bLWWHoTI7rGmoKLcVu6yses7vVfeA4T75LDSDfpHkoPbL2xNzWCBWUpGQEgjjjq9sHh1
+         qk5ir2Lv3PczqhaK3XtqdbnuFsi0J0xgjwdJphDe1yzduSHWd9nWO1/vwGI8Z/xo/yix
+         7aqA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@turing.com header.s=s1 header.b=j3f6noYm;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=tPHMCXGP;
+       spf=pass (google.com: domain of bounces+12552604-71a3-srijani515=gmail.com@em3570.turing.com designates 159.183.131.128 as permitted sender) smtp.mailfrom="bounces+12552604-71a3-srijani515=gmail.com@em3570.turing.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=turing.com
+Return-Path: <bounces+12552604-71a3-srijani515=gmail.com@em3570.turing.com>
+Received: from o4.ptr638.turing.com (o4.ptr638.turing.com. [159.183.131.128])
+        by mx.google.com with ESMTPS id g22-20020ac87d16000000b00417b80188eesi3644090qtb.518.2023.10.22.00.32.19
+        for <srijani515@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 22 Oct 2023 00:32:19 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+12552604-71a3-srijani515=gmail.com@em3570.turing.com designates 159.183.131.128 as permitted sender) client-ip=159.183.131.128;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@turing.com header.s=s1 header.b=j3f6noYm;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=tPHMCXGP;
+       spf=pass (google.com: domain of bounces+12552604-71a3-srijani515=gmail.com@em3570.turing.com designates 159.183.131.128 as permitted sender) smtp.mailfrom="bounces+12552604-71a3-srijani515=gmail.com@em3570.turing.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=turing.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=turing.com;
+	h=content-type:from:mime-version:subject:list-unsubscribe:x-feedback-id:
+	to:cc:content-type:from:subject:to;
+	s=s1; bh=UO3nYl8HXBGeVQePCNmtKGD8bEnP4VK1GjhCtCqiNfQ=;
+	b=j3f6noYmnse9m4Z3hOXy83kE8r766+lx2gmy+avyD9GhJbjrz6sl6cctibfaVh6bmKHD
+	S7rKWLkMVwx2aC2ya4cs0iSM19c86ip1XdzReL+ZPwaf+4JgD02cFBin2PzM2yinAx48YU
+	o9M/Tmx4vqLueezyskoPGsmCCOsf0e24ZSvZg8MCQ6iHLlRP5whQ7yzLmYkFLB/cfd+1v0
+	VVoYOAEOlEiCXN4GiqorNqXsQEGfh5Lx4nGQWsijxdt2/UKp+b/Hme0zhAy6A6S93WM+TU
+	kSRNL2PwZjHItm54qc+M/3vaHzdx0U/5opqFqZ9mIlkC5mbs1vxtAEop/uhW9U4A==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:list-unsubscribe:x-feedback-id:
+	to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=UO3nYl8HXBGeVQePCNmtKGD8bEnP4VK1GjhCtCqiNfQ=;
+	b=tPHMCXGPhsUNuDxNqI1mCIg59+jeDbm1Q+W0T5wTi4Y+LoPjw1NrfoD2/zWZT6XLa13x
+	WhmjQK6ZsESw2l+PR1qEJroS4O9sNCP9Coqgqohr2b8ILAaq7xHUXNajm7BxJqveRx+POH
+	LZ0JJXNsk33jlGACIR6EiV7g3u6sFGEGg=
+Received: by filterdrecv-697c458b48-nrfzp with SMTP id filterdrecv-697c458b48-nrfzp-1-6534D003-1B
+        2023-10-22 07:32:19.460941379 +0000 UTC m=+391878.215751751
+Received: from MTI1NTI2MDQ (unknown)
+	by geopod-ismtpd-9 (SG) with HTTP
+	id a7TcwdujQDmPZfZFdeD4_w
+	Sun, 22 Oct 2023 07:32:19.355 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=aae046c9b6127791434c089f4ba84aa96d6b448cbb630c6fc7c420101986
+Date: Sun, 22 Oct 2023 07:32:19 +0000 (UTC)
+From: "Chul Kwon (Head of Developer Growth and Engagement, Turing)"
+	<hiring+104@turing.com>
+Mime-Version: 1.0
+Message-ID: <a7TcwdujQDmPZfZFdeD4_w@geopod-ismtpd-9>
+Subject: Srijani, let's get to know you better to find the perfect opportunity
+ for you!
+Feedback-ID: 531:c2:t1:TuringECS
+Precedence: bulk
+List-Unsubscribe: <mailto:emailabuse@turing.com?subject=unsubscribe>
+X-Company-Id: 
+ =?us-ascii?Q?gmail--09a77b5c9407de8d5f308e2362e065972edc9137d27a461a134429c?=
+ =?us-ascii?Q?4d0ed01676f4e4944?=
+X-Feedback-ID: 12552604:SG
+X-SG-EID: 
+ =?us-ascii?Q?QQXy2ilH8WOTrI75nPdxK8A58o3dLs0NfZKayTh2QX18i2zu47TfeOaTflOpxj?=
+ =?us-ascii?Q?XEJuG8Sv=2FbpEKdaIv8Y32v9hYvmgVrz=2FroJijXi?=
+ =?us-ascii?Q?DNVNfelAOyhEJvhHHJ1S4dZ+r5JC4GheQ=2F7Bz5M?=
+ =?us-ascii?Q?NO37HzPKJ0Tl=2F3rKGlHvABk1ibYyarbcl4payOr?=
+ =?us-ascii?Q?54qJGcEdJSKEIA9pj6LauVNWZn+Xf1jNnkVCyHR?=
+ =?us-ascii?Q?r2+eZKNJQni0=2FPlehLz2axN5sXAFnrzyOJ9IJC5?=
+ =?us-ascii?Q?1DGp=2F0jMBzxoidSG1VO2ov1bLtx870dv3MpbLcG?=
+ =?us-ascii?Q?0ggqYNxRRrVEieU12qAToMxx?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsbxbatT1fJaR1PNCPmDs9oL4g7RJmrmBeD63Itjf08g?=
+ =?us-ascii?Q?vywnKDq2F2cCQPMua5YJmA3DpC8GaANHrVUp5Oi?=
+ =?us-ascii?Q?Z+44P1cD2NlP7Odz8GJLd=2FOGo6R?=
+To: srijani515@gmail.com
+X-Entity-ID: MTdlrvC5bwz/pPfXkSAB+A==
+
+--aae046c9b6127791434c089f4ba84aa96d6b448cbb630c6fc7c420101986
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+<div style=3D"font-family:sans-serif;"><p>Hi Srijani</p><p>I am Chul Kwon, =
+product lead at Turing. I am reaching out to let you know that we have gott=
+en many developers AI-matched to high-paying U.S. tech jobs since the last =
+time we saw you! Just last week, we matched a developer to a job opportunit=
+y that could have been yours!</p><p>And all of them are high-paying, long-t=
+erm remote U.S. jobs with flexible schedules and elite team members! (Isn=
+=E2=80=99t that the dream now?)</p><p>Don't worry Srijani, your chance to g=
+et a job is still here. There are fresh new positions that can be yours.</p=
+><p><b>All you have to do is complete your tests, starting with the <a href=
+=3D"https://ct.turing.com?ti=3Df706f6f637b75e205dceced24921d893a2e85113fc2b=
+ffb3002d380104db9c4fa156e0b3f9395b2a92a38a8bcd41547626afeeeb656f9acbe6840c3=
+93f682f977bb9e2cd4636aaebc5556e96b429652d90ed4f25fcda2e047e93991f5b982fd7be=
+c2b0cb8d4801060fbb6051b82f9a564f4563a0bb2201&rd=3Dhttps%3A%2F%2Fdevelopers.=
+turing.com%2Fdashboard%2Fturing_test%3Ftoken%3DeyJhbGciOiJIUzI1NiIsInR5cCI6=
+IkpXVCJ9.eyJ1aWQiOjI4MjI3MTksImxhbmRpbmciOnRydWUsImVtYWlsIjoic3JpamFuaTUxNU=
+BnbWFpbC5jb20iLCJyb2xlX2lkIjozLCJuYW1lIjoiU3JpamFuaSBDaGFrcmFiYXJ0aSIsImlhd=
+CI6MTY5Nzc2MTc5MSwiZXhwIjoxNzAyOTQ1NzkxfQ.rVuLbRGKmKZdgijHavmVwYueMgp_8Xi8W=
+jNmigzZ5M8%26utm_source%3Dremarketing%26utm_medium%3Demail%26utm_campaign%3=
+Dwxp_invite%26utm_content%3Da_text%26s%3Dwxp_invite%26n%3Da_text&email_id=
+=3Dc5abce4d-5437-4063-a668-913e94a9b05a">Work Experience Survey</a>.</b></p=
+><p>The Work Experience Survey is important for us to know more about you. =
+There are no right or wrong answers.</p><p>We hope to see you land the next=
+ best opportunity, taking your career to amazing heights with high-paying o=
+pportunities and career-defining projects!</p><p style=3D"text-align:center=
+"><a href=3D"https://ct.turing.com?ti=3Df706f6f637b75e205dceced24921d893a2e=
+85113fc2bffb3002d380104db9c4fa156e0b3f9395b2a92a38a8bcd41547626afeeeb656f9a=
+cbe6840c393f682f977bb9e2cd4636aaebc5556e96b429652d90ed4f25fcda2e047e93991f5=
+b982fd7bec2b0cb8d4801060fbb6051b82f9a564f4563a0bb2201&rd=3Dhttps%3A%2F%2Fde=
+velopers.turing.com%2Fdashboard%2Fturing_test%3Ftoken%3DeyJhbGciOiJIUzI1NiI=
+sInR5cCI6IkpXVCJ9.eyJ1aWQiOjI4MjI3MTksImxhbmRpbmciOnRydWUsImVtYWlsIjoic3Jpa=
+mFuaTUxNUBnbWFpbC5jb20iLCJyb2xlX2lkIjozLCJuYW1lIjoiU3JpamFuaSBDaGFrcmFiYXJ0=
+aSIsImlhdCI6MTY5Nzc2MTc5MSwiZXhwIjoxNzAyOTQ1NzkxfQ.rVuLbRGKmKZdgijHavmVwYue=
+Mgp_8Xi8WjNmigzZ5M8%26utm_source%3Dremarketing%26utm_medium%3Demail%26utm_c=
+ampaign%3Dwxp_invite%26utm_content%3Dc_text%26s%3Dwxp_invite%26n%3Dc_text&e=
+mail_id=3Dc5abce4d-5437-4063-a668-913e94a9b05a" style=3D"display:inline-blo=
+ck;margin-bottom:12px;margin-top:12px;padding:10px;text-align:center;text-d=
+ecoration:none;font-weight:bold;letter-spacing:0.72px;border:0;background-c=
+olor:#4285f4;color:white;border-radius:4px" target=3D"_blank">Take Work Exp=
+erience Survey NOW!</a></p><br><p>All the best, <br>Chul Kwon<br>Product Le=
+ad <br>Traditional recruiting is over. Welcome to the Talent Cloud. </p></d=
+iv><img alt=3D'.' src=3Dhttps://manage.turing.com/analytics/open/f706f6f637=
+b75e205dceced24921d893a2e85113fc2bffb3002d380104db9c4fa156e0b3f9395b2a92a38=
+a8bcd41547626afeeeb656f9acbe6840c393f682f977bb9e2cd4636aaebc5556e96b429652d=
+90ed4f25fcda2e047e93991f5b982fd7bec2b0cb8d4801060fbb6051b82f9a564f4563a0bb2=
+201 height=3D'1' width=3D'1'/><p style=3D'text-align: center'> Please use t=
+his link to <a href =3D 'https://unsubscription.turing.com/next?t=3Dcust&ui=
+=3Da7629a17ccfad600e17ae034f49bbd375ab651de68af3bb8dd7298d8a07c0b1b5c62572c=
+4436dac70a30836a2cddac009c94070f9df665ce141813dcacdf15c3c9443b4622c7fa80b73=
+29e770e820fdef96cbc3cc0a89e9e5fbe7b951dea3d4784684abbbc8cb3726827398f3dcf39=
+f099624b5bd8e38bd1c823d942fd927f60f89bf18f0cd36de6809f654143bef214eedff5f32=
+b27a52ab92d8e563fccfc&email=3Dsrijani515%40gmail.com&emailTypeId=3D1&target=
+=3Dcustomer&emailId=3Dc5abce4d-5437-4063-a668-913e94a9b05a' style =3D 'colo=
+r: #777777'>unsubscribe</a> from all our emails.</p>
+--aae046c9b6127791434c089f4ba84aa96d6b448cbb630c6fc7c420101986
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<div style=3D"font-family:sans-serif;"><p>Hi Srijani</p><p>I am Chul Kwon, =
+product lead at Turing. I am reaching out to let you know that we have gott=
+en many developers AI-matched to high-paying U.S. tech jobs since the last =
+time we saw you! Just last week, we matched a developer to a job opportunit=
+y that could have been yours!</p><p>And all of them are high-paying, long-t=
+erm remote U.S. jobs with flexible schedules and elite team members! (Isn=
+=E2=80=99t that the dream now?)</p><p>Don't worry Srijani, your chance to g=
+et a job is still here. There are fresh new positions that can be yours.</p=
+><p><b>All you have to do is complete your tests, starting with the <a href=
+=3D"https://ct.turing.com?ti=3Df706f6f637b75e205dceced24921d893a2e85113fc2b=
+ffb3002d380104db9c4fa156e0b3f9395b2a92a38a8bcd41547626afeeeb656f9acbe6840c3=
+93f682f977bb9e2cd4636aaebc5556e96b429652d90ed4f25fcda2e047e93991f5b982fd7be=
+c2b0cb8d4801060fbb6051b82f9a564f4563a0bb2201&rd=3Dhttps%3A%2F%2Fdevelopers.=
+turing.com%2Fdashboard%2Fturing_test%3Ftoken%3DeyJhbGciOiJIUzI1NiIsInR5cCI6=
+IkpXVCJ9.eyJ1aWQiOjI4MjI3MTksImxhbmRpbmciOnRydWUsImVtYWlsIjoic3JpamFuaTUxNU=
+BnbWFpbC5jb20iLCJyb2xlX2lkIjozLCJuYW1lIjoiU3JpamFuaSBDaGFrcmFiYXJ0aSIsImlhd=
+CI6MTY5Nzc2MTc5MSwiZXhwIjoxNzAyOTQ1NzkxfQ.rVuLbRGKmKZdgijHavmVwYueMgp_8Xi8W=
+jNmigzZ5M8%26utm_source%3Dremarketing%26utm_medium%3Demail%26utm_campaign%3=
+Dwxp_invite%26utm_content%3Da_text%26s%3Dwxp_invite%26n%3Da_text&email_id=
+=3Dc5abce4d-5437-4063-a668-913e94a9b05a">Work Experience Survey</a>.</b></p=
+><p>The Work Experience Survey is important for us to know more about you. =
+There are no right or wrong answers.</p><p>We hope to see you land the next=
+ best opportunity, taking your career to amazing heights with high-paying o=
+pportunities and career-defining projects!</p><p style=3D"text-align:center=
+"><a href=3D"https://ct.turing.com?ti=3Df706f6f637b75e205dceced24921d893a2e=
+85113fc2bffb3002d380104db9c4fa156e0b3f9395b2a92a38a8bcd41547626afeeeb656f9a=
+cbe6840c393f682f977bb9e2cd4636aaebc5556e96b429652d90ed4f25fcda2e047e93991f5=
+b982fd7bec2b0cb8d4801060fbb6051b82f9a564f4563a0bb2201&rd=3Dhttps%3A%2F%2Fde=
+velopers.turing.com%2Fdashboard%2Fturing_test%3Ftoken%3DeyJhbGciOiJIUzI1NiI=
+sInR5cCI6IkpXVCJ9.eyJ1aWQiOjI4MjI3MTksImxhbmRpbmciOnRydWUsImVtYWlsIjoic3Jpa=
+mFuaTUxNUBnbWFpbC5jb20iLCJyb2xlX2lkIjozLCJuYW1lIjoiU3JpamFuaSBDaGFrcmFiYXJ0=
+aSIsImlhdCI6MTY5Nzc2MTc5MSwiZXhwIjoxNzAyOTQ1NzkxfQ.rVuLbRGKmKZdgijHavmVwYue=
+Mgp_8Xi8WjNmigzZ5M8%26utm_source%3Dremarketing%26utm_medium%3Demail%26utm_c=
+ampaign%3Dwxp_invite%26utm_content%3Dc_text%26s%3Dwxp_invite%26n%3Dc_text&e=
+mail_id=3Dc5abce4d-5437-4063-a668-913e94a9b05a" style=3D"display:inline-blo=
+ck;margin-bottom:12px;margin-top:12px;padding:10px;text-align:center;text-d=
+ecoration:none;font-weight:bold;letter-spacing:0.72px;border:0;background-c=
+olor:#4285f4;color:white;border-radius:4px" target=3D"_blank">Take Work Exp=
+erience Survey NOW!</a></p><br><p>All the best, <br>Chul Kwon<br>Product Le=
+ad <br>Traditional recruiting is over. Welcome to the Talent Cloud. </p></d=
+iv><img alt=3D'.' src=3Dhttps://manage.turing.com/analytics/open/f706f6f637=
+b75e205dceced24921d893a2e85113fc2bffb3002d380104db9c4fa156e0b3f9395b2a92a38=
+a8bcd41547626afeeeb656f9acbe6840c393f682f977bb9e2cd4636aaebc5556e96b429652d=
+90ed4f25fcda2e047e93991f5b982fd7bec2b0cb8d4801060fbb6051b82f9a564f4563a0bb2=
+201 height=3D'1' width=3D'1'/><p style=3D'text-align: center'> Please use t=
+his link to <a href =3D 'https://unsubscription.turing.com/next?t=3Dcust&ui=
+=3Da7629a17ccfad600e17ae034f49bbd375ab651de68af3bb8dd7298d8a07c0b1b5c62572c=
+4436dac70a30836a2cddac009c94070f9df665ce141813dcacdf15c3c9443b4622c7fa80b73=
+29e770e820fdef96cbc3cc0a89e9e5fbe7b951dea3d4784684abbbc8cb3726827398f3dcf39=
+f099624b5bd8e38bd1c823d942fd927f60f89bf18f0cd36de6809f654143bef214eedff5f32=
+b27a52ab92d8e563fccfc&email=3Dsrijani515%40gmail.com&emailTypeId=3D1&target=
+=3Dcustomer&emailId=3Dc5abce4d-5437-4063-a668-913e94a9b05a' style =3D 'colo=
+r: #777777'>unsubscribe</a> from all our emails.</p><img src=3D"http://url1=
+550.turing.com/wf/open?upn=3DrWYU-2B0i-2B0Qcz8HINw-2Ff3NK-2FUlPkrdthebD6Und=
+9AwA9Co-2BSq97CUF8F-2BEKFjdsDoEqNgAfCpQXi506QvCiSjMQJnncn15HqFQ7JD1Mh8z8nSw=
+SZXB1fVHfAfYkO3qeLR-2BJ7DlAsIMUdDpRm-2BsBileI3ZTymkRWj82TWmxGs5okVzb7AVaehv=
+ZEP9AeJq-2FK-2FQQ-2FNbQa8nx70UHK5Lxzbbp-2BhI2FKCW8htWcWDDY7QYN1dZ3BNmqi3CWI=
+6CmKZV1S9FqtDGq9s4sTUN-2B8N8OjiJTdxtAvPlb6dMzA5lWdfieeEiSqiigpK56cm3b5Oyxax=
+hEHUzqODoJWDF4DM8pFOmA-3D-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"0=
+" style=3D"height:1px !important;width:1px !important;border-width:0 !impor=
+tant;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !imp=
+ortant;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !=
+important;padding-right:0 !important;padding-left:0 !important;"/>
+--aae046c9b6127791434c089f4ba84aa96d6b448cbb630c6fc7c420101986--

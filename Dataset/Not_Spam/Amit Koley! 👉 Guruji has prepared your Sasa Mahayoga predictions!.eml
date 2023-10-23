@@ -1,0 +1,256 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:8691:b0:4fd:23d3:a27 with SMTP id e17csp252381pxn;
+        Sat, 21 Oct 2023 05:03:11 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IExB37wPQ6l0nU6INRB9SR+T7Uf/5Lsbfi8P7YlyIEk6Bz5XIFLbIcI1ZQpNVevZv42bW6F
+X-Received: by 2002:a92:d4ca:0:b0:352:6a32:59d5 with SMTP id o10-20020a92d4ca000000b003526a3259d5mr4938237ilm.9.1697889791601;
+        Sat, 21 Oct 2023 05:03:11 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697889791; cv=none;
+        d=google.com; s=arc-20160816;
+        b=EziJxUI5+5smnyZcl8NQoeJ23Y7UVsCgZCs/IlSJbUEHAYP6nGWC/Om3ZsirGdNERU
+         Qc4lHaA4cXD/WogkcNUJPLiOxh+fofTcE8T6IYK9uZ8khnKqgNtfB4IxGQFUIGEkBdUt
+         1zztL6StOC+yIlFMoW5MLLcbHmC6ZQ1BiVW6qXXQ6qr9gkNDw2ehTSRGppxC+VzffdGM
+         tzlqFTu52rbjvdDkvAXVBVkffHgyIpbIgONnR6JVmdqLNjYfmel5WIpUtJJ1QPKCsY5W
+         3ZSSI8VBBs6yKq2TUa4zCTNsYcmKtmbAP8AVOEg13uGKHnvtfYUnYz4q6WXj9TMLjTG9
+         OTiQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:feedback-id:message-id:list-unsubscribe-post
+         :list-unsubscribe:date:reply-to:to:from:subject:dkim-signature;
+        bh=v1bCL1EkHhvkpqgcGnH0dTrmDCxZTt/OuaB9ZM+TVLo=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=csaDSE8tmXmVXNZW2w4LFCNR6kNWJiHVEiDlxs8FRqBhDLVIsTCKzLYF4Q7QBJlTs0
+         TzVZ8aErthDsVsG7dKCNWO3W5EpwxjObjwmI54MMj4OPtn+hOzH//MLUVEI5lYsi02N6
+         JiT2tTDDb34ce9VToE1oX5ZsZEw8bn7W6TSvaLPp1mQrV3vXs6L/wFtfyFu3mweFupE2
+         cxL/X83HTlGSVCuhV9Di7TudTuAZyQ37OuegIogF1JOuIypZJGrus3ZnjsBgDdMQQ3Fy
+         R0RuYotYj4WLNhSOmgSNHG+iJcPdxyvMKYXUWUptJ+EtrHunXCKRjfzkk2KF6WEjsk4z
+         TUyQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@sales.clickastro.com header.s=default header.b=n90JC9UM;
+       spf=pass (google.com: domain of return-a3162-305460-305630-e2458ce2=457453102=8@sales.clickastro.com designates 103.96.100.10 as permitted sender) smtp.mailfrom="return-a3162-305460-305630-e2458ce2=457453102=8@sales.clickastro.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=clickastro.com
+Return-Path: <return-a3162-305460-305630-e2458ce2=457453102=8@sales.clickastro.com>
+Received: from akt1-10.sales.clickastro.com (akt1-10.sales.clickastro.com. [103.96.100.10])
+        by mx.google.com with ESMTPS id t15-20020a056e02160f00b0035253ac3110si1701748ilu.149.2023.10.21.05.03.11
+        for <srijani515@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 21 Oct 2023 05:03:11 -0700 (PDT)
+Received-SPF: pass (google.com: domain of return-a3162-305460-305630-e2458ce2=457453102=8@sales.clickastro.com designates 103.96.100.10 as permitted sender) client-ip=103.96.100.10;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@sales.clickastro.com header.s=default header.b=n90JC9UM;
+       spf=pass (google.com: domain of return-a3162-305460-305630-e2458ce2=457453102=8@sales.clickastro.com designates 103.96.100.10 as permitted sender) smtp.mailfrom="return-a3162-305460-305630-e2458ce2=457453102=8@sales.clickastro.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=clickastro.com
+DKIM-Signature: a=rsa-sha256; bh=ETRzfTD5i+RNLu1v6gcQtAz8gHqdOwLqZKQ88UA2vr8=;
+ c=simple/simple; d=sales.clickastro.com;
+ h=Subject:From:To:Reply-To:Date:List-Unsubscribe:List-Unsubscribe-Post:X-CampaignID:Message-ID:X-Mailer-Info:Feedback-ID:MIME-Version:Content-Type;
+ s=default; t=1697889680; v=1;
+ b=n90JC9UM+htsnbzugNbu6HMWMozNPax6ayPISVpYiaKnWjDvKol7Aj+QIH+Mmh8vPdfiKPXN
+ tGiu/Ns8GGD++RkMWsO8ADPjwFpfD02Y2wscC7/3SJCtFiwbKVgfjmRGGyjhAKZonfywBpGtQi2
+ 62FyyeScvLQWMDh0iLkC+6uw=
+Subject: =?UTF-8?Q?Amit=20Koley=21=20=F0=9F=91=89=20Guruji=20has=20pr?=
+ =?UTF-8?Q?epared=20your=20Sasa=20Mahayoga=20predictions=21?=
+From: "Guruji" <mails@sales.clickastro.com>
+To: srijani515@gmail.com
+Reply-To: mails@sales.clickastro.com
+Date: 21 Oct 2023 12:01:20 -0000
+List-Unsubscribe: <https://cls.sales.clickastro.com/ga/unsubscribe/2-457453102-3162-157283-305630-16d27330efd12f5-9md178bb37>,
+ <mailto:return-a3162-305460-305630-e2458ce2=457453102=8u@sales.clickastro.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-CampaignID: s4:305460-2ced6d72bdd7d244
+Message-ID: <mid-70977a92d0f0579be5530969ed08b87d-74@sales.clickastro.com>
+X-Mailer-Info: 11.E2MxYjM.zATN0YDM.MncppWYulWNxUDQn1WYpxmLj9Wb.0UzN0UzMxAjM.z
+ ATN2MDM....
+Feedback-ID: o74:o74c157283:o74s457453102:mlkt5
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="==6989dc4084f41997a715439a1bb5e1b7"
+
+This is a multi-part message in MIME format.
+
+--==6989dc4084f41997a715439a1bb5e1b7
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+( https://cls.sales.clickastro.com/ga/click/2-457453102-3162-157283-305630-=
+474227-088995fe18-9md178bb37 )
+
+Dear Amit Koley,
+As a result of Sasha Maha Yoga, you may be professionally connected with th=
+e police, law or the army. You will be dignified and competent in any posit=
+ion. You will have many assistants. Your life span will be over 70. People =
+may consider you dishonest or self-centered. You will hold a position of le=
+adership within your community.=E2=80=A6Read More ( https://cls.sales.click=
+astro.com/ga/click/2-457453102-3162-157283-305630-474227-088995fe18-9md178b=
+b37 )
+
+Dear Amit Koley,
+
+Are you aware that you possess the ability to mold your own
+destiny? Eager to learn more? The Astrology Combo Report from
+Clickastro is here to provide you with all the information you
+need to shape a successful future. This insightful and
+comprehensive report combines your personalized In-depth
+Horoscope, influential Gem Recommendation Report, and detailed
+Numerology Report. By analyzing these aspects, the report unveils
+valuable insights on how your horoscope can pave the way for
+success and enhance your prospects in the future!
+These premium and personalized reports are now available to you
+for just Rs. 949!
+
+Do not hesitate any longer! Obtain your Astrology Combo Report
+today!
+
+Features of the Clickastro Astrology Combo Report:
+* Comprehensive and precise life analysis
+* Authentic and insightful predictions based on Vedic astrology
+* Personalized reports tailored to your birth details
+* Recommendations for lucky birthstones/gemstones
+* Gemstones as remedies to overcome obstacles
+* Predictions based on numerology
+* Lucky numbers and fortunate colors
+
+Get your report right away! ( https://cls.sales.clickastro.com/ga/click/2-4=
+57453102-3162-157283-305630-474227-088995fe18-9md178bb37 )
+
+( https://cls.sales.clickastro.com/ga/click/2-457453102-3162-157283-305630-=
+474227-088995fe18-9md178bb37 )
+You are receiving this email as a member of Clickastro ( https://cls.sales.=
+clickastro.com/ga/click/2-457453102-3162-157283-305630-474228-1d3611c461-9m=
+d178bb37 ). Please read the
+Privacy Policy ( https://cls.sales.clickastro.com/ga/click/2-457453102-3162=
+-157283-305630-474229-fdb2400392-9md178bb37 )
+for more details.
+
+14-07-2023Click here ( https://cls.sales.clickastro.com/ga/click/2-45745310=
+2-3162-157283-305630-474230-c2b0ba6a5d-9md178bb37 ) to view it online=
+
+--==6989dc4084f41997a715439a1bb5e1b7
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MAILER</title>
+</head>
+<body style=3D"margin:0;padding:0;background:white;;font-family:'Arial',san=
+s-serif;font-size:14px;display: table;color:#000;width: 100%;">
+	<div style=3D"max-width: 600px;margin:auto;border: 1px solid grey;display:=
+ table">
+	<div  class=3D"top-section" style=3D"background:#210400;"><a href=3D"https=
+://cls.sales.clickastro.com/ga/click/2-457453102-3162-157283-305630-474227-=
+088995fe18-9md178bb37">
+		<img style=3D"display: table-caption;background: #210400;"src=3D"https://=
+ca-img.s3.ap-south-1.amazonaws.com/ca/mailers/microprediction-13-july-2023-=
+mailer.jpg"></a>
+		<div style=3D"background:#210400;padding: 0px 15px 0px;">
+			<div style=3D"background:#fff;border-top-right-radius: 25px;border-top-l=
+eft-radius: 25px;border-bottom-left-radius: 25px;border-bottom-right-radius=
+: 25px;padding: 3%;height: auto;color: #000;font-size: 17px;">
+				<div style=3D"padding: 0px 10px;">Dear Amit Koley,</div>
+				<div style=3D"padding: 10px">As a result of Sasha Maha Yoga, you may be=
+ professionally connected with the police, law or the army. You will be dig=
+nified and competent in any position. You will have many assistants. Your l=
+ife span will be over 70. People may consider you dishonest or self-centere=
+d. You will hold a position of leadership within your community.=E2=80=A6<a=
+ href=3D"https://cls.sales.clickastro.com/ga/click/2-457453102-3162-157283-=
+305630-474227-088995fe18-9md178bb37" style=3D"color:#450908;font-weight: bo=
+ld;">Read More</a>
+				</div>
+			</div>
+		</div>
+		<div class=3D"bottom-area" style=3D"float: left; background:#fff;width:10=
+0%;box-sizing:border-box;">
+			<div class=3D"text-decription" style=3D"width: 100%; float: left;padding=
+-bottom: 0px;box-sizing:border-box;padding:15px 5%; line-height: 26px;font-=
+size: 14px;background: #210400;"><b style=3D"color:#fff;font-weight: normal=
+;">Dear Amit Koley,</b>
+				<div style=3D"line-height:28px;color:#fff;margin-bottom: 4px;">
+					Are you aware that you possess the ability to mold your own destiny? E=
+ager to learn more? The Astrology Combo Report from Clickastro is here to p=
+rovide you with all the information you need to shape a successful future. =
+This insightful and comprehensive report combines your personalized In-dept=
+h Horoscope, influential Gem Recommendation Report, and detailed Numerology=
+ Report. By analyzing these aspects, the report unveils valuable insights o=
+n how your horoscope can pave the way for success and enhance your prospect=
+s in the future!<br>These premium and personalized reports are now availabl=
+e to you for just Rs. 949!
+					<br>Do not hesitate any longer! Obtain your Astrology Combo Report tod=
+ay!
+				</div>
+				<div style=3D"overflow:hidden;color: #fff !important;width:100%; margin=
+:12px auto;line-height: 18px;margin-bottom: 0px;">
+					Features of the Clickastro Astrology Combo Report:
+					<ul style=3D"padding-left: 25px;">
+						<li style=3D"text-align:left;padding: 5px;">Comprehensive and precise=
+ life analysis</li>
+						<li style=3D"text-align:left;padding: 5px;"> Authentic and insightful=
+ predictions based on Vedic astrology</li>
+						<li style=3D"text-align:left;padding: 5px;">Personalized reports tail=
+ored to your birth details</li>
+						<li style=3D"text-align:left;padding: 5px;">Recommendations for lucky=
+ birthstones/gemstones</li>
+						<li style=3D"text-align:left;padding: 5px;">Gemstones as remedies to =
+overcome obstacles</li>
+						<li style=3D"text-align:left;padding: 5px;"> Predictions based on num=
+erology</li>
+						<li style=3D"text-align:left;padding: 5px;">Lucky numbers and fortuna=
+te colors</li>
+					</ul>
+				</div>
+				<div style=3D"clear:both;padding:20px 0;text-align:center;">
+					<a href=3D"https://cls.sales.clickastro.com/ga/click/2-457453102-3162-=
+157283-305630-474227-088995fe18-9md178bb37" style=3D"text-decoration:none;c=
+olor: #fff;font-size: 16px;">
+						<div class=3D"special-combo-button" style=3D"height:auto;background:#=
+9e2604;color:#fff;padding: 13px; border-radius: 13px;font-size: 16px;displa=
+y:inline-block;margin:auto;text-decoration:none;font-weight: bold;">Get you=
+r report right away!</div>
+					</a>
+				</div>				</div>
+				<a href=3D"https://cls.sales.clickastro.com/ga/click/2-457453102-3162-1=
+57283-305630-474227-088995fe18-9md178bb37">
+					<img src=3D"https://ca-img.s3.ap-south-1.amazonaws.com/ca/mailers/mail=
+er-bottomimg.png" style=3D"width: 100%;background: #210400;"></a>
+				<div style=3D"width:100%;text-align:center; color:#000;font-size:11px; =
+padding:1% 0">You are receiving this email as a member of <a style=3D"color=
+:#000;text-decoration:underline;" href=3D"https://cls.sales.clickastro.com/=
+ga/click/2-457453102-3162-157283-305630-474228-1d3611c461-9md178bb37" targe=
+t=3D"_blank">Clickastro</a>. Please read the
+					<a style=3D"color:#000;text-decoration: underline;" href=3D"https://cl=
+s.sales.clickastro.com/ga/click/2-457453102-3162-157283-305630-474229-fdb24=
+00392-9md178bb37" target=3D"_blank">Privacy Policy</a> for more details.</d=
+iv>
+					<div style=3D"margin:0;margin-left:2%;padding:0px 2%;display:table;wid=
+th:94%;font-size:12px;height:24px;overflow:hidden;">
+			<span style=3D"margin:5px 0;float:left;width: 50%;color: #fff;">14-07-20=
+23</span><span style=3D"margin:5px 0;float:left;width: 50%;text-align: righ=
+t;color: #fff;"><a style=3D"color:#fff;text-decoration: underline;" href=3D=
+"https://cls.sales.clickastro.com/ga/click/2-457453102-3162-157283-305630-4=
+74230-c2b0ba6a5d-9md178bb37" target=3D"_blank">Click here</a> to view it on=
+line</span>
+		</div>
+					<div style=3D"clear:both;height:5px;"></div>
+				</div>
+			</div>
+		</div>
+			<div style=3D"clear:both;"></div>=09
+=09=09
+
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:100%=
+">
+    	<tr><td>
+=20=20=20=20=20=20=20=20=09
+<p style=3D" font-weight: normal; font-size: 11px;font-style: normal; font-=
+family: verdana, sans-serif; text-decoration: none; color:#666666">--<br />=
+<a href=3D"https://cls.sales.clickastro.com/ga/unsubscribe/2-457453102-3162=
+-157283-305630-16d27330efd12f5-9md178bb37" style=3D" font-weight: normal; f=
+ont-size: 11px; color: #403ce6; font-style: normal; font-family: verdana, s=
+ans-serif; text-decoration: none;">Click Here</a> to unsubscribe from this =
+newsletter.</p>
+
+        </td></tr>
+    </table>
+<img src=3D"https://cls.sales.clickastro.com/ga/open/2-457453102-3162-15728=
+3-305630-9md178bb37" height=3D"2" width=3D"3" alt=3D""></body>
+		</html>=
+
+--==6989dc4084f41997a715439a1bb5e1b7--

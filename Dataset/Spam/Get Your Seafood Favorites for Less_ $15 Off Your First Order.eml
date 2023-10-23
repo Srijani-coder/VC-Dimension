@@ -1,0 +1,218 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:82b4:b0:4fd:23d3:a27 with SMTP id d20csp183163pxf;
+        Thu, 28 Sep 2023 23:58:35 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGo/BTrFY8tukpEREGeGZDxXCBkKBNnMNQ2mmXrJiRZmvsgD/Sl+spZKxhigjjcQEFBHrib
+X-Received: by 2002:a05:6a00:cca:b0:68a:5395:7aa5 with SMTP id b10-20020a056a000cca00b0068a53957aa5mr4214656pfv.17.1695970715363;
+        Thu, 28 Sep 2023 23:58:35 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1695970715; cv=none;
+        d=google.com; s=arc-20160816;
+        b=rYqZgisBJJtdQsvpgwjmy/wwuP2oPdtXFEr5TcQ4JmtUW8KMtS+l/ao3QtiqPBAKXG
+         WQP52Z1fMG4HYkzlskJ0gbClHTh0xytXMZmjPcwUeUYr3KiqE2liPmxOLlX+j7AXSoaq
+         cfjuSlpiHH+Ucz0C9gilHmk1tWDyomgH9rmyNheynouuxkZPin5OuRbS/4TM1wmGLrCk
+         1WuujqUFyMblCNiEXCEEiMva2z7R+r7N9COZlLuqm4kQK/gqeW3M1Kk3LWu1/lYLuu++
+         V3A7NRoHUrRFZkmcPbwf080MMTgyMEBUdi53SC9/Sq8q9RMkAo5NmjOMNYudq5Pk4j9Q
+         adUg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:content-transfer-encoding:subject:to:from:message-id
+         :date;
+        bh=DJDcvePqM/KGlEviGIjDWFI1hsqWSupAiNehUXkBShI=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=oJpUE726ser+yxMKH5QY/F+TTpyfefhshf38fDXukBl9Nc7FAebKm34spAm3dFuzyW
+         ef/CasPnVwP18sbFlZ+fOjnrT2wYmjTTAfcqSGCBZ49AMBVVYZMl/oiwmQIiGqzeF/FS
+         A22xRgI8Ezhgc6ERrKGp0EYz/+2YF3d5EllCa1J1AYFxrxZ7SOd22tOs6+pHAe6aEK2I
+         ECROf7GePvsj9m0XYkbw7fZSt5GncD4RST2tX2ZOx+96ax5l47/iSBfjk1DG+9fv8mg9
+         AbSHfiZVI9BbBzosD9DwyGd/v/aH/37g/K2xcxEBTdzW0wAw1+Dgv2NBEnf4O+LD/k3I
+         t8rg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=pass (google.com: domain of return.qjn5ytn2qznz0sm5gtn00cowidmxudnwgzm@y3ucc3qbr170jq.r31a1-2517.egoohxev.cf designates 2605:6400:c359:12aa:31a1:2517:0:1 as permitted sender) smtp.mailfrom=return.QjN5YTN2QzNz0SM5gTN00COwIDMxUDNwgzM@y3ucc3qbr170jq.r31a1-2517.egoohxev.cf
+Return-Path: <return.QjN5YTN2QzNz0SM5gTN00COwIDMxUDNwgzM@y3ucc3qbr170jq.r31a1-2517.egoohxev.cf>
+Received: from 26056400c35912aa31a1251700000001.egoohxev.cf (26056400c35912aa31a1251700000001.egoohxev.cf. [2605:6400:c359:12aa:31a1:2517:0:1])
+        by mx.google.com with ESMTPS id i7-20020a636d07000000b0057745b2d018si17781212pgc.390.2023.09.28.23.58.33
+        for <srijani515@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 28 Sep 2023 23:58:34 -0700 (PDT)
+Received-SPF: pass (google.com: domain of return.qjn5ytn2qznz0sm5gtn00cowidmxudnwgzm@y3ucc3qbr170jq.r31a1-2517.egoohxev.cf designates 2605:6400:c359:12aa:31a1:2517:0:1 as permitted sender) client-ip=2605:6400:c359:12aa:31a1:2517:0:1;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of return.qjn5ytn2qznz0sm5gtn00cowidmxudnwgzm@y3ucc3qbr170jq.r31a1-2517.egoohxev.cf designates 2605:6400:c359:12aa:31a1:2517:0:1 as permitted sender) smtp.mailfrom=return.QjN5YTN2QzNz0SM5gTN00COwIDMxUDNwgzM@y3ucc3qbr170jq.r31a1-2517.egoohxev.cf
+Date: Fri, 29 Sep 2023 06:50:28 GMT
+Message-Id: <84d8320d89a656627b63a3afc5f1a0@fkcfbgfbm1vof7.w31a1-2517.yqlulp.us>
+From: "'U.S.A. Wild Seafood Deal'"
+ <wlds45891@fkcfbgfbm1vof7.w31a1-2517.yqlulp.us>
+To: srijani515@gmail.com
+Subject: Get Your Seafood Favorites for Less: $15 Off Your First Order
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset=3D=22utf-8=22>
+    <meta name=3D=22viewport=22 content=3D=22width=3Ddevice-width, =
+initial-scale=3D1=22>
+    <meta http-equiv=3D=22X-UA-Compatible=22 content=3D=22IE=3Dedge=22 />
+  </head>
+  <body style=3D=22margin: 0 !important; padding: 0 !important;=22>
+    <table bgcolor=3D=22#ffffff=22 border=3D=220=22 cellpadding=3D=220=22 =
+cellspacing=3D=220=22 width=3D=22100%=22>
+      <tbody>
+        <tr>
+          <td align=3D=22center=22 class=3D=22section-padding=22 =
+style=3D=22padding: 20px 0 20px 0;=22>
+            <table border=3D=220=22 cellpadding=3D=220=22 =
+cellspacing=3D=220=22 class=3D=22responsive-table=22 style=3D=22max-width: =
+600px;=22 width=3D=22100%=22>
+              <tbody>
+                <tr>
+                  <td align=3D=22center=22 bgcolor=3D=22#11334d=22 =
+colspan=3D=222=22 style=3D=22padding: 20px; font-size: 26px; font-family: =
+'Adonis-Web', sans-serif; color: #ffffff; font-weight: 400; text-align: =
+center;=22>Introducing the Seafood Delivery Service You Didn&rsquo;t Know =
+You Needed
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan=3D=222=22><a href=3D=22http://fkcfbgfbm1vof7.=
+w31a1-2517.yqlulp.us/=3Fc1=3Dco8gAANvIAAAOg1UWmH8m7A&amp;c35=3Dpm98110=22><=
+img alt=3D=22=22 src=3D=22http://fkcfbgfbm1vof7.w31a1-2517.yqlulp.=
+us/img-co8gAANvIAAAOg1UWmH8m7A/F4BA28F85527322675771148697.jpg=22 =
+width=3D=22600=22 height=3D=22auto=22 style=3D=22width:600px;height:auto;=
+=22 /></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan=3D=222=22 style=3D=22padding: 15px; =
+font-size: 36px; font-family: 'Canada Type Gibson', sans-serif; color: =
+#0e253b; font-weight: 700; text-align: center;=22>Save $15 Off Your First =
+Order
+                    <br /><a href=3D=22http://fkcfbgfbm1vof7.w31a1-2517.=
+yqlulp.us/=3Fc1=3Dco8gAANvIAAAOg1UWmH8m7A&amp;c35=3Daz8964019=22 =
+style=3D=22background-color: #ed6325;  border: none;  color: #ffffff;  =
+padding-left: 25px;  padding-right: 25px;  padding-top: 15px;  =
+padding-bottom: 15px;  text-align: center;  text-decoration: none;  =
+display: inline-block;  border-radius: 0;  font-size: 16px;  font-weight: =
+500;  font-family: 'Nunito Sans', sans-serif;=22>CLAIM MY DISCOUNT</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan=3D=222=22 style=3D=22padding: 25px 15px; =
+font-size: 27px; line-height: 21px; font-family: 'Adonis-Web', sans-serif; =
+color: #11334d; font-weight: 400; text-align: left;=22><span =
+style=3D=22font-size: 18px; font-family: 'Canada Type Gibson', sans-serif; =
+color: #0c1e2a; font-weight: 300;=22>Our monthly seafood membership keeps =
+you stocked with a variety of seafood like salmon, halibut, cod, and other =
+varieties of sustainable seafood.</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class=3D=22benefits=22 style=3D=22padding: 15px; =
+font-size: 15px; font-family: 'Canada Type Gibson', sans-serif; color: =
+#0c1e2a; font-weight: 300; text-align: left;=22><span style=3D=22font-size:=
+ 22px; line-height: 21px; font-family: 'Adonis-Web', sans-serif; color: =
+#11334d; font-weight: 400;=22>With quality Alaskan seafood, you can...=
+</span>
+                    <br />
+                    <br /><img alt=3D=22=22 src=3D=22http://fkcfbgfbm1vof7.=
+w31a1-2517.yqlulp.us/img-co8gAANvIAAAOg1UWmH8m7A/635586FA143913823258644373=
+4.gif=22 width=3D=2218=22 height=3D=2214=22 /> <span style=3D=22font-size: =
+18px; color: #11334d; font-weight: 700;=22>Eat Healthy</span>
+                    <br />Wild Caught, High-Quality, Ready-To-Cook
+                    <br />
+                    <br /><img alt=3D=22=22 src=3D=22http://fkcfbgfbm1vof7.=
+w31a1-2517.yqlulp.us/img-co8gAANvIAAAOg1UWmH8m7A/635586FA143913823258644373=
+4.gif=22 width=3D=2218=22 height=3D=2214=22 /> <span style=3D=22font-size: =
+18px; color: #11334d; font-weight: 700;=22>Save Time</span>
+                    <br />Individually-Sealed Portions, Delivered to Your =
+Door
+                    <br />
+                    <br /><img alt=3D=22=22 src=3D=22http://fkcfbgfbm1vof7.=
+w31a1-2517.yqlulp.us/img-co8gAANvIAAAOg1UWmH8m7A/635586FA143913823258644373=
+4.gif=22 width=3D=2218=22 height=3D=2214=22 /> <span style=3D=22font-size: =
+18px; color: #11334d; font-weight: 700;=22>Shop Responsibly</span>
+                    <br />Sustainably Harvested, Shipped in Eco-Friendly =
+Packaging
+                    <br />&nbsp;
+                  </td>
+                  <td align=3D=22center=22 class=3D=22benefits=22><img =
+alt=3D=22=22 src=3D=22http://fkcfbgfbm1vof7.w31a1-2517.yqlulp.=
+us/img-co8gAANvIAAAOg1UWmH8m7A/DF7749D97495528686289444878.jpg=22 =
+width=3D=22259=22 height=3D=22131=22 />
+                  </td>
+                </tr>
+                <tr>
+                  <td bgcolor=3D=22#f0f0f0=22 colspan=3D=222=22 =
+style=3D=22padding: 25px; font-size: 15px; font-family: 'Canada Type =
+Gibson', sans-serif; color: #0c1e2a; font-weight: 300; text-align: =
+left;=22><center><img alt=3D=22=22 src=3D=22http://fkcfbgfbm1vof7.=
+w31a1-2517.yqlulp.us/img-co8gAANvIAAAOg1UWmH8m7A/8CD83F70224123590022445762=
+0.png=22 width=3D=2296=22 height=3D=2215=22 /></center>
+                    <br /><i>&ldquo;All of the fish is SO fresh, once it =
+defrosts it&#39;s almost melting out of the package. It barely needs to be =
+seasoned, too much actually ruins the integrity of the fish.&rdquo;</i>
+                    <br />
+                    <br />- Leily
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan=3D=222=22 style=3D=22padding: 45px 15px 15px =
+15px; font-size: 27px; font-family: 'Adonis-Web', sans-serif; color: =
+#11334d; font-weight: 400; text-align: center;=22>Eat Amazing Seafood Every=
+ Month!
+                    <br /><span style=3D=22font-size: 18px; font-family: =
+'Canada Type Gibson', sans-serif; font-weight: 400;=22>Caught and Processed=
+ in the USA</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan=3D=222=22 style=3D=22padding-top: 10px; =
+text-align: center;=22><a href=3D=22http://fkcfbgfbm1vof7.w31a1-2517.yqlulp=
+.us/=3Fc1=3Dco8gAANvIAAAOg1UWmH8m7A&amp;c35=3Dcl7639456=22 =
+style=3D=22background-color: #ed6325;  border: none;  color: #ffffff;  =
+padding-left: 35px;  padding-right: 35px;  padding-top: 15px;  =
+padding-bottom: 15px;  text-align: center;  text-decoration: none;  =
+display: inline-block;  border-radius: 0;  font-size: 18px;  font-weight: =
+500;  font-family: 'Nunito Sans', sans-serif;=22>GET YOUR $15 DISCOUNT =
+NOW</a>
+                    <br />
+                    <br />&nbsp;
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan=3D=222=22 style=3D=22padding-top: 25px; =
+font-size: 13px; font-family: 'Canada Type Gibson', sans-serif; color: =
+#333333; font-weight: normal; text-align: center;=22>&nbsp;
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p align=3D=22center=22><font size=3D=222=22>If you would no longer =
+like to receive email advertisements from USAWildSeafood,
+      <br />please <a href=3D=22http://fkcfbgfbm1vof7.w31a1-2517.yqlulp.=
+us/=3Fc1=3Dco8gAANvIAAAOg1UWmH8m7A&amp;c2=3Dunsub&amp;c35=3Dbm3938602=22>cl=
+ick here</a> or write to us at 2803 Philadelphia Pike, Suite B #325, =
+Claymont, DE 19703</font>
+    </p><center>
+    <p>&nbsp;
+    </p>
+    <p>&nbsp;
+    </p>
+    <p>&nbsp;
+    </p>
+    <div style=3D=22min-height:180px;height:180px;margin:60px;=22>&nbsp;<im=
+g alt=3D=22=22 border=3D=220=22 src=3D=22http://fkcfbgfbm1vof7.w31a1-2517.=
+yqlulp.us/co8gAANvIAAAOg1UWmH8m7A/t.gif=22 style=3D=22height:1px;width:1px;=
+=22 />
+    </div>
+    <p align=3D=22center=22><a href=3D=22http://fkcfbgfbm1vof7.w31a1-2517.=
+yqlulp.us/=3Fc1=3Dco8gAANvIAAAOg1UWmH8m7A&amp;c2=3Dpref&amp;c35=3Dna7755189=
+=22><img alt=3D=22=22 src=3D=22http://fkcfbgfbm1vof7.w31a1-2517.yqlulp.=
+us/img-co8gAANvIAAAOg1UWmH8m7A/rmvaddr.gif=22 width=3D=22314=22 =
+height=3D=2226=22 /></a>
+    </p></center>
+  </body>
+</html>

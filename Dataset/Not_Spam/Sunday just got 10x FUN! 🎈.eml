@@ -1,0 +1,654 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:8691:b0:4fd:23d3:a27 with SMTP id e17csp571461pxn;
+        Sat, 21 Oct 2023 18:47:27 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHkWJaqfZoHK8ejAgD2CyYguz+spLuHVgY64rPuL0OOWz2HmeMEJ++ErtimadSIUq4VVGBX
+X-Received: by 2002:a05:620a:f01:b0:778:8cef:a573 with SMTP id v1-20020a05620a0f0100b007788cefa573mr7293280qkl.2.1697939247674;
+        Sat, 21 Oct 2023 18:47:27 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697939247; cv=none;
+        d=google.com; s=arc-20160816;
+        b=cJwdd2orf/9U7s3XtB8OPl9smkaRyCjhuDR6vdeBu+FjIkTZI7BEBcdfrC4WuqAh+G
+         DnySV4xt9CruDBo98cyn7BVvObwjxOIY/0iOowSP7LUeCJZ2GjK521WosbZhke/lzoWP
+         IQkshJWOYBQO3wxmnFCD/rTvhayCUCOn3A4mYLTcKr04JfOfzqyhski30+/9V7noJOpD
+         fQf5qDiOKqOgFNF6GLj8TIINLinpb4ifAntWvyNpDQ+qcsVlialZjVhDXQIzDbk6MKFw
+         pwmaDhozwTcxGnAx6UJETWHlDB90+lxS1NKBIkI3E7kNcM0O5SsWSDRC41xYBKEs/hlW
+         vqaw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=date:feedback-id:reply-to:list-unsubscribe
+         :content-transfer-encoding:mime-version:message-id:subject:from:to
+         :dkim-signature:dkim-signature;
+        bh=FWu8l/c/s+2t2J94XY6VqiwGcqVxFnvLPgAdNj9jshc=;
+        fh=HDfxQt5CVEVBI2ZA9vp1XtdhgokPU/eWWV2PREp816E=;
+        b=ayn1pf954F1FpUPu41yH0Nsu+0HWU44/B/jGjk+E2O+aaRw2eAK/eJqHqrTvaNFtTr
+         P3yxraNEVwWYibJ/tCZY9MFMV0nyJY5lZ0yeXfPpmqwCYL5+S0ENCxI4kvZ7+V7r/DTG
+         wYNo4R8PWE7Q0gtOTsY9pkPRPW5dSEDabada90VPhNGJYyMbKeMc3yVnOI9oMBDNivQO
+         K7jxAutAsah2BtBxtubD9+sxZvB+/Eh1/ImTP1QfAItQkd9EAY/WJkro2F74y1Kn5LQp
+         QrJd2Ixp3ndfe73q1H5QhWI139a++KQzYTT93svRyQBqPKfPDy1tz/acEtQ3/XeJ/1Q2
+         3Qkg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@ncb.flipkart.com header.s=nc header.b=FNpgrLeP;
+       dkim=pass header.i=@flipkart.com header.s=nc header.b=E3ibJlN1;
+       spf=pass (google.com: domain of 16979130640737819-88661-1-gmail.com@delivery.ncb.flipkart.com designates 175.158.64.137 as permitted sender) smtp.mailfrom=16979130640737819-88661-1-gmail.com@delivery.ncb.flipkart.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=flipkart.com
+Return-Path: <16979130640737819-88661-1-gmail.com@delivery.ncb.flipkart.com>
+Received: from pepimail137.ncp.flipkart.com (pepimail137.ncp.flipkart.com. [175.158.64.137])
+        by mx.google.com with ESMTPS id rj5-20020a05620a8fc500b0076dad8619a5si3323298qkn.284.2023.10.21.18.47.27
+        for <srijani515@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 21 Oct 2023 18:47:27 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 16979130640737819-88661-1-gmail.com@delivery.ncb.flipkart.com designates 175.158.64.137 as permitted sender) client-ip=175.158.64.137;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@ncb.flipkart.com header.s=nc header.b=FNpgrLeP;
+       dkim=pass header.i=@flipkart.com header.s=nc header.b=E3ibJlN1;
+       spf=pass (google.com: domain of 16979130640737819-88661-1-gmail.com@delivery.ncb.flipkart.com designates 175.158.64.137 as permitted sender) smtp.mailfrom=16979130640737819-88661-1-gmail.com@delivery.ncb.flipkart.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=flipkart.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=ncb.flipkart.com; s=nc;
+	h=feedback-id:reply-to:list-unsubscribe:content-transfer-encoding:content-type:
+	 mime-version:message-id:subject:from:to:from:to:subject;
+	bh=FWu8l/c/s+2t2J94XY6VqiwGcqVxFnvLPgAdNj9jshc=;
+	b=FNpgrLePWZdpqwdzYxN4tFNHT/Q/4CDel+rQiv6RmR4silvCVOhNJ2Tueb2nYM9QucniyqeI/2cUs
+	 W9tHmVADtus/64zFnWp5d7UKGICemMMm1IV5EiNTsu1gbLmoBSuD30JQNZovJ1sqXYIpqEDYEpvlzL
+	 +iF9OB4rr8wFbjLibGVWkp3JL6qQF9ubOd2dyXWHbygnTKu5n5udFTUjC/6lh7oX4rVJiPFAECv68K
+	 0n/Wigr1fccPsIX4ZG/ME7MgoNgF2ijznXsL/QobkRF9XKJdsAM/Pr7v0tPTMksV2toPCcQJ2a1flP
+	 ie1YyyzhjS/QPzJILaqWGCMP3spO7PQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=flipkart.com; s=nc;
+	h=feedback-id:reply-to:list-unsubscribe:content-transfer-encoding:content-type:
+	 mime-version:message-id:subject:from:to:from:to:subject;
+	bh=FWu8l/c/s+2t2J94XY6VqiwGcqVxFnvLPgAdNj9jshc=;
+	b=E3ibJlN1fruOdvmvftP60AEYg+eDc6C5g1Dps9JE4ly5l7NkX8RWP2s9fR1FaAcs5bRPgD5vHn9dj
+	 BiXu0UkW+/5ryEmaeqRYdpSimRUJ/yi+Irqef06e0o03IPAE8fjeDMFYf7YFM5q5VTNqgNsgvnZeqP
+	 ADQX2uWP+w1t0DUQz9gFz858s7Rndg++bkfl+jEhHjBo6AZYRfQSiKHhXXygseDRt/pkDguZ9JrZ+S
+	 i5TxZ1h5dE9Y9u5/h99TN0NrZgO5idWbf+bIxuATJzSTWRu5dF7jDhwTMJk7uX6vJwM5T876uwcSBY
+	 qCRrvlMWqVWSTE1qqh9dr3RP1fyMjhA==
+To: srijani515@gmail.com<srijani515@gmail.com>
+From: =?UTF-8?B?RmxpcGthcnQ=?= <no-reply@ncb.flipkart.com>
+Subject: =?UTF-8?B?U3VuZGF5IGp1c3QgZ290IDEweCBGVU4hIPCfjog=?=
+Message-Id: <zfcnwy16979130640737819@ncb.flipkart.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="_----------=_16979373377781182"
+Content-Transfer-Encoding: binary
+X-Mailer: MIME::Lite 3.030 (F2.84; T1.38; A2.12; B3.13; Q3.13)
+X-Hdelivery: 88661_11
+List-Unsubscribe: <mailto:16979130640737819-88661@usub.ftrans03.com?subject=Unsubscribe>, <http://delivery.ncb.flipkart.com/KCEUSP?id=88661=YEUABFwBAQRXHRFGEEVDQxhGGBgUQUQQGUQWFEERRRgVGRAURBkXEkZBEUYQRUNDGFZEDQ0DAQEBUwMCWQhXXQMMCFdXXFYHBQMBX1IEAFQMVFsKVwRXCA0GDkhQB1wPDAgDBFINBwVVVglXCRkLF0wWAhcbBQFcUBJTRhgfC1tXF1ZYDUlcUxQVHwVfCEwoeyNta2ReDVRFEgU=>
+Reply-To: reply@flipkart.com
+Feedback-Id: 88661:202310:1:falconide
+X-Fncid: 88661-16979130640737819-0
+X-Injtime: 1697937337
+X-Traffic-Type: 88661-3
+Date: Sun, 22 Oct 2023 07:17:26 +0530
+
+This is a multi-part message in MIME format.
+
+--_----------=_16979373377781182
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; charset="utf-8"
+
+
+
+  
+   
+   
+   
+   
+   
+   
+  
+ 
+   
+   
+   
+   
+   
+     
+      
+       
+       
+       
+       
+       
+         
+          
+          
+           
+           
+             
+               Confused? We'll tell you how!   
+             
+           
+            
+          
+         
+       
+       
+       
+       
+         
+          
+           
+           
+             
+                  
+                  
+                  
+                  
+             
+             
+              
+               
+               
+                 
+                 
+               
+                
+             
+           
+            
+          
+         
+       
+        
+      
+     
+   
+   
+   
+   
+     
+      
+       
+       
+        
+         
+              
+         
+        
+        
+     
+     
+      
+       
+       
+        
+         
+              
+              
+         
+        
+        
+     
+     
+      
+       
+       
+        
+         
+              
+              
+         
+        
+        
+     
+     
+      
+       
+       
+        
+         
+              
+              
+         
+        
+        
+     
+     
+      
+       
+       
+        
+         
+              
+              
+         
+        
+        
+     
+     
+      
+       
+       
+        
+         
+              
+              
+         
+        
+        
+     
+     
+      
+       
+       
+        
+         
+              
+         
+        
+        
+     
+   
+   
+   
+   
+   
+   
+   
+   
+     
+      
+          
+      
+       
+       
+         
+                    
+         
+       
+       
+       
+       
+         
+           We hope you enjoy emails from Flipkart. If you wish to unsubscribe, please click here .   
+         
+       
+        
+      
+     
+   
+   
+      
+     
+  
+
+
+--_----------=_16979373377781182
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+Content-Type: text/html; charset="utf-8"
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <!-- If you delete this tag, the sky will fall on your head --> 
+  <meta name="viewport" content="width=device-width;initial-scale=1.0; user-scalable=1;"> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <title>Flipkart.com</title> 
+  <style type="text/css">
+        /*********************************/
+
+        /* Reset CSS styles starts */
+
+        /*********************************/
+
+        body {
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-size-adjust: none;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            font-family: Arial, Tahoma, Verdana, sans-serif;
+            font-weight: 299px;
+            font-size: 13px;
+        }
+
+        /* outlook.com / hotmail */
+
+        .ExternalClass {
+            width: 100%;
+        }
+
+        .ExternalClass,
+        .ExternalClass p,
+        .ExternalClass span,
+        .ExternalClass font,
+        .ExternalClass td,
+        .ExternalClass div {
+            line-height: 100%;
+        }
+
+        /* outlook 2007 / 2010 / 2013 */
+
+        table {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+
+        /* OSX / iOS / windows mobile */
+
+        body {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        img {
+            border: 0px;
+        }
+
+        a:link {
+            color: #666666;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #666666;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #2271B2;
+            text-decoration: underline;
+        }
+
+        /*********************************/
+
+        /* Email related styles */
+
+        /*********************************/
+
+        .body-wrapper {
+            margin: 0px auto;
+        }
+
+        p,
+        div {
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer {
+            border-bottom: solid 1px #e6e6e6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        p,
+        ul {
+            margin-bottom: 10px;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .collapse {
+            margin: 0 !important;
+        }
+
+        a {
+            color: #2BA6CB;
+        }
+
+        @media only screen and (max-width: 640px) {
+            a[class="btn"] {
+                display: block !important;
+                margin-bottom: 10px !important;
+                background-image: none !important;
+                margin-right: 0 !important;
+            }
+
+            div[class="column"] {
+                width: auto !important;
+                float: none !important;
+            }
+
+            table.social div[class="column"] {
+                width: auto !important;
+            }
+
+            img.respImg {
+                width: 50%;
+            }
+
+            .h1 {
+                font-size: 13px !important;
+            }
+
+            .column-wrap {
+                width: 100%;
+            }
+
+            table {
+                width: 100% !important;
+            }
+
+            table div {
+                float: none !important;
+                width: 100% !important;
+            }
+        }
+    </style> 
+ </head> 
+ <body style="-webkit-font-smoothing:antialiased; -webkit-text-size-adjust:none; width: 100%; height: 100%; margin:0; padding:0; background-color:#ffffff; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;font-weight:300;" bgcolor="#ffffff">
+  <img style="width:1px;height:1px;" src="http://l.flipkart.com/t/open/Pqt5dGC5tS9HKrZzbsZoVM9KE3W431VmHnnED_9nT3iQJ3t46yu50FEn63KIpBAit3BNVwrvOJnlyTEM4AcKZahMqdHedbybkWaZPx3GcjWv5AiyzVevE2b84p10AEcp0BXLi6Kh_8vGQEeVRxYqyTBDuniFU1NzVpm6rSqWe6J-gvLxn9S1rgz4vDgpGBW3VHZduRytnO20pt51_PAIvIdALRixyHMGl9NcW5UEFXuDxcobeob-ofLFmIoS0BjK8ZV1W1Tk6M_rJ1cFp3HYEdAYU2bvMqrE_Alw5SKuyIR3md9dbq6Bs_4SXaeXqgz2d-5lXSzLDlcP6xrJs564Cy-1g2IpVh466ZRkNXTIzdY=?e=true"> 
+  <!-- Wrapper table for outlook 2000 / 2002 / 2003/ 2007 / 2010 / 2013 and Lotus notes 8 & 8.5 --> 
+  <!--[if (gte mso 9)|(IE)]>
+<table width="600" class="body-wrapper" cellspacing="0" align="center" cellpadding="0">
+    <tr>
+        <td valign="top" align="center">
+<![endif]--> 
+  <table width="100%" class="body-wrapper" cellspacing="10" align="center" cellpadding="0"> 
+   <tbody>
+    <tr> 
+     <td valign="top" align="center" width="100%"> 
+      <!-- ============================================================== --> 
+      <!-- HEADER --> 
+      <!-- ============================================================== --> 
+      <table class="head-wrap" width="100%" cellspacing="0" cellpadding="0"> 
+       <tbody>
+        <tr> 
+         <td></td> 
+         <td class="header container" style="display:block; max-width:600px; margin:0 auto; clear:both;"> 
+          <table width="100%" cellspacing="0" cellpadding="0"> 
+           <tbody>
+            <tr> 
+             <td valign="middle" align="left"> <font style="font-size:12px; font-family:Arial, Helvetica, sans-serif; color:#aaaaaa"> Confused? We'll tell you how! </font> </td> 
+            </tr> 
+           </tbody>
+          </table> </td> 
+         <td></td> 
+        </tr> 
+       </tbody>
+      </table> 
+      <table class="head-wrap" width="100%" cellspacing="0" cellpadding="0"> 
+       <tbody>
+        <tr> 
+         <td class="header container" style="display:block; max-width:600px; margin:0 auto; clear:both;"> 
+          <table width="100%" cellspacing="0" cellpadding="0"> 
+           <tbody>
+            <tr> 
+             <td align="left" valign="middle" height="50" width="50%" style="padding-right: 10px;"> <a lname="Head:Head:Head:genImg1:R2;C1" href="http://delivery.ncb.flipkart.com/KCEUSP?id=88661=dkUABFwBAQRXHQRWVgAGUQFUXghVWQAEDlBXBFJVAQkEAQcHAAoOVgRUB18FV1AGD1JEDQ0DAQEBUwMCWQhXXQMMCFdXXFYHBQMBX1IEAFQMVFsKVwRXCA0GDkhQB1wPDAgDBFINBwVVVglXCRkLF0wWAhcbBQFcUBJTRhgfC1tXF1ZYDUlcUxQVHwVfCEwoeyNta2ReDVRFEgU=&fl=XU1ERF4WGF5IB10PQA4CEUxIW1dZThAfWghfVwoeF05bTkVrO3FUZAQYZSt7XFYqWj8BUnUUHFMMLkRhNndWfgMJRg0FUHBmCDd7EgkvARp/BXBsRg5WRUxWfGJZZTxtd091V1QOQVc/UWAsCCQnFk0xfX9BKCVRD0lyTFlQHE8MAGACIXx1ZSlXaB8CKS4CdQFpXGU0F0RsAkVZK2cifXdrCH8wAX5XPCVaEVcmNjBpJXNzUjMLfF4dR3IgdV0LAnwGfwYLRQswG3wFVVMILEEcdE59LjdKTUldXRZECwpQD3tFNkpUADUCcyxGDwICeVNSX04LK1VbDmFRLWkXWVRIYF8KVn5wEQcBI29TCgtoAk9VZCccCQogWWUXQi1JYwkBACdTZQsoNlYhYwk1VFQkfk55KDJKASZkcxscSEFtcV8HAgxzADUJXFF4Fg8IUilwXX1WM1NRKVxGNWINWWROSQYgaVhUCBlVKnIiAhdRVnALXwAze1Yzf1oGRBBNY2l5YhRqB1FeCEYraSIpDwocfEB2BQxjDTx/fzBDJk5cVlwDLnZCYwoLcjEESFJScBZKewdXMkNtIVRDVlkoAFNse34eSnAEJVh4AUQEAiFyBVJJfgsLSVIwaUIUCSRpQU57cC92Q2UULn0iRy0BAFcBa04HMV1cTVRnbQ1uFEhhSnx8BXZ0eisqSVYHNiUCZy9WUkwvMVRtMUx1ImAEYUFJBVMPbwdnJwBaMWgyOTJsPmIPYwogRUo3VQZMVSxRBVVTRVJ3Q1sHVkJfBRFOBGgMa1xwBil0WklFaytG&ext=ZT10cnVl" 
+style="text-decoration:none;display:table;"> <img src="https://img1a.flixcart.com/www/email/images/20150609-173157-logopsd__1_.png" style="border:none;color:#818181;font-size:9px;display:table-cell; margin-right: 5px;"> </a> </td> 
+             <td align="right" style="border-right:1px solid #cccccc;text-align: center;padding-right: 5px;"> <a lname="Head:Head:Head:genImg1:R2;C1" href="http://delivery.ncb.flipkart.com/KCEUSP?id=88661=dkUABFwBAQRXHQlVBFUCBV5eCgoEU1EHXVIEUVVQUwoEX1UMVQ1UAlIEVFcFV1NQD15EDQ0DAQEBUwMCWQhXXQMMCFdXXFYHBQMBX1IEAFQMVFsKVwRXCA0GDkhQB1wPDAgDBFINBwVVVglXCRkLF0wWAhcbBQFcUBJTRhgfC1tXF1ZYDUlcUxQVHwVfCEwoeyNta2ReDVRFEgU=&fl=XU1ERF4WGF5IB10PQA4CEUxIW1dZThAfWghfVwoeNwl9andaAmNvYgMnSAVvBxoCSyh+YlUnXXlQVnJTMl43YWpWU0Qmd0ZxMQh3OWMTETZWDUFiYgUPRHgCb0YjBwdScH8EDSkIeXcSImMXYgEsCAkiW1BXEFRpeidGURtEUHUDVVkHKVNhQ1Y3QQlyLC03eh9wTwc2IANwUVxXLggODVNPe0VSbF0KXg1kBGEfEyJyBV1LdS0JX2s9ZHI4ZlEAUGNTRS11flY5WXQhVh8rD0xQdklnMxR/Qy4HYitZLEFeTlhzUWFwYgxSYwEIExYWQF5VbFcSFx1SHH8NKEItW14IcXYRf0EfFlVTHmkVDihLA1ANBA8XfmsvDgQXARwPBgBaWDRBWAU+UkgvYR8FVVkgQWdfCgp8cx5lASQIHH9wc3JrIW9EflEDWytZEzdUXkt/S1sJJl1/AEREUwZQd3xTRhkSdH5xLDZDKVYnNzVvUkgPDBRUBm8leGEzeRZVfVtEGR52QEcfUH4yQhUHL00FYUwGTBICQQ4GTDtpDQ9Ya1JsAA5FAUs7SAwCK04BaxMIeQ0pJwFeEXhRMhwyfFxmX1UzcmF8BwhJIn8nBS55AX90TDg0WFg1fw0UWiJPdlVndgN1QFEAVWgHUS8SL0ofaG0DIFNHCyJEcC5BNXxMSAIGE35RaytXRQhqVhMySRNWbAJXKFtLLmVuEUVIbXYPSFVJbkBiXzB/EVMRJSlPC015UQ1TW2kWenAtYQpXZlhyQxZTZ1E/A0dXBVcsMFIrXQFnLxJ5DCFVQTFwFnZMfWQFI05yVBFXAVBBLiYHAFVZTwlc&ext=ZT10cnVl" 
+style="text-decoration:none;"> <img src="https://rukminim1.flixcart.com/www/256/256/promos/18/06/2021/b6fd9929-a0f0-4e80-876a-a1493a97f5fc.png?q=100" style="max-height: 64px;border:none;color:#818181;font-size:9px;"> </a> </td> 
+             <td align="right" style="border-right:1px solid #cccccc; text-align: center;"> <a lname="Head:Head:Head:genImg1:R2;C1" href="http://delivery.ncb.flipkart.com/KCEUSP?id=88661=dkUABFwBAQRXHQhRBAcHVAtfAF0NAgZSCVdXUVhSVl1TDVIAXQ8GBF9XAwAHBwZbDAJEDQ0DAQEBUwMCWQhXXQMMCFdXXFYHBQMBX1IEAFQMVFsKVwRXCA0GDkhQB1wPDAgDBFINBwVVVglXCRkLF0wWAhcbBQFcUBJTRhgfC1tXF1ZYDUlcUxQVHwVfCEwoeyNta2ReDVRFEgU=&fl=XU1ERF4WGF5IB10PQA4CEUxIW1dZThAfWghfVwoeF05bTkVrO3FUZAQYZSt7XFYqWj8BSGwPO3gNDht1FX4CDE1rBlEldlMEHxN/AmItLFpKCmsNdjkvYkwDA1kKQiJyeH5nWxxzbUEKM38qZyYKClITSWJuBTxoDgYCRypuE0J6UmoCKlZkZFUARTdCBi8mayJIXV4DEwMLFWlZInk9aHsUSnxJc39UIFFuCUg9NyhTJGlNUVEXZmw3BVcgQAZnZFZvGVd3X2dfMwYHCRcoEwExe0B+WRB6ADN+DDRHD3oBWwIAHVh/c1UoXABFNyk6cFNxfwEXNlIKDHxaKGUnS3ZmARkBa0JINRtGB0JXAlVuDA1/fVg9Xn80cEI0W1B6QFJhVy4BWl0CKEQQBiYOGxVfUQFDOQBdbAN+bTtZH0lya0ZVA0hVSwkIfV5ZI1UzDC9Pf2wDAX1aXHhDK38VdFpBBEAMQ3NhLjBIKAgdDA9LDWAAZxZSA00dUHorSRZ/clxqfTVwcGFLGHhQQSsFBkw2Ul1wWCN1TgBObRVIUF9FTH5tJmlBZhAXehIdEw4gezNNWX5ZDGQIVXJeAFABW0x7ZVoBYV1HOSRpNXFWDix+Bwt6ARU2UkshQn8jAlBuag50cFYNAUgEJ1sMQhY3E39eSX9DTBBnQwFidjJ2JFVvS1YFUmYAUwo4CAd+EzkCTydaWnw1J15/FWNYAAIWCmFfcnkQekJLDVBTUkFRWgVSCAhNYS03SW0gW0UbA1YKc2oIexdTZHEhKl5LRwM7AVU+bQsEVwwHTzJbACh9EA9lXFJSC30DAggwBSJxVjMRaB9beQlc&ext=ZT10cnVl" 
+style="text-decoration:none;"> <img src="https://rukminim1.flixcart.com/www/256/256/promos/18/06/2021/42138fd7-e0ff-48b5-8246-f4bebfe023f3.png?q=100" style="max-height: 64px;border:none;color:#818181;font-size:9px;"> </a> </td> 
+             <td align="right" style="text-align: center;"> <a lname="Head:Head:Head:genImg1:R2;C1" href="http://delivery.ncb.flipkart.com/KCEUSP?id=88661=dkUABFwBAQRXHVVXUgZSVQACWQgGBAFRDwcFUlYEAA4FWwkFBwgAA1dSVAQBV1sBXlFEDQ0DAQEBUwMCWQhXXQMMCFdXXFYHBQMBX1IEAFQMVFsKVwRXCA0GDkhQB1wPDAgDBFINBwVVVglXCRkLF0wWAhcbBQFcUBJTRhgfC1tXF1ZYDUlcUxQVHwVfCEwoeyNta2ReDVRFEgU=&fl=XU1ERF4WGF5IB10PQA4CEUxIW1dZThAfWghfVwoeNwl9andaAmNvYgMnSAVvBxoCSyh+YXIMU3RdC3sMDmcHQVlpaXoNSVMFPCZZBGgpGlNtS3RQAQMuZlE+YVMmZQMBQE52eVNVBVdLGXIfeSsrLFoLSW1kPil1WBxiAVRgI21jYWhzKENFRA8gRQJRMSkgZ1FOUn4TL11PFl96EwYPZ194BnBTVVhLPyxjXnc0GxJ8MAsKYlcDd09ST3Y+VBJdZnhheA10Q3teVH4hBlUEWlQLfFwGD1RVdlZEUBd+PQFNUlRlCg9hUAIEeT5eMlYQURZSWm5MLmBNAGJME1cOYH94fmY0fnQFUBNpM0UmG1FyLA9ablZUU3YQQX8LQQAIB0tEZh1BenszDUMySVZSCWcKW3BEJwV0AA5CTghuJEpPelZ9I1dffgwmAUtgNxBbVQxZd3AWLkdSBgVjIAcGTV4NWhkGeHhTNjFTPnMHMAIBAXR/AiwyQk0NQWQTBz91UX53TDV6Y3oLK2kNXDBTU34saw5fUBd/XSADRVJkIAt9a0h4JVpwZxUDZ1ZEIgEMYjl2VHwTMldeDWZdMQc8Z3MNflgcVHFrM1RjNkVWLClKJ3wJeRgBeUERAUdWVAp1ZkFWchd7B3g/O1ULAlwRN1BfVWpkNhJUaRRUUDduFVJyU1x6PUF6ehIEfiUdFywsWQFqa3I4O0RjJgdnCgYobXwJcl8nQHR3SxFSBWQiFi1SLV1nZlkKZVQ3VEMxVjpVRkwGUV1/VgovUFcnBjIVEFoDbgFnAj14TT1cXDNJBFpsYF1iEHBNHwEpaQ1DMg4UTT5CTwlc&ext=ZT10cnVl" 
+style="text-decoration:none;"> <img src="https://rukminim1.flixcart.com/www/256/256/promos/18/06/2021/e9ee2635-6ef6-47bd-adad-6927e4a6b3a5.png?q=100" style="max-height: 64px;border:none;color:#818181;font-size:9px;"> </a> </td> 
+            </tr> 
+            <tr> 
+             <td valign="middle" height="50" align="center"> 
+              <table width="100%" style="max-width:500px;"> 
+               <tbody>
+                <tr> 
+                </tr> 
+               </tbody>
+              </table> </td> 
+            </tr> 
+           </tbody>
+          </table> </td> 
+         <td></td> 
+        </tr> 
+       </tbody>
+      </table> </td> 
+     <td></td> 
+    </tr> 
+   </tbody>
+  </table> 
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF"> 
+   <tbody>
+    <tr> 
+     <td style="display:block;margin:0 auto; clear:both;max-width:600px;"> 
+      <!--Block of intro copy --> 
+      <table border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF"> 
+       <tbody> 
+        <tr> 
+         <td width="100%"> <a lname="NIL:NIL:AD:prodImg1:R1;C1" href="http://delivery.ncb.flipkart.com/KCEUSP?id=88661=dkUABFwBAQRXHQAFAVcFVQpfDwpRVAFSDQdXVVUCB1pXWwhWUlsGAl4FUgUCBAVVC1VEDQ0DAQEBUwMCWQhXXQMMCFdXXFYHBQMBX1IEAFQMVFsKVwRXCA0GDkhQB1wPDAgDBFINBwVVVglXCRkLF0wWAhcbBQFcUBJTRhgfC1tXF1ZYDUlcUxQVHwVfCEwoeyNta2ReDVRFEgU=&fl=XU1ERF4WGF5IB10PQA4CEUxIW1dZThAfWghfVwoeDFdgXUJ4K29CBgQAUx92HQsZSC4PXGE1XEoAD3tQIn1dVHtPWVUvU1Z8KghbIVkyIlFgPmxvZxEVWHUdAXgIVgNcR2gFcy56Rm0MCgg8XyIPL2Ewfw9RWA9qbxZuWVRfPW5Sb0lDA3BZYCEFfwxdEVpbVR5+T2s5NEd0EWlwO1A3SwNeWHkGd2V8FiprLWYKAgRJHGJoAwQ+AVM3RAErHDBZBW9pbCxtbkIhGQEeYhQFVQ8RVElQCAVnXgNvdxd6CktWWnt/BW9iUCgNQAR+N1sTaVZCQG1SDGdSSU91VVJddXwAfAETVHsLDCBLH34qBDJ9DBUIZjlUUndVAEUJXjYATWpefgVeTlUOB3UDYistDFpVV0FgEABAfyZ+VlhLMwxDSQZXSQBcXSIzZzdSIw4EbCJvVwBXKABDNGN5EXcOb0N/B2xdcnFxEQwBDlwqVQUVX2cJXgUcQ2wUR2YZdDwBeU9RUzV2WHEDL0EyRSwTOm8PZ1V1FR1AXUlMWg94IWtkS2J6Bwh2dy8tSCtvUBAFFSt+dBkNMEFxCFBWD3sraXtOQFocd1NZDwNgIAgyCQp8XnpxBQgFBVFJBVclARV7Y3MDflB/YGoVOHo/ZxQnGVUwQnRjUhNxTxFleztjAEpfTlhrCWFtU0ssWSVUOhcmdS5RWnslBkZ9J15nKQEfe1JvaVMFVH9xHFJ2M3sOBC0NV1VCRjQiXEFcUm4wRB9ZBFVhRxRKBmILDUEvcw4rIWg5YUt/Cx5jYStefg1+&ext=ZT10cnVl" 
+target="_blank" style="display:block;border:none;"> <img alt="." src="https://rukminim1.flixcart.com/fk-p-flap/920/460/image/2c88951586c65042.jpg?q=100" style="background-color:#F6F2E9; border:none; color:#818181; display:block; font-size:9px; width:600px;" width="100%"> </a> </td> 
+        </tr> 
+       </tbody> 
+      </table> </td> 
+    </tr> 
+    <tr> 
+     <td style="display:block;margin:0 auto; clear:both;max-width:600px;"> 
+      <!--Block of intro copy --> 
+      <table border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF"> 
+       <tbody> 
+        <tr> 
+         <td width="50%"> <a lname="NIL:NIL:AD:prodImg1:R1;C1" href="http://delivery.ncb.flipkart.com/KCEUSP?id=88661=dkUABFwBAQRXHQUEVQcGVgFXAFkCAF1VWAFSVVEBVQhWAVYNXVpVVlMDAVFUAQEFCwVEDQ0DAQEBUwMCWQhXXQMMCFdXXFYHBQMBX1IEAFQMVFsKVwRXCA0GDkhQB1wPDAgDBFINBwVVVglXCRkLF0wWAhcbBQFcUBJTRhgfC1tXF1ZYDUlcUxQVHwVfCEwoeyNta2ReDVRFEgU=&fl=XU1ERF4WGF5IB10PQA4CEUxIW1dZThAfWghfVwoeCUtPQVpMNV8DXF8UayFXLykvdwtVCwAzIwUBBgNsKAUXYlpqQGweXHIGClIBLGYIGRRpDFwAZjMKCGNUZGMqfw52VF4EUDtodnAXBnoWdQo1N04+eXFwCB1UWj1XeAcAKFNXXAllKGF0fwMUWw0FVyEEXwpSYlkNU1tIPnJ3CUAzbGdhcnY0dl13Iy5bS1URGzlxIH5OWlI+SQ43dWUCQx1AB0xUci9gQnRTJ0ANQA0LLXYWCm1nOwhxaCdFGSBaFAlbCmBmKAl7YVULeTJHCQAWCF5eWXAMD1ELJVxOCEASamN+Sg0pYVFqHy1jJwMJJiYMCUlBegwDaF41U1kjVAFMXUtTQQNfb0o8LGsMSR8KOk4gS3B+Owh1AQICbQ9aAn9naUYGVmpfcCEDQy9fUhcxblAMbgwyB31xJkNaNWRcTlxpYkdQclJ+SzRHUwMNFDF0AHBpTik3SWEzG04SARQOWQlUcAdIdVArLWNRfCcCFGguTEB4AhZfbFVeZCtjK2xqdFsHUVxUUxMDYCdWCztVSiBScG4zHmkLE3BxJwdSYmMJYmcsa2B7LhlUHGMcTjVKKGFPY1AmWk9TfHgKfSdIW0sIUSdLaF88PlM+aAIMFUo8e0l8KzNpdjdfATZnKXtGYX9sPl1ye1RUBVZANxQRUSB9fAIvDmRMC31EJH4uXH9TUlZTcFRVCxYEI14WCSJOFmhPGSMQU2g2eEcwYVVWXEFETSNDc0UUTEUcXikNEFFeVmJaBy1RST0EYBBZPFVvVUJ6HXR5XxICfS1mNCxQaiMIYnYwFkhIVH18KmZcAXBBHQU9b0QLETsHD1EpMAl/CFJaZTQiRFcNY11Uegp0cV5bbREMdn8wMwEKeBUkBVw8DHkGFiAHQSpEQVlnUF5RTgJzCW4CHxZRdj5HFCkpUVV9YWtVXHZqBgJYMGUGFU1SWXgzVFJcCDBTPkE0O1V5LlZBUSBcYWYiWHYWU1dhRGFYfyJobUU2GHQoShQiLVMWflphGAhxAFYCBhAcN3pSYXtiCXN1AhUqehZiLS4PXSVzTH1YCH0OM2NhI0dXalZfQGc8X0NXVxFFDlk/NFNSNg55UAQ3SFgGdQEHYQ==&ext=ZT10cnVl" 
+target="_blank" style="display:block;border:none;"> <img alt="." src="https://rukminim1.flixcart.com/fk-p-flap/920/460/image/dbca4a9e7a5c1507.jpg?q=100" style="background-color:#F6F2E9; border:none; color:#818181; display:block; font-size:9px; max-width:300px;"> </a> </td> 
+         <td width="50%"> <a lname="NIL:NIL:AD:prodImg1:R1;C1" href="http://delivery.ncb.flipkart.com/KCEUSP?id=88661=dkUABFwBAQRXHVUHBlRWBlwHCQ5QVFYJC1RXVlRXXAoADlEDU19WBAQFBlYAVFdTW1JEDQ0DAQEBUwMCWQhXXQMMCFdXXFYHBQMBX1IEAFQMVFsKVwRXCA0GDkhQB1wPDAgDBFINBwVVVglXCRkLF0wWAhcbBQFcUBJTRhgfC1tXF1ZYDUlcUxQVHwVfCEwoeyNta2ReDVRFEgU=&fl=XU1ERF4WGF5IB10PQA4CEUxIW1dZThAfWghfVwoeNwl9andaAmNvYgMnSAVvBxoCSyh+XXBSMHxtFVVMLGYMYnhmR3pRcWMGKihACXUONClVHH5qU1Eif1YhQ2U3fC5pYVRmQCNedVsNLVApdAQqNAk/UVJVCip/SwFOWVh5U1NaTXICAGtkVC0FUC9CVRoEQhMLFWAmEXQNFAJiNFgAC2JRQ2cLY0R3VgJIJGE1BgJPIHNzUiZSUXtdBnoxeyZ+eA8AAAxsdVwlTEQsSh0iBXosX1F8JxAFbj1OWBV+XQpganF6MG5nUREOUlR4F1EQfjR1X2UbCgUUAkFAI0sESngOYWEcbUFoA1ViVmkNECwKNgBJdxk2V28ufWFVdlRxVnNRWBZAfAAuMkgFV0gMJAxeQX5iGUlgdR1vQQcCMHUMSFR7Cld+dFE+dEtCKCQhcjFxUQMVHXxALl9NClc6dXl7V3goWEJVMAVcP0ovVjNBI3lqZQYTc3gcYn8UdhB8XwxFQgZ1aGoEJXZUeA0UIVMQbA57Pg5CYS5pThZjMkIFUl5zLXBDYB43RBVZLVI3cFVNCWNTKlJNBm5uWFAycVl6b3glakdYOTRGCAMnJFQVIW5vTSsjV1QjZl4uZwMVQXh8YVFXY1kzJFs0UTIvDgoMVn12OAVTaBJxTj5ZLXRlXQBVC11tSBQiW0tkMyo5XBdxXENSNUl7MEADTENQQXdacwAGUlV9Igx9L0cJCCZxDmlLViMBQHALZAYsdCFZBQ8ITQ1hcUocEXM5UylQCg4tamBrU11qUCwGdyd9N1kHFFZxJhRDeiM5UxIEIiYBYA5VVkAmFwFjEldSVXAmS0FXc2MlTQcFHAt1EUcMKAsOVFZqGTAHSF4MeWQxeQhecU9gdiJ7dFs0TFdeezoIMUgADmtOVABWVTcOAztwEHtaSggHCUhxaixQZjVaXTcqXFd+f0ZZU3d6SQN3FFs=&ext=ZT10cnVl" 
+target="_blank" style="display:block;border:none;"> <img alt="." src="https://rukminim1.flixcart.com/fk-p-flap/920/460/image/6d5a6fa54fa26aed.jpg?q=100" style="background-color:#F6F2E9; border:none; color:#818181; display:block; font-size:9px; max-width:300px;"> </a> </td> 
+        </tr> 
+       </tbody> 
+      </table> </td> 
+    </tr> 
+    <tr> 
+     <td style="display:block;margin:0 auto; clear:both;max-width:600px;"> 
+      <!--Block of intro copy --> 
+      <table border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF"> 
+       <tbody> 
+        <tr> 
+         <td width="50%"> <a lname="NIL:NIL:AD:prodImg1:R1;C1" href="http://delivery.ncb.flipkart.com/KCEUSP?id=88661=dkUABFwBAQRXHQBTBVRQUQpSD14MBAVWCgUCAgJQXABUDFQDAg9SUFRRB1QFA1EFXFJEDQ0DAQEBUwMCWQhXXQMMCFdXXFYHBQMBX1IEAFQMVFsKVwRXCA0GDkhQB1wPDAgDBFINBwVVVglXCRkLF0wWAhcbBQFcUBJTRhgfC1tXF1ZYDUlcUxQVHwVfCEwoeyNta2ReDVRFEgU=&fl=XU1ERF4WGF5IB10PQA4CEUxIW1dZThAfWghfVwoeH3NwQ0lEPE5PBTwbWyxJVxEiTRddaFE4L3N4VUV9L1RSa2MNe15SFH5nCQJ9CUQDJAhxFUpAQzUOcgkHUQwGQzB8BVAABgBWX2hWFnMCYlBTM1o/YQ5cAAUJZgtZYAhYF2oEYFV+UXBYWQouBiVaIzRaQAB9D3kWIgBBSQNRNkUGaQwMSQQXdENVMgxbOW8JNytVFXdcDRITYnUpdEMISzpARX5zeSxSZEUCG2MvBQ9TLWwWCXcBERcDQTN+eC93ARVTDQBnB11HeRcYZCwCVDsaejFQWmIsA3ltUAYCKW4oCGBbWk4qcwUBCScAAgIrDy1pMFNceVISb3cmYHA0UB9QUw57DSNydXs/NG4qSConNmE+C0p1IBIJbwwATDBfMlZXAWlwLFdyVCcLWCVlLipUXyd7S2YqMn5YPAV/NkINa3NcRVMNcw97FAVlHn8fKzILAFRwBhIHWAoMckMbAS4AcUF0BDVsUAoLUwUQBQ0NFkkKU25ZND1UVD16XlZZC2EEQ3JBNHhEawMCCDwDCwokTjlhAFoFFHh2PWFhI3QIamFfQ2FcCQdlIhVgFH4BMwheN3APeSI2R0xWD3MpeyYAAA1gTi5fXEslU0kOYjw8C3IlC3R/BhNGegBBRhNHUlBYWmUNNltnbTkICQIAKC4LDwtUfFUkE0gKCA5bJlYQUE9WVBkic3ZgIC5TIWkoMlJPUA12AyY0fABdTFUjBjViZmF1BTNsBQsrDGMDdBQBE24uQVVHEy4ADQF7Rgl/PwFvVXFeD3N1VEs+YSAJVCkuAQ1AVRlQAml+Nht+DVdVXARfQ3g0fQdoOQNUCV8hMRlcIm56DCUgWm49BXAtYwQLBkhEbA54e2VfN3AXQiAuJ00xYgtlFAtyUlxQRCdBPX8NCn8DEUtcYQcqXQ9YVSBOYCVpQlwuPAN9DBtdNHgLXW0OBUUJUHRHUyJaAgMTJDJ7Hn5PAAoQeFpSXw0IR1d3WFADcRQBdVo0O1stBjEkVGdVdE53LQV8CjZXdgsGK3NSTmV3UW9WVCgjUi8CACsGdhJ5U0YyIlxxAnAMFghXa00BCHkhaGR/LjlGV1kEEg1KEAlPWFk2B3YsB1YrBARZWAFkDDNTUQUzA3AIcgksJl0waFIGBwNGCx4FbAxYHG4YcloHVm9yeC5RCTNGIhQkVg9bbnlYSVV6V2lHKUhUVX5VWmY+VXR4DxtGN0MzJxtIHmdwfxIgdVIWAFwWBD1vVBRBcBJDUF4iAng2eDxaMXlXXXoMNQ1VVgNvBQZ/KklWf1hAIn1dQSETCCt2LQAvbBRZVwY0KwdAMg5tGwQieg1VWxkAc28GAzJ2HwkvOhNuBwpyVyMACXpVZwUrVypgBGEFXzZKUGMHVAcXdAIJVnYMSV8JXA==&ext=ZT10cnVl" 
+target="_blank" style="display:block;border:none;"> <img alt="." src="https://rukminim1.flixcart.com/fk-p-flap/920/460/image/74064a35de81d432.jpg?q=100" style="background-color:#F6F2E9; border:none; color:#818181; display:block; font-size:9px; max-width:300px;"> </a> </td> 
+         <td width="50%"> <a lname="NIL:NIL:AD:prodImg1:R1;C1" href="http://delivery.ncb.flipkart.com/KCEUSP?id=88661=dkUABFwBAQRXHVdWUlMHBVxfDQoMUgYJD1RSBFRUVVwDCVEDVA1VUFNUAAMJVFJQWgNEDQ0DAQEBUwMCWQhXXQMMCFdXXFYHBQMBX1IEAFQMVFsKVwRXCA0GDkhQB1wPDAgDBFINBwVVVglXCRkLF0wWAhcbBQFcUBJTRhgfC1tXF1ZYDUlcUxQVHwVfCEwoeyNta2ReDVRFEgU=&fl=XU1ERF4WGF5IB10PQA4CEUxIW1dZThAfWghfVwoeFGJ0UXoMHgt0RR4GfCpSHQkbDyFPaVcGPQh1EUZEO1MUXwNbQmMhSn0LSyJlAl8TBRAKD05UVQwTdX4BYWAJQiN9Z0pFRzthXUQXJwEzRVItAVQHcUwGLFV2CTZyRy9wH0xqCkBWIUhkRSIoQxVoXBUNcyhiAWtSKGpjXQ9lKgYDf1MPUn4wbQ4HXzd7JXMEKCVaCxVODQVVUXILX3pRey9yeUBFYgFwDwcHFlArUSAkB2cgSUFAEwZgbiVce1NIFlR2bWABPlhfaikPXBZIKBknawN/TgE3FlJeJ3MGCWItXEB6Sl5VCFxwVgkINGIQMBJbAVNyRhUJRlAKZX0CYigVTQkCVgxffmRLNQYCeAkKGV4nAGwAI1NTSQ5FUSJGVRVie2ZQHEB+WjkoBihnLgcaYVdsfm4DIG9AVUVDD0g0WlpBakwOa1RoB1VGS2EnCCF9KmFPUzIncwA1cwdVVBZ1RFtaBitxTn8WJ0cPeQoBCVInVU0DFQFAYDZ1Ug1BOnN3QFtgNE52WAMVelNjBxoJTRJXXFgoDWRbNQJGU2NVYGd6RQYwd0FFJQBbUl88BjNKH2dXegcWRwsMcl1WQyh1RUp9ZFdrZ3EXJHAIchIsG1opdUtXWCcJVCZveg1eD29gFEZOCHUGXVAxVTwIJAYtcA5LD3crUGpyKXVXKVIrCwV0VnYICmViFCdbDFoEEy9rKnpnZCsBSmwHWncieTZIXAl/Qgp7bnwcOWZfZCEkOX1XZ3YND1EBdVV6WxNXIw5NaVlSPVpVaCEWZwJmUDkwTVVNSHgmNFl8BXh7B2UtW3xyVgVJdE4KMSBdHl9UEisKD0wKGSswWUMIXlsLWwBqVAEEYgBdcEQ0Bgcxc10FVFBVAGINI1dyQy0GUApXNnB3YQYAHW0Aax4ScgFIUDYxdiVnbwUyLGdjDHh2DH0SC29NWWQ0S3NcI0xlC34RKlBPAwEPDDYpREgMUmsTZxxwfHdWTAdhb1AKF0sEeSgGExUSDmlBBBx8U1RTTDZ+FUF6bFROVVwOUCMVdhdyKTwQVzltQmZRPXNYMXF3C2MiUHJbVwQ7a2ZELjEECAEdGlRSLQFSUBE8W2oPZEAVdFwPXnd8GSdyRHQDBwMvQRMOO3khYQ5hMCxnVjcOACdrNXtxU39VKhRuQy4TVRNFEiBOTDJoC01ZHFMOLWJOTBwoflNeZQUgZgBKCw9BKFsxGhoBAEFVUAtRQUwxf3gOWAxSWHxcUhFyf3EeEUUOWT80U1I2DnlQBDdIWAZ1AQdh&ext=ZT10cnVl" 
+target="_blank" style="display:block;border:none;"> <img alt="." src="https://rukminim1.flixcart.com/fk-p-flap/920/460/image/2f8c36d31584f9b7.jpg?q=100" style="background-color:#F6F2E9; border:none; color:#818181; display:block; font-size:9px; max-width:300px;"> </a> </td> 
+        </tr> 
+       </tbody> 
+      </table> </td> 
+    </tr> 
+    <tr> 
+     <td style="display:block;margin:0 auto; clear:both;max-width:600px;"> 
+      <!--Block of intro copy --> 
+      <table border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF"> 
+       <tbody> 
+        <tr> 
+         <td width="50%"> <a lname="NIL:NIL:AD:prodImg1:R1;C1" href="http://delivery.ncb.flipkart.com/KCEUSP?id=88661=dkUABFwBAQRXHVNTU1dUVglXXFpVAwZTXAICVVBVXVwDCQYHBwwDBAMDVQIJAVVSWwBEDQ0DAQEBUwMCWQhXXQMMCFdXXFYHBQMBX1IEAFQMVFsKVwRXCA0GDkhQB1wPDAgDBFINBwVVVglXCRkLF0wWAhcbBQFcUBJTRhgfC1tXF1ZYDUlcUxQVHwVfCEwoeyNta2ReDVRFEgU=&fl=XU1ERF4WGF5IB10PQA4CEUxIW1dZThAfWghfVwoeU2BBSVV3EUhUeAdUAQNfDQIpbxUPQWEPUFtPL19HO3RUC3xTZE0XU19VPhUBA2AhMyV2LHwKeyJWREEQd3ItaCoORVgJcAtKAmEcOAc0WBQZVGwoeVR3WSxDCDIEBw9YK2lUaXtiAAB1YV4qYx5jFi40QTldbF8+MlNxEAYMOAUgWmpofV8gXlgAAwhJS2gGByhJHm8IXDJcAm8McwQUdzVeQUxeXTxVblA2PnMLfS8XBHItDHttWFd2dT1AflJwD21afwFME1VQcDU2WwdRK1RaYA8LDhlVCmBSHVRrK2kiQkVoQn5RTkdQJA98M1xXLTkKKn5PYFYSBk9QclIvSDcBfBRFAjxodHkyWWgxYxcGN0g+VUpkMBRqcFNTdwJlCA5WXnVkIlNuSgUrXlFpSDJQfAQBDX00EWNwBU5kJnc/DAIKUlELQGFELQ93HEoHCQxfAFwIclMQcWsCG0AHeQFrXWhIeCpaAmBfVlcHfVwXD1ICeVxsUy1vfD19BSpcUkJHUUFdNn5PagwgZhJFITQBUg8ITXcDVFRmO2lyCGQBfQJ4RhkUSk9xKzNzK18UUjJWPmBrYDkwdW4nRlALQEgIGFNgeypKXVc/KQFTYy0XWwsBfwxELQxDDxB9XAB4NVBtfld2DFBfeT4ScAFjKxMEfVFSdEIZJ1IUSWxgKWZTVHF2X0EdbUVcAzJTBGgJLFt7EU0IZlcrUVsDV2c3SSYAc3J+Vy8Jb3MxCHssRTcFKGAWCX5SMQNXCFN3bS14Jg5zV1NkL1h+QTYwWjd5CzUSfy9xVnIEFWRbMVwBUEkXbQRcX1MAQAViV1ZfVHlXMShZHnMAWzIefnUjfWxYVFx7QnN4BFFybUgXDFkReEgzOVYRdgp8WAlVAR4FRTFjP0tPamZMIEhobVcQcFVoCAQkTVYMFVc+Dl8BN1dRIH4scUN2aEItXnpVPw52FUlcFDtbKwFqc1M3R1ImYF1QXwMVDXYJTRB/RXoECmIcaicKE2EwCFVZMAZjCzRpcjJ/LQFkX1dHFFRQXR9SBwAEIFsOFRcBDEIXNkpmNnJ4WAYCbQF6BFIuSWhoAg16S2gAFQdOJ1t2blFdQncPY1kuVRYIb0NeDEljemNUFgVeSQoNU3ADD1BELSNoTgVpcix0Nnp3YXZQFBRzcVJc&ext=ZT10cnVl" 
+target="_blank" style="display:block;border:none;"> <img alt="." src="https://rukminim1.flixcart.com/fk-p-flap/920/460/image/dc3c5159b55c1afa.jpg?q=100" style="background-color:#F6F2E9; border:none; color:#818181; display:block; font-size:9px; max-width:300px;"> </a> </td> 
+         <td width="50%"> <a lname="NIL:NIL:AD:prodImg1:R1;C1" href="http://delivery.ncb.flipkart.com/KCEUSP?id=88661=dkUABFwBAQRXHVICBgEGAA5SXl4ABwUGWAdTAldUAwhRCQkCXQ1VAgMHAF5SV1ZXCgREDQ0DAQEBUwMCWQhXXQMMCFdXXFYHBQMBX1IEAFQMVFsKVwRXCA0GDkhQB1wPDAgDBFINBwVVVglXCRkLF0wWAhcbBQFcUBJTRhgfC1tXF1ZYDUlcUxQVHwVfCEwoeyNta2ReDVRFEgU=&fl=XU1ERF4WGF5IB10PQA4CEUxIW1dZThAfWghfVwoeU2BBSVV3EUhUeAdUAQNfDQIpbxUPFV81V0UPFWxaEwJWWQZaWF8hZnYKAARVLVhdVStoH2gMAgtSWm5cVQRRYyx2X09EelFzfGYuEQkkdAMXMwshCE5yBBUDeCV0Bjh8M3pkdGEFLkt/aww5egoHKC5QcC15cQEMLgh/LFwAMG5QDnBAWF8xbEQFHwhoNVQqNQ4PN30IUDQdUlc8clNQZlwAcklfTDcIDgUOMgcNSTBbOnEOWwhsCDJ5TBJwB1ZiUlJzcl15AUhtYjIyejRyUyw8TwpPVngDXVJsIwFkMm5QcXZMXnEJXnBcVS9fNAkQFRZODXB5UTMFZhQzZWI2WRd3bXYGAw1NXGpQLEcUeyssEkE/CnZmUDVGTQxpdg8CXUkNc38APgF2dVMGZAp5UFFbVQRUU3klXQlyJnN+MHUwdlxPdnUSYQdHACJgKGoWMDtTUH5TU1gRSVIjY1MZXRxSAlABbi0IBmgnDWALXicNOW8NXW5nUlUAawdZZwVINHxPQARbVnVGBS44fTYAEAIGaDZKXlxRAH1RHkd9IFwEVgR/cloeCUVbLS5ZOWcTBzpgVQgIbSoRY1YrVAYkXDp+RkpXXS1aBAs+LH4TVQAKO1k+FVFAUDQDSiZ4ZydJXH5jDwdkMmF4cygmbiRvCzcODktIa3gXMVdTUUNRJABUf296aH9SdWVWCywCHnxQF1V+IG1SXQQ2QmklRFUpeVAADV1KV11WbnshOV8sQhIwVUgzf0tHKRVmbDx0AiAGJ0F+QHFfDWl+YTktYFIAFTsmfghfW0MKJlxSU0JDFEMzVFddb3kmX0BTVAsHMVcMJjNBBFNQVVcFBF0DeXUvVEhcQFpdVgNpdmAzMX0gcys3IRUSfVYHLi5EfQZcUzAFBnd4WmoDMGZCfzMbSAlEHCAzcSgNakwUAnELAUB6VnQgAFRrSnURUFwHMhBuL2EIPAhZXnJIZgcye2wxcwZWYAZ7TH5UXVYIUWZWXA==&ext=ZT10cnVl" 
+target="_blank" style="display:block;border:none;"> <img alt="." src="https://rukminim1.flixcart.com/fk-p-flap/920/460/image/f855857e09732029.jpg?q=100" style="background-color:#F6F2E9; border:none; color:#818181; display:block; font-size:9px; max-width:300px;"> </a> </td> 
+        </tr> 
+       </tbody> 
+      </table> </td> 
+    </tr> 
+    <tr> 
+     <td style="display:block;margin:0 auto; clear:both;max-width:600px;"> 
+      <!--Block of intro copy --> 
+      <table border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF"> 
+       <tbody> 
+        <tr> 
+         <td width="50%"> <a lname="NIL:NIL:AD:prodImg1:R1;C1" href="http://delivery.ncb.flipkart.com/KCEUSP?id=88661=dkUABFwBAQRXHVRQA1RSBwtfDgsNAF1TDwZUUgIIUg9XAAMFUFsDAVcECVAJUAcAD15EDQ0DAQEBUwMCWQhXXQMMCFdXXFYHBQMBX1IEAFQMVFsKVwRXCA0GDkhQB1wPDAgDBFINBwVVVglXCRkLF0wWAhcbBQFcUBJTRhgfC1tXF1ZYDUlcUxQVHwVfCEwoeyNta2ReDVRFEgU=&fl=XU1ERF4WGF5IB10PQA4CEUxIW1dZThAfWghfVwoeNwl9andaAmNvYgMnSAVvBxoCSyh+XUwDBwVLKg5WTAgDb0ZaemIWeAN4DwRwHFlcLAZTLmpiBC8uAm4eTFEuSCdtAnNxeB5tcGQwG1YpRi4hV1QCVQ5wID1/cDJ+WzJ7DGEYD2FOIld7Cw8sWjBWMDIPVgNUUHhXSXxXPF1zUkYMdl1Jcl0VUGV9P1IcKEgjIhpwPntvACwnCQAAYEAGeg5eX3oHB1VKch8PMn0gagdSAm8MSnplFBJiUyBEflllHUFnf0Z8EVtBAFYDWwpSSApabidzTnIFC151E11+OwU6QVgACAECCVpkCCJZC3sCLwB5MWJVQzIhe25TcQwyVVwNcn1cZT1BbkY1AgIiWi5bO1RRamAFJAJoCCp6cVZLIHVdekIAKUACASc+CFcACxMlTiFvWlwPN2NuDwRSLVUjUAFvQl9dd05mUCt6PmUzIhZPEG55XFQ7UUsFWn0VeVBhYQxBVx1uAnkNKXUWUSMaLFEIbEIZVyB1Vhx6RzdCNX9abGJcI1VSZyQiRgtXLyUPVgVaWkI4F3xqEmlTEmEXUVpxCUMFbwd2Ng95NkMdATlKH295AVhVWFoyXwwKUCNaUw4HUiNzdHEIFQEvXwcmPHs5dkkCCyVBXSIGdwZUIk9ZW2F4Vg0CZAkyQCt8SFUwbDINbkYwXUN4KnABDGNVT0V8SFo7DgIDCyVCDgEBBQxWL1lZZicMWX09fGw5ZgQOUQ9TZQJaXllUM2gNVCEpMxUWcmpeDFReYBEbcwNDV3UDYEVWKwBFUCQOcglXPxIpSQRuSnYKIGh7D2ZMNWUACkVwdQYyFHtwVFcEDUMCAlJNHxVUBlI1WlsleHw3ZDNSc1pqZkkJRwsOC1oVQQAuMhVLCHdrKgZ+TCpYWVJ4LUpmDGJSIUxRfytc&ext=ZT10cnVl" 
+target="_blank" style="display:block;border:none;"> <img alt="." src="https://rukminim1.flixcart.com/fk-p-flap/920/460/image/9a1588062b0bea99.jpg?q=100" style="background-color:#F6F2E9; border:none; color:#818181; display:block; font-size:9px; max-width:300px;"> </a> </td> 
+         <td width="50%"> <a lname="NIL:NIL:AD:prodImg1:R1;C1" href="http://delivery.ncb.flipkart.com/KCEUSP?id=88661=dkUABFwBAQRXHQEFAFxaUAgEDQ9WVVYFAFZTVwQCVg1QWgQMUQwFAlZVVAVRUlcHW1VEDQ0DAQEBUwMCWQhXXQMMCFdXXFYHBQMBX1IEAFQMVFsKVwRXCA0GDkhQB1wPDAgDBFINBwVVVglXCRkLF0wWAhcbBQFcUBJTRhgfC1tXF1ZYDUlcUxQVHwVfCEwoeyNta2ReDVRFEgU=&fl=XU1ERF4WGF5IB10PQA4CEUxIW1dZThAfWghfVwoeU2BBSVV3EUhUeAdUAQNfDQIpbxUPFWQbIVEKXGNSIHkLQUx3WHNQd3ZeEw5rDgYoWgl8CAhZUxJUX20Ubn9XaCNAZ1dhZDV8eVgiJl0EdFIiIksgXEsHUgNxelUHQCpIKX94Ux18MwpHaCAFBTxnXQUwSCMOS1ASUlJOVltZIkU8DFZPf2cOTGBDVFUFAH9VLCRxF0t8c1MsXWMFB2sjBgkKZWxVWwp6QAE5LlAFcyIrM1ILZ3RjLTd8XklSUyVGLkJjSGpyImtTeVUpCRJ1IC4gVS9+bFsKBXRhNGJfCVgBWVsAQ2sPFEB7IghyM346UFJgD3tSRhdWYF8zWH8jSQsMbEh5Uw1wQQJfDVAgAQw8In4iSG99NiVYVV1SVi5dEUliYFZwKkBGZzwJZAFRBCsvcQ59f3wTUF9DPk9NMAUobVhDSFYCWGJiVRVSLgY3MzVKIwFVfBsLdkhRQ3xZSFZybFgJBlVRbmcTBlghZTY8LQ4JeVRBMilDdlUHQQBAVlAGQX5YPklTRBwUSzxfIlZOWxF2AXwkCh18Jw5REQALZ3AJU1g8YWFkVA5aEEAnMBVyFQF6BAcsZ30VU3cwBlVrZmZ3QzVLZkZTA2lVAwQhUlMEcgx4WDFyCiVTZQx9NEJqUlUCU1NeVyFMc0taNTEbejN7cQc0LmBzKFVBLkBRX3F+dngeD01lIylZJAlcFwlXKFNXRisASWhcAm4HSTQLZVUJBQd6TlkENXITUykEGnpSdntrIAlVWhJHUjhTFlJ7XUhcUlBTHzUUYjFTLVUrDz8AbgxZHHV+UFthC2EmdEJtaHMJD3xrEzFDLENVDRZoDVwMcwgnWGgdXlo7dx9oaglDcS0UeXcECXw/BS4kDWojQnFYCRJjSSV/eiVBM299fAhnV0FSYicDczJZEzUKDhFTWWssEEkBLFNMUHcxf20Lc39cSk1hEUx0IGlQKSRqAldsVSQHfGtRXXlSVjNnRHhmbg17VAMPGwQcYQE0NlIXT3R8UDZFXQlwfChpEVUAelxgUnpQZDYTaShUCwUvVVF6XGwyM0MBAwJbOHkMbXF4WlsJQGVeM1w=&ext=ZT10cnVl" 
+target="_blank" style="display:block;border:none;"> <img alt="." src="https://rukminim1.flixcart.com/fk-p-flap/920/460/image/cda1d1b7462da6df.jpg?q=100" style="background-color:#F6F2E9; border:none; color:#818181; display:block; font-size:9px; max-width:300px;"> </a> </td> 
+        </tr> 
+       </tbody> 
+      </table> </td> 
+    </tr> 
+    <tr> 
+     <td style="display:block;margin:0 auto; clear:both;max-width:600px;"> 
+      <!--Block of intro copy --> 
+      <table border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF"> 
+       <tbody> 
+        <tr> 
+         <td width="50%"> <a lname="NIL:NIL:AD:prodImg1:R1;C1" href="http://delivery.ncb.flipkart.com/KCEUSP?id=88661=dkUABFwBAQRXHQBUAgcHAQ5eAVpVBAEGDlAFBlAHVV0MD1IAUQsOUFIEAwQAA1VQW1BEDQ0DAQEBUwMCWQhXXQMMCFdXXFYHBQMBX1IEAFQMVFsKVwRXCA0GDkhQB1wPDAgDBFINBwVVVglXCRkLF0wWAhcbBQFcUBJTRhgfC1tXF1ZYDUlcUxQVHwVfCEwoeyNta2ReDVRFEgU=&fl=XU1ERF4WGF5IB10PQA4CEUxIW1dZThAfWghfVwoeU2BBSVV3EUhUeAdUAQNfDQIpbxUPZ05TUHZTEE59U2NQeWwMZkA9cQZwCTYGI1YmC05gMlBfBAZWXkoPZgEOfx1/TGNmfS53ZGojB38gRDY3Tns5bUtcMCN/XzICDVhuBm4DXlJbBVVWaF4LdxNhEhBTbhFcAW0gK1IAK10BLFVQUHN2RV9QYQJ1MAd2E2gTTlVtS2p6WQcrZ35cQ000ViloGHp3YCdmUmsIAHleYCAAEww8S1FhOCN6VCxOcC1eEk50fl5aLUFjVRdVUz9iFwBXaVFtUWVQNFReAABAC1UsSwVbanM9exp6VlVyN2gwBDxrBGx/AyojagBQYUUIaBB7fU19Wwl6T3xLMGMPfDYyFwEQU0JbEh11VgpeDDNAVHpYDHtSPV8PRwQCRSwECFUkegBCbm1TPlsLHmF+AEcmdxhdenYDdlpBLg9GVQknWlNaNUpOcAswW28lU3kCHCdubQoDRD5gZHFfOUgtdz8vVw4WAW8FJCBcVi1OQgZyOnxXTUoGEElkRS0jVwJSBhkvATVoQkEtM2QAFmVEDgkwbXpdaGwXbFFkIj55U1gDG1QLDlR2fC4hflcUAV8yeyFpB3NiGR5AXQIwImBRZyANVnYsd1d3Fl1DQSNgVTBEXGljC2lWLlMaUTRVcy9SHA0Majl0dX0NLFoOI10CBWkxUGxXXWscf2h3DSZfCkAtJU5yAVN0RC0LfXFXflsZcxYNWAh1UBdxeWQ1CUEQVTA8NktRXnt7LSJzCBdXYC4BJn0HFEJfEAhkbSUpCBBTIxZbdSMVV2Y0U0ZWMV5bGANTaF9xZ14xW1ZxNjlTLAcAMBlgE1NrXTQHWlsNDlo3VzdTWVxmURVtYXE5BVRVW10SO18vDU9YNChmUFNARRZLIQhmCVZWJ0lCVxUPRQ15VVc7eghKU0QFA3NaPmRgCl8mZwVzc3kKcmBQMC5pNQcrJA9gC1Z2cBYoeE8UZXIJBDJgVGpnDElhbQAoC3YhchAUM2cPXkEZJwtgXxJTblRn&ext=ZT10cnVl" 
+target="_blank" style="display:block;border:none;"> <img alt="." src="https://rukminim1.flixcart.com/fk-p-flap/920/460/image/e747333f2d0cefde.jpg?q=100" style="background-color:#F6F2E9; border:none; color:#818181; display:block; font-size:9px; max-width:300px;"> </a> </td> 
+         <td width="50%"> <a lname="NIL:NIL:AD:prodImg1:R1;C1" href="http://delivery.ncb.flipkart.com/KCEUSP?id=88661=dkUABFwBAQRXHQRRAlEFVQgAAFlQWVdWX1YHAlYAUglUW1FXBQhVUQRQBFJSUgUCW1NEDQ0DAQEBUwMCWQhXXQMMCFdXXFYHBQMBX1IEAFQMVFsKVwRXCA0GDkhQB1wPDAgDBFINBwVVVglXCRkLF0wWAhcbBQFcUBJTRhgfC1tXF1ZYDUlcUxQVHwVfCEwoeyNta2ReDVRFEgU=&fl=XU1ERF4WGF5IB10PQA4CEUxIW1dZThAfWghfVwoeU2BBSVV3EUhUeAdUAQNfDQIpbxUPDnYuUl9eIw8EJW4cYVdTZgYCUn98NhJHJ10xDlRBK3pvcxUcaHg9QXFRR1deAlRDdxUADnk2LHAtAgc7An0cawlwBh1SdgFhfztgEkxMX0FXL2FxYAwTBS52HDEBbV59V2M+M0hhLF9tMUQXTm1RSVgrWwYFJy1QBWQrLzdeDWd1eCwSCVgld2IxYjABYwtpZzNqGksyC0sUcxQ3JxVVQFIAOwlZTSpebRRiFG1NXWhMIX8AQ1YAXTleNQUNbVFtc3k1XV0PC2dbOQcMDwduaU0sCnlKIBliIUBUUBUAVXJORgVVAVgBB34lAxByRWABfBZqfAYsKmQ2Bi9UEUoAf0lWFAp2aBRYbVB2MF5XTHZNFnFhSlZWVwh+KDdQSzJiXgcVJkQNBn9cAwMcewRIBgAsak1rMxUEV1ctFjV+BQFxXDUtY048W3MxYABSRFxlATZ7e1khUEUCBQY8NVoJSkkGLhB0QCFHZRJfOnZ9bldaD3cBdDwSdA53LFsmTzldDhkwSX92AQ92IgddfXluA0dXZkV/DlEEPlUyCRNtV01IWjYLUgktc2wjUDZWc2B9AlduXHgrBggjdBYxKV0fTXxQOBcdfhBkDDZrBFx9VFwACmtNSBJRf0sdAwE3SSIMVXVTC1MMVEJEJm4MSm1LXnclS05FA1leOWAgNxVaEVlxQCgRc1sQBngrXRVwcWBHDSBrBWEuK14JAyJVGlk8WVtTFAFBWjQHXRlyVA0BSUh7CQp1exUsfA1pSBAIXD9zQFIbPl5bKAR9NmMJb2BAAQQvclhXMT4INgYyCzNpM0h7djFXWUAneU4IblNCdFBIZDMNXn5WMQcWBTMLOmI3cl1bA1FGWBIAU1hTHUIDXF51L3B4UCoFWzdXVwozCgJCSGYrFXdjO31cUBwMCn1VSF4tY2RwJFUJV2opFBtzIEBaWjEIRG9JVWY3XBBpWloEVipvZ2gsNUcgb1E8LA9ecFBYGC1BSRBbcQZDVVREbQVRUV57YjZQQxJ+Ng48cwhgUQE5KAELXXleNWUCaldwdHMDWw9XL1w=&ext=ZT10cnVl" 
+target="_blank" style="display:block;border:none;"> <img alt="." src="https://rukminim1.flixcart.com/fk-p-flap/920/460/image/26abe204109607f5.jpg?q=100" style="background-color:#F6F2E9; border:none; color:#818181; display:block; font-size:9px; max-width:300px;"> </a> </td> 
+        </tr> 
+       </tbody> 
+      </table> </td> 
+    </tr> 
+    <tr> 
+     <td style="display:block;margin:0 auto; clear:both;max-width:600px;"> 
+      <!--Block of intro copy --> 
+      <table border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF"> 
+       <tbody> 
+        <tr> 
+         <td width="100%"> <a lname="NIL:NIL:AD:prodImg1:R1;C1" href="http://delivery.ncb.flipkart.com/KCEUSP?id=88661=dkUABFwBAQRXHQAFAVcFVQpfDwpRVAFSDQdXVVUCB1pXWwhWUlsGAl4FUgUCBAVVC1VEDQ0DAQEBUwMCWQhXXQMMCFdXXFYHBQMBX1IEAFQMVFsKVwRXCA0GDkhQB1wPDAgDBFINBwVVVglXCRkLF0wWAhcbBQFcUBJTRhgfC1tXF1ZYDUlcUxQVHwVfCEwoeyNta2ReDVRFEgU=&fl=XU1ERF4WGF5IB10PQA4CEUxIW1dZThAfWghfVwoeDFdgXUJ4K29CBgQAUx92HQsZSC4PXGE1XEoAD3tQIn1dVHtPWVUvU1Z8KghbIVkyIlFgPmxvZxEVWHUdAXgIVgNcR2gFcy56Rm0MCgg8XyIPL2Ewfw9RWA9qbxZuWVRfPW5Sb0lDA3BZYCEFfwxdEVpbVR5+T2s5NEd0EWlwO1A3SwNeWHkGd2V8FiprLWYKAgRJHGJoAwQ+AVM3RAErHDBZBW9pbCxtbkIhGQEeYhQFVQ8RVElQCAVnXgNvdxd6CktWWnt/BW9iUCgNQAR+N1sTaVZCQG1SDGdSSU91VVJddXwAfAETVHsLDCBLH34qBDJ9DBUIZjlUUndVAEUJXjYATWpefgVeTlUOB3UDYistDFpVV0FgEABAfyZ+VlhLMwxDSQZXSQBcXSIzZzdSIw4EbCJvVwBXKABDNGN5EXcOb0N/B2xdcnFxEQwBDlwqVQUVX2cJXgUcQ2wUR2YZdDwBeU9RUzV2WHEDL0EyRSwTOm8PZ1V1FR1AXUlMWg94IWtkS2J6Bwh2dy8tSCtvUBAFFSt+dBkNMEFxCFBWD3sraXtOQFocd1NZDwNgIAgyCQp8XnpxBQgFBVFJBVclARV7Y3MDflB/YGoVOHo/ZxQnGVUwQnRjUhNxTxFleztjAEpfTlhrCWFtU0ssWSVUOhcmdS5RWnslBkZ9J15nKQEfe1JvaVMFVH9xHFJ2M3sOBC0NV1VCRjQiXEFcUm4wRB9ZBFVhRxRKBmILDUEvcw4rIWg5YUt/Cx5jYStefg1+&ext=ZT10cnVl" 
+target="_blank" style="display:block;border:none;"> <img alt="." src="https://rukminim1.flixcart.com/fk-p-flap/920/460/image/bdf73d9e2f3b17ec.jpg?q=100" style="background-color:#F6F2E9; border:none; color:#818181; display:block; font-size:9px; width:600px;" width="100%"> </a> </td> 
+        </tr> 
+       </tbody> 
+      </table> </td> 
+    </tr> 
+   </tbody>
+  </table> 
+  <output></output> 
+  <!-- ============================================================== --> 
+  <!-- Footer Text --> 
+  <!-- ============================================================== --> 
+  <table class="footer-wrap" width="100%" cellspacing="0" cellpadding="0"> 
+   <tbody>
+    <tr> 
+     <td></td> 
+     <td style="display:block;margin:0 auto; clear:both;max-width:600px;"> <a style="border:0; text-decoration:none;" href="http://delivery.ncb.flipkart.com/KCEUSP?id=88661=dkUABFwBAQRXHQlSBlYHVAsCClsAB1QHCVAHUFgIUgAMWAEMUw0PVlZZAwADXQZVXAJEDQ0DAQEBUwMCWQhXXQMMCFdXXFYHBQMBX1IEAFQMVFsKVwRXCA0GDkhQB1wPDAgDBFINBwVVVglXCRkLF0wWAhcbBQFcUBJTRhgfC1tXF1ZYDUlcUxQVHwVfCEwoeyNta2ReDVRFEgU=&fl=XU1ERF4WGF5IB10PQA4CEUxIW1dZThAfWghfVwoeNwl9andaAmNvYgMnSAVvBxoCSyh+YkctDgEAFwRaBmM9dgRVZH0iSGNTFylXHgcHNyt6Km9gdgwyBlZdcVc3ZC18U1dAYR4BW2BUKn0NZzELIm42XV1XGAlgVSZ6WVMFUnwMD2ZnUFFbVCcWRF50MSkqdydSXXUvUx11InxXVEYBDE1+XlwTSmNAUygDLmItAhtVI056fTMnfFg1UEUlQVN2cnx8UDMPdHBQV10/ZTIKIl0lVn4HMilpYRQBXQ11I1kDegliEEkHfiMxXDZIEDsEbgp6b1YRBVRAEnNSMhxSCmUKRVEKTmN1MBhoNWghKwJ9UwF0XQY2flIVDkAGaxVvR3cCGVdpGlUiVEcFf1M8N2cBd1JyUilDUQdkWCxhDXViCFNyNWNzRi4HXF96LVY6YlRfWVxMAXxwPl5nU0sqCXgAfE4LTlIGDwNcFl88Ig5dAA9+YSIIc1gnRwEXCDJwTHgdYwx+A1cFCXgPdipTIH4ldkBzFyICDS9CfRtkE3Bmcmh+NUFnQA8zYgtvIAtOfjVZeVcHIG9yLF1APmsIbmxaCEMSD2BVKSJ3VlMCEykPUAALbFYDB3gxRWEMBgt0agB+XxB9YEAuVwM1UQs3JkoBAVxDBCx+CylOVRlyK3wDQ3NZV1QBAgMPUFZpPAIsQSpxc14iFnZ6DHsNGVg0YA11WX9cV0cKDQZ2U3lWCQpRL19JZgtJdwwdX3gTWiMMcENeWDddc0oiGX0wVVYsMlQVfRVdMz4GfQkDWD5w&ext=ZT10cnVl"> 
+<img src="https://rukminim1.flixcart.com/www/600/240/promos/30/04/2021/f4c07fc6-b7b4-4be4-8af6-0755a292f4cf.jpg?q=100"> </a> </td> 
+     <td class="container" style="border-top:3px solid #333333; display:block; max-width:600px; margin:0 auto; clear:both;"> 
+      <table width="100%" cellspacing="0" cellpadding="0" align="center" style="font-family:Arial,serif;font-size:12px;font-weight:300;margin-top: 5px;"> 
+       <tbody>
+        <tr> 
+         <td align="center" valign="top" width="100%"> <a lname="Foot:Foot:Foot:genImg3:R1;C1" style="border:0; text-decoration:none;" href="http://delivery.ncb.flipkart.com/KCEUSP?id=88661=dkUABFwBAQRXHQFSVFEABVsECVpVUVxUXFZTVwcDVgsAAQMFUwFWA1JSBV9WB1sCWQdEDQ0DAQEBUwMCWQhXXQMMCFdXXFYHBQMBX1IEAFQMVFsKVwRXCA0GDkhQB1wPDAgDBFINBwVVVglXCRkLF0wWAhcbBQFcUBJTRhgfC1tXF1ZYDUlcUxQVHwVfCEwoeyNta2ReDVRFEgU=&fl=XU1ERF4WGF5IB10PQA4CEUxIW1dZThAfWghfVwoeF05bTkVrO3FUZAQYZSt7XFYqWj8BSGwPO3gNDht1FX4CDE1rBlEldlMEHBByJWg3CRpXIU5tVzEHY0tQeQ0MZlFXfA4CQCJhGmcgI2AJeDUpBQkFeQ4GWRJWbgFvUSBdAWt9DmB/EW1/UQclbgF6ACI2CyNdFQAWDndQMltnPhwMSwxJAm0LWFRkEzl7NF8/Ujx/OUxZRT5db3IifAMHAzFXcUhZBFNbUmpQL3YvZgwnBk0pSnFDEi1ybTRYdw0DBFFtXlV9CEp/QF8EAT9nVxcFFTddSQJZMEB+N2dZUHgDaXR6X1NWDkBKFVZjDGUMKzQMLwpsZxQnZm4UdHgpByFeWFpbYCZ/bVkMIwdSCTpSDnEkDXdlCBVcViFADAJiL0t+V2J/AVZBAjVWCAtWEFEiclAKcGMgAH8BJ2ZDEF9SUk1Ue0wgYwJqVztoMHULFDdRS15eTjNJYkwTenstZiNLVkMFWAlYQVE/NnchAwpWGnQ5W2J5UVx4ACxbY1lHVm0BWHl8O0pDeDZTdglYMFYoSBZbVloLHGNNFQN4Il0rX3BJSH4xdnhRUDkcKXQWOVR3L3pUViIVcwEwBQ0LeCJ0cVgADTwMemE8UEQORycTL34HDnsCLCxgWylAcFdZFlEHelx7Km4AXAogXxVYHAk0dS1LVGczJVVDFHUGEwdIfnZIfmMgcEB/ESxUPFc1Lg8KNF0MUD4HcXAHYk5WRCIAXEEGfy53Y3AxWFk/QVVaWgxQa01fAhVvWlx0TBRg&ext=ZT10cnVl"> 
+<img src="https://img1a.flixcart.com/www/email/images/20150302-161344-flipkartFacebook.gif" style="vertical-align:middle; border:none;color:#818181;font-size:9px;"> </a> <a lname="Foot:Foot:Foot:genTxt4:R1;C2" style="border:0; text-decoration:none;" href="http://delivery.ncb.flipkart.com/KCEUSP?id=88661=dkUABFwBAQRXHQdSCFMCUF5QCggNUgAIX1ABVVUHUQlUD1ZVVloBBFdSCVJWU1VaCldEDQ0DAQEBUwMCWQhXXQMMCFdXXFYHBQMBX1IEAFQMVFsKVwRXCA0GDkhQB1wPDAgDBFINBwVVVglXCRkLF0wWAhcbBQFcUBJTRhgfC1tXF1ZYDUlcUxQVHwVfCEwoeyNta2ReDVRFEgU=&fl=XU1ERF4WGF5IB10PQA4CEUxIW1dZThAfWghfVwoeF05bTkVrO3FUZAQYZSt7XFYqWj8BSGwPO3gNDht1FX4CDE1rBlEldlMEHlVkJ0UfWlYLFHliUhIJCX0KU35WWyRwQlR/Qw5oVAc5WXcoBAYoUWgpAHMGWRJWbgFvUSBdAWt9DmB/EW1/UTxMfRwGElc1TV4KDWsMAXsMJXsCMmYKT3doekQFQ1FjIw9AEX4kJQR/AH12TSscQH8OYFIycxR0T19peV1gVlklDFNfXR0MF10jfVpyAx16YQtOfD5fNA5NDANASWNzeypYYQJnHRQqZyRsAXo0Jwl2IFR2M1MPYnx2eH8FDlMHIhRAMkopUBsVM3BPByAAbw9SQ0MtRQoAGAhCB1wLDmEJIlY2BQsvIkg8e3tdKgIITikFUikELUhCSXpQAApEWTYucjRSVlIqCzwMVEMyUVtaNAUNKUksfkFbQAdXXk5QAioHVkFdBAtqVUwIcgwOBUAQQ2Q3Yld5GGN2WTMUWQErCQAkSTpQUHcJaUJOUBYFSzBeZCJ+H0h9a2pQElJBUVcHSBUdCloMalZdQGUuFUVaFncHMwczdEFQYG0ND1FfNyZTJ0EIMAhdJXJyBgIyW04jUVgTZjBtB2Z+dUlOQ3oBU3MSXjUuJHsLVUJZJSFEfyJgAkxmFm9CYwIGK3d7ZD4saBBFNVMgWwx1fl5MPlZxDHh2BUIvaFZjV1kLeE1nACt9CnQvDTdeVVZOWDZWRm4zcXIERx0VUVxVWC9fTkBQI2IlYQ5RFm8Hc2lDCgxZbzBUawZp&ext=ZT10cnVl"> 
+<img src="https://img1a.flixcart.com/www/email/images/20150302-161353-flipkartTwitter.gif" style="vertical-align:middle;border:none;color:#818181;font-size:9px;"> </a> <a lname="Foot:Foot:Foot:genTxt5:R1;C2" style="border:0; text-decoration:none;" href="http://delivery.ncb.flipkart.com/KCEUSP?id=88661=dkUABFwBAQRXHQJQVQQFBw4ECQ0HBABTDlEHUlYABwtWXwJWVgxTCldTVFYCUAZUAAREDQ0DAQEBUwMCWQhXXQMMCFdXXFYHBQMBX1IEAFQMVFsKVwRXCA0GDkhQB1wPDAgDBFINBwVVVglXCRkLF0wWAhcbBQFcUBJTRhgfC1tXF1ZYDUlcUxQVHwVfCEwoeyNta2ReDVRFEgU=&fl=XU1ERF4WGF5IB10PQA4CEUxIW1dZThAfWghfVwoeF05bTkVrO3FUZAQYZSt7XFYqWj8BVUYUVltKU1R7I0UocAdYZFowZgJbIApCHHcOLVpACWJdZzhXf1EqRWNZCTNnWn9nRTZQUEZeEFQJbyYUAmEFUVJXOQNDaVZHcgBAUg9seEdMU2tDRTcbbj5eSChWfjdQV2sFPnJNOwFhKEEgT39wVXZQWG4HA1dmI1soUzwOMWJCZw4yAGopBXY5djp9c1YAdgl1f2NWJAgQRiNOCHQWX1UFOB1DbVdnWwhnHGd7cURYNwFOZTwJBBFXVzdRDV4Vd1gbAQlRHWwMB2sWaHZzWkY0aGVKJBhkA3smW1JWS3RiUFciBHIDdVwEdgN1Y1VpBitAQ3c8LwkOCVQwNE0NQQx/GDBZSyZwRiVhDgx3CAdfXGNOdgQpRRJxKDYFXiRLClMkEX18U25+NWZddFdPHV8Hd1p/BFVkVGNXMjNVJQh8ZSBQc2oDYRkARVFuYwF6bQB8TQQMD0U5VFRaDE43UxV7ByZ2ezRCflBDUXYFDHx3Ilt4BFERXhxeHVYobRN+dF8vHkoBBXBNKmcPc0ZbcwUSaVt6HDJCPmE6CFYKE15aBFExV20PX04HABVLAxRdWlZQe1g1DmkhBiMzDXlSXVpyBih8UVFCRVl1NmhbWgFeXHdOBRYQQDBnSDwyYDN9a3YbBlx1FXB7DUQDXVJSQ3ggVQRkMxhSLFspVCh8PlZQWipSWQojBnslQihNQnFyV1BdXwNeNgYwXAYsEkklCFdCFQhCAFZsdlZ7&ext=ZT10cnVl"> 
+<img src="https://img1a.flixcart.com/www/email/images/20150302-161334-flipkartInstagram.gif" style="vertical-align:middle;border:none;color:#818181;font-size:9px;"> </a> </td> 
+        </tr> 
+       </tbody>
+      </table> 
+      <table width="100%" cellspacing="5" cellpadding="0" align="center" style="font-family:Arial,serif;font-size:12px;font-weight:300;"> 
+       <tbody>
+        <tr> 
+         <td align="center" valign="top" width="100%"> <font face="Arial, sans-serif" color="#333333" style="font-size:9px;"> We hope you enjoy emails from Flipkart. If you wish to unsubscribe, please <a style="font-size:9px;" href="http://delivery.ncb.flipkart.com/KCEUSP?id=88661=dkUABFwBAQRXHQYAAF0ABw9VC1wDVFQBX11UBgdQBwxWWlRWVggPBFQABFFWUQUBXF5EDQ0DAQEBUwMCWQhXXQMMCFdXXFYHBQMBX1IEAFQMVFsKVwRXCA0GDkhQB1wPDAgDBFINBwVVVglXCRkLF0wWAhcbBQFcUBJTRhgfC1tXF1ZYDUlcUxQVHwVfCEwoeyNta2ReDVRFEgU=&fl=XU1ERF4WGF5IB10PQA4CEUxIW1dZThAfWghfVwoeNwl9andaAmNvYgMnSAVvBxoCSyh+bGYpLmBWMWIZUAAqfEwLUWEnVH57Ky94L2YETlBuN29qDBArBw0TBVkkCBJcdFZTVyhgVgMjVXIPaF1OFGkyew0ZLwlfTRV7fBNcP1QYVF1+M01VXgEUS1J9FzEyAQlyTwdUAnNWEUUEAGg1eURmUgcKZm9fDihBPGotKVBCIXJiTRcjam9XWXgFWyBWAFRydgVXbnQLFkULBzQnV0BRTUh4VxdWdABxXSRuKGd3UEVwL2lTVFAmeBJCK1Q3bA9rfGYMFnpuEnRZUEgLTgJsVlpSW3tKCgl4A1EoUhJsA3p7QyA0aGs9Tn0kWy1dUnVBWzNSXWcMUWUkYQEOOX9QQAF7LyJZYTRgBRh9AVZ/aQZ7UkFGajc1Yi52IC5SVTR9dFcSAB1SVXd1I18EXVRDf1AtaFtqEipYLHEiCwZ5E1IOeRM8WQw0WXAwXyl5BENJUl1OVn4IJWIgAiMLUE8ycHxjMFdjbCYFbjRlIxVgQAFxAWEPQgopZCJzFFcWQAdpfnwQFggUVAdDJHsGS1BIaVBXU0IDKRtgDwZRNy5JIA1hXwg+XWEsXgYmACMMYFpyRAZ/BQATOGgCVwwiPHoOcXt8VgB+QyVQUFVHFUt4UgZHNxR+Q1EsfQFnJlYzCw17QEANAwVJMlsCCVUVcENYZnIVVGZECCNJJHwKLQQLAgB1dRBWBwkCXnwsUzN9Bw14V1Fvf3QhPn88YRwtUVUEYXlGOydGDlx6YjZrLXlaVnYNUWNUYCUgfwhUBFMhfDNMdwQ+SQN9LkNXCkUsb3RgX00FeG4AVihXE2EmFBZzIVwVRyRSRWkzTGQNUil1YVJ2Xz19RkFWWV0sVjpaMWJVUFRrDVVAcwVgX1d8Eg95AXZEUw1fAF5c&ext=ZT10cnVl">click 
+here</a>. </font> </td> 
+        </tr> 
+       </tbody>
+      </table> </td> 
+     <td></td> 
+    </tr> 
+   </tbody>
+  </table> 
+  <!-- /FOOTER -->    
+  <!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->   
+ <p>&nbsp;<br></p>
+<img src='http://delivery.ncb.flipkart.com/KCEUSP?id=88661=ekUABFwBAQRXHRFGEEVDQxhGGBgUQUQQGUQWFEERRRgVGRAURBkXEkZBEUYQRUNDGFZEDQ0DAQEBUwMCWQhXXQMMCFdXXFYHBQMBX1IEAFQMVFsKVwRXCA0GDkhQB1wPDAgDBFINBwVVVglXCRkLF0wWAhcbBQFcUBJTRhgfC1tXF1ZYDUlcUxQVHwVfCEwoeyNta2ReDVRFEgU=' alt='' /></body>
+</html>
+
+--_----------=_16979373377781182--
+

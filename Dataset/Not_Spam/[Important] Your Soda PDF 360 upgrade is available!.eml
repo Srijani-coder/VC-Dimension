@@ -1,0 +1,1004 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:8691:b0:4fd:23d3:a27 with SMTP id e17csp259311pxn;
+        Sat, 21 Oct 2023 05:14:45 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHyRvWB6sacfuow6jFYKZte6b+Ahy4P4lUZ38izZtHfJ8h+txOx3NO2YVdcpWctNFwDH6Di
+X-Received: by 2002:a05:6871:528d:b0:1eb:1fa3:7b05 with SMTP id hu13-20020a056871528d00b001eb1fa37b05mr2204122oac.27.1697890484878;
+        Sat, 21 Oct 2023 05:14:44 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697890484; cv=none;
+        d=google.com; s=arc-20160816;
+        b=N8HLzGpOUJvhth4QpPVs3iAEI5jH/ezQQvbQB/iMqmEYT29c0oqZ1Em6NvAIwHDMwy
+         tnvG1uJNeYVvMbBRg6P2NCyst1aKGqOopSIG++k/ozbrVGOTPsg/jRZUfYGdK78J7iIW
+         LRQ6Kc2B5poWqBjxv8T/a2GEJxvY7vMb5vuZiiNGm82ls068gKghAyFOhgs1QErKRdOx
+         1kAZ/ZL8rD9WfBMRVM/tRSCG9hMuO5t4BHicn/EHiU3aC39tJaKwu/ENbJ+UfvjpEVJo
+         /pYcfSpwDEcBYBEES3QDmDjswZ3BzWM3haL0MstcqNGKBTEXigCdhO+avvKa/qggYhU6
+         nbiA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-id:list-unsubscribe:precedence:mime-version:subject:message-id
+         :to:reply-to:sender:from:date:dkim-signature;
+        bh=vBcFaA5ApzQR2aCg+lQn+gatWozT0oj+e6W6ezy7PZs=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=awLFFePxYlisUdqfddCQoP76cr0uTc7xLbb1upSf9Nmd6OJIVQKA1wyuy+5+X/yu78
+         2qprnTA+YlIoJ1qzSO7p3YX5NS+Kwvt8mECslSR44uetdbnBH05NCT6Udds9Eeqilah+
+         LrfmVhkImiCCSAYAyYj/sKNj0uBfPpDRBnCgIbLCJUQaQRu1Z0ENTNH+z3X9NK/KAMZF
+         j5oX6uyDgSsicqQwtX7+C7SbmOrcxfVJR4rcDiBYdnJEmx91AnTyD30rJIyFLQG9Tkuz
+         7ubeSbszMRJf/WfcmEHVNHgpATgHHkI9BJ/tt016rWeJIC9mt7NMVEDBFYk3uQIkMCIy
+         dm/g==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@enews.sodapdf.com header.s=scph0122 header.b=MZiBCFqC;
+       spf=pass (google.com: domain of msprvs1=19658ekongaoy=bounces-266154-2@bounce.enews.sodapdf.com designates 192.174.89.112 as permitted sender) smtp.mailfrom="msprvs1=19658ekonGAOY=bounces-266154-2@bounce.enews.sodapdf.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=enews.sodapdf.com
+Return-Path: <msprvs1=19658ekonGAOY=bounces-266154-2@bounce.enews.sodapdf.com>
+Received: from mta-89-112.sparkpostmail.com (mta-89-112.sparkpostmail.com. [192.174.89.112])
+        by mx.google.com with ESMTPS id ck15-20020a056a02090f00b005a1d8815ebcsi3638286pgb.288.2023.10.21.05.14.44
+        for <srijani515@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 21 Oct 2023 05:14:44 -0700 (PDT)
+Received-SPF: pass (google.com: domain of msprvs1=19658ekongaoy=bounces-266154-2@bounce.enews.sodapdf.com designates 192.174.89.112 as permitted sender) client-ip=192.174.89.112;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@enews.sodapdf.com header.s=scph0122 header.b=MZiBCFqC;
+       spf=pass (google.com: domain of msprvs1=19658ekongaoy=bounces-266154-2@bounce.enews.sodapdf.com designates 192.174.89.112 as permitted sender) smtp.mailfrom="msprvs1=19658ekonGAOY=bounces-266154-2@bounce.enews.sodapdf.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=enews.sodapdf.com
+X-MSFBL: XnEMh4lBG2tQ8D3596IMa95JysRNwSv2Zqtre1sRT0Q=|eyJtZXNzYWdlX2lkIjo
+	iNjUzMWI0YzAzMzY1YWZjYjYwZTciLCJ0ZW5hbnRfaWQiOiJzcGMiLCJzdWJhY2N
+	vdW50X2lkIjoiMiIsImN1c3RvbWVyX2lkIjoiMjY2MTU0IiwiciI6InNyaWphbmk
+	1MTVAZ21haWwuY29tIn0=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=enews.sodapdf.com;
+	s=scph0122; t=1697890484; i=@enews.sodapdf.com;
+	bh=vBcFaA5ApzQR2aCg+lQn+gatWozT0oj+e6W6ezy7PZs=;
+	h=Date:From:To:Message-ID:Subject:Content-Type:List-Unsubscribe:
+	 From:To:Cc:Subject;
+	b=MZiBCFqC9vCdzdPWS3vfPt0FaHGNyCnML+FUyRvBgzShdrhru03QUNh5yE8cWeCPW
+	 pAQjkzCkOdg0SNUNRa28QTCau+0+5tJXIArXmVqK/HRSsJIyUr0HkqQQ7TsWNJxfQ4
+	 I22NF52Z517xQAE1qbiOzuZFdjPBzYuJPFoK+y9w=
+Authentication-Results:  gf.mta1vsmtp.cc.prd.sparkpost smtp.user=<hidden>; auth=pass (LOGIN)
+Received: from [35.203.79.128] ([35.203.79.128:12147] helo=zone2-cluster1-pmail.c.probance-canada.internal)
+	by gf.mta1vsmtp.cc.prd.sparkpost (envelope-from <info@bounce.enews.sodapdf.com>)
+	(ecelerity 4.4.1.18019 r(msys-ecelerity:tags/4.4.1.12)) with ESMTPSA (cipher=AES-256-GCM) 
+	id 06/7E-05002-4B0C3356; Sat, 21 Oct 2023 12:14:44 +0000
+Date: Sat, 21 Oct 2023 12:14:44 +0000
+From: Soda PDF <info@enews.sodapdf.com>
+Sender: info@enews.sodapdf.com
+Reply-To: reply@enews.sodapdf.com
+To: srijani515@gmail.com
+Message-ID: <1025185815.2974827.1697890484509@enews.sodapdf.com>
+Subject: [Important] Your Soda PDF 360 upgrade is available!
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_2974828_1754159318.1697890484305"
+Precedence: bulk
+List-Unsubscribe: <mailto:unsubscribe@unsub.spmta.com?subject=unsubscribe:J80a8hF0y6Acnnif-QTeTrFFIrUsX8_gxOfawOzpd20~|eyAicmNwdF90byI6ICJzcmlqYW5pNTE1QGdtYWlsLmNvbSIsICJ0ZW5hbnRfaWQiOiAic3BjIiwgImN1c3RvbWVyX2lkIjogIjI2NjE1NCIsICJzdWJhY2NvdW50X2lkIjogIjIiLCAibWVzc2FnZV9pZCI6ICI2NTMxYjRjMDMzNjVhZmNiNjBlNyIgfQ~~>
+List-Id: <spc.266154.2.sparkpostmail.com>
+
+------=_Part_2974828_1754159318.1697890484305
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+SODA PDF=20
+
+ =20
+=F0=9F=92=A1 Smarter workflows just a click away!=E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =20
+
+[37] View Online  |  [38] Unsubscribe=20
+ Links
+  37 - https://tg.enews.sodapdf.com/p/c2z2CKvnR0IpilLhCdCpipcrctMyJHeRVLiO5=
+7gfCIeA3huGvPIoDZdg58JvhTGTR5JSbD7-NHGIVuvfCKFRYU0YKBRqaLRCXHx47KfrhyPtiLnu=
+G_6ul8X27mMFuBEgX3rwjllQPIcmYZo8MKsC4XJQLanGNFbEsKF9FpmHxrJegMqXxdZ4kibqu0n=
+IYPWAWO
+  38 - https://tg.enews.sodapdf.com/f/020C3bVzCdS6IcGqR8qJoD18rSm3_onf-q_hp=
+sf6UtrRkCKgqc75WnWPwZPHAiO_xW
+
+
+SODA PDF 360=20
+ THE COMPLETE PDF SOLUTION =20
+
+All the powerful PDF tools you need=20
+ to work online or offline=20
+
+[39] ACTIVATE NOW=20
+ Links
+  39 - https://cgate.sodapdf.com/join.aspx?ref=3Dcrm.sodapdf.com&ujid=3Dkqe=
+ad2dOWxw%3D&step=3D2&culture=3Den&mkey3=3Dcrm_email-retargeting&mkey9=3DSPD=
+F_EM_PR_NEW_PM_ST-SCN_05&src=3Dprobance&uid=3D1001975&mkey1=3D&mkey2=3D&mke=
+y6=3D&mkey7=3D&cmp=3D&key1=3D&key2=3D&keyb=3D
+
+
+Smart PDF tools just =20
+a click away =20
+
+Edit  any PDF to your needs with easy-to-use tools.=20
+
+Merge  various file formats into a single PDF.=20
+
+Compress  your files without compromising quality.=20
+
+Create  your own PDF from scratch or an array of file types.=20
+
+Convert   documents to another file format easily.=20
+
+Secure   your documents with advanced security features.=20
+
+And so much more - accessible from anywhere at anytime.=20
+
+[40] ACTIVATE NOW =20
+ Links
+  40 - https://cgate.sodapdf.com/join.aspx?ref=3Dcrm.sodapdf.com&ujid=3Dkqe=
+ad2dOWxw%3D&step=3D2&culture=3Den&mkey3=3Dcrm_email-retargeting&mkey9=3DSPD=
+F_EM_PR_NEW_PM_ST-SCN_05&src=3Dprobance&uid=3D1001975&mkey1=3D&mkey2=3D&mke=
+y6=3D&mkey7=3D&cmp=3D&key1=3D&key2=3D&keyb=3D
+
+
+You're receiving this email because you registered to the Soda PDF mailing =
+list with  [41] srijani515@gmail.com .=20
+ Links
+  41 - undefined
+
+ This is an automated message - do not reply to the sender. If you wish to =
+reply to this email, please contact  [42] customer support . =20
+ Links
+  42 - https://sodapdf.com/support?lang=3Den&mkey3=3Dcrm_email-retargeting&=
+mkey9=3DSPDF_EM_PR_NEW_PM_ST-SCN_05&src=3Dprobance&uid=3D1001975&mkey1=3D&m=
+key2=3D&mkey6=3D&mkey7=3D&cmp=3D&key1=3D&key2=3D&keyb=3D
+
+
+ Soda=E2=84=A2 is a trademark of LULU Software=E2=84=A2.=20
+ Copyright =C2=A9 2023 LULU Software=E2=84=A2.=20
+ All rights reserved.=20
+[43] Privacy Policy  |  [44] Terms of Use  |  [45] Unsubscribe=20
+ Links
+  43 - https://www.sodapdf.com/privacy/?mkey3=3Dcrm_email-retargeting&mkey9=
+=3DSPDF_EM_PR_NEW_PM_ST-SCN_05&src=3Dprobance&uid=3D1001975&mkey1=3D&mkey2=
+=3D&mkey6=3D&mkey7=3D&cmp=3D&key1=3D&key2=3D&keyb=3D
+  44 - https://www.sodapdf.com/terms-of-use/?mkey3=3Dcrm_email-retargeting&=
+mkey9=3DSPDF_EM_PR_NEW_PM_ST-SCN_05&src=3Dprobance&uid=3D1001975&mkey1=3D&m=
+key2=3D&mkey6=3D&mkey7=3D&cmp=3D&key1=3D&key2=3D&keyb=3D
+  45 - https://tg.enews.sodapdf.com/f/020C3bVzCdS6IcGqR8qJoD18rSm3_onf-q_hp=
+sf6UtrRkCKgqc75WnWPwZPHAiO_xW
+
+
+7075 Robert-Joncas Place, Suite 142, St-Laurent, QC, H4M 2Z2, Canada=20
+
+  =20
+
+------=_Part_2974828_1754159318.1697890484305
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<?xml version=3D"1.0" encoding=3D"UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www=
+.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:o=3D"urn:sch=
+emas-microsoft-com:office:office">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+<meta name=3D"robots" content=3D"noindex, nofollow" />
+<meta name=3D"viewport" content=3D"width=3Ddevice-width" />
+<link href=3D"https://sodapdf.com/images/favicon.ico" rel=3D"shortcut icon"=
+ type=3D"image/x-icon" />
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" />
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1"=
+ />
+<title>SODA PDF</title>
+<style type=3D"text/css">div, p, a, li, td {
+-webkit-text-size-adjust: none;
+}
+#outlook a {
+padding: 0;
+}
+html {
+width: 100%;
+}
+body {
+-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+margin: 0;
+padding: 0;
+}
+.ExternalClass {
+width: 100%;
+}
+.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font,=
+ .ExternalClass td, .ExternalClass div {
+line-height: 100%;
+}
+@media only screen and (max-width:600px) {
+.full {
+width: 100% !important;
+text-align: center !important;
+}
+.full-80 {
+width: 80% !important;
+text-align: center !important;
+}
+.full img {
+width: 80% !important;
+margin: 0 auto !important;
+}
+img.resize-100 {
+width: 100% !important;
+height : auto !important;
+}
+img.no-resize {
+width: auto !important;
+height : auto !important;
+}
+img.resize-50 {
+width: 50% !important;
+margin: 0 auto !important;
+}
+img.resize-70 {
+width: 70% !important;
+margin: 0 auto !important;
+}
+img {
+height: auto !important;
+
+}
+.alignement{
+text-align:center !important;
+}
+.deviceWidth {
+width: 96% !important;
+}
+.font-title{
+font-size: 18px !important;
+font-weight: normal!important;
+}
+.font-title1{
+font-size: 20px !important;
+font-weight: normal!important;
+line-height:23px !important;
+
+}
+.font-title2 a {
+font-size: 23px !important;
+font-weight: normal!important;
+}
+.font-title3 a {
+font-size: 40px !important;
+font-weight: normal!important;
+}
+.font-cta a {
+font-size: 16px !important;
+font-weight: normal!important;
+}
+.p-h {
+padding-left : 7px !important;
+padding-right: 7px !important;
+}
+.p-h2 {
+padding-left : 15px !important;
+padding-right: 15px !important;
+}
+.p-v {
+padding-top : 10px !important;
+padding-bottom: 10px !important
+}
+.p-v2 {
+padding-top : 20px !important;
+
+}
+.d-n {
+display: none !important;
+}
+.txt-aligne{
+text-align:center !important;
+}
+.bg_m {
+width: 100vw !important;
+height: 51.33vw !important;
+background: url(http://web.avanquest.com/ML/FULL/Soda-PDF/SPDF_EM_AL_NSB_PM=
+_ST-1020_01/images/bg-img_01.png) no-repeat top center !important;
+background-size: cover !important;
+}
+.no-backg{
+background:none !important;
+}
+.h1{
+height:20px !important;
+}
+.bg-mobile{
+background: url(http://web.avanquest.com/ML/FULL/Soda-PDF/SPDF_EM_AL_NSB_PM=
+_ST-SCN_05/images/bg-laptop.png) center bottom no-repeat !important;
+width:83.33vw !important;
+height:78vw !important;
+background-size: cover !important;
+}
+.full-vw{
+width:93.33vw !important;
+}
+.bgc-mobile{
+background:#f2f3f5 !important;
+}
+.p-l{
+padding-left:0px !important;}
+}
+</style>
+<!--[if gte mso 9]>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+</head>
+<body style=3D"margin: 0; background-color:#E4E4E4"><div class=3D"gmailfix"=
+ style=3D"white-space:nowrap; font:15px courier; line-height:0;"><div class=
+=3D"gmailfix" style=3D"white-space:nowrap; font:15px courier; line-height:0=
+;">=C2=A0</div></div>
+<!-- start HIDDEN_PREVIEW_TEXT -->
+<!--[if !mso]><! -->
+<div style=3D"display:none !important; display:none; overflow:hidden; float=
+:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibilit=
+y:hidden;">=F0=9F=92=A1 Smarter workflows just a click away!=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0</div>
+<!--<![endif]-->
+<!-- end HIDDEN_PREVIEW_TEXT -->
+<table bgcolor=3D"#e4e4e4" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ width=3D"100%">
+<tbody>
+<tr bgcolor=3D"#E4E4E4">
+<td align=3D"center" width=3D"600">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"deviceWidth" width=3D"600">
+<tbody>
+<tr>
+<td align=3D"center" width=3D"600">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"full" width=3D"600">
+<tbody>
+<tr>
+<td bgcolor=3D"#E4E4E4" height=3D"10" style=3D"font-size:10px; line-height:=
+ 10px;">=C2=A0</td>
+</tr>
+<!-- Header start -->
+<tr>
+<td bgcolor=3D"#f2f3f5">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"full" style=3D"width:600px;" width=3D"600">
+<tbody>
+<tr>
+<td bgcolor=3D"#f2f3f5" class=3D"no-backg" valign=3D"top" width=3D"600">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"full" styl=
+e=3D"width:600px;" width=3D"600">
+<tbody>
+<tr>
+<td class=3D"h1" height=3D"20">=C2=A0</td>
+</tr>
+<tr bgcolor=3D"#f2f3f5">
+<td align=3D"center" bgcolor=3D"#F3F4F6" style=3D"width:600px;" width=3D"60=
+0">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"full" style=3D"width:560px;" width=3D"560">
+<tbody>
+<tr>
+<td align=3D"center" bgcolor=3D"#f2f3f5">
+<!--[if (gte mso 9)|(IE)]><table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"560"><tr  ><td  valign=3D"top"  width=3D"280"><![endif]-->
+<table align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" clas=
+s=3D"full" style=3D"width:280px; float:left" width=3D"280">
+<tbody>
+<tr>
+<td bgcolor=3D"#F3F4F6">
+<a href=3D"https://tg.enews.sodapdf.com/c/c2DWn68IBILDxI4Fz0-1ZcKbctMyJHeRV=
+LiO57gfCIeA0_QJVdyPUOcgUjUKeGJC_qGIbPTwaww3PsfS2XFyS8YSbbEZtS5zbk80APRSKMLD=
+bYmbo9RTg5s2V_TNhDH1dTqaoBae0Qfj6FdGDB3PPaBCqfQopQRDUtg2vucn550byyI-sDAyDZ3=
+hLOGWcFOYCGZsouUR4F1TmiadpvptyAXbct2rpNfUeGtcjqGHpgzYHbhYEURQoxrbVT1DZqcG4a=
+6kwQyoJlkoTXEmXnc8qbonzQHpibaVjl_munM90b1SUKOOanPtMLMdMl5uw2p77I4YuedD9vWjA=
+R6Hplwj6tPEcRAy-0c3g8-gSJgPZMCE4" target=3D"_blank"  >
+<img alt=3D"Soda" border=3D"0" class=3D"no-resize" height=3D"40"  src=3D"ht=
+tps://tg.enews.sodapdf.com/o/020C3bVzCdS6IcGqR8qJoD18rSm3_onf-q_hpsf6UtrRkG=
+pQonZmToBeJdh6U3yviV-ssQTkiwh9mriBfEKHU3WvSlTTkqhMkbwrds_EaRjzmtflQarT0g6_j=
+zXeEAJxGWOezRjKZm57TI_OnP47PTKg" style=3D"display: block;" width=3D"116" />=
+</a></td>
+</tr>
+</tbody>
+</table>
+<!--[if (gte mso 9)|(IE)]></td><td width=3D"280" valign=3D"top"><![endif]--=
+>
+<table align=3D"right" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cla=
+ss=3D"full" style=3D"width:280px; float:right" width=3D"280">
+<tbody>
+<tr>
+<td align=3D"right" height=3D"13" style=3D"font-size:13px; line-height:13px=
+;">=C2=A0</td>
+</tr>
+<tr>
+<td align=3D"right" class=3D"txt-aligne" style=3D"text-decoration: none; fo=
+nt-family:Arial, Helvetica, sans-serif; font-size:11px; color:#6180FF;">
+<a href=3D"https://tg.enews.sodapdf.com/p/c2z2CKvnR0IpilLhCdCpipcrctMyJHeRV=
+LiO57gfCIeA3huGvPIoDZdg58JvhTGTR5JSbD7-NHGIVuvfCKFRYU0YKBRqaLRCXHx47KfrhyPt=
+iLnuG_6ul8X27mMFuBEgX3rwjllQPIcmYZo8MKsC4XJQLanGNFbEsKF9FpmHxrJegMqXxdZ4kib=
+qu0nIYPWAWO" style=3D"text-decoration: underline; font-family:Arial, Helvet=
+ica, sans-serif; font-size:11px; color:#6180FF;"  >View Online</a>
+|
+<a href=3D"https://tg.enews.sodapdf.com/f/020C3bVzCdS6IcGqR8qJoD18rSm3_onf-=
+q_hpsf6UtrRkCKgqc75WnWPwZPHAiO_xW" style=3D"text-decoration: underline; fon=
+t-family:Arial, Helvetica, sans-serif; font-size:11px; color:#6180FF;">Unsu=
+bscribe</a></td>
+</tr>
+</tbody>
+</table>
+<!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td height=3D"24">=C2=A0</td>
+</tr>
+<tr>
+<td align=3D"center" valign=3D"middle">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"full p-h" width=3D"560">
+<tbody>
+<tr>
+<td align=3D"center" class=3D"font-title1" style=3D"text-decoration: none; =
+font-family:Arial, Helvetica, sans-serif; font-size:24px; color:#303030; li=
+ne-height: 26px;">
+<strong>
+<span style=3D"color:#FF6166;">SODA PDF 360</span>
+<br />
+THE COMPLETE PDF SOLUTION
+</strong></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td height=3D"16" style=3D"font-size:16px; line-height:16px;">=C2=A0</td>
+</tr>
+<tr>
+<td align=3D"center" valign=3D"middle">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"full p-h" width=3D"560">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"text-decoration: none; font-family:Arial, Hel=
+vetica, sans-serif; font-size:18px; color:#666666; line-height: 20px;">All =
+the powerful PDF tools you need<br />
+to work online or offline</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td class=3D"h1" height=3D"32">=C2=A0</td>
+</tr>
+<tr>
+<td align=3D"center">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"full-80 p-h p-v">
+<tbody>
+<tr>
+<td align=3D"center" bgcolor=3D"#FF6166" style=3D"-webkit-border-radius: 25=
+px;-moz-border-radius: 25px; border-radius: 25px; padding: 11px;" valign=3D=
+"middle">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr>
+<td align=3D"center" class=3D"font-cta" style=3D"font-family:Arial,sans-ser=
+if; font-size:19px; color:#FFFFFF; text-decoration: none; font-weight: norm=
+al;" valign=3D"middle">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"d-n" width=3D"20">
+<img alt=3D"" border=3D"0" class=3D"d-n" height=3D"1"  src=3D"https://ig.en=
+ews.sodapdf.com/3/6091/F4FBABF0266F351408F75C5D05F87ADA.gif" style=3D"displ=
+ay: block;" width=3D"20" /></td>
+<td align=3D"center" class=3D"font-cta" style=3D"font-family:Arial,sans-ser=
+if; font-size:15px; color:#FFFFFF; text-decoration: none; font-weight: norm=
+al;" valign=3D"middle">
+<a href=3D"https://tg.enews.sodapdf.com/c/c2DWn68IBILDxI4Fz0-1ZcKbctMyJHeRV=
+LiO57gfCIeA0_QJVdyPUOcgUjUKeGJC_qGIbPTwaww3PsfS2XFyS8YSbbEZtS5zbk80APRSKMLD=
+bYmbo9RTg5s2V_TNhDH1dTqaoBae0Qfj6FdGDB3PPaBCqfQopQRDUtg2vucn550byyI-sDAyDZ3=
+hLOGWcFOYCGZsouUR4F1TmiadpvptyAXbct2rpNfUeGtcjqGHpgzYHbhYEURQoxrbVT1DZqcG4a=
+6kwQyoJlkoTXEmXnc8qbonzQHpibaVjl_munM90b1SUKOOanPtMLMdMl5uw2p77I4YuedD9vWjA=
+R6Hplwj6tPMi71bhV7i3_zG9jrU7FdJA" style=3D"font-family:Arial,sans-serif; fo=
+nt-size:15px; color:#FFFFFF; text-decoration: none;" target=3D"_blank"  >
+<strong>ACTIVATE NOW</strong></a></td>
+<td class=3D"d-n" width=3D"20">
+<img alt=3D"" border=3D"0" class=3D"d-n" height=3D"1"  src=3D"https://ig.en=
+ews.sodapdf.com/3/6091/F4FBABF0266F351408F75C5D05F87ADA.gif" style=3D"displ=
+ay: block;" width=3D"20" /></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td background=3D"http://web.avanquest.com/ML/FULL/Soda-PDF/SPDF_EM_AL_NSB_=
+PM_ST-SCN_05/images/bg.png" bgcolor=3D"#F2F3F5" class=3D"no-backg" style=3D=
+"background-repeat:no-repeat; background-position:top" valign=3D"top" width=
+=3D"600">
+<!--[if gte mso 9]>
+<v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" stroke=3D"f=
+alse" style=3D"width:600px;">
+<v:fill type=3D"tile" src=3D"http://web.avanquest.com/ML/FULL/Soda-PDF/SPDF=
+_EM_AL_NSB_PM_ST-SCN_05/images/bg.png" color=3D"#F2F3F5" />
+<v:textbox style=3D"mso-fit-shape-to-text:true" inset=3D"0,0,0,0">
+<![endif]-->
+<div>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"full p-h" width=3D"560">
+<tbody>
+<tr>
+<td valign=3D"top">
+<table align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" clas=
+s=3D"full-vw tbl-aligne" style=3D"width:560px;" width=3D"560">
+<tbody>
+<tr>
+<td class=3D"d-n" height=3D"35" style=3D"font-size:0px; line-height:0px;" w=
+idth=3D"560">=C2=A0</td>
+</tr>
+<tr>
+<td align=3D"left" class=3D"txt-aligne font-title p-v p-l" style=3D"font-fa=
+mily:Arial, Helvetica, sans-serif; font-size:23px; color:#303030; line-heig=
+ht:26px; padding-left:3px;" valign=3D"top">
+<strong>Smart PDF tools just
+</strong>
+<br class=3D"d-n" />
+<strong>a click away
+</strong></td>
+</tr>
+<tr>
+<td class=3D"bg-mobile p-v2" height=3D"20" style=3D"font-size:0px; line-hei=
+ght:0px; height:20px">
+<img border=3D"0" class=3D"d-n" height=3D"10"  src=3D"https://ig.enews.soda=
+pdf.com/3/6091/65B6BA307C6921FA077D47A18985183E.gif" style=3D"display: bloc=
+k ; height:20px" width=3D"10" /></td>
+</tr>
+<tr>
+<td valign=3D"top">
+<table align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" clas=
+s=3D"full p-h" style=3D"width:340px; float:left">
+<tbody>
+<tr>
+<td align=3D"left" valign=3D"top" width=3D"46">
+<img alt=3D"" border=3D"0" class=3D"no-resize" height=3D"29"  src=3D"https:=
+//ig.enews.sodapdf.com/3/6091/4708DA162BB908E99BD01423769FBF4C.png" style=
+=3D"display: block;" width=3D"31" /></td>
+<td align=3D"left" style=3D"text-decoration: none; font-family:Arial, Helve=
+tica, sans-serif; font-size:14px; color:#303030; line-height:17px;" width=
+=3D"294">
+<strong>Edit</strong>
+any PDF to your needs with easy-to-use tools.</td>
+</tr>
+<tr>
+<td align=3D"center" height=3D"8" style=3D"font-size:0px; line-height:0px; =
+height:8" valign=3D"top">
+<img border=3D"0" class=3D"d-n" height=3D"8"  src=3D"https://ig.enews.sodap=
+df.com/3/6091/65B6BA307C6921FA077D47A18985183E.gif" style=3D"display: block=
+ ; height:8px" width=3D"8" /></td>
+<td align=3D"left">=C2=A0</td>
+</tr>
+<tr>
+<td align=3D"left" valign=3D"top" width=3D"46">
+<img alt=3D"" border=3D"0" class=3D"no-resize"  src=3D"https://ig.enews.sod=
+apdf.com/3/6091/172330FB64944F2CE209B3BFC609AB7C.png" style=3D"display: blo=
+ck;" width=3D"31" /></td>
+<td align=3D"left" style=3D"text-decoration: none; font-family:Arial, Helve=
+tica, sans-serif; font-size:14px; color:#303030; line-height:17px;" width=
+=3D"294">
+<strong>Merge</strong>
+various file formats into a single PDF.</td>
+</tr>
+<tr>
+<td align=3D"center" height=3D"8" style=3D"font-size:0px; line-height:0px; =
+height:8" valign=3D"top">
+<img border=3D"0" class=3D"d-n" height=3D"8"  src=3D"https://ig.enews.sodap=
+df.com/3/6091/65B6BA307C6921FA077D47A18985183E.gif" style=3D"display: block=
+ ; height:8px" width=3D"8" /></td>
+<td align=3D"left">=C2=A0</td>
+</tr>
+<tr>
+<td align=3D"left" valign=3D"top" width=3D"46">
+<img alt=3D"" border=3D"0" class=3D"no-resize"  src=3D"https://ig.enews.sod=
+apdf.com/3/6091/F34072CE6825C3C1A7C25546115FBF0B.png" style=3D"display: blo=
+ck;" width=3D"31" /></td>
+<td align=3D"left" style=3D"text-decoration: none; font-family:Arial, Helve=
+tica, sans-serif; font-size:14px; color:#303030; line-height:17px;" width=
+=3D"294">
+<strong>Compress</strong>
+your files without compromising quality.</td>
+</tr>
+<tr>
+<td align=3D"center" height=3D"8" style=3D"font-size:0px; line-height:0px; =
+height:8" valign=3D"top">
+<img border=3D"0" class=3D"d-n" height=3D"8"  src=3D"https://ig.enews.sodap=
+df.com/3/6091/65B6BA307C6921FA077D47A18985183E.gif" style=3D"display: block=
+ ; height:8px" width=3D"8" /></td>
+<td align=3D"left">=C2=A0</td>
+</tr>
+<tr>
+<td align=3D"left" valign=3D"top" width=3D"46">
+<img alt=3D"" border=3D"0" class=3D"no-resize"  src=3D"https://ig.enews.sod=
+apdf.com/3/6091/F898BB083D68E6111090DEBB8BF14D4D.png" style=3D"display: blo=
+ck;" width=3D"31" /></td>
+<td align=3D"left" style=3D"text-decoration: none; font-family:Arial, Helve=
+tica, sans-serif; font-size:14px; color:#303030; line-height:17px;" width=
+=3D"294">
+<strong>Create</strong>
+your own PDF from scratch or an array of file types.</td>
+</tr>
+<tr>
+<td align=3D"center" height=3D"8" style=3D"font-size:0px; line-height:0px; =
+height:8" valign=3D"top">
+<img border=3D"0" class=3D"d-n" height=3D"8"  src=3D"https://ig.enews.sodap=
+df.com/3/6091/65B6BA307C6921FA077D47A18985183E.gif" style=3D"display: block=
+ ; height:8px" width=3D"8" /></td>
+<td align=3D"left">=C2=A0</td>
+</tr>
+<tr>
+<td align=3D"left" valign=3D"top" width=3D"46">
+<img alt=3D"" border=3D"0" class=3D"no-resize"  src=3D"https://ig.enews.sod=
+apdf.com/3/6091/E0F4543743A273B42481AAC41953E93A.png" style=3D"display: blo=
+ck;" width=3D"31" /></td>
+<td align=3D"left" style=3D"text-decoration: none; font-family:Arial, Helve=
+tica, sans-serif; font-size:14px; color:#303030; line-height:17px;" width=
+=3D"294">
+<strong>Convert
+</strong>
+documents to another file format easily.</td>
+</tr>
+<tr>
+<td align=3D"center" height=3D"8" style=3D"font-size:0px; line-height:0px; =
+height:8" valign=3D"top">
+<img border=3D"0" class=3D"d-n" height=3D"8"  src=3D"https://ig.enews.sodap=
+df.com/3/6091/65B6BA307C6921FA077D47A18985183E.gif" style=3D"display: block=
+ ; height:8px" width=3D"8" /></td>
+<td align=3D"left">=C2=A0</td>
+</tr>
+<tr>
+<td align=3D"left" valign=3D"top" width=3D"46">
+<img alt=3D"" border=3D"0" class=3D"no-resize"  src=3D"https://ig.enews.sod=
+apdf.com/3/6091/BB46AC6B23B4FAC58EF1FEB759E6E54F.jpg" style=3D"display: blo=
+ck;" width=3D"31" /></td>
+<td align=3D"left" style=3D"text-decoration: none; font-family:Arial, Helve=
+tica, sans-serif; font-size:14px; color:#303030; line-height:17px;" width=
+=3D"294">
+<strong>Secure
+</strong>
+your documents with advanced security features.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td class=3D"h1" height=3D"40" style=3D"height:40px">=C2=A0</td>
+</tr>
+<tr>
+<td align=3D"left" class=3D"p-h" style=3D"font-family:Arial, Helvetica, san=
+s-serif; font-size:14px; color:#303030; line-height:20px; line-height:17px;=
+ padding-left:5px;">
+<strong>And so much more - accessible from anywhere at anytime.</strong></t=
+d>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if gte mso 9]>
+</v:textbox>
+</v:rect>
+<![endif]--></td>
+</tr>
+<tr>
+<td bgcolor=3D"#F2F3F5" class=3D"d-n" height=3D"20" style=3D"font-size:0px;=
+ line-height:0px;">=C2=A0</td>
+</tr>
+<tr>
+<td bgcolor=3D"#F3F4F6" class=3D"bgc-mobile">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"full-80 p-h p-v">
+<tbody>
+<tr>
+<td align=3D"center" bgcolor=3D"#FF6166" style=3D"-webkit-border-radius: 25=
+px;-moz-border-radius: 25px; border-radius: 25px; padding: 11px;" valign=3D=
+"middle">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr>
+<td align=3D"center" class=3D"font-cta" style=3D"font-family:Arial,sans-ser=
+if; font-size:19px; color:#FFFFFF; text-decoration: none; font-weight: norm=
+al;" valign=3D"middle">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%">
+<tbody>
+<tr>
+<td class=3D"d-n" width=3D"20">
+<img alt=3D"" border=3D"0" class=3D"d-n" height=3D"1"  src=3D"https://ig.en=
+ews.sodapdf.com/3/6091/F4FBABF0266F351408F75C5D05F87ADA.gif" style=3D"displ=
+ay: block;" width=3D"20" /></td>
+<td align=3D"center" class=3D"font-cta" style=3D"font-family:Arial,sans-ser=
+if; font-size:15px; color:#FFFFFF; text-decoration: none; font-weight: norm=
+al;" valign=3D"middle">
+<a href=3D"https://tg.enews.sodapdf.com/c/c2DWn68IBILDxI4Fz0-1ZcKbctMyJHeRV=
+LiO57gfCIeA0_QJVdyPUOcgUjUKeGJC_qGIbPTwaww3PsfS2XFyS8YSbbEZtS5zbk80APRSKMLD=
+bYmbo9RTg5s2V_TNhDH1dTqaoBae0Qfj6FdGDB3PPaBCqfQopQRDUtg2vucn550byyI-sDAyDZ3=
+hLOGWcFOYCGZsouUR4F1TmiadpvptyAXbct2rpNfUeGtcjqGHpgzYHbhYEURQoxrbVT1DZqcG4a=
+6kwQyoJlkoTXEmXnc8qbonzQHpibaVjl_munM90b1SUKOOanPtMLMdMl5uw2p77I4YuedD9vWjA=
+R6Hplwj6tPMR24Jq5aOoJWilXhD5SENE" style=3D"font-family:Arial,sans-serif; fo=
+nt-size:15px; color:#FFFFFF; text-decoration: none;" target=3D"_blank"  >
+<strong>ACTIVATE NOW
+</strong></a></td>
+<td class=3D"d-n" width=3D"20">
+<img alt=3D"" border=3D"0" class=3D"d-n" height=3D"1"  src=3D"https://ig.en=
+ews.sodapdf.com/3/6091/F4FBABF0266F351408F75C5D05F87ADA.gif" style=3D"displ=
+ay: block;" width=3D"20" /></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td bgcolor=3D"#F3F4F6" class=3D"h1 bgc-mobile" height=3D"30">=C2=A0</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<!-- Content end -->
+<!-- Footer start -->
+<tr>
+<td align=3D"center" bgcolor=3D"#303030">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"full p-h" width=3D"560">
+<tbody>
+<tr>
+<td bgcolor=3D"#303030" height=3D"16" style=3D"font-size:16px; line-height:=
+16px;">=C2=A0</td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"text-decoration: none; font-family:Arial, Helve=
+tica, sans-serif; font-size:10px; color:#ffffff;">You're receiving this ema=
+il because you registered to the Soda PDF mailing list with
+<a style=3D"text-decoration:none; color:#6180FF"  >srijani515@gmail.com</a>=
+.<br />
+This is an automated message - do not reply to the sender. If you wish to r=
+eply to this email, please contact
+<a href=3D"https://tg.enews.sodapdf.com/c/c2939wMqn7BSS6z7lpurck0bctMyJHeRV=
+LiO57gfCIeA0_QJVdyPUOcgUjUKeGJC_qX39O-DkQWMl61S_dMy03WYFr9NOCnLGFvKzZdcA0Wy=
+rVC9lmg2i3N5IPqqlg7ixh0lydOUnT7lxS-5QamVXzIDeE_tQqeYKGpm-gGiMrpebenj6WNljhd=
+OF3yVG3HsG5ANWQzFgCpcoBP8ewXJ4K6Kzq4s8hQL881d8fhFDroOY0_xd-yR8S6cFMxq7S36s5=
+xHnUtpQHRwXsqY6BdmXsy_vP5oWPmqGIWwB572Hmxj0" style=3D"font-family:Arial, He=
+lvetica, sans-serif; color: #ffffff; font-size:10px; text-decoration: under=
+line;" target=3D"_blank"  >customer support</a>.
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"full" width=3D"560">
+<tbody>
+<tr>
+<td align=3D"left" style=3D"text-decoration: none; font-family:Arial, Helve=
+tica, sans-serif; font-size:10px; color:#ffffff;" width=3D"318">
+<br />
+Soda=E2=84=A2 is a trademark of LULU Software=E2=84=A2.<br />
+Copyright =C2=A9 2023 LULU Software=E2=84=A2.<br />
+All rights reserved.</td>
+<td width=3D"30">=C2=A0</td>
+<td align=3D"right" style=3D"text-decoration: none; font-family:Arial, Helv=
+etica, sans-serif; font-size:11px; color:#959595;" width=3D"232">
+<table align=3D"right" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cla=
+ss=3D"full">
+<tbody>
+<tr>
+<td align=3D"right" style=3D"font-family:Arial, Helvetica, sans-serif; font=
+-size:11px; color:#ffffff;">
+<a href=3D"https://tg.enews.sodapdf.com/c/c2n9u12I3sKb6Rq6M2y2Gfe7ctMyJHeRV=
+LiO57gfCIeA0_QJVdyPUOcgUjUKeGJC_qTeKPCMwZ-jc2sAY_83V7l1QKAZVTUrL98krn2vK0gd=
+QodbY24ZIyyZ7ZDuzdR12l4vLnwNWRPA8nxfBMUtcbCCNjWOSgLZ2ItcxNQqo1lI5XYfhgDaAxn=
+K9MQcaI-3caHmTt1w0DzruDD0KUZVhUc7a3ukaBetxJMfMBIMA8szEh0v5k2U6puqgVv4xr0Dte=
+yQPClMtydOaHanXp4pYR7g" style=3D"text-decoration: underline; font-family:Ar=
+ial, Helvetica, sans-serif; font-size:10px; color:#ffffff;" target=3D"_blan=
+k"  >Privacy Policy</a>
+|
+<a href=3D"https://tg.enews.sodapdf.com/c/c2MtGyWy58J7CBdj6SdQiwMbctMyJHeRV=
+LiO57gfCIeA0_QJVdyPUOcgUjUKeGJC_qTeKPCMwZ-jc2sAY_83V7l0O6fV3z51MsK-pLE8k_71=
+EgnuLWu2LIZzeJJzH44UXac1pN90lSdGcQHbRuzixKHmPYCUMg3UmULrmnHeiFHqWc9cevqFUCc=
+iaFDnh2HRFF1Mhe9LJFO6lQllEHERBwHtxM7uOQf99-p2_LfWcCiEeObcbzgc7lItbeHT_ROlfq=
+zhU00zc8EDOAMEjwgArxoeOTNe2BGT2S_4HFs3z3BKk" style=3D"text-decoration: unde=
+rline; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#fff=
+fff;" target=3D"_blank"  >Terms of Use</a>
+|
+<a href=3D"https://tg.enews.sodapdf.com/f/020C3bVzCdS6IcGqR8qJoD18rSm3_onf-=
+q_hpsf6UtrRkCKgqc75WnWPwZPHAiO_xW" style=3D"text-decoration: underline; fon=
+t-family:Arial, Helvetica, sans-serif; font-size:10px; color:#ffffff;" targ=
+et=3D"_blank">Unsubscribe</a></td>
+<td>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td bgcolor=3D"#303030" height=3D"16" style=3D"font-size:16px; line-height:=
+16px;">=C2=A0</td>
+</tr>
+<tr>
+<td align=3D"center" style=3D"text-decoration: none; font-family:Arial, Hel=
+vetica, sans-serif; font-size:10px; color:#ffffff;">7075 Robert-Joncas Plac=
+e, Suite 142, St-Laurent, QC, H4M 2Z2, Canada</td>
+</tr>
+<tr>
+<td bgcolor=3D"#303030" height=3D"10" style=3D"font-size:10px; line-height:=
+10px;">=C2=A0</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td bgcolor=3D"#E4E4E4">=C2=A0</td>
+</tr>
+<!-- Footer end -->
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody></table>
+
+</body>
+</html>
+------=_Part_2974828_1754159318.1697890484305--

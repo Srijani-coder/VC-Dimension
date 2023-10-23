@@ -1,0 +1,128 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:c5c8:b0:4fd:23d3:a27 with SMTP id w8csp185144pxt;
+        Thu, 19 Oct 2023 01:48:36 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGgVFSX1J+wz8+kiZzGQa8aQa4+M9RT8hn5XlLmkokiwa9TJ2mDMwDcW9osZ+noOjddA/2S
+X-Received: by 2002:ac8:598d:0:b0:417:a01e:e39 with SMTP id e13-20020ac8598d000000b00417a01e0e39mr1542577qte.63.1697705316439;
+        Thu, 19 Oct 2023 01:48:36 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697705316; cv=none;
+        d=google.com; s=arc-20160816;
+        b=NeD40VYugwn8vgXRPOMxjffKCfks4Ynt9go/zkalZZYDX5RVi6/4iw3Qb00I+BR9+6
+         tC2F+ckSlDXsiRuMbtLTn6I175++YDEDttXwW62UPw4o0Q1spsSktjKddrRp3LZaLh1Q
+         xJ9iP+y8da4K0qTtWN/8osXj9LP8fCh9bOiVtcJQm/TYWGDXZ4W8gAzd1XtxGtUHmfxm
+         oab1vVVtRPwIL8w/Qwj30Zyo4cGHwJ++p9pjgc55hkfEAp4sSnPszXp9jAJp3clseLdX
+         gvtLOm7PddoNty8kb2nMV3bGHVhzQhX2XYNzvgqiDWatr7KKmy9rTLdjdY7APROUfjXa
+         yI2g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:feedback-id:x_delivery:list-unsubscribe:message-id
+         :subject:reply-to:from:to:date:dkim-signature;
+        bh=0ri7UIGJXWevUiaLHBOLtDpr25oJApNagyyTiZpHVJM=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=wbf9wDgjYXDv8LZFOAkhospRmU++j56rPGcBkw+MHE056xwlN87uiaXVBuCTuquNlz
+         +QxfQtBsgw669o15NKThXhI8GE6ScEz4UX4SZvuRQYw0YMvPM5u+ah6m8WWX9eP0JVZE
+         ikD8RUYREz3Ike7C6qBXxuvVPoVuxjxKo8lbEK9DjHt6kN9L5NASAY4OCGXWNHhXAAR6
+         bHMu0lKm9/yHxheyGgwESlPBlUhy9L595tF8ZJJf++0JYEfqX+i4YNNI/MAn3WTMigqi
+         2qR159mYXLfXAS+5Tr0SGjTEoUFLNjpvPLh55SWcQ0acTOjrtNAe5Si7GUKdQ30QoYBG
+         UsZA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@swiggy.in header.s=fnc header.b=qtvtXOCz;
+       spf=pass (google.com: domain of campaign-swiggyinsmt-54265-5340-11717064-srijani515=gmail.com@alerts.swiggy.in designates 103.52.180.242 as permitted sender) smtp.mailfrom="campaign-swiggyinsmt-54265-5340-11717064-srijani515=gmail.com@alerts.swiggy.in";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=swiggy.in
+Return-Path: <campaign-swiggyinsmt-54265-5340-11717064-srijani515=gmail.com@alerts.swiggy.in>
+Received: from mail242.delivery.swiggy.in (mail242.delivery.swiggy.in. [103.52.180.242])
+        by mx.google.com with ESMTPS id fa11-20020a05622a4ccb00b004197f495da6si179099qtb.554.2023.10.19.01.48.36
+        for <srijani515@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 19 Oct 2023 01:48:36 -0700 (PDT)
+Received-SPF: pass (google.com: domain of campaign-swiggyinsmt-54265-5340-11717064-srijani515=gmail.com@alerts.swiggy.in designates 103.52.180.242 as permitted sender) client-ip=103.52.180.242;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@swiggy.in header.s=fnc header.b=qtvtXOCz;
+       spf=pass (google.com: domain of campaign-swiggyinsmt-54265-5340-11717064-srijani515=gmail.com@alerts.swiggy.in designates 103.52.180.242 as permitted sender) smtp.mailfrom="campaign-swiggyinsmt-54265-5340-11717064-srijani515=gmail.com@alerts.swiggy.in";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=swiggy.in
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=swiggy.in; s=fnc;
+	h=content-type:mime-version:feedback-id:list-unsubscribe:message-id:subject:
+	 reply-to:from:to:from:to:subject;
+	bh=0ri7UIGJXWevUiaLHBOLtDpr25oJApNagyyTiZpHVJM=;
+	b=qtvtXOCz06Z5YYQyV0qxTI0ABu395sqiFJ+d5DUN2Agr+lFcTdTrlExJCDISynr/8lVZxPhSpDHxw
+	 fwYivnLpJKBMN858w0/7SYWMlu5ECspoDzEIAbgqH+w5Ztt7vuGnYFMmME6zbmihSVx/+P5t52i3cp
+	 fvWmTGuvD6IWujP4=
+Date: Thu, 19 Oct 2023 14:18:37 +0530
+To: srijani515@gmail.com
+From: Swiggy Dineout <no-reply@swiggy.in>
+Reply-To: support@swiggy.in
+Subject: =?UTF-8?Q?INVITE:_To_watch_IND_vs_BAN_match_LIVE!_=F0=9F=8F=8F?=
+Message-ID: <277461552711717064@alerts.swiggy.in>
+List-Unsubscribe: <mailto:swiggyinsmt-54265-5340-11717064-7969088ca125df6d48a743dff8b25d4e@usub.swiggy.in?subject=Unsubscribe>, <http://lnk.alerts.swiggy.in/vtrack?ul=CVRVCQEHVQ1MAk9GRltbUVtaVlBXIlFcUFpVHQUODhoe&ml=DVZWCEoHHwgECwsHSA==&sl=ehkte2NLNmpMYH5hSF5fWxtSDwQQFkUfQkRQVAEYTQ8MHQM=&clientid=54265&c=000>
+X_DELIVERY: 54265_5340_5
+Feedback-ID: 5340:54265:20231019135335:nczc
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="b1_fb37161fd2f3d66b2aa808aa4b0f4451"
+
+
+
+
+--b1_fb37161fd2f3d66b2aa808aa4b0f4451
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+
+Email Template 
+
+ <http://lnk.alerts.swiggy.in/vtrack?clientid=54265&ul=
+CVRVCQEHVQ1MAk9GRltbUVtaVlBXIlFcUFpVHQUODhoe&ml=DVZWCEoHHwgEBAYESA==&sl=ehkhRGNkH2p9Z09ZWlkfUVlWERURTEVGWFReSkgIDRpS&pp=0&fl=UBEWSAwYTFpZXVZFW15YQ1xdBwgDTFVeXBw=&ext=>
+
+ <http://lnk.alerts.swiggy.in/vtrack?clientid=54265&ul=
+CVRVCQEHVQ1MAk9GRltbUVtaVlBXIlFcUFpVHQUODhoe&ml=DVZWCEoHHwgECwsFSA==&sl=ehkhRGNkH2p9Z09ZWlkfUVlWERURTEVGWFReSkgIDRpS&pp=0&fl=UBEWSEUNTBZDRFpSU0sfX1tWDwgMCRhcVBwBC15UVVJQUwdKTQEaSFVLCA0=&ext=dXRtX3NvdXJjZT1OZXdzbGV0dGVyJnV0bV9tZWRpdW09RGluZW91dCZ1dG1fY2FtcGFpZ249RGluZW91dC1hZGhvYy1EaW5lb3V0LURPQWxsLUJyZWFrZmFzdC0xOTEwMjAyMy1EaW5lb3V0NTAwT0ZG>
+
+ <http://lnk.alerts.swiggy.in/vtrack?clientid=54265&ul=
+CVRVCQEHVQ1MAk9GRltbUVtaVlBXIlFcUFpVHQUODhoe&ml=DVZWCEoHHwgACwUBSA==&sl=ehkhRGNkH2p9Z09ZWlkfUVlWERURTEVGWFReSkgIDRpS&pp=0&fl=UBEWSEUNTBZHREQbXVxCRFRUEQAPTFVeXBxKRA8GBB8LD1cMVR4=&ext=dXRtX3NvdXJjZT1uZXdzbGV0dGVyJnV0bV9tZWRpdW09RW1haWwmdXRtX2NhbXBhaWduPUVtYWlsX0luc3RhZ3JhbQ==>
+ <http://lnk.alerts.swiggy.in/vtrack?clientid=54265&ul=
+CVRVCQEHVQ1MAk9GRltbUVtaVlBXIlFcUFpVHQUODhoe&ml=DVZWCEoHHwgACwUASA==&sl=ehkhRGNkH2p9Z09ZWlkfUVlWERURTEVGWFReSkgIDRpS&pp=0&fl=UBEWSEUNTBZHREQbUlNSVVdcDApMAVlcHkBOWgEGGkgLDxw=&ext=dXRtX3NvdXJjZT1uZXdzbGV0dGVyJnV0bV9tZWRpdW09RW1haWwmdXRtX2NhbXBhaWduPUVtYWlsX0ZhY2Vib29r>
+
+ <http://lnk.alerts.swiggy.in/vtrack?clientid=54265&ul=
+CVRVCQEHVQ1MAk9GRltbUVtaVlBXIlFcUFpVHQUODhoe&ml=DVZWCEoHHwgACwUDSA==&sl=ehkhRGNkH2p9Z09ZWlkfUVlWERURTEVGWFReSkgIDRpS&pp=0&fl=UBEWSEUNTBZHREQbTV1EREBRBk8BDVseUltYXQgED0k3IkYAB3w3SVlkOl0cWQR0BkQnKxd2eHM=&ext=dXRtX3NvdXJjZT1uZXdzbGV0dGVyJnV0bV9tZWRpdW09RW1haWwmdXRtX2NhbXBhaWduPWVtYWlsX3lvdXR1YmU=>
+ <http://lnk.alerts.swiggy.in/vtrack?clientid=54265&ul=
+CVRVCQEHVQ1MAk9GRltbUVtaVlBXIlFcUFpVHQUODhoe&ml=DVZWCEoHHwgDAgoBSA==&sl=ehkhRGNkH2p9Z09ZWlkfUVlWERURTEVGWFReSkgIDRpS&pp=0&fl=UBEWSEUNTBZERFpBQFdDHlZcDk4xFV9WVko=&ext=>
+ <http://lnk.alerts.swiggy.in/vtrack?clientid=54265&ul=
+CVRVCQEHVQ1MAk9GRltbUVtaVlBXIlFcUFpVHQUODhoe&ml=DVZWCEoHHwgACwUNSA==&sl=ehkhRGNkH2p9Z09ZWlkfUVlWERURTEVGWFReSkgIDRpS&pp=0&fl=UBEWSEUNTBZHREQbWFtfW1BXCg9MAVlcHlJMRw4WAgoO&ext=dHJrPXJpcGYmdHJrSW5mbz1BUUdrdzBVM3lBU1dVQUFBQVdfTC1jOUFHVEZGei1PemVpakM2cjItSGhqeTVXdWl2MkJlamVGNHgyaUQtRTZ4RXhlanlwd0t4OU8zdVJtbVp1cmlCWkw1c2tLWXowYkZGUG5QVXZfa0ZXVnJZcXc1ZU16MU9hU0NuMmpWak1BYXdnbS1LelU9Jm9yaWdpbmFsUmVmZXJlcj1odHRwczovL2FwcC5iaXRseS5jb20vQmdhajl2M21XMmIvYml0bGlua3MvMk0xM29LZz9xdWVyeT1lbWFpbCZmaWx0ZXJBY3RpdmU9dHJ1ZSZzZXNzaW9uUmVkaXJlY3Q9aHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2NvbXBhbnkvc3dpZ2d5LWluLyUzRnV0bV9zb3VyY2UlM0RuZXdzbGV0dGVyJTI2dXRtX21lZGl1bSUzREVtYWlsJTI2dXRtX2NhbXBhaWduJTNERW1haWxfTGlua2VkaW4=>
+
+ Don't want convenience delivered to your inbox? Unsubscribe here
+<http://lnk.alerts.swiggy.in/vtrack?clientid=54265&ul=
+CVRVCQEHVQ1MAk9GRltbUVtaVlBXIlFcUFpVHQUODhoe&ml=DVZWCEoHHwgECwsESA==&sl=ehk3RGNkH2p9Z09ZWlkfUVlWERURTEVGWFReSkgIDRpS&pp=0&fl=UBEWSAwYTFVeWB1UWFdDREYdEBYLBVFIH1pXHBUWCgEFGFoLR1wWHg==&ext=cD1zbXVuc3ViJm1pZD01MzQwJnVpZD1bVU5JUUlEXQ==>
+
+
+
+--b1_fb37161fd2f3d66b2aa808aa4b0f4451
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html><html><head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <style type="text/css"></style> <meta name="viewport" content="width = 375, initial-scale = -1"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="format-detection" content="date=no"> <meta name="format-detection" content="address=no"> <meta name="format-detection" content="telephone=no"> <meta name="x-apple-disable-message-reformatting"> <title>Email Template</title> <style type="text/css" media="screen"> body { padding: 0 !important; margin: 0 !important; display: block !important;
+min-width: 100% !important; width: 100% !important; background: #ebeef4; -webkit-text-size-adjust: none } a { color: #1936e7; text-decoration: none } .text-button.t-white a { color: #fefffe; text-decoration: none } .text-button.t-orange a { color: #ff7f02; text-decoration: none } .text-button.t-dark a { color: #000001; text-decoration: none } .text-button.t-blue a { color: #1936e7; text-decoration: none } .footer-text a { color: #999b9f; text-decoration: none } .t-orange a { color: #ff7f02 } .t-blue a { color: #1936e7 } .t-dark a { color: #000001 } .t-white a { color: #fefffe } p { padding: 0
+!important; margin: 0 !important } img { -ms-interpolation-mode: bicubic } .mcnPreviewText { display: none !important } @media only screen and (max-device-width: 600px), only screen and (max-width: 600px) { u+.body .gwfw { width: 100% !important; width: 100vw !important } .m-shell { width: 100% !important; min-width: 100% !important } .m-center { text-align: center !important } .center { margin: 0 auto !important } .td { width: 100% !important; min-width: 100% !important } .m-br-15 { height: 15px !important } .m-td, .m-hide { display: none !important; width: 0 !important; height: 0 !important;
+font-size: 0 !important; line-height: 0 !important; min-height: 0 !important } .m-block { display: block !important } .fluid-img img { width: 100% !important; max-width: 100% !important; height: auto !important } .column { float: left !important; width: 100% !important; display: block !important } .content-spacing { width: 15px !important } } </style></head><body class="body" style="background: #ebeef4; -webkit-text-size-adjust: none; padding: 0 !important; margin: 0 !important; display: block !important; min-width: 100% !important; width: 100% !important;"><div style="display: none;
+font-size: 1px; line-height: 1px; font-family: Verdana, Helvetica, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all;">Tap to accept.</div> <table width="100%" border="0"
+cellspacing="0" cellpadding="0" bgcolor="#ebeef4" class="gwfw"> <tbody> <tr> <td class="img" width="7" style="font-size:0pt; line-height:0pt; text-align:left;"></td> <td align="center" valign="top"> <table width="600" border="0" cellspacing="0" cellpadding="0" class="m-shell"> <tbody> <tr> <td class="td" style="width:600px; min-width:600px; font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal;"> <table width="100%" border="0" cellspacing="0" cellpadding="0"> <tbody> <tr> <td class="fluid-img" style="font-size:0pt; line-height:0pt; text-align:left;"> <a
+href="http://lnk.alerts.swiggy.in/vtrack?clientid=54265&ul=
+CVRVCQEHVQ1MAk9GRltbUVtaVlBXIlFcUFpVHQUODhoe&ml=DVZWCEoHHwgEBAYESA==&sl=ehkhRGNkH2p9Z09ZWlkfUVlWERURTEVGWFReSkgIDRpS&pp=0&fl=UBEWSAwYTFpZXVZFW15YQ1xdBwgDTFVeXBw=&ext="  target="_blank" style="color: #1936e7; text-decoration: none;" width="100%" height="100%" border="0" style="-ms-interpolation-mode: bicubic;"> </a> </td> </tr> <tr> <td class="fluid-img" style="font-size:0pt; line-height:0pt; text-align:left;"> <a href="http://lnk.alerts.swiggy.in/vtrack?clientid=54265&ul=
+CVRVCQEHVQ1MAk9GRltbUVtaVlBXIlFcUFpVHQUODhoe&ml=DVZWCEoHHwgECwsFSA==&sl=ehkhRGNkH2p9Z09ZWlkfUVlWERURTEVGWFReSkgIDRpS&pp=0&fl=UBEWSEUNTBZDRFpSU0sfX1tWDwgMCRhcVBwBC15UVVJQUwdKTQEaSFVLCA0=&ext=dXRtX3NvdXJjZT1OZXdzbGV0dGVyJnV0bV9tZWRpdW09RGluZW91dCZ1dG1fY2FtcGFpZ249RGluZW91dC1hZGhvYy1EaW5lb3V0LURPQWxsLUJyZWFrZmFzdC0xOTEwMjAyMy1EaW5lb3V0NTAwT0ZG"  target="_blank" style="color: #1936e7; text-decoration: none;"> <img
+src="https://marketing-media-assets.swiggy.com/500Emailer2.jpg?updatedAt=1697693749809" width="100%" height="100%" border="0" style="-ms-interpolation-mode: bicubic;"> </a> </td> </tr> <tr> <td class="fluid-img" style="font-size:0pt; line-height:0pt; text-align:left;"></td> </tr> <tr> <td class="fluid-img" style="font-size:0pt; line-height:0pt; text-align:left;"></td> </tr> <tr> <td class="fluid-img" style="font-size:0pt; line-height:0pt; text-align:left;"></td> </tr> <tr> <td class="img p40-15" style="font-size:0pt; line-height:0pt; text-align:left; padding:40px 15px;"> <table width="100%"
+border="0" cellspacing="0" cellpadding="0"> <tbody> <tr> <td align="center" class="pb-21" style="padding-bottom:21px;"> <table border="0" cellspacing="0" cellpadding="0"> <tbody> <tr> <td class="img" width="20" style="font-size:0pt; line-height:0pt; text-align:left;"> <a href="http://lnk.alerts.swiggy.in/vtrack?clientid=54265&ul=
+CVRVCQEHVQ1MAk9GRltbUVtaVlBXIlFcUFpVHQUODhoe&ml=DVZWCEoHHwgACwUBSA==&sl=ehkhRGNkH2p9Z09ZWlkfUVlWERURTEVGWFReSkgIDRpS&pp=0&fl=UBEWSEUNTBZHREQbXVxCRFRUEQAPTFVeXBxKRA8GBB8LD1cMVR4=&ext=dXRtX3NvdXJjZT1uZXdzbGV0dGVyJnV0bV9tZWRpdW09RW1haWwmdXRtX2NhbXBhaWduPUVtYWlsX0luc3RhZ3JhbQ=="  target="_blank" style="color: #1936e7; text-decoration: none;"> <img src="https://updates.swiggy.in/imgproxy/img/2039395374/2_11_2_87144dcb-fb8a-47c1-bf2e-30a34eaa6c03.png" width="35" height="35" border="0"
+style="-ms-interpolation-mode: bicubic;" /> </a> </td> <td class="img" width="13" style="font-size:0pt; line-height:0pt; text-align:left;"></td> <td class="img" width="25" style="font-size:0pt; line-height:0pt; text-align:left;"> <a href="http://lnk.alerts.swiggy.in/vtrack?clientid=54265&ul=
+CVRVCQEHVQ1MAk9GRltbUVtaVlBXIlFcUFpVHQUODhoe&ml=DVZWCEoHHwgACwUASA==&sl=ehkhRGNkH2p9Z09ZWlkfUVlWERURTEVGWFReSkgIDRpS&pp=0&fl=UBEWSEUNTBZHREQbUlNSVVdcDApMAVlcHkBOWgEGGkgLDxw=&ext=dXRtX3NvdXJjZT1uZXdzbGV0dGVyJnV0bV9tZWRpdW09RW1haWwmdXRtX2NhbXBhaWduPUVtYWlsX0ZhY2Vib29r"  target="_blank" style="color: #1936e7; text-decoration: none;"> <img src="https://updates.swiggy.in/imgproxy/img/2039395375/3_12_3_e35b29b5-25cc-490c-9937-04230c9b1ceb.png" width="30" height="30" border="0" style="-ms-interpolation-mode: bicubic;" /> </a>
+</td> <td class="img" width="14" style="font-size:0pt; line-height:0pt; text-align:left;"></td> <td class="img" width="19" style="font-size:0pt; line-height:0pt; text-align:left;"> <a href="http://lnk.alerts.swiggy.in/vtrack?clientid=54265&ul=
+CVRVCQEHVQ1MAk9GRltbUVtaVlBXIlFcUFpVHQUODhoe&ml=DVZWCEoHHwgACwUDSA==&sl=ehkhRGNkH2p9Z09ZWlkfUVlWERURTEVGWFReSkgIDRpS&pp=0&fl=UBEWSEUNTBZHREQbTV1EREBRBk8BDVseUltYXQgED0k3IkYAB3w3SVlkOl0cWQR0BkQnKxd2eHM=&ext=dXRtX3NvdXJjZT1uZXdzbGV0dGVyJnV0bV9tZWRpdW09RW1haWwmdXRtX2NhbXBhaWduPWVtYWlsX3lvdXR1YmU="  target="_blank" style="color: #1936e7; text-decoration: none;"> <img src="https://updates.swiggy.in/imgproxy/img/2039395376/4_13_4_73199d2c-ae94-4162-95d9-5c8416b3cab8.png" width="30" height="30" border="0" style="-ms-interpolation-mode: bicubic;" /> </a> </td> <td class="img"
+width="13" style="font-size:0pt; line-height:0pt; text-align:left;"></td> <td class="img" width="27" style="font-size:0pt; line-height:0pt; text-align:left;"> <a href="http://lnk.alerts.swiggy.in/vtrack?clientid=54265&ul=
+CVRVCQEHVQ1MAk9GRltbUVtaVlBXIlFcUFpVHQUODhoe&ml=DVZWCEoHHwgDAgoBSA==&sl=ehkhRGNkH2p9Z09ZWlkfUVlWERURTEVGWFReSkgIDRpS&pp=0&fl=UBEWSEUNTBZERFpBQFdDHlZcDk4xFV9WVko=&ext="  target="_blank" style="color: #1936e7; text-decoration: none;"> <img src="https://updates.swiggy.in/imgproxy/img/2039395377/5_14_5_5b356ef9-f4d3-416f-a3c7-7b7272b7cb98.png" width="30" height="30" border="0" style="-ms-interpolation-mode: bicubic;" /> </a> </td> <td class="img" width="13" style="font-size:0pt; line-height:0pt; text-align:left;"></td> <td class="img" width="18" style="font-size:0pt;
+line-height:0pt; text-align:left;"> <a href="http://lnk.alerts.swiggy.in/vtrack?clientid=54265&ul=
+CVRVCQEHVQ1MAk9GRltbUVtaVlBXIlFcUFpVHQUODhoe&ml=DVZWCEoHHwgACwUNSA==&sl=ehkhRGNkH2p9Z09ZWlkfUVlWERURTEVGWFReSkgIDRpS&pp=0&fl=UBEWSEUNTBZHREQbWFtfW1BXCg9MAVlcHlJMRw4WAgoO&ext=dHJrPXJpcGYmdHJrSW5mbz1BUUdrdzBVM3lBU1dVQUFBQVdfTC1jOUFHVEZGei1PemVpakM2cjItSGhqeTVXdWl2MkJlamVGNHgyaUQtRTZ4RXhlanlwd0t4OU8zdVJtbVp1cmlCWkw1c2tLWXowYkZGUG5QVXZfa0ZXVnJZcXc1ZU16MU9hU0NuMmpWak1BYXdnbS1LelU9Jm9yaWdpbmFsUmVmZXJlcj1odHRwczovL2FwcC5iaXRseS5jb20vQmdhajl2M21XMmIvYml0bGlua3MvMk0xM29LZz9xdWVyeT1lbWFpbCZmaWx0ZXJBY3RpdmU9dHJ1ZSZzZXNzaW9uUmVkaXJlY3Q9aHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2NvbXBhbnkvc3dpZ2d5LWluLyUzRnV0bV9zb3VyY2UlM0RuZXdzbGV0dGVyJTI2dXRtX21lZGl1bSUzREVtYWlsJTI2dXRtX2NhbXBhaWduJTNERW1haWxfTGlua2VkaW4="
+ target="_blank" style="color: #1936e7; text-decoration: none;"> <img
+src="https://updates.swiggy.in/imgproxy/img/2039395378/6_15_6_b129d633-76c8-4696-8c87-b46ed5a14b79.png" width="30" height="30" border="0" style="-ms-interpolation-mode: bicubic;" /> </a> </td> </tr> </tbody> </table> </td> </tr> <tr> <td class="footer-text" style="color:#999b9f; font-family:Verdana; font-size:12px; line-height:25px; text-align:center; min-width:auto !important;">Don't want convenience delivered to your inbox? <a class="link-dark-blue" href="http://lnk.alerts.swiggy.in/vtrack?clientid=54265&ul=
+CVRVCQEHVQ1MAk9GRltbUVtaVlBXIlFcUFpVHQUODhoe&ml=DVZWCEoHHwgECwsESA==&sl=ehk3RGNkH2p9Z09ZWlkfUVlWERURTEVGWFReSkgIDRpS&pp=0&fl=UBEWSAwYTFVeWB1UWFdDREYdEBYLBVFIH1pXHBUWCgEFGFoLR1wWHg==&ext=cD1zbXVuc3ViJm1pZD01MzQwJnVpZD1bVU5JUUlEXQ=="  style="color: #1936E7; text-decoration: none;" target="_blank"><span class="link-dark-blue" style="color:#1936e7;
+text-decoration:none;">Unsubscribe here</span> </a> </td> </tr> </tbody> </table> </td> </tr> </tbody> </table> </td> </tr> </tbody> </table> </td> <td class="img" width="7" style="font-size:0pt; line-height:0pt; text-align:left;"></td> </tr> </tbody> </table><br/><div></div><img border="0" src="http://lnk.alerts.swiggy.in/vtrack?clientid=54265&ul=
+CVRVCQEHVQ1MAk9GRltbUVtaVlBXIlFcUFpVHQUODhoe&ml=DVZWCEoHHwlM&sl=ehktRGNkH2p9Z09ZWlkfUVlWERURTEVGWFReSkgIDRpS&c=54265" ></body></html>
+
+
+
+--b1_fb37161fd2f3d66b2aa808aa4b0f4451--
+

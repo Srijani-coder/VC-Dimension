@@ -1,0 +1,2711 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:8691:b0:4fd:23d3:a27 with SMTP id e17csp717427pxn;
+        Sun, 22 Oct 2023 03:42:25 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGly84p0ItP7fNl55kiAUjOYjq1rPOSUETuhzzGcOkx1vkgt5/xbyhe1l1ibIrxjzD7yZmR
+X-Received: by 2002:a05:600c:3414:b0:401:c7ec:b930 with SMTP id y20-20020a05600c341400b00401c7ecb930mr8708915wmp.10.1697971345511;
+        Sun, 22 Oct 2023 03:42:25 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697971345; cv=none;
+        d=google.com; s=arc-20160816;
+        b=H1WvxY1Z6Y3EkypoSX1aV7m+3TxLK7k1gb4+0hBenIlwlAGqkvXCAOGAqzHOjA8enN
+         a8KYWNxgVYr2kfNoHPdHlU9CHssk3bjdn3ffWwW9kolyjZ0i7rmszoc7yW9HpRv6gltf
+         xacRXe2oIHRkha2aHHTFSo3rvJMDS0s//pto6VixgUaFTA8lW7Ehnh0NCrNYVQKmzeXf
+         z4ZdXGKJoHw6kHlyvyWLdx2LTHJRMlNa2c1m/fyLMPVDyOWbvuiPlGq5kAjih+vNyhkB
+         80J8ioYZcoXWvP4/3WnMq0B186Hyj/zslnUZXa1KWf4RCjbM3QVOHM/x/sNsI/AkEvF3
+         nsjw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:bounces-to:mime-version:subject:message-id:to:from:date
+         :dkim-signature:dkim-signature;
+        bh=R8cUXxR0dlAieSXAmu65b9npCyDDh38N08FZPFc3HhE=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=HplEjRcuU6my7Nhqqmcy0FKcf9iAh6cAjwSN+ufe++v+kIYCz+YpY7GfuGbmTk94uo
+         jTcHUYxH68HTD8KmYOpJvTRw2ikwW4rVjVc5eWUiNKqUBraJAJ75VCMMMlJmoWgGLpnj
+         D1LaiW0ctY/pwHOt8Ol/jseRbph8vGqrrFczl/shw+AAfZNa/D5ONXweHfrTShgYY1HP
+         dN4GKjy398wRkmI24jZNjuyJ36jVVDYOnjcle6ABb2MggiFYL3E8bGPCn1hKyDgJWkwN
+         CdENDDejRttwJB0mF2iwy9zfYd4wAKNpz6pzpcBwvnCRRiX9mLOIa6vjI0799BPBh71d
+         TlwA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@amazon.in header.s=m5iascuxoqzrt33ruhpiyfbgmjshuzy3 header.b=TU657zDN;
+       dkim=pass header.i=@amazonses.com header.s=shh3fegwg5fppqsuzphvschd53n6ihuv header.b=HgGQfxnp;
+       spf=pass (google.com: domain of 202310221042240f7763a254384d39963e8ff55990p0eu-cekg9e78zu67c@bounces.amazon.in designates 54.240.0.221 as permitted sender) smtp.mailfrom=202310221042240f7763a254384d39963e8ff55990p0eu-CEKG9E78ZU67C@bounces.amazon.in;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=amazon.in
+Return-Path: <202310221042240f7763a254384d39963e8ff55990p0eu-CEKG9E78ZU67C@bounces.amazon.in>
+Received: from a0-221.smtp-out.eu-west-1.amazonses.com (a0-221.smtp-out.eu-west-1.amazonses.com. [54.240.0.221])
+        by mx.google.com with ESMTPS id j14-20020a05600c130e00b004063e21146csi6407203wmf.71.2023.10.22.03.42.25
+        for <srijani515@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 22 Oct 2023 03:42:25 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 202310221042240f7763a254384d39963e8ff55990p0eu-cekg9e78zu67c@bounces.amazon.in designates 54.240.0.221 as permitted sender) client-ip=54.240.0.221;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@amazon.in header.s=m5iascuxoqzrt33ruhpiyfbgmjshuzy3 header.b=TU657zDN;
+       dkim=pass header.i=@amazonses.com header.s=shh3fegwg5fppqsuzphvschd53n6ihuv header.b=HgGQfxnp;
+       spf=pass (google.com: domain of 202310221042240f7763a254384d39963e8ff55990p0eu-cekg9e78zu67c@bounces.amazon.in designates 54.240.0.221 as permitted sender) smtp.mailfrom=202310221042240f7763a254384d39963e8ff55990p0eu-CEKG9E78ZU67C@bounces.amazon.in;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=amazon.in
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=m5iascuxoqzrt33ruhpiyfbgmjshuzy3; d=amazon.in; t=1697971345;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type;
+	bh=ihzRjka+FVNNsi4Ftgs0rcYpm/oqPElowHMAMI1m5Co=;
+	b=TU657zDNRBQOObxmeU1k2HTmZWlJnbG3CymTEkqddplWrF97KabwpCepMWHP2lLu
+	cRg55aKlq9rDkc+//TiWjpONftUUaUB4667A9Q7bv6DgbiOf33B3DfxFpdRryXQeZvn
+	hQmdqRcsHm0PdNKCxltgsCBv4vfy4WmYcjE5F5RY=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=shh3fegwg5fppqsuzphvschd53n6ihuv; d=amazonses.com; t=1697971345;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:Feedback-ID;
+	bh=ihzRjka+FVNNsi4Ftgs0rcYpm/oqPElowHMAMI1m5Co=;
+	b=HgGQfxnpgxW2d3OljQxsG9+/p9irXsDGg9Zauw2+6Aj3+LE12cpiNyzXyzWbd51J
+	sXAOmMaTOCLNkXQ3MhMPx67fPPvScVzoqrh0QRtlFTmHYGeDxkpOKvf1r5wcrOvN18r
+	aPrKveBJ1PE3HMFmgZ/vcqXzJQmlwwmEdTIdxURQ=
+Date: Sun, 22 Oct 2023 10:42:24 +0000
+From: "Amazon.in" <store-news@amazon.in>
+To: srijani515@gmail.com
+Message-ID: <0102018b56fa9641-8a605b86-c895-447c-b48c-6b93a3966e6c-000000@eu-west-1.amazonses.com>
+Subject: Great Indian Festival: Extra Happiness Days!
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_3700330_160906141.1697971344949"
+X-AMAZON-MAIL-RELAY-TYPE: notification
+Bounces-to: 202310221042240f7763a254384d39963e8ff55990p0eu-CEKG9E78ZU67C@bounces.amazon.in
+X-AMAZON-METADATA: CA=CEKG9E78ZU67C-CU=A26JJEVX5DXAMV
+X-Original-MessageID: <urn.rtn.msg.202310221042240f7763a254384d39963e8ff55990p0eu@1697971344951.>
+Feedback-ID: 1.eu-west-1.kjoQSiqb8G+7lWWiDVsxjM2m0ynYd4I6yEFlfoox6aY=:AmazonSES
+X-SES-Outgoing: 2023.10.22-54.240.0.221
+
+------=_Part_3700330_160906141.1697971344949
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Extra Happiness Days
+This festive season, shop with joy and save big! Get 10% instant discount w=
+ith HDFC Bank EMI, Bank of Baroda and OneCard Credit Cards*. Enjoy extra sa=
+vings with coupons and easy exchange.
+Shop now
+https://www.amazon.in/events/greatindianfestival
+
+
+
+
+Blockbuster deals :
+           =20
+Samsung M14
+by Samsung
+https://www.amazon.in/gp/product/B0BZCWLJHK/ref=3Dpe_74104961_858938571_em_=
+1p_0_ti
+...
+
+       =20
+           =20
+Redmi Fire TV 32
+by Redmi
+https://www.amazon.in/gp/product/B0BVMLNGXR/ref=3Dpe_74104961_858938571_em_=
+1p_0_ti
+...
+
+       =20
+           =20
+realme narzo
+by realme
+https://www.amazon.in/gp/product/B0C45N5VPT/ref=3Dpe_74104961_858938571_em_=
+1p_0_ti
+...
+
+       =20
+           =20
+Acer Laptop
+by Acer
+https://www.amazon.in/gp/product/B0B5KTSVTG/ref=3Dpe_74104961_858938571_em_=
+1p_0_ti
+...
+
+       =20
+Featured Deal :
+           =20
+Apple iPhone
+by Apple
+https://www.amazon.in/gp/product/B09V4B6K53/ref=3Dpe_74104961_858938571_em_=
+1p_0_ti
+...
+
+       =20
+
+
+Shop deals by category
+   https://www.amazon.in/b?node=3D1389401031&amp;ref_=3Do_pd_23_xc_1
+   https://www.amazon.in/b?node=3D976419031&amp;ref_=3Do_pd_23_xc_2
+   https://www.amazon.in/b?node=3D9899981031&amp;ref_=3Do_pd_23_xc_3
+https://www.amazon.in/events/greatindianfestival
+
+
+
+Extra happiness, Extra savings
+Coupon CarnivalCoupon CarnivalSave extra up to 40%
+Shop now https://www.amazon.in/b?node=3D10465704031&amp;ref_=3Do_pd_23_mp_1=
+_cta
+Exchange MelaExchange MelaExchange discount up to =E2=82=B950,000
+Shop now https://www.amazon.in/b?node=3D41997007031&amp;ref_=3Do_pd_23_mp_2=
+_cta
+Upgrade at =E2=82=B999/DayUpgradePremium electronics, appliances and more
+Shop now https://www.amazon.in/b?node=3D90919674031&amp;ref_=3Dpe_o_pd_23_m=
+p_3_cta
+
+
+
+https://www.amazon.in/b?node=3D6648217031
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+
+We hope you found this message to be useful. However, if you'd rather not r=
+eceive future e-mails of this sort from Amazon.in, please visit the opt-out=
+ link here:
+https://www.amazon.in//gp/gss/o/1euZ.jfQUk1uJ59QFV.d2yF8gUIkmBZsKIP0NDpxNMf=
+5VbiTKQeeRMigZIeeMIPW3.
+
+Please note that product prices and availability are subject to change. Pri=
+ces and availability were accurate at the time this newsletter was sent; ho=
+wever, they may differ from those you see when you visit Amazon.in.=20
+
+
+
+Amazon.in Marketplace platform: Products sold by a Marketplace seller are s=
+ubject to that seller's terms and conditions of sale. See www.Amazon.in for=
+ details.
+
+Reference: 858938571
+
+This message was sent to the following e-mail address: srijani515@gmail.com
+
+------=_Part_3700330_160906141.1697971344949
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   =20
+
+
+
+
+
+<!DOCTYPE html>
+<html
+    lang=3D"en_IN"
+    xmlns=3D"http://www.w3.org/1999/xhtml"
+    xmlns:o=3D"urn:schemas-microsoft-com:office:office"
+>
+<head>
+    <meta
+        content=3D"text/html; charset=3DUTF-8"
+        http-equiv=3D"Content-Type"
+    />
+    <meta
+        content=3D"telephone=3Dno"
+        name=3D"format-detection"
+    />
+    <meta
+        content=3D"width=3Ddevice-width, initial-scale=3D1; user-scalable=
+=3Dno;"
+        name=3D"viewport"
+    />
+    <meta
+        content=3D"IE=3D9; IE=3D8; IE=3D7; IE=3DEDGE"
+        http-equiv=3D"X-UA-Compatible"
+    />
+    <meta name=3D"x-apple-disable-message-reformatting" />
+    <meta
+        content=3D"light dark"
+        name=3D"color-scheme"
+    />
+    <meta
+        content=3D"light dark"
+        name=3D"supported-color-schemes"
+    />
+    <style type=3D"text/css">
+        @font-face {
+            font-family: "Ember";
+            font-weight: 600;
+            src: local("Ember"),
+            url(https://m.media-amazon.com/images/G/01/outbound/AmazonEmber=
+_Bd._CB1515450239_.WOFF) format("woff");
+        }
+
+        @font-face {
+            font-family: "Ember";
+            font-style: normal;
+            font-weight: 400;
+            src: local("Ember"),
+            url(https://m.media-amazon.com/images/G/01/outbound/AmazonEmber=
+_Rg._CB1515450239_.WOFF) format("woff");
+        }
+
+        @font-face {
+            font-family: "Ember";
+            font-weight: 200;
+            src: local("Ember"),
+            url(https://m.media-amazon.com/images/G/01/outbound/AmazonEmber=
+_Lt._CB1515450239_.WOFF) format("woff");
+        }
+
+        @font-face {
+            font-family: "Ember";
+            font-weight: 500;
+            src: local("Ember"),
+            url(https://m.media-amazon.com/images/G/01/outbound/AmazonEmber=
+_Md._CB1515450239_.WOFF) format("woff");
+        }
+        * {
+            font-family: Ember, Helvetica, Arial, sans-serif;
+        }
+
+        /* Logo */
+        #logoId.full {
+        =09 max-width: 100% !important;
+        =09 padding-left: 0 !important;
+        =09 padding-right: 0 !important;
+        =09 width: 100% !important;
+        }
+        #logoId.zeroBorder {
+        =09 border: 0;
+        =09 border-collapse: collapse;
+        =09 border-spacing: 0;
+        }
+        #logoId .full {
+        =09 max-width: 100% !important;
+        =09 padding-left: 0 !important;
+        =09 padding-right: 0 !important;
+        =09 width: 100% !important;
+        }
+        #logoId .zeroBorder {
+        =09 border: 0;
+        =09 border-collapse: collapse;
+        =09 border-spacing: 0;
+        }
+        #logoId .light-img {
+        =09 background-color: #fff;
+        =09 background-image: linear-gradient(#fff, #fff);
+        }
+        @media (prefers-color-scheme: light) {
+        =09#logoId .light-img {
+        =09=09 display: block !important;
+        =09}
+        =09#logoId .dark-img {
+        =09=09 display: none !important;
+        =09}
+        }
+        @media (prefers-color-scheme: dark) {
+        =09#logoId .light-img {
+        =09=09 display: none !important;
+        =09}
+            #logoId .dark-img {
+        =09=09 display: block !important;
+        =09}
+        }
+        #logoId [data-ogsc] .light-img {
+        =09 display: none !important;
+        }
+        #logoId [data-ogsc] .dark-img {
+        =09 display: block !important;
+        }
+=20
+        /* Paragraph */
+        #paragraphId.full {
+        =09 max-width: 100% !important;
+        =09 padding-left: 0 !important;
+        =09 padding-right: 0 !important;
+        =09 width: 100% !important;
+        }
+        #paragraphId.zeroBorder {
+        =09 border: 0;
+        =09 border-collapse: collapse;
+        =09 border-spacing: 0;
+        }
+        #paragraphId .sans, #paragraphId p {
+        =09 font-family: Ember, Helvetica, Arial, sans-serif;
+        =09 color: #0f1111;
+        }
+        @media (prefers-color-scheme: dark) {
+        =09#paragraphId .sans, #paragraphId p {
+        =09=09 color: #fff;
+        =09}
+        }
+=20
+    /* Footer */
+        #footerId.full {
+        =09 max-width: 100% !important;
+        =09 padding-left: 0 !important;
+        =09 padding-right: 0 !important;
+        =09 width: 100% !important;
+        }
+        #footerId.zeroBorder {
+        =09 border: 0;
+        =09 border-collapse: collapse;
+        =09 border-spacing: 0;
+        }
+        #footerId.footer {
+    =09=09 background-color: #f0f2f2;
+    =09=09 background-color: #f0f2f2 !important;
+    =09}
+        @media (prefers-color-scheme: light) {
+        =09#footerId.footer {
+        =09=09 background-color: #f0f2f2;
+        =09=09 background-color: #f0f2f2 !important;
+        =09}
+        }
+        @media (prefers-color-scheme: dark) {
+        =09#footerId.footer {
+        =09    background-color: #303333;
+        =09=09 background-color: #303333 !important;
+        =09}
+        }
+        #footerId .sans {
+        =09 font-family: Ember, Helvetica, Arial, sans-serif;
+        =09 color: #0f1111;
+        }
+        #footerId p {
+        =09 font-size: 14px;
+        =09 font-weight: 400;
+        =09 line-height: 20px;
+        =09 margin: 0;
+        =09 text-decoration: none;
+        }
+        #footerId .footerlinks a, #footerId a {
+        =09 color: #007185 !important;
+        =09 text-decoration: none;
+        }
+        #footerId .full {
+        =09 max-width: 100% !important;
+        =09 padding-left: 0 !important;
+        =09 padding-right: 0 !important;
+        =09 width: 100% !important;
+        }
+        #footerId .zeroBorder {
+        =09 border: 0;
+        =09 border-collapse: collapse;
+        =09 border-spacing: 0;
+        }
+        #footerId .light-img {
+        =09 background-color: #fff;
+        =09 background-image: linear-gradient(#fff, #fff);
+        }
+        @media (prefers-color-scheme: light) {
+        =09#footerId .light-img {
+        =09=09 display: block !important;
+        =09}
+        =09#footerId .dark-img {
+        =09=09 display: none !important;
+        =09}
+        }
+        @media (prefers-color-scheme: dark) {
+        =09#footerId .light-img {
+        =09=09 display: none !important;
+        =09}
+        =09#footerId .dark-img {
+        =09=09 display: block !important;
+        =09}
+        =09#footerId .sans {
+        =09=09 color: #fff !important;
+        =09}
+        =09#footerId a, #footerId .footerlinks a {
+        =09=09 color: #6ed6e6 !important;
+        =09}
+        }
+        #footerId [data-ogsc] .light-img {
+        =09 display: none !important;
+        }
+        #footerId [data-ogsc] .dark-img {
+        =09 display: block !important;
+        }
+        #footerId [data-ogsc] .sans {
+        =09 color: #fff !important;
+        }
+        #footerId [data-ogsc] a, #footerId [data-ogsc] .footerlinks a {
+        =09 color: #6ed6e6 !important;
+        }
+    /* /Footer */
+=20
+=20
+=20
+    /* HERO IMAGE MODULE */
+        #heroImageId.full, #heroImageId .full {
+        =09 padding-left: 0 !important;
+        =09 padding-right: 0 !important;
+        =09 width: 100% !important;
+        }
+        #heroImageId.zeroBorder, #heroImageId .zeroBorder {
+        =09 border: 0;
+        =09 border-collapse: collapse;
+        =09 border-spacing: 0;
+        }
+        #heroImageId .heroImageMember {
+            display:block; width: 100%; height: auto; margin:0; padding:0;
+        }
+        #heroImageId .heroImageNonMember {
+            display:block; width: 100%; height: 460px; margin:0; padding:0;
+        }
+    /* /HERO IMAGE MODULE */
+   =20
+   =20
+    /* HERO COPY MODULE */
+        #heroCopyId.full, #heroCopyId .full {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            width: 100% !important;
+        }
+        #heroCopyId.zeroBorder, #heroCopyId .zeroBorder {
+                border: 0;
+                border-collapse: collapse;
+                border-spacing: 0;
+        }
+        @media (prefers-color-scheme: dark) {
+            #heroCopyId .darkmode td, #heroCopyId .darkmode p, #heroCopyId =
+.darkmode a {
+                background-color: #000000 !important;
+                color: #ffffff !important;
+            }
+            #heroCopyId .darkmode .button {
+                background-color: #FFD814 !important; color: #0f1111 !impor=
+tant;
+            }
+            #heroCopyId .darkmode {
+                background-color: #000000 !important;
+                border-radius: 4px !important;
+            }
+            #heroCopyId .dark-text {
+            color: #0f1111 !important;
+            }
+            #heroCopyId .dark-white {
+                color: #ffffff !important;
+            }
+        }
+    /* /HERO COPY MODULE */
+   =20
+   =20
+   =20
+    /* PRODUCT1UPID MODULE */
+        #product1UpId.full, #product1UpId .full {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            width: 100% !important;
+        }
+        #product1UpId.zeroBorder, #product1UpId .zeroBorder {
+        =09 border: 0;
+        =09 border-collapse: collapse;
+        =09 border-spacing: 0;
+        }
+        #product1UpId .product-image-wrapper {
+            padding: 8px;
+        }
+        #product1UpId .product-image-td {
+            background: linear-gradient(rgba(15, 17, 17, 0.03), rgba(15, 17=
+, 17, 0.03));
+        }
+        #product1UpId .product-image {
+            mix-blend-mode: multiply;
+        }
+        [data-ogsc] #product1UpId .product-image-wrapper {
+          =09background-image: linear-gradient(#fff, #fff);
+        }
+        [data-ogsc] #product1UpId .product-image-td {
+            background: linear-gradient(#fff, #fff);
+        }
+        [data-ogsc] #product1UpId .product-image {
+            mix-blend-mode: normal;
+        }
+      =09u + .body #product1UpId .product-image-wrapper {
+          =09background-image: linear-gradient(#fff, #fff);
+            padding: 8px;
+        }
+        u + .body #product1UpId .product-image-td {
+            background: #fff;
+        }
+        u + .body #product1UpId .product-image {
+            mix-blend-mode: normal;
+        }
+        @media (prefers-color-scheme: dark) {
+          =09#product1UpId .product-image-wrapper {
+              =09background-image: linear-gradient(#fff, #fff) !important;
+            }
+            #product1UpId .product-image-td {
+                background: linear-gradient(#fff, #fff) !important;
+            }
+            #product1UpId .product-image {
+                mix-blend-mode: normal;
+            }
+        =09#product1UpId .darkmode {
+        =09    background-color: #000000 !important;
+        =09    border-radius: 4px !important;
+        =09}
+        =09#product1UpId .darkmode td, #product1UpId .darkmode p, #product1=
+UpId .darkmode a {
+        =09    background-color: #000000 !important;
+        =09    color: #ffffff !important;
+        =09}
+        =09#product1UpId .darkmode .button {
+                background-color: #FFD814 !important; color: #0f1111 !impor=
+tant;
+            }
+        =09#product1UpId .dark-pad {
+        =09    padding: 0!important;
+        =09}
+          #product1UpId .dark-text {
+            color: #0f1111 !important;
+          }
+        =09#product1UpId .dark-white {
+        =09    color: #ffffff !important;
+        =09}
+        =09#product1UpId .dark-alert {
+        =09    color: #CC0C39 !important;
+        =09}
+            #product1UpId .dark-bgalert {
+                background-color: #CC0C39 !important;
+            }
+        =09#product1UpId .dark-bgwhite {
+            =09background-color: #000000 !important;
+          }
+        }
+    /* /PRODUCT1UPID MODULE */
+   =20
+   =20
+   =20
+    /* PRODUCT4UPID MODULE */
+        #product4UpId .product-image-wrapper {
+            padding: 8px;
+        }
+        #product4UpId .product-image-td {
+            background: linear-gradient(rgba(15, 17, 17, 0.03), rgba(15, 17=
+, 17, 0.03));
+        }
+        #product4UpId .product-image {
+            mix-blend-mode: multiply;
+        }
+       =20
+        [data-ogsc] #product4UpId .product-image-wrapper {
+          =09background-image: linear-gradient(#fff, #fff);
+            padding: 8px;
+        }
+        [data-ogsc] #product4UpId .product-image-td {
+            background: linear-gradient(#fff, #fff);
+        }
+        [data-ogsc] #product4UpId .product-image {
+            mix-blend-mode: normal;
+        }
+        u + .body #product4UpId .product-image-wrapper {
+          =09background-image: linear-gradient(#fff, #fff);
+            padding: 8px;
+        }
+        u + .body #product4UpId .product-image-td {
+            background: #fff;
+        }
+        u .body #product4UpId .product-image {
+            mix-blend-mode: normal;
+        }
+       =20
+        @media (prefers-color-scheme: dark) {
+            #product4UpId .product-image-wrapper {
+              =09background-image: linear-gradient(#fff, #fff) !important;
+            }
+            #product4UpId .product-image-td {
+                background: linear-gradient(#fff, #fff) !important;
+            }
+            #product4UpId .product-image {
+                mix-blend-mode: normal !important;
+            }
+            #product4UpId .darkmode {
+                background-color: #000000 !important;
+                border-radius: 4px !important;
+            }
+            #product4UpId .darkmode td, #product4UpId .darkmode p, #product=
+4UpId .darkmode a {
+                background-color: #000000 !important;
+                color: #ffffff !important;
+            }
+            #product4UpId .darkmode .button {
+                background-color: #FFD814 !important; color: #0f1111 !impor=
+tant;
+            }
+            #product4UpId .dark-pad {
+                padding: 0!important;
+            }
+            #product4UpId .dark-text {
+            color: #0f1111 !important;
+            }
+            #product4UpId .dark-white {
+                color: #ffffff !important;
+            }
+            #product4UpId .dark-alert {
+                color: #CC0C39 !important;
+            }
+            #product4UpId .dark-bgalert {
+                background-color: #CC0C39 !important;
+            }
+            #product4UpId .dark-bgwhite {
+            =09background-color: #000000 !important;
+            }
+        }
+    /* /PRODUCT4UPID MODULE */
+   =20
+   =20
+    /* BANNER MODULE */
+    #bannerId.full, #bannerId .full {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            width: 100% !important;
+        }
+        #bannerId.zeroBorder, #bannerId .zeroBorder {
+        =09 border: 0;
+        =09 border-collapse: collapse;
+        =09 border-spacing: 0;
+        }
+    /* /BANNER MODULE */
+
+   =20
+    /* BANNER2COL MODULE */
+        #banner2ColId.full, #banner2ColId .full {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            width: 100% !important;
+        }
+        #banner2ColId.zeroBorder, #banner2ColId .zeroBorder {
+        =09 border: 0;
+        =09 border-collapse: collapse;
+        =09 border-spacing: 0;
+        }
+        @media (prefers-color-scheme: dark) {
+            #banner2ColId .darkmode td, #banner2ColId .darkmode p, #banner2=
+ColId .darkmode a {
+                background-color: #000000 !important;
+                color: #ffffff !important;
+            }
+        =09#banner2ColId .darkmode .button {
+                background-color: #FFD814 !important; color: #0f1111 !impor=
+tant;
+            }
+        =09#banner2ColId .darkmode {
+                background-color: #000000 !important;
+                border-radius: 4px !important;
+            }
+            #banner2ColId .dark-text {
+            color: #0f1111 !important;
+            }
+            #banner2ColId .dark-white {
+                color: #ffffff !important;
+            }
+        }
+    /* /BANNER2COL MODULE */
+   =20
+    /* CATEGORY3UPID MODULE */
+        #category3UpId.full, #category3UpId .full {
+        =09 padding-left: 0 !important;
+        =09 padding-right: 0 !important;
+        =09 width: 100% !important;
+        }
+        #category3UpId.zeroBorder, #category3UpId .zeroBorder {
+        =09 border: 0;
+        =09 border-collapse: collapse;
+        =09 border-spacing: 0;
+        }
+        #category3UpId .sans, #category3UpId p {
+        =09 font-family: Ember, Helvetica, Arial, sans-serif;
+        }
+        @media (prefers-color-scheme: dark) {
+            #category3UpId .darkmode td, #category3UpId .darkmode p, #categ=
+ory3UpId .darkmode a {
+                background-color: #000000 !important;
+                color: #ffffff !important;
+            }
+        =09#category3UpId .darkmode .button {
+                background-color: #FFD814 !important; color: #0f1111 !impor=
+tant;
+            }
+        =09#category3UpId .darkmode {
+                background-color: #000000 !important;
+                border-radius: 4px !important;
+            }
+            #category3UpId .dark-text {
+            color: #0f1111 !important;
+            }
+            #category3UpId .dark-white {
+                color: #ffffff !important;
+            }
+        }
+    /* /CATEGORY3UPID MODULE */
+   =20
+    /* CATEGORY4UPID MODULE */
+        #category4UpId.full, #category4UpId .full {
+        =09 padding-left: 0 !important;
+        =09 padding-right: 0 !important;
+        =09 width: 100% !important;
+        }
+        #category4UpId.zeroBorder, #category4UpId .zeroBorder {
+        =09 border: 0;
+        =09 border-collapse: collapse;
+        =09 border-spacing: 0;
+        }
+        #category4UpId .sans, #category4UpId p {
+        =09 font-family: Ember, Helvetica, Arial, sans-serif;
+        }
+        @media (prefers-color-scheme: dark) {
+            #category4UpId .darkmode td, #category4UpId .darkmode p, #categ=
+ory4UpId .darkmode a {
+                background-color: #000000 !important;
+                color: #ffffff !important;
+            }
+        =09#category4UpId .darkmode .button {
+                background-color: #FFD814 !important; color: #0f1111 !impor=
+tant;
+            }
+        =09#category4UpId .darkmode {
+                background-color: #000000 !important;
+                border-radius: 4px !important;
+            }
+            #category4UpId .dark-text {
+            color: #0f1111 !important;
+            }
+            #category4UpId .dark-white {
+                color: #ffffff !important;
+            }
+        }
+    /* /CATEGORY4UPID MODULE */
+   =20
+    /* /footerBannerCopy MODULE */
+       =20
+        #footerBannerCopy.full, #footerBannerCopy .full {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            width: 100% !important;
+        }
+        #footerBannerCopy.zeroBorder, #footerBannerCopy .zeroBorder {
+                border: 0;
+                border-collapse: collapse;
+                border-spacing: 0;
+        }
+       =20
+        #footerBannerCopy img {
+            width:100%;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
+       =20
+        #footerBannerCopy h3 {
+            color: #0F1111;
+        }
+       =20
+        @media screen and (min-width: 600px) {
+            #footerBannerCopy .mobile-only {
+                display: none;
+            }
+        }
+       =20
+        @media screen and (max-width: 599px) {
+            #footerBannerCopy .desktop-only {
+                display: none;
+            }
+        }
+       =20
+        @media (prefers-color-scheme: dark) {
+       =20
+            #footerBannerCopy h3 {
+                color: #FFFFFF !important;
+            }
+       =20
+            #footerBannerCopy .content {
+                background-color: #181A1A !important;
+            }
+        }
+       =20
+        [data-ogsc] #footerBannerCopy {
+            background-color: #181A1A !important;
+        }
+        [data-ogsc] #footerBannerCopy h2  {
+            color: #FFFFFF !important;
+        }
+        [data-ogsc] #footerBannerCopy .content {
+            background-color: #181A1A !important;
+        }
+       =20
+        /* /footerBannerCopy MODULE */
+   =20
+    /* DARKMODE GENERICS */
+    [data-ogsc] .button {=20
+        background-color: #FFD814 !important; color: #0f1111 !important;=20
+    }
+    /*u + .body .button span { color: #f0eeee; mix-blend-mode:exclusion; }*=
+/
+   =20
+    </style>
+   =20
+    <!--[if mso 9]>
+    <style type=3D'text/css'>
+        .product-image-wrapper {
+            width: 218px;
+            height: 218px;
+        }
+    </style>
+    <![endif]-->
+
+    <!--[if gte mso 9]>
+        <xml>
+            <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+        <style type=3D"text/css">
+        body, h1, h2, h3, h4, table, th, td, p, li, a, .sans {font-family: =
+Helvetica, Arial, sans-serif !important;}
+        .serif {font-family: 'Times New Roman', Times, serif !important;}
+        sup { font-size:.92em !important; }
+        </style>
+    <![endif]-->
+</head>
+<body class=3D'body'><img width=3D"1" height=3D"1" src=3D"https://www.amazo=
+n.in/gp/r.html?C=3D1JNWRKNZ5AW2N&K=3D1YVXG9YUR937V&M=3Durn:rtn:msg:20231022=
+1042240f7763a254384d39963e8ff55990p0eu&R=3D1HC38WMTBV5R4&T=3DO&U=3Dhttps%3A=
+%2F%2Fimages-eu.ssl-images-amazon.com%2Fimages%2FG%2F01%2Fnav%2Ftransp.gif&=
+H=3DSYRLGLTARPDJEMKE1OXCCJHJ3I4A&ref_=3Dpe_74104961_858938571_opens" /><div=
+ style=3D"display:none !important;
+           visibility:hidden;
+           mso-hide:all;
+           font-size:1px;
+           color:#ffffff;
+           line-height:1px;
+           max-height:0px;
+           max-width:0px;
+           opacity:0;
+           overflow:hidden;">Shop now and save 10% extra with HDFC Bank EMI=
+, Bank of Baroda and OneCard Credit Cards*.</div>
+   =20
+    <!-- Insert &#847;&zwnj;&nbsp; hack after hidden preview text -->
+    <div style=3D"display: none; max-height: 0px; overflow: hidden;">
+    &#847; &zwnj; &nbsp; &#8199; &shy; &#847; &zwnj; &nbsp; &#8199; &shy; &=
+#847; &zwnj; &nbsp; &#8199; &shy; &#847; &zwnj; &nbsp; &#8199; &shy; &#847;=
+ &zwnj; &nbsp; &#8199; &shy; &#847; &zwnj; &nbsp; &#8199; &shy; &#847; &zwn=
+j; &nbsp; &#8199; &shy; &#847; &zwnj; &nbsp; &#8199; &shy;
+    </div><div itemscope itemtype=3D"http://schema.org/Organization"></div>
+<div itemscope itemtype=3D"http://schema.org/DiscountOffer"></div>
+<!--[if (gte mso 9)|(IE)]>
+<table
+    align=3D'center'
+    class=3D'full zeroBorder'
+    width=3D'525'
+    style=3D'margin-left: auto; margin-right: auto; width: 525px;'
+>
+    <tbody width=3D'525'>
+    <tr>
+        <td width=3D'525' style=3D'width: 525px;'>
+<![endif]-->
+<table
+    style=3D"margin:0 auto; width:100%; max-width:525px; border:0; border-c=
+ollapse:collapse; border-spacing:0; padding:0;"
+    role=3D"presentation"
+    cellpadding=3D"0" cellspacing=3D"0"
+>
+    <tbody>
+    <tr>
+        <td width=3D'525'>
+       =20
+                <table
+                    width=3D"525"
+                    role=3D"presentation"
+                    style=3D"width:100%; max-width:525px; margin: 0 auto; b=
+order: 0; border-collapse: collapse; border-spacing: 0; padding: 0;"
+                    cellpadding=3D"0" cellspacing=3D"0"
+                  >
+                    <tr>
+                        <td style=3D"padding:0;" align=3D"center">
+                            <!-- LOGO -->
+<table
+    id=3D"logoId"
+    class=3D"full zeroBorder"
+    style=3D"width: 100%; max-width: 568px; border: 0; border-collapse: col=
+lapse; border-spacing: 0;"
+    role=3D"presentation"
+>
+    <tbody>
+    <tr>
+        <td style=3D"padding:16px 0 12px 0; text-align:left;">
+            <a
+                href=3D"https://www.amazon.in/gp/r.html?C=3D1JNWRKNZ5AW2N&K=
+=3D1YVXG9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a254384d39963e8ff55990=
+p0eu&R=3D1BG27J2E5G6TI&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2F%3Fref_%3Dpe=
+_74104961_858938571&H=3DDTIXVSBABASQZBHH5XK41XFN0AIA&ref_=3Dpe_74104961_858=
+938571"
+                target=3D"_blank"
+            >
+                <img
+                    class=3D"light-img"
+                    height=3D"30"
+                    role=3D"presentation"
+                    src=3D"https://m.media-amazon.com/images/G/01/automated=
+/2022/amazon_in_half_logo_RGB_SQUID.png"
+                    style=3D"width:auto; height:30px; max-width:100%; displ=
+ay:block; border:0; float:left; background-color: #ffffff;"
+                    alt=3D'Amazon.in'
+                />
+                <!--[if !mso]><! -->
+                <img
+                    class=3D"dark-img"
+                    height=3D"30"
+                    role=3D"presentation"
+                    src=3D"https://m.media-amazon.com/images/G/01/automated=
+/2022/amazon_in_half_logo_RGB_WHITE.png"
+                    style=3D"display:none; width:auto; height:30px; max-wid=
+th:100%; border:0; float:left;"
+                    alt=3D'Amazon.in'
+                />
+                <!--<![endif]-->
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+   =20
+<table
+  id=3D"heroImageId"
+  class=3D"full zeroBorder"
+  style=3D"width: 100%;"
+  role=3D"presentation"
+  cellpadding=3D"0" cellspacing=3D"0"
+>
+    <tbody>
+    <tr>
+        <td style=3D"padding:0;"><a href=3D"https://www.amazon.in/gp/r.html=
+?C=3D1JNWRKNZ5AW2N&K=3D1YVXG9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a2=
+54384d39963e8ff55990p0eu&R=3D3BEBSU6GUH7XY&T=3DC&U=3Dhttps%3A%2F%2Fwww.amaz=
+on.in%2Fevents%2Fgreatindianfestival%3Fref_%3Dpe_74104961_858938571_o_pd_h_=
+i&H=3DDKFQLTTYQ8YTR9MGPRVT3RHAZWWA&ref_=3Dpe_74104961_858938571_o_pd_h_i"><=
+img src=3D"https://m.media-amazon.com/images/G/31/img19/IN_Out_Bound/Jup23/=
+9_3.jpg" alt=3D"Great Indian Festival" width=3D"525" style=3D"display:block=
+; width:100%;" /></a></td>
+    </tr>
+    </tbody>
+</table>
+
+   =20
+   =20
+   =20
+    <table
+          class=3D"full zeroBorder"
+          style=3D"width: 100%; height: 4px; background-color:#279BFC; line=
+-height:4px; font-size:4px;"
+          role=3D"presentation"
+          cellpadding=3D"0" cellspacing=3D"0"
+        >
+    <tbody>
+        <tr><td>&nbsp;</td></tr>
+    </tbody>
+    </table>
+   =20
+   =20
+<table
+  id=3D"heroCopyId"
+  class=3D"full zeroBorder"
+  style=3D"width: 100%; background-color:#279BFC;"
+  role=3D"presentation"
+  cellpadding=3D"0" cellspacing=3D"0"
+>
+    <tbody>
+    <tr>
+        <td style=3D"padding:4px 8px;">
+            <table class=3D"full darkmode" style=3D"width: 100%; background=
+-color:#ffffff; color:#0F1111; border-radius:4px;" cellpadding=3D"0" cellsp=
+acing=3D"0">
+                <tr>
+                   =20
+                    <td style=3D"padding:8px 8px 16px 8px;">
+                      <table style=3D"width:100%;" cellpadding=3D"0" cellsp=
+acing=3D"0"><tr>
+                          <td style=3D"padding:0px 0px 4px 0px;">
+                            <h3 class=3D"sans" style=3D"margin:0; font-size=
+:22px; line-height:28px; font-weight:700;">Extra Happiness Days</h3>
+                          </td>
+                        </tr><tr>
+                          <td style=3D"padding:0px 0px 12px 0px; font-size:=
+ 15px; line-height: 20px;">This festive season, shop with joy and save big!=
+ Get 10% instant discount with HDFC Bank EMI, Bank of Baroda and OneCard Cr=
+edit Cards*. Enjoy extra savings with coupons and easy exchange.</td>
+                        </tr><tr>
+                            <td style=3D"padding:0px;">
+    <!--[if mso]>
+        <v:roundrect
+            arcsize=3D'24px'
+            fillcolor=3D'#FFD814'
+            stroke=3D'f'
+            style=3D'border:0;width:120px;height:32px;v-text-anchor:middle;=
+'
+            xmlns:v=3D'urn:schemas-microsoft-com:vml'
+            xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+        >
+            <w:anchorlock/>
+            <v:textbox inset=3D'0,0,0,0'>
+                <center>
+    <![endif]-->
+    <a
+        aria-describedby=3D""
+        class=3D"button"
+        href=3D"https://www.amazon.in/gp/r.html?C=3D1JNWRKNZ5AW2N&K=3D1YVXG=
+9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a254384d39963e8ff55990p0eu&R=
+=3D178YIPC9P0CAM&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fevents%2Fgreatindi=
+anfestival%3Fref_%3Dpe_74104961_858938571_o_pd_23_h_cta&H=3DDOJKIMOJBUXIXAD=
+QBGMRAXUAA6UA&ref_=3Dpe_74104961_858938571_o_pd_23_h_cta"
+        style=3D"background-color: #FFD814; color: #0f1111; border-radius: =
+24px; padding: 8px 12px; display: inline-block; box-shadow: 1px 2px 4px rgb=
+a(153, 153, 153, 0.2); font-size: 13px; line-height: 16px; white-space:nowr=
+ap; text-decoration:none;"
+    >
+        <span class=3D"dark-text">Shop now</span>
+    </a>
+    <!--[if mso]>
+        </center>
+        </v:textbox>
+        </v:roundrect>
+    <![endif]-->
+
+                            </td>
+                        </tr></table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+   =20
+       =20
+<table
+  id=3D"product4UpId"
+  class=3D"full zeroBorder"
+  style=3D"width: 100%; background-color:#279BFC;"
+  role=3D"presentation"
+  cellpadding=3D"0" cellspacing=3D"0"
+>
+    <tbody>
+    <tr>
+        <td style=3D"padding:4px 8px;">
+            <table class=3D"full darkmode" style=3D"width: 100%; background=
+-color:#ffffff; color:#0F1111; border-radius:4px;" cellpadding=3D"0" cellsp=
+acing=3D"0">
+                <tr>
+                    <td style=3D"padding:4px 4px 12px 4px;"><table cellpadd=
+ing=3D"0" cellspacing=3D"0"><tr><td style=3D"padding:4px;"><h3 style=3D"mar=
+gin:0; font-size:18px; line-height:22px; font-weight:700;">Blockbuster deal=
+s</h3></td></tr></table>
+
+    <table class=3D''
+           style=3D"border: 0; border-collapse: collapse; border-spacing: 0=
+; "
+           cellpadding=3D"0" cellspacing=3D"0">
+
+       =20
+
+
+                <tr><td style=3D"vertical-align: top; width:50%;">
+               =20
+                   =20
+<table
+    class=3D"zeroBorder full"
+    align=3D"center"
+    width=3D"100%"
+    role=3D"presentation"
+    cellpadding=3D"0" cellspacing=3D"0" border=3D"0"
+>
+    <tbody>
+    <tr>
+        <td style=3D"vertical-align: top; padding:4px; ">
+   =20
+   =20
+       =20
+    <table class=3D"zeroBorder" style=3D"width: 100%; border-radius: 4px;" =
+cellpadding=3D"0" cellspacing=3D"0">
+        <tbody>
+            <tr>
+                <td class=3D'product-image-td' style=3D'border-radius:4px; =
+position: relative; width:100%; vertical-align: center; text-align: center;=
+'>
+                    <a
+                        href=3D"https://www.amazon.in/gp/r.html?C=3D1JNWRKN=
+Z5AW2N&K=3D1YVXG9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a254384d39963e=
+8ff55990p0eu&R=3DRKZOX95O1KWL&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fgp%2F=
+product%2FB0BZCWLJHK%2Fref%3Dpe_74104961_858938571_em_2p_0_lm_o_pd_c_1&H=3D=
+AZE4X3GRB3MLXZKILALR3DFVAQGA&ref_=3Dpe_74104961_858938571_em_2p_0_lm_o_pd_c=
+_1"
+                        class=3D'product-image-wrapper' style=3D"display: b=
+lock; position:relative; background-color:transparent; border-radius: 4px;"=
+>
+                       =20
+                        <img
+                            class=3D'product-image'
+                            alt=3D"Samsung Galaxy M14 5G (Berry Blue,4GB,12=
+8GB)|50MP Triple Cam|Segment&#x27;s Only 6000 mAh 5G SP|5nm Processor|2 Gen=
+. OS Upgrade &amp; 4 Year Security Update|12GB RAM with RAM Plus|Android 13=
+|Without Charger"
+                            src=3D"https://m.media-amazon.com/images/I/41Yo=
+rSgCIcL._SR500,500_.jpg"
+                            style=3D"width:100%; margin:0 auto; display:blo=
+ck; border-radius:4px;"
+                            width=3D"202"
+                        />
+                       =20
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+   =20
+    </td>
+    </tr>
+    <tr>
+        <td style=3D"vertical-align: top; padding: 4px;">
+           =20
+            <table
+                class=3D"zeroBorder"
+                style=3D"width:100%;"
+                cellpadding=3D"0" cellspacing=3D"0" border=3D"0"
+            >
+                <tbody><tr>
+                        <td style=3D"padding: 0;">
+        <table width=3D'100%' style=3D'width: 100%' cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0">
+        <tbody>
+        <tr>
+            <td style=3D'padding-bottom: 4px;'>
+           =20
+                <table style=3D'' cellpadding=3D"0" cellspacing=3D"0">
+                <tbody>
+                <tr>
+                <td bgcolor=3D"#CC0C39" style=3D"background-color:#CC0C39 !=
+important; color: #FFFFFF; padding: 4px 6px; border-radius:4px; font-family=
+: Ember, Helvetica, Arial, sans-serif; font-weight: 700; font-size: 11px; l=
+ine-height: 11px;">
+                       =20
+                                Great Indian Festival
+                    </td>
+                =20
+                </tr>
+                </tbody>
+            </table>
+                    <span class=3D'product-discount dark-deal' style=3D"col=
+or:#CC0C39; font-size:20px; font-weight:300;">-33%</span>
+        <span class=3D'product-price' style=3D"font-size: 22px; font-weight=
+: 400; line-height: 26px;"><sup
+                        style=3D"font-size: 12px; position: relative; top: =
+2px;">=E2=82=B9</sup>11,990<sup
+                        style=3D"font-size: 12px; position: relative; top: =
+2px;">00</sup>
+            </span>
+                </td>
+        </tr><tr>
+        <td class=3D'product-list-price'
+            style=3D'padding-bottom: 4px; font-size: 13px; font-weight: 400=
+; color: #565959; line-height: 18px;'>
+           =20
+                <span>M.R.P.:</span>
+            <span
+                    style=3D"text-decoration: line-through;">=E2=82=B917,99=
+0.00</span>
+            </td>
+    </tr>
+        </tbody>
+    </table>
+
+</td>
+                    </tr>
+               =20
+                <tr>
+                    <td style=3D"padding: 0;">
+
+
+
+
+
+<p class=3D"product-name" style=3D"margin:0 0 4px 0; font-size: 15px; line-=
+height: 20px;">
+    <a
+        href=3D"https://www.amazon.in/gp/r.html?C=3D1JNWRKNZ5AW2N&K=3D1YVXG=
+9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a254384d39963e8ff55990p0eu&R=
+=3D2KBYCRT81F1R4&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fgp%2Fproduct%2FB0B=
+ZCWLJHK%2Fref%3Dpe_74104961_858938571_em_2p_0_lm_o_pd_c_1&H=3D0ZNLSZ7LPSOPL=
+LDGJIIADLTCFDGA&ref_=3Dpe_74104961_858938571_em_2p_0_lm_o_pd_c_1"
+        style=3D"text-decoration: none; color:#232F3E;"
+    >
+        Samsung M14
+</a>
+</p>
+</td>
+                </tr>
+               =20
+                <tr>
+                    <td style=3D"padding: 0;">
+                            <!--[if mso]>
+                            <v:roundrect
+                                arcsize=3D'24px'
+                                fillcolor=3D'#FFD814'
+                                stroke=3D'f'
+                                style=3D'border:0;width:120px;height:32px;v=
+-text-anchor:middle;'
+                                xmlns:v=3D'urn:schemas-microsoft-com:vml'
+                                xmlns:w=3D'urn:schemas-microsoft-com:office=
+:word'
+                            >
+                                <w:anchorlock/>
+                                <v:textbox inset=3D'0,0,0,0'>
+                                    <center>
+                            <![endif]-->
+                            <a
+                                aria-describedby=3D"Samsung Galaxy M14 5G (=
+Berry Blue,4GB,128GB)|50MP Triple..."
+                                class=3D"button"
+                                href=3D"https://www.amazon.in/gp/r.html?C=
+=3D1JNWRKNZ5AW2N&K=3D1YVXG9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a254=
+384d39963e8ff55990p0eu&R=3D3TCGU22RRTS76&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon=
+.in%2Fgp%2Fproduct%2FB0BZCWLJHK%2Fref%3Dpe_74104961_858938571_em_2p_0_lm_o_=
+pd_c_1&H=3DS8CXRTZONGTUASQJXAP519UXRLCA&ref_=3Dpe_74104961_858938571_em_2p_=
+0_lm_o_pd_c_1"
+                                style=3D"background-color: #FFD814; color: =
+#0f1111; border-radius: 24px; padding: 8px 12px; display: inline-block; box=
+-shadow: 1px 2px 4px rgba(153, 153, 153, 0.2); font-size: 13px; line-height=
+: 16px; white-space:nowrap; text-decoration: none; "
+                            >
+                                <span class=3D"dark-text">
+                                    Shop now
+                                </span>
+                            </a>
+                            <!--[if mso]>
+                            </center>
+                            </v:textbox>
+                            </v:roundrect>
+                            <![endif]-->
+                        </td>
+                </tr>
+                </tbody>
+            </table>
+                       =20
+        </td>
+    </tr>
+    </tbody>
+</table>
+                </td>
+               =20
+
+
+               =20
+               =20
+
+               =20
+
+
+                <td style=3D"vertical-align: top; width:50%;">
+               =20
+                   =20
+<table
+    class=3D"zeroBorder full"
+    align=3D"center"
+    width=3D"100%"
+    role=3D"presentation"
+    cellpadding=3D"0" cellspacing=3D"0" border=3D"0"
+>
+    <tbody>
+    <tr>
+        <td style=3D"vertical-align: top; padding:4px; ">
+   =20
+   =20
+       =20
+    <table class=3D"zeroBorder" style=3D"width: 100%; border-radius: 4px;" =
+cellpadding=3D"0" cellspacing=3D"0">
+        <tbody>
+            <tr>
+                <td class=3D'product-image-td' style=3D'border-radius:4px; =
+position: relative; width:100%; vertical-align: center; text-align: center;=
+'>
+                    <a
+                        href=3D"https://www.amazon.in/gp/r.html?C=3D1JNWRKN=
+Z5AW2N&K=3D1YVXG9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a254384d39963e=
+8ff55990p0eu&R=3D2D1G0LT30V5NL&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fgp%2=
+Fproduct%2FB0BVMLNGXR%2Fref%3Dpe_74104961_858938571_em_2p_1_lm_o_pd_c_1&H=
+=3DF4AE62CGDNY4YSCNIWOUPFHOK6MA&ref_=3Dpe_74104961_858938571_em_2p_1_lm_o_p=
+d_c_1"
+                        class=3D'product-image-wrapper' style=3D"display: b=
+lock; position:relative; background-color:transparent; border-radius: 4px;"=
+>
+                       =20
+                        <img
+                            class=3D'product-image'
+                            alt=3D"Redmi 80 cm (32 inches) F Series HD Read=
+y Smart LED Fire TV L32R8-FVIN (Black)"
+                            src=3D"https://m.media-amazon.com/images/I/51xz=
+0+Y1oUL._SR500,500_.jpg"
+                            style=3D"width:100%; margin:0 auto; display:blo=
+ck; border-radius:4px;"
+                            width=3D"202"
+                        />
+                       =20
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+   =20
+    </td>
+    </tr>
+    <tr>
+        <td style=3D"vertical-align: top; padding: 4px;">
+           =20
+            <table
+                class=3D"zeroBorder"
+                style=3D"width:100%;"
+                cellpadding=3D"0" cellspacing=3D"0" border=3D"0"
+            >
+                <tbody><tr>
+                        <td style=3D"padding: 0;">
+        <table width=3D'100%' style=3D'width: 100%' cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0">
+        <tbody>
+        <tr>
+            <td style=3D'padding-bottom: 4px;'>
+           =20
+                <table style=3D'' cellpadding=3D"0" cellspacing=3D"0">
+                <tbody>
+                <tr>
+                <td bgcolor=3D"#CC0C39" style=3D"background-color:#CC0C39 !=
+important; color: #FFFFFF; padding: 4px 6px; border-radius:4px; font-family=
+: Ember, Helvetica, Arial, sans-serif; font-weight: 700; font-size: 11px; l=
+ine-height: 11px;">
+                       =20
+                                Great Indian Festival
+                    </td>
+                =20
+                </tr>
+                </tbody>
+            </table>
+                    <span class=3D'product-discount dark-deal' style=3D"col=
+or:#CC0C39; font-size:20px; font-weight:300;">-60%</span>
+        <span class=3D'product-price' style=3D"font-size: 22px; font-weight=
+: 400; line-height: 26px;"><sup
+                        style=3D"font-size: 12px; position: relative; top: =
+2px;">=E2=82=B9</sup>9,999<sup
+                        style=3D"font-size: 12px; position: relative; top: =
+2px;">00</sup>
+            </span>
+                </td>
+        </tr><tr>
+        <td class=3D'product-list-price'
+            style=3D'padding-bottom: 4px; font-size: 13px; font-weight: 400=
+; color: #565959; line-height: 18px;'>
+           =20
+                <span>M.R.P.:</span>
+            <span
+                    style=3D"text-decoration: line-through;">=E2=82=B924,99=
+9.00</span>
+            </td>
+    </tr>
+        </tbody>
+    </table>
+
+</td>
+                    </tr>
+               =20
+                <tr>
+                    <td style=3D"padding: 0;">
+
+
+
+
+
+<p class=3D"product-name" style=3D"margin:0 0 4px 0; font-size: 15px; line-=
+height: 20px;">
+    <a
+        href=3D"https://www.amazon.in/gp/r.html?C=3D1JNWRKNZ5AW2N&K=3D1YVXG=
+9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a254384d39963e8ff55990p0eu&R=
+=3D3OEJEGVLHFUR5&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fgp%2Fproduct%2FB0B=
+VMLNGXR%2Fref%3Dpe_74104961_858938571_em_2p_1_lm_o_pd_c_1&H=3DVJSHAXWMJVEGR=
+KRFHTVQERBSP5OA&ref_=3Dpe_74104961_858938571_em_2p_1_lm_o_pd_c_1"
+        style=3D"text-decoration: none; color:#232F3E;"
+    >
+        Redmi Fire TV 32
+</a>
+</p>
+</td>
+                </tr>
+               =20
+                <tr>
+                    <td style=3D"padding: 0;">
+                            <!--[if mso]>
+                            <v:roundrect
+                                arcsize=3D'24px'
+                                fillcolor=3D'#FFD814'
+                                stroke=3D'f'
+                                style=3D'border:0;width:120px;height:32px;v=
+-text-anchor:middle;'
+                                xmlns:v=3D'urn:schemas-microsoft-com:vml'
+                                xmlns:w=3D'urn:schemas-microsoft-com:office=
+:word'
+                            >
+                                <w:anchorlock/>
+                                <v:textbox inset=3D'0,0,0,0'>
+                                    <center>
+                            <![endif]-->
+                            <a
+                                aria-describedby=3D"Redmi 80 cm (32 inches)=
+ F Series HD Ready Smart LED Fire TV..."
+                                class=3D"button"
+                                href=3D"https://www.amazon.in/gp/r.html?C=
+=3D1JNWRKNZ5AW2N&K=3D1YVXG9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a254=
+384d39963e8ff55990p0eu&R=3D2J3AALQSB4JV5&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon=
+.in%2Fgp%2Fproduct%2FB0BVMLNGXR%2Fref%3Dpe_74104961_858938571_em_2p_1_lm_o_=
+pd_c_1&H=3DAC8HJHCS5SBA3X7O78GCJZ6C3GKA&ref_=3Dpe_74104961_858938571_em_2p_=
+1_lm_o_pd_c_1"
+                                style=3D"background-color: #FFD814; color: =
+#0f1111; border-radius: 24px; padding: 8px 12px; display: inline-block; box=
+-shadow: 1px 2px 4px rgba(153, 153, 153, 0.2); font-size: 13px; line-height=
+: 16px; white-space:nowrap; text-decoration: none; "
+                            >
+                                <span class=3D"dark-text">
+                                    Shop now
+                                </span>
+                            </a>
+                            <!--[if mso]>
+                            </center>
+                            </v:textbox>
+                            </v:roundrect>
+                            <![endif]-->
+                        </td>
+                </tr>
+                </tbody>
+            </table>
+                       =20
+        </td>
+    </tr>
+    </tbody>
+</table>
+                </td>
+               =20
+
+
+               =20
+               =20
+
+                </tr>
+                   =20
+                    <tr>
+                        <td colspan=3D"2" style=3D"font-size:0; line-height=
+:0; height: 4px;"></td>
+                    </tr>
+               =20
+
+
+                <tr><td style=3D"vertical-align: top; width:50%;">
+               =20
+                   =20
+<table
+    class=3D"zeroBorder full"
+    align=3D"center"
+    width=3D"100%"
+    role=3D"presentation"
+    cellpadding=3D"0" cellspacing=3D"0" border=3D"0"
+>
+    <tbody>
+    <tr>
+        <td style=3D"vertical-align: top; padding:4px; ">
+   =20
+   =20
+       =20
+    <table class=3D"zeroBorder" style=3D"width: 100%; border-radius: 4px;" =
+cellpadding=3D"0" cellspacing=3D"0">
+        <tbody>
+            <tr>
+                <td class=3D'product-image-td' style=3D'border-radius:4px; =
+position: relative; width:100%; vertical-align: center; text-align: center;=
+'>
+                    <a
+                        href=3D"https://www.amazon.in/gp/r.html?C=3D1JNWRKN=
+Z5AW2N&K=3D1YVXG9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a254384d39963e=
+8ff55990p0eu&R=3D3DAYO5YUG326Q&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fgp%2=
+Fproduct%2FB0C45N5VPT%2Fref%3Dpe_74104961_858938571_em_2p_2_lm_o_pd_c_1&H=
+=3DATR1ETEW044ZPXBAGWSVBN1MFKYA&ref_=3Dpe_74104961_858938571_em_2p_2_lm_o_p=
+d_c_1"
+                        class=3D'product-image-wrapper' style=3D"display: b=
+lock; position:relative; background-color:transparent; border-radius: 4px;"=
+>
+                       =20
+                        <img
+                            class=3D'product-image'
+                            alt=3D"realme narzo N53 (Feather Gold, 4GB+64GB=
+) 33W Segment Fastest Charging | Slimmest Phone in Segment | 90 Hz Smooth D=
+isplay"
+                            src=3D"https://m.media-amazon.com/images/I/41dE=
+cQR7UnL._SR500,500_.jpg"
+                            style=3D"width:100%; margin:0 auto; display:blo=
+ck; border-radius:4px;"
+                            width=3D"202"
+                        />
+                       =20
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+   =20
+    </td>
+    </tr>
+    <tr>
+        <td style=3D"vertical-align: top; padding: 4px;">
+           =20
+            <table
+                class=3D"zeroBorder"
+                style=3D"width:100%;"
+                cellpadding=3D"0" cellspacing=3D"0" border=3D"0"
+            >
+                <tbody><tr>
+                        <td style=3D"padding: 0;">
+        <table width=3D'100%' style=3D'width: 100%' cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0">
+        <tbody>
+        <tr>
+            <td style=3D'padding-bottom: 4px;'>
+           =20
+                <table style=3D'' cellpadding=3D"0" cellspacing=3D"0">
+                <tbody>
+                <tr>
+                <td bgcolor=3D"#CC0C39" style=3D"background-color:#CC0C39 !=
+important; color: #FFFFFF; padding: 4px 6px; border-radius:4px; font-family=
+: Ember, Helvetica, Arial, sans-serif; font-weight: 700; font-size: 11px; l=
+ine-height: 11px;">
+                       =20
+                                Great Indian Festival
+                    </td>
+                =20
+                </tr>
+                </tbody>
+            </table>
+                    <span class=3D'product-discount dark-deal' style=3D"col=
+or:#CC0C39; font-size:20px; font-weight:300;">-27%</span>
+        <span class=3D'product-price' style=3D"font-size: 22px; font-weight=
+: 400; line-height: 26px;"><sup
+                        style=3D"font-size: 12px; position: relative; top: =
+2px;">=E2=82=B9</sup>7,999<sup
+                        style=3D"font-size: 12px; position: relative; top: =
+2px;">00</sup>
+            </span>
+                </td>
+        </tr><tr>
+        <td class=3D'product-list-price'
+            style=3D'padding-bottom: 4px; font-size: 13px; font-weight: 400=
+; color: #565959; line-height: 18px;'>
+           =20
+                <span>M.R.P.:</span>
+            <span
+                    style=3D"text-decoration: line-through;">=E2=82=B910,99=
+9.00</span>
+            </td>
+    </tr>
+        </tbody>
+    </table>
+
+</td>
+                    </tr>
+               =20
+                <tr>
+                    <td style=3D"padding: 0;">
+
+
+
+
+
+<p class=3D"product-name" style=3D"margin:0 0 4px 0; font-size: 15px; line-=
+height: 20px;">
+    <a
+        href=3D"https://www.amazon.in/gp/r.html?C=3D1JNWRKNZ5AW2N&K=3D1YVXG=
+9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a254384d39963e8ff55990p0eu&R=
+=3D3HOZHV2TWR2W4&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fgp%2Fproduct%2FB0C=
+45N5VPT%2Fref%3Dpe_74104961_858938571_em_2p_2_lm_o_pd_c_1&H=3DRQTFSLYHVQG2Q=
+FMJTDNXHJBTALUA&ref_=3Dpe_74104961_858938571_em_2p_2_lm_o_pd_c_1"
+        style=3D"text-decoration: none; color:#232F3E;"
+    >
+        realme narzo
+</a>
+</p>
+</td>
+                </tr>
+               =20
+                <tr>
+                    <td style=3D"padding: 0;">
+                            <!--[if mso]>
+                            <v:roundrect
+                                arcsize=3D'24px'
+                                fillcolor=3D'#FFD814'
+                                stroke=3D'f'
+                                style=3D'border:0;width:120px;height:32px;v=
+-text-anchor:middle;'
+                                xmlns:v=3D'urn:schemas-microsoft-com:vml'
+                                xmlns:w=3D'urn:schemas-microsoft-com:office=
+:word'
+                            >
+                                <w:anchorlock/>
+                                <v:textbox inset=3D'0,0,0,0'>
+                                    <center>
+                            <![endif]-->
+                            <a
+                                aria-describedby=3D"realme narzo N53 (Feath=
+er Gold, 4GB+64GB) 33W Segment Fastest..."
+                                class=3D"button"
+                                href=3D"https://www.amazon.in/gp/r.html?C=
+=3D1JNWRKNZ5AW2N&K=3D1YVXG9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a254=
+384d39963e8ff55990p0eu&R=3D34G9P6MJV4G01&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon=
+.in%2Fgp%2Fproduct%2FB0C45N5VPT%2Fref%3Dpe_74104961_858938571_em_2p_2_lm_o_=
+pd_c_1&H=3DQA2ZTWPA4FXAATKTQVUSXU4XSQYA&ref_=3Dpe_74104961_858938571_em_2p_=
+2_lm_o_pd_c_1"
+                                style=3D"background-color: #FFD814; color: =
+#0f1111; border-radius: 24px; padding: 8px 12px; display: inline-block; box=
+-shadow: 1px 2px 4px rgba(153, 153, 153, 0.2); font-size: 13px; line-height=
+: 16px; white-space:nowrap; text-decoration: none; "
+                            >
+                                <span class=3D"dark-text">
+                                    Shop now
+                                </span>
+                            </a>
+                            <!--[if mso]>
+                            </center>
+                            </v:textbox>
+                            </v:roundrect>
+                            <![endif]-->
+                        </td>
+                </tr>
+                </tbody>
+            </table>
+                       =20
+        </td>
+    </tr>
+    </tbody>
+</table>
+                </td>
+               =20
+
+
+               =20
+               =20
+
+               =20
+
+
+                <td style=3D"vertical-align: top; width:50%;">
+               =20
+                   =20
+<table
+    class=3D"zeroBorder full"
+    align=3D"center"
+    width=3D"100%"
+    role=3D"presentation"
+    cellpadding=3D"0" cellspacing=3D"0" border=3D"0"
+>
+    <tbody>
+    <tr>
+        <td style=3D"vertical-align: top; padding:4px; ">
+   =20
+   =20
+       =20
+    <table class=3D"zeroBorder" style=3D"width: 100%; border-radius: 4px;" =
+cellpadding=3D"0" cellspacing=3D"0">
+        <tbody>
+            <tr>
+                <td class=3D'product-image-td' style=3D'border-radius:4px; =
+position: relative; width:100%; vertical-align: center; text-align: center;=
+'>
+                    <a
+                        href=3D"https://www.amazon.in/gp/r.html?C=3D1JNWRKN=
+Z5AW2N&K=3D1YVXG9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a254384d39963e=
+8ff55990p0eu&R=3D3KOJKS9QWI8TA&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fgp%2=
+Fproduct%2FB0B5KTSVTG%2Fref%3Dpe_74104961_858938571_em_2p_3_lm_o_pd_c_1&H=
+=3DEVSYHX41WPJKZCTIIQTVPOSESK0A&ref_=3Dpe_74104961_858938571_em_2p_3_lm_o_p=
+d_c_1"
+                        class=3D'product-image-wrapper' style=3D"display: b=
+lock; position:relative; background-color:transparent; border-radius: 4px;"=
+>
+                       =20
+                        <img
+                            class=3D'product-image'
+                            alt=3D"Acer Aspire 5 Gaming Laptop Intel Core i=
+5 12th gen (16 GB/512 GB SSD/Win11 Home/4GB Graphics/RTX 2050) A515-57G (15=
+.6&quot; FHD Display, 1.8 Kg)"
+                            src=3D"https://m.media-amazon.com/images/I/41T5=
+vxK+AWL._SR500,500_.jpg"
+                            style=3D"width:100%; margin:0 auto; display:blo=
+ck; border-radius:4px;"
+                            width=3D"202"
+                        />
+                       =20
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+   =20
+    </td>
+    </tr>
+    <tr>
+        <td style=3D"vertical-align: top; padding: 4px;">
+           =20
+            <table
+                class=3D"zeroBorder"
+                style=3D"width:100%;"
+                cellpadding=3D"0" cellspacing=3D"0" border=3D"0"
+            >
+                <tbody><tr>
+                        <td style=3D"padding: 0;">
+        <table width=3D'100%' style=3D'width: 100%' cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0">
+        <tbody>
+        <tr>
+            <td style=3D'padding-bottom: 4px;'>
+           =20
+                <table style=3D'' cellpadding=3D"0" cellspacing=3D"0">
+                <tbody>
+                <tr>
+                <td bgcolor=3D"#CC0C39" style=3D"background-color:#CC0C39 !=
+important; color: #FFFFFF; padding: 4px 6px; border-radius:4px; font-family=
+: Ember, Helvetica, Arial, sans-serif; font-weight: 700; font-size: 11px; l=
+ine-height: 11px;">
+                       =20
+                                Great Indian Festival
+                    </td>
+                =20
+                </tr>
+                </tbody>
+            </table>
+                    <span class=3D'product-discount dark-deal' style=3D"col=
+or:#CC0C39; font-size:20px; font-weight:300;">-37%</span>
+        <span class=3D'product-price' style=3D"font-size: 22px; font-weight=
+: 400; line-height: 26px;"><sup
+                        style=3D"font-size: 12px; position: relative; top: =
+2px;">=E2=82=B9</sup>51,990<sup
+                        style=3D"font-size: 12px; position: relative; top: =
+2px;">00</sup>
+            </span>
+                </td>
+        </tr><tr>
+        <td class=3D'product-list-price'
+            style=3D'padding-bottom: 4px; font-size: 13px; font-weight: 400=
+; color: #565959; line-height: 18px;'>
+           =20
+                <span>M.R.P.:</span>
+            <span
+                    style=3D"text-decoration: line-through;">=E2=82=B982,99=
+9.00</span>
+            </td>
+    </tr>
+        </tbody>
+    </table>
+
+</td>
+                    </tr>
+               =20
+                <tr>
+                    <td style=3D"padding: 0;">
+
+
+
+
+
+<p class=3D"product-name" style=3D"margin:0 0 4px 0; font-size: 15px; line-=
+height: 20px;">
+    <a
+        href=3D"https://www.amazon.in/gp/r.html?C=3D1JNWRKNZ5AW2N&K=3D1YVXG=
+9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a254384d39963e8ff55990p0eu&R=
+=3D2PK3T72063IT5&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fgp%2Fproduct%2FB0B=
+5KTSVTG%2Fref%3Dpe_74104961_858938571_em_2p_3_lm_o_pd_c_1&H=3D4OMZPMSQHKODR=
+CCE4BC8IAUDOYCA&ref_=3Dpe_74104961_858938571_em_2p_3_lm_o_pd_c_1"
+        style=3D"text-decoration: none; color:#232F3E;"
+    >
+        Acer Laptop
+</a>
+</p>
+</td>
+                </tr>
+               =20
+                <tr>
+                    <td style=3D"padding: 0;">
+                            <!--[if mso]>
+                            <v:roundrect
+                                arcsize=3D'24px'
+                                fillcolor=3D'#FFD814'
+                                stroke=3D'f'
+                                style=3D'border:0;width:120px;height:32px;v=
+-text-anchor:middle;'
+                                xmlns:v=3D'urn:schemas-microsoft-com:vml'
+                                xmlns:w=3D'urn:schemas-microsoft-com:office=
+:word'
+                            >
+                                <w:anchorlock/>
+                                <v:textbox inset=3D'0,0,0,0'>
+                                    <center>
+                            <![endif]-->
+                            <a
+                                aria-describedby=3D"Acer Aspire 5 Gaming La=
+ptop Intel Core i5 12th gen (16 GB/512 GB..."
+                                class=3D"button"
+                                href=3D"https://www.amazon.in/gp/r.html?C=
+=3D1JNWRKNZ5AW2N&K=3D1YVXG9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a254=
+384d39963e8ff55990p0eu&R=3D135QMW75ZDA0F&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon=
+.in%2Fgp%2Fproduct%2FB0B5KTSVTG%2Fref%3Dpe_74104961_858938571_em_2p_3_lm_o_=
+pd_c_1&H=3DY3DUMOEWIN1JMO68CACQ7ZJJXYOA&ref_=3Dpe_74104961_858938571_em_2p_=
+3_lm_o_pd_c_1"
+                                style=3D"background-color: #FFD814; color: =
+#0f1111; border-radius: 24px; padding: 8px 12px; display: inline-block; box=
+-shadow: 1px 2px 4px rgba(153, 153, 153, 0.2); font-size: 13px; line-height=
+: 16px; white-space:nowrap; text-decoration: none; "
+                            >
+                                <span class=3D"dark-text">
+                                    Shop now
+                                </span>
+                            </a>
+                            <!--[if mso]>
+                            </center>
+                            </v:textbox>
+                            </v:roundrect>
+                            <![endif]-->
+                        </td>
+                </tr>
+                </tbody>
+            </table>
+                       =20
+        </td>
+    </tr>
+    </tbody>
+</table>
+                </td>
+               =20
+
+
+               =20
+               =20
+
+                </tr>
+                   =20
+                    <tr>
+                        <td colspan=3D"2" style=3D"font-size:0; line-height=
+:0; height: 4px;"></td>
+                    </tr>
+                </table><table cellpadding=3D"0" cellspacing=3D"0"><tr><td =
+style=3D"padding:4px;">
+    <!--[if mso]>
+        <v:roundrect
+            arcsize=3D'24px'
+            fillcolor=3D'#FFD814'
+            stroke=3D'f'
+            style=3D'border:0;width:120px;height:32px;v-text-anchor:middle;=
+'
+            xmlns:v=3D'urn:schemas-microsoft-com:vml'
+            xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+        >
+            <w:anchorlock/>
+            <v:textbox inset=3D'0,0,0,0'>
+                <center>
+    <![endif]-->
+    <a
+        aria-describedby=3D""
+        class=3D"button"
+        href=3D"https://www.amazon.in/gp/r.html?C=3D1JNWRKNZ5AW2N&K=3D1YVXG=
+9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a254384d39963e8ff55990p0eu&R=
+=3D2VV1IID621F65&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fevents%2Fgreatindi=
+anfestival%3Fref_%3Dpe_74104961_858938571_o_pd_23_m_cta&H=3DUHBCA1K5BQUFNQV=
+AMKJHQCLJIRQA&ref_=3Dpe_74104961_858938571_o_pd_23_m_cta"
+        style=3D"background-color: #FFD814; color: #0f1111; border-radius: =
+24px; padding: 8px 12px; display: inline-block; box-shadow: 1px 2px 4px rgb=
+a(153, 153, 153, 0.2); font-size: 13px; line-height: 16px; white-space:nowr=
+ap; text-decoration:none;"
+    >
+        <span class=3D"dark-text">See all deals</span>
+    </a>
+    <!--[if mso]>
+        </center>
+        </v:textbox>
+        </v:roundrect>
+    <![endif]-->
+</td></tr></table></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<table
+  id=3D"product1UpId"
+  class=3D"full zeroBorder"
+  style=3D"width: 100%; background-color:#279BFC;"
+  role=3D"presentation"
+  cellpadding=3D"0" cellspacing=3D"0"
+>
+    <tbody>
+    <tr>
+        <td style=3D"padding:4px 8px;">
+            <table class=3D"full darkmode" style=3D"width: 100%; background=
+-color:#ffffff; color:#0F1111; border-radius:4px;" cellpadding=3D"0" cellsp=
+acing=3D"0">
+                <tr>
+                   =20
+                    <td style=3D"padding:4px 4px 12px 4px;">
+                      <table style=3D"width:100%;" cellpadding=3D"0" cellsp=
+acing=3D"0">
+                        <tr>
+                          <td style=3D"padding:4px;">
+                            <h3 class=3D"sans" style=3D"margin:0; font-size=
+:18px; line-height:22px; font-weight:700;">Featured Deal</h3>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style=3D"padding:0px;">
+<table
+    class=3D"zeroBorder full"
+    align=3D"center"
+    width=3D"100%"
+    role=3D"presentation"
+    cellpadding=3D"0" cellspacing=3D"0" border=3D"0"
+>
+    <tbody>
+    <tr>
+        <td style=3D"vertical-align: top; padding:4px; ">
+   =20
+   =20
+       =20
+    <table class=3D"zeroBorder" style=3D"width: 100%; border-radius: 4px;" =
+cellpadding=3D"0" cellspacing=3D"0">
+        <tbody>
+            <tr>
+                <td class=3D'product-image-td' style=3D'border-radius:4px; =
+position: relative; width:100%; vertical-align: center; text-align: center;=
+'>
+                    <a
+                        href=3D"https://www.amazon.in/gp/r.html?C=3D1JNWRKN=
+Z5AW2N&K=3D1YVXG9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a254384d39963e=
+8ff55990p0eu&R=3D3JN2QU0P1GIQQ&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fgp%2=
+Fproduct%2FB09V4B6K53%2Fref%3Dpe_74104961_858938571_em_1p_0_lm_o_pd_f&H=3DW=
+EP5AS0B5JMOANRBN76E0HLKCICA&ref_=3Dpe_74104961_858938571_em_1p_0_lm_o_pd_f"
+                        class=3D'product-image-wrapper' style=3D"display: b=
+lock; position:relative; background-color:transparent; border-radius: 4px;"=
+>
+                       =20
+                        <img
+                            class=3D'product-image'
+                            alt=3D"Apple iPhone 13 (128GB) - Green"
+                            src=3D"https://m.media-amazon.com/images/I/315v=
+s3rLEZL._SR500,500_.jpg"
+                            style=3D"width:50%; margin:0 auto; display:bloc=
+k; border-radius:4px;"
+                            width=3D"202"
+                        />
+                       =20
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+   =20
+    </td>
+    </tr>
+    <tr>
+        <td style=3D"vertical-align: top; padding: 4px;">
+           =20
+            <table
+                class=3D"zeroBorder"
+                style=3D"width:100%;"
+                cellpadding=3D"0" cellspacing=3D"0" border=3D"0"
+            >
+                <tbody><tr>
+                        <td style=3D"padding: 0;">
+        <table width=3D'100%' style=3D'width: 100%' cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0">
+        <tbody>
+        <tr>
+            <td style=3D'padding-bottom: 4px;'>
+                    <span class=3D'product-discount dark-deal' style=3D"col=
+or:#CC0C39; font-size:20px; font-weight:300;">-15%</span>
+        <span class=3D'product-price' style=3D"font-size: 22px; font-weight=
+: 400; line-height: 26px;"><sup
+                        style=3D"font-size: 12px; position: relative; top: =
+2px;">=E2=82=B9</sup>50,999<sup
+                        style=3D"font-size: 12px; position: relative; top: =
+2px;">00</sup>
+            </span>
+                </td>
+        </tr><tr>
+        <td class=3D'product-list-price'
+            style=3D'padding-bottom: 4px; font-size: 13px; font-weight: 400=
+; color: #565959; line-height: 18px;'>
+           =20
+                <span>M.R.P.:</span>
+            <span
+                    style=3D"text-decoration: line-through;">=E2=82=B959,90=
+0.00</span>
+            </td>
+    </tr>
+        </tbody>
+    </table>
+
+</td>
+                    </tr>
+               =20
+                <tr>
+                    <td style=3D"padding: 0;">
+
+
+
+
+
+<p class=3D"product-name" style=3D"margin:0 0 4px 0; font-size: 15px; line-=
+height: 20px;">
+    <a
+        href=3D"https://www.amazon.in/gp/r.html?C=3D1JNWRKNZ5AW2N&K=3D1YVXG=
+9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a254384d39963e8ff55990p0eu&R=
+=3D23H96QZQDTDXQ&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fgp%2Fproduct%2FB09=
+V4B6K53%2Fref%3Dpe_74104961_858938571_em_1p_0_lm_o_pd_f&H=3DHVSCLFOBY4MRZAS=
+XIKQ3UB4C4P0A&ref_=3Dpe_74104961_858938571_em_1p_0_lm_o_pd_f"
+        style=3D"text-decoration: none; color:#232F3E;"
+    >
+        Apple iPhone
+</a>
+</p>
+</td>
+                </tr>
+               =20
+                <tr>
+                    <td style=3D"padding: 0;">
+                            <!--[if mso]>
+                            <v:roundrect
+                                arcsize=3D'24px'
+                                fillcolor=3D'#FFD814'
+                                stroke=3D'f'
+                                style=3D'border:0;width:120px;height:32px;v=
+-text-anchor:middle;'
+                                xmlns:v=3D'urn:schemas-microsoft-com:vml'
+                                xmlns:w=3D'urn:schemas-microsoft-com:office=
+:word'
+                            >
+                                <w:anchorlock/>
+                                <v:textbox inset=3D'0,0,0,0'>
+                                    <center>
+                            <![endif]-->
+                            <a
+                                aria-describedby=3D"Apple iPhone 13 (128GB)=
+ - Green"
+                                class=3D"button"
+                                href=3D"https://www.amazon.in/gp/r.html?C=
+=3D1JNWRKNZ5AW2N&K=3D1YVXG9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a254=
+384d39963e8ff55990p0eu&R=3D11V3ZN0CV1P5W&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon=
+.in%2Fgp%2Fproduct%2FB09V4B6K53%2Fref%3Dpe_74104961_858938571_em_1p_0_lm_o_=
+pd_f&H=3DUPN5RLHOCPPE037N1RJ77N8VXAUA&ref_=3Dpe_74104961_858938571_em_1p_0_=
+lm_o_pd_f"
+                                style=3D"background-color: #FFD814; color: =
+#0f1111; border-radius: 24px; padding: 8px 12px; display: inline-block; box=
+-shadow: 1px 2px 4px rgba(153, 153, 153, 0.2); font-size: 13px; line-height=
+: 16px; white-space:nowrap; text-decoration: none; "
+                            >
+                                <span class=3D"dark-text">
+                                    Shop now
+                                </span>
+                            </a>
+                            <!--[if mso]>
+                            </center>
+                            </v:textbox>
+                            </v:roundrect>
+                            <![endif]-->
+                        </td>
+                </tr>
+                </tbody>
+            </table>
+                       =20
+        </td>
+    </tr>
+    </tbody>
+</table></td>
+                        </tr>
+                      </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<table
+  id=3D"category3UpId"
+  class=3D"full zeroBorder"
+  style=3D"width: 100%; background-color:#279BFC;"
+  role=3D"presentation"
+  cellpadding=3D"0" cellspacing=3D"0"
+>
+    <tbody>
+    <tr>
+        <td style=3D"padding:4px 8px;">
+            <table class=3D"full darkmode" style=3D"width: 100%; background=
+-color:#ffffff; color:#0F1111; border-radius:4px;" cellpadding=3D"0" cellsp=
+acing=3D"0">
+           =20
+            <tr>
+                <td style=3D"padding:4px 4px 12px 4px;">
+                    <table class=3D"zeroBorder" style=3D"width: 100%;" cell=
+padding=3D"0" cellspacing=3D"0">
+                     =20
+                          <tr><td colspan=3D"3" style=3D"padding:8px 4px;">=
+<h3 style=3D"margin:0; font-size:18px; line-height:22px; font-weight:700;">=
+Shop deals by category</h3></td></tr>
+                     =20
+
+                            <tr><td style=3D"padding:4px;width: 33%;vertica=
+l-align: top" align=3D"center">
+                                    <a href=3D"https://www.amazon.in/gp/r.h=
+tml?C=3D1JNWRKNZ5AW2N&K=3D1YVXG9YUR937V&M=3Durn:rtn:msg:202310221042240f776=
+3a254384d39963e8ff55990p0eu&R=3D1YPJ7T5TSF0EU&T=3DC&U=3Dhttps%3A%2F%2Fwww.a=
+mazon.in%2Fb%3Fnode%3D1389401031%26ref_%3Dpe_74104961_858938571_o_pd_23_xc_=
+1&H=3DUP5L95C6QDZBGHDUM6ZCF8AOYZ4A&ref_=3Dpe_74104961_858938571_o_pd_23_xc_=
+1">
+                                        <img src=3D"https://m.media-amazon.=
+com/images/G/31/img23/Wireless/lshruthi/Jupiter/CentralPage/Shovler/D962791=
+81_INWLD_Jupiter_CentralPage-Inputs_DesktopShoveler_200x200_2._CB578799628_=
+.jpg" height=3D"159" alt=3D"Mobiles" style=3D"display:block; width: 100%; h=
+eight:auto; border-radius:4px;" /> </a>
+                                            <p style=3D"text-align:left; fo=
+nt-size:15px; line-height:20px; font-weight:400; margin:0;"></p>
+                                    </td><td style=3D"padding:4px;width: 33=
+%;vertical-align: top" align=3D"center">
+                                    <a href=3D"https://www.amazon.in/gp/r.h=
+tml?C=3D1JNWRKNZ5AW2N&K=3D1YVXG9YUR937V&M=3Durn:rtn:msg:202310221042240f776=
+3a254384d39963e8ff55990p0eu&R=3D1RKYECAD0WZMH&T=3DC&U=3Dhttps%3A%2F%2Fwww.a=
+mazon.in%2Fb%3Fnode%3D976419031%26ref_%3Dpe_74104961_858938571_o_pd_23_xc_2=
+&H=3DMLXTCCQZRKOJVPLL0T86BUTLF8AA&ref_=3Dpe_74104961_858938571_o_pd_23_xc_2=
+">
+                                        <img src=3D"https://m.media-amazon.=
+com/images/G/31/img21/Halo/Centralstore/DesktopShoveler_200x200._CB57870374=
+7_.jpg" height=3D"159" alt=3D"Electronics" style=3D"display:block; width: 1=
+00%; height:auto; border-radius:4px;" /> </a>
+                                            <p style=3D"text-align:left; fo=
+nt-size:15px; line-height:20px; font-weight:400; margin:0;"></p>
+                                    </td><td style=3D"padding:4px;width: 33=
+%;vertical-align: top" align=3D"center">
+                                    <a href=3D"https://www.amazon.in/gp/r.h=
+tml?C=3D1JNWRKNZ5AW2N&K=3D1YVXG9YUR937V&M=3Durn:rtn:msg:202310221042240f776=
+3a254384d39963e8ff55990p0eu&R=3DL19NAYNNG7BO&T=3DC&U=3Dhttps%3A%2F%2Fwww.am=
+azon.in%2Fb%3Fnode%3D9899981031%26ref_%3Dpe_74104961_858938571_o_pd_23_xc_3=
+&H=3DIJZK8BXR1SULLMESFAG1H5KFCH8A&ref_=3Dpe_74104961_858938571_o_pd_23_xc_3=
+">
+                                        <img src=3D"https://m.media-amazon.=
+com/images/G/31/IMG_22/Varun/jupiter/23/CH/Header/DesktopShoveler_200x200_L=
+ATV._CB578771166_.jpg" height=3D"159" alt=3D"TV and Appliances" style=3D"di=
+splay:block; width: 100%; height:auto; border-radius:4px;" /> </a>
+                                            <p style=3D"text-align:left; fo=
+nt-size:15px; line-height:20px; font-weight:400; margin:0;"></p>
+                                    </td></tr><tr>
+                                <td colspan=3D"3" style=3D"padding:8px 4px;=
+">
+    <!--[if mso]>
+        <v:roundrect
+            arcsize=3D'24px'
+            fillcolor=3D'#FFD814'
+            stroke=3D'f'
+            style=3D'border:0;width:153px;height:32px;v-text-anchor:middle;=
+'
+            xmlns:v=3D'urn:schemas-microsoft-com:vml'
+            xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+        >
+            <w:anchorlock/>
+            <v:textbox inset=3D'0,0,0,0'>
+                <center>
+    <![endif]-->
+    <a
+        aria-describedby=3D""
+        class=3D"button"
+        href=3D"https://www.amazon.in/gp/r.html?C=3D1JNWRKNZ5AW2N&K=3D1YVXG=
+9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a254384d39963e8ff55990p0eu&R=
+=3D24WIPGDOWDMWW&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fevents%2Fgreatindi=
+anfestival%3Fref_%3Dpe_74104961_858938571_o_pd_xc_cta&H=3DXJJHIBE0XAANDZ2CU=
+VFP8NIGA4QA&ref_=3Dpe_74104961_858938571_o_pd_xc_cta"
+        style=3D"background-color: #FFD814; color: #0f1111; border-radius: =
+24px; padding: 8px 12px; display: inline-block; box-shadow: 1px 2px 4px rgb=
+a(153, 153, 153, 0.2); font-size: 13px; line-height: 16px; white-space:nowr=
+ap; text-decoration:none;"
+    >
+        <span class=3D"dark-text">Explore all deals</span>
+    </a>
+    <!--[if mso]>
+        </center>
+        </v:textbox>
+        </v:roundrect>
+    <![endif]-->
+</td>
+                            </tr></table>
+                </td>
+            </tr>
+           =20
+           =20
+           =20
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<table
+  id=3D"banner2ColId"
+  class=3D"full zeroBorder"
+  style=3D"width: 100%; background-color:#279BFC;"
+  role=3D"presentation"
+  cellpadding=3D"0" cellspacing=3D"0"
+>
+    <tbody>
+    <tr>
+        <td style=3D"padding:4px 8px;">
+            <table class=3D"full darkmode" style=3D"width: 100%; background=
+-color:#ffffff; color:#0F1111; border-radius:4px;" cellpadding=3D"0" cellsp=
+acing=3D"0">
+                <tr>
+                  <td style=3D"padding:4px;">
+                    <table class=3D"zeroBorder" style=3D"width: 100%;" cell=
+padding=3D"0" cellspacing=3D"0">
+
+                     =20
+                          <tr><td colspan=3D"2" style=3D"padding:8px 4px;">=
+<h3 style=3D"margin:0; font-size:18px; line-height:22px; font-weight:700;">=
+Extra happiness, Extra savings</h3></td></tr>
+                      <tr>
+                                <td width=3D"50%" style=3D"padding:4px;">
+                                <a href=3D"https://www.amazon.in/gp/r.html?=
+C=3D1JNWRKNZ5AW2N&K=3D1YVXG9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a25=
+4384d39963e8ff55990p0eu&R=3D1YMIVYNSPTWWC&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazo=
+n.in%2Fb%3Fnode%3D10465704031%26ref_%3Dpe_74104961_858938571_o_pd_23_mp_1&H=
+=3DEKRTY8ONCPQ3EUDY6PW0PQBY928A&ref_=3Dpe_74104961_858938571_o_pd_23_mp_1">
+                                <img src=3D"https://m.media-amazon.com/imag=
+es/G/31/Events/img23/Jupiter23/Homepage/Phase2/PC_QC_Coupon_1X._SY116_CB574=
+821580_.jpg" width=3D"243" alt=3D"Coupon Carnival" style=3D"display:block; =
+width: 100%; border-radius:4px;" /> </a>
+                                </td>
+                                <td class=3D"sans" style=3D"padding:4px;">
+                                <table cellpadding=3D"0" cellspacing=3D"0">
+                                <tr>
+                                    <td style=3D"padding-bottom:8px;"><p st=
+yle=3D"font-size:18px; line-height:22px; font-weight:700; margin:0; padding=
+-bottom:4px;">Coupon Carnival</p>
+                                    <p style=3D"font-size:15px; line-height=
+:20px; font-weight:400; margin:0;">Save extra up to 40%</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                       =20
+    <!--[if mso]>
+        <v:roundrect
+            arcsize=3D'24px'
+            fillcolor=3D'#FFD814'
+            stroke=3D'f'
+            style=3D'border:0;width:120px;height:32px;v-text-anchor:middle;=
+'
+            xmlns:v=3D'urn:schemas-microsoft-com:vml'
+            xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+        >
+            <w:anchorlock/>
+            <v:textbox inset=3D'0,0,0,0'>
+                <center>
+    <![endif]-->
+    <a
+        aria-describedby=3D""
+        class=3D"button"
+        href=3D"https://www.amazon.in/gp/r.html?C=3D1JNWRKNZ5AW2N&K=3D1YVXG=
+9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a254384d39963e8ff55990p0eu&R=
+=3D3S4LLINLJ0H75&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fb%3Fnode%3D1046570=
+4031%26ref_%3Dpe_74104961_858938571_o_pd_23_mp_1_cta&H=3DXOF1BA5RAB0SVH5HMD=
+AF40AUNZQA&ref_=3Dpe_74104961_858938571_o_pd_23_mp_1_cta"
+        style=3D"background-color: #FFD814; color: #0f1111; border-radius: =
+24px; padding: 8px 12px; display: inline-block; box-shadow: 1px 2px 4px rgb=
+a(153, 153, 153, 0.2); font-size: 13px; line-height: 16px; white-space:nowr=
+ap; text-decoration:none;"
+    >
+        <span class=3D"dark-text">Shop now</span>
+    </a>
+    <!--[if mso]>
+        </center>
+        </v:textbox>
+        </v:roundrect>
+    <![endif]-->
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr><tr>
+                                <td width=3D"50%" style=3D"padding:4px;">
+                                <a href=3D"https://www.amazon.in/gp/r.html?=
+C=3D1JNWRKNZ5AW2N&K=3D1YVXG9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a25=
+4384d39963e8ff55990p0eu&R=3DMPLRNVHO0UMX&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon=
+.in%2Fb%3Fnode%3D41997007031%26ref_%3Dpe_74104961_858938571_o_pd_23_mp_2&H=
+=3DR9L0621FXHXMDKUAQ8CHQPGTQOKA&ref_=3Dpe_74104961_858938571_o_pd_23_mp_2">
+                                <img src=3D"https://m.media-amazon.com/imag=
+es/G/31/Events/img23/Jupiter23/Homepage/Phase2/PC-QC_Exchange-Mela_1X._SY11=
+6_CB574821580_.jpg" width=3D"243" alt=3D"Exchange Mela" style=3D"display:bl=
+ock; width: 100%; border-radius:4px;" /> </a>
+                                </td>
+                                <td class=3D"sans" style=3D"padding:4px;">
+                                <table cellpadding=3D"0" cellspacing=3D"0">
+                                <tr>
+                                    <td style=3D"padding-bottom:8px;"><p st=
+yle=3D"font-size:18px; line-height:22px; font-weight:700; margin:0; padding=
+-bottom:4px;">Exchange Mela</p>
+                                    <p style=3D"font-size:15px; line-height=
+:20px; font-weight:400; margin:0;">Exchange discount up to =E2=82=B950,000<=
+/p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                       =20
+    <!--[if mso]>
+        <v:roundrect
+            arcsize=3D'24px'
+            fillcolor=3D'#FFD814'
+            stroke=3D'f'
+            style=3D'border:0;width:120px;height:32px;v-text-anchor:middle;=
+'
+            xmlns:v=3D'urn:schemas-microsoft-com:vml'
+            xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+        >
+            <w:anchorlock/>
+            <v:textbox inset=3D'0,0,0,0'>
+                <center>
+    <![endif]-->
+    <a
+        aria-describedby=3D""
+        class=3D"button"
+        href=3D"https://www.amazon.in/gp/r.html?C=3D1JNWRKNZ5AW2N&K=3D1YVXG=
+9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a254384d39963e8ff55990p0eu&R=
+=3D30IZ0H5IL53F8&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fb%3Fnode%3D4199700=
+7031%26ref_%3Dpe_74104961_858938571_o_pd_23_mp_2_cta&H=3DM7QHPDXJXACJS1WRNI=
+AKC9Q4AGAA&ref_=3Dpe_74104961_858938571_o_pd_23_mp_2_cta"
+        style=3D"background-color: #FFD814; color: #0f1111; border-radius: =
+24px; padding: 8px 12px; display: inline-block; box-shadow: 1px 2px 4px rgb=
+a(153, 153, 153, 0.2); font-size: 13px; line-height: 16px; white-space:nowr=
+ap; text-decoration:none;"
+    >
+        <span class=3D"dark-text">Shop now</span>
+    </a>
+    <!--[if mso]>
+        </center>
+        </v:textbox>
+        </v:roundrect>
+    <![endif]-->
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr><tr>
+                                <td width=3D"50%" style=3D"padding:4px;">
+                                <a href=3D"https://www.amazon.in/gp/r.html?=
+C=3D1JNWRKNZ5AW2N&K=3D1YVXG9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a25=
+4384d39963e8ff55990p0eu&R=3D1LV5Q9XOM2SZC&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazo=
+n.in%2Fb%3Fnode%3D90919674031%26ref_%3Dpe_74104961_858938571_pe_o_pd_23_mp_=
+3&H=3D90OYJFF3JPFKL2A2JKHG4UGMIP0A&ref_=3Dpe_74104961_858938571_pe_o_pd_23_=
+mp_3">
+                                <img src=3D"https://m.media-amazon.com/imag=
+es/G/31/Events/img23/Jupiter23/Homepage/PC-QC_U-99_1X._SY116_CB576205986_.j=
+pg" width=3D"243" alt=3D"Upgrade" style=3D"display:block; width: 100%; bord=
+er-radius:4px;" /> </a>
+                                </td>
+                                <td class=3D"sans" style=3D"padding:4px;">
+                                <table cellpadding=3D"0" cellspacing=3D"0">
+                                <tr>
+                                    <td style=3D"padding-bottom:8px;"><p st=
+yle=3D"font-size:18px; line-height:22px; font-weight:700; margin:0; padding=
+-bottom:4px;">Upgrade at =E2=82=B999/Day</p>
+                                    <p style=3D"font-size:15px; line-height=
+:20px; font-weight:400; margin:0;">Premium electronics, appliances and more=
+</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                       =20
+    <!--[if mso]>
+        <v:roundrect
+            arcsize=3D'24px'
+            fillcolor=3D'#FFD814'
+            stroke=3D'f'
+            style=3D'border:0;width:120px;height:32px;v-text-anchor:middle;=
+'
+            xmlns:v=3D'urn:schemas-microsoft-com:vml'
+            xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+        >
+            <w:anchorlock/>
+            <v:textbox inset=3D'0,0,0,0'>
+                <center>
+    <![endif]-->
+    <a
+        aria-describedby=3D""
+        class=3D"button"
+        href=3D"https://www.amazon.in/gp/r.html?C=3D1JNWRKNZ5AW2N&K=3D1YVXG=
+9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a254384d39963e8ff55990p0eu&R=
+=3D1ZNHIFD5W2FUU&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fb%3Fnode%3D9091967=
+4031%26ref_%3Dpe_74104961_858938571_pe_o_pd_23_mp_3_cta&H=3D1TRX8HAXQCMZ9FS=
+BAREGZQQUBHGA&ref_=3Dpe_74104961_858938571_pe_o_pd_23_mp_3_cta"
+        style=3D"background-color: #FFD814; color: #0f1111; border-radius: =
+24px; padding: 8px 12px; display: inline-block; box-shadow: 1px 2px 4px rgb=
+a(153, 153, 153, 0.2); font-size: 13px; line-height: 16px; white-space:nowr=
+ap; text-decoration:none;"
+    >
+        <span class=3D"dark-text">Shop now</span>
+    </a>
+    <!--[if mso]>
+        </center>
+        </v:textbox>
+        </v:roundrect>
+    <![endif]-->
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr></table>
+                  </td>
+                </tr>
+           =20
+               =20
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+   =20
+   =20
+           =20
+   =20
+       =20
+      <table
+    id=3D"footerBannerCopy"
+    class=3D"full zeroBorder"
+    style=3D"width: 100%; background-color:#279BFC;"
+    role=3D"presentation"
+    cellpadding=3D"0" cellspacing=3D"0"
+  >
+    <tbody>
+    <tr>
+      <td style=3D"padding:4px 8px;">
+        <table class=3D"full darkmode content" style=3D"width: 100%; backgr=
+ound-color:#ffffff; color:#0F1111; border-radius:4px;" cellpadding=3D"0" ce=
+llspacing=3D"0">
+          <tr>
+
+            <td style=3D"padding:12px 8px 16px 8px;">
+              <table style=3D"width:100%;" cellpadding=3D"0" cellspacing=3D=
+"0">
+                  <tr>
+                    <td style=3D"padding:0px; border-radius: 4px">
+                      <a href=3D"https://www.amazon.in/gp/r.html?C=3D1JNWRK=
+NZ5AW2N&K=3D1YVXG9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a254384d39963=
+e8ff55990p0eu&R=3D1XQ6OFGZDAOQ4&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fb%3=
+Fnode%3D6648217031%26ref_%3Dpe_74104961_858938571_o_pd_foo_i&H=3D2VGONKT4LA=
+BMLZA6AIWJYQFTHHKA&ref_=3Dpe_74104961_858938571_o_pd_foo_i" style=3D"border=
+-radius: 4px;">
+                        <img src=3D"https://m.media-amazon.com/images/G/31/=
+img23/TS/SL/Jupiter/Phase2/Emailer2.jpg" alt=3D"Fashion and beauty" style=
+=3D"width: 100%; border-radius: 4px" width=3D"492"/>
+                      </a>
+                    </td>
+                  </tr></table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+    <table
+          class=3D"full zeroBorder"
+          style=3D"width: 100%; height: 4px; background-color:#279BFC; line=
+-height:4px; font-size:4px;"
+          role=3D"presentation"
+          cellpadding=3D"0" cellspacing=3D"0"
+        >
+    <tbody>
+        <tr><td>&nbsp;</td></tr>
+    </tbody>
+    </table>
+
+</td>
+                    </tr>
+                    <tr>
+                        <td
+                            class=3D"footer"
+                        >
+
+
+<!-- FOOTER -->
+<table
+    id=3D"footerId"
+    class=3D"zeroBorder footer"
+    style=3D"margin-left: auto; margin-right: auto; width: 100%; background=
+-color: #f0f2f2;"
+    role=3D"presentation"
+    cellpadding=3D"0" cellspacing=3D"0"
+>
+    <tbody>
+        <tr>
+            <td style=3D"padding: 32px 16px 0px 16px;">
+                <p
+                    class=3D"sans footerlinks"
+                    style=3D"font-size:14px; line-height: 20px; color: #494=
+d4d; margin:0;"
+                >
+                    <a
+                        href=3D"https://www.amazon.in/gp/f.html?C=3D1JNWRKN=
+Z5AW2N&K=3D1YVXG9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a254384d39963e=
+8ff55990p0eu&R=3D3OFFOJ14M7QQ6&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fgp%2=
+Fcpc%2Fhomepage%3Fref_%3Dpe_74104961_858938571_pe_ob_ftr_comm_prfs&H=3DO9LF=
+FRANT85QJ2OVGZPAQ1M3NN8A&ref_=3Dpe_74104961_858938571_pe_ob_ftr_comm_prfs"
+                        style=3D"color: #007185; text-decoration:none;"
+                        target=3D"_blank"
+                    >Update your preferences</a>
+                    <span aria-hidden=3D'true' style=3D'padding:0 8px; colo=
+r:#007185;'>|</span>
+                    <a
+                        href=3D"https://www.amazon.in/gp/f.html?C=3D1JNWRKN=
+Z5AW2N&K=3D1YVXG9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a254384d39963e=
+8ff55990p0eu&R=3DAUOVN137GSRU&T=3DX&U=3Dhttps%3A%2F%2Fwww.amazon.in%2F%2Fgp=
+%2Fgss%2Fo%2F1euZ.jfQUk1uJ59QFV.d2yF8gUIkmBZsKIP0NDpxNMf5VbiTKQeeRMigZIeeMI=
+PW3&H=3DXALK6ZFOKE1M0RXFQVPCR9IG7FCA"
+                        style=3D"color: #007185; text-decoration:none;"
+                        target=3D"_blank"
+                    >Unsubscribe</a>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td style=3D"padding: 20px 16px;">
+                <p class=3D"footerlinks" style=3D"margin:0;">
+                    Please note that product prices and availability are su=
+bject to change. Prices and availability were accurate at the time this ema=
+il was sent; however, they may differ from those you see when you visit Ama=
+zon.in.<br><br>=C2=A9 Amazon.in Marketplace: Products sold by a Marketplace=
+ seller are subject to that seller's terms, conditions of sale, and conditi=
+ons of use. See Amazon.in for details.<br><br> =C2=A92023 Amazon.in, Inc. o=
+r its affiliates. Amazon=C2=A0and all related marks are trademarks of Amazo=
+n.in, Inc. or its affiliates. Ref:=C2=A0858938571.
+                </p>
+            </td>
+        </tr><tr>
+            <td style=3D"padding: 20px 16px 36px 16px;">
+                <p style=3D"margin:0;">
+                    <a
+                        href=3D"https://www.amazon.in/gp/r.html?C=3D1JNWRKN=
+Z5AW2N&K=3D1YVXG9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a254384d39963e=
+8ff55990p0eu&R=3D17LN9BVRJI5I&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fgp%2F=
+help%2Fcustomer%2Fdisplay.html%3FnodeId%3D200534380%26ref_%3Dpe_74104961_85=
+8938571&H=3DT7MU7KVEGE1XAPXLAQREFWNWY2IA&ref_=3Dpe_74104961_858938571"
+                        style=3D"color: #007185; text-decoration:none;"
+                        target=3D"_blank"
+                    >Privacy Policy</a>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td style=3D"padding: 0px 16px 36px 16px;">
+                <img
+                    class=3D"light-img"
+                    height=3D"12"
+                    role=3D"presentation"
+                    src=3D"https://m.media-amazon.com/images/G/01/automated=
+/2022/Smile_logo_US.png"
+                    style=3D"width:auto; height:12px; max-width:100%; displ=
+ay:block; border:0; float:left; background-color: #F0F2F2; background-image=
+: linear-gradient(#F0F2F2, #F0F2F2)"
+                    alt=3D'Amazon.in'
+                />
+                <!--[if !mso]><! -->
+                <img
+                    class=3D"dark-img"
+                    style=3D"display:none; width:auto; height:12px; max-wid=
+th:100%; border:0; float:left;"
+                    height=3D"12"
+                    role=3D"presentation"
+                    src=3D"https://m.media-amazon.com/images/G/01/automated=
+/2022/Smile_Mark_RGB_WHITE.png"
+                    alt=3D'Amazon.in'
+                />
+                <!--<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table>
+</td>
+                    </tr>
+                </table>
+
+
+    </tr>
+    </tbody>
+</table>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</tbody>
+</table>
+<![endif]-->
+<img width=3D"1" height=3D"1" src=3D"https://www.amazon.in/gp/r.html?C=3D1J=
+NWRKNZ5AW2N&K=3D1YVXG9YUR937V&M=3Durn:rtn:msg:202310221042240f7763a254384d3=
+9963e8ff55990p0eu&R=3D1A63J0UFTC43A&T=3DE&U=3Dhttps%3A%2F%2Fimages-eu.ssl-i=
+mages-amazon.com%2Fimages%2FG%2F01%2Fnav%2Ftransp.gif&H=3D1ZS8BYSFAARU2OCZZ=
+PUIALJRXEAA&ref_=3Dpe_74104961_858938571_open" /></body>
+</html>
+
+------=_Part_3700330_160906141.1697971344949--

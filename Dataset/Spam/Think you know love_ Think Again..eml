@@ -1,0 +1,662 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:329a:b0:4fd:23d3:a27 with SMTP id k26csp5778947pxc;
+        Wed, 18 Oct 2023 12:42:22 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFpM8nL+W85pasixzmxei8TfBlBPL9tLmqoAAkxXj3nDEf2xfNNpiH8+ce6nA54TuEBihTr
+X-Received: by 2002:ac8:7e87:0:b0:412:1e4c:e858 with SMTP id w7-20020ac87e87000000b004121e4ce858mr310024qtj.36.1697658141744;
+        Wed, 18 Oct 2023 12:42:21 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697658141; cv=none;
+        d=google.com; s=arc-20160816;
+        b=DjYsZ4IfyGnBuvwFCjTQxy6ag7cBDFlws6bviNJ0Dnh+pIlIRpX+9ijc+xgby1LUFW
+         1uWQ7mrBv0O3vWZdgkSjDcjPwdgvucRjDH0oSrdnjGs/jslc1/IyHmNG44OnQmcLETzp
+         ptebwhm0fuPgy3qdZQBxj9LDLpiDUhz9Z2z7tu/VXFpotIxA4l6/Mr+XgC+G8QDNzzsh
+         6cUkgNGq0bn2hTod1B5c827cLtkDYuy4tcOulWXgCTsJFbWlH6cLIKZUtxXDsyrvNG6I
+         Yg+u1j/trtelnXD6/rM69O9hF6M3S/uAvVX6kfYkNY0DLT1DMe/ho6LMvp74vNGMOR4Y
+         NwYQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=message-id:list-unsubscribe-post:list-unsubscribe:feedback-id
+         :content-transfer-encoding:mime-version:date:subject:from:to
+         :cfbl-address:dkim-signature:dkim-signature;
+        bh=4iDk9jpPWX8Hy6RHkvyHf4U93TTqqmJ2Tgb/C5ZBfnE=;
+        fh=1jpT/WKx9w1MSp8pGnZ42S6s7FoxGExtHbOmXF4FNqs=;
+        b=h/iOUgz4Pk2zl4fjodlJzbO2rsp8rx1r08EgVRDOS2vadTdEmF3P/IoT+68rSAW91D
+         g5N7zf78rCTRvduEw2c5W5TYpjjtFqecbhNwtLE3Xt6E8cb3so6mBPgyWtF3fM38O5mJ
+         kOvNsibabTzAsp6C/07l35d5mJjYQPpuGx65CCQBzXqnWgi9YffY5s+gRDtXoGmzQGlS
+         +ho6N4Fc7nf+XqwJKT/Q5NNVKt9npaf402oYqR4dXFMAqbqncANpLFf+YzLGbdodutYm
+         Y9ECAbxcfWIdeacuNXJpPuNj9am61lMyqauUdRHDDMwN6Q4S2W/lmmVlpv80ec98Datw
+         tGNg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@personaldevelopmentschool.com header.s=acdkim1 header.b=itpzFTYG;
+       dkim=pass header.i=@acems1.com header.s=dk header.b="Xv/qAR27";
+       spf=pass (google.com: domain of bounce-910477-3780-4588112-srijani515=gmail.com@s3.csa2.acemsb3.com designates 192.92.97.53 as permitted sender) smtp.mailfrom="bounce-910477-3780-4588112-srijani515=gmail.com@s3.csa2.acemsb3.com";
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=personaldevelopmentschool.com
+Return-Path: <bounce-910477-3780-4588112-srijani515=gmail.com@s3.csa2.acemsb3.com>
+Received: from s1.csa2.acemsb3.com (s1.csa2.acemsb3.com. [192.92.97.53])
+        by mx.google.com with ESMTPS id t22-20020a05622a01d600b0041972df884fsi489047qtw.578.2023.10.18.12.42.21
+        for <srijani515@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 18 Oct 2023 12:42:21 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-910477-3780-4588112-srijani515=gmail.com@s3.csa2.acemsb3.com designates 192.92.97.53 as permitted sender) client-ip=192.92.97.53;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@personaldevelopmentschool.com header.s=acdkim1 header.b=itpzFTYG;
+       dkim=pass header.i=@acems1.com header.s=dk header.b="Xv/qAR27";
+       spf=pass (google.com: domain of bounce-910477-3780-4588112-srijani515=gmail.com@s3.csa2.acemsb3.com designates 192.92.97.53 as permitted sender) smtp.mailfrom="bounce-910477-3780-4588112-srijani515=gmail.com@s3.csa2.acemsb3.com";
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=personaldevelopmentschool.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=acdkim1;
+ d=personaldevelopmentschool.com;
+ h=To:From:Subject:Date:MIME-Version:Content-Type:Content-Transfer-Encoding:
+ List-Unsubscribe:List-Unsubscribe-Post:Message-ID;
+ i=info@personaldevelopmentschool.com;
+ bh=4iDk9jpPWX8Hy6RHkvyHf4U93TTqqmJ2Tgb/C5ZBfnE=;
+ b=itpzFTYGtNqVEzGE6dFbfbL2I8aW0mc3/922PhBsrD4krVqhWoOqBUdd4KqTEUjWhQxfGIfq8yOh
+   l39E8mPxzJj1uBLl5RTYtdHbyEDjXeEGPZ2ENgTl0V06xB1DtidxAlQcJBkFoEUBQCZgi7dGDxjX
+   eThfKTlIeKka0u8kQh/dzVx2rpcZdO3e8eDhQVls2+o7YCKkW1x/q+M/CfIS0KSyIQbnf0KFEzAj
+   TJVeubmj1lwcecrrTfnjQ0dbHJbUNOgWk7OoT7SQc5RcJLB70ttALxrLtRVRMf8I9vHfwfftC9n2
+   0Y5mtMXVwAf0NOgJkuT1a6UKgusmV3Swdx7Okg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=dk; d=acems1.com;
+ h=To:From:Subject:Date:MIME-Version:Content-Type:Content-Transfer-Encoding:
+ List-Unsubscribe:List-Unsubscribe-Post:Message-ID;
+ bh=4iDk9jpPWX8Hy6RHkvyHf4U93TTqqmJ2Tgb/C5ZBfnE=;
+ b=Xv/qAR27taB+UGmu6kfg1FCvZYGJ41qQu4Up3YZtji0ubASZi61b6jz8P/e4x+ab09Y8+HNvfGQH
+   O07Fy0z525XveFZ9cgcSXfMwvSV1Gz6itXD1OnsybKz5DAwHgxizb+SlHfOgY3+sG2gL7PdgEc11
+   u/VAGRk1lxINFZRtEq4=
+Received: by s1.acemsrvg.com id h60qhq34rc8u for <srijani515@gmail.com>; Wed, 18 Oct 2023 19:40:04 +0000 (envelope-from <bounce-910477-3780-4588112-srijani515=gmail.com@s3.csa2.acemsb3.com>)
+X-Mailer: ActiveCampaign Mailer
+CFBL-Address: fbl-report@acems1.com; report=arf
+To: "Srijani Chakrabarti" <srijani515@gmail.com>
+From: "Thais Gibson" <info@personaldevelopmentschool.com>
+Subject: Think you know love? Think Again.
+Date: Wed, 18 Oct 2023 14:38:16 -0500
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="_=_swift-175787165303428cabc61.91338818_=_"
+Content-Transfer-Encoding: 7bit
+X-DKIM-Options: s=acdkim1
+X-mid: c3JpamFuaTUxNUBnbWFpbC5jb20gLCBjMzc4MCAsIG00MDE5ICwgczYzNjYzMTk
+x-virtual-mta: s1.acemsrvg.com
+Feedback-ID: 910477:910477.3780:s1.acemsrvg.com:activecampaign
+X-250ok-CID: 910477-3780
+List-Unsubscribe: <mailto:unsubscribe-11b3f686bfe40432934b7a767d65edb1-3780-f80b3c5d95b48747dbcb6172ceee3b6e@s3.csa2.acemsb3.com>,
+ <http://email.personaldevelopmentschool.com/box.php?nl=2&c=3780&m=4019&s=f80b3c5d95b48747dbcb6172ceee3b6e&funcml=unsub2&luha=1>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Message-ID: <20231018194004.3726.100961997.swift@email.personaldevelopmentschool.com>
+
+
+--_=_swift-175787165303428cabc61.91338818_=_
+Content-Type: text/plain; charset=utf-8
+
+Hey Srijani,
+
+As the excitement builds for 
+
+**Learning Love**, I've been reflecting on what sets this book apart.
+While many books offer insights into attachment and relationships, few
+provide the tangible, actionable steps to truly heal and transform.
+
+**Learning Love** dives deep into the science of relationships, offering
+a fresh perspective that our attachment styles aren't static. Through
+exercises, tools, charts, and in-depth explorations, this book is a
+roadmap to secure attachment.
+
+Claim My Pre-Order Discount
+
+Each chapter offers customizable profiles, diagnostic exercises and
+questions you can complete directly in your book to find out why your
+relationships unfold the way they do-
+
+**and** what exactly you can do about it. 
+
+If you've been feeling like you're:
+
+* Lonely, even when you're with someone
+
+* Overwhelmed by repeated patterns of conflict
+
+* Unworthy or doubting your self-worth
+
+* Disconnected or out of sync with your partner
+
+* Afraid of commitment or fearing abandonment
+
+* Stuck in a cycle of seeking validation
+
+* Exhausted from trying to "fix" your relationship
+
+* Hopeless about finding a meaningful bond
+
+...then this book is here to guide you. Whether it's romantic ties,
+friendships, or family bonds, 
+
+**Learning Love**aims to redefine and transform the way you connect with
+those around you.
+
+Reclaim the spark in your relationship with the simple roadmap in 
+
+**Learning Love**that will teach you everything you need to know about
+the rules of connection in less than a day.
+
+Claim My Pre-Order Discount
+
+With Gratitude,
+
+Thais
+
+http://email.personaldevelopmentschool.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuZmFjZWJvb2suY29tJTJGVGhlUGVyc29uYWxEZXZlbG9wbWVudFNjaG9vbCUzRnV0bV9zb3VyY2UlM0RBY3RpdmVDYW1wYWlnbiUyNnV0bV9tZWRpdW0lM0RlbWFpbCUyNnV0bV9jb250ZW50JTNEVGhpbmslMkJ5b3UlMkJrbm93JTJCbG92ZSUyNTNGJTJCVGhpbmslMkJBZ2FpbiUyNnV0bV9jYW1wYWlnbiUzREJvb2tfTGF1bmNoX1ByZXNhbGVfT2N0XzE4XzIwMjNfRW1haWwyJTJCJTI1MjhOb24tTWVtYmVycyUyQlRpZXIlMkIzJTJCR21haWwlMjUyOQ==&sig=E2uQFvkjenHd8WuBnzRctgqZVEqsFM8HfXvcJcL3ZU1&iat=1697658004&a=%7C%7C475800167%7C%7C&account=personaldevelopmentschool%2Eactivehosted%2Ecom&email=rb3hgvIa7uTgt6AkW6kBlH4s1%2FJa3hgixUujEhHx2X2F69%2F%2F%3AqsX2W72zY5%2FJ0mPO2BlUAaV9qF%2FA1Thv&s=f80b3c5d95b48747dbcb6172ceee3b6e&i=3780A4019A2A196905 
+
+http://email.personaldevelopmentschool.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cueW91dHViZS5jb20lMkYlNDB0aGVwZXJzb25hbGRldmVsb3BtZW50c2Nob29sJTNGdXRtX3NvdXJjZSUzREFjdGl2ZUNhbXBhaWduJTI2dXRtX21lZGl1bSUzRGVtYWlsJTI2dXRtX2NvbnRlbnQlM0RUaGluayUyQnlvdSUyQmtub3clMkJsb3ZlJTI1M0YlMkJUaGluayUyQkFnYWluJTI2dXRtX2NhbXBhaWduJTNEQm9va19MYXVuY2hfUHJlc2FsZV9PY3RfMThfMjAyM19FbWFpbDIlMkIlMjUyOE5vbi1NZW1iZXJzJTJCVGllciUyQjMlMkJHbWFpbCUyNTI5&sig=HE4zVKps3wJZtfpvmbnf4jDz57aSewezSvhkS2VF1TMQ&iat=1697658004&a=%7C%7C475800167%7C%7C&account=personaldevelopmentschool%2Eactivehosted%2Ecom&email=rb3hgvIa7uTgt6AkW6kBlH4s1%2FJa3hgixUujEhHx2X2F69%2F%2F%3AqsX2W72zY5%2FJ0mPO2BlUAaV9qF%2FA1Thv&s=f80b3c5d95b48747dbcb6172ceee3b6e&i=3780A4019A2A196906 
+
+http://email.personaldevelopmentschool.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuaW5zdGFncmFtLmNvbSUyRnRoZXBlcnNvbmFsZGV2ZWxvcG1lbnRzY2hvb2wlM0Z1dG1fc291cmNlJTNEQWN0aXZlQ2FtcGFpZ24lMjZ1dG1fbWVkaXVtJTNEZW1haWwlMjZ1dG1fY29udGVudCUzRFRoaW5rJTJCeW91JTJCa25vdyUyQmxvdmUlMjUzRiUyQlRoaW5rJTJCQWdhaW4lMjZ1dG1fY2FtcGFpZ24lM0RCb29rX0xhdW5jaF9QcmVzYWxlX09jdF8xOF8yMDIzX0VtYWlsMiUyQiUyNTI4Tm9uLU1lbWJlcnMlMkJUaWVyJTJCMyUyQkdtYWlsJTI1Mjk=&sig=64vpwDbj5SGbJ5epqxWacHYHSJ3kga1eyqtbtLRCBDK2&iat=1697658004&a=%7C%7C475800167%7C%7C&account=personaldevelopmentschool%2Eactivehosted%2Ecom&email=rb3hgvIa7uTgt6AkW6kBlH4s1%2FJa3hgixUujEhHx2X2F69%2F%2F%3AqsX2W72zY5%2FJ0mPO2BlUAaV9qF%2FA1Thv&s=f80b3c5d95b48747dbcb6172ceee3b6e&i=3780A4019A2A196907 
+
+http://email.personaldevelopmentschool.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cudGlrdG9rLmNvbSUyRiU0MHRoYWlzZ2lic29uJTNGdXRtX3NvdXJjZSUzREFjdGl2ZUNhbXBhaWduJTI2dXRtX21lZGl1bSUzRGVtYWlsJTI2dXRtX2NvbnRlbnQlM0RUaGluayUyQnlvdSUyQmtub3clMkJsb3ZlJTI1M0YlMkJUaGluayUyQkFnYWluJTI2dXRtX2NhbXBhaWduJTNEQm9va19MYXVuY2hfUHJlc2FsZV9PY3RfMThfMjAyM19FbWFpbDIlMkIlMjUyOE5vbi1NZW1iZXJzJTJCVGllciUyQjMlMkJHbWFpbCUyNTI5&sig=22hsEuqUtxtbWPv8oHdpcjoUhYyWHvoJyKdYUcHzbLFp&iat=1697658004&a=%7C%7C475800167%7C%7C&account=personaldevelopmentschool%2Eactivehosted%2Ecom&email=rb3hgvIa7uTgt6AkW6kBlH4s1%2FJa3hgixUujEhHx2X2F69%2F%2F%3AqsX2W72zY5%2FJ0mPO2BlUAaV9qF%2FA1Thv&s=f80b3c5d95b48747dbcb6172ceee3b6e&i=3780A4019A2A196908 
+
+http://email.personaldevelopmentschool.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZwb2RjYXN0cy5hcHBsZS5jb20lMkZ1cyUyRnBvZGNhc3QlMkZwZXJzb25hbC1kZXZlbG9wbWVudC1zY2hvb2wlMkZpZDE0Nzg1ODAxODUlM0Z1dG1fc291cmNlJTNEQWN0aXZlQ2FtcGFpZ24lMjZ1dG1fbWVkaXVtJTNEZW1haWwlMjZ1dG1fY29udGVudCUzRFRoaW5rJTJCeW91JTJCa25vdyUyQmxvdmUlMjUzRiUyQlRoaW5rJTJCQWdhaW4lMjZ1dG1fY2FtcGFpZ24lM0RCb29rX0xhdW5jaF9QcmVzYWxlX09jdF8xOF8yMDIzX0VtYWlsMiUyQiUyNTI4Tm9uLU1lbWJlcnMlMkJUaWVyJTJCMyUyQkdtYWlsJTI1Mjk=&sig=9fzJX8uQuTdTa1LLeocn7inpxzBZPapqnX7s3tzZSzYn&iat=1697658004&a=%7C%7C475800167%7C%7C&account=personaldevelopmentschool%2Eactivehosted%2Ecom&email=rb3hgvIa7uTgt6AkW6kBlH4s1%2FJa3hgixUujEhHx2X2F69%2F%2F%3AqsX2W72zY5%2FJ0mPO2BlUAaV9qF%2FA1Thv&s=f80b3c5d95b48747dbcb6172ceee3b6e&i=3780A4019A2A196909
+
+Sent to: srijani515@gmail.com
+
+<a href="http://email.personaldevelopmentschool.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZwZXJzb25hbGRldmVsb3BtZW50c2Nob29sLmFjdGl2ZWhvc3RlZC5jb20lMkZmJTJGMTM5JTNGZW1haWwlM0RzcmlqYW5pNTE1JTQwZ21haWwuY29tJTI2dXRtX3NvdXJjZSUzREFjdGl2ZUNhbXBhaWduJTI2dXRtX21lZGl1bSUzRGVtYWlsJTI2dXRtX2NvbnRlbnQlM0RUaGluayUyQnlvdSUyQmtub3clMkJsb3ZlJTI1M0YlMkJUaGluayUyQkFnYWluJTI2dXRtX2NhbXBhaWduJTNEQm9va19MYXVuY2hfUHJlc2FsZV9PY3RfMThfMjAyM19FbWFpbDIlMkIlMjUyOE5vbi1NZW1iZXJzJTJCVGllciUyQjMlMkJHbWFpbCUyNTI5&sig=FqDGq9tQQUVFJCXLQi9VeueB5MmY12h5jXF5xbEqouiU&iat=1697658004&a=%7C%7C475800167%7C%7C&account=personaldevelopmentschool%2Eactivehosted%2Ecom&email=rb3hgvIa7uTgt6AkW6kBlH4s1%2FJa3hgixUujEhHx2X2F69%2F%2F%3AqsX2W72zY5%2FJ0mPO2BlUAaV9qF%2FA1Thv&s=f80b3c5d95b48747dbcb6172ceee3b6e&i=3780A4019A2A196910" target="_blank">Manage your preferences</a> or unsubscribe here 
+
+Personal Development School, 999 Edgeley Blvd, Unit 3, Concord, Ontario L4K 5Z4, Canada
+_________________
+
+Sent to srijani515@gmail.com
+
+Unsubscribe:
+http://email.personaldevelopmentschool.com/proc.php?nl=2&amp;c=3780&amp;m=4019&amp;s=f80b3c5d95b48747dbcb6172ceee3b6e&amp;act=unsub
+
+Personal Development School, 999 Edgeley Blvd, Unit 3, Concord, Ontario L4K 5Z4, Canada
+--_=_swift-175787165303428cabc61.91338818_=_
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html><html>=0A<head><meta http-equiv=3D"Content-Type" content=3D"=
+text/html; charset=3Dutf-8"><meta name=3D"viewport" content=3D"width=3Ddevi=
+ce-width, minimal-ui, initial-scale=3D1.0, maximum-scale=3D1.0, user-scalab=
+le=3D0;"><meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"><meta n=
+ame=3D"format-detection" content=3D"telephone=3Dno, date=3Dno, email=3Dno, =
+address=3Dno"><meta name=3D"x-apple-disable-message-reformatting"><!--[if (=
+mso 16)]>=0A            <style type=3D"text/css">=0A                a {=0A =
+                   text-decoration: none;=0A                }=0A           =
+ </style>=0A        <![endif]--><!--[if gte mso 9]>=0A            <style>=
+=0A                sup {=0A                    font-size: 100% !important;=
+=0A                }=0A            </style>=0A        <![endif]--><!--[if g=
+te mso 9]>=0A            <xml>=0A                <o:OfficeDocumentSettings>=
+=0A                    <o:AllowPNG></o:AllowPNG>=0A                    <o:P=
+ixelsPerInch>96</o:PixelsPerInch>=0A                </o:OfficeDocumentSetti=
+ngs>=0A            </xml>=0A        <![endif]--><!--[if gte mso 9]><style>s=
+up { font-size: 100% !important; }</style><![endif]--><style type=3D"text/c=
+ss">#outlook a {=09padding:0;}.es-button {=09mso-style-priority:100!importa=
+nt;=09text-decoration:none!important;}a[x-apple-data-detectors] {=09color:i=
+nherit!important;=09text-decoration:none!important;=09font-size:inherit!imp=
+ortant;=09font-family:inherit!important;=09font-weight:inherit!important;=
+=09line-height:inherit!important;}.es-desk-hidden {=09display:none;=09float=
+:left;=09overflow:hidden;=09width:0;=09max-height:0;=09line-height:0;=09mso=
+-hide:all;}@media only screen and (max-width:600px) {p, ul li, ol li, a { l=
+ine-height:150%!important } h1, h2, h3, h1 a, h2 a, h3 a { line-height:120%=
+!important } h1 { font-size:30px!important; text-align:inherit } h2 { font-=
+size:26px!important; text-align:inherit } h3 { font-size:20px!important; te=
+xt-align:inherit } .es-header-body h1 a, .es-content-body h1 a, .es-footer-=
+body h1 a { font-size:30px!important } .es-header-body h2 a,=0A.es-content-=
+body h2 a, .es-footer-body h2 a { font-size:26px!important } .es-header-bod=
+y h3 a, .es-content-body h3 a, .es-footer-body h3 a { font-size:20px!import=
+ant } .es-menu td a { font-size:13px!important } .es-header-body p, .es-hea=
+der-body ul li, .es-header-body ol li, .es-header-body a { font-size:16px!i=
+mportant } .es-content-body p, .es-content-body ul li, .es-content-body ol =
+li, .es-content-body a { font-size:16px!important } .es-footer-body p, .es-=
+footer-body ul li, .es-footer-body ol li, .es-footer-body a { font-size:16p=
+x!important } .es-infoblock p, .es-infoblock ul li, .es-infoblock ol li, .e=
+s-infoblock a { font-size:12px!important } *[class=3D"gmail-fix"] { display=
+:none!important } .es-m-txt-c, .es-m-txt-c h1, .es-m-txt-c h2, .es-m-txt-c =
+h3 { text-align:center!important } .es-m-txt-r, .es-m-txt-r h1, .es-m-txt-r=
+ h2, .es-m-txt-r h3 { text-align:right!important } .es-m-txt-l, .es-m-txt-l=
+ h1, .es-m-txt-l h2, .es-m-txt-l h3 { text-align:left!important }=0A.es-m-t=
+xt-r img, .es-m-txt-c img, .es-m-txt-l img { display:inline!important } .es=
+-button-border { display:inline-block!important } a.es-button, button.es-bu=
+tton { display:inline-block!important; font-size:16px!important } .es-adapt=
+ive table, .es-left, .es-right { width:100%!important } .ac-footer, .es-con=
+tent table, .es-header table, .es-footer table, .es-content, .es-footer, .e=
+s-header { width:100%!important; max-width:600px!important } .ac-footer td,=
+ .ac-footer p, .es-adapt-td { display:block!important; width:100%!important=
+ } .adapt-img { width:100%!important; height:auto!important } .es-m-p0 { pa=
+dding:0px!important } .es-m-p0r { padding-right:0px!important } .es-m-p0l {=
+ padding-left:0px!important } .es-m-p0t { padding-top:0px!important } .es-m=
+-p0b { padding-bottom:0!important } .es-m-p20b { padding-bottom:20px!import=
+ant } .es-mobile-hidden, .es-hidden { display:none!important } tr.es-desk-h=
+idden, td.es-desk-hidden, table.es-desk-hidden { width:auto!important;=0Aov=
+erflow:visible!important; float:none!important; max-height:inherit!importan=
+t; line-height:inherit!important } tr.es-desk-hidden { display:table-row!im=
+portant } table.es-desk-hidden { display:table!important } td.es-desk-menu-=
+hidden { display:table-cell!important } .es-menu td { width:1%!important } =
+table.es-table-not-adapt, .esd-block-html table { width:auto!important } ta=
+ble.es-social { display:inline-block!important } table.es-social td { displ=
+ay:inline-block!important } .es-desk-hidden { display:table-row!important; =
+width:auto!important; overflow:visible!important; max-height:inherit!import=
+ant } }</style></head><body class=3D"es-wrapper-color" style=3D"font-family=
+:roboto, 'helvetica neue', helvetica, arial, sans-serif;width:100%;-webkit-=
+text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;Margin:0;backgrou=
+nd-color:inherit"><table class=3D"es-wrapper" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0"=0Astyle=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;=
+border-collapse:collapse;border-spacing:0px;padding:0;Margin:0;width:100%;b=
+ackground-repeat:repeat;background-position:center top;height:100%;backgrou=
+nd-color:inherit"><tr><td valign=3D"top" style=3D"padding:0;Margin:0"><tabl=
+e cellpadding=3D"0" cellspacing=3D"0" class=3D"es-content" align=3D"center"=
+ style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collaps=
+e;border-spacing:0px;table-layout:fixed !important;width:100%"><tr><td alig=
+n=3D"center" bgcolor=3D"#ffffff" style=3D"padding:0;Margin:0;background-col=
+or:#ffffff"><table class=3D"es-content-body" align=3D"center" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt=
+;border-collapse:collapse;border-spacing:0px;background-color:transparent;w=
+idth:650px"><tr><td align=3D"left" style=3D"padding:0;Margin:0"><table cell=
+padding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"mso-table-lspace:0p=
+t;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td=
+=0Aalign=3D"center" valign=3D"top" style=3D"padding:0;Margin:0;width:650px"=
+><table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgcolor=3D"#F3F6=
+F8" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:coll=
+apse;border-spacing:0px;background-color:#f3f6f8" role=3D"presentation"><tr=
+><td align=3D"left" style=3D"padding:0;Margin:0;padding-top:40px;padding-le=
+ft:40px;padding-right:40px;color:#022e8b" bgcolor=3D"#ffffff"><p style=3D"M=
+argin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-he=
+ight-rule:exactly;font-family:roboto, 'helvetica neue', helvetica, arial, s=
+ans-serif;line-height:24px;color:#001133;font-size:16px">Hey Srijani,</p>=
+=0A<p style=3D"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:=
+none;mso-line-height-rule:exactly;font-family:roboto, 'helvetica neue', hel=
+vetica, arial, sans-serif;line-height:24px;color:#001133;font-size:16px"><b=
+r></p>=0A<p style=3D"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-a=
+djust:none;mso-line-height-rule:exactly;font-family:roboto, 'helvetica neue=
+', helvetica, arial, sans-serif;line-height:24px;color:#2F3433;font-size:16=
+px">As the excitement builds for <i>Learning Love</i>, I've been reflecting=
+ on what sets this book apart. While many books offer insights into attachm=
+ent and relationships, few provide the tangible, actionable steps to truly =
+heal and transform.</p>=0A<br><p style=3D"Margin:0;-webkit-text-size-adjust=
+:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:ro=
+boto, 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color=
+:#2F3433;font-size:16px"><i>Learning Love</i> dives deep into the science o=
+f relationships, offering a fresh perspective that our attachment styles ar=
+en't static. Through exercises, tools, charts, and in-depth explorations, t=
+his book is a roadmap to secure attachment.<br></p>=0A</td>=0A</tr>=0A<tr><=
+td align=3D"center" bgcolor=3D"#ffffff" style=3D"padding:0;Margin:0;padding=
+-top:30px;padding-bottom:30px"><!--[if mso]><a href=3D"http://email.persona=
+ldevelopmentschool.com/Prod/link-tracker?redirectUrl=3DaHR0cHMlM0ElMkYlMkZ3=
+d3cuYW1hem9uLmNvbSUyRkxlYXJuaW5nLUxvdmUtUmVsYXRpb25zaGlwLUludGVncmF0ZWQtQXR=
+0YWNobWVudCUyRmRwJTJGQjBDRkdGVjVDSCUyRnJlZiUzRG1wX3NfYV8xXzElM0ZjcmlkJTNEMT=
+BYMUZOSEhRMlRKMCUyNmtleXdvcmRzJTNEbGVhcm5pbmclMkJsb3ZlJTJCdGhhaXMlMkJnaWJzb=
+24lMjZxaWQlM0QxNjk3MDQwODQ5JTI2c3ByZWZpeCUzRGxlYXJuaWduJTJCbG92ZSUyQnRoYWlz=
+JTJCZ2lic29uJTI1MkNhcHMlMjUyQzY3JTI2c3IlM0Q4LTElMjZ1dG1fc291cmNlJTNEQWN0aXZ=
+lQ2FtcGFpZ24lMjZ1dG1fbWVkaXVtJTNEZW1haWwlMjZ1dG1fY29udGVudCUzRFRoaW5rJTJCeW=
+91JTJCa25vdyUyQmxvdmUlMjUzRiUyQlRoaW5rJTJCQWdhaW4lMjZ1dG1fY2FtcGFpZ24lM0RCb=
+29rX0xhdW5jaF9QcmVzYWxlX09jdF8xOF8yMDIzX0VtYWlsMiUyQiUyNTI4Tm9uLU1lbWJlcnMl=
+MkJUaWVyJTJCMyUyQkdtYWlsJTI1Mjk=3D&sig=3D3efY53cbL97QxPiJXZ32Tbp7kh7TavmjNC=
+gEvJFr7DJE&iat=3D1697658004&a=3D%7C%7C475800167%7C%7C&account=3Dpersonaldev=
+elopmentschool%2Eactivehosted%2Ecom&email=3Drb3hgvIa7uTgt6AkW6kBlH4s1%2FJa3=
+hgixUujEhHx2X2F69%2F%2F%3AqsX2W72zY5%2FJ0mPO2BlUAaV9qF%2FA1Thv&s=3Df80b3c5d=
+95b48747dbcb6172ceee3b6e&i=3D3780A4019A2A196904" target=3D"_blank" hidden>=
+=0A=09<v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn=
+:schemas-microsoft-com:office:word" esdevVmlButton href=3D"http://email.per=
+sonaldevelopmentschool.com/Prod/link-tracker?redirectUrl=3DaHR0cHMlM0ElMkYl=
+MkZ3d3cuYW1hem9uLmNvbSUyRkxlYXJuaW5nLUxvdmUtUmVsYXRpb25zaGlwLUludGVncmF0ZWQ=
+tQXR0YWNobWVudCUyRmRwJTJGQjBDRkdGVjVDSCUyRnJlZiUzRG1wX3NfYV8xXzElM0ZjcmlkJT=
+NEMTBYMUZOSEhRMlRKMCUyNmtleXdvcmRzJTNEbGVhcm5pbmclMkJsb3ZlJTJCdGhhaXMlMkJna=
+WJzb24lMjZxaWQlM0QxNjk3MDQwODQ5JTI2c3ByZWZpeCUzRGxlYXJuaWduJTJCbG92ZSUyQnRo=
+YWlzJTJCZ2lic29uJTI1MkNhcHMlMjUyQzY3JTI2c3IlM0Q4LTElMjZ1dG1fc291cmNlJTNEQWN=
+0aXZlQ2FtcGFpZ24lMjZ1dG1fbWVkaXVtJTNEZW1haWwlMjZ1dG1fY29udGVudCUzRFRoaW5rJT=
+JCeW91JTJCa25vdyUyQmxvdmUlMjUzRiUyQlRoaW5rJTJCQWdhaW4lMjZ1dG1fY2FtcGFpZ24lM=
+0RCb29rX0xhdW5jaF9QcmVzYWxlX09jdF8xOF8yMDIzX0VtYWlsMiUyQiUyNTI4Tm9uLU1lbWJl=
+cnMlMkJUaWVyJTJCMyUyQkdtYWlsJTI1Mjk=3D&sig=3D3efY53cbL97QxPiJXZ32Tbp7kh7Tav=
+mjNCgEvJFr7DJE&iat=3D1697658004&a=3D%7C%7C475800167%7C%7C&account=3Dpersona=
+ldevelopmentschool%2Eactivehosted%2Ecom&email=3Drb3hgvIa7uTgt6AkW6kBlH4s1%2=
+FJa3hgixUujEhHx2X2F69%2F%2F%3AqsX2W72zY5%2FJ0mPO2BlUAaV9qF%2FA1Thv&s=3Df80b=
+3c5d95b48747dbcb6172ceee3b6e&i=3D3780A4019A2A196904" =0A                sty=
+le=3D"height:44px; v-text-anchor:middle; width:365px" arcsize=3D"25%" strok=
+ecolor=3D"#808080" strokeweight=3D"2px" fillcolor=3D"#8a50a0">=0A=09=09<w:a=
+nchorlock></w:anchorlock>=0A=09=09<center style=3D'color:#ffffff; font-fami=
+ly:roboto, "helvetica neue", helvetica, arial, sans-serif; font-size:18px; =
+font-weight:700; line-height:18px;  mso-text-raise:1px'>Claim My Pre-Order =
+Discount</center>=0A=09</v:roundrect></a>=0A<![endif]--><!--[if !mso]><!-- =
+--><span class=3D"msohide es-button-border" style=3D"border-style:solid;bor=
+der-color:#808080;background:#8a50a0;border-width:2px;display:inline-block;=
+border-radius:11px;width:auto;mso-hide:all"><a href=3D"http://email.persona=
+ldevelopmentschool.com/Prod/link-tracker?redirectUrl=3DaHR0cHMlM0ElMkYlMkZ3=
+d3cuYW1hem9uLmNvbSUyRkxlYXJuaW5nLUxvdmUtUmVsYXRpb25zaGlwLUludGVncmF0ZWQtQXR=
+0YWNobWVudCUyRmRwJTJGQjBDRkdGVjVDSCUyRnJlZiUzRG1wX3NfYV8xXzElM0ZjcmlkJTNEMT=
+BYMUZOSEhRMlRKMCUyNmtleXdvcmRzJTNEbGVhcm5pbmclMkJsb3ZlJTJCdGhhaXMlMkJnaWJzb=
+24lMjZxaWQlM0QxNjk3MDQwODQ5JTI2c3ByZWZpeCUzRGxlYXJuaWduJTJCbG92ZSUyQnRoYWlz=
+JTJCZ2lic29uJTI1MkNhcHMlMjUyQzY3JTI2c3IlM0Q4LTElMjZ1dG1fc291cmNlJTNEQWN0aXZ=
+lQ2FtcGFpZ24lMjZ1dG1fbWVkaXVtJTNEZW1haWwlMjZ1dG1fY29udGVudCUzRFRoaW5rJTJCeW=
+91JTJCa25vdyUyQmxvdmUlMjUzRiUyQlRoaW5rJTJCQWdhaW4lMjZ1dG1fY2FtcGFpZ24lM0RCb=
+29rX0xhdW5jaF9QcmVzYWxlX09jdF8xOF8yMDIzX0VtYWlsMiUyQiUyNTI4Tm9uLU1lbWJlcnMl=
+MkJUaWVyJTJCMyUyQkdtYWlsJTI1Mjk=3D&sig=3D3efY53cbL97QxPiJXZ32Tbp7kh7TavmjNC=
+gEvJFr7DJE&iat=3D1697658004&a=3D%7C%7C475800167%7C%7C&account=3Dpersonaldev=
+elopmentschool%2Eactivehosted%2Ecom&email=3Drb3hgvIa7uTgt6AkW6kBlH4s1%2FJa3=
+hgixUujEhHx2X2F69%2F%2F%3AqsX2W72zY5%2FJ0mPO2BlUAaV9qF%2FA1Thv&s=3Df80b3c5d=
+95b48747dbcb6172ceee3b6e&i=3D3780A4019A2A196904" class=3D"es-button msohide=
+ es-button-1696018886438" target=3D"_blank" style=3D"mso-style-priority:100=
+=0A!important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-s=
+ize-adjust:none;mso-line-height-rule:exactly;color:#ffffff;font-size:20px;d=
+isplay:inline-block;background:#8a50a0;border-radius:11px;font-family:robot=
+o, 'helvetica neue', helvetica, arial, sans-serif;font-weight:bold;font-sty=
+le:normal;line-height:24px;width:auto;text-align:center;padding:10px 40px;m=
+so-padding-alt:0;mso-border-alt:10px solid #F0F0F0;mso-hide:all">Claim My P=
+re-Order Discount</a></span><!--<![endif]--></td>=0A</tr>=0A<tr><td align=
+=3D"left" style=3D"padding:0;Margin:0;padding-left:40px;padding-right:40px;=
+color:#022e8b"><p style=3D"Margin:0;-webkit-text-size-adjust:none;-ms-text-=
+size-adjust:none;mso-line-height-rule:exactly;font-family:roboto, 'helvetic=
+a neue', helvetica, arial, sans-serif;line-height:24px;color:#2F3433;font-s=
+ize:16px"><br></p>=0A<p style=3D"Margin:0;-webkit-text-size-adjust:none;-ms=
+-text-size-adjust:none;mso-line-height-rule:exactly;font-family:roboto, 'he=
+lvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#2F3433;=
+font-size:16px">Each chapter offers customizable profiles, diagnostic exerc=
+ises and questions you can complete directly in your book to find out why y=
+our relationships unfold the way they do=E2=80=94<i>and</i> what exactly yo=
+u can do about it.=C2=A0</p>=0A<br><p style=3D"Margin:0;-webkit-text-size-a=
+djust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-fami=
+ly:roboto, 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;=
+color:#2F3433;font-size:16px">If you've been feeling like you=E2=80=99re:</=
+p>=0A<ul><li style=3D"-webkit-text-size-adjust:none;-ms-text-size-adjust:no=
+ne;mso-line-height-rule:exactly;font-family:roboto, 'helvetica neue', helve=
+tica, arial, sans-serif;line-height:24px;Margin-bottom:15px;color:#2F3433;m=
+argin-left:0;font-size:16px"><p style=3D"Margin:0;-webkit-text-size-adjust:=
+none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:rob=
+oto, 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:=
+#2F3433;font-size:16px">Lonely, even when you're with someone</p>=0A</li><l=
+i style=3D"-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line=
+-height-rule:exactly;font-family:roboto, 'helvetica neue', helvetica, arial=
+, sans-serif;line-height:24px;Margin-bottom:15px;color:#2F3433;margin-left:=
+0;font-size:16px"><p style=3D"Margin:0;-webkit-text-size-adjust:none;-ms-te=
+xt-size-adjust:none;mso-line-height-rule:exactly;font-family:roboto, 'helve=
+tica neue', helvetica, arial, sans-serif;line-height:24px;color:#2F3433;fon=
+t-size:16px">Overwhelmed by repeated patterns of conflict</p>=0A</li><li st=
+yle=3D"-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-hei=
+ght-rule:exactly;font-family:roboto, 'helvetica neue', helvetica, arial, sa=
+ns-serif;line-height:24px;Margin-bottom:15px;color:#2F3433;margin-left:0;fo=
+nt-size:16px"><p style=3D"Margin:0;-webkit-text-size-adjust:none;-ms-text-s=
+ize-adjust:none;mso-line-height-rule:exactly;font-family:roboto, 'helvetica=
+ neue', helvetica, arial, sans-serif;line-height:24px;color:#2F3433;font-si=
+ze:16px">Unworthy or doubting your self-worth</p>=0A</li><li style=3D"-webk=
+it-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exa=
+ctly;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;lin=
+e-height:24px;Margin-bottom:15px;color:#2F3433;margin-left:0;font-size:16px=
+"><p style=3D"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:n=
+one;mso-line-height-rule:exactly;font-family:roboto, 'helvetica neue', helv=
+etica, arial, sans-serif;line-height:24px;color:#2F3433;font-size:16px">Dis=
+connected or out of sync with your partner</p>=0A</li><li style=3D"-webkit-=
+text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactl=
+y;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;line-h=
+eight:24px;Margin-bottom:15px;color:#2F3433;margin-left:0;font-size:16px"><=
+p style=3D"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none=
+;mso-line-height-rule:exactly;font-family:roboto, 'helvetica neue', helveti=
+ca, arial, sans-serif;line-height:24px;color:#2F3433;font-size:16px">Afraid=
+ of commitment or fearing abandonment</p>=0A</li><li style=3D"-webkit-text-=
+size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;fon=
+t-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;line-height=
+:24px;Margin-bottom:15px;color:#2F3433;margin-left:0;font-size:16px"><p sty=
+le=3D"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-=
+line-height-rule:exactly;font-family:roboto, 'helvetica neue', helvetica, a=
+rial, sans-serif;line-height:24px;color:#2F3433;font-size:16px">Stuck in a =
+cycle of seeking validation</p>=0A</li><li style=3D"-webkit-text-size-adjus=
+t:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:r=
+oboto, 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;Marg=
+in-bottom:15px;color:#2F3433;margin-left:0;font-size:16px"><p style=3D"Marg=
+in:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-heigh=
+t-rule:exactly;font-family:roboto, 'helvetica neue', helvetica, arial, sans=
+-serif;line-height:24px;color:#2F3433;font-size:16px">Exhausted from trying=
+ to "fix" your relationship</p>=0A</li><li style=3D"-webkit-text-size-adjus=
+t:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:r=
+oboto, 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;Marg=
+in-bottom:15px;color:#2F3433;margin-left:0;font-size:16px"><p style=3D"Marg=
+in:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-heigh=
+t-rule:exactly;font-family:roboto, 'helvetica neue', helvetica, arial, sans=
+-serif;line-height:24px;color:#2F3433;font-size:16px">Hopeless about findin=
+g a meaningful bond</p>=0A</li></ul><p style=3D"Margin:0;-webkit-text-size-=
+adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-fam=
+ily:roboto, 'helvetica neue', helvetica, arial, sans-serif;line-height:24px=
+;color:#2F3433;font-size:16px">...then this book is here to guide you. Whet=
+her it's romantic ties, friendships, or family bonds, <i>Learning Love </i>=
+aims to redefine and transform the way you connect with those around you.</=
+p>=0A<p style=3D"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjus=
+t:none;mso-line-height-rule:exactly;font-family:roboto, 'helvetica neue', h=
+elvetica, arial, sans-serif;line-height:24px;color:#2F3433;font-size:16px">=
+<br>Reclaim the spark in your relationship with the simple roadmap in <i>Le=
+arning Love </i>that will teach you everything you need to know about the r=
+ules of connection in less than a day.</p>=0A<p style=3D"Margin:0;-webkit-t=
+ext-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly=
+;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;line-he=
+ight:24px;color:#2F3433;font-size:16px"><br></p>=0A</td>=0A</tr>=0A<tr><td =
+align=3D"center" bgcolor=3D"#ffffff" style=3D"padding:0;Margin:0;padding-to=
+p:30px;padding-bottom:30px"><!--[if mso]><a href=3D"http://email.personalde=
+velopmentschool.com/Prod/link-tracker?redirectUrl=3DaHR0cHMlM0ElMkYlMkZ3d3c=
+uYW1hem9uLmNvbSUyRkxlYXJuaW5nLUxvdmUtUmVsYXRpb25zaGlwLUludGVncmF0ZWQtQXR0YW=
+NobWVudCUyRmRwJTJGQjBDRkdGVjVDSCUyRnJlZiUzRG1wX3NfYV8xXzElM0ZjcmlkJTNEMTBYM=
+UZOSEhRMlRKMCUyNmtleXdvcmRzJTNEbGVhcm5pbmclMkJsb3ZlJTJCdGhhaXMlMkJnaWJzb24l=
+MjZxaWQlM0QxNjk3MDQwODQ5JTI2c3ByZWZpeCUzRGxlYXJuaWduJTJCbG92ZSUyQnRoYWlzJTJ=
+CZ2lic29uJTI1MkNhcHMlMjUyQzY3JTI2c3IlM0Q4LTElMjZ1dG1fc291cmNlJTNEQWN0aXZlQ2=
+FtcGFpZ24lMjZ1dG1fbWVkaXVtJTNEZW1haWwlMjZ1dG1fY29udGVudCUzRFRoaW5rJTJCeW91J=
+TJCa25vdyUyQmxvdmUlMjUzRiUyQlRoaW5rJTJCQWdhaW4lMjZ1dG1fY2FtcGFpZ24lM0RCb29r=
+X0xhdW5jaF9QcmVzYWxlX09jdF8xOF8yMDIzX0VtYWlsMiUyQiUyNTI4Tm9uLU1lbWJlcnMlMkJ=
+UaWVyJTJCMyUyQkdtYWlsJTI1Mjk=3D&sig=3D3efY53cbL97QxPiJXZ32Tbp7kh7TavmjNCgEv=
+JFr7DJE&iat=3D1697658004&a=3D%7C%7C475800167%7C%7C&account=3Dpersonaldevelo=
+pmentschool%2Eactivehosted%2Ecom&email=3Drb3hgvIa7uTgt6AkW6kBlH4s1%2FJa3hgi=
+xUujEhHx2X2F69%2F%2F%3AqsX2W72zY5%2FJ0mPO2BlUAaV9qF%2FA1Thv&s=3Df80b3c5d95b=
+48747dbcb6172ceee3b6e&i=3D3780A4019A2A196904" target=3D"_blank" hidden>=0A=
+=09<v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:sc=
+hemas-microsoft-com:office:word" esdevVmlButton href=3D"http://email.person=
+aldevelopmentschool.com/Prod/link-tracker?redirectUrl=3DaHR0cHMlM0ElMkYlMkZ=
+3d3cuYW1hem9uLmNvbSUyRkxlYXJuaW5nLUxvdmUtUmVsYXRpb25zaGlwLUludGVncmF0ZWQtQX=
+R0YWNobWVudCUyRmRwJTJGQjBDRkdGVjVDSCUyRnJlZiUzRG1wX3NfYV8xXzElM0ZjcmlkJTNEM=
+TBYMUZOSEhRMlRKMCUyNmtleXdvcmRzJTNEbGVhcm5pbmclMkJsb3ZlJTJCdGhhaXMlMkJnaWJz=
+b24lMjZxaWQlM0QxNjk3MDQwODQ5JTI2c3ByZWZpeCUzRGxlYXJuaWduJTJCbG92ZSUyQnRoYWl=
+zJTJCZ2lic29uJTI1MkNhcHMlMjUyQzY3JTI2c3IlM0Q4LTElMjZ1dG1fc291cmNlJTNEQWN0aX=
+ZlQ2FtcGFpZ24lMjZ1dG1fbWVkaXVtJTNEZW1haWwlMjZ1dG1fY29udGVudCUzRFRoaW5rJTJCe=
+W91JTJCa25vdyUyQmxvdmUlMjUzRiUyQlRoaW5rJTJCQWdhaW4lMjZ1dG1fY2FtcGFpZ24lM0RC=
+b29rX0xhdW5jaF9QcmVzYWxlX09jdF8xOF8yMDIzX0VtYWlsMiUyQiUyNTI4Tm9uLU1lbWJlcnM=
+lMkJUaWVyJTJCMyUyQkdtYWlsJTI1Mjk=3D&sig=3D3efY53cbL97QxPiJXZ32Tbp7kh7TavmjN=
+CgEvJFr7DJE&iat=3D1697658004&a=3D%7C%7C475800167%7C%7C&account=3Dpersonalde=
+velopmentschool%2Eactivehosted%2Ecom&email=3Drb3hgvIa7uTgt6AkW6kBlH4s1%2FJa=
+3hgixUujEhHx2X2F69%2F%2F%3AqsX2W72zY5%2FJ0mPO2BlUAaV9qF%2FA1Thv&s=3Df80b3c5=
+d95b48747dbcb6172ceee3b6e&i=3D3780A4019A2A196904" =0A                style=
+=3D"height:44px; v-text-anchor:middle; width:365px" arcsize=3D"25%" strokec=
+olor=3D"#808080" strokeweight=3D"2px" fillcolor=3D"#8a50a0">=0A=09=09<w:anc=
+horlock></w:anchorlock>=0A=09=09<center style=3D'color:#ffffff; font-family=
+:roboto, "helvetica neue", helvetica, arial, sans-serif; font-size:18px; fo=
+nt-weight:700; line-height:18px;  mso-text-raise:1px'>Claim My Pre-Order Di=
+scount</center>=0A=09</v:roundrect></a>=0A<![endif]--><!--[if !mso]><!-- --=
+><span class=3D"msohide es-button-border" style=3D"border-style:solid;borde=
+r-color:#808080;background:#8a50a0;border-width:2px;display:inline-block;bo=
+rder-radius:11px;width:auto;mso-hide:all"><a href=3D"http://email.personald=
+evelopmentschool.com/Prod/link-tracker?redirectUrl=3DaHR0cHMlM0ElMkYlMkZ3d3=
+cuYW1hem9uLmNvbSUyRkxlYXJuaW5nLUxvdmUtUmVsYXRpb25zaGlwLUludGVncmF0ZWQtQXR0Y=
+WNobWVudCUyRmRwJTJGQjBDRkdGVjVDSCUyRnJlZiUzRG1wX3NfYV8xXzElM0ZjcmlkJTNEMTBY=
+MUZOSEhRMlRKMCUyNmtleXdvcmRzJTNEbGVhcm5pbmclMkJsb3ZlJTJCdGhhaXMlMkJnaWJzb24=
+lMjZxaWQlM0QxNjk3MDQwODQ5JTI2c3ByZWZpeCUzRGxlYXJuaWduJTJCbG92ZSUyQnRoYWlzJT=
+JCZ2lic29uJTI1MkNhcHMlMjUyQzY3JTI2c3IlM0Q4LTElMjZ1dG1fc291cmNlJTNEQWN0aXZlQ=
+2FtcGFpZ24lMjZ1dG1fbWVkaXVtJTNEZW1haWwlMjZ1dG1fY29udGVudCUzRFRoaW5rJTJCeW91=
+JTJCa25vdyUyQmxvdmUlMjUzRiUyQlRoaW5rJTJCQWdhaW4lMjZ1dG1fY2FtcGFpZ24lM0RCb29=
+rX0xhdW5jaF9QcmVzYWxlX09jdF8xOF8yMDIzX0VtYWlsMiUyQiUyNTI4Tm9uLU1lbWJlcnMlMk=
+JUaWVyJTJCMyUyQkdtYWlsJTI1Mjk=3D&sig=3D3efY53cbL97QxPiJXZ32Tbp7kh7TavmjNCgE=
+vJFr7DJE&iat=3D1697658004&a=3D%7C%7C475800167%7C%7C&account=3Dpersonaldevel=
+opmentschool%2Eactivehosted%2Ecom&email=3Drb3hgvIa7uTgt6AkW6kBlH4s1%2FJa3hg=
+ixUujEhHx2X2F69%2F%2F%3AqsX2W72zY5%2FJ0mPO2BlUAaV9qF%2FA1Thv&s=3Df80b3c5d95=
+b48747dbcb6172ceee3b6e&i=3D3780A4019A2A196904" class=3D"es-button msohide e=
+s-button-1697044793567" target=3D"_blank" style=3D"mso-style-priority:100=
+=0A!important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-s=
+ize-adjust:none;mso-line-height-rule:exactly;color:#ffffff;font-size:20px;d=
+isplay:inline-block;background:#8a50a0;border-radius:11px;font-family:robot=
+o, 'helvetica neue', helvetica, arial, sans-serif;font-weight:bold;font-sty=
+le:normal;line-height:24px;width:auto;text-align:center;padding:10px 40px;m=
+so-padding-alt:0;mso-border-alt:10px solid #F0F0F0;mso-hide:all">Claim My P=
+re-Order Discount</a></span><!--<![endif]--></td>=0A</tr>=0A<tr><td align=
+=3D"left" style=3D"padding:0;Margin:0;padding-bottom:40px;padding-left:40px=
+;padding-right:40px;color:#022e8b" bgcolor=3D"#ffffff"><p style=3D"Margin:0=
+;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-ru=
+le:exactly;font-family:roboto, 'helvetica neue', helvetica, arial, sans-ser=
+if;line-height:24px;color:#2F3433;font-size:16px">With Gratitude,</p>=0A<p =
+style=3D"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;m=
+so-line-height-rule:exactly;font-family:roboto, 'helvetica neue', helvetica=
+, arial, sans-serif;line-height:24px;color:#2F3433;font-size:16px">Thais</p=
+>=0A</td>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A<=
+/table>=0A</td>=0A</tr>=0A</table>=0A<table cellpadding=3D"0" cellspacing=
+=3D"0" class=3D"es-footer" align=3D"center" style=3D"mso-table-lspace:0pt;m=
+so-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layou=
+t:fixed !important;width:100%;background-color:inherit;background-repeat:re=
+peat;background-position:center top"><tr><td align=3D"center" style=3D"padd=
+ing:0;Margin:0"><table class=3D"es-footer-body" align=3D"center" cellpaddin=
+g=3D"0" cellspacing=3D"0" style=3D"mso-table-lspace:0pt;mso-table-rspace:0p=
+t;border-collapse:collapse;border-spacing:0px;background-color:transparent;=
+width:650px" bgcolor=3D"#FFFFFF"><tr><td align=3D"left" style=3D"padding:0;=
+Margin:0"><table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=
+=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;bord=
+er-spacing:0px"><tr><td align=3D"center" valign=3D"top" style=3D"padding:0;=
+Margin:0;width:650px"><table cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" bgcolor=3D"#FFFFFF"=0Astyle=3D"mso-table-lspace:0pt;mso-table-rspace:0=
+pt;border-collapse:collapse;border-spacing:0px;background-color:#ffffff" ro=
+le=3D"presentation"><tr><td align=3D"center" style=3D"padding:15px;Margin:0=
+;font-size:0"><table border=3D"0" width=3D"100%" height=3D"100%" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0=
+pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><t=
+d style=3D"padding:0;Margin:0;border-bottom:0px solid #cccccc;background:un=
+set;height:1px;width:100%;margin:0px"></td>=0A</tr>=0A</table>=0A</td>=0A</=
+tr>=0A<tr><td align=3D"center" style=3D"padding:0;Margin:0;font-size:0px"><=
+img src=3D"https://content.app-us1.com/cdn-cgi/image/dpr=3D2,fit=3Dscale-do=
+wn,format=3Dauto,onerror=3Dredirect,width=3D650/dG03x/2021/06/01/a66653a18b=
+d281ece15e7e1b53cdab1d820bff17.png" alt style=3D"display:block;border:0;out=
+line:none;text-decoration:none;-ms-interpolation-mode:bicubic" width=3D"300=
+" data-cf-ir-is-resized=3D"true"></td>=0A</tr>=0A<tr><td align=3D"center" s=
+tyle=3D"padding:0;Margin:0;padding-top:10px;padding-bottom:10px;font-size:0=
+"><table border=3D"0" width=3D"100%" height=3D"100%" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table=
+-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td style=3D"p=
+adding:0;Margin:0;border-bottom:1px solid #000000;background:unset;height:1=
+px;width:100%;margin:0px"></td>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A<tr><t=
+d align=3D"center" style=3D"padding:15px;Margin:0;font-size:0"><table borde=
+r=3D"0" width=3D"100%" height=3D"100%" cellpadding=3D"0" cellspacing=3D"0" =
+role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;bo=
+rder-collapse:collapse;border-spacing:0px"><tr><td style=3D"padding:0;Margi=
+n:0;border-bottom:0px solid #cccccc;background:unset;height:1px;width:100%;=
+margin:0px"></td>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A<tr><td align=3D"cen=
+ter" style=3D"padding:0;Margin:0;font-size:0"><table cellpadding=3D"0" cell=
+spacing=3D"0" class=3D"es-table-not-adapt es-social" role=3D"presentation" =
+style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse=
+;border-spacing:0px"><tr><td align=3D"center" valign=3D"top" style=3D"paddi=
+ng:0;Margin:0;padding-right:10px"><a target=3D"_blank" href=3D"http://email=
+.personaldevelopmentschool.com/Prod/link-tracker?redirectUrl=3DaHR0cHMlM0El=
+MkYlMkZ3d3cuZmFjZWJvb2suY29tJTJGVGhlUGVyc29uYWxEZXZlbG9wbWVudFNjaG9vbCUzRnV=
+0bV9zb3VyY2UlM0RBY3RpdmVDYW1wYWlnbiUyNnV0bV9tZWRpdW0lM0RlbWFpbCUyNnV0bV9jb2=
+50ZW50JTNEVGhpbmslMkJ5b3UlMkJrbm93JTJCbG92ZSUyNTNGJTJCVGhpbmslMkJBZ2FpbiUyN=
+nV0bV9jYW1wYWlnbiUzREJvb2tfTGF1bmNoX1ByZXNhbGVfT2N0XzE4XzIwMjNfRW1haWwyJTJC=
+JTI1MjhOb24tTWVtYmVycyUyQlRpZXIlMkIzJTJCR21haWwlMjUyOQ=3D=3D&sig=3DE2uQFvkj=
+enHd8WuBnzRctgqZVEqsFM8HfXvcJcL3ZU1&iat=3D1697658004&a=3D%7C%7C475800167%7C=
+%7C&account=3Dpersonaldevelopmentschool%2Eactivehosted%2Ecom&email=3Drb3hgv=
+Ia7uTgt6AkW6kBlH4s1%2FJa3hgixUujEhHx2X2F69%2F%2F%3AqsX2W72zY5%2FJ0mPO2BlUAa=
+V9qF%2FA1Thv&s=3Df80b3c5d95b48747dbcb6172ceee3b6e&i=3D3780A4019A2A196905" s=
+tyle=3D"-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-he=
+ight-rule:exactly;text-decoration:underline;color:inherit;font-size:12px"><=
+img=0Atitle=3D"Facebook" src=3D"https://stripo.cluster.app-us1.com/static/a=
+ssets/img/social-icons/circle-black/facebook-circle-black.png" alt=3D"Faceb=
+ook" width=3D"32" style=3D"display:block;border:0;outline:none;text-decorat=
+ion:none;-ms-interpolation-mode:bicubic"></a></td>=0A<td align=3D"center" v=
+align=3D"top" style=3D"padding:0;Margin:0;padding-right:10px"><a target=3D"=
+_blank" href=3D"http://email.personaldevelopmentschool.com/Prod/link-tracke=
+r?redirectUrl=3DaHR0cHMlM0ElMkYlMkZ3d3cueW91dHViZS5jb20lMkYlNDB0aGVwZXJzb25=
+hbGRldmVsb3BtZW50c2Nob29sJTNGdXRtX3NvdXJjZSUzREFjdGl2ZUNhbXBhaWduJTI2dXRtX2=
+1lZGl1bSUzRGVtYWlsJTI2dXRtX2NvbnRlbnQlM0RUaGluayUyQnlvdSUyQmtub3clMkJsb3ZlJ=
+TI1M0YlMkJUaGluayUyQkFnYWluJTI2dXRtX2NhbXBhaWduJTNEQm9va19MYXVuY2hfUHJlc2Fs=
+ZV9PY3RfMThfMjAyM19FbWFpbDIlMkIlMjUyOE5vbi1NZW1iZXJzJTJCVGllciUyQjMlMkJHbWF=
+pbCUyNTI5&sig=3DHE4zVKps3wJZtfpvmbnf4jDz57aSewezSvhkS2VF1TMQ&iat=3D16976580=
+04&a=3D%7C%7C475800167%7C%7C&account=3Dpersonaldevelopmentschool%2Eactiveho=
+sted%2Ecom&email=3Drb3hgvIa7uTgt6AkW6kBlH4s1%2FJa3hgixUujEhHx2X2F69%2F%2F%3=
+AqsX2W72zY5%2FJ0mPO2BlUAaV9qF%2FA1Thv&s=3Df80b3c5d95b48747dbcb6172ceee3b6e&=
+i=3D3780A4019A2A196906" style=3D"-webkit-text-size-adjust:none;-ms-text-siz=
+e-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:=
+inherit;font-size:12px"><img title=3D"Youtube" src=3D"https://stripo.cluste=
+r.app-us1.com/static/assets/img/social-icons/circle-black/youtube-circle-bl=
+ack.png" alt=3D"Youtube" width=3D"32" style=3D"display:block;border:0;outli=
+ne:none;text-decoration:none;-ms-interpolation-mode:bicubic"></a></td>=0A<t=
+d align=3D"center" valign=3D"top" style=3D"padding:0;Margin:0;padding-right=
+:10px"><a target=3D"_blank" href=3D"http://email.personaldevelopmentschool.=
+com/Prod/link-tracker?redirectUrl=3DaHR0cHMlM0ElMkYlMkZ3d3cuaW5zdGFncmFtLmN=
+vbSUyRnRoZXBlcnNvbmFsZGV2ZWxvcG1lbnRzY2hvb2wlM0Z1dG1fc291cmNlJTNEQWN0aXZlQ2=
+FtcGFpZ24lMjZ1dG1fbWVkaXVtJTNEZW1haWwlMjZ1dG1fY29udGVudCUzRFRoaW5rJTJCeW91J=
+TJCa25vdyUyQmxvdmUlMjUzRiUyQlRoaW5rJTJCQWdhaW4lMjZ1dG1fY2FtcGFpZ24lM0RCb29r=
+X0xhdW5jaF9QcmVzYWxlX09jdF8xOF8yMDIzX0VtYWlsMiUyQiUyNTI4Tm9uLU1lbWJlcnMlMkJ=
+UaWVyJTJCMyUyQkdtYWlsJTI1Mjk=3D&sig=3D64vpwDbj5SGbJ5epqxWacHYHSJ3kga1eyqtbt=
+LRCBDK2&iat=3D1697658004&a=3D%7C%7C475800167%7C%7C&account=3Dpersonaldevelo=
+pmentschool%2Eactivehosted%2Ecom&email=3Drb3hgvIa7uTgt6AkW6kBlH4s1%2FJa3hgi=
+xUujEhHx2X2F69%2F%2F%3AqsX2W72zY5%2FJ0mPO2BlUAaV9qF%2FA1Thv&s=3Df80b3c5d95b=
+48747dbcb6172ceee3b6e&i=3D3780A4019A2A196907" style=3D"-webkit-text-size-ad=
+just:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decor=
+ation:underline;color:inherit;font-size:12px"><img title=3D"Instagram" src=
+=3D"https://stripo.cluster.app-us1.com/static/assets/img/social-icons/circl=
+e-black/instagram-circle-black.png" alt=3D"Instagram" width=3D"32" style=3D=
+"display:block;border:0;outline:none;text-decoration:none;-ms-interpolation=
+-mode:bicubic"></a></td>=0A<td align=3D"center" valign=3D"top" style=3D"pad=
+ding:0;Margin:0;padding-right:10px"><a target=3D"_blank" href=3D"http://ema=
+il.personaldevelopmentschool.com/Prod/link-tracker?redirectUrl=3DaHR0cHMlM0=
+ElMkYlMkZ3d3cudGlrdG9rLmNvbSUyRiU0MHRoYWlzZ2lic29uJTNGdXRtX3NvdXJjZSUzREFjd=
+Gl2ZUNhbXBhaWduJTI2dXRtX21lZGl1bSUzRGVtYWlsJTI2dXRtX2NvbnRlbnQlM0RUaGluayUy=
+QnlvdSUyQmtub3clMkJsb3ZlJTI1M0YlMkJUaGluayUyQkFnYWluJTI2dXRtX2NhbXBhaWduJTN=
+EQm9va19MYXVuY2hfUHJlc2FsZV9PY3RfMThfMjAyM19FbWFpbDIlMkIlMjUyOE5vbi1NZW1iZX=
+JzJTJCVGllciUyQjMlMkJHbWFpbCUyNTI5&sig=3D22hsEuqUtxtbWPv8oHdpcjoUhYyWHvoJyK=
+dYUcHzbLFp&iat=3D1697658004&a=3D%7C%7C475800167%7C%7C&account=3Dpersonaldev=
+elopmentschool%2Eactivehosted%2Ecom&email=3Drb3hgvIa7uTgt6AkW6kBlH4s1%2FJa3=
+hgixUujEhHx2X2F69%2F%2F%3AqsX2W72zY5%2FJ0mPO2BlUAaV9qF%2FA1Thv&s=3Df80b3c5d=
+95b48747dbcb6172ceee3b6e&i=3D3780A4019A2A196908" style=3D"-webkit-text-size=
+-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-de=
+coration:underline;color:inherit;font-size:12px"><img title=3D"TikTok" src=
+=3D"https://stripo.cluster.app-us1.com/static/assets/img/social-icons/circl=
+e-black/tiktok-circle-black.png" alt=3D"Tt" width=3D"32" style=3D"display:b=
+lock;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicu=
+bic"></a></td>=0A<td align=3D"center" valign=3D"top" style=3D"padding:0;Mar=
+gin:0"><a target=3D"_blank" href=3D"http://email.personaldevelopmentschool.=
+com/Prod/link-tracker?redirectUrl=3DaHR0cHMlM0ElMkYlMkZwb2RjYXN0cy5hcHBsZS5=
+jb20lMkZ1cyUyRnBvZGNhc3QlMkZwZXJzb25hbC1kZXZlbG9wbWVudC1zY2hvb2wlMkZpZDE0Nz=
+g1ODAxODUlM0Z1dG1fc291cmNlJTNEQWN0aXZlQ2FtcGFpZ24lMjZ1dG1fbWVkaXVtJTNEZW1ha=
+WwlMjZ1dG1fY29udGVudCUzRFRoaW5rJTJCeW91JTJCa25vdyUyQmxvdmUlMjUzRiUyQlRoaW5r=
+JTJCQWdhaW4lMjZ1dG1fY2FtcGFpZ24lM0RCb29rX0xhdW5jaF9QcmVzYWxlX09jdF8xOF8yMDI=
+zX0VtYWlsMiUyQiUyNTI4Tm9uLU1lbWJlcnMlMkJUaWVyJTJCMyUyQkdtYWlsJTI1Mjk=3D&sig=
+=3D9fzJX8uQuTdTa1LLeocn7inpxzBZPapqnX7s3tzZSzYn&iat=3D1697658004&a=3D%7C%7C=
+475800167%7C%7C&account=3Dpersonaldevelopmentschool%2Eactivehosted%2Ecom&em=
+ail=3Drb3hgvIa7uTgt6AkW6kBlH4s1%2FJa3hgixUujEhHx2X2F69%2F%2F%3AqsX2W72zY5%2=
+FJ0mPO2BlUAaV9qF%2FA1Thv&s=3Df80b3c5d95b48747dbcb6172ceee3b6e&i=3D3780A4019=
+A2A196909" style=3D"-webkit-text-size-adjust:none;-ms-text-size-adjust:none=
+;mso-line-height-rule:exactly;text-decoration:underline;color:inherit;font-=
+size:12px"><img title=3D"iTunesPodcasts" src=3D"https://stripo.cluster.app-=
+us1.com/static/assets/img/social-icons/circle-black/itunespodcasts-circle-b=
+lack.png" alt=3D"iTp" width=3D"32"=0Astyle=3D"display:block;border:0;outlin=
+e:none;text-decoration:none;-ms-interpolation-mode:bicubic"></a></td>=0A</t=
+r>=0A</table>=0A</td>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A</table>=0A</td>=
+=0A</tr>=0A<tr><td align=3D"left" style=3D"padding:0;Margin:0;padding-top:2=
+0px;padding-left:20px;padding-right:20px"><table cellpadding=3D"0" cellspac=
+ing=3D"0" width=3D"100%" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt=
+;border-collapse:collapse;border-spacing:0px"><tr><td align=3D"center" vali=
+gn=3D"top" style=3D"padding:0;Margin:0;width:610px"><table cellpadding=3D"0=
+" cellspacing=3D"0" width=3D"100%" role=3D"presentation" style=3D"mso-table=
+-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0p=
+x"><tr><td align=3D"center" style=3D"padding:0;Margin:0"><p style=3D"Margin=
+:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-=
+rule:exactly;font-family:roboto, 'helvetica neue', helvetica, arial, sans-s=
+erif;line-height:18px;color:inherit;font-size:12px">Sent to: srijani515@gma=
+il.com<br><br><a=0Ahref=3D"http://email.personaldevelopmentschool.com/Prod/=
+link-tracker?redirectUrl=3DaHR0cHMlM0ElMkYlMkZwZXJzb25hbGRldmVsb3BtZW50c2No=
+b29sLmFjdGl2ZWhvc3RlZC5jb20lMkZmJTJGMTM5JTNGZW1haWwlM0RzcmlqYW5pNTE1JTQwZ21=
+haWwuY29tJTI2dXRtX3NvdXJjZSUzREFjdGl2ZUNhbXBhaWduJTI2dXRtX21lZGl1bSUzRGVtYW=
+lsJTI2dXRtX2NvbnRlbnQlM0RUaGluayUyQnlvdSUyQmtub3clMkJsb3ZlJTI1M0YlMkJUaGlua=
+yUyQkFnYWluJTI2dXRtX2NhbXBhaWduJTNEQm9va19MYXVuY2hfUHJlc2FsZV9PY3RfMThfMjAy=
+M19FbWFpbDIlMkIlMjUyOE5vbi1NZW1iZXJzJTJCVGllciUyQjMlMkJHbWFpbCUyNTI5&sig=3D=
+FqDGq9tQQUVFJCXLQi9VeueB5MmY12h5jXF5xbEqouiU&iat=3D1697658004&a=3D%7C%7C475=
+800167%7C%7C&account=3Dpersonaldevelopmentschool%2Eactivehosted%2Ecom&email=
+=3Drb3hgvIa7uTgt6AkW6kBlH4s1%2FJa3hgixUujEhHx2X2F69%2F%2F%3AqsX2W72zY5%2FJ0=
+mPO2BlUAaV9qF%2FA1Thv&s=3Df80b3c5d95b48747dbcb6172ceee3b6e&i=3D3780A4019A2A=
+196910" target=3D"_blank">Manage your preferences</a> or <a href=3D"http://=
+email.personaldevelopmentschool.com/proc.php?nl=3D2&c=3D3780&m=3D4019&s=3Df=
+80b3c5d95b48747dbcb6172ceee3b6e&act=3Dunsub&ALL" target=3D"_blank" style=3D=
+"-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-ru=
+le:exactly;text-decoration:underline;color:inherit;font-size:12px">unsubscr=
+ibe here</a><br><br>Personal Development School, 999 Edgeley Blvd, Unit 3, =
+Concord, Ontario L4K 5Z4, Canada</p>=0A</td>=0A</tr>=0A</table>=0A</td>=0A<=
+/tr>=0A</table>=0A</td>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A</table>=0A</t=
+d>=0A</tr>=0A</table>=0A<img src=3D"http://email.personaldevelopmentschool.=
+com/Prod/link-tracker?nl=3D2&c=3D3780&m=3D4019&s=3Df80b3c5d95b48747dbcb6172=
+ceee3b6e&l=3Dopen&account=3Dpersonaldevelopmentschool.activehosted.com&a=3D=
+475800167" border=3D"0" width=3D"1" height=3D"1" style=3D"display:block;wid=
+th:1px!important;min-width:1px!important;max-width:1px!important;height:1px=
+!important;border:0;overflow:hidden;" /><br /><br clear=3D"all" /></body>=
+=0A</html>
+--_=_swift-175787165303428cabc61.91338818_=_--
+

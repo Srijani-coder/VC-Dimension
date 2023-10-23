@@ -1,0 +1,461 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:6916:b0:4d9:4627:b4e2 with SMTP id s22csp2433594pxw;
+        Thu, 28 Sep 2023 05:39:43 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHLVfxUFLwXtUXf8Lom4ocBDYYhgYNcbWggHJqjqkbGV8PYxoB0UB5KCxQmeKtFThNLN2Zp
+X-Received: by 2002:a17:902:8649:b0:1c3:5f05:922a with SMTP id y9-20020a170902864900b001c35f05922amr853824plt.60.1695904782934;
+        Thu, 28 Sep 2023 05:39:42 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1695904782; cv=none;
+        d=google.com; s=arc-20160816;
+        b=zSGo0+xkU5Uhbq7yF8mESbz6Cdku2LHLSrK1ZKHGzlw6GrGobF6rV0N5zQcZD69ZD3
+         mfHcR6kZFjxa8z4pwoaL4IaAMhr0QfOSZwIo2/gMd70+HdF3zoqggM5ec8uUyFn1eHlN
+         WcKuL1Yt0alU1mGNrqBddl9pSNibxToPZ5K31S1ECcbWsmlJfDTLyZ+qNOhazLiZ1PlR
+         6d8a/27R0e08Ia2kiaojO8+PI0DTlI5afNHYC7Q7m5Im9b71VOW+8GHxzGJyRiwifJe0
+         z3b7WTqDoiOYDshYARWtdrDWy4HJUCE1zq8v927NuD9+0QbFAncMFJKr7dVU1PqtCPHy
+         vpPQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:list-unsubscribe:reply-to:message-id:date:to:from
+         :subject:content-transfer-encoding:mime-version:dkim-signature
+         :dkim-signature;
+        bh=rA2pMUklhobEvnv5nGEUMoIThPE42rZRPS5kINQ8jEw=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=WpxuN4LBkflV+yutN741XQTDGA8fHNIyX7OOwGNcW/j8lEXczyoqORDCV5VtqdxivP
+         DDTVa2Y++to6FlPGF+QYPI0fkB98XPAXPuo51vpQKFJq/ARKn3E+USmVsknWh/9fHQjp
+         0iqyyMMunJYMgOcgdz04UKxuVURmEJKvo8wElc0mERp22m4FPN2BJvb0AHOF08/JvHKm
+         fBeRwEx1c+kzfDfGVum4305GDpO2+92W9h3OisAwHbRJQfTJ4QYE3mqqXD/gllFeY0nU
+         maufikRteGbH2hUro9R7NfqJ8jlcbGhSld+LaL954j3Qt9VCA8rcBSdHBvwT7JtF14As
+         Vj4Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@job.shine.com header.s=nc2048 header.b=HiLa1KgK;
+       dkim=pass header.i=@env.etransmail.com header.s=fnc header.b=Rm2dtcfQ;
+       spf=pass (google.com: domain of 16958394681463695-37602-1-gmail.com@delivery.job.shine.com designates 175.158.68.75 as permitted sender) smtp.mailfrom=16958394681463695-37602-1-gmail.com@delivery.job.shine.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=shine.com
+Return-Path: <16958394681463695-37602-1-gmail.com@delivery.job.shine.com>
+Received: from pepimail75-in.jobs.shine.com (pepimail75-in.jobs.shine.com. [175.158.68.75])
+        by mx.google.com with ESMTPS id m4-20020a170902db0400b001c7358e8cf3si2065895plx.542.2023.09.28.05.39.42
+        for <srijani515@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 28 Sep 2023 05:39:42 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 16958394681463695-37602-1-gmail.com@delivery.job.shine.com designates 175.158.68.75 as permitted sender) client-ip=175.158.68.75;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@job.shine.com header.s=nc2048 header.b=HiLa1KgK;
+       dkim=pass header.i=@env.etransmail.com header.s=fnc header.b=Rm2dtcfQ;
+       spf=pass (google.com: domain of 16958394681463695-37602-1-gmail.com@delivery.job.shine.com designates 175.158.68.75 as permitted sender) smtp.mailfrom=16958394681463695-37602-1-gmail.com@delivery.job.shine.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=shine.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=job.shine.com; s=nc2048;
+	h=feedback-id:list-unsubscribe:reply-to:message-id:to:from:subject:
+	 content-transfer-encoding:content-type:mime-version:from:to:subject;
+	bh=rA2pMUklhobEvnv5nGEUMoIThPE42rZRPS5kINQ8jEw=;
+	b=HiLa1KgKazKOdAL5soM/JdEwYxu2OLWJ+N929no9I2ZwUE00SJFJ0cDjnmU7n2FJQPHBdZvKv4EGZ
+	 cFHwJch3TGBUG3kg0OeS8xYcX3jkIb2jM0s1HtuL2olUImmDDGoguXtKIukuNc/PNAVnWseX2Akxa2
+	 TnB2H7lzgOBS295CaSvWR7QV39KuT1TbYj0iqL7emMGmW7/IEnrvnQwAsDEm8BogGJWmJJZtCoJehT
+	 qQrddewlyQiQl006Hx7kJ8HNSl6XF7Wz0vCOmKRdVjak7nTpdVXJI3lVp41uHgcNjXmavWHELPcxlD
+	 KkNBbwMHWmq4zkv0vglnfyuEDgUCE0g==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=env.etransmail.com; s=fnc;
+	h=feedback-id:list-unsubscribe:reply-to:message-id:to:from:subject:
+	 content-transfer-encoding:content-type:mime-version:from:to:subject;
+	bh=rA2pMUklhobEvnv5nGEUMoIThPE42rZRPS5kINQ8jEw=;
+	b=Rm2dtcfQ2pBc7UVHPwB94sOuEnYBnBj1nOe6Kyhf3z4d3vXt4GQPE+yH+jh/oa4ml7nBxgiBnWeqQ
+	 LC31H74O7uK8nRcGPK1Hol8I2L3qIpVUyk/sTY7IqARi6x+ReHMHOFqkiMTztjmhMkMBff35ssZdFv
+	 Q7LrHCHGZZgxbQfE=
+MIME-Version: 1.0
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Subject: Urgent Hiring at Quess Corp (Magna Infotech) for Test Engineer
+From: Job For You <vacancy@job.shine.com>
+To: srijani515@gmail.com
+Date: Thu, 28 Sep 2023 18:09:42 +0530
+Message-ID: <20230928123712.27060.57517@common>
+Reply-To: contactus@shine.com
+X-MailerTag: active_minus_r_4_to_6_28-Sep_new
+X-SentDate: 2023-09-28 18:07:12.951341
+List-Unsubscribe: 
+ <mailto:unsubscribe+drm@shine.com>,<https://www.shine.com/api/v2/candidate/unsubscribe-email-api/?uid=NjUxNGYyM2Y0MTU4NmM1MTAwMGYxNDlh&j=yes>
+X-JOB: shinerec:37602:20230928
+X-InjTime: 1695904781
+Feedback-ID: Mzc2MDI6MjAyMzA5MjhfMTg6YWN0aXZlX21pbnVzX3JfNF90b182XzI4LVNlcF9uZXc=:pepipostE
+X-FNCID: 37602-16958394681463695-0
+X-Traffic-Type: 37602-1
+
+=0A=
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">=0A=
+<html xmlns=3D"http://www.w3.org/1999/xhtml">=0A=
+<head>=0A=
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">=
+=0A=
+<meta name=3D"format-detection" content=3D"telephone=3Dno">=0A=
+<meta name=3D"viewport" content=3D"width=3Ddevice-width; initial-scale=3D1.=
+0; maximum-scale=3D1.0; user-scalable=3Dno;">=0A=
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3D9; IE=3D8; IE=3D7; IE=
+=3DEDGE" />=0A=
+<title>Emailer</title>=0A=
+</head>=0A=
+<body style=3D"margin: 0; padding: 0;">=0A=
+<img src=3D"https://www3.shine.com/media/images/dot.gif?utm_campaign=3Dacti=
+ve_minus_r_4_to_6_28-Sep_new&utm_source=3DOwnbaseSystemEmails&utm_medium=3D=
+gmail.com&user_email=3DoSmJU1Dhz6Wn5rr5yFPIBoouFdoYiMA9Sg9f5xOStow=3D&utm_c=
+ampdt=3D20230928&user_id=3D6514f23f41586c51000f149a" alt=3D"" >=0A=
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" styl=
+e=3D"font-family: Arial, 'sans-serif'; color: #333; font-size: 11px;">=0A=
+  <tbody>=0A=
+    <tr>=0A=
+      <td align=3D"center" style=3D"font-family: Helvetica, Arial, sans-ser=
+if; font-size:11px; color:#6d6e71; text-align:center; padding: 5px 0; backg=
+round-color: #fff;"> Do Not forward this mail, it contains links which allo=
+w direct login to your Shine account. </td>=0A=
+    </tr>=0A=
+  </tbody>=0A=
+</table>=0A=
+<span class=3D"preheader" style=3D"color:#f3f3f3;display:none!important;fon=
+t-size:1px;line-height:1px;max-height:0;max-width:0;mso-hide:all!important;=
+opacity:0;overflow:hidden;visibility:hidden">Emailer</span>=0A=
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" alig=
+n=3D"center" style=3D"margin: 0 auto; padding: 0; font-family:Open Sans, Ar=
+ial, 'sans-serif'; font-size: 15px;color: #232434; border: solid 1px #efefe=
+f;max-width: 600px;">=0A=
+  <tbody>=0A=
+    <tr>=0A=
+      <td align=3D"left" valign=3D"top"><table width=3D"100%" border=3D"0" =
+cellspacing=3D"0" cellpadding=3D"0" align=3D"left" style=3D"padding-top: 22=
+px; padding-left: 18px; padding-right: 30px;">=0A=
+          <tbody>=0A=
+            <tr>=0A=
+              <td align=3D"left" valign=3D"top" style=3D"color: #232434; fo=
+nt-size: 15px; padding-bottom: 24px; text-align: left; font-weight: 700; pa=
+dding-top: 10px;">Dear Srijani,</td>=0A=
+              <td align=3D"right" valign=3D"top"><img src=3D"https://static=
+cand.shine.com/c/s1/images/candidate/mailers/logo.jpg" style=3D"display: bl=
+ock; border: none;" alt=3D"logo"></td>=0A=
+            </tr>=0A=
+          </tbody>=0A=
+        </table></td>=0A=
+    </tr>=0A=
+    <tr>=0A=
+      <td align=3D"left" valign=3D"top"><table width=3D"100%" border=3D"0" =
+cellspacing=3D"0" cellpadding=3D"0" align=3D"left">=0A=
+          <tbody>=0A=
+            <tr>=0A=
+              <td align=3D"left" valign=3D"top"><p align=3D"left" style=3D"=
+color: #232434; font-size: 15px;text-align: left;padding-top: 10px; hyphens=
+: none; margin: 0; padding-left: 18px; padding-right: 0px; line-height: 26p=
+x; font-family:Open Sans, Arial, 'sans-serif';">Recruiter from <strong>Ques=
+s Corp (Magna Infotech)</strong> is actively hiring for <strong>Test Engine=
+er</strong> and your profile seems to be a good match. </p>=0A=
+                <span style=3D"color: #232434; font-size: 15px; display: bl=
+ock; padding-top: 20px;padding-left: 18px; padding-right: 30px;font-family:=
+Open Sans, Arial, 'sans-serif';"> Role: <strong style=3D"font-family:Open S=
+ans, Arial, 'sans-serif';">Test Engineer</strong></span> <span style=3D"col=
+or: #232434; font-size: 15px; display: block; padding-top: 10px;padding-lef=
+t: 18px; padding-right: 30px;font-family:Open Sans, Arial, 'sans-serif';"> =
+Experience required: <strong style=3D"font-family:Open Sans, Arial, 'sans-s=
+erif';">1-4yrs</strong> </span> <span style=3D"color: #232434; font-size: 1=
+5px; display: block; padding-top: 10px;padding-left: 18px; padding-right: 3=
+0px;font-family:Open Sans, Arial, 'sans-serif';"> Annual CTC: <strong style=
+=3D"font-family:Open Sans, Arial, 'sans-serif';">2-6LPA</strong> </span>=0A=
+                <p align=3D"left" style=3D"color: #232434; font-size: 15px;=
+text-align: left;padding-top: 30px; hyphens: none; margin: 0; padding-left:=
+ 18px; padding-right: 30px; line-height: 24px;font-family:Open Sans, Arial,=
+ 'sans-serif';">Kindly share the below details and resume on the subsequent=
+ page to apply for this role.</p></td>=0A=
+            </tr>=0A=
+          </tbody>=0A=
+        </table></td>=0A=
+    </tr>=0A=
+    <tr>=0A=
+      <td align=3D"center" valign=3D"top" style=3D"padding-left: 18px; padd=
+ing-right: 30px; padding-top: 25px;">=0A=
+		  <form action=3Dhttps://www.shine.com/myshine/login/ method=3D"get" styl=
+e=3D"margin: 0; padding: 0;color: #232434;">=0A=
+		  <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" =
+align=3D"center" style=3D"background-color: #F3FAFF;border-radius: 8px; pad=
+ding: 15px 0 15px 15px;">=0A=
+          <tbody>=0A=
+            <tr>=0A=
+              <td align=3D"left" valign=3D"top"><span style=3D"display: blo=
+ck; padding-bottom: 3px; font-size: 15px; padding-top: 10px; color: #232434=
+;font-family:Open Sans, Arial, 'sans-serif'; font-weight: bold;">Total Expe=
+rience in Years*</span>=0A=
+                <select type=3D"ChoiceField" required=3D"true" mandatory=3D=
+"true" name=3D"exp_in_year" id=3D"exp_in_year" style=3D"display: block; out=
+line: none; border: 1px solid #AFD1E9; padding: 0; border-radius: 8px; colo=
+r: #232434; font-size: 15px; text-align: left; margin-right: 12px; margin-t=
+op: 5px; width: 285px; height: 40px; padding: 0 5px;font-family:Open Sans, =
+Arial, 'sans-serif';background-color: #fff;">=0A=
+                  <option value=3D"" selected style=3D" color: #232434; fon=
+t-size: 15px; font-weight: 400;font-family:Open Sans, Arial, 'sans-serif';"=
+>Select Experience</option>=0A=
+                 <option  value=3D"2">0</option>=0A=
+=0A=
+		  <option  value=3D"3">>1</option>=0A=
+          <option  value=3D"4">1</option>=0A=
+          <option  value=3D"5">2</option>=0A=
+          <option  value=3D"6">3</option>=0A=
+          <option  value=3D"7">4</option>=0A=
+          <option  value=3D"8">5</option>=0A=
+           <option  value=3D"9">6</option>=0A=
+          <option  value=3D"10">7</option>=0A=
+          <option  value=3D"11">8</option>=0A=
+          <option  value=3D"12">9</option>=0A=
+          <option  value=3D"13">10</option>=0A=
+           <option  value=3D"14">11</option>=0A=
+          <option  value=3D"15">12</option>=0A=
+          <option  value=3D"16">13</option>=0A=
+          <option  value=3D"17">14</option>=0A=
+          <option  value=3D"18">15</option>=0A=
+           <option  value=3D"19">16</option>=0A=
+          <option  value=3D"20">17</option>=0A=
+          <option  value=3D"21">18</option>=0A=
+          <option  value=3D"22">19</option>=0A=
+          <option  value=3D"23">20</option>=0A=
+          <option  value=3D"24">21</option>=0A=
+          <option  value=3D"25">22</option>=0A=
+          <option  value=3D"26">23</option>=0A=
+          <option  value=3D"27">24</option>=0A=
+          <option  value=3D"28">&gt;25+</option>=0A=
+                </select></td>=0A=
+            </tr>=0A=
+            <tr>=0A=
+              <td align=3D"left" valign=3D"top"><span style=3D"display: blo=
+ck; padding-bottom: 3px; font-size: 15px; padding-top: 38px; color: #232434=
+;font-family:Open Sans, Arial, 'sans-serif'; font-weight: bold;">Notice Per=
+iod*</span>=0A=
+				  <span style=3D"display: inline-block">=0A=
+                <input type=3D"radio" id=3D"immediately" value=3D"0" name=
+=3D"notice_period" required mandatory=3D"true" style=3D"margin: 0; padding:=
+ 0;font-family:Open Sans, Arial, 'sans-serif';">=0A=
+                <label for=3D"immediately" style=3D"display: inline-block; =
+outline: none; border: none; padding: 8px 0px 10px 0; border-radius: 30px; =
+color: #232434; font-size: 15px; text-align: center; margin-right: 10px;fon=
+t-family:Open Sans, Arial, 'sans-serif';">Immediately</label>=0A=
+                </span>=0A=
+=0A=
+=0A=
+				  <span style=3D"display: inline-block">=0A=
+                <input type=3D"radio" id=3D"15days" value=3D"2" name=3D"not=
+ice_period" required mandatory=3D"true" style=3D"font-family:Open Sans, Ari=
+al, 'sans-serif';margin: 0; padding: 0;">=0A=
+                <label for=3D"15days" style=3D"display: inline-block; outli=
+ne: none; border: none; padding: 8px 0px 10px 0; border-radius: 30px; color=
+: #232434; font-size: 15px; text-align: center; margin-right: 10px;font-fam=
+ily:Open Sans, Arial, 'sans-serif';">15 Days</label>=0A=
+                </span>=0A=
+				  <span style=3D"display: inline-block">=0A=
+                <input type=3D"radio" id=3D"30days" value=3D"4" name=3D"not=
+ice_period" required mandatory=3D"true" style=3D"font-family:Open Sans, Ari=
+al, 'sans-serif';margin: 0; padding: 0;">=0A=
+                <label for=3D"30days" style=3D"display: inline-block; outli=
+ne: none; border: none; padding: 8px 0px 10px 0; border-radius: 30px; color=
+: #232434; font-size: 15px; text-align: center; margin-right: 10px;font-fam=
+ily:Open Sans, Arial, 'sans-serif';">30 Days</label>=0A=
+                </span>=0A=
+=0A=
+				<span style=3D"display: inline-block">=0A=
+                <input type=3D"radio" id=3D"2months" value=3D"8" name=3D"no=
+tice_period" required mandatory=3D"true" style=3D"font-family:Open Sans, Ar=
+ial, 'sans-serif';margin: 0; padding: 0;">=0A=
+                <label for=3D"2months" style=3D"display: inline-block; outl=
+ine: none; border: none; padding: 8px 0px 10px 0; border-radius: 30px; colo=
+r: #232434; font-size: 15px; text-align: center; margin-right: 10px;font-fa=
+mily:Open Sans, Arial, 'sans-serif';">2 Months</label>=0A=
+                </span>=0A=
+=0A=
+				  <span style=3D"display: inline-block">=0A=
+                <input type=3D"radio" id=3D"3months" value=3D"9" name=3D"no=
+tice_period" required mandatory=3D"true" style=3D"font-family:Open Sans, Ar=
+ial, 'sans-serif';margin: 0; padding: 0;">=0A=
+                <label for=3D"3months" style=3D"display: inline-block; outl=
+ine: none; border: none; padding: 8px 0px 10px 0; border-radius: 30px; colo=
+r: #232434; font-size: 15px; text-align: center; margin-right: 10px;font-fa=
+mily:Open Sans, Arial, 'sans-serif';">3 Months</label>=0A=
+                </span>=0A=
+=0A=
+				</td>=0A=
+            </tr>=0A=
+            <tr>=0A=
+              <td align=3D"left" valign=3D"top"><span style=3D"display: blo=
+ck; padding-bottom: 3px; font-size: 15px; padding-top: 25px; color: #232434=
+;font-family:Open Sans, Arial, 'sans-serif'; font-weight: bold;">Current An=
+nual Salary in Lacs*</span>=0A=
+                <select type=3D"ChoiceField" required=3D"true" mandatory=3D=
+"true" name=3D"salary_in_lakh" id=3D"salary_in_lakh" style=3D"display: bloc=
+k; outline: none; border: 1px solid #AFD1E9; padding: 0; border-radius: 8px=
+; color: #232434; font-size: 15px; text-align: left; margin-right: 12px; ma=
+rgin-top: 5px; width: 285px; height: 40px; padding: 0 5px;font-family:Open =
+Sans, Arial, 'sans-serif';background-color: #fff;">=0A=
+                  <option value=3D"" selected style=3D" color: #232434; fon=
+t-size: 15px; font-weight: 400;font-family:Open Sans, Arial, 'sans-serif';"=
+>Select Salary</option>=0A=
+                  <option  value=3D"0">0</option>=0A=
+				  <option  value=3D"1">1</option>=0A=
+				  <option  value=3D"2">2</option>=0A=
+				  <option  value=3D"3">3</option>=0A=
+				  <option  value=3D"4">4</option>=0A=
+				  <option  value=3D"5">5</option>=0A=
+				  <option  value=3D"6">6</option>=0A=
+				  <option  value=3D"7">7</option>=0A=
+				  <option  value=3D"8">8</option>=0A=
+				  <option  value=3D"9">9</option>=0A=
+				  <option  value=3D"10">10</option>=0A=
+				  <option  value=3D"11">11</option>=0A=
+				  <option  value=3D"12">12</option>=0A=
+				  <option  value=3D"13">13</option>=0A=
+                  <option  value=3D"14">14</option>=0A=
+				  <option  value=3D"15">15</option>=0A=
+				  <option  value=3D"16">16</option>=0A=
+				  <option  value=3D"17">17</option>=0A=
+				  <option  value=3D"18">18</option>=0A=
+				  <option  value=3D"19">19</option>=0A=
+				  <option  value=3D"20">20</option>=0A=
+				  <option  value=3D"21">21</option>=0A=
+				  <option  value=3D"22">22</option>=0A=
+				  <option  value=3D"23">23</option>=0A=
+				  <option  value=3D"24">24</option>=0A=
+				  <option  value=3D"25">25</option>=0A=
+				  <option  value=3D"26">26</option>=0A=
+				  <option  value=3D"27">27</option>=0A=
+                  <option  value=3D"28">28</option>=0A=
+				  <option  value=3D"29">29</option>=0A=
+				  <option  value=3D"30">30</option>=0A=
+				  <option  value=3D"31">31</option>=0A=
+				  <option  value=3D"32">32</option>=0A=
+				  <option  value=3D"33">33</option>=0A=
+				  <option  value=3D"34">34</option>=0A=
+				  <option  value=3D"35">35</option>=0A=
+				  <option  value=3D"36">36</option>=0A=
+				  <option  value=3D"37">37</option>=0A=
+				  <option  value=3D"38">38</option>=0A=
+				  <option  value=3D"39">39</option>=0A=
+				  <option  value=3D"40">40</option>=0A=
+				  <option  value=3D"41">41</option>=0A=
+                  <option  value=3D"42">42</option>=0A=
+				  <option  value=3D"43">43</option>=0A=
+				  <option  value=3D"44">44</option>=0A=
+				  <option  value=3D"45">45</option>=0A=
+				  <option  value=3D"46">46</option>=0A=
+				  <option  value=3D"47">47</option>=0A=
+				  <option  value=3D"48">48</option>=0A=
+				  <option  value=3D"49">49</option>=0A=
+				  <option  value=3D"50">50</option>=0A=
+				  <option  value=3D"51">50+</option>=0A=
+=0A=
+                </select></td>=0A=
+            </tr>=0A=
+			<tr>=0A=
+				<td align=3D"center" valign=3D"top" style=3D"padding:20px 20px 5px 20px=
+; font-weight: bold; font-size: 15px;">=0A=
+				  <input type=3D"submit" value=3D"Continue" style=3D"display: inline-bl=
+ock; width: 150px; background-color: #2521D2; outline: none; border: 1px so=
+lid #007CFF; padding: 10px 0px; border-radius: 4px; color: #fff; font-size:=
+ 15px; text-align: center; font-weight: 700; cursor: pointer; margin: 5px;f=
+ont-family:Open Sans, Arial, 'sans-serif';"></td>=0A=
+			  </tr>=0A=
+          </tbody>=0A=
+        </table>=0A=
+			  <input type=3D"hidden" name=3D"jobid" value =3D 12566860 style=3D"disp=
+lay: none;">=0A=
+			  <input type=3D"hidden" name=3D"jslug1" value =3D test-engineer-permane=
+nt style=3D"display: none;">=0A=
+              <input type=3D"hidden" name=3D"jslug2" value =3D quess-corp-m=
+agna-infotech style=3D"display: none;">=0A=
+              <input type=3D"hidden" name=3D"utm_campaign" value =3D active=
+_minus_r_4_to_6_28-Sep_new style=3D"display: none;">=0A=
+              <input type=3D"hidden" name=3D"next" value =3D "/drm" style=
+=3D"display: none;">=0A=
+              <input type=3D"hidden" name=3D"tc" value =3D AAAAAAAAAAAAAAAA=
+AAAAAAAAAAAAAAAAAAAAAAAAAABLAjUcKBsKNhxXB2heQF49LEQnSS9AQDFqDg0ScnF8QgZJd0J=
+zSA=3D=3D style=3D"display: none;">=0A=
+=0A=
+=0A=
+		  </form>=0A=
+			  </td>=0A=
+    </tr>=0A=
+	  <tr>=0A=
+	  	<td align=3D"left" valign=3D"top">=0A=
+		  <p align=3D"left" style=3D"color: #232434; font-size: 15px;text-align: =
+left;padding-top: 25px; hyphens: none; margin: 0; padding-left: 18px; paddi=
+ng-right: 30px; line-height: 18px; font-family:Open Sans, Arial, 'sans-seri=
+f'; padding-bottom: 30px;">Best Regards,<br>=0A=
+=0A=
+Team Shine</p>=0A=
+=0A=
+=0A=
+								  <p align=3D"left" style=3D"margin: 0 auto 18px auto; border-top: =
+solid 1px #DDDFE1; max-width: 550px;"></p>=0A=
+		  </td>=0A=
+	  </tr>=0A=
+	  <tr>=0A=
+	  <td align=3D"left" valign=3D"top">=0A=
+		  <p align=3D"left" style=3D"margin: 0; padding: 0; font-family:Open Sans=
+, Arial, 'sans-serif'; font-size: 12px; color: #505E6B; padding:0 30px 22px=
+ 18px; hyphens: none;">Please add <a href=3D"mailto:alert@shine.com" style=
+=3D"text-decoration: underline; color: #505E6B;"> alert@shine.com</a> to yo=
+ur Address Book or Safe List to prevent future Shine Updates from being cla=
+ssified as Junk/Bulk Mail.Security Alert- In case you receive a suspicious =
+mail from anyone claiming to be a client of <a href=3D"http://delivery.job.=
+shine.com/HASEKMJXN?id=3D37602=3DJU5UVlFWBQZTGQcFVlUEVQUGVQEBUFcBVQFSXFFUUV=
+ZTBAJTUgNWUFFXDlIHUlYDBwAZRhcLDFZdDFEJUSEFCQdbCEgBDl5KUFMPUVkDXAMFW1QBU1FQD=
+gYZDEwQEVhLSVYBCgsXVkQYS1wLAx4WX1oNABsGDQsYeyQ3fS8sKDwoDQ0CHhcA&fl=3DDkYQFh=
+FbHBkWEkFKElgMWVZNBloITQtOQA0NVgFODgsBWwpJ&ext=3DdGM9QUFBQUFBQUFBQUFBQUFBQU=
+FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQkxBalVjS0JzS05oeFhCMmhlUUY0OUxFUW5TUzlBU=
+URGcURnMFNjbkY4UWdaSmQwSnpTQT09Jm5leHQ9L215c2hpbmUvbXlkYXNoYm9hcmQvJnV0bV9z=
+b3VyY2U9T3duYmFzZVN5c3RlbUVtYWlscyZ1dG1fbWVkaXVtPWdtYWlsLmNvbSZldG1fY29udGV=
+udD02NTE0ZjIzZjQxNTg2YzUxMDAwZjE0OWF8fDIwMjMtMDktMjhUMTg6MDc6MTIuOTQ0NDQzfG=
+ImIzM5O29TbUpVMURoejZXbjVycjV5RlBJQm9vdUZkb1lpTUE5U2c5ZjV4T1N0b3c9JiMzOTt8f=
+HNsb2dvJnV0bV9jYW1wYWlnbj1hY3RpdmVfbWludXNfcl80X3RvXzZfMjgtU2VwX25ldw=3D=3D=
+" style=3D"text-decoration: underline; color: #505E6B;">Shine.com</a>, aski=
+ng for your personal information or money by pretending to offer you a job =
+please do not respond to such mails and bring it to the immediate notice of=
+ <a href=3D"http://delivery.job.shine.com/HASEKMJXN?id=3D37602=3DJU5UVlFWBQ=
+ZTGQcFVlUEVQUGVQEBUFcBVQFSXFFUUVZTBAJTUgNWUFFXDlIHUlYDBwAZRhcLDFZdDFEJUSEFC=
+QdbCEgBDl5KUFMPUVkDXAMFW1QBU1FQDgYZDEwQEVhLSVYBCgsXVkQYS1wLAx4WX1oNABsGDQsY=
+eyQ3fS8sKDwoDQ0CHhcA&fl=3DDkYQFhFbHBkWEkFKElgMWVZNBloITQtOQA0NVgFODgsBWwpJ&=
+ext=3DdGM9QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQkxBalVjS=
+0JzS05oeFhCMmhlUUY0OUxFUW5TUzlBUURGcURnMFNjbkY4UWdaSmQwSnpTQT09Jm5leHQ9L215=
+c2hpbmUvbXlkYXNoYm9hcmQvJnV0bV9zb3VyY2U9T3duYmFzZVN5c3RlbUVtYWlscyZ1dG1fbWV=
+kaXVtPWdtYWlsLmNvbSZldG1fY29udGVudD02NTE0ZjIzZjQxNTg2YzUxMDAwZjE0OWF8fDIwMj=
+MtMDktMjhUMTg6MDc6MTIuOTQ0NDQzfGImIzM5O29TbUpVMURoejZXbjVycjV5RlBJQm9vdUZkb=
+1lpTUE5U2c5ZjV4T1N0b3c9JiMzOTt8fHNsb2dvJnV0bV9jYW1wYWlnbj1hY3RpdmVfbWludXNf=
+cl80X3RvXzZfMjgtU2VwX25ldw=3D=3D" style=3D"text-decoration: underline; colo=
+r: #505E6B;">Shine.com</a> by writing to us at <a href=3D"mailto:contactus@=
+shine.com" style=3D"text-decoration: none; color: #5563CA;">contactus@shine=
+.com</a>.</p>=0A=
+		  </td>=0A=
+	  </tr>=0A=
+  </tbody>=0A=
+</table>=0A=
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" styl=
+e=3D"font-family: Arial, Helvetica, 'sans-serif'; color: #333; font-size: 1=
+1px; background-color: #fff;">=0A=
+  <tbody>=0A=
+    <tr>=0A=
+      <td align=3D"center" style=3D"height: 25px" width=3D"100%"><a href=3D=
+"http://delivery.job.shine.com/HASEKMJXN?id=3D37602=3DJU5UVlFWBQZTGQMCWVNQU=
+gVQUwdTAwQAVwEBCwBQB1RUClYHVwQFA1RRBQVTBAMPUQEZRhcLDFZdDFEJUSEFCQdbCEgBDl5K=
+UFMPUVkDXAMFW1QBU1FQDgYZDEwQEVhLSVYBCgsXVkQYS1wLAx4WX1oNABsGDQsYeyQ3fS8sKDw=
+oDQ0CHhcA&fl=3DDkYQFhFbHBkWEkFKElgMWVZNBloITQtOQA0NVgFODgsBWwpJ&ext=3DdGM9Q=
+UFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQkxBalVjS0JzS05oeFhC=
+MmhlUUY0OUxFUW5TUzlBUURGcURnMFNjbkY4UWdaSmQwSnpTQT09Jm5leHQ9L215c2hpbmUvYWN=
+jb3VudHNldHRpbmdzLyZhcHBQYXJhbXM9eyUyMmVuYl9ibG9jayUyMiUzQSUyMmNsc19lZGl0UH=
+JpdmFjeSUyMn0mdXRtX3NvdXJjZT1Pd25iYXNlU3lzdGVtRW1haWxzJnV0bV9tZWRpdW09Z21ha=
+WwuY29tJmV0bV9jb250ZW50PTY1MTRmMjNmNDE1ODZjNTEwMDBmMTQ5YXx8MjAyMy0wOS0yOFQx=
+ODowNzoxMi45NDQ0NDN8YiYjMzk7b1NtSlUxRGh6NlduNXJyNXlGUElCb291RmRvWWlNQTlTZzl=
+mNXhPU3Rvdz0mIzM5O3wmdXRtX2NhbXBhaWduPWFjdGl2ZV9taW51c19yXzRfdG9fNl8yOC1TZX=
+BfbmV3JnV0bV9jb250ZW50PURSTTFKRA=3D=3D" style=3D"color:#939393;font-size:10=
+px;-decoration:none;">Unsubscribe</a></td>=0A=
+    </tr>=0A=
+  </tbody>=0A=
+</table>=0A=
+<p>&nbsp;<br></p>=0A=
+=0A=
+Click <a href=3D"http://delivery.job.shine.com/HASEKMJXN?id=3D37602=3DM05UV=
+lFWBQZTGRZEQRBFFxNDRRVFQkYXE0VEGERBQkRGEkRGQkETFkFFFkRBEEUXE1MZRhcLDFZdDFEJ=
+USEFCQdbCEgBDl5KUFMPUVkDXAMFW1QBU1FQDgYZDEwQEVhLSVYBCgsXVkQYS1wLAx4WX1oNABs=
+GDQsYeyQ3fS8sKDwoDQ0CHhcA">here</a> to unsubscribe=0A=
+<img id=3D'SBBBB' src=3D'http://delivery.job.shine.com/HASEKMJXN?id=3D37602=
+=3DKU5UVlFWBQZTGRZEQRBFFxNDRRVFQkYXE0VEGERBQkRGEkRGQkETFkFFFkRBEEUXE1MZRhcL=
+DFZdDFEJUSEFCQdbCEgBDl5KUFMPUVkDXAMFW1QBU1FQDgYZDEwQEVhLSVYBCgsXVkQYS1wLAx4=
+WX1oNABsGDQsYeyQ3fS8sKDwoDQ0CHhcA' /></body>=0A=
+</html>=0A=
+

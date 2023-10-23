@@ -1,0 +1,201 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:f00d:b0:4fd:23d3:a27 with SMTP id t13csp473175pxk;
+        Sat, 30 Sep 2023 15:36:48 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IF3I7WRA78rFX6pECTKq5BJiTAYXqIJ2YuOSlkbNITzGev276MfflaAeOe5fsH1bwGRoB/+
+X-Received: by 2002:a05:6a20:734b:b0:134:2e3c:9845 with SMTP id v11-20020a056a20734b00b001342e3c9845mr8404458pzc.22.1696113408206;
+        Sat, 30 Sep 2023 15:36:48 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1696113408; cv=none;
+        d=google.com; s=arc-20160816;
+        b=tP2E6Tp2S9PVZBZPZWr8VncYmy2q56dwMaD7djwc9wfINohYjDs/3KvRdgQBDebp0R
+         XZBSrCvGVFas284krc07imND7+7ikZPpLnB4cm1x8mdRK/JevKxvtgDntMrMDWrcyNyQ
+         pEECpdGYaSPgkoIedk382OBrqhjterCokjHVxqlFWWoNveIgDfQBjMCA5uKTtuqMaTNF
+         YdrOPKTfgExgiUyAkIl8Ev+u6bkv2mgR+vAa+w+4ii0f6TXGCZ5ddbADJvAdeUhgfL76
+         lTStpyB92DYLvqRwlXjURLpUVtlItWBOar6/zDB8zVp5HFAPj4YgKshEukBWqNSnQg5E
+         UBOA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:content-transfer-encoding:mime-version:list-unsubscribe
+         :message-id:subject:reply-to:from:to:date:dkim-signature
+         :dkim-signature;
+        bh=jQt+wbIVoy+COnM6U3J9OSiBQUcD9/4QXPMpIejqVcs=;
+        fh=muYZlfPIN43a2ojUmrxsxD/hpu1DuRpn5+fnB6pt4e0=;
+        b=HpKg3C8e4UiRgxXojvihi+c6TckHlMMhcM9CrJvrxoCrsURiVxZNttVFmZWecrt4Zh
+         bpVyr8stuiebW3xrcijKwxnxAxOd0BF4YPGfa+CIqfiu+hVcXDn86+EY3wlBaGHeXC7u
+         ZIRmfxTl7C7NtD+bC9c5XFtovoAi/BT7F35PRPAAh9jKVS3OaFImJ6kia4w39vjRvdyt
+         83zltcHTlTijrlK+jS4OyLxFoxaxlPDAFIJTxc7mikuhhd88nKYvvV4YzP0qP4wyFGth
+         SNeDuhqkrfpSZvgQpYbhqijt/GwmO/vcjpsWwKn2wW7lNNCNW6aKKC6HFdOlOw8p446W
+         l/9Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@pantech.ai header.s=qkkjjgwtrwr4breqaamknazfozf5ld5q header.b=Em1nbBfW;
+       dkim=pass header.i=@amazonses.com header.s=rlntogby6xsxlfnvyxwnvvhttakdsqto header.b=iK7dA9np;
+       spf=pass (google.com: domain of 0109018ae83cb371-9bc09fb1-7a3a-4def-9d61-87d1ba46c80e-000000@ap-south-1.amazonses.com designates 76.223.180.111 as permitted sender) smtp.mailfrom=0109018ae83cb371-9bc09fb1-7a3a-4def-9d61-87d1ba46c80e-000000@ap-south-1.amazonses.com
+Return-Path: <0109018ae83cb371-9bc09fb1-7a3a-4def-9d61-87d1ba46c80e-000000@ap-south-1.amazonses.com>
+Received: from c180-111.smtp-out.ap-south-1.amazonses.com (c180-111.smtp-out.ap-south-1.amazonses.com. [76.223.180.111])
+        by mx.google.com with ESMTPS id s2-20020a170903200200b001c43fce9c7asi11837264pla.444.2023.09.30.15.36.47
+        for <srijani515@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 30 Sep 2023 15:36:48 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 0109018ae83cb371-9bc09fb1-7a3a-4def-9d61-87d1ba46c80e-000000@ap-south-1.amazonses.com designates 76.223.180.111 as permitted sender) client-ip=76.223.180.111;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@pantech.ai header.s=qkkjjgwtrwr4breqaamknazfozf5ld5q header.b=Em1nbBfW;
+       dkim=pass header.i=@amazonses.com header.s=rlntogby6xsxlfnvyxwnvvhttakdsqto header.b=iK7dA9np;
+       spf=pass (google.com: domain of 0109018ae83cb371-9bc09fb1-7a3a-4def-9d61-87d1ba46c80e-000000@ap-south-1.amazonses.com designates 76.223.180.111 as permitted sender) smtp.mailfrom=0109018ae83cb371-9bc09fb1-7a3a-4def-9d61-87d1ba46c80e-000000@ap-south-1.amazonses.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=qkkjjgwtrwr4breqaamknazfozf5ld5q; d=pantech.ai; t=1696113406;
+	h=Date:To:From:Reply-To:Subject:Message-ID:List-Unsubscribe:MIME-Version:Content-Type:Content-Transfer-Encoding;
+	bh=qJzJMl5f2w3tOYK+s34QCMANnkbfXLcnmgu+kYXonTE=;
+	b=Em1nbBfW0QVh//tgbEDr73R8Rwal+KGMdPzHHxC+S3Nheo5UaUqim4Ptj/8ReRr2
+	V7njOAQPHFyVYNKSG824Fu/+uxvQp+CbcXti+X7kNCKtkujGZCk5Wi6O1IA074z7Qx1
+	1k40ua5bWwxQPqnwxdnAYgokVWUG/QBESs1Q8kKAZZqbcxpPfARa1gMMTdeHQ4JBB/A
+	JdoGIllebCq7ZtsFeGngRDHuTy+eksggrnRw9zMkW05m88OUTypzEJT5lH9FDgN+VPj
+	GLOtvV7lwVwDdsQeGxiXZlJj19KiCsdIvhnaBbCbGY2is3VscnwAQRbGNJ7hmnrrh1s
+	zAdHNdptcQ==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=rlntogby6xsxlfnvyxwnvvhttakdsqto; d=amazonses.com; t=1696113406;
+	h=Date:To:From:Reply-To:Subject:Message-ID:List-Unsubscribe:MIME-Version:Content-Type:Content-Transfer-Encoding:Feedback-ID;
+	bh=qJzJMl5f2w3tOYK+s34QCMANnkbfXLcnmgu+kYXonTE=;
+	b=iK7dA9npAIAk3lwRU+o1lyBZMFkF6K3XXyodK7TZ24nUxbo0QUToifkq0M9qOj8r
+	T3K05wgWwMCzLhcIgax7wdcpmNgq8C1QXlVCCOvcL5n1t5n+P/HSMLSR/zVIHPtGwIj
+	kunpbQtmEqhbvUEDRHUNFSKu6uMEiGnfNWwwvz0o=
+Date: Sat, 30 Sep 2023 22:36:46 +0000
+To: Srijani Chakraborty <srijani515@gmail.com>
+From: "Pantech.AI" <sales@pantech.ai>
+Reply-To: "Pantech.AI" <sales@pantech.ai>
+Subject: =?UTF-8?Q?=F0=9F=94=B4FINAL_NOTICE_-ENROLLMENT_ENDS_TOMORROW?=
+Message-ID: <0109018ae83cb371-9bc09fb1-7a3a-4def-9d61-87d1ba46c80e-000000@ap-south-1.amazonses.com>
+X-Mailer: Sendy (https://sendy.co)
+List-Unsubscribe: <http://mail.warriorsway.in/unsubscribe/lKFGHPo5sKTYShN8rN200892RYrw8HPN7WuN9KMLRYBLg/7tiJmH76399weuYP0HKu763qCg/0CHA0WcDysLlDWyxjheIjA>
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+Feedback-ID: 1.ap-south-1.RoK1cU+3EFspBlOU6Z9uV32mtGZmT4sinuoWVVUzL7Y=:AmazonSES
+X-SES-Outgoing: 2023.09.30-76.223.180.111
+
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<p style="text-align: center;"><span style="font-family:arial;"><img alt="" src="http://mail.warriorsway.in/uploads/1694066608.png" style="width: 290px; height: 50px;" /></span></p>
+
+<h3 style="text-align: center;"><span style="font-family:arial;"><span style="color:#000000;"><strong><img alt="" src="http://mail.warriorsway.in/uploads/1696090353.png" style="width: 733px; height: 260px;" />&nbsp;&nbsp;</strong></span></span></h3>
+
+<p><span style="font-family:arial;"><span style="font-size:18px;"><span style="color:#000000;"><strong>Dear&nbsp;Srijani Chakraborty</strong></span></span></span></p>
+
+<p style="text-align: center;"><span style="color:#FF0000;"><span style="font-family:arial;"><strong><span style="font-size:18px;">🏆Gold Membership <s>@Rs.19,999</s> Rs.4,999</span></strong></span></span></p>
+
+<h3 style="text-align: center;"><span style="font-family:arial;"><strong><span style="font-size:18px;"><img alt="" src="http://mail.warriorsway.in/uploads/1694860643.png" style="width: 576px; height: 300px;" /></span></strong></span></h3>
+
+<p style="text-align: center;"><img alt="" src="http://mail.warriorsway.in/uploads/1696090452.png" style="width: 654px; height: 354px;" /></p>
+
+<p style="text-align: center;"><span style="font-family:arial;"><span style="font-size:16px;"><strong>Do You want to be one among the people in Hall of Fame<br />
+&nbsp;<a href="http://mail.warriorsway.in/l/zDZYwDVO4x7A9u692kAROQ/6ceH9e892pPuwUIVUtmpuvQw/0CHA0WcDysLlDWyxjheIjA">https://www.pantechsolutions.net/hall-of-fame-3-month-internship</a></strong></span></span><br />
+<br />
+<span style="font-family:arial;"><img alt="" src="http://mail.warriorsway.in/uploads/1694861149.png" style="width: 102px; height: 102px;" /></span></p>
+
+<p style="text-align: center;"><span style="font-family:arial;"><strong><a href="http://mail.warriorsway.in/l/zDZYwDVO4x7A9u692kAROQ/P4XZe6PGq892SEF1Xgo763ygEA/0CHA0WcDysLlDWyxjheIjA" rel="noopener noreferrer" style="display: inline-block; text-decoration: none; border-style: solid; text-align: center; background-color: rgb(214, 29, 49); color: rgb(255, 255, 255); font-size: 16px; border-color: rgb(214, 29, 49); border-radius: 4px; border-width: 1px; padding: 12px 20px;" target="_blank"><span data-key="287"><span data-offset-key="287:0" data-slate-leaf="true"><span data-slate-content="true" spellcheck="true">&nbsp;Grab the Gold Membership Now @Rs.4999 </span></span></span></a>&nbsp;</strong></span></p>
+
+<p style="text-align: center;"><span style="font-family:arial;"><strong><a href="http://mail.warriorsway.in/l/zDZYwDVO4x7A9u692kAROQ/VDke5jbp4fFH3s5G3FoQcw/0CHA0WcDysLlDWyxjheIjA" rel="noopener noreferrer" style="display: inline-block; text-decoration: none; border-style: solid; text-align: center; background-color: rgb(214, 29, 49); color: rgb(255, 255, 255); font-size: 16px; border-color: rgb(214, 29, 49); border-radius: 4px; border-width: 1px; padding: 12px 20px;" target="_blank"><span data-key="287"><span data-offset-key="287:0" data-slate-leaf="true"><span data-slate-content="true" spellcheck="true">&nbsp;Grab the Gold Membership Now @Rs.4999 (International payment link) </span></span></span></a>&nbsp;</strong></span></p>
+
+<h3 style="text-align: center;"><span style="color:#008080;"><span style="font-size:16px;"><span style="font-family:arial;"><strong>Only Today Rs. ₹4,999</strong></span></span></span><br />
+<span style="font-size:14px;"><span style="font-family:arial;"><strong>(EMI Option Available)<br />
+- You can Get this by sharing with your Friends -</strong></span></span></h3>
+
+<p style="text-align: center;"><span style="font-size:14px;"><span style="font-family:arial;"><strong>Gold Membership Enquiry Form for 1 : 1&nbsp;<br />
+<a href="http://mail.warriorsway.in/l/zDZYwDVO4x7A9u692kAROQ/kKnnjUhhNEedcjDI2dtVuQ/0CHA0WcDysLlDWyxjheIjA">https://docs.google.com/forms/d/e/1FAIpQLSexo8huUbMgTS_olQI2rlRpCd6GdktypBgcNBd0lfpRzzdjxg/viewform?usp=sf_link</a></strong></span></span></p>
+
+<hr />
+<h3 style="text-align: center;"><span style="font-family:arial;"><span style="color:#0000FF;"><strong>📜3 Month Internship on A.I / Data Science&nbsp;<br />
+<s>@Rs.4,999 </s>&nbsp;Rs.1,499</strong></span></span></h3>
+
+<p style="text-align: center;"><span style="font-family:arial;"><u><strong><img alt="" src="http://mail.warriorsway.in/uploads/1694863741.jpeg" style="width: 509px; height: 130px;" /></strong></u></span></p>
+
+<p style="text-align: center;"><span style="font-size:14px;"><span style="font-family:arial;">Lifetime access to 5 Courses<br />
+All Project Source Code &amp; Materials<br />
+Unlimited Weekend Live Session<br />
+<strong><span style="color:#0000FF;">3 Month Internship Certificate</span><br />
+<span style="color:#0000FF;">Internship Offer Letter </span><span style="color:#008080;">FREE</span></strong><br />
+10 Days A.I Live Hackathon <s><span style="color:#0000FF;">(Rs.2,999)</span></s> <span style="color:#008080;"><strong>FREE</strong></span></span></span></p>
+
+<p style="text-align: center;"><span style="font-family:arial;"><span style="font-size:16px;"><strong>&nbsp;Hall of Fame :&nbsp;&nbsp;<a href="http://mail.warriorsway.in/l/zDZYwDVO4x7A9u692kAROQ/6ceH9e892pPuwUIVUtmpuvQw/0CHA0WcDysLlDWyxjheIjA">https://www.pantechsolutions.net/hall-of-fame-3-month-internship</a></strong></span></span></p>
+
+<p style="text-align: center;"><span style="font-family:arial;"><strong><a href="http://mail.warriorsway.in/l/zDZYwDVO4x7A9u692kAROQ/dcJ8ShaAWx0aGqurC3tx6w/0CHA0WcDysLlDWyxjheIjA" rel="noopener noreferrer" style="display: inline-block; text-decoration: none; border-style: solid; text-align: center; background-color: rgb(214, 29, 49); color: rgb(255, 255, 255); font-size: 16px; border-color: rgb(214, 29, 49); border-radius: 4px; border-width: 1px; padding: 12px 20px;" target="_blank"><span data-key="287"><span data-offset-key="287:0" data-slate-leaf="true"><span data-slate-content="true" spellcheck="true">&nbsp;Click here to register for 3 Months Certification on AI@1499&nbsp;</span></span></span></a></strong></span></p>
+
+<p style="text-align: center;"><span style="font-family:arial;"><strong><a href="http://mail.warriorsway.in/l/zDZYwDVO4x7A9u692kAROQ/B0Ttlo87631kaDzcrm5DgV763w/0CHA0WcDysLlDWyxjheIjA" rel="noopener noreferrer" style="display: inline-block; text-decoration: none; border-style: solid; text-align: center; background-color: rgb(214, 29, 49); color: rgb(255, 255, 255); font-size: 16px; border-color: rgb(214, 29, 49); border-radius: 4px; border-width: 1px; padding: 12px 20px;" target="_blank"><span data-key="287"><span data-offset-key="287:0" data-slate-leaf="true"><span data-slate-content="true" spellcheck="true">&nbsp;Click here to register for 3 Months Certification on AI@1499&nbsp; (International Payment Link)</span></span></span></a></strong></span></p>
+
+<p style="text-align: center;"><span style="font-family:arial;"><strong><span data-key="287"><span data-offset-key="287:0" data-slate-leaf="true"><span data-slate-content="true" spellcheck="true"><span style="font-size:14px;">3 Months Internship Program Enquiry Form for 1 : 1 Call<br />
+<a href="http://mail.warriorsway.in/l/zDZYwDVO4x7A9u692kAROQ/qQjeqFjmNx8DuCh2uWC0KQ/0CHA0WcDysLlDWyxjheIjA">https://docs.google.com/forms/d/e/1FAIpQLSc7wDQt1ezPOL1nFEWX3u0VtBcxtpIMNXmBWAc7k5uKSEkiQg/viewform?usp=sf_link</a></span></span></span></span></strong></span></p>
+
+<hr />
+<h3 style="text-align: center;"><span style="font-family:arial;"><span style="color:#0000FF;"><strong><span data-key="287"><span data-offset-key="287:0" data-slate-leaf="true"><span data-slate-content="true" spellcheck="true">📜3 Month Internship on Embedded System &amp; IoT&nbsp;<br />
+<s>@Rs.4,999 </s>&nbsp;Rs.1,499</span></span></span></strong></span></span></h3>
+
+<p style="text-align: center;"><span style="font-family:arial;"><strong><span data-key="287"><span data-offset-key="287:0" data-slate-leaf="true"><span data-slate-content="true" spellcheck="true"><img alt="" src="http://mail.warriorsway.in/uploads/1694863955.jpeg" style="width: 509px; height: 130px;" /></span></span></span></strong></span></p>
+
+<p style="text-align: center;"><span style="font-size:14px;"><span style="font-family:arial;">Lifetime access to 5 Courses<br />
+All Project Source Code &amp; Materials<br />
+Unlimited Weekend Live Session<br />
+<strong><span style="color:#0000FF;">3 Month Internship Certificate<br />
+Internship Offer Letter</span> <span style="color:#008080;">FREE</span></strong><br />
+10 Days ESD&nbsp;Live Hackathon<span style="color:#0000FF;"> <s>(Rs.2,999)</s></span> <span style="color:#008080;"><strong>FREE</strong></span></span></span></p>
+
+<p style="text-align: center;"><span style="font-family:arial;"><span style="font-size:16px;"><strong>&nbsp;Hall of Fame :&nbsp;&nbsp;<a href="http://mail.warriorsway.in/l/zDZYwDVO4x7A9u692kAROQ/6ceH9e892pPuwUIVUtmpuvQw/0CHA0WcDysLlDWyxjheIjA">https://www.pantechsolutions.net/hall-of-fame-3-month-internship</a></strong></span></span></p>
+
+<p style="text-align: center;"><span style="font-family:arial;"><strong><a href="http://mail.warriorsway.in/l/zDZYwDVO4x7A9u692kAROQ/y6892l0zt763xt763YK2IH9QJdzQ/0CHA0WcDysLlDWyxjheIjA" rel="noopener noreferrer" style="display: inline-block; text-decoration: none; border-style: solid; text-align: center; background-color: rgb(214, 29, 49); color: rgb(255, 255, 255); font-size: 16px; border-color: rgb(214, 29, 49); border-radius: 4px; border-width: 1px; padding: 12px 20px;" target="_blank"><span data-key="287"><span data-offset-key="287:0" data-slate-leaf="true"><span data-slate-content="true" spellcheck="true">&nbsp;Click here to register for 3 Months Certification on ESD&nbsp;@1499</span></span></span></a>&nbsp;</strong></span></p>
+
+<p style="text-align: center;"><span style="font-family:arial;"><strong><a href="http://mail.warriorsway.in/l/zDZYwDVO4x7A9u692kAROQ/EqzqKBAQI9tQuNhdrMerdw/0CHA0WcDysLlDWyxjheIjA" rel="noopener noreferrer" style="display: inline-block; text-decoration: none; border-style: solid; text-align: center; background-color: rgb(214, 29, 49); color: rgb(255, 255, 255); font-size: 16px; border-color: rgb(214, 29, 49); border-radius: 4px; border-width: 1px; padding: 12px 20px;" target="_blank"><span data-key="287"><span data-offset-key="287:0" data-slate-leaf="true"><span data-slate-content="true" spellcheck="true">&nbsp;Click here to register for 3 Months Certification on ESD&nbsp;@1499 (International Payment link)</span></span></span></a></strong></span><span style="font-family:arial;"><strong>&nbsp;</strong></span></p>
+
+<p style="text-align: center;"><span style="font-family:arial;"><strong><span data-key="287"><span data-offset-key="287:0" data-slate-leaf="true"><span data-slate-content="true" spellcheck="true"><span style="font-size:14px;">3 Months Internship Program Enquiry Form for 1 : 1 Call<br />
+<a href="http://mail.warriorsway.in/l/zDZYwDVO4x7A9u692kAROQ/qQjeqFjmNx8DuCh2uWC0KQ/0CHA0WcDysLlDWyxjheIjA">https://docs.google.com/forms/d/e/1FAIpQLSc7wDQt1ezPOL1nFEWX3u0VtBcxtpIMNXmBWAc7k5uKSEkiQg/viewform?usp=sf_link</a></span></span></span></span></strong></span></p>
+
+<hr />
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><span style="font-family:arial;"><span style="color:#DAA520;"><strong>Sample Internship Certificate&nbsp;</strong></span></span></p>
+
+<h3 style="text-align: center;"><span style="font-family:arial;"><img alt="" src="http://mail.warriorsway.in/uploads/1694865596.png" style="width: 322px; height: 229px;" /></span></h3>
+
+<h3 style="text-align: center;"><span style="font-family:arial;"><span style="color:#DAA520;"><strong>Sample Offer Letter</strong></span></span></h3>
+
+<p style="text-align: center;"><span style="font-family:arial;"><strong><img alt="" src="http://mail.warriorsway.in/uploads/1694865651.png" style="width: 261px; height: 321px;" /></strong></span></p>
+
+<p style="text-align: center;">Enrollment ends in One day -OCT 1-2023</p>
+
+<p style="text-align: center;"><img alt="countdownmail.com" border="0" src="http://i.countdownmail.com/2rh17j.gif" /></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><span style="font-size:14px;"><span style="font-family:arial;"><strong>Contact here for Course Related Doubts : <span style="color:#0000CD;">https://warriorsway.in/contact?utm_source=c_sdye</span></strong></span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p><span style="font-size:14px;"><span style="font-family:arial;"><strong>Happy Learning</strong></span></span></p>
+
+<p><span style="font-size:14px;"><span style="font-family:arial;"><strong>MK Jeevarajan</strong></span></span></p>
+
+<p><span style="font-size:14px;"><span style="font-family:arial;"><strong>Director</strong></span></span></p>
+
+<p><span style="font-size:14px;"><span style="font-family:arial;">​This mail was sent because you enrolled to One of our Master class series .If you dont want to receive any Email regarding the program or any updates on latest free program. You can unsubscribe below.</span></span></p>
+
+<p><span style="font-size:14px;"><span style="font-family:arial;">Pantech.AI, nookambalayam link road ,Chennai-126.</span></span></p>
+
+<p>Please find the privacy policy here</p>
+
+<p><a href="http://mail.warriorsway.in/l/zDZYwDVO4x7A9u692kAROQ/UzLhXXjcFqvYe45H8924n4QQ/0CHA0WcDysLlDWyxjheIjA">https://pantech.ai/privacy-policy</a></p>
+
+<p><span style="font-size:14px;"><span style="font-family:arial;"><code><a href="http://mail.warriorsway.in/unsubscribe/lKFGHPo5sKTYShN8rN200892RYrw8HPN7WuN9KMLRYBLg/7tiJmH76399weuYP0HKu763qCg/0CHA0WcDysLlDWyxjheIjA" >Unsubscribe here</a></code></span></span></p>
+
+<p><span style="font-size:14px;"><span style="font-family:arial;">http://mail.warriorsway.in/unsubscribe/lKFGHPo5sKTYShN8rN200892RYrw8HPN7WuN9KMLRYBLg/7tiJmH76399weuYP0HKu763qCg/0CHA0WcDysLlDWyxjheIjA</span></span></p>
+
+<p>http://mail.warriorsway.in/unsubscribe-success.php?c=580</p>
+
+<div style="all: initial; display: inline; border: 0; margin: 0; padding: 0; user-select: none; overflow: hidden; font-size: 0px;">&nbsp;</div>
+
+<div style="all: initial; display: inline; border: 0; margin: 0; padding: 0; user-select: none; overflow: hidden; font-size: 0px;">&nbsp;</div>
+
+<div style="all: initial; display: inline; border: 0; margin: 0; padding: 0; user-select: none; overflow: hidden; font-size: 0px;">&nbsp;</div>
+
+<div style="all: initial; display: inline; border: 0; margin: 0; padding: 0; user-select: none; overflow: hidden; font-size: 0px;">&nbsp;</div>
+</body>
+<div style="all: initial; display: inline; border: 0; margin: 0; padding: 0; user-select: none; overflow: hidden; font-size: 0px;">&nbsp;</div>
+</html>
+<img src="http://mail.warriorsway.in/t/0CHA0WcDysLlDWyxjheIjA/zDZYwDVO4x7A9u692kAROQ" alt="" style="width:1px;height:1px;"/>

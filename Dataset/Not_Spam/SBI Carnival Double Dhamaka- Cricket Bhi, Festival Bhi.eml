@@ -1,0 +1,120 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:8691:b0:4fd:23d3:a27 with SMTP id e17csp660148pxn;
+        Sun, 22 Oct 2023 00:26:59 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHnSlDCTgKXZKEbBsYrKLCPrn+eXkiuctTJ3OLzNpYNUZhYY3Yd8xexWuuBMDs92bdxNVNe
+X-Received: by 2002:a05:6300:8088:b0:161:3013:b499 with SMTP id ap8-20020a056300808800b001613013b499mr6325827pzc.60.1697959619295;
+        Sun, 22 Oct 2023 00:26:59 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697959619; cv=none;
+        d=google.com; s=arc-20160816;
+        b=rRrPoI7fjOxToCpatG4EwSJ0cFvMVYUTEcGmv0pcAd8dmW3cStP+cGz6HK21DGfixA
+         ovnUcyZJ7pmKsmy05yfaYGT/Yii6sCENs8z0p1DsJdCVZnfIEAK+XoQl4rVHuxnvLD4+
+         Qj5G5orFJ/SkiF3aTvD2k3jT+qrRufrkehy9nuDmr/FaiEULN12pXqQI3pYj5PPzUK2k
+         ErOhUId48qNOrMjqc9Gx+O7txYL0X8oyf+XWfltp7DLLrCeUmU6p6q2LLy8U+CQHB32M
+         rl+ZZV6lSuzKs0ztQCFn1U9Af2RBuIg6MnFJA/bxzddpfh5/cDU08F8J7ScLbYmSymnv
+         m+Vw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:feedback-id:list-unsubscribe:message-id:subject
+         :reply-to:from:to:date:dkim-signature:dkim-signature;
+        bh=evJ8/fwaWqaGHrsdGRr7a0u/kIkTCJBGIXQ6QmlNv/w=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=OJKQM544EklBbdQ82aZGY0j5wz2B8UyDqNOXKCG9pQSTijoHEg708vHcKDvlZVicrK
+         phiCxWmaOM1DmntdWYCHdVtTaWzZT4BE7vwD8D3tsz5irIyPVe9kiCNXlGxzF6LEyK/v
+         AJOVK8OvWU0ieOwwOHVnXw9hd1/jqc8JnSoYcYanpuZMXy8MTjbkhXGnfrPORsk2oYFo
+         hhsNCHS9wumyem5x6PlrjGHmaqMcdK2DN3VBsSDmd17o1yzq0sof+JxU8Qe5tcyDd3GN
+         bFRIElJpQWKVlVMTGsTk6KBJx9YcAyXVpyVaHaggWTfxSfWhdKiOQ8PQHt1hn4fD3PIt
+         HH2w==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@communications.sbi.co.in header.s=nc header.b=LsWt4QZa;
+       dkim=pass header.i=@env.etransmail.com header.s=fnc header.b=hxA18R+9;
+       spf=pass (google.com: domain of campaign-emm_tb-292-139-14884809-srijani515=gmail.com@communications.sbi.co.in designates 175.158.69.51 as permitted sender) smtp.mailfrom="campaign-emm_tb-292-139-14884809-srijani515=gmail.com@communications.sbi.co.in";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=sbi.co.in
+Return-Path: <campaign-emm_tb-292-139-14884809-srijani515=gmail.com@communications.sbi.co.in>
+Received: from d51-smtp-out-in.communications.sbi.co.in (d51-smtp-out-in.communications.sbi.co.in. [175.158.69.51])
+        by mx.google.com with ESMTPS id bk13-20020a056a02028d00b005895c80c902si4224173pgb.438.2023.10.22.00.26.59
+        for <srijani515@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 22 Oct 2023 00:26:59 -0700 (PDT)
+Received-SPF: pass (google.com: domain of campaign-emm_tb-292-139-14884809-srijani515=gmail.com@communications.sbi.co.in designates 175.158.69.51 as permitted sender) client-ip=175.158.69.51;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@communications.sbi.co.in header.s=nc header.b=LsWt4QZa;
+       dkim=pass header.i=@env.etransmail.com header.s=fnc header.b=hxA18R+9;
+       spf=pass (google.com: domain of campaign-emm_tb-292-139-14884809-srijani515=gmail.com@communications.sbi.co.in designates 175.158.69.51 as permitted sender) smtp.mailfrom="campaign-emm_tb-292-139-14884809-srijani515=gmail.com@communications.sbi.co.in";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=sbi.co.in
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=communications.sbi.co.in; s=nc;
+	h=content-type:mime-version:feedback-id:list-unsubscribe:message-id:subject:
+	 reply-to:from:to:from:to:subject;
+	bh=evJ8/fwaWqaGHrsdGRr7a0u/kIkTCJBGIXQ6QmlNv/w=;
+	b=LsWt4QZaUwE97Isayov9aCEuoSDIh7FjaL7UYX/I/nJugSXhHPfxAUatg9pBo9LvRHT3nt7rbt5yW
+	 EuzR5llUWJC22g3q3iCrCVcapm8/h3C8sGGm+4rnIRy2uXpOo3Y0vXCfKUNFrv7kY3I/0/kdxMXqot
+	 rTjV4AtdHiXvjqTA/ImwAURby8L9/Nv2fFDxluaQTm29/Yw6/FNlHUQNiHP/mc/46bPdQeE8tavD5g
+	 wElF3xSPF7Dei2n1wGk+4gfYFqPIElqT0bvc2fpVehKMDvChtLY/g2l8xKkTYBfqydeen5WpR3gKTK
+	 A5FuRGAn1h0BkkhcveKE4fuK076kPcw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=env.etransmail.com; s=fnc;
+	h=content-type:mime-version:feedback-id:list-unsubscribe:message-id:subject:
+	 reply-to:from:to:from:to:subject;
+	bh=evJ8/fwaWqaGHrsdGRr7a0u/kIkTCJBGIXQ6QmlNv/w=;
+	b=hxA18R+9ebQHbfRQFztiYtM4tdW3TjN1uFavi2Syotl0jitKBSjVSp5Hg/hd+3MxkHT4mDX0dVbKx
+	 Af0H0plrfIG2m0cujI6XTldQuGoRRkhRzOSIJO2Gw0s5IA/ucSOP3ZBPR/NN9BwpZ+UfbQyMDPsuiN
+	 CZRP+0UaNkIgwwLQ=
+Date: Sun, 22 Oct 2023 12:56:58 +0530
+To: srijani515@gmail.com
+From: SBI <sbirewardz@communications.sbi.co.in>
+Reply-To: SBI <sbirewardz@communications.sbi.co.in>
+Subject: SBI Carnival Double Dhamaka- Cricket Bhi, Festival Bhi
+Message-ID: <400695452714884809@communications.sbi.co.in>
+X-Abuse-Reports-To: abuse@bosemail.com
+List-Unsubscribe: <mailto:emm_tb-292-139-14884809-d6f94e7d4ab659ae1e9f4e53fbee63de@usub.sbi.co.in?subject=Unsubscribe>, <http://deliverycommunications.sbi.co.in/emm_tb/?p=smunsub&mid=139&uid=d6f94e7d4ab659ae1e9f4e53fbee63de>
+Feedback-ID: 139:292:20231022100721:
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="b1_0eb280971c5e557a4628e370d20f347c"
+
+
+
+
+--b1_0eb280971c5e557a4628e370d20f347c
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+
+Disclaimer: State Bank never sends e-mails and embedded links asking
+you to update or verify confidential, personal and security details.
+If you receive such emails/phone calls/SMS, NEVER RESPOND to them and
+report such matter to the bank at report.phishing@sbi.co.in
+
+
+--b1_0eb280971c5e557a4628e370d20f347c
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: 8bit
+
+<html>
+<head>
+<meta content="text/html;charset=UTF-8" http-equiv="Content-Type"><title></title>
+<style type="text/css">
+body { font-size : 11px; font-family: Verdana, Arial, Helvetica, sans-serif; }
+a { font-size: 11px; color: #ff6600; font-style: normal; font-family: verdana, sans-serif; text-decoration: none; }
+a:visited { color: #666666; }
+a:hover {  text-decoration: underline; }
+p { font-weight: normal; font-size: 11px; color: #666666; font-style: normal; font-family: verdana, sans-serif; text-decoration: none; }
+h1 {font-weight: bold; font-size: 14px; color: #666666; font-style: normal; font-family: verdana, sans-serif; text-decoration: none;}
+h2 {font-weight: bold; font-size: 13px; color: #666666; font-style: normal; font-family: verdana, sans-serif; text-decoration: none;}
+h3 {font-weight: bold; font-size: 12px; color: #666666; font-style: normal; font-family: verdana, sans-serif; text-decoration: none; margin:0px; padding:0px;}
+h4 {font-weight: bold; font-size: 11px; color: #666666; font-style: normal; font-family: verdana, sans-serif; text-decoration: none; margin:0px; padding:0px;}
+hr {width : 100%; height : 1px; color: #ff9900; size:1px;}
+ .forwardform {margin: 0 0 0 0; padding: 0 0 0 0;}
+ .forwardinput {margin: 0 0 0 0; padding: 0 0 0 0;}
+ .forwardsubmit {margin: 0 0 0 0; padding: 0 0 0 0;}
+div.emailfooter { font-size : 11px; font-family: Verdana, Arial, Helvetica, sans-serif; }
+div.emailfooter a { font-size: 11px; color: #ff6600; font-style: normal; font-family: verdana, sans-serif; text-decoration: none; }
+</style>
+</head>
+<body><div align="center"><table border="0" cellpadding="0" cellspacing="0"><tr align="center"><td><a href='https://deliverycommunications.sbi.co.in/emm_tb/lt.php?id=KkoCUwRUBgcJABkGVQkCAQVXCUw=UwRbDQ1ZBwBNR0JcU1JZXQ0BViRXWwJfXEgAXFg=&client=292' >Forward to your friends</a></td></tr></table></div><p><img alt="" src="https://imagescommunications.sbi.co.in/14624573/14624573_03999_2980363_SBI_Carnival_emailer.jpg" /></p>
+<div style="text-align: justify;"><span style="color:black;"><span style="font-family:times new roman,serif;"><span style="font-size:8.0pt;">Disclaimer: State Bank never sends e-mails and embedded links asking you to update or verify confidential, personal and security details. If you receive such emails/phone calls/SMS, NEVER RESPOND to them and report such matter to the bank at&nbsp;</span></span></span><span style="font-family:times new roman,serif;"><span style="font-size:8.0pt;">report.phishing@sbi.co.in</span></span></div>
+<br/><div><p>--<br><a href='https://deliverycommunications.sbi.co.in/emm_tb/lt.php?id=KkoCUwRUBgcJARkGVQkCAQVXCUw=UwRbDQ1ZBwBNR0JcU1JZXQ0BViRXWwJfXEgAXFg=&client=292'  >Click Here</a> to unsubscribe.<br><br></div><img border="0" src="https://deliverycommunications.sbi.co.in/emm_tb/ut.php?m=139&u=d6f94e7d4ab659ae1e9f4e53fbee63de&c=0000" ></body>
+</html>
+
+
+
+--b1_0eb280971c5e557a4628e370d20f347c--
+

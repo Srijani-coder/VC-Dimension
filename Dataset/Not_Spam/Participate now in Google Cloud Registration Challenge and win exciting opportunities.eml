@@ -1,0 +1,439 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:8691:b0:4fd:23d3:a27 with SMTP id e17csp641350pxn;
+        Sat, 21 Oct 2023 23:22:48 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGfVgw0v7i1xT0lgCLv3VdqbQqC6FJCt3C7idT7hY/TWvWTSyNoXo1fWddBHvOwziImgYRl
+X-Received: by 2002:a17:902:ce88:b0:1ca:92a:df0 with SMTP id f8-20020a170902ce8800b001ca092a0df0mr6699163plg.59.1697955767983;
+        Sat, 21 Oct 2023 23:22:47 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697955767; cv=none;
+        d=google.com; s=arc-20160816;
+        b=W+R6inqLXtwXjkRyoNy+aSNTzDNS0NDRYNY6mTQ9jjf3HbhhHigq3rYROBPDCcg8gH
+         haL9fXkZ0z5Srq3fhDTTUAVzjZuU9+cLLXbzH/x6ihWlcTFcAD2eADHclkHM5GNXgl/C
+         BStKWmHKOlL7zlDSxXnj3gqgQji5Si6F4MqUJi3GHA38kCXwjbXP2McheNHSulm4FWfR
+         RHrDr53NMWknKqoIfXVdgjkC8ADncJLbzjpsxnnUWb3WsliTHzD05xIzFpYoRHrtY2b/
+         7flcY5XcF33u8hivFAOf/qS2RwRDrvHFefT77uLcOOKC5mn/18VjnWbHAEPRWw+4RkOY
+         7klQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=subject:to:from:mime-version:ironport-sdr:date:message-id
+         :dkim-signature;
+        bh=3OVOHLRHQKiGLYbV1OHPaDnhIwtaFRoxAMQw6cZhh5Y=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=hHc45qXJCTavgGnToT/e7vn1Ly+6kxxP2ak0hgmc7XCKM91tHFFIuaELnkOl8DJN2T
+         Xzaan6Ypmosc9TaYg0prW8iF2RQdZsw0neem+nHRG57IXpJ2S6bYoeFVcBvHCGfFfE4Q
+         gJ+VyX82sjctfj1H4benzzYJqyvnTK6eJmGU3MxBuN9413ooKjueHVcmtiWTVoNHdmoc
+         m3swpvLjQ2Hsy4mMzZk4bk+pyqluuvhQThY0oXIimSPhWlsC9ZIo1BxRUxnBFXERRQ/w
+         qahJBkNMVn/toN94k/o36ywS/hjOBxRJ4MQzYlkWfS8pw+cSgHnibbU1fb+EnDTnq034
+         oDHw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@techgig.com header.s=main header.b=OtEGc1zB;
+       spf=pass (google.com: domain of contest@techgig.com designates 219.65.84.12 as permitted sender) smtp.mailfrom=contest@techgig.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=techgig.com
+Return-Path: <contest@techgig.com>
+Received: from mgw12.techgig.com (mgw12.techgig.com. [219.65.84.12])
+        by mx.google.com with ESMTP id c7-20020a170902d48700b001c9bcb6f00asi4513369plg.528.2023.10.21.23.22.47
+        for <srijani515@gmail.com>;
+        Sat, 21 Oct 2023 23:22:47 -0700 (PDT)
+Received-SPF: pass (google.com: domain of contest@techgig.com designates 219.65.84.12 as permitted sender) client-ip=219.65.84.12;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@techgig.com header.s=main header.b=OtEGc1zB;
+       spf=pass (google.com: domain of contest@techgig.com designates 219.65.84.12 as permitted sender) smtp.mailfrom=contest@techgig.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=techgig.com
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+  d=techgig.com; i=@techgig.com; q=dns/txt; s=main;
+  t=1697954327; x=1729490327;
+  h=mime-version:from:to:subject:message-id:date;
+  bh=RW6t2i8Yd2KH1hzaZelSZjYda+OAzmpKyTdbioQw+BQ=;
+  b=OtEGc1zBhj6R2t9XCHJGEk7hpzFYrs+QvIILG12Xg3VgMvBHC5dTbjzF
+   TgXXi8Dev2929RjhI5U5uUNjcAxdECC9NDnIs2mS8oGZpJ5jQI2G2nbZ/
+   wewmzoNhch6zTvb/P11CiG+WK6uxZRxft9qWEDTNE9/3TStNvhsTX6Vcg
+   c=;
+Authentication-Results: mgw12.techgig.com; dkim=none (message not signed) header.i=none
+Message-Id: <84c769$aq9u2r@mgw12.techgig.com>
+Date: 22 Oct 2023 05:58:38 +0000
+IronPort-SDR: N5rQ488LczRxdrDQ+I483EiPp5tY4YSVuYL+Buu9FNAnSZLiNpN/r3AR7rlfBMWNv+VXPkBY1p
+ Xs+lTrIF31fPZYvc2AjuhiWmCWV9/FAFo=
+Received: from tgwebz1ap3042 (HELO localhost) ([172.29.30.42])
+  by mgw12.techgig.com with ESMTP; 22 Oct 2023 05:58:38 +0000
+MIME-Version: 1.0
+Content-type: text/html; charset=iso-8859-1;
+From: TechGig <contest@techgig.com>
+To: srijani515@gmail.com
+Subject: Participate now in Google Cloud Registration Challenge and win exciting opportunities
+X-Feedback-ID: PR36937-BT1274903:srijani515@gmail.com:CodeContest:TechGig
+
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<style>
+body{padding:0; margin:0;}
+@media only screen and (max-width: 767px) {
+table.devicewidth-color {
+width: 565px!important;
+text-align: center!important;
+}
+table.devicewidth {
+width: 500px!important;
+text-align: center!important;
+}
+.color-border {
+height: 20px!important;
+}
+img.responsive-image {
+width: 100% !important;
+}
+.banner-image {
+width: 250px !important;
+}
+.text1 {
+font-size: 14px !important;
+line-height: 20px !important;
+}
+.text2 {
+font-size: 20px !important;
+line-height: 26px !important;
+}
+.auto-height {
+height: auto !important;
+}
+.header-space {
+text-align: center !important;
+padding-bottom: 10px !important;
+}
+.hidden-mobile {
+display: none !important;
+}
+.apps {
+height: 30px !important;
+}
+.no-margin {
+margin-right: 0px !important;
+padding-bottom: 10px !important;
+display: block !important;
+width: 100% !important;
+}
+.user-info {
+text-align: left !important;
+padding-left: 68px !important;
+}
+.full-width {
+width: 100% !important;
+}
+.small-height {
+height: 10px !important;
+}
+.non-padding {
+padding-left: 0px !important;
+}
+.follow {
+width:178px !important;
+}
+.button-block {
+width:100% !important;
+}
+}
+@media only screen and (max-width: 480px) {
+table.devicewidth-color {
+width: 300px!important;
+text-align: center!important;
+}
+table.devicewidth {
+width: 270px!important;
+text-align: center!important;
+}
+.color-border {
+height: 20px!important;
+}
+}
+</style>
+</head>
+<body style="padding:0px; margin:0px; background-color:#f7f7f7;">
+<table width="100%" bgcolor="#f7f7f7" cellpadding="0" cellspacing="0" border="0" id="backgroundTable" style="border-collapse: collapse; border-spacing: 0;">
+	<tbody>
+	<tr>
+		<td><!-- Header -->
+			<table bgcolor="#f7f7f7" width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth-color" style="border-collapse: collapse; border-spacing: 0; background-color:#f7f7f7;">
+				<tbody>
+				<tr>
+					<td style="padding:0px; margin:0px; ">
+						<table bgcolor="#f7f7f7" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth-inner" style="border-collapse: collapse; border-spacing: 0;">
+							<tbody>
+							<tr>
+								<td>
+									<table bgcolor="#f7f7f7" width="551" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth" style="border-collapse: collapse; border-spacing: 0;">
+										<tbody>
+										<tr>
+											<td style="line-height: 0;font-size: 0;vertical-align: top;padding: 0px; text-align: left;" height="14"> </td>
+										</tr>
+										<tr>
+											<td style="padding:0px;">
+												<table width="100%" border="0" style="border-collapse: collapse; border-spacing: 0;">
+													<tbody>
+													<tr>
+														<td style="padding:0px; text-align:center;">
+															<a href="https://www.techgig.com/mail_redirect.php?url=https%3A%2F%2Fwww.techgig.com%3Futm_source%3DTG_batch%26utm_medium%3Demail%26utm_campaign%3DCodeContest_2023-10-22%26auto_login=WVRIbUhQRWdTdUYxblczc3RxeDdwejh1V2E3L044V0VTV2pnK0ovN0J3NGhGVmtHeEk0aHp6WnVXNFo0b3luaFVBSEdENEg4d0M5c3hpOHJ1ekpMZnc9PQ==%26%26etoken=WVRIbUhQRWdTdUYxblczc3RxeDdwK1l6YkZYeVQzRU5rZThLYitLVXEzMD0=%26activity_name%3DMTI3NDkwMw==%26template_type%3D0%26crid%3DUS9VaUx2dlAwQU55eHFoYWUxZzQ4dz09" target="_blank"><img src="https://www.techgig.com/files/nicUploads/193654633631276.png"></a>
+														</td>
+													</tr>
+													</tbody>
+												</table>
+											</td>
+										</tr>
+										<tr>
+											<td style="line-height: 0;font-size: 0;vertical-align: top;padding: 0px; text-align: left;" height="14"></td>
+										</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+			<!-- /Header -->
+			<!-- Section -->
+			<table bgcolor="#ffffff" width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth-color" style="border-collapse: collapse; border-spacing: 0; background-color:#ffffff;">
+				<tbody>
+				<tr>
+					<td style="padding:0px; margin:0px;">
+						<table width="100%" border="0" style="border-collapse: collapse; border-spacing: 0;">
+	<tr>
+		<td>
+			<a href="https://techgig.com/mail_redirect.php?url=https%3A%2F%2Ftechgig.com%2Fchallenge%2Fcloudregistration%3Futm_source%3DTG_batch%26utm_medium%3Demail%26utm_campaign%3DCodeContest_2023-10-22%26date%3D2023-10-22%26auto_login=WVRIbUhQRWdTdUYxblczc3RxeDdwejh1V2E3L044V0VTV2pnK0ovN0J3NGhGVmtHeEk0aHp6WnVXNFo0b3luaFVBSEdENEg4d0M5c3hpOHJ1ekpMZnc9PQ==%26%26etoken=WVRIbUhQRWdTdUYxblczc3RxeDdwK1l6YkZYeVQzRU5rZThLYitLVXEzMD0=%26activity_name%3DMTI3NDkwMw==%26template_type%3D0%26crid%3DUS9VaUx2dlAwQU55eHFoYWUxZzQ4dz09"><img border="0" src="https://engage.techgig.com/files/CG2018_ML_1521121094.png" width="100%"></a>
+		</td>
+	</tr>
+	<tr>
+		<td style="line-height: 0;font-size: 0;vertical-align: top;padding: 0px;text-align: left;" height="12">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%" border="0" style="border-collapse: collapse; border-spacing: 0;">
+				<tr>
+					<td width="20">&nbsp;</td>
+					<td>
+						<table width="100%" border="0">
+							<tr>
+								<td style="margin:0; color:#424242; font-size:14px; line-height:21px; font-family:Arial, Helvetica, sans-serif; font-style:normal; font-weight:normal; text-align:left;">
+									<table bgcolor="#ffffff" width="100%" cellpadding="0" cellspacing="0" border="0" align="center" style="border-collapse:collapse;border-spacing:0">
+	<tbody>
+	  <tr>
+		<td style="line-height:0;font-size:0;vertical-align:top;padding:0px;text-align:left" height="15"> </td>
+	  </tr>
+	 
+	   <tr>
+		<td style="line-height:24px;font-size:15px;vertical-align:top;padding:0px;text-align:left;color:rgb(35,31,32);font-family:Arial,Helvetica,sans-serif"><span style="font-weight:normal"> Hi Srijani Chakrabarti</span></td>
+	  </tr>
+
+	  <tr>
+		<td style="line-height:0;font-size:0;vertical-align:top;padding:0px;text-align:left" height="15"> </td>
+	  </tr>
+	 
+	  <tr>
+		<td style="line-height:24px;font-size:15px;vertical-align:top;padding:0px;text-align:left;color:rgb(35,31,32);font-family:Arial,Helvetica,sans-serif"><span style="font-weight:normal">
+		  We are pleased to bring to you a challenging contest by <strong>TechGig</strong>. Showcase your skills and ability to solve challenges. Participate in the <strong>Google Cloud Registration</strong> Challenge and stand a chance to win prizes worth INR 200<br></span></td>
+	  </tr>
+	  <tr>
+		<td style="line-height:0;font-size:0;vertical-align:top;padding:0px;text-align:left" height="25"> </td>
+	  </tr>
+							<tr>
+		<td align="center"><table style="border-collapse:collapse;border-spacing:0" width="200">
+			<tbody>
+			  <tr>
+				<td style="background-color:#d7263d;text-align:center;color:#ffffff;border-radius:25px;font-size:12px;text-decoration:none;font-weight:bold"><a href="https://techgig.com/mail_redirect.php?url=https%3A%2F%2Ftechgig.com%2Fchallenge%2Fcloudregistration%3Futm_source%3DTG_batch%26utm_medium%3Demail%26utm_campaign%3DCodeContest_2023-10-22%26date%3D2023-10-22%26auto_login=WVRIbUhQRWdTdUYxblczc3RxeDdwejh1V2E3L044V0VTV2pnK0ovN0J3NGhGVmtHeEk0aHp6WnVXNFo0b3luaFVBSEdENEg4d0M5c3hpOHJ1ekpMZnc9PQ==%26%26etoken=WVRIbUhQRWdTdUYxblczc3RxeDdwK1l6YkZYeVQzRU5rZThLYitLVXEzMD0=%26activity_name%3DMTI3NDkwMw==%26template_type%3D0%26crid%3DUS9VaUx2dlAwQU55eHFoYWUxZzQ4dz09" style="margin:0;padding:0px 10px 0px 10px;display:block;color:#ffffff;font-size:17px;line-height:21px;font-family:Arial,Helvetica,sans-serif;text-align:center;font-weight:bold;text-align:center;text-decoration:none;border:10px solid #d7263d;border-radius:25px" target="_blank">Participate Now </a></td>
+			  </tr>
+			  <tr>
+					<td style="margin:0; padding:0; font-size:0; line-height:0;" height="10">&nbsp; </td>
+				</tr>				
+			</tbody>
+		  </table></td>
+		</tr>
+
+		<tr>
+			<td align="center">
+				<p style="line-height:24px;font-size:15px;vertical-align:top;padding:0px;text-align:center;color:rgb(35,31,32);font-family:Arial,Helvetica,sans-serif">22 Oct, 2023 to 25 Oct, 2023</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="margin:0; padding:0; font-size:0; line-height:0;" height="20">&nbsp; </td>
+		</tr>	
+
+					<tr>
+				<td style="margin:0;padding:0;font-size:20px;text-align:center;color:#231f20;line-height:22px;font-family:Arial,Helvetica,sans-serif;font-weight:bold">Awards &amp; Recognition</td>
+			</tr>
+			<tr>
+				<td style="line-height:0;font-size:0;vertical-align:top;padding:0px;text-align:left" height="15"> </td>
+			</tr>
+			<tr>
+				<td style="line-height:0;font-size:0;background-color:#f8f8f8;vertical-align:top;padding:0px;text-align:left" height="15"> </td>
+			</tr>
+			<tr>
+				<td style="padding:0px;text-align:center;background-color:#f8f8f8"><img src="https://www.techgig.com/files/nicUploads/886370233658045.png" alt="prize"></td>
+			</tr>   
+			<tr>
+				<td style="line-height:0;font-size:0;vertical-align:top;padding:0px;text-align:left;background-color:#f8f8f8" height="5"> </td>
+			</tr>
+			<tr>
+			  <td style="margin:0;padding:0;font-size:14px;color:#231f20;line-height:16px;font-family:Arial,Helvetica,sans-serif;font-weight:bold;text-align:center;background-color:#f8f8f8">Win Prizes Worth INR 200</td>
+			</tr>
+			<tr>
+				<td style="line-height:0;font-size:0;background-color:#f8f8f8;vertical-align:top;padding:0px;text-align:left" height="25"> </td>
+			</tr>
+			 
+		<tr>
+			<td style="line-height:0;font-size:0;vertical-align:top;padding:0px;text-align:left" height="25"> </td>
+		</tr>
+		<tr>
+		<td align="center"><table style="border-collapse:collapse;border-spacing:0" width="200">
+			<tbody>
+			  <tr>
+				<td style="background-color:#d7263d;text-align:center;color:#ffffff;border-radius:25px;font-size:12px;text-decoration:none;font-weight:bold"><a href="https://techgig.com/mail_redirect.php?url=https%3A%2F%2Ftechgig.com%2Fchallenge%2Fcloudregistration%3Futm_source%3DTG_batch%26utm_medium%3Demail%26utm_campaign%3DCodeContest_2023-10-22%26date%3D2023-10-22%26auto_login=WVRIbUhQRWdTdUYxblczc3RxeDdwejh1V2E3L044V0VTV2pnK0ovN0J3NGhGVmtHeEk0aHp6WnVXNFo0b3luaFVBSEdENEg4d0M5c3hpOHJ1ekpMZnc9PQ==%26%26etoken=WVRIbUhQRWdTdUYxblczc3RxeDdwK1l6YkZYeVQzRU5rZThLYitLVXEzMD0=%26activity_name%3DMTI3NDkwMw==%26template_type%3D0%26crid%3DUS9VaUx2dlAwQU55eHFoYWUxZzQ4dz09" style="margin:0;padding:0px 10px 0px 10px;display:block;color:#ffffff;font-size:17px;line-height:21px;font-family:Arial,Helvetica,sans-serif;text-align:center;font-weight:bold;text-align:center;text-decoration:none;border:10px solid #d7263d;border-radius:25px" target="_blank">Participate Now</a></td>
+			  </tr>
+			</tbody>
+		  </table></td>
+		</tr>
+			  <tr>
+		<td style="line-height:0;font-size:0;vertical-align:top;padding:0px;text-align:left" height="25"> </td>
+	  </tr>
+	
+	  <tr><td style="line-height:24px;font-size:15px;vertical-align:top;padding:0px;text-align:left;font-weight:normal;color:#231f20;font-family:Arial,Helvetica,sans-serif"> If you have any queries or feedback with respect to the challenge, send them out at  <a href="mailto:customercare@techgig.com" style="text-decoration:none;color:#d7263d" target="_blank">customercare@techgig.com</a> or share them on our contest discussion forum</td>
+	</tr>
+	<tr>
+	  <td style="line-height:0;font-size:0;vertical-align:top;padding:0px;text-align:left;margin:0px" height="25"> </td>
+	</tr>
+	<tr>
+	  <td style="margin:0;padding:0;font-size:14px;color:#231f20;line-height:21px;font-family:Arial,Helvetica,sans-serif;font-weight:normal">Happy Coding!<br>
+		Team TechGig</td>
+	</tr>
+	<tr>
+	  <td style="line-height:0;font-size:0;vertical-align:top;padding:0px;text-align:left;margin:0px" height="16"> </td>
+	</tr>
+	  </tbody>
+</table> 
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td width="20">&nbsp;</td>
+				</tr>
+			</table>
+		</td>
+  </tr>
+  <tr>
+	<td style="line-height: 0;font-size: 0;vertical-align: top;padding: 0px;text-align: left; " height="18">&nbsp;</td>
+  </tr>
+</table>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+			<!-- /Section -->
+		</td>
+	</tr>
+	<!-- Footer -->
+	<tr>
+		<td style="padding:0px;">
+			<table bgcolor="#f7f7f7" width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth-color" style="border-collapse: collapse; border-spacing: 0; background-color:#f7f7f7;">
+				<tbody>
+				<tr>
+					<td style="padding:0px; margin:0px; ">
+						<table bgcolor="#f7f7f7" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth-inner" style="border-collapse: collapse; border-spacing: 0;">
+							<tbody>
+							<tr>
+								<td>
+									<table bgcolor="#f7f7f7" width="100%" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth" style="border-collapse: collapse; border-spacing: 0;">
+										<tbody>
+										<tr>
+											<td style="line-height: 0;font-size: 0;vertical-align: top;padding: 0px; text-align: center;" height="24"> </td>
+										</tr>
+										<tr>
+											<td style="padding:0px;">
+												<table class="devicewidth" align="left" width="320" border="0" style="border-collapse: collapse; border-spacing: 0;">
+													<tbody>
+													<tr>
+														<td style=" margin:0; padding:0; font-size:14px; text-align:left; color:#c2c2c2; line-height:18px; font-family: Arial, Helvetica,sans-serif; font-weight:normal;">2023 | <a href="https://www.techgig.com" style="color:#c2c2c2; text-decoration:none;">TechGig</a> | <a href="https://www.techgig.com/user_links.php?show=Terms" style="color:#c2c2c2; text-decoration:none;">Terms of Use</a> | <a href="https://www.techgig.com/user_links.php?show=ContactUs" style="color:#c2c2c2; text-decoration:none;">Contact Us</a></td>
+													</tr>
+													<tr>
+														<td style="line-height: 0;font-size: 0;vertical-align: top;padding: 0px; text-align: center;" height="4"> </td>
+													</tr>
+													<tr>
+														<td style=" margin:0; padding:0; font-size:12px; text-align:left; color:#c2c2c2; line-height:18px; font-family: Arial, Helvetica,sans-serif; font-weight:normal;">Times Center, FC - 6, Sector 16 A, Film City,<br>Noida - 201301, Uttar Pradesh, India </td>
+													</tr>
+													</tbody>
+												</table>
+												<table align="left" class="devicewidth" width="260" border="0" style="border-collapse: collapse; border-spacing: 0;">
+													<tbody>
+													<tr>
+														<td style="padding:0px;">
+															<table width="100%" border="0" style="border-collapse: collapse; border-spacing: 0;">
+																<tbody>
+																<tr>
+																	<td width="165" class="follow" style="padding:0px;">
+																		<table width="100%" border="0" style="border-collapse: collapse; border-spacing: 0;">
+																			<tbody>
+																			<tr>
+																				<td style=" margin:0; padding:0; font-size:14px; text-align:left; color:#c2c2c2; line-height:18px; font-family: Arial, Helvetica,sans-serif; font-weight:normal;">Follow Us on</td>
+																			</tr>
+																			<tr>
+																				<td style="line-height: 0;font-size: 0;vertical-align: top;padding: 0px; text-align: center;" height="4"> </td>
+																			</tr>
+																			<tr>
+																				<td style="padding:0px; text-align:left"><a style="padding-right:4px;" href="http://www.facebook.com/TechGig"><img src="https://www.techgig.com/files/nicUploads/475110113538406.png"></a> <a style="padding-right:4px;" href="https://twitter.com/#!/techgigdotcom"><img src="https://www.techgig.com/files/nicUploads/988866088855306.png"></a> <a style="padding-right:4px;" href="https://www.linkedin.com/company/techgig-com"><img src="https://www.techgig.com/files/nicUploads/943957694855144.png"></a></td>
+																			</tr>
+																			</tbody>
+																		</table>
+																	</td>
+																	<td style="padding:0px;">
+																		<table align="right" width="100%" border="0" style="border-collapse: collapse; border-spacing: 0;">
+																			<tbody>
+																			<tr>
+																				<td style=" margin:0; padding:0; font-size:14px; text-align:left; color:#c2c2c2; line-height:18px; font-family: Arial, Helvetica,sans-serif; font-weight:normal;">Download App</td>
+																			</tr>
+																			<tr>
+																				<td style="line-height: 0;font-size: 0;vertical-align: top;padding: 0px; text-align: center;" height="4"> </td>
+																			</tr>
+																			<tr>
+																				<td style="padding:0px;"><a href="https://play.google.com/store/apps/details?id=com.timesgroup.techgig&amp;hl=en&amp;utm_source=Email&amp;utm_medium=app_icon&amp;utm_campaign=TgAppIcon" target="_blank"><img class="apps" src="https://www.techgig.com/files/nicUploads/874250402864600.png"></a></td>
+																			</tr>
+																			</tbody>
+																		</table>
+																	</td>
+																</tr>
+																</tbody>
+															</table>
+														</td>
+													</tr>
+													</tbody>
+												</table>
+											</td>
+										</tr>
+										<tr>
+											<td style="line-height: 0;font-size: 0;vertical-align: top;padding: 0px; text-align: center; border-bottom:1px solid #dadada;" height="30"> </td>
+										</tr>
+										<tr>
+											<td style="line-height: 0;font-size: 0;vertical-align: top;padding: 0px; text-align: center;" height="7"> </td>
+										</tr>
+										<tr>
+											<td style=" margin:0; padding:0; font-size:12px; text-align:left; color:#c2c2c2; line-height:18px; font-family: Arial, Helvetica,sans-serif; font-weight:normal;">Note: For your privacy and protection, please do not forward this mail to anyone as it allows you to get automatically logged into your account.<br> You have received this email because your are registered member on TechGig.com. If you do not want to receive this mailer, please <a href="https://www.techgig.com/block_invitations.php?block_etoken=WVRIbUhQRWdTdUYxblczc3RxeDdwK1l6YkZYeVQzRU5rZThLYitLVXEzMD0=&receiverUid=WVRIbUhQRWdTdUYxblczc3RxeDdwK1l6YkZYeVQzRU5rZThLYitLVXEzMD0=&master_ref_id=MTI3NDkwMw==&template_type=0&activity_id=NQ==" style="color:#8a858d;">unsubscribe here</a>. To make sure this email is not sent to your "junk/spam" folder, select the email and add the sender to your Address Book.<div style="display:none;"><img src="https://www.techgig.com/mis/tj_mailer_opened_count_all.php?etoken=WVRIbUhQRWdTdUYxblczc3RxeDdwK1l6YkZYeVQzRU5rZThLYitLVXEzMD0=&activity_name=MTI3NDkwMw==%26template_type%3D0%26crid%3DUS9VaUx2dlAwQU55eHFoYWUxZzQ4dz09&subject_line=Participate+now+in+season_name+and+win+exciting+opportunities&current_date=2023-10-22" style="display:none;"></div> </td>
+										</tr>
+										<tr>
+											<td style="line-height: 0;font-size: 0;vertical-align: top;padding: 0px; text-align: center;" height="24"> </td>
+										</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+	<!-- /Footer -->
+	</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,1229 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:411b:b0:442:125c:2efd with SMTP id e27csp1572675pxc;
+        Sun, 9 Apr 2023 07:06:24 -0700 (PDT)
+X-Google-Smtp-Source: AKy350YXpjjotoHssHWCpivCmh6w8OR04FAlFHl57CSdWYQwEeJmP0HHy0Zv4fwDhSJWyDboTxnJ
+X-Received: by 2002:a05:6214:250d:b0:5ea:922:bea9 with SMTP id gf13-20020a056214250d00b005ea0922bea9mr7297493qvb.14.1681049184469;
+        Sun, 09 Apr 2023 07:06:24 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1681049184; cv=none;
+        d=google.com; s=arc-20160816;
+        b=lyhKFj7B5kP3YlWZTLf50eY7slUpL3HkbilEaigt3qgrjrJOHoTSyUQvebZXpf3x5Y
+         T6ZNlO41BwmkzOJ0ounBS/TGH/rSiStmJ6rUdNHYMbbW4HLHNjEMsvoOS/0QRxKMFHBu
+         ybZ+YFAT4UnvaGM4y7Jo6Xr66XvJ9ne1Hq1Np3ZrZRRH4A20PPyKCU9KXS5SdpCvQyod
+         OBIfZjn9ZtaAy38sFe5IVgM+5i0cLHinFK9MNzea4nf2X7941BgHy8STIBMW6G/dBMNG
+         1imblSi+wB6h7MO7UbwtvM8gd/bwm3C1751kasz9r5PQrVcLfuCTs3vz4CJQDR0JIVdM
+         etmA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:precedence:mime-version:subject:message-id:to:reply-to
+         :from:date:list-unsubscribe:dkim-signature:dkim-signature;
+        bh=7qsdiy0+NEmDV25B1frY512B/KrM7mgLsOs8hdyWfGM=;
+        b=zDw4dfO/yKyAYLUgmtRkAIMmLzKrg9fxf+JPx53o70GknUFVAzXYiy12NDr8CMa2fV
+         mh8uXTF7o9DxaLDiO4B9wu/SgJNTzp0kS0DxGrqb+cL5uz0lAgJncnKNkU/ENw5vAbFZ
+         ml3Aq7ewLYjj7UlGsPAge6x5R7IR/Jze6nZ4kkIw3BYOZhZitiS82vTr2B/IekqfRgnu
+         T052yid07Lrfy0Ah+IMjw/j9lyAbERn+YHYXgaYeEL3LCdjxqbgyi0YIHQy66jkrTw5Z
+         oypama1wqPBKcQmHa5njc3ju95tygU66anKAtdG6YF58wteNdDLW9XC4/Opondzn63vx
+         48Tg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@bf10x.hubspotemail.net header.s=hs2 header.b=cWNLGW+w;
+       dkim=pass header.i=@gottman.com header.s=hs2-22460962 header.b=Bhee1YsZ;
+       spf=pass (google.com: domain of 1axb0f27e4c2npnot82cx8ni79psxebr6v8vv4-srijani515=gmail.com@bf10x.hubspotemail.net designates 158.247.23.191 as permitted sender) smtp.mailfrom="1axb0f27e4c2npnot82cx8ni79psxebr6v8vv4-srijani515=gmail.com@bf10x.hubspotemail.net"
+Return-Path: <1axb0f27e4c2npnot82cx8ni79psxebr6v8vv4-srijani515=gmail.com@bf10x.hubspotemail.net>
+Received: from bid47pt.bf10x.hubspotemail.net (bid47pt.bf10x.hubspotemail.net. [158.247.23.191])
+        by mx.google.com with ESMTPS id bl20-20020a05620a1a9400b007456cbd961asi5804909qkb.279.2023.04.09.07.06.24
+        for <srijani515@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 09 Apr 2023 07:06:24 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 1axb0f27e4c2npnot82cx8ni79psxebr6v8vv4-srijani515=gmail.com@bf10x.hubspotemail.net designates 158.247.23.191 as permitted sender) client-ip=158.247.23.191;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@bf10x.hubspotemail.net header.s=hs2 header.b=cWNLGW+w;
+       dkim=pass header.i=@gottman.com header.s=hs2-22460962 header.b=Bhee1YsZ;
+       spf=pass (google.com: domain of 1axb0f27e4c2npnot82cx8ni79psxebr6v8vv4-srijani515=gmail.com@bf10x.hubspotemail.net designates 158.247.23.191 as permitted sender) smtp.mailfrom="1axb0f27e4c2npnot82cx8ni79psxebr6v8vv4-srijani515=gmail.com@bf10x.hubspotemail.net"
+Received: by 172.16.116.30 with SMTP id awr0u7ftm42nwsv2tk3i5npqp077d6m4znwi;
+        Sun, 9 Apr 2023 14:06:24 GMT
+DKIM-Signature: v=1; s=hs2; d=bf10x.hubspotemail.net; 
+        i=@bf10x.hubspotemail.net; 
+        h=sender:from:from:reply-to:to:to:cc:cc:subject:subject:list-unsubscribe:form-sub:feedback-id; 
+        a=rsa-sha256; c=relaxed/relaxed; 
+        bh=7qsdiy0+NEmDV25B1frY512B/KrM7mgLsOs8hdyWfGM=; 
+        b=cWNLGW+wpGhJTAkRTg7DJXp+dOJK9yXjC7r/Uan/X+kwBDltSa9pRkDGb4j1Pf
+         hKjh1SzIGzmvZp6mwhJdrXAnIuBOZFHPzoOzEMoR/omkvwC7Y2I0RQEm9fbfJE8
+         5xwE8SbNPJDtA/2Auzm0aPZZ9eisnFoyP9LIgWgGtlDQ9ZntmBUmxFSao4GH6YY
+         3aQr2+vLleNasdr3DDl/f4tuILwcKpXb+2tBxzGlghL/TPZsSGmrGAYZ9nHtatK
+         G6FlPIod2ddBpgtud4BUOst4gq/V8VXnh0JDSgdGNNh4BBEGSDQ/v//sIWpfrxs
+         LpR0HXfIJ2YyGtS4GwZD0uIRBRDw==; q=dns/txt; t=1681049184; 
+        x=1681221984;
+DKIM-Signature: v=1; s=hs2-22460962; d=gottman.com; 
+        i=@gottman.com; 
+        h=sender:from:from:reply-to:to:to:cc:cc:subject:subject:list-unsubscribe:form-sub:feedback-id; 
+        a=rsa-sha256; c=relaxed/relaxed; 
+        bh=7qsdiy0+NEmDV25B1frY512B/KrM7mgLsOs8hdyWfGM=; 
+        b=Bhee1YsZ6csJT7PZy6EKfHlONDuyH2+fYocXQO68oshfnvckZdr9EOUb7y3wm5
+         jQi+LrDR3jQo2E2CkCs4cftb0GkdXBSw/XTgSvQEWapMcdcAf+Ld/AbQ8oFbyt+
+         zbHWzR4ROYZ/eAOUC3uZNOF6lSapnWOjkhIAW5RDYhxNDGi+fpnzz+Iw7qhHHva
+         hwkc4FlsYfhj6tYonKdRcYxN1FQz+aQvuO9+wCngQ/r+hz4N+91cagG50iOjRFz
+         tAgMn611b6gWBtLlrKJ6ive2Gw3YdtqA4yS6cyUmTmZ4h0Fidtxh86EN95/Ntgf
+         5xF0JIv6AhI4t+m3DqAkkmNb2rEg==; q=dns/txt; t=1681049184; 
+        x=1681221984;
+Return-Path: <1axb0f27e4c2npnot82cx8ni79psxebr6v8vv4-srijani515=gmail.com@bf10x.hubspotemail.net>
+X-HS-Cid: 1axe8qksssoxekemioqyac8lujdrsh9krjy6no
+List-Unsubscribe: <mailto:1axcxsr3x6w0fs3adsfmhdki0ah5o1lo3b3i3o-srijani515=gmail.com@bf10x.hubspotemail.net?subject=unsubscribe>
+Date: Sun, 9 Apr 2023 07:06:24 -0700
+From: The Gottman Institute <noreply@gottman.com>
+Reply-To: noreply@gottman.com
+To: srijani515@gmail.com
+Message-ID: <1681048944074.21dbcf75-811c-473e-ba2d-ed15cacee22e@bf10x.hubspotemail.net>
+Subject: How Are You Emotionally Investing In Your Relationship?
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_591833_1424319462.1681049183828"
+Precedence: bulk
+X-Report-Abuse-To: abuse@hubspot.com (see
+ https://policy.hubspot.com/abuse-complaints)
+Feedback-ID: aenno9w:aieg9i9v:airvv:HubSpot
+
+------=_Part_591833_1424319462.1681049183828
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Do you know what relationship struggles to focus on or do you want an asses=
+sment?
+
+View in browser (https://info.gottmanconnect.com/e3t/Ctc/UC+113/d2FFGM04/VV=
+Dc2h4hSGCZN2hNmxkP_VCTW1HN78y4Z8lHSN7nzPvt5mNY1V3Zsc37CgzV8W2y76jH4p7kkRW5Z=
+tkJY4ZgS7JMFyMBcsRyXBW8Tc4MY5HxTR7W4w3K7-2Nm4ldW5BwqvH3wSg3yW2lWjZM6l-GxwW4=
+gL9tB99cGG7W1GHrLc3hl5S1W7lvppX2sKP0_W47J--68pBCWlW8YwmVv2VkdyCMhsqSW78hQZW=
+6Qdd0c1zx1W0W6QlkHv60F08VW8q0fXC9kFrGYW3Nk6MJ6FyW6fW8nDWYl3rBp06N4RYGKSWwZt=
+yW94qTc-8KY8DJW1NXr3C3j5B1mW1HS_0z5b2nP-W2HYSSn3n5yTkW5MjLK18S3NDpW624LK120=
+wSfMVznKHm1dP2ClTXKkb5_Tj9DW1VnbBx40HbrTW8tlVJ75lTyPTW6_lK4N1xLJbDW7jHl5c4P=
+p4qvW54CyyB8Sdp23W2DPXZD6bWy4HVSjdck60pGXJW2qBnj081lQndW7WK0kb3Ld3Y235W31 )
+
+You may be asking yourself, what is the best way to invest in my Emotional =
+Bank Account and strengthen my relationship this season?
+
+We offer a series of relationship-improvement programs tailored to your spe=
+cific needs. Choose the one that=E2=80=99s best for your relationship:
+
+August+2022+-+End+of+Summer+Sale_Square+Product+Images_Adviser_v1 (https://=
+info.gottmanconnect.com/e3t/Ctc/UC+113/d2FFGM04/VVDc2h4hSGCZN2hNmxkP_VCTW1H=
+N78y4Z8lHSN7nzPwm3pdrLV1-WJV7CgVsSW7mbgXm1jkr4cV9RgsT3_JsKgW7jNLQD1BWQTcW5L=
+K7KV7JPZNQW7xSvYz97Z5dBW3-YhSv4lV3bBW1rpgmV3kTvvgW7wRsH91vTQfPN1J7nnCn9cdJW=
+5zJ9Tj6VFJkJW4dmh8Z5fHVy0W5_k63g7tFMp8W6WTRCS7yQ4LFW3Lcx8R3GDy3PW8b7xlw7cdv=
+vSW637N_n3KfQ5lN1ZTzTpWHDgWW1tCf5j3v8YDRVw7hg380JYbmW7LC0ny1PC519N2rbqwlgg_=
+MpW1HlnCx24tMf0W2QMH1s1LgrbDW7Q9RYf8SSLbsW54Xwsq4qlPhHW1z_mLR2vBM4W3fNz1 )
+
+The Gottman Relationship Adviser is a complete wellness program that first =
+assesses your relationship health, then builds a unique step-by-step soluti=
+on that you can work through at your own pace.
+
+ASSESS AND ADDRESS
+(https://info.gottmanconnect.com/e3t/Ctc/UC+113/d2FFGM04/VVDc2h4hSGCZN2hNmx=
+kP_VCTW1HN78y4Z8lHSN7nzPwm3pdrLV1-WJV7CgVsSW7mbgXm1jkr4cV9RgsT3_JsKgW7jNLQD=
+1BWQTcW5LK7KV7JPZNQW7xSvYz97Z5dBW3-YhSv4lV3bBW1rpgmV3kTvvgW7wRsH91vTQfPN1J7=
+nnCn9cdJW5zJ9Tj6VFJkJW4dmh8Z5fHVy0W5_k63g7tFMp8W6WTRCS7yQ4LFW3Lcx8R3GDy3PW8=
+b7xlw7cdvvSW637N_n3KfQ5lN1ZTzTpWHDgWW1tCf5j3v8YDRVw7hg380JYbmW7LC0ny1PC519N=
+2rbqwlgg_MpW1HlnCx24tMf0W2QMH1s1LgrbDW7Q9RYf8SSLbsW54Xwsq4qlPhHW1z_mLR2vBM4=
+W3fNz1 )
+
+August+2022+-+End+of+Summer+Sale_Square+Product+Images_GRC_v1 (https://info=
+.gottmanconnect.com/e3t/Ctc/UC+113/d2FFGM04/VVDc2h4hSGCZN2hNmxkP_VCTW1HN78y=
+4Z8lHSN7nzPwm3pdrLV1-WJV7CgWqHW96vPfF3ZFG5HN5D5Gf7B-gs2W1l4X1b5NYRw5W3nFGkF=
+5TzkZFVwmL4v6mnpSzW3K2yQD3r1dKrW311YkN8VJ5grVkfktV5hLc7CW4yctxh1XLCSYW3KqmF=
+N3kFTc_W1FyzcY1h_qznW1p8KQx3PSxSyW29zYgg85h2S6W6dJpJ_2M0j9VVSMc0M5NxrfhW6ZM=
+SZR5bV3K4W3CjFJ45pF9DlW1lZ-Y942lGzsW6pWGmm5sXp2KW5BG2Sg296n0VW1yV3DR1KX91yV=
+vl3775r8jbMW78Qv047_c8t2W8Njsfg4fkKc4W5CqySg1sp7b_W3PYRC_2wLZtM38B-1 )
+
+The Gottman Relationship Coach products address a specific area of your rel=
+ationship, like constant arguments, intimacy challenges, and communication =
+skills. Self-select the program based on your unique needs.
+
+START ON MY OWN
+(https://info.gottmanconnect.com/e3t/Ctc/UC+113/d2FFGM04/VVDc2h4hSGCZN2hNmx=
+kP_VCTW1HN78y4Z8lHSN7nzPwm3pdrLV1-WJV7CgWqHW96vPfF3ZFG5HN5D5Gf7B-gs2W1l4X1b=
+5NYRw5W3nFGkF5TzkZFVwmL4v6mnpSzW3K2yQD3r1dKrW311YkN8VJ5grVkfktV5hLc7CW4yctx=
+h1XLCSYW3KqmFN3kFTc_W1FyzcY1h_qznW1p8KQx3PSxSyW29zYgg85h2S6W6dJpJ_2M0j9VVSM=
+c0M5NxrfhW6ZMSZR5bV3K4W3CjFJ45pF9DlW1lZ-Y942lGzsW6pWGmm5sXp2KW5BG2Sg296n0VW=
+1yV3DR1KX91yVvl3775r8jbMW78Qv047_c8t2W8Njsfg4fkKc4W5CqySg1sp7b_W3PYRC_2wLZt=
+M38B-1 )
+
+Instagram (https://info.gottmanconnect.com/e3t/Ctc/UC+113/d2FFGM04/VVDc2h4h=
+SGCZN2hNmxkP_VCTW1HN78y4Z8lHSN7nzPw33pdrrV1-WJV7CgYCtW7kTgl516B21cW2K2Y7R10=
+VS9sW8nYWqR4xtVv2W8gWK7r6SHfD8W1cYWyX6q72QZW6DRbf7265bS2W46hW6M2KLmvNW6BnVg=
+M3mtGytW3Lpd8q5s8_R2W2Y3Q1b613vTpN1mbmbYMyjk3W3pyZQZ8PFhyZVNL1dK27dHdjW7Dj3=
+KX61plgsVRSpwt91rr0bF1Z8mdNPk5mW2GZhS56S_dMJW3L59MP3PTcRmW4WT61B61kjpnN91GD=
+SD27yhhW14tBjY1DHg73W5CmxWh9jvSzkW1LW7bZ8BNt0tW1lNbDH5cyv8432f21 )
+
+Facebook (https://info.gottmanconnect.com/e3t/Ctc/UC+113/d2FFGM04/VVDc2h4hS=
+GCZN2hNmxkP_VCTW1HN78y4Z8lHSN7nzPw33pdrrV1-WJV7CgNQQW5P1ylR1sx8drW8n2VJD2cd=
+l5XW3C8bpT45KCJnW64CqTC2KyXN1N8XjY03J617MW7s7-9Z1qn4lqW2Gb7FJ6q1xQBVk2lbv6N=
+05HmW5KR9pn1k5L52W2Yz31258jx_XMvd87sQp5CbW51j_TD1FcZT3N99xCbcT-RxTW1PP7_L4F=
+7mkCW70CKND2mSr19W1Hm6XD88xj1vW3hlm3G9hQ8PMW5nc9_l5B0Lz3W6RLGwd9m3GBtW2bSyW=
+T6n7QlNW5QhnH55nt3cfW1Tsx8y5P6L53N351N615YcKyW4FrXQ74FxHJJ3f8g1 )
+
+LinkedIn (https://info.gottmanconnect.com/e3t/Ctc/UC+113/d2FFGM04/VVDc2h4hS=
+GCZN2hNmxkP_VCTW1HN78y4Z8lHSN7nzPw33pdrrV1-WJV7CgHjHW3HvHsS1TXMqJW4WL2zP3QW=
+5BJW5f3s051WWWh9N9bMz6mqcr1LW5yFNdP51Spn9W4PfrvT2sBMRcW5z14FP7clL5BW1FNj1g9=
+1y3hKW6y7LK34j5_F9W6lSmzk58_yHBVfHD1M57Gpy5W76Nz3C6BzksrW1VHSMB3y79KSW2Qt0y=
+X3D-YpyW6mM10k3x8kzHW6CLXpM8tbY9zW7GR-Px7PqxsfW1s4Rd815zPBcW7rlP829fRXYFW7c=
+HLT21zB4b8W6JV_T22_lHR_W1QK3fH8YHqZ3N6nHY4rxyVS8W54TDjm3qxCSf3b6P1 )
+
+YouTube (https://info.gottmanconnect.com/e3t/Ctc/UC+113/d2FFGM04/VVDc2h4hSG=
+CZN2hNmxkP_VCTW1HN78y4Z8lHSN7nzPw33pdrrV1-WJV7CgN85W8K1bWS1RnmWnW1Jg8Zj1Qt0=
+J_W1m097X2bPjCCVZ0Zb44SMcs8N44V-hqn_SC8W6VbhYs4KG7q7N6RDj8VH2KYLW7l6lYr2Mnq=
+kVN6b6XLRH-kb3W3lGcwy9jnkRQVl047c8xDtq7W70dTCg8h0fVNW1dxxdt4TR7X-W8rkD-t659=
+mxqVNb1dL1SRBN-M-Vzw716ZJ_W8Bsnk077sJMzW8zCwzB19m9R0W4P7LwJ6P779qN3jMnVtZ0M=
+sPW8gyG5p45TgvDW28pDnk7VNkYrW3vPxpp51BN_2TFFbr6xnsgD3kVl1 )
+
+Pinterest (https://info.gottmanconnect.com/e3t/Ctc/UC+113/d2FFGM04/VVDc2h4h=
+SGCZN2hNmxkP_VCTW1HN78y4Z8lHSN7nzPw33pdrrV1-WJV7CgWYgW2txDM6856cHCW88V0Fv4W=
+vZ4_W6Tf2Gg7jq6N8W87n0QC6pjxk1W6YN2nx6s5k9LW7Hkw6d3M-pptW9bNgJF4PnvNSN2nWP9=
+Q51jqWN6sv7BPtDVfxW1GfpFJ3Gbxq2W7xF3M-7sYCxwW2zr7Fx2SwfGyW3GJpk_6_DnhnN37fs=
+HmYqqLWW7qsKqz1gkWQkW3kggpM94D7BqW2l2xB82S_hjfW1ZZrcv3VDCprW9grppg8btvb1W5x=
+zQ091tX0DjW7K8L8m1CDfnNN4-gxN8jWZY9VkLXdg4GnXzbW2pfjCs2RDD0b3kpw1 )
+
+TikTok (https://info.gottmanconnect.com/e3t/Ctc/UC+113/d2FFGM04/VVDc2h4hSGC=
+ZN2hNmxkP_VCTW1HN78y4Z8lHSN7nzPw33pdrrV1-WJV7CgMqdW2xGv2T6WcV-kW7WSQzH6BJLj=
+BV3LmXs3c0TxlW42kS1f43gWQyMNHgMhXf53jW8yPXqw3chJB8W90MXrM4tRsJgW85JdwD55GZ3=
+kW8RXWsv7LgXypW5kyLvq9bq3QRW1BGZ0Q3xWc47W7bKpqG3LDKN4W2-Q4vh1fnkqzVvlpbl1XZ=
+4yDW89170l9brQ_pW9jWCQJ80tGBtW3djrcN1rPql_MTRrk-TZMnlW6KP7Rn81v7tXV4MlTF7VV=
+fwCW4H7h-57p7QrDW7rJzrp2yNvXbW3_6CLM4LfbsbW3M5mL38MNgqc39Kj1 )
+
+The Gottman Institute, 2101 4th Ave, Ste 1750, Seattle, WA 98121
+
+Unsubscribe (https://info.gottmanconnect.com/hs/manage-preferences/unsubscr=
+ibe-all?languagePreference=3Den&d=3DVnd6948Z63bbVMl-Jw3VWt57W1YZrD63P3Q7wW3=
+ZsjYm3_fZy1N72_vyCmWcNdW7b9ghF5ZBcXCV25wRF8RzDXHW8XhsL67qw8PTN8_MqcB1yf0NW3=
+0qMN77bFNhFVllHyn1MtX2xn1L3Q1x143&v=3D3&_hsenc=3Dp2ANqtz-_-cfO5cWK1_4hK8mDG=
+p7kAt0hUuGTD7wuJrvxLUaLP_IH3Muz6hOwB-27is0yd9bRmfNdmLwpfEa8JzGHs5T_rueLZHg&=
+_hsmi=3D253587009 )
+
+Manage preferences (https://info.gottmanconnect.com/hs/manage-preferences/u=
+nsubscribe?languagePreference=3Den&d=3DVnd6948Z63bbVMl-Jw3VWt57W1YZrD63P3Q7=
+wW3ZsjYm3_fZy1N72_vyCmWcNdW7b9ghF5ZBcXCV25wRF8RzDXHW8XhsL67qw8PTN8_MqcB1yf0=
+NW30qMN77bFNhFVllHyn1MtX2xn1L3Q1x143&v=3D3&_hsenc=3Dp2ANqtz-_-cfO5cWK1_4hK8=
+mDGp7kAt0hUuGTD7wuJrvxLUaLP_IH3Muz6hOwB-27is0yd9bRmfNdmLwpfEa8JzGHs5T_rueLZ=
+Hg&_hsmi=3D253587009 )
+------=_Part_591833_1424319462.1681049183828
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www=
+.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"http://www.w3=
+.org/1999/xhtml" xmlns:o=3D"urn:schemas-microsoft-com:office:office" xmlns:=
+v=3D"urn:schemas-microsoft-com:vml" lang=3D"en"><head>
+    <title>How Are You Emotionally Investing In Your Relationship?</title>
+    <meta property=3D"og:title" content=3D"How Are You Emotionally Investin=
+g In Your Relationship?">
+    <meta name=3D"twitter:title" content=3D"How Are You Emotionally Investi=
+ng In Your Relationship?">
+   =20
+   =20
+   =20
+<meta name=3D"x-apple-disable-message-reformatting">
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0">
+    <!--[if gte mso 9]>
+  <xml>
+      <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+  </xml>
+ =20
+  <style>
+    ul > li {
+      text-indent: -1em;
+    }
+  </style>
+<![endif]-->
+<!--[if mso]>
+<style type=3D"text/css">
+ body, td {font-family: Arial, Helvetica, sans-serif;}=20
+ .hse-body-wrapper-table {background-color: #FFFFFF}
+</style>
+<![endif]-->
+   =20
+     =20
+   =20
+  <meta name=3D"generator" content=3D"HubSpot"><meta property=3D"og:url" co=
+ntent=3D"https://info.gottman.com/how-are-you-emotionally-investing"><meta =
+name=3D"robots" content=3D"noindex,follow"><!--[if !((mso)|(IE))]><!-- --><=
+style type=3D"text/css">.moz-text-html .hse-column-container{max-width:600p=
+x !important;width:600px !important}
+.moz-text-html .hse-column{display:table-cell;vertical-align:top}.moz-text-=
+html .hse-section .hse-size-6{max-width:300px !important;width:300px !impor=
+tant}
+.moz-text-html .hse-section .hse-size-12{max-width:600px !important;width:6=
+00px !important}
+[owa] .hse-column-container{max-width:600px !important;width:600px !importa=
+nt}[owa] .hse-column{display:table-cell;vertical-align:top}
+[owa] .hse-section .hse-size-6{max-width:300px !important;width:300px !impo=
+rtant}
+[owa] .hse-section .hse-size-12{max-width:600px !important;width:600px !imp=
+ortant}
+@media only screen and (min-width:640px){.hse-column-container{max-width:60=
+0px !important;width:600px !important}
+.hse-column{display:table-cell;vertical-align:top}.hse-section .hse-size-6{=
+max-width:300px !important;width:300px !important}
+.hse-section .hse-size-12{max-width:600px !important;width:600px !important=
+}}@media only screen and (max-width:639px){img.stretch-on-mobile,.hs_rss_em=
+ail_entries_table img,.hs-stretch-cta .hs-cta-img{height:auto !important;wi=
+dth:100% !important}
+.display_block_on_small_screens{display:block}.hs_padded{padding-left:20px =
+!important;padding-right:20px !important}
+}@media screen and (max-width:639px){.social-network-cell{display:inline-bl=
+ock}}</style><!--<![endif]--><style type=3D"text/css">body[data-outlook-cyc=
+le] img.stretch-on-mobile,body[data-outlook-cycle] .hs_rss_email_entries_ta=
+ble img{height:auto !important;width:100% !important}
+body[data-outlook-cycle] .hs_padded{padding-left:20px !important;padding-ri=
+ght:20px !important}
+a[x-apple-data-detectors]{color:inherit !important;text-decoration:none !im=
+portant;font-size:inherit !important;font-family:inherit !important;font-we=
+ight:inherit !important;line-height:inherit !important}
+#outlook a{padding:0}.yshortcuts a{border-bottom:none !important}a{text-dec=
+oration:underline}
+.ExternalClass{width:100%}.ExternalClass,.ExternalClass p,.ExternalClass td=
+,.ExternalClass div,.ExternalClass span,.ExternalClass font{line-height:100=
+%}
+p{margin:0}body{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-we=
+bkit-font-smoothing:antialiased;moz-osx-font-smoothing:grayscale}</style></=
+head>
+  <body bgcolor=3D"#FFFFFF" style=3D"margin:0 !important; padding:0 !import=
+ant; font-family:Tahoma, sans-serif; font-size:16px; color:#303030; word-br=
+eak:break-word">
+   =20
+<div id=3D"preview_text" style=3D"display:none;font-size:1px;color:#FFFFFF;=
+line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">Do=
+ you know what relationship struggles to focus on or do you want an assessm=
+ent?</div>
+   =20
+<!--[if gte mso 9]>
+<v:background xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"t">
+ =20
+    <v:fill type=3D"tile" size=3D"100%,100%"  color=3D"#ffffff"/>
+ =20
+</v:background>
+<![endif]-->
+    <div class=3D"hse-body-background" style=3D"background-color:#ffffff" b=
+gcolor=3D"#ffffff">
+      <table role=3D"presentation" class=3D"hse-body-wrapper-table" cellpad=
+ding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !important; border-c=
+ollapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; margin:0; pad=
+ding:0; width:100% !important; min-width:320px !important; height:100% !imp=
+ortant" width=3D"100%" height=3D"100%">
+        <tbody><tr>
+          <td class=3D"hse-body-wrapper-td" valign=3D"top" style=3D"border-=
+collapse:collapse; mso-line-height-rule:exactly; font-family:Tahoma, sans-s=
+erif; font-size:16px; color:#303030; word-break:break-word; padding-top:20p=
+x">
+            <div id=3D"hs_cos_wrapper_main" class=3D"hs_cos_wrapper hs_cos_=
+wrapper_widget hs_cos_wrapper_type_dnd_area" style=3D"color: inherit; font-=
+size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget" d=
+ata-hs-cos-type=3D"dnd_area">  <div id=3D"section_1678817636298" class=3D"h=
+se-section hse-section-first" style=3D"padding-left:10px; padding-right:10p=
+x">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation">
+      <tr>
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:600px">
+<![endif]-->
+<div id=3D"column_1678817636298_0" class=3D"hse-column hse-size-12">
+  <div id=3D"hs_cos_wrapper_module_16788176362972" class=3D"hs_cos_wrapper =
+hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; =
+font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widg=
+et" data-hs-cos-type=3D"module">
+<div style=3D"overflow:hidden">
+<table role=3D"presentation" class=3D"hse-pre-header hse-secondary" width=
+=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !im=
+portant; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0=
+pt; text-align:right; font-family:Arial, sans-serif; font-size:12px; line-h=
+eight:135%; color:#23496d; margin-bottom:0; padding:0" align=3D"right">
+    <tbody>
+        <tr>
+           =20
+            <td align=3D"right" valign=3D"top" style=3D"border-collapse:col=
+lapse; mso-line-height-rule:exactly; color:#303030; word-break:break-word; =
+text-align:right; font-family:Arial, sans-serif; font-size:12px; padding:10=
+px 0; margin-bottom:0; line-height:135%">
+                <a href=3D"https://info.gottmanconnect.com/e3t/Ctc/UC+113/d=
+2FFGM04/VVDc2h4hSGCZN2hNmxkP_VCTW1HN78y4Z8lHSN7nzPvt5nCVhV3Zsc37CgQx3W7-CqZ=
+q5PSyCzW4lBvxN7w1gzZW9kXL_v7YS0G5N2nYdmjp10_QN7MCT6j-0mR5W7Ccccf8Lpf4kW6VWj=
+Ry7LkrC_W35Fk3n3wpwFrW82CGqx5HNS4vN3CR5hCjCfb4W49l6Tg2zNCkXW213nFC4qkJb8W7C=
+PR7M5D0QZhVV90dC4rz3yxW8YJQl43C0ZkfW6tx5Jw67XJQ8VnzKJB8Hf2XVMMXvkmrsqWcW8R7=
+J6L7d1-s-W4Rr4CR5bS_ZBW3hnJtw6FnKjnN4QHTmrBBZftW4t6DJ14Dc1QFW3lWLyW5_5sfZV7=
+887S9483P5W45--Zh7VslFqW2JXSZj1mqZzTW8nL5m36Xy4h-W4RDDvt4mNv3NW5R4gqw95HjSw=
+W5Bq-mL8phm1kW2Mvv5m5ktr28W3Qt3tT50Z_GnW5w94kg6-QXgFW2-PDd4118hCCW2mWYf61D3=
+zCt3ltl1" style=3D"mso-line-height-rule:exactly; color:#00a4bd; font-weight=
+:normal; text-decoration:underline; font-style:normal" data-hs-link-id=3D"0=
+" target=3D"_blank">View in browser</a>
+            </td>
+           =20
+        </tr>
+    </tbody>
+</table>
+</div></div>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"section-1" class=3D"hse-section" style=3D"padding-left:10px; p=
+adding-right:10px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0; background-color:#ffffff; padding-bottom:5px" b=
+gcolor=3D"#ffffff">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;padding-bottom:5px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:600px">
+<![endif]-->
+<div id=3D"column-1-0" class=3D"hse-column hse-size-12">
+  <div id=3D"hs_cos_wrapper_module_16776961927881" class=3D"hs_cos_wrapper =
+hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; =
+font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widg=
+et" data-hs-cos-type=3D"module">
+=09
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !important; bord=
+er-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt">
+    <tbody>
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"border-collapse:co=
+llapse; mso-line-height-rule:exactly; font-family:Tahoma, sans-serif; color=
+:#303030; word-break:break-word; text-align:center; padding:20px 0px 10px; =
+font-size:0px">
+               =20
+                <img alt=3D"Invest in your relationship to become rich in l=
+ove" src=3D"https://info.gottman.com/hs-fs/hubfs/April%202023%20Campaign_Me=
+ssage%202-Email%20Banner_1200x1000_v1.png?width=3D1200&amp;upscale=3Dtrue&a=
+mp;name=3DApril%202023%20Campaign_Message%202-Email%20Banner_1200x1000_v1.p=
+ng" style=3D"outline:none; text-decoration:none; -ms-interpolation-mode:bic=
+ubic; max-width:100%; font-size:16px" width=3D"600" align=3D"middle" srcset=
+=3D"https://info.gottman.com/hs-fs/hubfs/April%202023%20Campaign_Message%20=
+2-Email%20Banner_1200x1000_v1.png?upscale=3Dtrue&amp;width=3D1200&amp;upsca=
+le=3Dtrue&amp;name=3DApril%202023%20Campaign_Message%202-Email%20Banner_120=
+0x1000_v1.png 600w, https://info.gottman.com/hs-fs/hubfs/April%202023%20Cam=
+paign_Message%202-Email%20Banner_1200x1000_v1.png?upscale=3Dtrue&amp;width=
+=3D2400&amp;upscale=3Dtrue&amp;name=3DApril%202023%20Campaign_Message%202-E=
+mail%20Banner_1200x1000_v1.png 1200w" sizes=3D"(max-width: 600px) 100vw, 60=
+0px">
+               =20
+            </td>
+        </tr>
+    </tbody>
+</table></div>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Tahoma, sans-serif; font-size:16px; color:#303030; word-break:break-word; p=
+adding:15px 20px"><div id=3D"hs_cos_wrapper_module-1-0-0" class=3D"hs_cos_w=
+rapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: in=
+herit; font-size: inherit; line-height: inherit;" data-hs-cos-general-type=
+=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs_cos_wrapper_module-1-=
+0-0_" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_ric=
+h_text" style=3D"color: inherit; font-size: inherit; line-height: inherit;"=
+ data-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"rich_text"><p styl=
+e=3D"mso-line-height-rule:exactly; line-height:150%">You may be asking your=
+self, what is the best way to invest in my Emotional Bank Account and stren=
+gthen my relationship this season?</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:150%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:150%">We offer a seri=
+es of relationship-improvement programs tailored to your specific needs. Ch=
+oose the one that=E2=80=99s best for your relationship:</p></div></div></td=
+></tr></tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"section_1680576090153" class=3D"hse-section" style=3D"padding-=
+left:10px; padding-right:10px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0; background-color:#EEEEEE; padding-bottom:10px; =
+padding-top:10px" bgcolor=3D"#EEEEEE">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#EEEEEE">
+      <tr style=3D"background-color:#EEEEEE;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:300px;padding-bottom:10px; padding-top:=
+10px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"300" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:300px">
+<![endif]-->
+<div id=3D"column_1680576090153_0" class=3D"hse-column hse-size-6">
+  <div id=3D"hs_cos_wrapper_module_16806321803025" class=3D"hs_cos_wrapper =
+hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; =
+font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widg=
+et" data-hs-cos-type=3D"module">
+=09
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !important; bord=
+er-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt">
+    <tbody>
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"border-collapse:co=
+llapse; mso-line-height-rule:exactly; font-family:Tahoma, sans-serif; color=
+:#303030; word-break:break-word; text-align:center; padding:10px; font-size=
+:0px">
+               =20
+                    <a href=3D"https://info.gottmanconnect.com/e3t/Ctc/UC+1=
+13/d2FFGM04/VVDc2h4hSGCZN2hNmxkP_VCTW1HN78y4Z8lHSN7nzPwm3q3n_V1-WJV7CgN9QW2=
+vyDGD83DYlNW8xYv1315VGX0VNqS836xDHT9N63l6ztrYL5RW3SBYWW4P94RVW8lCm9Y96z5NpM=
+TSdCPtqQsSW2T7G768-HLYfW5rN4kB3kfDzQW5lbr3l1X3b17W7Qd6M47jPRXXN8QDJfvth1LtV=
+gcC-F1xlhjFW1TGmwL6x4m1TW5C-w5-8rYrzYW5KJLVz3Z2xFgW18RDjl7GsR-_VqnW5s69Gshv=
+W6ryLr18XwZfyW1JmHZR6j7c9nW1msr0l4-nxdHW76s3g43RpzRgW6cQMqC4TFPJHW4DGYXw6mC=
+PNcN8f8r4FbScZ7W6V9JWk1h_Td63nzr1" target=3D"_blank" style=3D"color:#00a4bd=
+; mso-line-height-rule:exactly" data-hs-link-id=3D"0">
+               =20
+                <img alt=3D"August+2022+-+End+of+Summer+Sale_Square+Product=
++Images_Adviser_v1" src=3D"https://info.gottman.com/hs-fs/hubfs/Imported%20=
+sitepage%20images/August+2022+-+End+of+Summer+Sale_Square+Product+Images_Ad=
+viser_v1.png?width=3D560&amp;upscale=3Dtrue&amp;name=3DAugust+2022+-+End+of=
++Summer+Sale_Square+Product+Images_Adviser_v1.png" style=3D"outline:none; t=
+ext-decoration:none; -ms-interpolation-mode:bicubic; border:none; max-width=
+:100%; font-size:16px" width=3D"280" align=3D"middle" srcset=3D"https://inf=
+o.gottman.com/hs-fs/hubfs/Imported%20sitepage%20images/August+2022+-+End+of=
++Summer+Sale_Square+Product+Images_Adviser_v1.png?upscale=3Dtrue&amp;width=
+=3D560&amp;upscale=3Dtrue&amp;name=3DAugust+2022+-+End+of+Summer+Sale_Squar=
+e+Product+Images_Adviser_v1.png 280w, https://info.gottman.com/hs-fs/hubfs/=
+Imported%20sitepage%20images/August+2022+-+End+of+Summer+Sale_Square+Produc=
+t+Images_Adviser_v1.png?upscale=3Dtrue&amp;width=3D1120&amp;upscale=3Dtrue&=
+amp;name=3DAugust+2022+-+End+of+Summer+Sale_Square+Product+Images_Adviser_v=
+1.png 560w" sizes=3D"(max-width: 280px) 100vw, 280px">
+               =20
+                    </a>
+               =20
+            </td>
+        </tr>
+    </tbody>
+</table></div>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Tahoma, sans-serif; font-size:16px; color:#303030; word-break:break-word; p=
+adding:15px 20px 10px"><div id=3D"hs_cos_wrapper_module_16806321428773" cla=
+ss=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" styl=
+e=3D"color: inherit; font-size: inherit; line-height: inherit;" data-hs-cos=
+-general-type=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs_cos_wrap=
+per_module_16806321428773_" class=3D"hs_cos_wrapper hs_cos_wrapper_widget h=
+s_cos_wrapper_type_rich_text" style=3D"color: inherit; font-size: inherit; =
+line-height: inherit;" data-hs-cos-general-type=3D"widget" data-hs-cos-type=
+=3D"rich_text"><p style=3D"mso-line-height-rule:exactly; line-height:150%; =
+text-align:center" align=3D"center">The Gottman Relationship Adviser is a c=
+omplete wellness program that first assesses your relationship health, then=
+ builds a unique step-by-step solution that you can work through at your ow=
+n pace.</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:150%; text-align:cent=
+er" align=3D"center">&nbsp;</p></div></div></td></tr></tbody></table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Tahoma, sans-serif; font-size:16px; color:#303030; word-break:break-word; p=
+adding:10px 20px"><div id=3D"hs_cos_wrapper_module_16805761013933" class=3D=
+"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"=
+color: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-gene=
+ral-type=3D"widget" data-hs-cos-type=3D"module">
+ =20
+  <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+role=3D"presentation" style=3D"border-spacing:0 !important; mso-table-lspac=
+e:0pt; mso-table-rspace:0pt; border-collapse:separate!important">
+    <tbody><tr>
+        <!--[if mso]>
+      <td align=3D"center" valign=3D"middle" bgcolor=3D"#e56055" role=3D"pr=
+esentation"  valign=3D"middle" style=3D"border-radius:5px;cursor:auto;backg=
+round-color:#e56055;padding:12px 18px;">
+    <![endif]-->
+    <!--[if !mso]><!-- -->
+      <td align=3D"center" valign=3D"middle" bgcolor=3D"#e56055" role=3D"pr=
+esentation" style=3D"border-collapse:collapse; mso-line-height-rule:exactly=
+; font-family:Tahoma, sans-serif; font-size:16px; color:#303030; word-break=
+:break-word; border-radius:5px; cursor:auto; background-color:#e56055">
+   <!--<![endif]-->
+        <a href=3D"https://info.gottmanconnect.com/e3t/Ctc/UC+113/d2FFGM04/=
+VVDc2h4hSGCZN2hNmxkP_VCTW1HN78y4Z8lHSN7nzPwm3q3n_V1-WJV7CgDxVW5V3NjX1kzDsmW=
+63hH9Q1v_MrbW8fdCNs3YHfRqW60jpfN4ZbglgW449h0751wdpmW7V8xHc96strgW4MTTht4jbs=
+FHVy5_wZ4sQCc_W5ZgvjJ5NMjq0VyPgt4545QK9W72J70c4K5s8lN4CklDSsdkbmW8Lss1083GV=
+ydW3_WqWs31gmCrW36RnhN1nJqDRW5l32nQ15Lwd8V7MfWd6qKyywW3L166K3yy-fhW64JZyz1v=
+1stxW5XFpbf1RLnzpV5y9B87ZFzNtW3pqrwC8QTxXpW28LjjB5Xqdd8Vq1-M627WcVdVTMMgn89=
+02FmW88nmbF8s9f4838R41" target=3D"_blank" style=3D"color:#00a4bd; mso-line-=
+height-rule:exactly; font-size:16px; font-family:Arial, sans-serif; Margin:=
+0; text-transform:none; text-decoration:none; padding:12px 18px; display:bl=
+ock" data-hs-link-id=3D"1">
+          <strong style=3D"color:#ffffff;font-weight:bold;text-decoration:n=
+one;font-style:normal;">ASSESS AND ADDRESS</strong>
+        </a>
+      </td>
+    </tr>
+  </tbody></table>
+</div></td></tr></tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+<!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:300px;padding-bottom:10px; padding-top:=
+10px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"300" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:300px">
+<![endif]-->
+<div id=3D"column_1680576090153_1" class=3D"hse-column hse-size-6">
+  <div id=3D"hs_cos_wrapper_module_16806322002066" class=3D"hs_cos_wrapper =
+hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; =
+font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widg=
+et" data-hs-cos-type=3D"module">
+=09
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !important; bord=
+er-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt">
+    <tbody>
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"border-collapse:co=
+llapse; mso-line-height-rule:exactly; font-family:Tahoma, sans-serif; color=
+:#303030; word-break:break-word; text-align:center; padding:10px; font-size=
+:0px">
+               =20
+                    <a href=3D"https://info.gottmanconnect.com/e3t/Ctc/UC+1=
+13/d2FFGM04/VVDc2h4hSGCZN2hNmxkP_VCTW1HN78y4Z8lHSN7nzPwm3q3n_V1-WJV7CgY9GW3=
+bwmK35hLsF4N2M9PRvbqDq1Vf__5Y4D1q3vW2vqv7n1fV8H4W93pBw84VsZt4W6MBXkZ2QDCJ_W=
+305lQG85rkhmW1pjNkt73KTg_W8lCdSV1C8xN6W7mcwZF3ngVw2W1sHY469byL0zW97CHgF1W-b=
+28W1jKQ1Q2N10P-W4grvXl53ldcGW5qW_Dd2zr0SdW7rTcw27R0QtWN3yW4bZS-4T5W4cjV3T6l=
+HbmhW7lHFJ17ds43QW2Vbm_F121HnqVqM0dD2xz2n4W4q3H-t965lqlW6tfjc23HwNcGMhf4fJX=
+s5YPW5HSDms1Hy8Y2W19fdn44w8xq032BC1" target=3D"_blank" style=3D"color:#00a4=
+bd; mso-line-height-rule:exactly" data-hs-link-id=3D"0">
+               =20
+                <img alt=3D"August+2022+-+End+of+Summer+Sale_Square+Product=
++Images_GRC_v1" src=3D"https://info.gottman.com/hs-fs/hubfs/Imported%20site=
+page%20images/August+2022+-+End+of+Summer+Sale_Square+Product+Images_GRC_v1=
+.png?width=3D560&amp;upscale=3Dtrue&amp;name=3DAugust+2022+-+End+of+Summer+=
+Sale_Square+Product+Images_GRC_v1.png" style=3D"outline:none; text-decorati=
+on:none; -ms-interpolation-mode:bicubic; border:none; max-width:100%; font-=
+size:16px" width=3D"280" align=3D"middle" srcset=3D"https://info.gottman.co=
+m/hs-fs/hubfs/Imported%20sitepage%20images/August+2022+-+End+of+Summer+Sale=
+_Square+Product+Images_GRC_v1.png?upscale=3Dtrue&amp;width=3D560&amp;upscal=
+e=3Dtrue&amp;name=3DAugust+2022+-+End+of+Summer+Sale_Square+Product+Images_=
+GRC_v1.png 280w, https://info.gottman.com/hs-fs/hubfs/Imported%20sitepage%2=
+0images/August+2022+-+End+of+Summer+Sale_Square+Product+Images_GRC_v1.png?u=
+pscale=3Dtrue&amp;width=3D1120&amp;upscale=3Dtrue&amp;name=3DAugust+2022+-+=
+End+of+Summer+Sale_Square+Product+Images_GRC_v1.png 560w" sizes=3D"(max-wid=
+th: 280px) 100vw, 280px">
+               =20
+                    </a>
+               =20
+            </td>
+        </tr>
+    </tbody>
+</table></div>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Tahoma, sans-serif; font-size:16px; color:#303030; word-break:break-word; p=
+adding:15px 20px 10px"><div id=3D"hs_cos_wrapper_module_16806321448864" cla=
+ss=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" styl=
+e=3D"color: inherit; font-size: inherit; line-height: inherit;" data-hs-cos=
+-general-type=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs_cos_wrap=
+per_module_16806321448864_" class=3D"hs_cos_wrapper hs_cos_wrapper_widget h=
+s_cos_wrapper_type_rich_text" style=3D"color: inherit; font-size: inherit; =
+line-height: inherit;" data-hs-cos-general-type=3D"widget" data-hs-cos-type=
+=3D"rich_text"><p style=3D"mso-line-height-rule:exactly; line-height:150%; =
+text-align:center" align=3D"center">The Gottman Relationship Coach products=
+ address a specific area of your relationship, like constant arguments, int=
+imacy challenges, and communication skills. Self-select the program based o=
+n your unique needs.</p></div></div></td></tr></tbody></table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Tahoma, sans-serif; font-size:16px; color:#303030; word-break:break-word; p=
+adding:10px 20px"><div id=3D"hs_cos_wrapper_module_16805760759892" class=3D=
+"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"=
+color: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-gene=
+ral-type=3D"widget" data-hs-cos-type=3D"module">
+ =20
+  <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+role=3D"presentation" style=3D"border-spacing:0 !important; mso-table-lspac=
+e:0pt; mso-table-rspace:0pt; border-collapse:separate!important">
+    <tbody><tr>
+        <!--[if mso]>
+      <td align=3D"center" valign=3D"middle" bgcolor=3D"#e56055" role=3D"pr=
+esentation"  valign=3D"middle" style=3D"border-radius:5px;cursor:auto;backg=
+round-color:#e56055;padding:12px 18px;">
+    <![endif]-->
+    <!--[if !mso]><!-- -->
+      <td align=3D"center" valign=3D"middle" bgcolor=3D"#e56055" role=3D"pr=
+esentation" style=3D"border-collapse:collapse; mso-line-height-rule:exactly=
+; font-family:Tahoma, sans-serif; font-size:16px; color:#303030; word-break=
+:break-word; border-radius:5px; cursor:auto; background-color:#e56055">
+   <!--<![endif]-->
+        <a href=3D"https://info.gottmanconnect.com/e3t/Ctc/UC+113/d2FFGM04/=
+VVDc2h4hSGCZN2hNmxkP_VCTW1HN78y4Z8lHSN7nzPwm3q3n_V1-WJV7CgTptW40ygy-95fFrwW=
+5gxjqX4j34XFW8PRRsH2q19VfVTqY0l8Z71L1W3fWn3R3TpXdQW4-2phB52lRlBW7gWtLY3zFy3=
+-W324g9v6Mq7CHW2kfXHF6v-NfGV8wTh47pD2sHW7r0TyW3W6TwSW3wMZMb8T2PZhW64BS2P6zR=
+4JbW7mnLM58vXVV3V4vjr84dX8MJW79ctl95F6QmGN6Wt4PztZJD_W3LV1Rl6zhB1CW7_Qw5X6g=
+FH_gW4xggrM65b3F8W90v5mF8vQvcjW1W1f3w9bn3LvW1qwfmv22c9m7W1TdXGy76XhLjN4Q7vQ=
+1GfMmcW2JXhrV21q980387V1" target=3D"_blank" style=3D"color:#00a4bd; mso-lin=
+e-height-rule:exactly; font-size:16px; font-family:Arial, sans-serif; Margi=
+n:0; text-transform:none; text-decoration:none; padding:12px 18px; display:=
+block" data-hs-link-id=3D"1">
+          <strong style=3D"color:#ffffff;font-weight:bold;text-decoration:n=
+one;font-style:normal;">START ON MY OWN</strong>
+        </a>
+      </td>
+    </tr>
+  </tbody></table>
+</div></td></tr></tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"section_16781332399274" class=3D"hse-section" style=3D"padding=
+-left:10px; padding-right:10px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0; background-color:#ffffff" bgcolor=3D"#ffffff">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:600px">
+<![endif]-->
+<div id=3D"column-0-0" class=3D"hse-column hse-size-12">
+  <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-=
+table-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" =
+style=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-famil=
+y:Tahoma, sans-serif; font-size:16px; color:#303030; word-break:break-word;=
+ padding:0px 20px 15px"><div id=3D"hs_cos_wrapper_module_16801278452001" cl=
+ass=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" sty=
+le=3D"color: inherit; font-size: inherit; line-height: inherit;" data-hs-co=
+s-general-type=3D"widget" data-hs-cos-type=3D"module">
+<!--[if gte mso 9]>
+<div style=3D"line-height: 0; font-size: 0px">
+  <v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" stroke=3D=
+"false" style=3D"width:560px; height:2pt;" fillcolor=3D"none">
+    <v:fill type=3D"tile"/>
+    <v:textbox inset=3D"0,0,0,0">
+      <div>
+<![endif]-->
+<table role=3D"presentation" width=3D"100%" align=3D"center" border=3D"0" s=
+tyle=3D"position:relative; top:-1px; min-width:20px; width:100%; max-width:=
+100%; border-spacing:0; mso-table-lspace:0pt; mso-table-rspace:0pt; border-=
+collapse:collapse; font-size:1px">
+  <tbody><tr>
+   =20
+   =20
+    <td width=3D"auto" style=3D"border-collapse:collapse; mso-line-height-r=
+ule:exactly; font-family:Tahoma, sans-serif; font-size:16px; color:#303030;=
+ word-break:break-word; line-height:0"><!--[if mso 16]>&nbsp;<![endif]--></=
+td>
+   =20
+   =20
+    <td width=3D"50%" valign=3D"middle" style=3D"border-collapse:collapse; =
+mso-line-height-rule:exactly; font-family:Tahoma, sans-serif; font-size:16p=
+x; color:#303030; word-break:break-word; line-height:0; border:transparent;=
+ border-bottom:1px solid #FFFFFF; mso-border-bottom-alt:2pt solid #FFFFFF; =
+border-bottom-width:1px"><!--[if mso 16]>&nbsp;<![endif]--></td>
+   =20
+   =20
+    <td width=3D"auto" style=3D"border-collapse:collapse; mso-line-height-r=
+ule:exactly; font-family:Tahoma, sans-serif; font-size:16px; color:#303030;=
+ word-break:break-word; line-height:0"><!--[if mso 16]>&nbsp;<![endif]--></=
+td>
+   =20
+  </tr>
+</tbody></table>
+<!--[if gte mso 9]></div></v:textbox></v:rect></div><![endif]--></div></td>=
+</tr></tbody></table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Tahoma, sans-serif; font-size:16px; color:#303030; word-break:break-word; p=
+adding:20px 20px 10px"><div id=3D"hs_cos_wrapper_module_16781332399272" cla=
+ss=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" styl=
+e=3D"color: inherit; font-size: inherit; line-height: inherit;" data-hs-cos=
+-general-type=3D"widget" data-hs-cos-type=3D"module">
+<table role=3D"presentation" align=3D"center" style=3D"border-spacing:0 !im=
+portant; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0=
+pt; width:auto; text-align:center" class=3D"hs_cos_wrapper_type_social_modu=
+le" width=3D"auto">
+  <tbody>
+    <tr align=3D"center">
+     =20
+      <td class=3D"social-network-cell" style=3D"border-collapse:collapse; =
+mso-line-height-rule:exactly; font-family:Tahoma, sans-serif; font-size:16p=
+x; color:#303030; word-break:break-word">
+        <table role=3D"presentation" align=3D"center" style=3D"border-spaci=
+ng:0 !important; border-collapse:collapse; mso-table-lspace:0pt; mso-table-=
+rspace:0pt; width:auto; text-align:center" class=3D"hs_cos_wrapper_type_soc=
+ial_module_single" width=3D"auto">
+          <tbody>
+            <tr align=3D"center">
+             =20
+              <td class=3D"display_block_on_small_screens" style=3D"border-=
+collapse:collapse; mso-line-height-rule:exactly; font-family:Tahoma, sans-s=
+erif; font-size:16px; color:#303030; word-break:break-word; padding:8px 5px=
+; line-height:1; vertical-align:middle" valign=3D"middle">
+                <a href=3D"https://info.gottmanconnect.com/e3t/Ctc/UC+113/d=
+2FFGM04/VVDc2h4hSGCZN2hNmxkP_VCTW1HN78y4Z8lHSN7nzPw33q3nJV1-WJV7CgGyfW1LnYD=
+X80S9KNN1FB65p7_sNdW5Kr3Rh70yYXsW1MPg-H6WB4JbW7vM-7k1njhyNW8TmX1H68Q1sKW82C=
+Cj91GCtQNN8fwtbr2MtDFW7wjddS9g_j2kW5y-p074mGh8nW194W5P5qmd6RW7cks7H48s3Z1W8=
+xcPQv22PgFTW6Q0-ZZ8KkTg0W6CVR3t5c-X8kW5G6fRd6YdYKmW8NdVKn7Xdh27W2fD21B6sqJ9=
+4W14jWZ249fyJXW7Gn15k33jJTfW8TtlXN8yhmBMW8w-_8d5B_K6vW77BZym4LgjLxW9bdY2S2g=
+C7Bj31Fp1" style=3D"color:#00a4bd; mso-line-height-rule:exactly; text-decor=
+ation:none !important" data-hs-link-id=3D"0" target=3D"_blank">
+                 =20
+                 =20
+                  <img src=3D"https://info.gottmanconnect.com/hs/hsstatic/T=
+emplateAssets/static-1.114/img/hs_default_template_images/modules/Follow+Me=
++-+Email/instagram_circle_black.png" alt=3D"Instagram" height=3D"25" style=
+=3D"outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; bor=
+der:none; width:auto!important; height:25px!important; vertical-align:middl=
+e" valign=3D"middle" width=3D"auto">
+                 =20
+                </a>
+              </td>
+             =20
+             =20
+            </tr>
+          </tbody>
+        </table>
+      </td>
+     =20
+      <td class=3D"social-network-cell" style=3D"border-collapse:collapse; =
+mso-line-height-rule:exactly; font-family:Tahoma, sans-serif; font-size:16p=
+x; color:#303030; word-break:break-word">
+        <table role=3D"presentation" align=3D"center" style=3D"border-spaci=
+ng:0 !important; border-collapse:collapse; mso-table-lspace:0pt; mso-table-=
+rspace:0pt; width:auto; text-align:center" class=3D"hs_cos_wrapper_type_soc=
+ial_module_single" width=3D"auto">
+          <tbody>
+            <tr align=3D"center">
+             =20
+              <td class=3D"display_block_on_small_screens" style=3D"border-=
+collapse:collapse; mso-line-height-rule:exactly; font-family:Tahoma, sans-s=
+erif; font-size:16px; color:#303030; word-break:break-word; padding:8px 5px=
+; line-height:1; vertical-align:middle" valign=3D"middle">
+                <a href=3D"https://info.gottmanconnect.com/e3t/Ctc/UC+113/d=
+2FFGM04/VVDc2h4hSGCZN2hNmxkP_VCTW1HN78y4Z8lHSN7nzPw33q3nJV1-WJV7CgBqjN8lrXk=
+mqNHcNW6cZ5PJ2K4Xs0VfzW-s6FLxf2W8LLhXw165dSCW726SP88Kc2YkV9ZMfN3k7KgdW59Vt5=
+68-_VqTVDDq5c5bm25_VYYW_X6tl3XLW2BCbLl1JDS3LN4YDn83GGK9ZW6vFKr95bvw1lW7RjW7=
+f8f2t3QW2C34xd5xkn32W8rlN7X8dRstcW84XSWy3GVwLsN9hl7J7KqfDCW1Jqv-41SfH51W2x3=
+Rl19kZH2dW6hq-Nl2PfGN8W6FnQ-Z4cBRm0W1C_VrX5SF18jW15273g4HXndHW4NPMMm5QDcWh3=
+8mV1" style=3D"color:#00a4bd; mso-line-height-rule:exactly; text-decoration=
+:none !important" data-hs-link-id=3D"0" target=3D"_blank">
+                 =20
+                 =20
+                  <img src=3D"https://info.gottmanconnect.com/hs/hsstatic/T=
+emplateAssets/static-1.114/img/hs_default_template_images/modules/Follow+Me=
++-+Email/facebook_circle_black.png" alt=3D"Facebook" height=3D"25" style=3D=
+"outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; border=
+:none; width:auto!important; height:25px!important; vertical-align:middle" =
+valign=3D"middle" width=3D"auto">
+                 =20
+                </a>
+              </td>
+             =20
+             =20
+            </tr>
+          </tbody>
+        </table>
+      </td>
+     =20
+      <td class=3D"social-network-cell" style=3D"border-collapse:collapse; =
+mso-line-height-rule:exactly; font-family:Tahoma, sans-serif; font-size:16p=
+x; color:#303030; word-break:break-word">
+        <table role=3D"presentation" align=3D"center" style=3D"border-spaci=
+ng:0 !important; border-collapse:collapse; mso-table-lspace:0pt; mso-table-=
+rspace:0pt; width:auto; text-align:center" class=3D"hs_cos_wrapper_type_soc=
+ial_module_single" width=3D"auto">
+          <tbody>
+            <tr align=3D"center">
+             =20
+              <td class=3D"display_block_on_small_screens" style=3D"border-=
+collapse:collapse; mso-line-height-rule:exactly; font-family:Tahoma, sans-s=
+erif; font-size:16px; color:#303030; word-break:break-word; padding:8px 5px=
+; line-height:1; vertical-align:middle" valign=3D"middle">
+                <a href=3D"https://info.gottmanconnect.com/e3t/Ctc/UC+113/d=
+2FFGM04/VVDc2h4hSGCZN2hNmxkP_VCTW1HN78y4Z8lHSN7nzPw33q3nJV1-WJV7CgKQwVM1sZN=
+3GTw23W7dJDn66dFG1WW47BMQg3y5kSCW68c0vp4P5mJvW5P_7Gm99S3gnW7lT6vb3SnpqNVXyf=
+5V2GsMNHN6J6mDx-VjCzW28D21M16L7VjW5vBG0y91jbtlW4c_gf_3kp_V1W2r7zp93QL609W7k=
+KXp83dJHPvW1xfClH3GmRFFW6vjm5_8sqgWFW1v93P97X--6sW719HST5nVkjtW65JSGd3gb1Vg=
+W1f5QW-2DxhrlW23Sv904NL8FDW8JcfF-5MKGR3W5jhZfR2J5cQ2VGtjlV8g6db_N6WFWqJVBPr=
+c37Z31" style=3D"color:#00a4bd; mso-line-height-rule:exactly; text-decorati=
+on:none !important" data-hs-link-id=3D"0" target=3D"_blank">
+                 =20
+                 =20
+                  <img src=3D"https://info.gottmanconnect.com/hs/hsstatic/T=
+emplateAssets/static-1.114/img/hs_default_template_images/modules/Follow+Me=
++-+Email/linkedin_circle_black.png" alt=3D"LinkedIn" height=3D"25" style=3D=
+"outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; border=
+:none; width:auto!important; height:25px!important; vertical-align:middle" =
+valign=3D"middle" width=3D"auto">
+                 =20
+                </a>
+              </td>
+             =20
+             =20
+            </tr>
+          </tbody>
+        </table>
+      </td>
+     =20
+      <td class=3D"social-network-cell" style=3D"border-collapse:collapse; =
+mso-line-height-rule:exactly; font-family:Tahoma, sans-serif; font-size:16p=
+x; color:#303030; word-break:break-word">
+        <table role=3D"presentation" align=3D"center" style=3D"border-spaci=
+ng:0 !important; border-collapse:collapse; mso-table-lspace:0pt; mso-table-=
+rspace:0pt; width:auto; text-align:center" class=3D"hs_cos_wrapper_type_soc=
+ial_module_single" width=3D"auto">
+          <tbody>
+            <tr align=3D"center">
+             =20
+              <td class=3D"display_block_on_small_screens" style=3D"border-=
+collapse:collapse; mso-line-height-rule:exactly; font-family:Tahoma, sans-s=
+erif; font-size:16px; color:#303030; word-break:break-word; padding:8px 5px=
+; line-height:1; vertical-align:middle" valign=3D"middle">
+                <a href=3D"https://info.gottmanconnect.com/e3t/Ctc/UC+113/d=
+2FFGM04/VVDc2h4hSGCZN2hNmxkP_VCTW1HN78y4Z8lHSN7nzPw33q3nJV1-WJV7CgSrZW4p-Bh=
+K5V2hygW98Gnr13vybBTVDzt-p69y4pGW8N8rBd5z04psW1MYZmn9cF8nnW4BbLhJ63JZQPW2G9=
+9Fj1Flc9WW7YXFNF7mtwZDW6DzWdP7Q9FkGW50n5bL3kWYCGW9kP2-Y2cDm6NVRqH2s8DQnYwN4=
+5T3F1RPsPQW8jDLVF1frFSKW8SH86f4-GWQ1W1wx_zB8qth5SW3vdZWY7MmG2JVK0S3g1QQhdTN=
+4z4jGPS5xh3W2XFVLZ1sB0b3W6L_F8w5nFTYFW58g3Fw1CtV3RW784KYF6_TjJ5W2Ct7SR3dwPD=
+534yN1" style=3D"color:#00a4bd; mso-line-height-rule:exactly; text-decorati=
+on:none !important" data-hs-link-id=3D"0" target=3D"_blank">
+                 =20
+                 =20
+                  <img src=3D"https://info.gottmanconnect.com/hs/hsstatic/T=
+emplateAssets/static-1.114/img/hs_default_template_images/modules/Follow+Me=
++-+Email/youtube_circle_black.png" alt=3D"YouTube" height=3D"25" style=3D"o=
+utline:none; text-decoration:none; -ms-interpolation-mode:bicubic; border:n=
+one; width:auto!important; height:25px!important; vertical-align:middle" va=
+lign=3D"middle" width=3D"auto">
+                 =20
+                </a>
+              </td>
+             =20
+             =20
+            </tr>
+          </tbody>
+        </table>
+      </td>
+     =20
+      <td class=3D"social-network-cell" style=3D"border-collapse:collapse; =
+mso-line-height-rule:exactly; font-family:Tahoma, sans-serif; font-size:16p=
+x; color:#303030; word-break:break-word">
+        <table role=3D"presentation" align=3D"center" style=3D"border-spaci=
+ng:0 !important; border-collapse:collapse; mso-table-lspace:0pt; mso-table-=
+rspace:0pt; width:auto; text-align:center" class=3D"hs_cos_wrapper_type_soc=
+ial_module_single" width=3D"auto">
+          <tbody>
+            <tr align=3D"center">
+             =20
+              <td class=3D"display_block_on_small_screens" style=3D"border-=
+collapse:collapse; mso-line-height-rule:exactly; font-family:Tahoma, sans-s=
+erif; font-size:16px; color:#303030; word-break:break-word; padding:8px 5px=
+; line-height:1; vertical-align:middle" valign=3D"middle">
+                <a href=3D"https://info.gottmanconnect.com/e3t/Ctc/UC+113/d=
+2FFGM04/VVDc2h4hSGCZN2hNmxkP_VCTW1HN78y4Z8lHSN7nzPw33q3nJV1-WJV7CgH_FW17N8-=
+W3gFJPHVKbVmk5Gwcn7W51c3K78m03ZQW5MnPgw41TCP9W64DKcP7Z9HV6W8qGxbW8tlG4JW3D_=
+-Xy8XhcZ_W61LCqn2DV3DzW8ql3bp249FYsW6M1ypP4JzLz4VrTHJZ8kwtJxW3kx1974C5m4yW7=
+QNdw33Pl7WbMT6qZG_1LR5W9jNz6b4ldzN_W2nXrdC3CpxzNV223H34YZTYvW5sxs-18Wm46kV-=
+NFpX57sjjzW7HcJ9j1X01NQW94B7Nj2r4_CwW8KmN_H8SkhNgW4DYCkN2CMvmhW6ybP4z97rZnK=
+3bKB1" style=3D"color:#00a4bd; mso-line-height-rule:exactly; text-decoratio=
+n:none !important" data-hs-link-id=3D"0" target=3D"_blank">
+                 =20
+                 =20
+                  <img src=3D"https://info.gottmanconnect.com/hs/hsstatic/T=
+emplateAssets/static-1.114/img/hs_default_template_images/modules/Follow+Me=
++-+Email/pinterest_circle_black.png" alt=3D"Pinterest" height=3D"25" style=
+=3D"outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; bor=
+der:none; width:auto!important; height:25px!important; vertical-align:middl=
+e" valign=3D"middle" width=3D"auto">
+                 =20
+                </a>
+              </td>
+             =20
+             =20
+            </tr>
+          </tbody>
+        </table>
+      </td>
+     =20
+      <td class=3D"social-network-cell" style=3D"border-collapse:collapse; =
+mso-line-height-rule:exactly; font-family:Tahoma, sans-serif; font-size:16p=
+x; color:#303030; word-break:break-word">
+        <table role=3D"presentation" align=3D"center" style=3D"border-spaci=
+ng:0 !important; border-collapse:collapse; mso-table-lspace:0pt; mso-table-=
+rspace:0pt; width:auto; text-align:center" class=3D"hs_cos_wrapper_type_soc=
+ial_module_single" width=3D"auto">
+          <tbody>
+            <tr align=3D"center">
+             =20
+              <td class=3D"display_block_on_small_screens" style=3D"border-=
+collapse:collapse; mso-line-height-rule:exactly; font-family:Tahoma, sans-s=
+erif; font-size:16px; color:#303030; word-break:break-word; padding:8px 5px=
+; line-height:1; vertical-align:middle" valign=3D"middle">
+                <a href=3D"https://info.gottmanconnect.com/e3t/Ctc/UC+113/d=
+2FFGM04/VVDc2h4hSGCZN2hNmxkP_VCTW1HN78y4Z8lHSN7nzPw33q3nJV1-WJV7CgM30W85DCz=
+61WyzsZW5MS7WD90mW5NW4TTnF63-pgSGW7GXF_W2sgMrQW6Zv8b37H1FFfW3gV8Wy72D5JZW16=
+-44W1zgSk3W8QKkvW26HNHfW5R_LFg5mvG3fW1b_xjw44gyKKN7Fdjgw6F0hCW5wMdLc2csHRtW=
+3ncr9V84lX7vV84XTj5fjsHCW7f6XTm12NYHKW4lkxrs8w9HqHW36y3jc5mNG8PW8L2qWh7KVHX=
+5W3y-C_W4DmrsRW4PVkrW34y1bFW291v0n8qr6t7W4KLg_D4pJl1SW251zFQ3KlDfcW95kpB04s=
+ktyJ3n2T1" style=3D"color:#00a4bd; mso-line-height-rule:exactly; text-decor=
+ation:none !important" data-hs-link-id=3D"0" target=3D"_blank">
+                 =20
+                 =20
+                  <img src=3D"https://info.gottmanconnect.com/hs/hsstatic/T=
+emplateAssets/static-1.114/img/hs_default_template_images/modules/Follow+Me=
++-+Email/tiktok_circle_black.png" alt=3D"TikTok" height=3D"25" style=3D"out=
+line:none; text-decoration:none; -ms-interpolation-mode:bicubic; border:non=
+e; width:auto!important; height:25px!important; vertical-align:middle" vali=
+gn=3D"middle" width=3D"auto">
+                 =20
+                </a>
+              </td>
+             =20
+             =20
+            </tr>
+          </tbody>
+        </table>
+      </td>
+     =20
+    </tr>
+  </tbody>
+</table>
+</div></td></tr></tbody></table>
+<div id=3D"hs_cos_wrapper_module_16781332399273" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+=09
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !important; bord=
+er-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt">
+    <tbody>
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"border-collapse:co=
+llapse; mso-line-height-rule:exactly; font-family:Tahoma, sans-serif; color=
+:#303030; word-break:break-word; text-align:center; padding:10px 20px; font=
+-size:0px">
+               =20
+                <img alt=3D"TGI-GC-logos" src=3D"https://info.gottman.com/h=
+s-fs/hubfs/TGI-GC-logos.png?width=3D622&amp;upscale=3Dtrue&amp;name=3DTGI-G=
+C-logos.png" style=3D"outline:none; text-decoration:none; -ms-interpolation=
+-mode:bicubic; max-width:100%; font-size:16px" width=3D"311" align=3D"middl=
+e" srcset=3D"https://info.gottman.com/hs-fs/hubfs/TGI-GC-logos.png?upscale=
+=3Dtrue&amp;width=3D622&amp;upscale=3Dtrue&amp;name=3DTGI-GC-logos.png 311w=
+, https://info.gottman.com/hs-fs/hubfs/TGI-GC-logos.png?upscale=3Dtrue&amp;=
+width=3D1244&amp;upscale=3Dtrue&amp;name=3DTGI-GC-logos.png 622w" sizes=3D"=
+(max-width: 311px) 100vw, 311px">
+               =20
+            </td>
+        </tr>
+    </tbody>
+</table></div>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"section-32" class=3D"hse-section hse-section-last" style=3D"pa=
+dding-left:10px; padding-right:10px; padding-bottom:20px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0; background-color:#FFFFFF" bgcolor=3D"#FFFFFF">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#FFFFFF">
+      <tr style=3D"background-color:#FFFFFF;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:600px">
+<![endif]-->
+<div id=3D"column-32-0" class=3D"hse-column hse-size-12">
+  <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-=
+table-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" =
+style=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-famil=
+y:Tahoma, sans-serif; font-size:16px; color:#303030; word-break:break-word;=
+ padding:10px 20px"><div id=3D"hs_cos_wrapper_module-32-0-0" class=3D"hs_co=
+s_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color:=
+ inherit; font-size: inherit; line-height: inherit;" data-hs-cos-general-ty=
+pe=3D"widget" data-hs-cos-type=3D"module">
+ =20
+ =20
+ =20
+ =20
+ =20
+ =20
+ =20
+<table role=3D"presentation" class=3D"hse-footer hse-secondary" width=3D"10=
+0%" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !importan=
+t; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; fo=
+nt-family:Arial, sans-serif; font-size:12px; line-height:135%; color:#23496=
+d; margin-bottom:0; padding:0">
+    <tbody>
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"border-collapse:co=
+llapse; mso-line-height-rule:exactly; font-family:Tahoma, sans-serif; font-=
+size:16px; color:#303030; word-break:break-word; text-align:center; margin-=
+bottom:0; line-height:135%; padding:10px 20px">
+               =20
+                <p style=3D"mso-line-height-rule:exactly; font-family:arial=
+, helvetica, sans-serif; font-size:12px; font-weight:normal; text-decoratio=
+n:none; font-style:normal; color:#23496d; direction:lrt" dir=3D"lrt">
+                  The Gottman Institute, 2101 4th Ave, Ste 1750, Seattle, W=
+A 98121
+                </p>
+                <p style=3D"mso-line-height-rule:exactly">
+                 =20
+                  <a data-unsubscribe=3D"true" href=3D"https://info.gottman=
+connect.com/hs/manage-preferences/unsubscribe-all?languagePreference=3Den&a=
+mp;d=3DVnd6948Z63bbVMl-Jw3VWt57W1YZrD63P3Q7wW3ZsjYm3_fZy1N72_vyCmWcNdW7b9gh=
+F5ZBcXCV25wRF8RzDXHW8XhsL67qw8PTN8_MqcB1yf0NW30qMN77bFNhFVllHyn1MtX2xn1L3Q1=
+x143&amp;v=3D3&amp;utm_campaign=3DLove%20Notes%20Newsletter&amp;utm_source=
+=3Dhs_email&amp;utm_medium=3Demail&amp;utm_content=3D253587953&amp;_hsenc=
+=3Dp2ANqtz-9OGU2RK7cNwgiecTM1ycDdF8cKn-Iw9B9faHPfRrYlRRsB2_s8ht1Z2AolWv13gg=
+nE4kll2W_8Be_Ihk0bqH-uCPxdaQ&amp;_hsmi=3D253587009" style=3D"mso-line-heigh=
+t-rule:exactly; font-family:helvetica; font-size:12px; color:#00a4bd; font-=
+weight:normal; text-decoration:underline; font-style:normal" data-hs-link-i=
+d=3D"0" target=3D"_blank">Unsubscribe</a>
+                 =20
+                  <a data-unsubscribe=3D"true" href=3D"https://info.gottman=
+connect.com/hs/manage-preferences/unsubscribe?languagePreference=3Den&amp;d=
+=3DVnd6948Z63bbVMl-Jw3VWt57W1YZrD63P3Q7wW3ZsjYm3_fZy1N72_vyCmWcNdW7b9ghF5ZB=
+cXCV25wRF8RzDXHW8XhsL67qw8PTN8_MqcB1yf0NW30qMN77bFNhFVllHyn1MtX2xn1L3Q1x143=
+&amp;v=3D3&amp;utm_campaign=3DLove%20Notes%20Newsletter&amp;utm_source=3Dhs=
+_email&amp;utm_medium=3Demail&amp;utm_content=3D253587953&amp;_hsenc=3Dp2AN=
+qtz-9OGU2RK7cNwgiecTM1ycDdF8cKn-Iw9B9faHPfRrYlRRsB2_s8ht1Z2AolWv13ggnE4kll2=
+W_8Be_Ihk0bqH-uCPxdaQ&amp;_hsmi=3D253587009" style=3D"mso-line-height-rule:=
+exactly; font-family:helvetica; font-size:12px; color:#00a4bd; font-weight:=
+normal; text-decoration:underline; font-style:normal" data-hs-link-id=3D"0"=
+ target=3D"_blank">Manage preferences</a>
+                 =20
+                </p>
+               =20
+            </td>
+        </tr>
+    </tbody>
+</table></div></td></tr></tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+</div>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+ =20
+<img src=3D"https://info.gottmanconnect.com/e3t/Cto/UC+113/d2FFGM04/VVDc2h4=
+hSGCZN2hNmxkP_VCTW1HN78y4Z8lHSW7nzPfV3CDmKY1b2" alt=3D"" width=3D"1" height=
+=3D"1" border=3D"0" style=3D"display:none!important;min-height:1px!importan=
+t;width:1px!important;border-width:0!important;margin-top:0!important;margi=
+n-bottom:0!important;margin-right:0!important;margin-left:0!important;paddi=
+ng-top:0!important;padding-bottom:0!important;padding-right:0!important;pad=
+ding-left:0!important"></body></html>
+------=_Part_591833_1424319462.1681049183828--
+

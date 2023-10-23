@@ -1,0 +1,830 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:8691:b0:4fd:23d3:a27 with SMTP id e17csp455349pxn;
+        Sat, 21 Oct 2023 12:19:25 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGSMDRE/wvJyv9KO2lstexSh5MbHySkqUn1Q/P8GzsO6SU+jJvEu0ZJOFDcU1nKQWfDPtu7
+X-Received: by 2002:a05:6358:8807:b0:134:eb97:ea01 with SMTP id hv7-20020a056358880700b00134eb97ea01mr5574872rwb.27.1697915965417;
+        Sat, 21 Oct 2023 12:19:25 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697915965; cv=none;
+        d=google.com; s=arc-20160816;
+        b=kMaeTF5yCHWJB6LPD0PtgT4oQRnaaBkH3DArj8t0r1GhXKdOiD/zDGJ8ecrCRw9mDa
+         ZvBNI+qbOfNCvyq7c0zSFErT90wwst1IqDo3qY17tdbIYnEDW4BWaESdWRlXDKxC3EFF
+         Ewxu7Ns+ENEx6bEXr7exbTYmKeuNP/VFUMDtaJQgie45STndZrTsmVsg56yffsqfqILO
+         j5nYPiXqINJPZonhnjU0HurqlTpGbCFuZ/vYsbn8KK/DT8vX/XsyWNOHfKfm1aCqR/H8
+         QE0UDhz94i5I8rU59VKEcvwiR/igDU2R55o92jnbquXdv3u5W6jmsTfq0bPBS1PT9EKq
+         tuTg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:date:message-id:to:from:organization:subject:list-help
+         :list-unsubscribe:list-id:precedence:mime-version
+         :content-transfer-encoding:dkim-signature:dkim-signature
+         :dkim-signature;
+        bh=m5hkzEMcLxr0rT0fp3frhxadc3iqI4mw4h+SAkj+VRI=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=yERLbzaE6+bHUP+Rnae9UpjnP4RfGouQH/+yQRDEpQDK3g/p728AUQrG1XPKF/vTZY
+         8hX8t1TpORoe21LofFFTFXaRlNyKXHtRhv7/CSyzmZ/qI0sP537+xsy/lkU9/EcYJY6B
+         8Ke5zbxBev62aeIbF6Xywq43Csp0xo401kIzm+ZSCLN9JFrSR68uZyD67HKaVtB3fNz8
+         Uiag2frx2okkm4JGcqbhpKPiM+sLF5x+kbCEbslWeBdVSKe3FIHFabZiYWZYG0wTkaZb
+         v3efR2LbCJQkVm4bsDDGbMiZjH9HQ0DjpCSQtDOc0Lvh0AVnLuNcxxNWY5qu0fT1YIt3
+         MbXw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@adzuna.com.au header.s=4hdwjhy7222jylpnumgdwyqqrmzaczgq header.b=PwuCgEdl;
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=LFosaZ1t;
+       dkim=fail header.i=@adzuna.com.au header.s=adhunter header.b=eVFRG4RG;
+       spf=pass (google.com: domain of 0100018b53ad8dc5-4dad94d2-3030-43b5-880d-145e2a853be3-000000@amazonses.com designates 23.249.217.114 as permitted sender) smtp.mailfrom=0100018b53ad8dc5-4dad94d2-3030-43b5-880d-145e2a853be3-000000@amazonses.com;
+       dmarc=pass (p=REJECT sp=NONE dis=NONE) header.from=adzuna.com.au
+Return-Path: <0100018b53ad8dc5-4dad94d2-3030-43b5-880d-145e2a853be3-000000@amazonses.com>
+Received: from d217-114.smtp-out.amazonses.com (d217-114.smtp-out.amazonses.com. [23.249.217.114])
+        by mx.google.com with ESMTPS id l8-20020a05622a174800b004122e2178desi3333249qtk.695.2023.10.21.12.19.25
+        for <srijani515@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 21 Oct 2023 12:19:25 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 0100018b53ad8dc5-4dad94d2-3030-43b5-880d-145e2a853be3-000000@amazonses.com designates 23.249.217.114 as permitted sender) client-ip=23.249.217.114;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@adzuna.com.au header.s=4hdwjhy7222jylpnumgdwyqqrmzaczgq header.b=PwuCgEdl;
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=LFosaZ1t;
+       dkim=fail header.i=@adzuna.com.au header.s=adhunter header.b=eVFRG4RG;
+       spf=pass (google.com: domain of 0100018b53ad8dc5-4dad94d2-3030-43b5-880d-145e2a853be3-000000@amazonses.com designates 23.249.217.114 as permitted sender) smtp.mailfrom=0100018b53ad8dc5-4dad94d2-3030-43b5-880d-145e2a853be3-000000@amazonses.com;
+       dmarc=pass (p=REJECT sp=NONE dis=NONE) header.from=adzuna.com.au
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=4hdwjhy7222jylpnumgdwyqqrmzaczgq; d=adzuna.com.au; t=1697915965;
+	h=Content-Type:Content-Transfer-Encoding:MIME-Version:List-ID:List-Unsubscribe:List-Help:Subject:From:To:Message-ID:Date;
+	bh=3SepBQS8VrRglAYTZdoA0+InpBM3FNG/GIfi4R+OtWU=;
+	b=PwuCgEdlFYFm/QPr51xEoluv7aRPMEzqGuTjDbFuUv5UR+NzK9/q/L/ysSB9NSZD
+	HYnnhlew6CdSHcoOXfelCbBIddsKDzrA1IghZZlyV6ezuVTvoWW2RKPOMf7UG2oAPh0
+	olfVpTf/+K6mz76HcE2YOlgN6ouVof90dzW9jIXw=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=224i4yxa5dv7c2xz3womw6peuasteono; d=amazonses.com; t=1697915965;
+	h=Content-Type:Content-Transfer-Encoding:MIME-Version:List-ID:List-Unsubscribe:List-Help:Subject:From:To:Message-ID:Date:Feedback-ID;
+	bh=3SepBQS8VrRglAYTZdoA0+InpBM3FNG/GIfi4R+OtWU=;
+	b=LFosaZ1tyrpNPz9K1ej3FRdAVa1vntmc9wpIolMYhaLHLC4zgwnzYclQcv3FxU1B
+	LUL1O9xHCIltFMeacYGMYOlq+DLYFEncT+Ln7cRf2+ex8yc4OkS9dldYSzDWHbDKmsi
+	aE4C3MhUiP5bEJ0ymxj6yiy+Vp2PMoex+uLVU0KQ=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed; d=adzuna.com.au; h=content-type:content-transfer-encoding:mime-version:list-id:list-unsubscribe:list-help:subject:from:to; s=adhunter; bh=3SepBQS8VrRglAYTZdoA0+InpBM3FNG/GIfi4R+OtWU=; b=eVFRG4RGJCDJtEDrBJzovDREHe6SljDHRB6cS8ffNbcNuN/H9bjd0o1xi44ivegeInLpSPz1uvpmV240vzDbHlC/lSIoqdz0OtyitGNAkXMQRvWmjmRk7Vau8LueW+SY21C+H9X4fpD1HDJiPb9NiXHOD1A0h9n4Y0E6kb4c5Xc=
+Content-Type: multipart/alternative;
+ boundary="----------=_1697915964-74693-9061"
+Content-Transfer-Encoding: binary
+MIME-Version: 1.0
+X-Mailer: MIME-tools 5.510 (Entity 5.510)
+Precedence: bulk
+X-Zuna-Uuid: amazon_east_1/adzuna-us-au-set
+List-ID: <notification.4ccca9c61ae08beffe2d2c567e8f0621e299b756@adzuna.com.au>
+List-Unsubscribe: <mailto:pmrgc3dhei5cesctgi2tmit5.pmrgcir2ej2w443vmircyituei5dcnrzg44tcnjzgyzsyitonerduobrgq3dsnbqgj6q.mndhrflxdbrufdf2owvj7jjyfukrvmegaw646uc3ml22ruyffdba@lists.adzuna.com.au>, <https://www.adzuna.com.au/unsubscribe?id=81469402&vhash=4ccca9c61ae08beffe2d2c567e8f0621e299b756>
+X-Zuna-Mail-Type: web_alert
+List-Help: <https://www.adzuna.com.au/my-alerts?id=81469402&vhash=4ccca9c61ae08beffe2d2c567e8f0621e299b756>
+Subject: =?UTF-8?B?VGhlIGxhdGVzdCBFWENFTCBBTkQgVkJBIHZhY2FuY2llcyBmb3IgeW91?=
+Organization: Adzuna
+From: =?UTF-8?B?Q2hsb2UgYXQgQWR6dW5h?= <no-reply@adzuna.com.au>
+X-Rpcampaign: ADZJobAlertAU21102023
+To: srijani515@gmail.com
+Message-ID: <0100018b53ad8dc5-4dad94d2-3030-43b5-880d-145e2a853be3-000000@email.amazonses.com>
+Date: Sat, 21 Oct 2023 19:19:24 +0000
+Feedback-ID: 1.us-east-1.Qp3uDswf8+Bv3KqVSBGTP+SIm7aOrlReywS0JweAv7g=:AmazonSES
+X-SES-Outgoing: 2023.10.21-23.249.217.114
+
+This is a multi-part message in MIME format...
+
+------------=_1697915964-74693-9061
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+
+Adzuna Job alert
+
+63 new EXCEL AND VBA jobs in Australia. View your latest job matches here:
+
+https://www.adzuna.com.au/search?loc=3D105392&qwd=3Dexcel+AND+vba&adv=3D1&s=
+e=3Dvls6vkZw7hGK-fG4PxQy8w&nid=3D81469402&utm_source=3Dalerts&utm_medium=3D=
+email&utm_content=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~=
+10~63~sl5&utm_campaign=3DAlerts_26_02_23
+
+Edit your alerts here:
+
+https://www.adzuna.com.au/my-alerts?id=3D81469402&vhash=3D4ccca9c61ae08beff=
+e2d2c567e8f0621e299b756&utm_source=3Dalerts&utm_medium=3Demail&utm_content=
+=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~63~sl5&utm_cam=
+paign=3DAlerts_26_02_23&autoedit=3D1=
+
+------------=_1697915964-74693-9061
+Content-Type: text/html; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+X-Mailer: MIME-tools 5.510 (Entity 5.510)
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8" />
+    <!--[if !mso]><!-->
+=20=20=20=20
+    <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" />
+    <!--<![endif]-->
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0">
+=20=20=20=20
+    <title></title>
+    <!--[if (gte mso 9)|(IE)]>
+    <style type=3D"text/css">
+        table {border-collapse: collapse;}
+    </style>
+    <![endif]-->
+</head>
+<body style=3D"margin: 0 !important; padding: 0; background-color: #ffffff;=
+">
+    <center style=3D"width: 100%; table-layout: fixed; -webkit-text-size-ad=
+just: 100%;  -ms-text-size-adjust: 100%;">
+        <div style=3D"max-width: 600px; margin: 0 auto;">
+=20=20=20=20=20=20=20=20=09
+            <!--[if (gte mso 9)|(IE)]>
+			<table width=3D"600" align=3D"center" cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0">
+				<tr>
+					<td>
+			<![endif]-->
+=09=09=09
+			<table style=3D"margin: 0 auto;width: 95%;max-width: 600px; padding:0;" =
+align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td s=
+tyle=3D"margin:0; text-align:center; padding-top:20px; padding-bottom:20px;=
+"><a href=3D"https://www.adzuna.com.au?utm_source=3Dalerts&utm_medium=3Dema=
+il&utm_content=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~=
+63~sl5&utm_campaign=3DAlerts_26_02_23"><img src=3D"https://zunastatic-abf.k=
+xcdn.com/images/emails/adzuna_logo.png" style=3D"border:0; display:inline-b=
+lock;" width=3D"204" height=3D"52" alt=3D"Adzuna" /></a></td></tr><tr><td s=
+tyle=3D"margin:0; padding-bottom:20px;">
+
+<table cellpadding=3D"0" cellspacing=3D"0" style=3D"width:100%;">
+    <tr>
+        <td style=3D"background-color:#FFEDA6; color:#212121; font-family:A=
+rial, sans-serif; font-size:12px; line-height:18px; font-weight:normal; pad=
+ding:10px; border-radius:10px;">
+            <table cellpadding=3D"0" cellspacing=3D"0">
+                <tr>
+                    <td style=3D"width:32px; padding-right:8px;">
+                        <img src=3D"https://zunastatic-abf.kxcdn.com/images=
+/emails/icon_warning.png" width=3D"32" height=3D"32" alt=3D"Warning icon"/>
+                    </td>
+                    <td><strong>This search returns jobs from all over the =
+country</strong><br/>Improve your alerts by <a href=3D"https://www.adzuna.c=
+om.au/my-alerts?id=3D81469402&vhash=3D4ccca9c61ae08beffe2d2c567e8f0621e299b=
+756&utm_source=3Dalerts&utm_medium=3Demail&utm_content=3Dexcel_vba~au~googl=
+e_cpc~src~promo_alerts~d~rec_false~0~10~63~sl5&utm_campaign=3DAlerts_26_02_=
+23&autoedit=3D1" style=3D"color:#212121; text-decoration:underline;"> telli=
+ng us what you're looking for </a> =E2=9D=AF</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table></td></tr><tr>
+    <td style=3D"text-align:center; padding-bottom:10px;">
+        <table cellpadding=3D"0" cellspacing=3D"0" style=3D"width:100%;">
+            <tr>
+                <td style=3D"background-color:#279B37; color:white; font-fa=
+mily:Arial, sans-serif; font-size:18px; font-weight:bold; text-align:center=
+; padding:10px; border-radius:10px;">Latest job matches for you            =
+    </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td style=3D"padding-top:10px; padding-bottom:10px; border-bottom:1px s=
+olid #DADADA;">
+        <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"10=
+0%">
+            <tr>
+                <td style=3D"text-align:left; padding-right:20px; font-fami=
+ly:Arial, sans-serif; font-size:18px;">
+                    <h2 style=3D"font-size:16px; font-weight:bold; line-hei=
+ght:20px; margin:0 0 4px 0;"><a href=3D"https://www.adzuna.com.au/land/ad/4=
+382058939?v=3DAB166AFC838B8B3A55B1D485644FF42D1EEFD9E4&se=3Dvls6vkZw7hGK-fG=
+4PxQy8w&nid=3D81469402&sl=3Dsl5&et=3D1&utm_source=3Dalerts&utm_medium=3Dema=
+il&utm_content=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~=
+63~sl5&utm_campaign=3DAlerts_26_02_23" style=3D"color:#279B37; text-decorat=
+ion:underline;"><span style=3D"color:#279B37">Customer Experience Administr=
+ator (VPSG2.1)</span></a>                    </h2>
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+<table cellpadding=3D"0" cellspacing=3D"0">
+    <tr>
+=20=20=20=20
+        <td style=3D"padding-right:4px; padding-bottom:4px;">
+            <table cellpadding=3D"0" cellspacing=3D"0">
+                <tr>
+                    <td style=3D"padding:4px;font-size:12px;font-family:Ari=
+al, sans-serif;line-height:12px;border-radius:4px;border-width: 1px;border-=
+style: solid;border-color:#279B37;background-color:#279B37;color:white">
+                        TOP MATCH
+                    </td>
+               </tr>
+            </table>
+        </td>
+=20=20=20=20
+        <td style=3D"padding-right:4px; padding-bottom:4px;">
+            <table cellpadding=3D"0" cellspacing=3D"0">
+                <tr>
+                    <td style=3D"padding:4px;font-size:12px;font-family:Ari=
+al, sans-serif;line-height:12px;border-radius:4px;border-width: 1px;border-=
+style: solid;border-color:#F6E05E;background-color:#F6E05E;color:black">
+                        NEW
+                    </td>
+               </tr>
+            </table>
+        </td>
+=20=20=20=20
+    </tr>
+</table>
+
+                    <p style=3D"font-size:12px; line-height:16px; font-weig=
+ht:normal; color:#212121; margin:0;">Victorian Building Authority - Melbour=
+ne - 56271.00 AUD per year<br/><a href=3D"https://www.adzuna.com.au/land/ad=
+/4382058939?v=3DAB166AFC838B8B3A55B1D485644FF42D1EEFD9E4&se=3Dvls6vkZw7hGK-=
+fG4PxQy8w&nid=3D81469402&sl=3Dsl5&et=3D1&utm_source=3Dalerts&utm_medium=3De=
+mail&utm_content=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~1=
+0~63~sl5&utm_campaign=3DAlerts_26_02_23" style=3D"color:#279B37; text-decor=
+ation:underline;"><span style=3D"color:#279B37">more details &raquo;</span>=
+</a></p>
+                </td>
+                <td width=3D"100" valign=3D"top">
+                    <a href=3D"https://www.adzuna.com.au/land/ad/4382058939=
+?v=3DAB166AFC838B8B3A55B1D485644FF42D1EEFD9E4&se=3Dvls6vkZw7hGK-fG4PxQy8w&n=
+id=3D81469402&sl=3Dsl5&et=3D1&utm_source=3Dalerts&utm_medium=3Demail&utm_co=
+ntent=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~63~sl5&ut=
+m_campaign=3DAlerts_26_02_23"><img src=3D"https://zunastatic-abf.kxcdn.com/=
+images/shared/jobs/partners/logo_jobradars.png" width=3D"100" height=3D"75"=
+ alt=3D"JobRadars" style=3D"display:block;border:0;"></a>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td style=3D"padding-top:10px; padding-bottom:10px; border-bottom:1px s=
+olid #DADADA;">
+        <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"10=
+0%">
+            <tr>
+                <td style=3D"text-align:left; padding-right:20px; font-fami=
+ly:Arial, sans-serif; font-size:18px;">
+                    <h2 style=3D"font-size:16px; font-weight:bold; line-hei=
+ght:20px; margin:0 0 4px 0;"><a href=3D"https://www.adzuna.com.au/land/ad/4=
+382058401?v=3D35AD44AC8ADA4E8E154B9A8E433C7CE1D19E907D&se=3Dvls6vkZw7hGK-fG=
+4PxQy8w&nid=3D81469402&sl=3Dsl5&et=3D1&utm_source=3Dalerts&utm_medium=3Dema=
+il&utm_content=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~=
+63~sl5&utm_campaign=3DAlerts_26_02_23" style=3D"color:#279B37; text-decorat=
+ion:underline;"><span style=3D"color:#279B37">Customer Experience Administr=
+ator</span></a>                    </h2>
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+<table cellpadding=3D"0" cellspacing=3D"0">
+    <tr>
+=20=20=20=20
+        <td style=3D"padding-right:4px; padding-bottom:4px;">
+            <table cellpadding=3D"0" cellspacing=3D"0">
+                <tr>
+                    <td style=3D"padding:4px;font-size:12px;font-family:Ari=
+al, sans-serif;line-height:12px;border-radius:4px;border-width: 1px;border-=
+style: solid;border-color:#F6E05E;background-color:#F6E05E;color:black">
+                        NEW
+                    </td>
+               </tr>
+            </table>
+        </td>
+=20=20=20=20
+        <td style=3D"padding-right:4px; padding-bottom:4px;">
+            <table cellpadding=3D"0" cellspacing=3D"0">
+                <tr>
+                    <td style=3D"padding:4px;font-size:12px;font-family:Ari=
+al, sans-serif;line-height:12px;border-radius:4px;border-width: 1px;border-=
+style: solid;border-color:#3182CE;background-color:#3182CE;color:white">
+                        REMOTE
+                    </td>
+               </tr>
+            </table>
+        </td>
+=20=20=20=20
+    </tr>
+</table>
+
+                    <p style=3D"font-size:12px; line-height:16px; font-weig=
+ht:normal; color:#212121; margin:0;">Victorian Building Authority - Melbour=
+ne City Centre<br/><a href=3D"https://www.adzuna.com.au/land/ad/4382058401?=
+v=3D35AD44AC8ADA4E8E154B9A8E433C7CE1D19E907D&se=3Dvls6vkZw7hGK-fG4PxQy8w&ni=
+d=3D81469402&sl=3Dsl5&et=3D1&utm_source=3Dalerts&utm_medium=3Demail&utm_con=
+tent=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~63~sl5&utm=
+_campaign=3DAlerts_26_02_23" style=3D"color:#279B37; text-decoration:underl=
+ine;"><span style=3D"color:#279B37">more details &raquo;</span></a></p>
+                </td>
+                <td width=3D"100" valign=3D"top">
+                    <a href=3D"https://www.adzuna.com.au/land/ad/4382058401=
+?v=3D35AD44AC8ADA4E8E154B9A8E433C7CE1D19E907D&se=3Dvls6vkZw7hGK-fG4PxQy8w&n=
+id=3D81469402&sl=3Dsl5&et=3D1&utm_source=3Dalerts&utm_medium=3Demail&utm_co=
+ntent=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~63~sl5&ut=
+m_campaign=3DAlerts_26_02_23"><img src=3D"https://zunastatic-abf.kxcdn.com/=
+images/shared/jobs/partners/logo_jobradars.png" width=3D"100" height=3D"75"=
+ alt=3D"JobRadars" style=3D"display:block;border:0;"></a>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td style=3D"padding-top:10px; padding-bottom:10px; border-bottom:1px s=
+olid #DADADA;">
+        <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"10=
+0%">
+            <tr>
+                <td style=3D"text-align:left; padding-right:20px; font-fami=
+ly:Arial, sans-serif; font-size:18px;">
+                    <h2 style=3D"font-size:16px; font-weight:bold; line-hei=
+ght:20px; margin:0 0 4px 0;"><a href=3D"https://www.adzuna.com.au/land/ad/4=
+382719691?v=3DDA67DDF504C9EC66DB2261E0F548B5F015FFABD2&se=3Dvls6vkZw7hGK-fG=
+4PxQy8w&nid=3D81469402&sl=3Dsl5&et=3D1&utm_source=3Dalerts&utm_medium=3Dema=
+il&utm_content=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~=
+63~sl5&utm_campaign=3DAlerts_26_02_23" style=3D"color:#279B37; text-decorat=
+ion:underline;"><span style=3D"color:#279B37">Account Receivable Manager (J=
+apanese & English)</span></a>                    </h2>
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+<table cellpadding=3D"0" cellspacing=3D"0">
+    <tr>
+=20=20=20=20
+        <td style=3D"padding-right:4px; padding-bottom:4px;">
+            <table cellpadding=3D"0" cellspacing=3D"0">
+                <tr>
+                    <td style=3D"padding:4px;font-size:12px;font-family:Ari=
+al, sans-serif;line-height:12px;border-radius:4px;border-width: 1px;border-=
+style: solid;border-color:#F6E05E;background-color:#F6E05E;color:black">
+                        NEW
+                    </td>
+               </tr>
+            </table>
+        </td>
+=20=20=20=20
+    </tr>
+</table>
+
+                    <p style=3D"font-size:12px; line-height:16px; font-weig=
+ht:normal; color:#212121; margin:0;">Lenovo - =E5=A4=A7=E8=BF=9E=EF=BC=88Da=
+lian=EF=BC=89,Liaoning<br/><a href=3D"https://www.adzuna.com.au/land/ad/438=
+2719691?v=3DDA67DDF504C9EC66DB2261E0F548B5F015FFABD2&se=3Dvls6vkZw7hGK-fG4P=
+xQy8w&nid=3D81469402&sl=3Dsl5&et=3D1&utm_source=3Dalerts&utm_medium=3Demail=
+&utm_content=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~63=
+~sl5&utm_campaign=3DAlerts_26_02_23" style=3D"color:#279B37; text-decoratio=
+n:underline;"><span style=3D"color:#279B37">more details &raquo;</span></a>=
+</p>
+                </td>
+                <td width=3D"100" valign=3D"top">
+                    <a href=3D"https://www.adzuna.com.au/land/ad/4382719691=
+?v=3DDA67DDF504C9EC66DB2261E0F548B5F015FFABD2&se=3Dvls6vkZw7hGK-fG4PxQy8w&n=
+id=3D81469402&sl=3Dsl5&et=3D1&utm_source=3Dalerts&utm_medium=3Demail&utm_co=
+ntent=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~63~sl5&ut=
+m_campaign=3DAlerts_26_02_23"><img src=3D"https://zunastatic-abf.kxcdn.com/=
+images/logo/Jobs_AU/partners/LQwc0Ar5G4eo0fDNOyvRO5t0lBs.png" width=3D"100"=
+ height=3D"75" alt=3D"Lenovo" style=3D"display:block;border:0;"></a>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td style=3D"padding-top:10px; padding-bottom:10px; border-bottom:1px s=
+olid #DADADA;">
+        <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"10=
+0%">
+            <tr>
+                <td style=3D"text-align:left; padding-right:20px; font-fami=
+ly:Arial, sans-serif; font-size:18px;">
+                    <h2 style=3D"font-size:16px; font-weight:bold; line-hei=
+ght:20px; margin:0 0 4px 0;"><a href=3D"https://www.adzuna.com.au/land/ad/4=
+382719709?v=3D12A147ED431102973D6053401ABC05CDA6E31BBD&se=3Dvls6vkZw7hGK-fG=
+4PxQy8w&nid=3D81469402&sl=3Dsl5&et=3D1&utm_source=3Dalerts&utm_medium=3Dema=
+il&utm_content=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~=
+63~sl5&utm_campaign=3DAlerts_26_02_23" style=3D"color:#279B37; text-decorat=
+ion:underline;"><span style=3D"color:#279B37">=E4=BA=BA=E5=8A=9B=E8=B5=84=
+=E6=BA=90=E6=95=B0=E6=8D=AE=E5=88=86=E6=9E=90=E4=B8=93=E5=91=98</span></a> =
+                   </h2>
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+<table cellpadding=3D"0" cellspacing=3D"0">
+    <tr>
+=20=20=20=20
+        <td style=3D"padding-right:4px; padding-bottom:4px;">
+            <table cellpadding=3D"0" cellspacing=3D"0">
+                <tr>
+                    <td style=3D"padding:4px;font-size:12px;font-family:Ari=
+al, sans-serif;line-height:12px;border-radius:4px;border-width: 1px;border-=
+style: solid;border-color:#F6E05E;background-color:#F6E05E;color:black">
+                        NEW
+                    </td>
+               </tr>
+            </table>
+        </td>
+=20=20=20=20
+    </tr>
+</table>
+
+                    <p style=3D"font-size:12px; line-height:16px; font-weig=
+ht:normal; color:#212121; margin:0;">Lenovo - =E5=8C=97=E4=BA=AC=EF=BC=88Be=
+ijing=EF=BC=89,Beijing<br/><a href=3D"https://www.adzuna.com.au/land/ad/438=
+2719709?v=3D12A147ED431102973D6053401ABC05CDA6E31BBD&se=3Dvls6vkZw7hGK-fG4P=
+xQy8w&nid=3D81469402&sl=3Dsl5&et=3D1&utm_source=3Dalerts&utm_medium=3Demail=
+&utm_content=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~63=
+~sl5&utm_campaign=3DAlerts_26_02_23" style=3D"color:#279B37; text-decoratio=
+n:underline;"><span style=3D"color:#279B37">more details &raquo;</span></a>=
+</p>
+                </td>
+                <td width=3D"100" valign=3D"top">
+                    <a href=3D"https://www.adzuna.com.au/land/ad/4382719709=
+?v=3D12A147ED431102973D6053401ABC05CDA6E31BBD&se=3Dvls6vkZw7hGK-fG4PxQy8w&n=
+id=3D81469402&sl=3Dsl5&et=3D1&utm_source=3Dalerts&utm_medium=3Demail&utm_co=
+ntent=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~63~sl5&ut=
+m_campaign=3DAlerts_26_02_23"><img src=3D"https://zunastatic-abf.kxcdn.com/=
+images/logo/Jobs_AU/partners/LQwc0Ar5G4eo0fDNOyvRO5t0lBs.png" width=3D"100"=
+ height=3D"75" alt=3D"Lenovo" style=3D"display:block;border:0;"></a>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td style=3D"padding-top:10px; padding-bottom:10px; border-bottom:1px s=
+olid #DADADA;">
+        <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"10=
+0%">
+            <tr>
+                <td style=3D"text-align:left; padding-right:20px; font-fami=
+ly:Arial, sans-serif; font-size:18px;">
+                    <h2 style=3D"font-size:16px; font-weight:bold; line-hei=
+ght:20px; margin:0 0 4px 0;"><a href=3D"https://www.adzuna.com.au/land/ad/4=
+380181301?v=3D34ACB9EE51BF4C9E744DEF065304609F2E5750E1&se=3Dvls6vkZw7hGK-fG=
+4PxQy8w&nid=3D81469402&sl=3Dsl5&et=3D1&utm_source=3Dalerts&utm_medium=3Dema=
+il&utm_content=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~=
+63~sl5&utm_campaign=3DAlerts_26_02_23" style=3D"color:#279B37; text-decorat=
+ion:underline;"><span style=3D"color:#279B37">Customer Experience Administr=
+ator</span></a>                    </h2>
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+<table cellpadding=3D"0" cellspacing=3D"0">
+    <tr>
+=20=20=20=20
+        <td style=3D"padding-right:4px; padding-bottom:4px;">
+            <table cellpadding=3D"0" cellspacing=3D"0">
+                <tr>
+                    <td style=3D"padding:4px;font-size:12px;font-family:Ari=
+al, sans-serif;line-height:12px;border-radius:4px;border-width: 1px;border-=
+style: solid;border-color:#3182CE;background-color:#3182CE;color:white">
+                        REMOTE
+                    </td>
+               </tr>
+            </table>
+        </td>
+=20=20=20=20
+    </tr>
+</table>
+
+                    <p style=3D"font-size:12px; line-height:16px; font-weig=
+ht:normal; color:#212121; margin:0;">Victorian Government - Melbourne - CBD=
+<br/><a href=3D"https://www.adzuna.com.au/land/ad/4380181301?v=3D34ACB9EE51=
+BF4C9E744DEF065304609F2E5750E1&se=3Dvls6vkZw7hGK-fG4PxQy8w&nid=3D81469402&s=
+l=3Dsl5&et=3D1&utm_source=3Dalerts&utm_medium=3Demail&utm_content=3Dexcel_v=
+ba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~63~sl5&utm_campaign=3DAl=
+erts_26_02_23" style=3D"color:#279B37; text-decoration:underline;"><span st=
+yle=3D"color:#279B37">more details &raquo;</span></a></p>
+                </td>
+                <td width=3D"100" valign=3D"top">
+                    <a href=3D"https://www.adzuna.com.au/land/ad/4380181301=
+?v=3D34ACB9EE51BF4C9E744DEF065304609F2E5750E1&se=3Dvls6vkZw7hGK-fG4PxQy8w&n=
+id=3D81469402&sl=3Dsl5&et=3D1&utm_source=3Dalerts&utm_medium=3Demail&utm_co=
+ntent=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~63~sl5&ut=
+m_campaign=3DAlerts_26_02_23"><img src=3D"https://zunastatic-abf.kxcdn.com/=
+images/logo/jobs_AU/partners/Muue9DEIAko1TNS996Ix0AP1ICs.png" width=3D"100"=
+ height=3D"75" alt=3D"PeopleScout" style=3D"display:block;border:0;"></a>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td style=3D"padding-top:10px; padding-bottom:10px; border-bottom:1px s=
+olid #DADADA;">
+        <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"10=
+0%">
+            <tr>
+                <td style=3D"text-align:left; padding-right:20px; font-fami=
+ly:Arial, sans-serif; font-size:18px;">
+                    <h2 style=3D"font-size:16px; font-weight:bold; line-hei=
+ght:20px; margin:0 0 4px 0;"><a href=3D"https://www.adzuna.com.au/land/ad/4=
+380407141?v=3D20A42CC410B6AA98AE63F297F67FBB6A4D8DE3E1&se=3Dvls6vkZw7hGK-fG=
+4PxQy8w&nid=3D81469402&sl=3Dsl5&et=3D1&utm_source=3Dalerts&utm_medium=3Dema=
+il&utm_content=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~=
+63~sl5&utm_campaign=3DAlerts_26_02_23" style=3D"color:#279B37; text-decorat=
+ion:underline;"><span style=3D"color:#279B37">GLS Data Analyst</span></a>  =
+                  </h2>
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+                    <p style=3D"font-size:12px; line-height:16px; font-weig=
+ht:normal; color:#212121; margin:0;">Questas Corporate - Seven Hills, 2147 =
+- AUD per year<br/><a href=3D"https://www.adzuna.com.au/land/ad/4380407141?=
+v=3D20A42CC410B6AA98AE63F297F67FBB6A4D8DE3E1&se=3Dvls6vkZw7hGK-fG4PxQy8w&ni=
+d=3D81469402&sl=3Dsl5&et=3D1&utm_source=3Dalerts&utm_medium=3Demail&utm_con=
+tent=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~63~sl5&utm=
+_campaign=3DAlerts_26_02_23" style=3D"color:#279B37; text-decoration:underl=
+ine;"><span style=3D"color:#279B37">more details &raquo;</span></a></p>
+                </td>
+                <td width=3D"100" valign=3D"top">
+                    <a href=3D"https://www.adzuna.com.au/land/ad/4380407141=
+?v=3D20A42CC410B6AA98AE63F297F67FBB6A4D8DE3E1&se=3Dvls6vkZw7hGK-fG4PxQy8w&n=
+id=3D81469402&sl=3Dsl5&et=3D1&utm_source=3Dalerts&utm_medium=3Demail&utm_co=
+ntent=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~63~sl5&ut=
+m_campaign=3DAlerts_26_02_23"><img src=3D"https://zunastatic-abf.kxcdn.com/=
+images/au/jobs/partners/logo_adzuna_network.png" width=3D"100" height=3D"75=
+" alt=3D"My Recruitment Plus" style=3D"display:block;border:0;"></a>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td style=3D"padding-top:10px; padding-bottom:10px; border-bottom:1px s=
+olid #DADADA;">
+        <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"10=
+0%">
+            <tr>
+                <td style=3D"text-align:left; padding-right:20px; font-fami=
+ly:Arial, sans-serif; font-size:18px;">
+                    <h2 style=3D"font-size:16px; font-weight:bold; line-hei=
+ght:20px; margin:0 0 4px 0;"><a href=3D"https://www.adzuna.com.au/land/ad/4=
+378341306?v=3DA3457C88866E3EB145BFDEC9709D8ECE5A3334DB&se=3Dvls6vkZw7hGK-fG=
+4PxQy8w&nid=3D81469402&sl=3Dsl5&et=3D1&utm_source=3Dalerts&utm_medium=3Dema=
+il&utm_content=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~=
+63~sl5&utm_campaign=3DAlerts_26_02_23" style=3D"color:#279B37; text-decorat=
+ion:underline;"><span style=3D"color:#279B37">Senior Analyst</span></a>    =
+                </h2>
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+                    <p style=3D"font-size:12px; line-height:16px; font-weig=
+ht:normal; color:#212121; margin:0;">Queensland Government - Brisbane<br/><=
+a href=3D"https://www.adzuna.com.au/land/ad/4378341306?v=3DA3457C88866E3EB1=
+45BFDEC9709D8ECE5A3334DB&se=3Dvls6vkZw7hGK-fG4PxQy8w&nid=3D81469402&sl=3Dsl=
+5&et=3D1&utm_source=3Dalerts&utm_medium=3Demail&utm_content=3Dexcel_vba~au~=
+google_cpc~src~promo_alerts~d~rec_false~0~10~63~sl5&utm_campaign=3DAlerts_2=
+6_02_23" style=3D"color:#279B37; text-decoration:underline;"><span style=3D=
+"color:#279B37">more details &raquo;</span></a></p>
+                </td>
+                <td width=3D"100" valign=3D"top">
+                    <a href=3D"https://www.adzuna.com.au/land/ad/4378341306=
+?v=3DA3457C88866E3EB145BFDEC9709D8ECE5A3334DB&se=3Dvls6vkZw7hGK-fG4PxQy8w&n=
+id=3D81469402&sl=3Dsl5&et=3D1&utm_source=3Dalerts&utm_medium=3Demail&utm_co=
+ntent=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~63~sl5&ut=
+m_campaign=3DAlerts_26_02_23"><img src=3D"https://zunastatic-abf.kxcdn.com/=
+images/logo/jobs_AU/partners/zaHtvRcqXmrNVLXjrfId5OYl2Kk.png" width=3D"100"=
+ height=3D"75" alt=3D"Queensland Government Jobs" style=3D"display:block;bo=
+rder:0;"></a>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td style=3D"padding-top:10px; padding-bottom:10px; border-bottom:1px s=
+olid #DADADA;">
+        <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"10=
+0%">
+            <tr>
+                <td style=3D"text-align:left; padding-right:20px; font-fami=
+ly:Arial, sans-serif; font-size:18px;">
+                    <h2 style=3D"font-size:16px; font-weight:bold; line-hei=
+ght:20px; margin:0 0 4px 0;"><a href=3D"https://www.adzuna.com.au/land/ad/4=
+376091541?v=3DEBA11830C0D060EEF821C9777C9E6C49E9596958&se=3Dvls6vkZw7hGK-fG=
+4PxQy8w&nid=3D81469402&sl=3Dsl5&et=3D1&utm_source=3Dalerts&utm_medium=3Dema=
+il&utm_content=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~=
+63~sl5&utm_campaign=3DAlerts_26_02_23" style=3D"color:#279B37; text-decorat=
+ion:underline;"><span style=3D"color:#279B37">Senior Business Analyst</span=
+></a>                    </h2>
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+                    <p style=3D"font-size:12px; line-height:16px; font-weig=
+ht:normal; color:#212121; margin:0;">Seven West Media - Melbourne, State of=
+ Victoria, 3000<br/><a href=3D"https://www.adzuna.com.au/land/ad/4376091541=
+?v=3DEBA11830C0D060EEF821C9777C9E6C49E9596958&se=3Dvls6vkZw7hGK-fG4PxQy8w&n=
+id=3D81469402&sl=3Dsl5&et=3D1&utm_source=3Dalerts&utm_medium=3Demail&utm_co=
+ntent=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~63~sl5&ut=
+m_campaign=3DAlerts_26_02_23" style=3D"color:#279B37; text-decoration:under=
+line;"><span style=3D"color:#279B37">more details &raquo;</span></a></p>
+                </td>
+                <td width=3D"100" valign=3D"top">
+                    <a href=3D"https://www.adzuna.com.au/land/ad/4376091541=
+?v=3DEBA11830C0D060EEF821C9777C9E6C49E9596958&se=3Dvls6vkZw7hGK-fG4PxQy8w&n=
+id=3D81469402&sl=3Dsl5&et=3D1&utm_source=3Dalerts&utm_medium=3Demail&utm_co=
+ntent=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~63~sl5&ut=
+m_campaign=3DAlerts_26_02_23"><img src=3D"https://zunastatic-abf.kxcdn.com/=
+images/shared/jobs/partners/logo_adzuna_network.png" width=3D"100" height=
+=3D"75" alt=3D"LinkUp" style=3D"display:block;border:0;"></a>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td style=3D"padding-top:10px; padding-bottom:10px; border-bottom:1px s=
+olid #DADADA;">
+        <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"10=
+0%">
+            <tr>
+                <td style=3D"text-align:left; padding-right:20px; font-fami=
+ly:Arial, sans-serif; font-size:18px;">
+                    <h2 style=3D"font-size:16px; font-weight:bold; line-hei=
+ght:20px; margin:0 0 4px 0;"><a href=3D"https://www.adzuna.com.au/land/ad/4=
+372844859?v=3DAA631D2A9B002D953C53955200C2E6C5EEBCA7E8&se=3Dvls6vkZw7hGK-fG=
+4PxQy8w&nid=3D81469402&sl=3Dsl5&et=3D1&utm_source=3Dalerts&utm_medium=3Dema=
+il&utm_content=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~=
+63~sl5&utm_campaign=3DAlerts_26_02_23" style=3D"color:#279B37; text-decorat=
+ion:underline;"><span style=3D"color:#279B37">Training Profile Analyst</spa=
+n></a>                    </h2>
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+                    <p style=3D"font-size:12px; line-height:16px; font-weig=
+ht:normal; color:#212121; margin:0;">NSW Government - Sydney, State of New =
+South Wales, 2000<br/><a href=3D"https://www.adzuna.com.au/land/ad/43728448=
+59?v=3DAA631D2A9B002D953C53955200C2E6C5EEBCA7E8&se=3Dvls6vkZw7hGK-fG4PxQy8w=
+&nid=3D81469402&sl=3Dsl5&et=3D1&utm_source=3Dalerts&utm_medium=3Demail&utm_=
+content=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~63~sl5&=
+utm_campaign=3DAlerts_26_02_23" style=3D"color:#279B37; text-decoration:und=
+erline;"><span style=3D"color:#279B37">more details &raquo;</span></a></p>
+                </td>
+                <td width=3D"100" valign=3D"top">
+                    <a href=3D"https://www.adzuna.com.au/land/ad/4372844859=
+?v=3DAA631D2A9B002D953C53955200C2E6C5EEBCA7E8&se=3Dvls6vkZw7hGK-fG4PxQy8w&n=
+id=3D81469402&sl=3Dsl5&et=3D1&utm_source=3Dalerts&utm_medium=3Demail&utm_co=
+ntent=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~63~sl5&ut=
+m_campaign=3DAlerts_26_02_23"><img src=3D"https://zunastatic-abf.kxcdn.com/=
+images/logo/jobs_AU/partners/6YKDO7xCQbCfv3SFcZ8PDasxxbI.png" width=3D"100"=
+ height=3D"75" alt=3D"LinkUp" style=3D"display:block;border:0;"></a>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td style=3D"padding-top:10px; padding-bottom:10px;">
+        <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"10=
+0%">
+            <tr>
+                <td style=3D"text-align:left; padding-right:20px; font-fami=
+ly:Arial, sans-serif; font-size:18px;">
+                    <h2 style=3D"font-size:16px; font-weight:bold; line-hei=
+ght:20px; margin:0 0 4px 0;"><a href=3D"https://www.adzuna.com.au/land/ad/4=
+370660991?v=3DD4A7D466D51E98F774E00A171935E60F98435D72&se=3Dvls6vkZw7hGK-fG=
+4PxQy8w&nid=3D81469402&sl=3Dsl5&et=3D1&utm_source=3Dalerts&utm_medium=3Dema=
+il&utm_content=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~=
+63~sl5&utm_campaign=3DAlerts_26_02_23" style=3D"color:#279B37; text-decorat=
+ion:underline;"><span style=3D"color:#279B37">Analyst - Economics & Strateg=
+y Team</span></a>                    </h2>
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+                    <p style=3D"font-size:12px; line-height:16px; font-weig=
+ht:normal; color:#212121; margin:0;">Morgan Stanley - Sydney<br/><a href=3D=
+"https://www.adzuna.com.au/land/ad/4370660991?v=3DD4A7D466D51E98F774E00A171=
+935E60F98435D72&se=3Dvls6vkZw7hGK-fG4PxQy8w&nid=3D81469402&sl=3Dsl5&et=3D1&=
+utm_source=3Dalerts&utm_medium=3Demail&utm_content=3Dexcel_vba~au~google_cp=
+c~src~promo_alerts~d~rec_false~0~10~63~sl5&utm_campaign=3DAlerts_26_02_23" =
+style=3D"color:#279B37; text-decoration:underline;"><span style=3D"color:#2=
+79B37">more details &raquo;</span></a></p>
+                </td>
+                <td width=3D"100" valign=3D"top">
+                    <a href=3D"https://www.adzuna.com.au/land/ad/4370660991=
+?v=3DD4A7D466D51E98F774E00A171935E60F98435D72&se=3Dvls6vkZw7hGK-fG4PxQy8w&n=
+id=3D81469402&sl=3Dsl5&et=3D1&utm_source=3Dalerts&utm_medium=3Demail&utm_co=
+ntent=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~63~sl5&ut=
+m_campaign=3DAlerts_26_02_23"><img src=3D"https://zunastatic-abf.kxcdn.com/=
+images/logo/jobs_AU/partners/k-rgS9rYhFOqP31iEWXS26ig2tk.png" width=3D"100"=
+ height=3D"75" alt=3D"Direct Employers" style=3D"display:block;border:0;"><=
+/a>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+
+<tr>
+    <td style=3D"padding-top:10px; padding-bottom:20px;">
+        <table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" style=
+=3D"margin:0 auto;">
+            <tr>
+                <td style=3D"background-color:#279B37; color:white; font-fa=
+mily:Arial, sans-serif; font-size:18px; font-weight:bold; text-align:center=
+; padding:10px 20px; border-radius:10px;">
+                    <a href=3D"https://www.adzuna.com.au/search?loc=3D10539=
+2&qwd=3Dexcel+AND+vba&adv=3D1&se=3Dvls6vkZw7hGK-fG4PxQy8w&nid=3D81469402&ut=
+m_source=3Dalerts&utm_medium=3Demail&utm_content=3Dexcel_vba~au~google_cpc~=
+src~promo_alerts~d~rec_false~0~10~63~sl5&utm_campaign=3DAlerts_26_02_23" st=
+yle=3D"color:white;text-decoration:none;">View all job matches             =
+       </a>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr><td style=3D"padding-bottom:20px;"><table cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%">
+    <tr>
+        <td align=3D"center" style=3D"padding-top: 20px; padding-bottom: 0;=
+">
+            <table cellpadding=3D"0" cellspacing=3D"0" width=3D"285" align=
+=3D"center">
+                <tr>
+                    <td align=3D"center">
+                        <tr>
+                            <td align=3D"center">
+                                <a href=3D"https://app.appsflyer.com/id9760=
+23178?pid=3DEmail_AU&c=3Dbottomlogo_VMCV&b=3Dappstore"
+                                    target=3D"_blank"
+                                    style=3D"width:135px; display:inline-bl=
+ock;">
+                                    <img src=3D"https://zunastatic-abf.kxcd=
+n.com/images/global/jobs/promos/app-store-badge.png" width=3D"135" height=
+=3D"40" />
+                                </a>
+                                <a href=3D"https://play.google.com/store/ap=
+ps/details?id=3Dcom.adzuna&referrer=3Dutm_source%3DEmail_AU%26utm_campaign%=
+3Dbottomlogo"
+                                    target=3D"_blank"
+                                    style=3D"width:135px; display:inline-bl=
+ock;">
+                                    <img src=3D"https://zunastatic-abf.kxcd=
+n.com/images/global/jobs/promos/google-play-badge.png" width=3D"135" height=
+=3D"40" />
+                                </a>
+                            </td>
+                        </tr>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table></td></tr><tr><td style=3D"padding-bottom:20px;"><table width=3D"10=
+0%" style=3D"background:#E4F5F8;border-radius:10px; padding:10px; text-alig=
+n:center;"><tr><td style=3D"font-size:18px; line-height:22px; font-weight:n=
+ormal; color:#009FBB; font-family:Arial, sans-serif; margin:0;">ValueMyCV</=
+td></tr><tr><td style=3D"font-size:12px; line-height:18px; font-weight:norm=
+al; color:#212121; font-family:Arial, sans-serif; margin:0;">53% of people =
+feel underpaid. Calculate how much your CV is worth.</td></tr><tr><td style=
+=3D"padding-top:10px;"><table cellpadding=3D"0" cellspacing=3D"0" align=3D"=
+center" style=3D"margin:0 auto;"><tr><td style=3D"background-color:#009FBB;=
+ color:white; font-family:Arial, sans-serif; font-size:18px; font-weight:bo=
+ld; text-align:center; padding:10px; border-radius:10px;"><a href=3D"https:=
+//www.adzuna.com.au/value-my-cv?utm_source=3Dalerts&utm_medium=3Demail&utm_=
+content=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_false~0~10~63~sl5&=
+utm_campaign=3DAlerts_26_02_23" style=3D"color:white;text-decoration:none;"=
+>Value my CV now</a></td></tr></table></td></tr></table></td></tr><tr><td s=
+tyle=3D"padding-bottom:20px;"><table cellpadding=3D"0" cellspacing=3D"6" bo=
+rder=3D"0" align=3D"center" style=3D"margin:0 auto;"><tr><td style=3D"text-=
+align:center" align=3D"center"><a href=3D"https://www.twitter.com/adzunaAU"=
+ target=3D"_blank"><img src=3D"https://zunastatic-abf.kxcdn.com/images/emai=
+ls/icon_twitter_large.png" width=3D"44" height=3D"44" style=3D"display:inli=
+ne-block;" alt=3D"@adzuna" /></a></td><td style=3D"text-align:center" align=
+=3D"center"><a href=3D"https://www.facebook.com/adzunaAU" target=3D"_blank"=
+><img src=3D"https://zunastatic-abf.kxcdn.com/images/emails/icon_facebook_l=
+arge-1.0.0-vsn.png" width=3D"44" height=3D"44" style=3D"display:inline-bloc=
+k;" alt=3D"Facebook" /></a></td><td style=3D"text-align:center" align=3D"ce=
+nter"><a href=3D"https://www.adzuna.com.au/blog?utm_source=3Dalerts&utm_med=
+ium=3Demail&utm_content=3Dexcel_vba~au~google_cpc~src~promo_alerts~d~rec_fa=
+lse~0~10~63~sl5&utm_campaign=3DAlerts_26_02_23" target=3D"_blank"><img src=
+=3D"https://zunastatic-abf.kxcdn.com/images/emails/icon_adzuna_large.png" w=
+idth=3D"44" height=3D"44" style=3D"display:inline-block;" alt=3D"Adzuna blo=
+g" /></a></td></tr></table></td></tr><tr><td><table align=3D"center" width=
+=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"><tr><td align=3D=
+"center" style=3D"color:#9c9c9c;padding-bottom:40px;text-align: center; fon=
+t-family:Arial, sans-serif; font-size:12px; line-height:20px; "><span style=
+=3D"color:#212121"><b>Job alert keywords:</b> Jobs in Australia within a 10=
+ km radius, including...<br/></span>If you want to improve your job alerts,=
+ please click here:<br/><a href=3D"https://www.adzuna.com.au/my-alerts?id=
+=3D81469402&vhash=3D4ccca9c61ae08beffe2d2c567e8f0621e299b756&utm_source=3Da=
+lerts&utm_medium=3Demail&utm_content=3Dexcel_vba~au~google_cpc~src~promo_al=
+erts~d~rec_false~0~10~63~sl5&utm_campaign=3DAlerts_26_02_23&autoedit=3D1" s=
+tyle=3D"color:#279B37">Edit job alert</a><br/><br/>Click here to <a href=3D=
+"https://www.adzuna.com.au/unsubscribe?id=3D81469402&vhash=3D4ccca9c61ae08b=
+effe2d2c567e8f0621e299b756&t=3Dweb_alert&et=3D1&nid=3D81469402&v=3D&c=3Djob=
+s_AU&rec=3D0&utm_source=3Dalerts&utm_medium=3Demail&utm_content=3Dexcel_vba=
+~au~google_cpc~src~promo_alerts~d~rec_false~0~10~63~sl5&utm_campaign=3DAler=
+ts_26_02_23" style=3D"color:#9c9c9c"><span style=3D"color:#9c9c9c">cancel</=
+span></a> your alert<br/><a href=3D"https://www.adzuna.com.au/my-alerts?id=
+=3D81469402&vhash=3D4ccca9c61ae08beffe2d2c567e8f0621e299b756&utm_source=3Da=
+lerts&utm_medium=3Demail&utm_content=3Dexcel_vba~au~google_cpc~src~promo_al=
+erts~d~rec_false~0~10~63~sl5&utm_campaign=3DAlerts_26_02_23" style=3D"color=
+:#9c9c9c"><span style=3D"color:#9c9c9c">Create a new alert</span></a></td><=
+/tr></table></td></tr><img style=3D"width:0px; height:0px;" src=3D"https://=
+www.adzuna.com.au/tracking/email?action=3Dopen&t=3Dweb_alert&nid=3D81469402=
+&v=3D&c=3Djobs_AU&epoch=3D1697915963&se=3Dvls6vkZw7hGK-fG4PxQy8w&rec=3D0&ac=
+q=3Dgoogle_cpc&uq=3D0&et=3D1&sl=3Dsl5"><img src=3D"https://pixel.app.return=
+path.net/pixel.gif?r=3Dca92f7456350049dfcc14ea37a41cfeb6fb19bdb&c=3Dadzuna-=
+us-au-set" width=3D"1" height=3D"1" />=20=20=20=20
+            </table>
+			<!--[if (gte mso 9)|(IE)]>
+					</td>
+				</tr>
+			</table>
+			<![endif]-->
+        </div>
+    </center>
+=20=20=20=20
+
+
+=20=20=20=20
+=20=20=20=20
+
+</body>
+</html>
+
+------------=_1697915964-74693-9061--

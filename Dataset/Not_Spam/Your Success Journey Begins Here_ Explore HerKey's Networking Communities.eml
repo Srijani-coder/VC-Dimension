@@ -1,0 +1,1607 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:8691:b0:4fd:23d3:a27 with SMTP id e17csp188771pxn;
+        Sat, 21 Oct 2023 02:10:21 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEIBmHD1eDk+fEUFPzXOCCAZVtILBzW6FkrlSQK6LaqY//H0FZHq86Z1WbmbsYTAoyRuXF2
+X-Received: by 2002:a17:903:5c4:b0:1c9:bf02:664b with SMTP id kf4-20020a17090305c400b001c9bf02664bmr5258553plb.7.1697879421618;
+        Sat, 21 Oct 2023 02:10:21 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697879421; cv=none;
+        d=google.com; s=arc-20160816;
+        b=E8NIkUhKPxngJ755D8HjdAO3ITc/mg/v4HLnaMeuI6OtuiXCUsCSJ3mZT4KZD3b8TN
+         1xjdxKNUtQjf5LK9xYG1BzimQrACTSZqnmXR5g933RJn7vMMTeeJ+FuCzDMnm/ZhRN8D
+         yuUiblQSH1eAXXZprSPr9AKUjcQ4XyLwmZgCNSwvENRc4dL+emoii8RwKLDnTQEeBJCI
+         9Bz55IlwkWhAb7a9vsTl1PNwbHYnm+FMtmSgg2jfKFAf9J/9dzrT8NCphO/VkEYzDj0v
+         R7iA9tlNZuEStYK/L2JArC9rsYcxawNhlElGaovZ10uBDmaJDR8kPFST/Fe+NkybR14E
+         DBzw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:reply-to:list-unsubscribe-post:list-unsubscribe
+         :mime-version:subject:message-id:to:from:date:dkim-signature
+         :dkim-signature;
+        bh=loKwo7oY0NsgTIvglXT4n5W0KNHEV8LARGeRPQDrKZc=;
+        fh=rMR7aHeW0kk3EfQCRVDA3y4VKplschu3hzpKRLl2D+Y=;
+        b=AjvtkqBB3htlW/tPNwAJ+ShxpeFz/uuX+NEwr2BtBPUAu0qGJ0sHLJv3SztsZzrVOL
+         2Zqy6raeuxnyC+iifr6khqWwmYvMUXBwCWJaDfbwsl7DJpMZ07Cd8r1dLeR/VQqYlRvw
+         i9Guby1w1hl27Qzzy/VsEETxM0Y6vrOeH+zoPtQnB6uHSg2HYBnF5Wge7x8XVm2KhQmC
+         PoRp/LTpF1CAmYWzRF7wBKNUS7smiKX5eC8hQKs8O59ZOeOhMzNswPsfM6kz+FL9UOXD
+         21JCZStQi7wv2/zjU/NiBpi7cHI25OLwQZ8E95vn0/cbnzE3PHvgjosfc1ERaBDYVNVD
+         J61Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@jfhmails.co.in header.s=231153 header.b=lk+1BDIk;
+       dkim=pass header.i=@jfh.rsen.zcsend.in header.s=k1 header.b=cfHFx2D+;
+       spf=pass (google.com: domain of campaign_60004988591+a1.1816bfce98c2fb2_d4@zcmp.jfhmails.co.in designates 103.103.198.43 as permitted sender) smtp.mailfrom=campaign_60004988591+a1.1816bfce98c2fb2_d4@zcmp.jfhmails.co.in;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=jfhmails.co.in
+Return-Path: <campaign_60004988591+a1.1816bfce98c2fb2_d4@zcmp.jfhmails.co.in>
+Received: from zdmail43.jfhmails.co.in (zdmail43.jfhmails.co.in. [103.103.198.43])
+        by mx.google.com with ESMTPS id l5-20020a170903120500b001c572ccd45bsi3433996plh.391.2023.10.21.02.10.20
+        for <srijani515@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 21 Oct 2023 02:10:21 -0700 (PDT)
+Received-SPF: pass (google.com: domain of campaign_60004988591+a1.1816bfce98c2fb2_d4@zcmp.jfhmails.co.in designates 103.103.198.43 as permitted sender) client-ip=103.103.198.43;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@jfhmails.co.in header.s=231153 header.b=lk+1BDIk;
+       dkim=pass header.i=@jfh.rsen.zcsend.in header.s=k1 header.b=cfHFx2D+;
+       spf=pass (google.com: domain of campaign_60004988591+a1.1816bfce98c2fb2_d4@zcmp.jfhmails.co.in designates 103.103.198.43 as permitted sender) smtp.mailfrom=campaign_60004988591+a1.1816bfce98c2fb2_d4@zcmp.jfhmails.co.in;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=jfhmails.co.in
+Received: from 10.213.23.186 by zdmail43.jfhmails.co.in
+	with SMTP id 169787444038758515; Sat, 21 Oct 2023 13:17:20 +0530
+DKIM-Signature: a=rsa-sha256; b=lk+1BDIktV/3NooDhYleeyOjiSQnrO0IIjWCT75h199gJZKwyX6rrz4dYZJDwDuZDgYeK3QaAyLourZLUIhwNEiaSNCxymtd/Sr69zWBj6yhYTWLvVSFlGQ27+A9f3Yxw5vugVevD7hG8+Hiv1WnXucscreKP7GZsGjrvFjuTJ8=; c=simple/simple; s=231153; d=jfhmails.co.in; v=1; bh=L7tFkDuDwADGXB2/bHVYKwMUBGXW/zeTCEgpoOBOVyw=; h=date:from:to:message-id:subject:mime-version:content-type:list-unsubscribe:list-unsubscribe-post:x-csa-complaints;
+DKIM-Signature: a=rsa-sha256; b=cfHFx2D+fU83SYYg96ERdpDPZcvB9sPpKfM7S2sdhGX+7ZDOnTYwCQoRMrDcFwGNJXh+UqVlnzXtwYjtPUCbxciRKzHoDOXhBGqcY/XZ26f2cRgkvwktYlSMBHcNz1ODkYn7lIgMQ0ee1UOkcuuQyVJAyjyrTl9VqsZr9tJgPVI=; c=simple/simple; s=k1; d=jfh.rsen.zcsend.in; v=1; bh=L7tFkDuDwADGXB2/bHVYKwMUBGXW/zeTCEgpoOBOVyw=; h=date:from:to:message-id:subject:mime-version:content-type:list-unsubscribe:list-unsubscribe-post:x-csa-complaints;
+Date: Sat, 21 Oct 2023 13:17:20 +0530 (IST)
+From: "Join HerKey Networking Groups" <info@jfhmails.co.in>
+To: Srijani Chakrabarti <srijani515@gmail.com>
+Message-ID: <zcb.3zbd09784cf5d5d46e440d3fd8ba565209a891e52b9a0743b88d3ecc6e4eff041c.1816bfce98c2fb2.1697874440381@zcmp.jfhmails.co.in>
+Subject: Your Success Journey Begins Here: Explore HerKey's Networking
+ Communities
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_925098_540534664.1697874440380"
+List-Unsubscribe: <https://jfh-zc1.maillist-manage.in/ua/optout?od=3zbd09784cf5d5d46e440d3fd8ba565209a891e52b9a0743b88d3ecc6e4eff041c&rd=1816bfce98c2fb2&sd=1816bfce9729034&n=11699e4c09a0434>,<mailto:leave_60004988591+1816bfce98c2fb2_1816bfce9729034@zcsend.in>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-CSA-Complaints: csa-complaints@eco.de
+Reply-To: info@jfhmails.co.in
+Feedback-ID: c1816bfce9714247:z1df89376af:s3zb9c17df10db820498d893ceb7e1a7441ff5c873c5c2bfe9dac1d49fe9ea05ddd
+X-JID: 3zbd09784cf5d5d46e440d3fd8ba565209a891e52b9a0743b88d3ecc6e4eff041c.1816bfce9714247
+X-campaignid: zohocampaigns.3zbd09784cf5d5d46e440d3fd8ba565209a891e52b9a0743b88d3ecc6e4eff041c.zcb.1816bfce98c2fb2.11699e4c09a0434
+X-Zoho-RID: zohocampaigns.3zbd09784cf5d5d46e440d3fd8ba565209a891e52b9a0743b88d3ecc6e4eff041c.zcb.1816bfce98c2fb2.11699e4c09a0434
+X-Mailer: Zoho Campaigns
+X-Report-Abuse: <Please send a copy of this message along with header to abuse+3zbd09784cf5d5d46e440d3fd8ba565209a891e52b9a0743b88d3ecc6e4eff041c_zcb_1816bfce98c2fb2@zohocampaigns.in>, <https://jfh-zc1.maillist-manage.in/campaigns/ReportAbuse.zc?od=3zbd09784cf5d5d46e440d3fd8ba565209a891e52b9a0743b88d3ecc6e4eff041c&rd=1816bfce98c2fb2&sd=1816bfce9729034&n=11699e4c09a0434>
+
+------=_Part_925098_540534664.1697874440380
+Content-Type: text/plain;charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+https://www.jobsforher.com?utm_source=3DCommunityGroupMailerOct212023&utm_m=
+edium=3DEmail&utm_campaign=3DEmailPromo&utm_content=3DEmail_1
+
+Hi Srijani Chakrabarti,
+
+We are pleased to inform you that we have some exciting news to share!
+
+At HerKey, we are committed to enabling women and providing them with oppor=
+tunities to connect, engage, and grow. We believe that by joining our netwo=
+rking groups, you can take your personal and professional development to ne=
+w heights. Our platform hosts a variety of networking groups, each designed=
+ to cater to different aspects of your journey.
+
+We invite you to explore and join the following groups, where you can meet =
+like-minded women, share experiences, and learn from one another:
+
+https://www.jobsforher.com/groups/women-in-tech/112?utm_source=3DCommunityG=
+roupMailerOct212023&utm_medium=3DEmail&utm_campaign=3DEmailPromo&utm_conten=
+t=3DEmail_1 Women in Tech : For those in the tech industry or aspiring to b=
+e a part of it. Connect with women who are breaking barriers and making str=
+ides in the world of technology.
+
+https://www.jobsforher.com/groups/women-in-tech/112?utm_source=3DCommunityG=
+roupMailerOct212023&utm_medium=3DEmail&utm_campaign=3DEmailPromo&utm_conten=
+t=3DEmail_1 Join here
+
+https://www.jobsforher.com/groups/women-achievers/145?utm_source=3DCommunit=
+yGroupMailerOct212023&utm_medium=3DEmail&utm_campaign=3DEmailPromo&utm_cont=
+ent=3DEmail_1 Women Achievers : Join this group if you are an ambitious wom=
+an striving for success and recognition in your career. Share your achievem=
+ents and gain inspiration from other high-achieving women.
+
+https://www.jobsforher.com/groups/women-achievers/145?utm_source=3DCommunit=
+yGroupMailerOct212023&utm_medium=3DEmail&utm_campaign=3DEmailPromo&utm_cont=
+ent=3DEmail_1 Join here
+
+https://www.jobsforher.com/groups/women-returnees-programmes/100?utm_source=
+=3DCommunityGroupMailerOct212023&utm_medium=3DEmail&utm_campaign=3DEmailPro=
+mo&utm_content=3DEmail_1 Women Returnees : If you're returning to the workf=
+orce after a break or seeking support in transitioning back, this group pro=
+vides a welcoming community of women with similar experiences.
+
+https://www.jobsforher.com/groups/women-returnees-programmes/100?utm_source=
+=3DCommunityGroupMailerOct212023&utm_medium=3DEmail&utm_campaign=3DEmailPro=
+mo&utm_content=3DEmail_1 Join here
+
+https://www.jobsforher.com/groups/women-entrepreneurs/155?utm_source=3DComm=
+unityGroupMailerOct212023&utm_medium=3DEmail&utm_campaign=3DEmailPromo&utm_=
+content=3DEmail_1 Women Entrepreneurs : For those who dream of running thei=
+r own business or have already taken the leap into entrepreneurship, connec=
+t with fellow female business owners to exchange insights and advice.
+
+https://www.jobsforher.com/groups/women-entrepreneurs/155?utm_source=3DComm=
+unityGroupMailerOct212023&utm_medium=3DEmail&utm_campaign=3DEmailPromo&utm_=
+content=3DEmail_1 Join here
+
+But before you take the next step, we invite you to watch this video to get=
+ a glimpse of what you can expect from our networking events:
+https://www.youtube.com/watch?v=3Dp_hBEBfDk6k
+
+By becoming a part of these groups on HerKey, you will:
+* Expand your network with influential women in your field.
+* Gain access to valuable resources, webinars, and mentorship opportunities=
+.
+* Engage in meaningful discussions and knowledge-sharing.
+* Discover new career and personal growth opportunities.
+* Find a supportive community of women who understand your journey.
+Joining is easy. Simply log in to your HerKey account or sign up if you're =
+new to our platform. Navigate to the "Networking Groups" section and choose=
+ the groups that align with your interests and goals.
+
+https://www.jobsforher.com/groups?utm_source=3DCommunityGroupMailerOct21202=
+3&utm_medium=3DEmail&utm_campaign=3DEmailPromo&utm_content=3DEmail_1 Explor=
+e and join the groups here.
+
+We encourage you to actively participate, as your insights and experiences =
+can inspire and support others on their journey.
+Empowerment begins with connection, and at HerKey, we believe that women ca=
+n achieve great things when they unite. Join our networking groups today an=
+d embark on a journey of personal and professional growth.
+
+We look forward to seeing you in our vibrant community of women on HerKey. =
+Together, we can make great strides and create a brighter future.
+
+Best regards,=20
+Team HerKey
+
+To stay updated with the latest job opportunities, events, courses, and ins=
+pirational stories, follow us on social media, and don=E2=80=99t forget to =
+share what you see with your own tribe of women!
+https://www.youtube.com/@herkey_?utm_source=3DB2CEmailer2023&utm_medium=3DE=
+mail&utm_campaign=3DEmailPromo&utm_content=3DEmail_1
+https://twitter.com/herkey_?utm_source=3DB2CEmailer2023&utm_medium=3DEmail&=
+utm_campaign=3DEmailPromo&utm_content=3DEmail_1
+https://www.facebook.com/herkeyformerlyjobsforher?utm_source=3DB2CEmailer20=
+23&utm_medium=3DEmail&utm_campaign=3DEmailPromo&utm_content=3DEmail_1
+https://www.instagram.com/herkeyformerlyjobsforher/?utm_source=3DB2CEmailer=
+2023&utm_medium=3DEmail&utm_campaign=3DEmailPromo&utm_content=3DEmail_1
+https://www.linkedin.com/company/herkeyformerlyjobsforher?utm_source=3DB2CE=
+mail2023&utm_medium=3DEmail&utm_campaign=3DEmailPromo&utm_content=3DEmail_1
+
+
+
+
+
+
+----------------------------------------------------------------------
+This email was sent by info@jfhmails.co.in to srijani515@gmail.com
+
+Not interested? Unsubscribe - https://jfh-zc1.maillist-manage.in/ua/optout?=
+od=3D3zbd09784cf5d5d46e440d3fd8ba565209a891e52b9a0743b88d3ecc6e4eff041c&rd=
+=3D1816bfce98c2fb2&sd=3D1816bfce9729034&n=3D11699e4c09a0434
+
+Update profile -  https://jfh-zc1.maillist-manage.in/ua/upc?upd=3D1816bfcaf=
+c14a05&r=3D1816bfce98c2fb2&n=3D11699e4c09a0434&od=3D3zbd09784cf5d5d46e440d3=
+fd8ba565209a891e52b9a0743b88d3ecc6e4eff041c&r=3D1816bfce98c2fb2&n=3D11699e4=
+c09a0434&od=3D3zbd09784cf5d5d46e440d3fd8ba565209a891e52b9a0743b88d3ecc6e4ef=
+f041c
+  =20
+
+
+
+HerKey (formerly JobsForHer) | Jasma Bhavan Rd, Govinda Chetty Colony, Swam=
+y Shivanandapuram, Vasanth Nagar, Bengaluru, Karnataka 560052=20
+
+
+
+Our Privacy Policy [ https://www.jobsforher.com/privacy-policy ] and Terms =
+of Use. [ https://www.jobsforher.com/terms-of-use ]=20
+
+------=_Part_925098_540534664.1697874440380
+Content-Type: text/html;charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:o=3D"urn:schemas-microso=
+ft-com:office:office" xmlns:v=3D"urn:schemas-microsoft-com:vml"><head><titl=
+e>Your Success Journey Begins Here: Explore HerKey's Networking Communities=
+</title><!--[if gte mso 9]><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:P=
+ixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml><![endif]=
+-->
+=09<meta content=3D"width=3Ddevice-width" name=3D"viewport">
+=09<style>
+=09/* #### Mobile Phones Portrait #### */
+=09/* #### iPhone 4+ Portrait or Landscape #### */
+=09@media only screen and (max-width: 480px){
+=09=09table[class=3DcontentInner] {width:100% !important;padding:0px;margin=
+:0px;}
+=09=09img[class=3DzpImage]{width:260px !important;max-width: 360px !importa=
+nt;text-align:center;margin:0px;padding:0px}=20
+=09=09body, table, td, p, li,div,span, blockquote{-webkit-text-size-adjust:=
+none !important;margin:0px auto;line-height:1.7}
+=09=09table[class=3DzpImageCaption]{text-align:left;}
+=09=09table[class=3Dcols]{width:100% !important;max-width:100% !important;t=
+ext-align:left;}
+=09=09table[class=3Dzpcolumns] {text-align:left;margin:0px;}=20
+=09=09table[class=3Dzpcolumn] {text-align:left;margin:0px;}=20
+=09=09table[class=3DzpAlignPos]{width:100%;text-align:left;margin:0px;}=20
+=09=09td[class=3Dtxtsize]{font-size:18px !important;}
+=09=09td[class=3Dpaddingcomp]{ padding-left: 15px !important; padding-right=
+: 15px !important }
+=09=09td[class=3Dbannerimgpad]{padding:0px !important;}
+=09=09span[class=3Dtxtsize]{font-size:18px !important;}
+=09=09img[size =3D "B"]{width: 100% !important;max-width:100% !important;ma=
+rgin: 0px !important;padding:0px !important;}
+=09=09img[size =3D "F"]{width: 100% !important;max-width:100% !important;ma=
+rgin: 0px !important;padding:0px !important;}
+=09=09img[size =3D "S"]{width:105px !important; height:auto; margin:0px aut=
+o !important;padding:0px !important;}
+=09=09img[size =3D "M"]{width:277.869px !important;height:auto;margin:0px a=
+uto !important;padding:0px !important;}
+=09=09h1{
+=09=09=09font-size:28px !important;
+=09=09=09line-height:100% !important;
+=09=09}
+=09=09h2{
+=09=09=09font-size:24px !important;
+=09=09=09line-height:100% !important;
+=09=09}
+=09=09h3{
+=09=09=09font-size:20px !important;
+=09=09=09line-height:100% !important;
+=09=09}
+=09=09h4{
+=09=09=09font-size:18px !important;
+=09=09=09line-height:100% !important;
+=09=09}
+=09=09}=09=09
+=09=09@media only screen and (max-width: 480px){
+=09=09.zpImage{
+=09=09=09height:auto !important;
+=09=09=09width:100% !important;
+=09=09}}
+=09=09@media only screen and (max-width: 480px){
+=09=09.contentInner,.cols,.zpAlignPos{
+=09=09=09width:100% !important;
+=09=09=09max-width:100% !important;
+=09=09}}
+=09=09@media only screen and (max-width: 480px){
+=09=09.paddingcomp{
+=09=09=09padding-left: 15px !important;
+=09=09=09padding-right: 15px !important;=20
+=09=09}
+=09=09.bannerimgpad{
+=09=09=09padding:0px !important;
+=09=09}
+=09=09.buttonElem a
+=09=09{
+=09=09=09max-width: 320px !important;
+=09=09}
+=09}
+=09=09@media screen and (max-width: 480px)
+        {
+                .tmplheader,.tmplfooter{width:100% !important;max-width:400=
+px !important;margin:0px auto;text-align:center;}
+        }
+=09=09a[x-apple-data-detectors] {
+=09=09    color: inherit !important;
+=09=09    text-decoration: none !important;
+=09=09    font-size: inherit !important;
+=09=09    font-family: inherit !important;
+=09=09    font-weight: inherit !important;
+=09=09    line-height: inherit !important;
+=09=09}
+=09=09
+=09=09</style>
+<meta content=3D"text/html;charset=3DUTF-8" http-equiv=3D"Content-Type"></h=
+ead><body bgcolor=3D"#f0f0f0" style=3D"margin:0; padding:0;font-family:Aria=
+l, Helvetica, sans-serif; font-size:12px; color:#000000;"><!--[if !mso 9]><=
+!--><span style=3D'font-size:0px;max-width: 0px;max-height: 0px;mso-hide:al=
+l;'> Join HerKey Networking Groups </span><!--<![endif]--><head>
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width">
+        <style>
+            @media screen and (max-width: 480px)
+            {
+=09                table[class=3Dtmplfooter]{width:100% !important;max-widt=
+h:100% !important; text-align:left;}=20
+=09                table[class=3Dtmplheader]{width:100% !important; max-wid=
+th:100% !important; text-align:left;}=20
+=09                div[class=3Dtxtsize]{text-align:left}=20
+=09                td[class=3Dtxtsize]{text-align:left}
+            }
+            @media screen and (min-width: 320px) and (max-width: 480px) and=
+ (orientation : portrait){
+            {
+=09                table[class=3Dtmplfooter]{width:100% !important;max-widt=
+h:100% !important; text-align:left;}=20
+=09                table[class=3Dtmplheader]{width:100% !important; max-wid=
+th:100% !important; text-align:left;}=20
+=09                div[class=3Dtxtsize]{text-align:left}=20
+=09                td[class=3Dtxtsize]{text-align:left}
+            }
+            @media screen and (max-width: 598px)
+            {
+=09                table[class=3Dtmplfooter]{width:100% !important;max-widt=
+h:100% !important; text-align:left;}=20
+=09                table[class=3Dtmplheader]{width:100% !important; max-wid=
+th:100% !important; text-align:left;}=20
+=09                div[class=3Dtxtsize]{text-align:left}=20
+=09                td[class=3Dtxtsize]{text-align:left}
+            }
+        </style>
+</head>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"backgrou=
+nd-color:#f7f7f7;color:#333;font-size:11px;border-color:#f0f0f0;border-widt=
+h:1px;font-family:Arial;border-style:solid;">
+        <tr><td align=3D"center">
+<div>
+=09=09=09<table style=3D"color:#333;font-size:11px;font-family:Arial; paddi=
+ng:5px;text-align:center;;width:600px;" class=3D"tmplheader"  align=3D"cent=
+er" id=3D"H_INNER"><tr><td><div class=3D"txtsize" style=3D"text-align:cente=
+r;color:#333;font-size:11px;font-family:Arial; ">Can't read or see images?&=
+nbsp;<a target=3D"_blank" href=3D"https://jfh-zc1.campaign-view.in/ua/viewi=
+nbrowser?od=3D3zbd09784cf5d5d46e440d3fd8ba565209a891e52b9a0743b88d3ecc6e4ef=
+f041c&rd=3D1816bfce98c2fb2&sd=3D1816bfce9729034&n=3D11699e4c09a0434&mrd=3D1=
+816bfce979442a&m=3D1" style=3D"color:#03F;font-size:11px;font-family:Arial;=
+"><span style=3D'color:#03F;font-size:11px;font-family:Arial;'>View this em=
+ail in a browser</span></a></div></td></tr></table>
+</div>
+=09</td></tr>
+</table>
+<center>=20
+<div class=3D"zppage-container">                                           =
+              =20
+=09=09<table bgcolor=3D"#f0f0f0" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" class=3D"contentOuter" id=3D"contentOuter" style=3D"background-color=
+:#f0f0f0;background-color:#f0f0f0; mso-table-lspace:0pt; mso-table-rspace:0=
+pt;font-size:12px;text-align:center;border:0px;padding:0px;border-collapse:=
+collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" width=3D"100%">=20
+=09=09=09<tbody><tr>=20
+=09=09=09=09<td style=3D" mso-table-lspace:0pt; font-size:12px;font-family:=
+Arial, Helvetica, sans-serif; mso-table-rspace:0pt;font-size:12px;border:0p=
+x;padding:0px;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rsp=
+ace:0pt;">&nbsp;</td>
+=09=09=09=09<td align=3D"center" style=3D" mso-table-lspace:0pt; font-size:=
+12px;font-family:Arial, Helvetica, sans-serif; mso-table-rspace:0pt;font-si=
+ze:12px;border:0px;padding:0px;border-collapse:collapse; mso-table-lspace:0=
+pt; mso-table-rspace:0pt;">
+=09=09=09=09=09<table bgcolor=3D"#ffffff" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" class=3D"contentInner" id=3D"contentInner" style=3D"border-=
+collapse:collapse; border:0px;font-size:12px;border-collapse:collapse; mso-=
+table-lspace:0pt; mso-table-rspace:0pt;background-color:#ffffff;background-=
+color:#ffffff;width:600px;margin:0px auto;border:0px;" width=3D"600">=20
+=09=09=09=09=09<tbody><tr>=20
+=09=09=09=09=09<td height=3D"570" style=3D"border-collapse:collapse; mso-ta=
+ble-lspace:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; ms=
+o-table-rspace:0pt;font-size:12px;border:0px solid;padding:0px;" valign=3D"=
+top">
+=09=09=09=09=09 =09<a name=3D"Top" style=3D"text-decoration:underline;"></a=
+>
+    <div baseposition=3D"pos_YFkUyjFlRUSG17KTGU8Ffg" class=3D"zpcontent-wra=
+pper" id=3D"page-container">
+    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" id=3D"page-cont=
+ainer" style=3D" mso-table-lspace:0pt;font-size:12px;border:0px;padding:0px=
+;border-collapse:collapse; mso-table-lspace:0pt;mso-table-rspace:0pt;text-d=
+ecoration:none !important;" width=3D"100%">
+<tbody><tr><td class=3D"txtsize" id=3D"elm_1684301400835" style=3D" mso-tab=
+le-lspace:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso=
+-table-rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse=
+:collapse;" valign=3D"top">
+
+=09    =09<table bgcolor=3D"#ffffff" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:1=
+2px;border:0px;padding:0px;width:100%;border-collapse:collapse; mso-table-l=
+space:0pt; mso-table-rspace:0pt;word-break:break-word;background-color:#fff=
+fff;">
+=09    <tbody><tr>
+=09=09<td class=3D"txtsize" style=3D"border-collapse:collapse; mso-table-ls=
+pace:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-tabl=
+e-rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-top:none none=
+ none ;border-bottom:none none none;">
+            =09<div class=3D"zpelement-wrapper image" coupcmp id=3D"elm_168=
+4301400835" prodcmp style=3D";word-wrap:break-word;overflow:hidden;padding:=
+0px;background-color:#ffffff;">
+=09=09=09<div>
+=09=09        <table align=3D"left" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" class=3D"zpAlignPos" style=3D" mso-table-lspace:0pt; mso-table-rs=
+pace:0pt;font-size:12px;text-align:left;width:100%;padding:0px;border:0px;b=
+order-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;word-br=
+eak:break-word;width:100%;text-align:left;">
+            =09=09<tbody><tr><td class=3D"paddingcomp" style=3D"border-coll=
+apse:collapse; mso-table-lspace:0pt; font-size:12px;font-family:Arial, Helv=
+etica, sans-serif; mso-table-rspace:0pt;font-size:12px;border:0px;padding:7=
+px 15px;text-align:center;padding-top:7px;padding-bottom:7px;padding-right:=
+15px;padding-left:15px;">
+=09=09=09<a href=3D"https://jfh-zc1.maillist-manage.in/click/1816bfce98c2fb=
+2/1816bfce97462bd" style=3D"text-decoration:underline;border:0px;" target=
+=3D"_blank" zcurl_name=3D"l_1">
+=09=09=09<img align=3D"left" alt=3D"https://campaign-image.in/zohocampaigns=
+/36429004258577681_zc_v13_1678203171323_women_s_day_emailer.jpg" class=3D"z=
+pImage" height=3D"auto" hspace=3D"0" size=3D"F" src=3D"https://stratus.camp=
+aign-image.in/images/36429005988119127_zc_v1_1694798021279_herkey__viva_for=
+za_bkgrd.jpg" style=3D"width:570px;height:autopx;max-width:570px !important=
+;border:0px;text-align:left;" vspace=3D"0" width=3D"570">
+=09=09=09</a>
+=09=09=09</td></tr>
+=09=09=09</tbody></table>
+=09=09</div>
+            </div>
+            </td></tr></tbody></table>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1692032009615" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+          <div class=3D"zpelement-wrapper" id=3D"elm_1692032009615" style=
+=3D";word-wrap:break-word;overflow:hidden;padding-right:0px;background-colo=
+r:;">
+=09    =09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"=
+zpAlignPos" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:=
+12px;padding:0px;border:0px;border-collapse:collapse; mso-table-lspace:0pt;=
+ mso-table-rspace:0pt;word-break:break-word;-ms-text-size-adjust: 100%;-web=
+kit-text-size-adjust: 100%;" width=3D"100%">
+=09  =09
+            <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:c=
+ollapse; mso-table-lspace:0pt; mso-table-rspace:0pt;border:0px;padding:7px =
+15px;font-size:12pt;font-family:Arial,Helvetica;line-height:19pt;border-top=
+:0px none ;   border-bottom:0px none ;padding-top:20px;padding-bottom:7px;p=
+adding-right:15px;padding-left:15px;">
+             =09    =09=09<div componentpaddingbottom=3D"7px" componentpadd=
+ingleft=3D"15px" componentpaddingright=3D"15px" componentpaddingtop=3D"20px=
+" style><div componentpaddingbottom=3D"7px" componentpaddingleft=3D"15px" c=
+omponentpaddingright=3D"15px" componentpaddingtop=3D"20px" id style=3D"outl=
+ine: none;"><p style=3D"font-family:Arial,verdana;font-size:12px; color:#00=
+0000;padding:0px;margin: 0;line-height: 19pt; text-align: left;"><font colo=
+r=3D"#000000" face=3D"Arial, Helvetica" style><font style=3D"font-size: 11p=
+t;"><b style>Hi Srijani Chakrabarti,</b></font></font></p><p style=3D"font-=
+family:Arial,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;li=
+ne-height: 19pt; text-align: left;"><font color=3D"#000000" face=3D"Arial, =
+Helvetica" style><font style=3D"font-size: 12pt;"><b><br></b></font></font>=
+</p><p style=3D"font-family:Arial,verdana;font-size:12px; color:#000000;pad=
+ding:0px;margin: 0;line-height: 19pt; text-align: left;"><font color=3D"#00=
+0000" face=3D"Arial, Helvetica" style><font style=3D"font-size: 12pt;"><b><=
+/b></font></font></p><font face=3D"Arial, Helvetica" style=3D"font-size: 12=
+pt;"><b></b></font></div><font face=3D"Arial, Helvetica" style></font><span=
+><font face=3D"Arial, Helvetica" style></font></span><span><font face=3D"Ar=
+ial, Helvetica" style=3D"font-size: 11pt;">We are pleased to inform you tha=
+t we have some exciting news to share! </font></span><div><span><font face=
+=3D"Arial, Helvetica" style=3D"font-size: 11pt;"><br></font></span></div><d=
+iv><span><font face=3D"Arial, Helvetica" style=3D"font-size: 11pt;">At HerK=
+ey, we are committed to enabling women and providing them with opportunitie=
+s to connect, engage, and grow. We believe that by joining our networking g=
+roups, you can take your personal and professional development to new heigh=
+ts. Our platform hosts a variety of networking groups, each designed to cat=
+er to different aspects of your journey. </font></span></div><div><span><fo=
+nt face=3D"Arial, Helvetica" style=3D"font-size: 11pt;"><br></font></span><=
+/div><div><span><font face=3D"Arial, Helvetica" style=3D"font-size: 11pt;">=
+We invite you to explore and join the following groups, where you can meet =
+like-minded women, share experiences, and learn from one another:</font></s=
+pan></div><div><span><font face=3D"Arial, Helvetica" style=3D"font-size: 11=
+pt;"><br></font></span></div><div><font face=3D"Arial, Helvetica" style=3D"=
+font-size: 11pt;"><b><a alt=3D"Women in Tech" href=3D"https://jfh-zc1.maill=
+ist-manage.in/click/1816bfce98c2fb2/1816bfce97462bf" rel=3D"noopener norefe=
+rrer" style=3D"text-decoration:underline;color: rgb(40, 40, 218);" target=
+=3D"_blank" title=3D"Women in Tech" zcurl_name=3D"l_2"><font color=3D"#2828=
+da" style=3D"color:#2828da;">Women in Tech</font></a></b>: For those in the=
+ tech industry or aspiring to be a part of it. Connect with women who are b=
+reaking barriers and making strides in the world of technology.</font><div>=
+<span><font face=3D"Arial, Helvetica" style=3D"font-size: 12pt;"><b></b></f=
+ont></span><div><span><font face=3D"Arial, Helvetica" style=3D"font-size: 1=
+2pt;"><b></b></font></span><div componentpaddingbottom=3D"7px" componentpad=
+dingleft=3D"15px" componentpaddingright=3D"15px" componentpaddingtop=3D"20p=
+x" id style=3D"outline: none;"><span><font face=3D"Arial, Helvetica" style=
+=3D"font-size: 12pt;"><b></b></font></span><p style=3D"margin: 0;padding: 0=
+px;font-family:Arial, Helvetica, sans-serif; color:#000000;line-height:1.7;=
+font-family:Arial,verdana;font-size:12px;padding:0px;"></p></div></div></di=
+v></div></div>
+=09=09=09</td></tr>
+=09=09</tbody></table>
+       =09  </div>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1670926973500" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+=09=09=09
+=09=09 =09       =20
+=09=09           =20
+=09=09 =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=09<table bgcolor=3D"transparent" cellpadding=3D"0" cellspacing=3D"0" heigh=
+t=3D"48" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12p=
+x;border:0px;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspa=
+ce:0pt;border:none;" width=3D"100%">
+        <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:colla=
+pse; mso-table-lspace:0pt; font-size:12px;font-family:Arial, Helvetica, san=
+s-serif; mso-table-rspace:0pt;font-size:12px;border:0px;padding:7px 15px;bo=
+rder-top:none none none;border-bottom:none none none;padding-top:7px;paddin=
+g-bottom:7px;padding-right:15px;padding-left:15px;">
+        <div class=3D"zpelement-wrapper buttonElem" id=3D"elm_1670926973500=
+" style=3D"overflow:hidden;word-wrap:break-word;">
+=09    <div class=3D"zpAlignPos" style=3D"text-align:center;">
+                <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0"=
+ style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;border=
+:none;padding:0px;border:0px;margin:0px auto;border-collapse:separate; mso-=
+table-lspace:0pt; mso-table-rspace:0pt;">
+                <tbody><tr>
+                   <td align=3D"center" class=3D"txtsize" style=3D"border-c=
+ollapse:collapse; mso-table-lspace:0pt; font-size:12px; mso-table-rspace:0p=
+t;font-size:12px;border:0px;padding:0px;color:#ffffff;font-family:Arial;tex=
+t-align:center;border-radius:12px;text-align:center;cursor:pointer;">
+                         <!--[if mso]>
+=09=09=09=09=09          <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:=
+vml" xmlns:w=3D"urn:schemas-microsoft-com:office:office" href=3D"https://jf=
+h-zc1.maillist-manage.in/click/1816bfce98c2fb2/1816bfce97462bf" style=3D"bo=
+rder-radius:12px;height:50px;v-text-anchor:middle;width:150px;" arcsize=3D"=
+12%" strokecolor=3D"#ffffff" strokeweight =3D"0px" fillcolor=3D"#87c05a">
+=09=09=09=09=09          <v:stroke dashstyle=3D"solid" />
+=09=09=09=09=09            <w:anchorlock/>
+=09=09=09=09=09            <center style=3D"direction:ltr;color:#ffffff;fon=
+t-family:Arial;font-size:14pt;">Join here</center>
+=09=09=09=09=09          </v:roundrect>
+        =09=09=09=09<![endif]-->
+                        <a align=3D"center" href=3D"https://jfh-zc1.maillis=
+t-manage.in/click/1816bfce98c2fb2/1816bfce97462c1" style=3D"padding:0px 0px=
+;background-color:#87c05a;width:150px;height:50px;font-size:14pt;direction:=
+ltr;font-family:Arial;color:#ffffff;cursor:pointer;text-decoration:none;bor=
+der-radius:12px;border:0px solid #ffffff;border-collapse:separate;display:t=
+able;mso-hide:all;text-align:center;" target=3D"_blank" zcurl_name=3D"l_3">
+=09=09=09=09=09=09=09<font style=3D"color:#ffffff;display:table-cell;vertic=
+al-align:middle;">
+                     =09=09   Join here
+=09=09=09=09=09=09=09</font>
+                        </a>
+                    </td>
+                </tr>
+                </tbody></table>
+            </div>
+=09</div>
+=09</td></tr></tbody></table>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1692423221607" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+          <div class=3D"zpelement-wrapper" id=3D"elm_1692423221607" style=
+=3D";word-wrap:break-word;overflow:hidden;padding-right:0px;background-colo=
+r:;">
+=09    =09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"=
+zpAlignPos" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:=
+12px;padding:0px;border:0px;border-collapse:collapse; mso-table-lspace:0pt;=
+ mso-table-rspace:0pt;word-break:break-word;-ms-text-size-adjust: 100%;-web=
+kit-text-size-adjust: 100%;" width=3D"100%">
+=09  =09
+            <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:c=
+ollapse; mso-table-lspace:0pt; mso-table-rspace:0pt;border:0px;padding:7px =
+15px;font-size:12pt;font-family:Arial,Helvetica;line-height:19pt;border-top=
+:0px none ;   border-bottom:0px none ;padding-top:7px;padding-bottom:7px;pa=
+dding-right:15px;padding-left:15px;">
+             =09    =09=09<div style><p align=3D"center" style=3D"font-fami=
+ly:Arial,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;line-h=
+eight: 19pt; text-align: center;"><font color=3D"#000000" face=3D"Arial, He=
+lvetica" style><b><u><font style=3D"font-size: 12pt;"></font></u></b></font=
+></p><span><div align=3D"center" style=3D"text-align: center;"><span style=
+=3D"font-family: Arial, Helvetica; background-color: rgba(0, 0, 0, 0);"><b>=
+<u><font style=3D"font-size: 11pt;"></font></u></b></span></div><font face=
+=3D"Arial, Helvetica" style><div align=3D"center" style=3D"text-align: cent=
+er;"><span style=3D"background-color: transparent;"><font style=3D"font-siz=
+e: 11pt;"></font></span></div><span><div align=3D"left" style=3D"text-align=
+: left;"><span style=3D"background-color: transparent;"><font style=3D"font=
+-size: 11pt;"><b><a alt=3D"Women Achievers" href=3D"https://jfh-zc1.maillis=
+t-manage.in/click/1816bfce98c2fb2/1816bfce97462c3" rel=3D"noopener noreferr=
+er" style=3D"text-decoration:underline;color: rgb(40, 40, 218);" target=3D"=
+_blank" title=3D"Women Achievers" zcurl_name=3D"l_4"><font color=3D"#2828da=
+" style=3D"color:#2828da;">Women Achievers</font></a></b>: Join this group =
+if you are an ambitious woman striving for success and recognition in your =
+career. Share your achievements and gain inspiration from other high-achiev=
+ing women.</font></span></div></span><div align=3D"center" style=3D"text-al=
+ign: center;"><span style=3D"font-size: 12pt; background-color: transparent=
+;"><b></b></span></div><b style=3D"font-size: 12pt;"></b></font><div align=
+=3D"center" style=3D"text-align: center;"><span style=3D"font-size: 12pt; f=
+ont-family: Arial, Helvetica; background-color: rgba(0, 0, 0, 0);"><b></b><=
+/span></div></span><p align=3D"center" style=3D"font-family:Arial,verdana;f=
+ont-size:12px; color:#000000;padding:0px;margin: 0;line-height: 19pt; text-=
+align: center;"><font color=3D"#000000" face=3D"Arial, Helvetica" style><fo=
+nt style=3D"font-size: 12pt;"></font></font></p></div>
+=09=09=09</td></tr>
+=09=09</tbody></table>
+       =09  </div>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1693754323306" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+=09=09=09
+=09=09 =09       =20
+=09=09           =20
+=09=09 =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=09<table bgcolor=3D"transparent" cellpadding=3D"0" cellspacing=3D"0" heigh=
+t=3D"48" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12p=
+x;border:0px;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspa=
+ce:0pt;border:none;" width=3D"100%">
+        <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:colla=
+pse; mso-table-lspace:0pt; font-size:12px;font-family:Arial, Helvetica, san=
+s-serif; mso-table-rspace:0pt;font-size:12px;border:0px;padding:7px 15px;bo=
+rder-top:none none none;border-bottom:none none none;padding-top:7px;paddin=
+g-bottom:7px;padding-right:15px;padding-left:15px;">
+        <div class=3D"zpelement-wrapper buttonElem" id=3D"elm_1693754323306=
+" style=3D"overflow:hidden;word-wrap:break-word;">
+=09    <div class=3D"zpAlignPos" style=3D"text-align:center;">
+                <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0"=
+ style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;border=
+:none;padding:0px;border:0px;margin:0px auto;border-collapse:separate; mso-=
+table-lspace:0pt; mso-table-rspace:0pt;">
+                <tbody><tr>
+                   <td align=3D"center" class=3D"txtsize" style=3D"border-c=
+ollapse:collapse; mso-table-lspace:0pt; font-size:12px; mso-table-rspace:0p=
+t;font-size:12px;border:0px;padding:0px;color:#ffffff;font-family:Arial;tex=
+t-align:center;border-radius:12px;text-align:center;cursor:pointer;">
+                         <!--[if mso]>
+=09=09=09=09=09          <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:=
+vml" xmlns:w=3D"urn:schemas-microsoft-com:office:office" href=3D"https://jf=
+h-zc1.maillist-manage.in/click/1816bfce98c2fb2/1816bfce97462c3" style=3D"bo=
+rder-radius:12px;height:50px;v-text-anchor:middle;width:150px;" arcsize=3D"=
+12%" strokecolor=3D"#ffffff" strokeweight =3D"0px" fillcolor=3D"#87c05a">
+=09=09=09=09=09          <v:stroke dashstyle=3D"solid" />
+=09=09=09=09=09            <w:anchorlock/>
+=09=09=09=09=09            <center style=3D"direction:ltr;color:#ffffff;fon=
+t-family:Arial;font-size:14pt;">Join here</center>
+=09=09=09=09=09          </v:roundrect>
+        =09=09=09=09<![endif]-->
+                        <a align=3D"center" href=3D"https://jfh-zc1.maillis=
+t-manage.in/click/1816bfce98c2fb2/1816bfce97462c5" style=3D"padding:0px 0px=
+;background-color:#87c05a;width:150px;height:50px;font-size:14pt;direction:=
+ltr;font-family:Arial;color:#ffffff;cursor:pointer;text-decoration:none;bor=
+der-radius:12px;border:0px solid #ffffff;border-collapse:separate;display:t=
+able;mso-hide:all;text-align:center;" target=3D"_blank" zcurl_name=3D"l_5">
+=09=09=09=09=09=09=09<font style=3D"color:#ffffff;display:table-cell;vertic=
+al-align:middle;">
+                     =09=09   Join here
+=09=09=09=09=09=09=09</font>
+                        </a>
+                    </td>
+                </tr>
+                </tbody></table>
+            </div>
+=09</div>
+=09</td></tr></tbody></table>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1693754358521" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+          <div class=3D"zpelement-wrapper" id=3D"elm_1693754358521" style=
+=3D";word-wrap:break-word;overflow:hidden;padding-right:0px;background-colo=
+r:;">
+=09    =09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"=
+zpAlignPos" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:=
+12px;padding:0px;border:0px;border-collapse:collapse; mso-table-lspace:0pt;=
+ mso-table-rspace:0pt;word-break:break-word;-ms-text-size-adjust: 100%;-web=
+kit-text-size-adjust: 100%;" width=3D"100%">
+=09  =09
+            <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:c=
+ollapse; mso-table-lspace:0pt; mso-table-rspace:0pt;border:0px;padding:7px =
+15px;font-size:12pt;font-family:Arial,Helvetica;line-height:19pt;border-top=
+:0px none ;   border-bottom:0px none ;padding-top:7px;padding-bottom:7px;pa=
+dding-right:15px;padding-left:15px;">
+             =09    =09=09<div style><p align=3D"center" style=3D"font-fami=
+ly:Arial,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;line-h=
+eight: 19pt; text-align: center;"><font color=3D"#000000" face=3D"Arial, He=
+lvetica" style><b><u><font style=3D"font-size: 12pt;"></font></u></b></font=
+></p><div align=3D"center" style=3D"text-align: center;"><span style=3D"fon=
+t-family: Arial, Helvetica; background-color: rgba(0, 0, 0, 0);"><b><u><fon=
+t style=3D"font-size: 12pt;"></font></u></b></span></div><font face=3D"Aria=
+l, Helvetica" style><div align=3D"center" style=3D"text-align: center;"><sp=
+an style=3D"background-color: transparent;"><font style=3D"font-size: 11pt;=
+"></font></span></div><span><div align=3D"left" style=3D"text-align: left;"=
+><span style=3D"background-color: transparent;"><font style=3D"font-size: 1=
+1pt;"><b><a alt=3D"Women Returnees" href=3D"https://jfh-zc1.maillist-manage=
+.in/click/1816bfce98c2fb2/1816bfce97462c7" rel=3D"noopener noreferrer" styl=
+e=3D"text-decoration:underline;color: rgb(40, 40, 218);" target=3D"_blank" =
+title=3D"Women Returnees" zcurl_name=3D"l_6"><font color=3D"#2828da" style=
+=3D"color:#2828da;">Women Returnees</font></a></b>: If you're returning to =
+the workforce after a break or seeking support in transitioning back, this =
+group provides a welcoming community of women with similar experiences.</fo=
+nt></span></div></span><div align=3D"center" style=3D"text-align: center;">=
+<span style=3D"font-size: 12pt; background-color: transparent;"><b></b></sp=
+an></div><b style=3D"font-size: 12pt;"></b></font><div align=3D"center" sty=
+le=3D"text-align: center;"><span style=3D"font-size: 12pt; font-family: Ari=
+al, Helvetica; background-color: rgba(0, 0, 0, 0);"><b></b></span></div><p =
+align=3D"center" style=3D"font-family:Arial,verdana;font-size:12px; color:#=
+000000;padding:0px;margin: 0;line-height: 19pt; text-align: center;"><font =
+color=3D"#000000" face=3D"Arial, Helvetica" style><font style=3D"font-size:=
+ 12pt;"></font></font></p></div>
+=09=09=09</td></tr>
+=09=09</tbody></table>
+       =09  </div>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1693754365045" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+=09=09=09
+=09=09 =09       =20
+=09=09           =20
+=09=09 =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=09<table bgcolor=3D"transparent" cellpadding=3D"0" cellspacing=3D"0" heigh=
+t=3D"48" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12p=
+x;border:0px;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspa=
+ce:0pt;border:none;" width=3D"100%">
+        <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:colla=
+pse; mso-table-lspace:0pt; font-size:12px;font-family:Arial, Helvetica, san=
+s-serif; mso-table-rspace:0pt;font-size:12px;border:0px;padding:7px 15px;bo=
+rder-top:none none none;border-bottom:none none none;padding-top:7px;paddin=
+g-bottom:7px;padding-right:15px;padding-left:15px;">
+        <div class=3D"zpelement-wrapper buttonElem" id=3D"elm_1693754365045=
+" style=3D"overflow:hidden;word-wrap:break-word;">
+=09    <div class=3D"zpAlignPos" style=3D"text-align:center;">
+                <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0"=
+ style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;border=
+:none;padding:0px;border:0px;margin:0px auto;border-collapse:separate; mso-=
+table-lspace:0pt; mso-table-rspace:0pt;">
+                <tbody><tr>
+                   <td align=3D"center" class=3D"txtsize" style=3D"border-c=
+ollapse:collapse; mso-table-lspace:0pt; font-size:12px; mso-table-rspace:0p=
+t;font-size:12px;border:0px;padding:0px;color:#ffffff;font-family:Arial;tex=
+t-align:center;border-radius:12px;text-align:center;cursor:pointer;">
+                         <!--[if mso]>
+=09=09=09=09=09          <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:=
+vml" xmlns:w=3D"urn:schemas-microsoft-com:office:office" href=3D"https://jf=
+h-zc1.maillist-manage.in/click/1816bfce98c2fb2/1816bfce97462c7" style=3D"bo=
+rder-radius:12px;height:50px;v-text-anchor:middle;width:150px;" arcsize=3D"=
+12%" strokecolor=3D"#ffffff" strokeweight =3D"0px" fillcolor=3D"#87c05a">
+=09=09=09=09=09          <v:stroke dashstyle=3D"solid" />
+=09=09=09=09=09            <w:anchorlock/>
+=09=09=09=09=09            <center style=3D"direction:ltr;color:#ffffff;fon=
+t-family:Arial;font-size:14pt;">Join here</center>
+=09=09=09=09=09          </v:roundrect>
+        =09=09=09=09<![endif]-->
+                        <a align=3D"center" href=3D"https://jfh-zc1.maillis=
+t-manage.in/click/1816bfce98c2fb2/1816bfce97462c9" style=3D"padding:0px 0px=
+;background-color:#87c05a;width:150px;height:50px;font-size:14pt;direction:=
+ltr;font-family:Arial;color:#ffffff;cursor:pointer;text-decoration:none;bor=
+der-radius:12px;border:0px solid #ffffff;border-collapse:separate;display:t=
+able;mso-hide:all;text-align:center;" target=3D"_blank" zcurl_name=3D"l_7">
+=09=09=09=09=09=09=09<font style=3D"color:#ffffff;display:table-cell;vertic=
+al-align:middle;">
+                     =09=09   Join here
+=09=09=09=09=09=09=09</font>
+                        </a>
+                    </td>
+                </tr>
+                </tbody></table>
+            </div>
+=09</div>
+=09</td></tr></tbody></table>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1697861772434" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+          <div class=3D"zpelement-wrapper" id=3D"elm_1697861772434" style=
+=3D";word-wrap:break-word;overflow:hidden;padding-right:0px;background-colo=
+r:;">
+=09    =09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"=
+zpAlignPos" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:=
+12px;padding:0px;border:0px;border-collapse:collapse; mso-table-lspace:0pt;=
+ mso-table-rspace:0pt;word-break:break-word;-ms-text-size-adjust: 100%;-web=
+kit-text-size-adjust: 100%;" width=3D"100%">
+=09  =09
+            <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:c=
+ollapse; mso-table-lspace:0pt; mso-table-rspace:0pt;border:0px;padding:7px =
+15px;font-size:12pt;font-family:Arial,Helvetica;line-height:19pt;border-top=
+:0px none ;   border-bottom:0px none ;padding-top:7px;padding-bottom:7px;pa=
+dding-right:15px;padding-left:15px;">
+             =09    =09=09<div style><p align=3D"center" style=3D"font-fami=
+ly:Arial,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;line-h=
+eight: 19pt; text-align: center;"><font color=3D"#000000" face=3D"Arial, He=
+lvetica" style><b><u><font style=3D"font-size: 12pt;"></font></u></b></font=
+></p><div align=3D"center" style=3D"text-align: center;"><span style=3D"fon=
+t-family: Arial, Helvetica; background-color: rgba(0, 0, 0, 0);"><b><u><fon=
+t style=3D"font-size: 12pt;"></font></u></b></span></div><font face=3D"Aria=
+l, Helvetica" style><div align=3D"center" style=3D"text-align: center;"><sp=
+an style=3D"background-color: transparent;"><font style=3D"font-size: 11pt;=
+"></font></span></div><span><div align=3D"left" style=3D"text-align: left;"=
+><span style=3D"background-color: transparent;"><font style><font style=3D"=
+font-size: 11pt;"><b style></b><b><a alt=3D"Women Entrepreneurs" href=3D"ht=
+tps://jfh-zc1.maillist-manage.in/click/1816bfce98c2fb2/1816bfce97462cb" rel=
+=3D"noopener noreferrer" style=3D"text-decoration:underline;color: rgb(40, =
+40, 218);" target=3D"_blank" title=3D"Women Entrepreneurs" zcurl_name=3D"l_=
+8"><font color=3D"#2828da" style=3D"color:#2828da;">Women Entrepreneurs</fo=
+nt></a></b>: For those who dream of running their own business or have alre=
+ady taken the leap into entrepreneurship, connect with fellow female busine=
+ss owners to exchange insights and advice.</font></font></span></div></span=
+><div align=3D"center" style=3D"text-align: center;"><span style=3D"font-si=
+ze: 12pt; background-color: transparent;"><b></b></span></div><b style=3D"f=
+ont-size: 12pt;"></b></font><div align=3D"center" style=3D"text-align: cent=
+er;"><span style=3D"font-size: 12pt; font-family: Arial, Helvetica; backgro=
+und-color: rgba(0, 0, 0, 0);"><b></b></span></div><p align=3D"center" style=
+=3D"font-family:Arial,verdana;font-size:12px; color:#000000;padding:0px;mar=
+gin: 0;line-height: 19pt; text-align: center;"><font color=3D"#000000" face=
+=3D"Arial, Helvetica" style><font style=3D"font-size: 12pt;"></font></font>=
+</p></div>
+=09=09=09</td></tr>
+=09=09</tbody></table>
+       =09  </div>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1697861794506" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+=09=09=09
+=09=09 =09       =20
+=09=09           =20
+=09=09 =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=09<table bgcolor=3D"transparent" cellpadding=3D"0" cellspacing=3D"0" heigh=
+t=3D"48" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12p=
+x;border:0px;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspa=
+ce:0pt;border:none;" width=3D"100%">
+        <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:colla=
+pse; mso-table-lspace:0pt; font-size:12px;font-family:Arial, Helvetica, san=
+s-serif; mso-table-rspace:0pt;font-size:12px;border:0px;padding:7px 15px;bo=
+rder-top:none none none;border-bottom:none none none;padding-top:7px;paddin=
+g-bottom:7px;padding-right:15px;padding-left:15px;">
+        <div class=3D"zpelement-wrapper buttonElem" id=3D"elm_1697861794506=
+" style=3D"overflow:hidden;word-wrap:break-word;">
+=09    <div class=3D"zpAlignPos" style=3D"text-align:center;">
+                <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0"=
+ style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;border=
+:none;padding:0px;border:0px;margin:0px auto;border-collapse:separate; mso-=
+table-lspace:0pt; mso-table-rspace:0pt;">
+                <tbody><tr>
+                   <td align=3D"center" class=3D"txtsize" style=3D"border-c=
+ollapse:collapse; mso-table-lspace:0pt; font-size:12px; mso-table-rspace:0p=
+t;font-size:12px;border:0px;padding:0px;color:#ffffff;font-family:Arial;tex=
+t-align:center;border-radius:12px;text-align:center;cursor:pointer;">
+                         <!--[if mso]>
+=09=09=09=09=09          <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:=
+vml" xmlns:w=3D"urn:schemas-microsoft-com:office:office" href=3D"https://jf=
+h-zc1.maillist-manage.in/click/1816bfce98c2fb2/1816bfce97462cb" style=3D"bo=
+rder-radius:12px;height:50px;v-text-anchor:middle;width:150px;" arcsize=3D"=
+12%" strokecolor=3D"#ffffff" strokeweight =3D"0px" fillcolor=3D"#87c05a">
+=09=09=09=09=09          <v:stroke dashstyle=3D"solid" />
+=09=09=09=09=09            <w:anchorlock/>
+=09=09=09=09=09            <center style=3D"direction:ltr;color:#ffffff;fon=
+t-family:Arial;font-size:14pt;">Join here</center>
+=09=09=09=09=09          </v:roundrect>
+        =09=09=09=09<![endif]-->
+                        <a align=3D"center" href=3D"https://jfh-zc1.maillis=
+t-manage.in/click/1816bfce98c2fb2/1816bfce97462cd" style=3D"padding:0px 0px=
+;background-color:#87c05a;width:150px;height:50px;font-size:14pt;direction:=
+ltr;font-family:Arial;color:#ffffff;cursor:pointer;text-decoration:none;bor=
+der-radius:12px;border:0px solid #ffffff;border-collapse:separate;display:t=
+able;mso-hide:all;text-align:center;" target=3D"_blank" zcurl_name=3D"l_9">
+=09=09=09=09=09=09=09<font style=3D"color:#ffffff;display:table-cell;vertic=
+al-align:middle;">
+                     =09=09   Join here
+=09=09=09=09=09=09=09</font>
+                        </a>
+                    </td>
+                </tr>
+                </tbody></table>
+            </div>
+=09</div>
+=09</td></tr></tbody></table>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1694802000144" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+          <div class=3D"zpelement-wrapper" id=3D"elm_1694802000144" style=
+=3D";word-wrap:break-word;overflow:hidden;padding-right:0px;background-colo=
+r:;">
+=09    =09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"=
+zpAlignPos" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:=
+12px;padding:0px;border:0px;border-collapse:collapse; mso-table-lspace:0pt;=
+ mso-table-rspace:0pt;word-break:break-word;-ms-text-size-adjust: 100%;-web=
+kit-text-size-adjust: 100%;" width=3D"100%">
+=09  =09
+            <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:c=
+ollapse; mso-table-lspace:0pt; mso-table-rspace:0pt;border:0px;padding:7px =
+15px;font-size:12pt;font-family:Arial,Helvetica;line-height:19pt;border-top=
+:0px none ;   border-bottom:0px none ;padding-top:7px;padding-bottom:7px;pa=
+dding-right:15px;padding-left:15px;">
+             =09    =09=09<div componentpaddingbottom=3D"7px" componentpadd=
+ingleft=3D"15px" componentpaddingright=3D"15px" componentpaddingtop=3D"7px"=
+ style><span><font face=3D"Arial, Helvetica" style=3D"font-size: 11pt;"><b =
+style>But before you take the next step, we invite you to watch this video =
+to get a glimpse of what you can expect from our networking events:</b></fo=
+nt></span></div>
+=09=09=09</td></tr>
+=09=09</tbody></table>
+       =09  </div>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1697861886397" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+=09=09    =09<table bgcolor=3D"rgba(0, 0, 0, 0)" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D" mso-table-lspace:0pt; mso-table-rspace:0=
+pt;font-size:12px;border:0px;padding:0px;width:100%;border-collapse:collaps=
+e; mso-table-lspace:0pt; mso-table-rspace:0pt;word-break:break-word;backgro=
+und-color:rgba(0, 0, 0, 0);">
+=09=09     <tbody><tr>
+=09=09=09<td class=3D"txtsize" style=3D"border-collapse:collapse; mso-table=
+-lspace:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-t=
+able-rspace:0pt;font-size:12px;padding:0px;border:0px;mso-line-height-rule:=
+ exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border-t=
+op:1px solid rgba(0, 0, 0, 0) ;border-bottom:1px solid rgba(0, 0, 0, 0);">
+=09=09    =09<div class=3D"zpelement-wrapper video" style=3D"overflow:hidde=
+n;word-wrap:break-word;">
+=09=09    =09=09<table align=3D"left" border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0" class=3D"zpAlignPos" style=3D"font-size:12px;padding:0px;border=
+:0px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;=
+-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;width:100%;text-a=
+lign:left;">
+            =09=09<tbody><tr><td class=3D"paddingcomp" style=3D"border-coll=
+apse:collapse; mso-table-lspace:0pt; font-size:12px;font-family:Arial, Helv=
+etica, sans-serif; mso-table-rspace:0pt;font-size:12px;border:0px;padding:7=
+px 15px;text-align:center;padding-top:7px;padding-bottom:7px;padding-right:=
+15px;padding-left:15px;">
+=09=09=09    =09=09<a class href=3D"https://jfh-zc1.maillist-manage.in/clic=
+k/1816bfce98c2fb2/1816bfce97462cf" name playbutton=3D"1" service=3D"youtube=
+" style=3D"text-decoration:underline;border:0px solid;" tag_name=3D"HerKeyG=
+roups" target=3D"_blank" url_type=3D"youtube" video_tag=3D"true" videotype=
+=3D"New" wistiatitle wistiaurl zcurl_name=3D"l_10">
+=09=09=09=09=09=09=09<img align=3D"left" alt=3D"HerKeyGroups" class=3D"zpIm=
+age" height=3D"auto" size=3D"F" src=3D"https://stratus.campaign-image.in/im=
+ages/36429005988119127_herkeygroups.png" style=3D"width:570px;height:autopx=
+;border:0px;text-align:center;" width=3D"570">
+=09=09=09=09=09=09</a>
+=09=09=09=09=09</td></tr></tbody></table>
+=09=09=09=09=09=09<div class=3D"zpImageCaption" style=3D"text-align:center;=
+padding:0px;"></div>
+=09=09=09=09=09</div>
+=09=09=09=09
+=09=09=09</td></tr></tbody></table>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1697862014782" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+          <div class=3D"zpelement-wrapper" id=3D"elm_1697862014782" style=
+=3D";word-wrap:break-word;overflow:hidden;padding-right:0px;background-colo=
+r:;">
+=09    =09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"=
+zpAlignPos" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:=
+12px;padding:0px;border:0px;border-collapse:collapse; mso-table-lspace:0pt;=
+ mso-table-rspace:0pt;word-break:break-word;-ms-text-size-adjust: 100%;-web=
+kit-text-size-adjust: 100%;" width=3D"100%">
+=09  =09
+            <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:c=
+ollapse; mso-table-lspace:0pt; mso-table-rspace:0pt;border:0px;padding:7px =
+15px;font-size:12pt;font-family:Arial,Helvetica;line-height:19pt;border-top=
+:0px none ;   border-bottom:0px none ;padding-top:7px;padding-bottom:7px;pa=
+dding-right:15px;padding-left:15px;">
+             =09    =09=09<div componentpaddingbottom=3D"7px" componentpadd=
+ingleft=3D"15px" componentpaddingright=3D"15px" componentpaddingtop=3D"7px"=
+ style><span><font face=3D"Arial, Helvetica" style><font style=3D"font-size=
+: 11pt;"><b>                            =20
+By becoming a part of these groups on HerKey, you will:&nbsp;</b></font></f=
+ont></span><div><ul><li><span><font face=3D"Arial, Helvetica" style><font s=
+tyle=3D"font-size: 11pt;">Expand your network with influential women in you=
+r field.&nbsp;</font></font></span><li><span><font face=3D"Arial, Helvetica=
+" style><font style=3D"font-size: 11pt;">Gain access to valuable resources,=
+ webinars, and mentorship opportunities.</font></font></span><li><span><fon=
+t face=3D"Arial, Helvetica" style><font style=3D"font-size: 11pt;">Engage i=
+n meaningful discussions and knowledge-sharing.&nbsp;</font></font></span><=
+li><span><font face=3D"Arial, Helvetica" style><font style=3D"font-size: 11=
+pt;">Discover new career and personal growth opportunities.&nbsp;</font></f=
+ont></span><li><span><font face=3D"Arial, Helvetica" style><font style=3D"f=
+ont-size: 11pt;">Find a supportive community of women who understand your j=
+ourney.</font></font></span></ul></div><div><span><font face=3D"Arial, Helv=
+etica" style><font style=3D"font-size: 11pt;">Joining is easy. Simply log i=
+n to your HerKey account or sign up if you're new to our platform. Navigate=
+ to the &quot;Networking Groups&quot; section and choose the groups that al=
+ign with your interests and goals.</font></font></span></div></div>
+=09=09=09</td></tr>
+=09=09</tbody></table>
+       =09  </div>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1697862106743" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+=09=09=09
+=09=09 =09       =20
+=09=09           =20
+=09=09 =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=09<table bgcolor=3D"transparent" cellpadding=3D"0" cellspacing=3D"0" heigh=
+t=3D"48" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12p=
+x;border:0px;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspa=
+ce:0pt;border:none;" width=3D"100%">
+        <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:colla=
+pse; mso-table-lspace:0pt; font-size:12px;font-family:Arial, Helvetica, san=
+s-serif; mso-table-rspace:0pt;font-size:12px;border:0px;padding:7px 15px;bo=
+rder-top:none none none;border-bottom:none none none;padding-top:7px;paddin=
+g-bottom:7px;padding-right:15px;padding-left:15px;">
+        <div class=3D"zpelement-wrapper buttonElem" id=3D"elm_1697862106743=
+" style=3D"overflow:hidden;word-wrap:break-word;">
+=09    <div class=3D"zpAlignPos" style=3D"text-align:center;">
+                <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0"=
+ style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;border=
+:none;padding:0px;border:0px;margin:0px auto;border-collapse:separate; mso-=
+table-lspace:0pt; mso-table-rspace:0pt;">
+                <tbody><tr>
+                   <td align=3D"center" class=3D"txtsize" style=3D"border-c=
+ollapse:collapse; mso-table-lspace:0pt; font-size:12px; mso-table-rspace:0p=
+t;font-size:12px;border:0px;padding:0px;color:#ffffff;font-family:Arial;tex=
+t-align:center;border-radius:26px;text-align:center;cursor:pointer;">
+                         <!--[if mso]>
+=09=09=09=09=09          <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:=
+vml" xmlns:w=3D"urn:schemas-microsoft-com:office:office" href=3D"https://jf=
+h-zc1.maillist-manage.in/click/1816bfce98c2fb2/1816bfce97462d1" style=3D"bo=
+rder-radius:26px;height:50px;v-text-anchor:middle;width:320px;" arcsize=3D"=
+26%" strokecolor=3D"#ffffff" strokeweight =3D"0px" fillcolor=3D"#87c05a">
+=09=09=09=09=09          <v:stroke dashstyle=3D"solid" />
+=09=09=09=09=09            <w:anchorlock/>
+=09=09=09=09=09            <center style=3D"direction:ltr;color:#ffffff;fon=
+t-family:Arial;font-size:14pt;">Explore and join the groups here.</center>
+=09=09=09=09=09          </v:roundrect>
+        =09=09=09=09<![endif]-->
+                        <a align=3D"center" href=3D"https://jfh-zc1.maillis=
+t-manage.in/click/1816bfce98c2fb2/1816bfce97462d1" style=3D"padding:0px 0px=
+;background-color:#87c05a;width:320px;height:50px;font-size:14pt;direction:=
+ltr;font-family:Arial;color:#ffffff;cursor:pointer;text-decoration:none;bor=
+der-radius:26px;border:0px solid #ffffff;border-collapse:separate;display:t=
+able;mso-hide:all;text-align:center;" target=3D"_blank" zcurl_name=3D"l_11"=
+>
+=09=09=09=09=09=09=09<font style=3D"color:#ffffff;display:table-cell;vertic=
+al-align:middle;">
+                     =09=09   Explore and join the groups here.
+=09=09=09=09=09=09=09</font>
+                        </a>
+                    </td>
+                </tr>
+                </tbody></table>
+            </div>
+=09</div>
+=09</td></tr></tbody></table>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1697862134481" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+          <div class=3D"zpelement-wrapper" id=3D"elm_1697862134481" style=
+=3D";word-wrap:break-word;overflow:hidden;padding-right:0px;background-colo=
+r:;">
+=09    =09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"=
+zpAlignPos" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:=
+12px;padding:0px;border:0px;border-collapse:collapse; mso-table-lspace:0pt;=
+ mso-table-rspace:0pt;word-break:break-word;-ms-text-size-adjust: 100%;-web=
+kit-text-size-adjust: 100%;" width=3D"100%">
+=09  =09
+            <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:c=
+ollapse; mso-table-lspace:0pt; mso-table-rspace:0pt;border:0px;padding:7px =
+15px;font-size:12pt;font-family:Arial,Helvetica;line-height:19pt;border-top=
+:0px none ;   border-bottom:0px none ;padding-top:7px;padding-bottom:7px;pa=
+dding-right:15px;padding-left:15px;">
+             =09    =09=09<div componentpaddingbottom=3D"7px" componentpadd=
+ingleft=3D"15px" componentpaddingright=3D"15px" componentpaddingtop=3D"7px"=
+ style><span><font face=3D"Arial, Helvetica" style><font style><b>         =
+                   =20
+</b></font></font></span><span><font face=3D"Arial, Helvetica" style=3D"fon=
+t-size: 11pt;">We encourage you to actively participate, as your insights a=
+nd experiences can inspire and support others on their journey.&nbsp;</font=
+></span><div><span><font face=3D"Arial, Helvetica" style=3D"font-size: 11pt=
+;">Empowerment begins with connection, and at HerKey, we believe that women=
+ can achieve great things when they unite. Join our networking groups today=
+ and embark on a journey of personal and professional growth.&nbsp;</font><=
+/span></div><div><span><font face=3D"Arial, Helvetica" style=3D"font-size: =
+11pt;"><br></font></span></div><div><span><font face=3D"Arial, Helvetica" s=
+tyle=3D"font-size: 11pt;">We look forward to seeing you in our vibrant comm=
+unity of women on HerKey. Together, we can make great strides and create a =
+brighter future.&nbsp;</font></span></div><div><span><font face=3D"Arial, H=
+elvetica" style=3D"font-size: 11pt;"><br></font></span></div><div><font fac=
+e=3D"Arial, Helvetica" style=3D"font-size: 11pt;"><b>Best regards,</b>&nbsp=
+;</font></div><div><span style=3D"font-size: 11pt; font-family: Arial, Helv=
+etica; background-color: rgba(0, 0, 0, 0);">Team HerKey</span></div><div><d=
+iv><span><font face=3D"Arial, Helvetica" style><font style=3D"font-size: 11=
+pt;"></font></font></span></div></div></div>
+=09=09=09</td></tr>
+=09=09</tbody></table>
+       =09  </div>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1692032202673" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+          <div class=3D"zpelement-wrapper" id=3D"elm_1692032202673" style=
+=3D";word-wrap:break-word;overflow:hidden;padding-right:0px;background-colo=
+r:;">
+=09    =09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"=
+zpAlignPos" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:=
+12px;padding:0px;border:0px;border-collapse:collapse; mso-table-lspace:0pt;=
+ mso-table-rspace:0pt;word-break:break-word;-ms-text-size-adjust: 100%;-web=
+kit-text-size-adjust: 100%;" width=3D"100%">
+=09  =09
+            <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:c=
+ollapse; mso-table-lspace:0pt; mso-table-rspace:0pt;border:0px;padding:7px =
+15px;font-size:12pt;font-family:Arial,Helvetica;line-height:19pt;border-top=
+:0px none ;   border-bottom:0px none ;padding-top:60px;padding-bottom:7px;p=
+adding-right:15px;padding-left:15px;">
+             =09    =09=09<div componentpaddingbottom=3D"7px" componentpadd=
+ingleft=3D"15px" componentpaddingright=3D"15px" componentpaddingtop=3D"60px=
+" style><div id style=3D"outline: none;"><p align=3D"center" style=3D"font-=
+family:Arial,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;li=
+ne-height: 19pt; text-align: center;"><font color=3D"#000000" face=3D"Arial=
+, Helvetica" style><font style=3D"font-size: 11pt;"><i style>To stay update=
+d with the latest job opportunities, events, courses, and inspirational sto=
+ries, follow us on social media, and don&rsquo;t forget to share what you s=
+ee with your own tribe of women!</i></font></font></p></div></div>
+=09=09=09</td></tr>
+=09=09</tbody></table>
+       =09  </div>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1644926582194" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+
+
+
+
+
+
+
+
+
+=09                <div class=3D"zpelement-wrapper wdgts" id=3D"elm_1644926=
+582194" style=3D"overflow:hidden;word-wrap:break-word;">
+=09=09=09=09=09=09<table bgcolor border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" class=3D"zpAlignPos" style=3D" mso-table-lspace:0pt; mso-table-rspac=
+e:0pt;padding:0px;border:0px;border-collapse:collapse; mso-table-lspace:0pt=
+;font-size:5px; mso-table-rspace:0pt;word-break:break-word;-ms-text-size-ad=
+just: 100%;-webkit-text-size-adjust: 100%;  background-color:;" width=3D"10=
+0%">
+=09=09=09=09=09=09=09<tbody><tr><td style=3D"border-collapse:collapse; mso-=
+table-lspace:0pt;font-family:Arial, Helvetica, sans-serif; mso-table-rspace=
+:0pt;padding:7px 15px;border:0px;font-size:5px;border-top:0px none ;border-=
+bottom:0px none ;padding-top:7px;padding-bottom:7px;padding-right:15px;padd=
+ing-left:15px;">
+=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" style=3D"border-collapse:collapse;border-collapse:col=
+lapse; mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;min-width:=
+ 100%;border: none;" width=3D"100%"><tbody><tr><td align=3D"center" style=
+=3D"border-collapse:collapse; mso-table-lspace:0pt; font-size:12px;font-fam=
+ily:Arial, Helvetica, sans-serif; mso-table-rspace:0pt;font-size:12px;borde=
+r: none;padding: 0px;margin: 0px;" valign=3D"top"> <table align=3D"center" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" icontext=3D"false" index=
+=3D"1" name=3D"zcsclwdgts_alnmnt" style=3D" mso-table-lspace:0pt; mso-table=
+-rspace:0pt;font-size:12px;border-collapse: collapse;border: none;margin:au=
+to;"><tbody><tr><td align=3D"left" style=3D"border-collapse:collapse; mso-t=
+able-lspace:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; m=
+so-table-rspace:0pt;font-size:12px;border: none;padding: 0px;margin: 0px;" =
+valign=3D"top"> <table align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" name=3D"zcsclwdgtscontainer" style=3D"border-collapse:collaps=
+e;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;font=
+-size:12px;border: none;direction: rtl;"><tbody><tr><td align=3D"left" styl=
+e=3D"border-collapse:collapse; mso-table-lspace:0pt; font-size:12px;font-fa=
+mily:Arial, Helvetica, sans-serif; mso-table-rspace:0pt;font-size:12px;bord=
+er:none;padding:0px;margin:0px;" valign=3D"top"><table align=3D"left" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D" mso-table-lspace:0pt;=
+ mso-table-rspace:0pt;font-size:12px;border-collapse: collapse;border: none=
+;"><tbody><tr><td style=3D"border-collapse:collapse; mso-table-lspace:0pt; =
+font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-rspace:0=
+pt;font-size:12px;padding-right: 9px;padding-bottom: 9px;border:none;paddin=
+g: 0px;margin: 0px;" valign=3D"top"> <table border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font=
+-size:12px;border-collapse: separate;border: none;"><tbody><tr><td align=3D=
+"left" style=3D"border-collapse:collapse; mso-table-lspace:0pt; font-size:1=
+2px;font-family:Arial, Helvetica, sans-serif; mso-table-rspace:0pt;font-siz=
+e:12px;padding:7px;padding-top: 0px;padding-right: 9px;padding-bottom: 0px;=
+padding-left: 9px;border:none;" valign=3D"middle"> <table align=3D"left" bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D" mso-table-lspace:0=
+pt; mso-table-rspace:0pt;font-size:12px;border-collapse: collapse;border: n=
+one;" width><tbody><tr><td align=3D"center" name=3D"sclwdgtimges" style=3D"=
+border-collapse:collapse; mso-table-lspace:0pt; font-size:12px;font-family:=
+Arial, Helvetica, sans-serif; mso-table-rspace:0pt;font-size:12px;border: n=
+one;padding: 0px;margin: 0px;padding-bottom: 6px;" valign=3D"middle"> <a hr=
+ef=3D"https://jfh-zc1.maillist-manage.in/click/1816bfce98c2fb2/1816bfce9746=
+2d3" style=3D"text-decoration:underline;display: block;font-size: 1px;" tar=
+get=3D"_blank" zcurl_name=3D"l_12"><img alt=3D"YouTube" height=3D"30" purpo=
+se=3D"wdgt_1684839547859" src=3D"https://stratus.campaign-image.in/images/3=
+6429005988119127_1_1692464620717_36429004770233366.jpg" style=3D"border: 0p=
+x; margin: 0px; outline: none; text-decoration: none; width: 30px; height: =
+30px;" vspace=3D"10" width=3D"30"></a> </td></tr></tbody></table></td></tr>=
+</tbody></table></td></tr></tbody></table></td><td align=3D"left" style=3D"=
+border-collapse:collapse; mso-table-lspace:0pt; font-size:12px;font-family:=
+Arial, Helvetica, sans-serif; mso-table-rspace:0pt;font-size:12px;border:no=
+ne;padding:0px;margin:0px;" valign=3D"top"><table align=3D"left" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" style=3D" mso-table-lspace:0pt; mso-=
+table-rspace:0pt;font-size:12px;border-collapse: collapse;border: none;"><t=
+body><tr><td style=3D"border-collapse:collapse; mso-table-lspace:0pt; font-=
+size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-rspace:0pt;fo=
+nt-size:12px;padding-right: 9px;padding-bottom: 9px;border:none;padding: 0p=
+x;margin: 0px;" valign=3D"top"> <table border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size=
+:12px;border-collapse: separate;border: none;"><tbody><tr><td align=3D"left=
+" style=3D"border-collapse:collapse; mso-table-lspace:0pt; font-size:12px;f=
+ont-family:Arial, Helvetica, sans-serif; mso-table-rspace:0pt;font-size:12p=
+x;padding:7px;padding-top: 0px;padding-right: 9px;padding-bottom: 0px;paddi=
+ng-left: 9px;border:none;" valign=3D"middle"> <table align=3D"left" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D" mso-table-lspace:0pt; =
+mso-table-rspace:0pt;font-size:12px;border-collapse: collapse;border: none;=
+" width><tbody><tr><td align=3D"center" name=3D"sclwdgtimges" style=3D"bord=
+er-collapse:collapse; mso-table-lspace:0pt; font-size:12px;font-family:Aria=
+l, Helvetica, sans-serif; mso-table-rspace:0pt;font-size:12px;border: none;=
+padding: 0px;margin: 0px;padding-bottom: 6px;" valign=3D"middle"> <a href=
+=3D"https://jfh-zc1.maillist-manage.in/click/1816bfce98c2fb2/1816bfce97462d=
+5" style=3D"text-decoration:underline;display: block;font-size: 1px;" targe=
+t=3D"_blank" zcurl_name=3D"l_13"><img alt=3D"Twitter" height=3D"30" purpose=
+=3D"wdgt_1684839509030" src=3D"https://stratus.campaign-image.in/images/364=
+29005988119127_2_1692464620796_36429004770233366.jpg" style=3D"border: 0px;=
+ margin: 0px; outline: none; text-decoration: none; width: 30px; height: 30=
+px;" vspace=3D"10" width=3D"30"></a> </td></tr></tbody></table></td></tr></=
+tbody></table></td></tr></tbody></table></td><td align=3D"left" style=3D"bo=
+rder-collapse:collapse; mso-table-lspace:0pt; font-size:12px;font-family:Ar=
+ial, Helvetica, sans-serif; mso-table-rspace:0pt;font-size:12px;border:none=
+;padding:0px;margin:0px;" valign=3D"top"><table align=3D"left" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" style=3D" mso-table-lspace:0pt; mso-ta=
+ble-rspace:0pt;font-size:12px;border-collapse: collapse;border: none;"><tbo=
+dy><tr><td style=3D"border-collapse:collapse; mso-table-lspace:0pt; font-si=
+ze:12px;font-family:Arial, Helvetica, sans-serif; mso-table-rspace:0pt;font=
+-size:12px;padding-right: 9px;padding-bottom: 9px;border:none;padding: 0px;=
+margin: 0px;" valign=3D"top"> <table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:1=
+2px;border-collapse: separate;border: none;"><tbody><tr><td align=3D"left" =
+style=3D"border-collapse:collapse; mso-table-lspace:0pt; font-size:12px;fon=
+t-family:Arial, Helvetica, sans-serif; mso-table-rspace:0pt;font-size:12px;=
+padding:7px;padding-top: 0px;padding-right: 9px;padding-bottom: 0px;padding=
+-left: 9px;border:none;" valign=3D"middle"> <table align=3D"left" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" style=3D" mso-table-lspace:0pt; mso=
+-table-rspace:0pt;font-size:12px;border-collapse: collapse;border: none;" w=
+idth><tbody><tr><td align=3D"center" name=3D"sclwdgtimges" style=3D"border-=
+collapse:collapse; mso-table-lspace:0pt; font-size:12px;font-family:Arial, =
+Helvetica, sans-serif; mso-table-rspace:0pt;font-size:12px;border: none;pad=
+ding: 0px;margin: 0px;padding-bottom: 6px;" valign=3D"middle"> <a href=3D"h=
+ttps://jfh-zc1.maillist-manage.in/click/1816bfce98c2fb2/1816bfce97462d7" st=
+yle=3D"text-decoration:underline;display: block;font-size: 1px;" target=3D"=
+_blank" zcurl_name=3D"l_14"><img alt=3D"FB" height=3D"30" purpose=3D"wdgt_1=
+684839379582" src=3D"https://stratus.campaign-image.in/images/3642900598811=
+9127_3_1692464620874_36429004770233366.jpg" style=3D"border: 0px; margin: 0=
+px; outline: none; text-decoration: none; width: 30px; height: 30px;" vspac=
+e=3D"10" width=3D"30"></a> </td></tr></tbody></table></td></tr></tbody></ta=
+ble></td></tr></tbody></table></td><td align=3D"left" style=3D"border-colla=
+pse:collapse; mso-table-lspace:0pt; font-size:12px;font-family:Arial, Helve=
+tica, sans-serif; mso-table-rspace:0pt;font-size:12px;border:none;padding:0=
+px;margin:0px;" valign=3D"top"><table align=3D"left" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" style=3D" mso-table-lspace:0pt; mso-table-rspace=
+:0pt;font-size:12px;border-collapse: collapse;border: none;"><tbody><tr><td=
+ style=3D"border-collapse:collapse; mso-table-lspace:0pt; font-size:12px;fo=
+nt-family:Arial, Helvetica, sans-serif; mso-table-rspace:0pt;font-size:12px=
+;padding-right: 9px;padding-bottom: 9px;border:none;padding: 0px;margin: 0p=
+x;" valign=3D"top"> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;border=
+-collapse: separate;border: none;"><tbody><tr><td align=3D"left" style=3D"b=
+order-collapse:collapse; mso-table-lspace:0pt; font-size:12px;font-family:A=
+rial, Helvetica, sans-serif; mso-table-rspace:0pt;font-size:12px;padding:7p=
+x;padding-top: 0px;padding-right: 9px;padding-bottom: 0px;padding-left: 9px=
+;border:none;" valign=3D"middle"> <table align=3D"left" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" style=3D" mso-table-lspace:0pt; mso-table-rsp=
+ace:0pt;font-size:12px;border-collapse: collapse;border: none;" width><tbod=
+y><tr><td align=3D"center" name=3D"sclwdgtimges" style=3D"border-collapse:c=
+ollapse; mso-table-lspace:0pt; font-size:12px;font-family:Arial, Helvetica,=
+ sans-serif; mso-table-rspace:0pt;font-size:12px;border: none;padding: 0px;=
+margin: 0px;padding-bottom: 6px;" valign=3D"middle"> <a href=3D"https://jfh=
+-zc1.maillist-manage.in/click/1816bfce98c2fb2/1816bfce97462d9" style=3D"tex=
+t-decoration:underline;display: block;font-size: 1px;" target=3D"_blank" zc=
+url_name=3D"l_15"><img alt=3D"Insta" height=3D"30" purpose=3D"wdgt_16848393=
+22341" src=3D"https://stratus.campaign-image.in/images/36429005988119127_4_=
+1692464620977_36429004770233366.jpg" style=3D"border: 0px; margin: 0px; out=
+line: none; text-decoration: none; width: 30px; height: 30px;" vspace=3D"10=
+" width=3D"30"></a> </td></tr></tbody></table></td></tr></tbody></table></t=
+d></tr></tbody></table></td><td align=3D"left" style=3D"border-collapse:col=
+lapse; mso-table-lspace:0pt; font-size:12px;font-family:Arial, Helvetica, s=
+ans-serif; mso-table-rspace:0pt;font-size:12px;border:none;padding:0px;marg=
+in:0px;" valign=3D"top"><table align=3D"left" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;fo=
+nt-size:12px;border-collapse: collapse;border: none;"><tbody><tr><td style=
+=3D"border-collapse:collapse; mso-table-lspace:0pt; font-size:12px;font-fam=
+ily:Arial, Helvetica, sans-serif; mso-table-rspace:0pt;font-size:12px;paddi=
+ng-right: 9px;padding-bottom: 9px;border:none;padding: 0px;margin: 0px;" va=
+lign=3D"top"> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;border-colla=
+pse: separate;border: none;"><tbody><tr><td align=3D"left" style=3D"border-=
+collapse:collapse; mso-table-lspace:0pt; font-size:12px;font-family:Arial, =
+Helvetica, sans-serif; mso-table-rspace:0pt;font-size:12px;padding:7px;padd=
+ing-top: 0px;padding-right: 9px;padding-bottom: 0px;padding-left: 9px;borde=
+r:none;" valign=3D"middle"> <table align=3D"left" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D" mso-table-lspace:0pt; mso-table-rspace:0=
+pt;font-size:12px;border-collapse: collapse;border: none;" width><tbody><tr=
+><td align=3D"center" name=3D"sclwdgtimges" style=3D"border-collapse:collap=
+se; mso-table-lspace:0pt; font-size:12px;font-family:Arial, Helvetica, sans=
+-serif; mso-table-rspace:0pt;font-size:12px;border: none;padding: 0px;margi=
+n: 0px;padding-bottom: 6px;" valign=3D"middle"> <a href=3D"https://jfh-zc1.=
+maillist-manage.in/click/1816bfce98c2fb2/1816bfce97462db" style=3D"text-dec=
+oration:underline;display: block;font-size: 1px;" target=3D"_blank" zcurl_n=
+ame=3D"l_16"><img alt height=3D"30" purpose=3D"wdgt_1684833615177" src=3D"h=
+ttps://stratus.campaign-image.in/images/36429005988119127_5_1692464621060_3=
+6429004770233366.jpg" style=3D"border: 0px; margin: 0px; outline: none; tex=
+t-decoration: none; width: 30px; height: 30px;" vspace=3D"10" width=3D"30">=
+</a> </td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody>=
+</table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbo=
+dy></table>=09
+=09=09=09=09=09=09=09</td></tr>
+=09=09=09            </tbody></table>=09
+=09=09            </div>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1652205764899" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=09=20
+
+=09          <div class=3D"zpelement-wrapper spacebar" id=3D"elm_1652205764=
+899" style=3D";word-wrap:break-word;overflow:hidden;background-color:transp=
+arent;">
+=09=09=09=09=09
+=09=09=09=09=09 <table bgcolor=3D"transparent" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" class=3D"zpAlignPos" style=3D" mso-table-lspace:0pt; m=
+so-table-rspace:0pt;padding:0px;border:0px;border-collapse:collapse; mso-ta=
+ble-lspace:0pt;font-size:5px; mso-table-rspace:0pt;word-break:break-word;-m=
+s-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;height:26px;" width=
+=3D"100%">
+
+=09                        <tbody><tr><td style=3D"border-collapse:collapse=
+; mso-table-lspace:0pt;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;padding:0px;border:0px;font-size:5px;height:26px;border-top:none=
+ none none;border-bottom:none none none;">
+
+=09                        &nbsp;&nbsp;&nbsp;
+
+=09                        </td></tr>
+
+=09                </tbody></table>
+
+=09          </div>
+
+</td></tr>
+    </tbody></table>
+</div>
+
+=09=09=09=09=09</td>=20
+=09=09=09=09=09</tr>=20
+=09=09=09=09=09</tbody></table>
+=09=09=09=09</td>=20
+=09=09=09=09<td style=3D" mso-table-lspace:0pt; font-size:12px;font-family:=
+Arial, Helvetica, sans-serif; mso-table-rspace:0pt;font-size:12px;border:0p=
+x;padding:0px;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rsp=
+ace:0pt;">&nbsp;</td>
+=09=09=09</tr>=20
+=09=09</tbody></table>=20
+</div>
+</center>=20
+
+        <meta content=3D"width=3Ddevice-width" name=3D"viewport">
+        <style>
+            @media screen and (max-width: 480px)
+            {
+                table[class=3Dtmplfooter]{width:100% !important;max-width:1=
+00% !important; text-align:left;}=20
+                table[class=3Dtmplheader]{width:100% !important; max-width:=
+100% !important; text-align:left;}=20
+                div[class=3Dtxtsize]{text-align:left}=20
+                td[class=3Dtxtsize]{text-align:left}
+            }
+            @media screen and (min-width: 320px) and (max-width: 480px) and=
+ (orientation : portrait){
+            {
+                    table[class=3Dtmplfooter]{width:100% !important;max-wid=
+th:100% !important; text-align:left;}=20
+=09                table[class=3Dtmplheader]{width:100% !important; max-wid=
+th:100% !important; text-align:left;}=20
+=09                div[class=3Dtxtsize]{text-align:left}=20
+=09                td[class=3Dtxtsize]{text-align:left}
+             }
+            @media screen and (max-width: 598px)
+            {
+                table[class=3Dtmplfooter]{width:100% !important;max-width:1=
+00% !important; text-align:left;}=20
+                table[class=3Dtmplheader]{width:100% !important; max-width:=
+100% !important; text-align:left;}=20
+                div[class=3Dtxtsize]{text-align:left}=20
+                td[class=3Dtxtsize]{text-align:left}
+            }
+        </style>
+
+<table cellpadding=3D"0" cellspacing=3D"0" style=3D"background-color:#f7f7f=
+7;color:#333;font-size:11px;border-color:#f0f0f0;border-width:1px;font-fami=
+ly:Arial;border-style:solid;" width=3D"100%"><tbody><tr><td align=3D"center=
+">
+=09<table align=3D"center" cellpadding=3D"9" cellspacing=3D"0" class=3D"tmp=
+lfooter" id=3D"F_INNER" style=3D"width:600px;text-align:center;color:inheri=
+t;font-size:inherit;font-family:inherit;">
+=09<tbody><tr><td align=3D"center">
+=09=09<div class=3D"txtsize" style=3D"text-align:center;color:#333;font-siz=
+e:11px;font-family:Arial;">
+=09=09
+=09=09<div style=3D"color:#333;font-size:11px;font-family:Arial;">This emai=
+l was sent by <a href=3D"mailto:info@jfhmails.co.in" id=3D"FOOTERLINK" styl=
+e=3D"color:#0000FF;font-size:11px;font-family:Arial;" target=3D"_blank"><sp=
+an style>info@jfhmails.co.in</span></a> to <a href=3D"mailto:srijani515@gma=
+il.com" id=3D"FOOTERLINK" style=3D"color:#0000FF;font-size:11px;font-family=
+:Arial;" target=3D"_blank"><span style>srijani515@gmail.com</span></a></div=
+>
+=09=09<div class=3D"txtsize" style=3D"padding-top:3px;text-align:center;col=
+or:#333;font-size:11px;font-family:Arial;">Not interested? <a href=3D"https=
+://jfh-zc1.maillist-manage.in/ua/optout?od=3D3zbd09784cf5d5d46e440d3fd8ba56=
+5209a891e52b9a0743b88d3ecc6e4eff041c&rd=3D1816bfce98c2fb2&sd=3D1816bfce9729=
+034&n=3D11699e4c09a0434" id=3D"FOOTERLINK" rel=3D"nofollow" style=3D"color:=
+#0000FF;font-size:11px;font-family:Arial;" target=3D"_blank"><span style>Un=
+subscribe</span></a> | <a href=3D"https://jfh-zc1.maillist-manage.in/ua/com=
+mpref?od=3D3zbd09784cf5d5d46e440d3fd8ba565209a891e52b9a0743b88d3ecc6e4eff04=
+1c&rd=3D1816bfce98c2fb2&sd=3D1816bfce9729034&n=3D11699e4c09a0434" id=3D"FOO=
+TERLINK" rel=3D"nofollow" style=3D"color:#0000FF;font-size:11px;font-family=
+:Arial;" target=3D"_blank"><span id=3D"f11p">Manage Preference</span></a> |=
+ <a href=3D"https://jfh-zc1.maillist-manage.in/ua/upc?upd=3D1816bfcafc14a05=
+&r=3D1816bfce98c2fb2&n=3D11699e4c09a0434&od=3D3zbd09784cf5d5d46e440d3fd8ba5=
+65209a891e52b9a0743b88d3ecc6e4eff041c" id=3D"FOOTERLINK" rel=3D"nofollow" s=
+tyle=3D"color:#0000FF;font-size:11px;font-family:Arial;" target=3D"_blank">=
+<span style>Update profile</span></a> </div>
+=09=09<div style=3D"margin-top:5px;color:#333;font-size:11px;font-family:Ar=
+ial;"></div>=20
+=09=09<div class=3D"txtsize" style=3D"padding-top:3px;text-align:center;col=
+or:#acacac;font-size:11px;font-family:Arial;">HerKey (formerly JobsForHer) =
+| Jasma Bhavan Rd, Govinda Chetty Colony, Swamy Shivanandapuram, Vasanth Na=
+gar, Bengaluru, Karnataka 560052</div>
+=09=09<div class=3D"txtsize" style=3D"padding:3px;text-align:center;color:#=
+acacac;font-size:11px;font-family:Arial;"></div>=09=09
+=09=09<div class=3D"txtsize" style=3D"margin-top:5px;text-align:center;">  =
+ </div>
+=09=09<div class=3D"txtsize" id=3D"FOOTERADDRESS" style=3D"padding:3px;padd=
+ing-left:0px;text-align:center;color:#acacac;font-size:11px;font-family:Ari=
+al;"></div>
+=09=09
+=09=09</div>
+=09</td></tr>
+</tbody></table>
+=09</td></tr>
+</tbody></table>
+   =20
+<img style=3D'visibility:hidden' src=3D"https://jfh-zc1.maillist-manage.in/=
+click/1816bfce98c2fb2/open.gif" alt=3D"" height=3D"1" width=3D"1"/></body><=
+/html>
+------=_Part_925098_540534664.1697874440380--

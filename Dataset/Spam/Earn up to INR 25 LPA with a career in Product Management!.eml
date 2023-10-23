@@ -1,0 +1,172 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a5d:4144:0:b0:314:27c5:6113 with SMTP id c4csp3525466wrq;
+        Thu, 21 Sep 2023 23:48:21 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFuE33icJG0r7AP6vwNEdc3Vaec9hE7BP8vuq6D8Js0wvflG9r8QTfzrFJxZnqvU8TB0MDC
+X-Received: by 2002:a05:6a00:84e:b0:690:ca4e:662f with SMTP id q14-20020a056a00084e00b00690ca4e662fmr8276304pfk.5.1695365301467;
+        Thu, 21 Sep 2023 23:48:21 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1695365301; cv=none;
+        d=google.com; s=arc-20160816;
+        b=vGt89zV+wRcgbLExPvR8e7z88mPEqPpKUU0ctbeDg7lpykE5DPBm148pQP1WubysVD
+         oVVTa5PfIbnxIG3JyomGW1OqKst5SLv1tMFAgRFTpoLYd3DOcD6bKWNcr7mjOZsWgQMl
+         CW+9Wa5ntHJlyP5xrGd/wE0djQQbp8ZoGW9NYBHy8STp1raKxmBwdlEpdmBKyf3mOyXd
+         7v9C2W5yP9cRyqUgF9nW/+ZOSJQuNjXx5clvaDOK4KX3FoJZ5IxoAfRC+x+9Syrn+K05
+         BtxJjbah1nMeJBBUmv32YCElnVaxwFhpupClrrvIsm0VBG5wuXoAv9ePZgKg9KRAAYGB
+         woFw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:mime-version:to:reply-to:from:subject:date:message-id
+         :dkim-signature:dkim-signature;
+        bh=ky02zhRydEH+i2QUzfM+jY3+YpGVK5MMP+pEuvaYfdw=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=Gd977qTL/u7mBTXRJm4ivZRalRdShVYYcHhP5ZHHrTqFdER2XAK5vQxDCnKilox250
+         wHiu71CiTt4+P+K1/uIws/UcXldopFkEpOeIGn7BpbxS6VxEPJSqo8WxzfO2u9nT8Ubk
+         q5mG2PQVDwCHO3GH1NfHQA3w1C5K2wvJa8YLlQ0cuVxDX/OaCVctl+H0Ko4h3sBzQByq
+         wpdIsn2APWcfTkOyW2+9vdMPQNAJS7MCEnAQNcsPUG01p8JB8u9FeqPADGVTz4OFubSY
+         OxNHm6sgOIj2weizuxmEiBHbpJgxorDD4tD7srs01VY1k+liytJ08EQ3Qg3x5+Co/8h8
+         Gt5w==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@dare2compete.news header.s=6bwq2m5ror7cu45mlxsyicgb6nkvi4mb header.b="Soay3D/j";
+       dkim=pass header.i=@amazonses.com header.s=rlntogby6xsxlfnvyxwnvvhttakdsqto header.b="KsExwBb/";
+       spf=pass (google.com: domain of 0109018abba57ed3-a540d02e-c140-46c9-acca-80eb266f8554-000000@emails.dare2compete.news designates 76.223.190.148 as permitted sender) smtp.mailfrom=0109018abba57ed3-a540d02e-c140-46c9-acca-80eb266f8554-000000@emails.dare2compete.news;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=dare2compete.news
+Return-Path: <0109018abba57ed3-a540d02e-c140-46c9-acca-80eb266f8554-000000@emails.dare2compete.news>
+Received: from c190-148.smtp-out.ap-south-1.amazonses.com (c190-148.smtp-out.ap-south-1.amazonses.com. [76.223.190.148])
+        by mx.google.com with ESMTPS id k66-20020a636f45000000b0056418c0864csi3025753pgc.456.2023.09.21.23.48.20
+        for <srijani515@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 21 Sep 2023 23:48:21 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 0109018abba57ed3-a540d02e-c140-46c9-acca-80eb266f8554-000000@emails.dare2compete.news designates 76.223.190.148 as permitted sender) client-ip=76.223.190.148;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@dare2compete.news header.s=6bwq2m5ror7cu45mlxsyicgb6nkvi4mb header.b="Soay3D/j";
+       dkim=pass header.i=@amazonses.com header.s=rlntogby6xsxlfnvyxwnvvhttakdsqto header.b="KsExwBb/";
+       spf=pass (google.com: domain of 0109018abba57ed3-a540d02e-c140-46c9-acca-80eb266f8554-000000@emails.dare2compete.news designates 76.223.190.148 as permitted sender) smtp.mailfrom=0109018abba57ed3-a540d02e-c140-46c9-acca-80eb266f8554-000000@emails.dare2compete.news;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=dare2compete.news
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=6bwq2m5ror7cu45mlxsyicgb6nkvi4mb; d=dare2compete.news;
+	t=1695365300;
+	h=Message-ID:Date:Subject:From:Reply-To:To:MIME-Version:Content-Type;
+	bh=eNeLGYfX6p1+lOp0rwkBxnbn8YcezHzD0zfeZ/ju2zo=;
+	b=Soay3D/jk3cFru6DDIjjTkkfTi1mI7zkdIPOaVI2y+jRtuDSEAvDHQc2FhQWg1mj
+	GfF74BXYa7mmGLtc590VBiBCVTixGHYPUse99QWd9DyRimCiXCVh540AHIGE4+ia88M
+	qdCEAHc3N2u9/evxpvO+KsgCpVUcUaH3LXLbIcxU=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=rlntogby6xsxlfnvyxwnvvhttakdsqto; d=amazonses.com; t=1695365300;
+	h=Message-ID:Date:Subject:From:Reply-To:To:MIME-Version:Content-Type:Feedback-ID;
+	bh=eNeLGYfX6p1+lOp0rwkBxnbn8YcezHzD0zfeZ/ju2zo=;
+	b=KsExwBb/y5iTLaoMAscLBXWeWnRC2gbqB9xnkX5CmNkEW5SD2N7qzBUQAPRfJ3Tx
+	3bpyPBH2FcZlmpox88HK0a2ysI/sEEk4LnW9Hxw1zWD/k9bnaDBldnVacc+E892yPk1
+	8oQLLGwbFpIswQMZiFdfDvilsgSIxNUVOv5QgGtQ=
+Message-ID: <0109018abba57ed3-a540d02e-c140-46c9-acca-80eb266f8554-000000@ap-south-1.amazonses.com>
+Date: Fri, 22 Sep 2023 06:48:19 +0000
+Subject: Earn up to INR 25 LPA with a career in Product Management!
+From: Unstop Courses <noreply@dare2compete.news>
+Reply-To: Unstop Courses <noreply@dare2compete.news>
+To: srijani515@gmail.com
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="_=_swift_1695365299_f3803c88b5d4a6f418ce0a359a1183ec_=_"
+Feedback-ID: 1.ap-south-1.vLaUspdbZtz+0zahNQSbWc0bbDg5bpfORXW9fnjVqUQ=:AmazonSES
+X-SES-Outgoing: 2023.09.22-76.223.190.148
+
+--_=_swift_1695365299_f3803c88b5d4a6f418ce0a359a1183ec_=_
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<p><span style=3D"fo=
+nt-weight: 400;">Hi Srijani,</span></p>
+<p><span style=3D"font-weight: 40=
+0;">The placement season is coming and it is time to put your best foot for=
+ward in front of dream companies =F0=9F=98=8E</span></p>
+<p><span style=
+=3D"font-weight: 400;">And as always, we&rsquo;re here to boost your </span=
+><strong>CV &amp; career </strong><span style=3D"font-weight: 400;">with a =
+course that&rsquo;s been </span><strong>created &amp; led by Microsoft &amp=
+; Amazon&rsquo;s Product Heads. </strong><span style=3D"font-weight: 400;">=
+Could it get any better? =F0=9F=A5=B3</span></p>
+<p><span style=3D"font-w=
+eight: 400;">Bag a seat from </span><strong>1,10,00,000+ openings, </strong=
+><span style=3D"font-weight: 400;">and take the first step to earn an avera=
+ge salary of </span><strong>INR 25 LPA. </strong><span style=3D"font-weight=
+: 400;">Should we say more, are you convinced? =F0=9F=98=8E</span></p>
+<p=
+><strong>Join their live classes now</strong><span style=3D"font-weight: 40=
+0;">: </span><a href=3D"https://unstop.com/courses/details/product-manageme=
+nt?utm_source=3DCourses&amp;utm_medium=3DD2C-Newsletters&amp;utm_campaign=
+=3DUncategorised"><span style=3D"font-weight: 400;">Click Here</span></a></=
+p>
+<p><strong>Pro tip</strong><span style=3D"font-weight: 400;">: Fill th=
+e </span><a href=3D"https://docs.google.com/forms/d/1hu6RbPeuATB3S8MejfDWCZ=
+YSKwo68S7vaqGFrLjsgVs/edit"><span style=3D"font-weight: 400;">"I'm Interest=
+ed"</span></a><span style=3D"font-weight: 400;"> form to receive an exclusi=
+ve call from our career experts to get personalized guidance.&nbsp;</span><=
+/p>
+<p><span style=3D"font-weight: 400;">Kickstart your dream career toda=
+y!&nbsp;</span></p>
+<p><span style=3D"font-weight: 400;">Regards,<br /></=
+span><span style=3D"font-weight: 400;">Team Unstop</span></p>
+</body>
+<=
+p style=3D"text-align: center;"><a href=3D"https://unstop.com/newsletter-un=
+subscribe/c3JpamFuaTUxNUBnbWFpbC5jb20=3D"  style=3D"font-size: 8px;">Unsubs=
+cribe here</a></p>
+</html>
+
+--_=_swift_1695365299_f3803c88b5d4a6f418ce0a359a1183ec_=_
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<p><span style=3D"font-weight: 400;">Hi Srijani,</span></p>
+<p><span style=3D"font-weight: 400;">The placement season is coming and it =
+is time to put your best foot forward in front of dream companies =F0=9F=98=
+=8E</span></p>
+<p><span style=3D"font-weight: 400;">And as always, we&rsquo;re here to boo=
+st your </span><strong>CV &amp; career </strong><span style=3D"font-weight:=
+ 400;">with a course that&rsquo;s been </span><strong>created &amp; led by =
+Microsoft &amp; Amazon&rsquo;s Product Heads. </strong><span style=3D"font-=
+weight: 400;">Could it get any better? =F0=9F=A5=B3</span></p>
+<p><span style=3D"font-weight: 400;">Bag a seat from </span><strong>1,10,00=
+,000+ openings, </strong><span style=3D"font-weight: 400;">and take the fir=
+st step to earn an average salary of </span><strong>INR 25 LPA. </strong><s=
+pan style=3D"font-weight: 400;">Should we say more, are you convinced? =F0=
+=9F=98=8E</span></p>
+<p><strong>Join their live classes now</strong><span style=3D"font-weight: =
+400;">: </span><a href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2Fu=
+nstop.com%2Fcourses%2Fdetails%2Fproduct-management%3Futm_source=3DCourses%2=
+6utm_medium=3DD2C-Newsletters%26utm_campaign=3DUncategorised/1/0109018abba5=
+7ed3-a540d02e-c140-46c9-acca-80eb266f8554-000000/X_d0KBYB49o6KvF7sauV63ArGF=
+EXQ9OenTXGCLuPGm4=3D121"><span style=3D"font-weight: 400;">Click Here</span=
+></a></p>
+<p><strong>Pro tip</strong><span style=3D"font-weight: 400;">: Fill the </s=
+pan><a href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2Fdocs.google.=
+com%2Fforms%2Fd%2F1hu6RbPeuATB3S8MejfDWCZYSKwo68S7vaqGFrLjsgVs%2Fedit/1/010=
+9018abba57ed3-a540d02e-c140-46c9-acca-80eb266f8554-000000/RCTwAyK9qrrn-VYAd=
+Pjk6arnvkBCfknfxa8o1NgmZG8=3D121"><span style=3D"font-weight: 400;">"I'm In=
+terested"</span></a><span style=3D"font-weight: 400;"> form to receive an e=
+xclusive call from our career experts to get personalized guidance.&nbsp;</=
+span></p>
+<p><span style=3D"font-weight: 400;">Kickstart your dream career today!&nbs=
+p;</span></p>
+<p><span style=3D"font-weight: 400;">Regards,<br /></span><span style=3D"fo=
+nt-weight: 400;">Team Unstop</span></p>
+<img alt=3D"" src=3D"http://mstats.dare2compete.com/CI0/0109018abba57ed3-a5=
+40d02e-c140-46c9-acca-80eb266f8554-000000/9iOuGZFGkax9lMdCIhAYV8JIHHvfR8yAx=
+MDkeVWyq2E=3D121" style=3D"display: none; width: 1px; height: 1px;">
+</body>
+<p style=3D"text-align: center;"><a href=3D"https://mstats.dare2compete.com=
+/CL0/https:%2F%2Funstop.com%2Fnewsletter-unsubscribe%2Fc3JpamFuaTUxNUBnbWFp=
+bC5jb20=3D%3Futm_source=3DCourses%26utm_medium=3DD2C-Newsletters%26utm_camp=
+aign=3DUncategorised/1/0109018abba57ed3-a540d02e-c140-46c9-acca-80eb266f855=
+4-000000/N1wIAbFNSeUUxZGEafTWiL_82JiqOEXuJ6Y2DjCIr9M=3D121"  style=3D"font-=
+size: 8px;">Unsubscribe here</a></p>
+</html>
+
+--_=_swift_1695365299_f3803c88b5d4a6f418ce0a359a1183ec_=_--

@@ -1,0 +1,346 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:329a:b0:4fd:23d3:a27 with SMTP id k26csp1726425pxc;
+        Thu, 12 Oct 2023 11:04:27 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFTLninlDyWuv2HyrwhBDGGbN1xVn4WQ5oj2vKaiCi/8utdQEFAfyyJCm9LilW4vyhZqwNt
+X-Received: by 2002:a05:6a20:3d85:b0:133:f0b9:856d with SMTP id s5-20020a056a203d8500b00133f0b9856dmr29751454pzi.17.1697133866755;
+        Thu, 12 Oct 2023 11:04:26 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697133866; cv=none;
+        d=google.com; s=arc-20160816;
+        b=PfKMsYCX/M11gf3tv4o1h/dOT4pfUgakDk+bpFVv1IystuADGX0b7AKm4VgeeCUe5h
+         y3drlffNgIXEdk1Qzd6IBm13E+1Oq6xeYVRZRCcFeiyi8qjeS57lA7T3T1+B7T3Xo7we
+         i2fgVcKA//wUS+irDMEOUTNMXYH1b/418vEEjuCUr8WEf/+Bu5iwkkehj6/HTRtVfrSz
+         m+OKZwYWt1r763gwMoKIGhrU5HztWDXRY4uyComPJ4fYAqWJS6w/Qewg17QlOUlakZKK
+         PU9+Pxm0lV0OI9WhSLXsVxfnKkKuZ7yb1nQ9JKNHyY5SyN1z1QnLo0Siym/emx+B/Kx4
+         7Owg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:feedback-id:envelope-to:delivery-date:nrk:rowkey
+         :precedence:auto-submitted:content-transfer-encoding:mime-version
+         :date:subject:to:from:reply-to:message-id:dkim-signature:dkim-filter;
+        bh=JP3n+MxbFWNdF2gF+qx/6282KQmfIjv/1BspgU7lYwI=;
+        fh=Aqe6xtJ2ccSlx9NnrUD9c7Fd7YTQfaNQx9hKYnhgjDI=;
+        b=YdqNotswTwrYDBW/VjvJPXF6c6E43AX48ga1ztE6fXFoex6vcJ6Vj6FiYosEbcXec6
+         wB+ldCdWbroMS/5RCFrRwWChjM/2RifXeBIC2gTDNBHu+c4FLLoV9EKmPqQ2QIAPClOh
+         /LQJ8LT5p4HnerLMbMeZPRbMtHRYSa+QTziefC8l79de18St36d1DVqR6AMBqWvQZEzf
+         ffDpuxKQjppU/Jq8niJ7HkLVKG9YCJFSTJA6icD6ffmc4WWluDxupx8Z+kOh4j5NrdpN
+         /7E8Wx7jMMUG0U/oiYIxZw+D94DP4tVMxtPw7hIVvmJWEwRvHL4fidX39xurPTVzXdwz
+         lPzg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@utimf-marketing.in header.s=mail header.b="FLg/DYLz";
+       spf=pass (google.com: domain of edm-00t87i8w5spve3vu@res34192.utimf-marketing.in designates 103.214.134.192 as permitted sender) smtp.mailfrom=edm-00T87I8W5SPVE3VU@res34192.utimf-marketing.in;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=utimf-marketing.in
+Return-Path: <edm-00T87I8W5SPVE3VU@res34192.utimf-marketing.in>
+Received: from res34192.utimf-marketing.in ([103.214.134.192])
+        by mx.google.com with ESMTPS id i21-20020a17090acf9500b0027d0c3507eesi2808424pju.32.2023.10.12.11.04.26
+        for <srijani515@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 12 Oct 2023 11:04:26 -0700 (PDT)
+Received-SPF: pass (google.com: domain of edm-00t87i8w5spve3vu@res34192.utimf-marketing.in designates 103.214.134.192 as permitted sender) client-ip=103.214.134.192;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@utimf-marketing.in header.s=mail header.b="FLg/DYLz";
+       spf=pass (google.com: domain of edm-00t87i8w5spve3vu@res34192.utimf-marketing.in designates 103.214.134.192 as permitted sender) smtp.mailfrom=edm-00T87I8W5SPVE3VU@res34192.utimf-marketing.in;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=utimf-marketing.in
+Received: from run-campjsvr6.domain (200.3.148.34.bc.googleusercontent.com [34.148.3.200])
+	by res34192.utimf-marketing.in (Postfix) with ESMTPA id 9A618C1E50E5
+	for <srijani515@gmail.com>; Thu, 12 Oct 2023 23:34:06 +0530 (IST)
+DKIM-Filter: OpenDKIM Filter v2.11.0 res34192.utimf-marketing.in 9A618C1E50E5
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=utimf-marketing.in;
+	s=mail; t=1697133847;
+	bh=r3bHqSL351jR2lSTNsnXFr/1z5HHM2i2jv3FLqFnohw=;
+	h=Message-ID:From:To:Subject:Date:From:Sender:To:CC:Subject:
+	 Message-Id:Date;
+	b=FLg/DYLzjknjH72/oeWFz4HUS2ukmTR/EurQso2moZ5f12MqkDrQFP7ZYcySUSaVo
+	 0y+xPirEoRMm/cjzupb5vvBdTstoPGPS7CtnIEtQreoZeIuEuLWolO2P2vJzQ14HBg
+	 97PhIIhDblm9ogS/YcqL698ik33JoCjlCuJ1pCrE=
+Message-ID: <cce09851d454264a4a67dca832bd2b28@utimf-marketing.in>
+Reply-To: UTI MF <updates@utimf-marketing.in>
+From: UTI MF <updates@utimf-marketing.in>
+To: <srijani515@gmail.com>
+Subject: =?utf-8?B?Sm9pbiB1cyBmb3Igb3VyIE1hcmtldCBJbnNpZ2h0LSBFcXVp?=
+	=?utf-8?B?dHkgc2Vzc2lvbiBMSVZFIG9uIE9jdG9iZXIgMTMsIDIwMjM=?=
+Date: Thu, 12 Oct 2023 14:03:05 -0400
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Auto-Submitted: auto-generated
+Precedence: bulk
+RowKey: camp-54b865b8-5123-461a-accf-d12ed01ce383_a2f43b25-eadc-4b58-8815-9b75d2daaff8_VE3VU_79429c9b-22c0-46e5-b13e-68b83a51285e_20231012020305
+NRK: 00T87I8W5SPVE3VU
+Delivery-date: 10/12/2023 12:00:00 AM
+Envelope-to: updates@utimf-marketing.in
+X-Priority: 3
+Feedback-ID: 8W5:VE3VU:SP:T87
+List-Unsubscribe: <mailto:abuse@res34192.utimf-marketing.in?subject=00T87I8W5SPVE3VU>
+X-Abuse-Reports-To: <mailto:abuse@res34192.utimf-marketing.in?subject=00T87I8W5SPVE3VU>
+
+<html><!DOCTYPE HTML>=0D=0A=0D=0A        =0D=0A=0D=0A        =0D=0A<meta ch=
+arset=3D"UTF-8">=0D=0A<meta name=3D"viewport" content=3D"width=3Ddevice-wid=
+th, initial-scale=3D1.0">=0D=0A<meta http-equiv=3D"X-UA-Compatible" content=
+=3D"ie=3Dedge">=0D=0A=0D=0A<title>UTI</title>=0D=0A<style type=3D"text/css"=
+>=0D=0Abody{margin:0px;padding:0px;font-family:Arial,Helvetica,sans-serif;}=
+=0D=0Aa,img{margin:0px;padding:0px;text-decoration:none;outline:none;}=0D=
+=0Aa{outline: none !important;}=0D=0Atable td {border-collapse:collapse;bor=
+der-spacing:0px;}=0D=0A@media screen and (max-width: 600px), screen and (ma=
+x-device-width: 600px) {=0D=0Atable[class=3D"responsive-table"]{width:100%!=
+important;}=09=0D=0A}=0D=0A@media only screen and (min-width: 300px) and (m=
+ax-width: 600px) {=0D=0Atable{width:100%;}=0D=0A}=0D=0A</style>=0D=0A=0D=0A=
+=0D=0A<div class=3D"hide"><div style=3D'display: none; max-height: 0px; hei=
+ght:0px; overflow: hidden; font-size:0px !important; color:transprent; line=
+-height:0px;mso-hide:all;max-width:0px;opacity:0;'></div><div style=3D'disp=
+lay: none; max-height: 0px; overflow: hidden;'>&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;</div><table wid=
+th=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"cente=
+r"><tbody><tr><td><table align=3D"center">=0D=0A    <tr>=0D=0A        <td a=
+lign=3D"center">=0D=0A            <p  style=3D"font-size: 11px; color: #4C4=
+C4C; padding:10px;line-height:19px;">Email not displaying correctly?  =0D=
+=0A=09=09=09<a href=3D"https://v.mailer.resulticks.net/EmailHeader/WebView?=
+dbid=3Dcust_54b865b8_5123_461a_accf_d12ed01ce383&bid=3D5&cid=3D79429c9b-22c=
+0-46e5-b13e-68b83a51285e&rid=3DVE3VU&eid=3DpdGubrnAAb51urmUsCyu70U4sYhrYH2C=
+Bjiupr0D+b0=3D&sid=3Da2f43b25-eadc-4b58-8815-9b75d2daaff8&pid=3DVE3VU&bkey=
+=3DIpx&resul=3DT87_SV84VzVfZW1fU1BfVkUzVlU=3D&jobId=3D499221&jobType=3DBulk=
+&subject=3DSm9pbiB1cyBmb3Igb3VyIE1hcmtldCBJbnNpZ2h0LSBFcXVpdHkgc2Vzc2lvbiBM=
+SVZFIG9uIE9jdG9iZXIgMTMsIDIwMjM=3D&Split=3D&levelno=3D0&actionid=3D&parentc=
+hannelid=3D&channeldetailid=3D3898" class=3D"emailText" target=3D"_blank" s=
+tyle=3D"color:#2E2E2E;text-decoration: underline;">View in Browser</a> </p>=
+=0D=0A        </td>=0D=0A    </tr>=0D=0A</table></td></tr></tbody></table><=
+/div>=0D=0A<table class=3D"responsive-table" align=3D"center" width=3D"598"=
+ border=3D"0" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#fff" style=3D=
+"border-left:1px solid #ccc; border-right:1px solid #ccc; border-bottom:1px=
+ solid #ccc; border-top:1px solid #ccc;border-spacing: 0; padding: 0; color=
+:#515a7e; border-collapse:collapse;">=0D=0A=09<tbody>=0D=0A=0D=0A=0D=0A=09=
+=09=0D=0A    =0D=0A<!--section 01-->=0D=0A =09<tr>=0D=0A    <td valign=3D"t=
+op" align=3D"center">=0D=0A         <table align=3D"center" width=3D"100%" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0">=0D=0A            <tbody><=
+tr>=0D=0A                <td valign=3D"top" align=3D"center">=0D=0A        =
+            <table width=3D"100%" align=3D"center" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0">=0D=0A                       =0D=0A               =
+         <tbody><tr>=0D=0A                          <td>=0D=0A             =
+                 <div>  <img src=3D"https://cdn.resulticks.com/Uploads/Camp=
+aigns/edm/S/79429c9b-22c0-46e5-b13e-68b83a51285e/102/images/EDM_1.jpg" alt=
+=3D"" border=3D"0" style=3D"display:block; "></div>=0D=0A                  =
+          =0D=0A                        </td>  =0D=0A                      =
+  </tr>=0D=0A=09=09=09=09=09=09<tr>=0D=0A                        <td style=
+=3D"padding:20px 30px;">=0D=0A                         <div style=3D"font-s=
+ize: 14px;font-family: 'Arial';color: #000101;">Dear SRIJANI CHAKRABARTI,</=
+div>    =0D=0A                            <div style=3D"font-size: 14px;fon=
+t-family: 'Arial';color: #000101;padding-top: 15px;line-height: 20px">We in=
+vite you to join this month's Market Insight - Equity LIVE Session, an info=
+rmative session with <strong>Vetri Subramaniam - Chief Investment Officer &=
+amp; Amit Premchandani - Fund Manager, Equity </strong>. They would be shar=
+ing useful insights and opinions about the market. You can send your questi=
+ons in advance to <a href=3D"mailto:AskUTI@uti.co.in" class=3D"edmSLink" re=
+l=3D"tooltip" data-original-title=3D"Mark as smart link" data-placement=3D"=
+top">AskUTI@uti.co.in</a> or you could ask questions during the live sessio=
+n.</div>=0D=0A                        </td>=0D=0A                        </=
+tr>=0D=0A                        =09=09=09=09=09=09=0D=0A=09=09=09=09=09=09=
+=09=0D=0A=09=09=09=09=09=09=09=0D=0A=09=09=09=09=09=09<tr>=0D=0A=09=09=09=
+=09=09=09=09<td>=0D=0A                                <img src=3D"https://c=
+dn.resulticks.com/Uploads/Campaigns/edm/S/79429c9b-22c0-46e5-b13e-68b83a512=
+85e/102/images/EDM_2.jpg" alt=3D"" width=3D"598" height=3D"372" style=3D"di=
+splay: block;" border=3D"0">=0D=0A                                  </td>=
+=0D=0A                        </tr>=0D=0A=09=09                  =0D=0A    =
+                                           <tr>=0D=0A                      =
+  <td align=3D"center">=0D=0A                         <div style=3D"font-si=
+ze: 16px;font-family: 'Arial';color: #000;padding-top: 10px;">Don't miss ou=
+t on this session. To attend, kindly </div>    =0D=0A                      =
+      <div style=3D"padding: 10px 0px;">=0D=0A                            <=
+a href=3D"https://lcs.resu.io/EdmTrack/ReUrl?url=3D4e3fb0e2-cea4-4979-b5f6-=
+7f1c53ebf52e&dbid=3Dcust_54b865b8_5123_461a_accf_d12ed01ce383&bid=3D5&cid=
+=3D79429c9b-22c0-46e5-b13e-68b83a51285e&sid=3Da2f43b25-eadc-4b58-8815-9b75d=
+2daaff8&rid=3DVE3VU&pid=3DVE3VU&bkey=3DIpx&resul=3DT87_SV84VzVfZW1fU1BfVkUz=
+VlU=3D&utm_source=3DResulticks_web&utm_medium=3Dcomm&utm_campaign=3D8W5&cam=
+pname=3DTUtUX01hcmtldCBJbnNpZ2h0X0ludmVzdG9yc18xMm9jdDIz" target=3D"_blank"=
+ class=3D"edmSLink" rel=3D"tooltip" data-original-title=3D"Mark as smart li=
+nk" data-placement=3D"top">=0D=0A                                <img src=
+=3D"https://cdn.resulticks.com/Uploads/Campaigns/edm/S/79429c9b-22c0-46e5-b=
+13e-68b83a51285e/102/images/EDM_3.jpg" alt=3D"" border=3D"0">=0D=0A        =
+                        </a>=0D=0A                            </div>=0D=0A =
+                       </td>=0D=0A                        </tr>=0D=0A      =
+            =0D=0A                =09=0D=0A=09=09=09=09=09=09=0D=0A=09=09=
+=09=09=09=09<tr>=0D=0A                          <td style=3D"font-size: 13p=
+x;color: #010000;font-family: 'Arial';font-weight: 500;padding: 15px 0px 10=
+px; text-align:center;background: #f7f7f7;">Get social with UTI MF for inte=
+resting and relevant information on mutual funds!=0D=0A                    =
+        </td>=0D=0A                        </tr>=0D=0A=09=09=09=09=09=09=0D=
+=0A=09=09=09=09=09=09<tr>=0D=0A=09=09=09=09=09=09=09<td height=3D"5" style=
+=3D"background: #f7f7f7"></td>=0D=0A                        </tr>=0D=0A=09=
+=09=09=09=09=09=0D=0A                            <tr>=0D=0A                =
+                <td align=3D"center" style=3D"background: #f7f7f7">=0D=0A=
+=09=09=09=09=09=09=09=09<table cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0">=0D=0A=09=09=09=09=09=09=09=09=09=0D=0A=09=09=09=09=09=09=09=09=09<t=
+body><tr>=09=0D=0A=09=09=09=09=09=09=09=09=09=09<td width=3D"216">&nbsp;</t=
+d>=0D=0A=09=09=09=09=09=09=09=09=09=09<td>=0D=0A=09=09=09=09=09=09=09=09=09=
+=09=09<a href=3D"https://lcs.resu.io/EdmTrack/ReUrl?url=3D648ae0bd-985e-492=
+d-8749-d27afd64c741&dbid=3Dcust_54b865b8_5123_461a_accf_d12ed01ce383&bid=3D=
+5&cid=3D79429c9b-22c0-46e5-b13e-68b83a51285e&sid=3Da2f43b25-eadc-4b58-8815-=
+9b75d2daaff8&rid=3DVE3VU&pid=3DVE3VU&bkey=3DIpx&resul=3DT87_SV84VzVfZW1fU1B=
+fVkUzVlU=3D&utm_source=3DResulticks_web&utm_medium=3Dcomm&utm_campaign=3D8W=
+5&campname=3DTUtUX01hcmtldCBJbnNpZ2h0X0ludmVzdG9yc18xMm9jdDIz" target=3D"_b=
+lank" style=3D"vertical-align: middle;" class=3D"edmSLink" rel=3D"tooltip" =
+data-original-title=3D"Mark as smart link" data-placement=3D"top"><img src=
+=3D"https://cdn.resulticks.com/Uploads/Campaigns/edm/S/79429c9b-22c0-46e5-b=
+13e-68b83a51285e/102/images/facebook.jpg" alt=3D"" border=3D"0"></a>=0D=0A=
+=09=09=09=09=09=09=09=09=09=09</td>=0D=0A=09=09=09=09=09=09=09=09=09=09<td =
+width=3D"10">&nbsp;</td>=0D=0A=09=09=09=09=09=09=09=09=09=09<td>=0D=0A=09=
+=09=09=09=09=09=09=09=09=09=09<a href=3D"https://lcs.resu.io/EdmTrack/ReUrl=
+?url=3D75d78de7-8743-4fb5-85cd-8117f0246f78&dbid=3Dcust_54b865b8_5123_461a_=
+accf_d12ed01ce383&bid=3D5&cid=3D79429c9b-22c0-46e5-b13e-68b83a51285e&sid=3D=
+a2f43b25-eadc-4b58-8815-9b75d2daaff8&rid=3DVE3VU&pid=3DVE3VU&bkey=3DIpx&res=
+ul=3DT87_SV84VzVfZW1fU1BfVkUzVlU=3D&utm_source=3DResulticks_web&utm_medium=
+=3Dcomm&utm_campaign=3D8W5&campname=3DTUtUX01hcmtldCBJbnNpZ2h0X0ludmVzdG9yc=
+18xMm9jdDIz" target=3D"_blank" style=3D"vertical-align: bottom;" class=3D"e=
+dmSLink" rel=3D"tooltip" data-original-title=3D"Mark as smart link" data-pl=
+acement=3D"top"><img src=3D"https://cdn.resulticks.com/Uploads/Campaigns/ed=
+m/S/79429c9b-22c0-46e5-b13e-68b83a51285e/102/images/twitter.jpg" alt=3D"" b=
+order=3D"0"></a>=0D=0A=09=09=09=09=09=09=09=09=09=09</td>=0D=0A=09=09=09=09=
+=09=09=09=09=09=09<td width=3D"10">&nbsp;</td>=0D=0A=09=09=09=09=09=09=09=
+=09=09=09<td>=0D=0A=09=09=09=09=09=09=09=09=09=09=09<a href=3D"https://lcs.=
+resu.io/EdmTrack/ReUrl?url=3D77db058a-1574-465b-8ae5-3c3b90cefbda&dbid=3Dcu=
+st_54b865b8_5123_461a_accf_d12ed01ce383&bid=3D5&cid=3D79429c9b-22c0-46e5-b1=
+3e-68b83a51285e&sid=3Da2f43b25-eadc-4b58-8815-9b75d2daaff8&rid=3DVE3VU&pid=
+=3DVE3VU&bkey=3DIpx&resul=3DT87_SV84VzVfZW1fU1BfVkUzVlU=3D&utm_source=3DRes=
+ulticks_web&utm_medium=3Dcomm&utm_campaign=3D8W5&campname=3DTUtUX01hcmtldCB=
+JbnNpZ2h0X0ludmVzdG9yc18xMm9jdDIz" target=3D"_blank" style=3D"vertical-alig=
+n: middle;" class=3D"edmSLink" rel=3D"tooltip" data-original-title=3D"Mark =
+as smart link" data-placement=3D"top"><img src=3D"https://cdn.resulticks.co=
+m/Uploads/Campaigns/edm/S/79429c9b-22c0-46e5-b13e-68b83a51285e/102/images/l=
+inkedin.jpg" alt=3D"" border=3D"0"></a>=0D=0A=09=09=09=09=09=09=09=09=09=09=
+</td>=0D=0A=09=09=09=09=09=09=09=09=09=09<td width=3D"10">&nbsp;</td>=0D=0A=
+=09=09=09=09=09=09=09=09=09=09<td>=0D=0A=09=09=09=09=09=09=09=09=09=09=09<a=
+ href=3D"https://lcs.resu.io/EdmTrack/ReUrl?url=3D687998a7-7d16-47c3-a10c-b=
+9ab24095a4d&dbid=3Dcust_54b865b8_5123_461a_accf_d12ed01ce383&bid=3D5&cid=3D=
+79429c9b-22c0-46e5-b13e-68b83a51285e&sid=3Da2f43b25-eadc-4b58-8815-9b75d2da=
+aff8&rid=3DVE3VU&pid=3DVE3VU&bkey=3DIpx&resul=3DT87_SV84VzVfZW1fU1BfVkUzVlU=
+=3D&utm_source=3DResulticks_web&utm_medium=3Dcomm&utm_campaign=3D8W5&campna=
+me=3DTUtUX01hcmtldCBJbnNpZ2h0X0ludmVzdG9yc18xMm9jdDIz" target=3D"_blank" st=
+yle=3D"vertical-align: middle;" class=3D"edmSLink" rel=3D"tooltip" data-ori=
+ginal-title=3D"Mark as smart link" data-placement=3D"top"><img src=3D"https=
+://cdn.resulticks.com/Uploads/Campaigns/edm/S/79429c9b-22c0-46e5-b13e-68b83=
+a51285e/102/images/instagram.jpg" alt=3D"" border=3D"0"></a>=0D=0A=09=09=09=
+=09=09=09=09=09=09=09</td>=0D=0A=09=09=09=09=09=09=09=09=09=09<td width=3D"=
+10">&nbsp;</td>=0D=0A=09=09=09=09=09=09=09=09=09=09<td>=0D=0A=09=09=09=09=
+=09=09=09=09=09=09=09<a href=3D"https://lcs.resu.io/EdmTrack/ReUrl?url=3Dfa=
+96928e-5b3f-4ec9-8bb2-9ab1fb221ed8&dbid=3Dcust_54b865b8_5123_461a_accf_d12e=
+d01ce383&bid=3D5&cid=3D79429c9b-22c0-46e5-b13e-68b83a51285e&sid=3Da2f43b25-=
+eadc-4b58-8815-9b75d2daaff8&rid=3DVE3VU&pid=3DVE3VU&bkey=3DIpx&resul=3DT87_=
+SV84VzVfZW1fU1BfVkUzVlU=3D&utm_source=3DResulticks_web&utm_medium=3Dcomm&ut=
+m_campaign=3D8W5&campname=3DTUtUX01hcmtldCBJbnNpZ2h0X0ludmVzdG9yc18xMm9jdDI=
+z" target=3D"_blank" style=3D"vertical-align: bottom;" class=3D"edmSLink" r=
+el=3D"tooltip" data-original-title=3D"Mark as smart link" data-placement=3D=
+"top"><img src=3D"https://cdn.resulticks.com/Uploads/Campaigns/edm/S/79429c=
+9b-22c0-46e5-b13e-68b83a51285e/102/images/youtube.jpg" alt=3D"" border=3D"0=
+"></a>=0D=0A=09=09=09=09=09=09=09=09=09=09</td>=0D=0A=09=09=09=09=09=09=09=
+=09=09=09=0D=0A=09=09=09=09=09=09=09=09=09=09=09<td width=3D"10">&nbsp;</td=
+>=0D=0A=09=09=09=09=09=09=09=09=09=09<td>=0D=0A=09=09=09=09=09=09=09=09=09=
+=09=09<a href=3D"https://lcs.resu.io/EdmTrack/ReUrl?url=3D8aae36c3-3c50-4af=
+0-8ce6-71fd0d008284&dbid=3Dcust_54b865b8_5123_461a_accf_d12ed01ce383&bid=3D=
+5&cid=3D79429c9b-22c0-46e5-b13e-68b83a51285e&sid=3Da2f43b25-eadc-4b58-8815-=
+9b75d2daaff8&rid=3DVE3VU&pid=3DVE3VU&bkey=3DIpx&resul=3DT87_SV84VzVfZW1fU1B=
+fVkUzVlU=3D&utm_source=3DResulticks_web&utm_medium=3Dcomm&utm_campaign=3D8W=
+5&campname=3DTUtUX01hcmtldCBJbnNpZ2h0X0ludmVzdG9yc18xMm9jdDIz" target=3D"_b=
+lank" style=3D"vertical-align: bottom;" class=3D"edmSLink" rel=3D"tooltip" =
+data-original-title=3D"Mark as smart link" data-placement=3D"top"><img src=
+=3D"https://cdn.resulticks.com/Uploads/Campaigns/edm/S/79429c9b-22c0-46e5-b=
+13e-68b83a51285e/102/images/whatsp.jpg" alt=3D"" border=3D"0"></a>=0D=0A=09=
+=09=09=09=09=09=09=09=09=09</td>=0D=0A=09=09=09=09=09=09=09=09=09=09<td wid=
+th=3D"216">&nbsp;</td>=0D=0A=09=09=09=09=09=09=09=09=09</tr>=0D=0A=09=09=09=
+=09=09=09=09=09=09=09=0D=0A=09=09=09=09=09=09=09=09</tbody></table>=0D=0A  =
+                          =0D=0A                            </td>  =0D=0A  =
+                      </tr>=0D=0A=09=09=09=09=09=09=09<tr>=0D=0A=09=09=09=
+=09=09=09=09<td height=3D"5" style=3D"background: #f7f7f7"></td>=0D=0A     =
+                   </tr>=0D=0A=09=09=09=09=09=0D=0A=09=09=09=09=09=09<tr>=
+=0D=0A=09=09=09=09=09=09=09<td height=3D"10"></td>=0D=0A                   =
+     </tr>=0D=0A=09=09=09=09=09=09<!--<tr>=0D=0A=09=09=09=09=09=09=09<td>=
+=0D=0A                                <img src=3D"https://cdn.resulticks.co=
+m/Uploads/Campaigns/edm/S/79429c9b-22c0-46e5-b13e-68b83a51285e/102/images/M=
+FD-hindi.jpg" alt=3D"" width=3D"598" height=3D"13" style=3D"display: block;=
+" border=3D"0">=0D=0A                                  </td>=0D=0A         =
+               </tr>-->=0D=0A                       =0D=0A=09=09=09=09=09=
+=09<tr>=0D=0A                          <td style=3D"font-size: 9px;color: #=
+000;font-family: 'Arial';font-weight: bold;padding: 5px 0px 5px; text-align=
+:center;text-transform: uppercase;">Mutual Fund investments are subject to =
+market risks, read all scheme related documents carefully.</td>  =0D=0A    =
+                    </tr>=0D=0A=09=09=09=09=09=09=0D=0A                    =
+    <tr>=0D=0A=09=09=09=09=09=09=09<td>=0D=0A=09=09=09=09=09=09=09=09<img s=
+rc=3D"https://cdn.resulticks.com/Uploads/Campaigns/edm/S/79429c9b-22c0-46e5=
+-b13e-68b83a51285e/102/images/band.jpg" alt=3D"" border=3D"0" style=3D"disp=
+lay: block">=0D=0A                            </td>=0D=0A                  =
+      </tr>=0D=0A=09=09=09=09=09=09=0D=0A=09=09=09=09=09=0D=0A             =
+           =0D=0A=09=09=09=09=09<tr>=0D=0A=09=09=09=09=09=09=09<td>=0D=0A=
+=09=09=09=09=09=09=09=09<img src=3D"https://cdn.resulticks.com/Uploads/Camp=
+aigns/edm/S/79429c9b-22c0-46e5-b13e-68b83a51285e/102/images/footer.gif" alt=
+=3D"" border=3D"0" style=3D"display: block">=0D=0A                         =
+   </td>=0D=0A                        </tr></tbody></table>=0D=0A          =
+      </td>=0D=0A           </tr>=0D=0A        </tbody></table>=0D=0A    </=
+td>=0D=0A    </tr>=0D=0A <!--section 01//-->=0D=0A=0D=0A                   =
+    =0D=0A</tbody></table>=0D=0A=0D=0A=0D=0A<div class=3D"hide"><table widt=
+h=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center=
+"><tbody><tr><td>=0D=0A=0D=0A        =0D=0A=0D=0A    =0D=0A=0D=0A        =
+=0D=0A=0D=0A    =0D=0A=0D=0A        =0D=0A=0D=0A    <table style=3D"border:=
+1px solid #cccccc" class=3D"temp-holderSec emailFooterTemplate" id=3D"defau=
+ltTemplate2" width=3D"600" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"=
+ align=3D"center">=0D=0A=09<tbody class=3D"ui-sortable">=0D=0A=09=09<tr>=0D=
+=0A=09=09=09<td>=0D=0A=09=09=09=09<table style=3D"color:#4C4C4C; border:0px=
+ solid #F0F0F0;" width=3D"595" cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" align=3D"center">=0D=0A=09=09=09=09=09<tbody>=0D=0A=09=09=09=09=09=
+=09<tr>=0D=0A=09=09=09=09=09=09=09<td style=3D"background:#F0F0F0;  font:no=
+rmal 13px/18px Tahoma, Geneva, sans-serif; color:#4C4C4C;" align=3D"center"=
+>=0D=0A=09=09=09=09=09=09=09=09<table width=3D"595" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" align=3D"center">=0D=0A=09=09=09=09=09=09=09=09=
+=09<tbody>=0D=0A=09=09=09=09=09=09=09=09=09=09<tr>=0D=0A=09=09=09=09=09=09=
+=09=09=09=09=09<td align=3D"center" style=3D"padding:10px;">You are subscri=
+bed as srijani515@gmail.com. Do you want to <a href=3D"https://u.mailer.res=
+ulticks.net/EmailFooter/UnSubcriptionEmail?dbid=3Dcust_54b865b8_5123_461a_a=
+ccf_d12ed01ce383&bid=3D5&cid=3D79429c9b-22c0-46e5-b13e-68b83a51285e&rid=3DV=
+E3VU&eid=3DpdGubrnAAb51urmUsCyu70U4sYhrYH2CBjiupr0D+b0=3D&sid=3Da2f43b25-ea=
+dc-4b58-8815-9b75d2daaff8&pid=3DVE3VU&bkey=3DIpx&resul=3DT87_SV84VzVfZW1fU1=
+BfVkUzVlU=3D&jobId=3D499221&jobType=3DBulk&channeldetailid=3D3898&subject=
+=3DSm9pbiB1cyBmb3Igb3VyIE1hcmtldCBJbnNpZ2h0LSBFcXVpdHkgc2Vzc2lvbiBMSVZFIG9u=
+IE9jdG9iZXIgMTMsIDIwMjM=3D">unsubscribe</a>?</td>=0D=0A=09=09=09=09=09=09=
+=09=09=09=09</tr>=0D=0A=09=09=09=09=09=09=09=09=09</tbody>=0D=0A=09=09=09=
+=09=09=09=09=09</table>=0D=0A=09=09=09=09=09=09=09</td>=0D=0A=09=09=09=09=
+=09=09</tr>=0D=0A=09=09=09=09=09=09<tr id=3D"no-social" style=3D"display: t=
+able-row;">=0D=0A=09=09=09=09=09=09=09<td style=3D"  font:normal 13px/18px =
+Tahoma, Geneva, sans-serif; color:#4C4C4C;" align=3D"center">=0D=0A=09=09=
+=09=09=09=09=09=09<table width=3D"595" cellspacing=3D"0" cellpadding=3D"0" =
+border=3D"0" align=3D"center">=0D=0A=09=09=09=09=09=09=09=09=09<tbody>=0D=
+=0A=09=09=09=09=09=09=09=09=09=09<tr>=0D=0A=09=09=09=09=09=09=09=09=09=09=
+=09<td align=3D"center" style=3D"padding: 10px 70px;line-height: 20px;">UTI=
+ Mutual Fund, UTI Tower, Gn Block, Bandra Kurla Complex, Bandra East, Mumba=
+i, Zip Code: 400051</td>=0D=0A=09=09=09=09=09=09=09=09=09=09</tr>=0D=0A=09=
+=09=09=09=09=09=09=09=09</tbody>=0D=0A=09=09=09=09=09=09=09=09</table>=0D=
+=0A=09=09=09=09=09=09=09</td>=0D=0A=09=09=09=09=09=09</tr>=0D=0A=09=09=09=
+=09=09=09=0D=0A=09=09=09=09=09=09<tr class=3D"hides ">=0D=0A=09=09=09=09=09=
+=09=09<td style=3D"  font:normal 13px/18px Tahoma, Geneva, sans-serif; colo=
+r:#4C4C4C;" align=3D"left">=0D=0A=09=09=09=09=09=09=09=09<table width=3D"59=
+5" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"left">=0D=0A=
+=09=09=09=09=09=09=09=09=09<tbody>=0D=0A=09=09=09=09=09=09=09=09=09=09<tr>=
+=0D=0A=09=09=09=09=09=09=09=09=09=09=09<td id=3D"ForwardtoFriendurl" valign=
+=3D"middle" class=3D"" style=3D" opacity: 1; padding:10px;">Forward=0D=0A=
+=09=09=09=09=09=09=09=09=09=09=09=09<a href=3D"https://fw.mailer.resulticks=
+.net/EmailFooter/ForwardFriends?dbid=3Dcust_54b865b8_5123_461a_accf_d12ed01=
+ce383&bid=3D5&cid=3D79429c9b-22c0-46e5-b13e-68b83a51285e&rid=3DVE3VU&eid=3D=
+pdGubrnAAb51urmUsCyu70U4sYhrYH2CBjiupr0D+b0=3D&sid=3Da2f43b25-eadc-4b58-881=
+5-9b75d2daaff8&pid=3DVE3VU&bkey=3DIpx&resul=3DT87_SV84VzVfZW1fU1BfVkUzVlU=
+=3D&jobId=3D499221&jobType=3DBulk&name=3DNJkn9jiuiy74SskoGq+TXRYuckhF0HMqCW=
+ornGbTvkE=3D&channeldetailid=3D3898&levelno=3D0&subject=3DSm9pbiB1cyBmb3Igb=
+3VyIE1hcmtldCBJbnNpZ2h0LSBFcXVpdHkgc2Vzc2lvbiBMSVZFIG9uIE9jdG9iZXIgMTMsIDIw=
+MjM=3D"> <span id=3D"forwardToFriendIcon"><img style=3D"opacity: 0.5;vertic=
+al-align:middle;" class=3D"footer-ifm-icon" src=3D"https://run.resulticks.c=
+om//images/icon-forward-mail.png" alt=3D"Forward to friend" width=3D"20" he=
+ight=3D"20"></span>=0D=0A=09=09=09=09=09=09=09=09=09=09=09=09</a>=0D=0A=09=
+=09=09=09=09=09=09=09=09=09=09</td>=0D=0A=09=09=09=09=09=09=09=09=09=09</tr=
+>=0D=0A=09=09=09=09=09=09=09=09=09</tbody>=0D=0A=09=09=09=09=09=09=09=09</t=
+able>=0D=0A=09=09=09=09=09=09=09</td>=0D=0A=09=09=09=09=09=09</tr>=0D=0A=09=
+=09=09=09=09</tbody>=0D=0A=09=09=09=09</table>=0D=0A=09=09=09</td>=0D=0A=09=
+=09</tr>=0D=0A=09</tbody>=0D=0A</table></td></tr></tbody></table></div><div=
+ id=3D'_t'></div><img alt=3D'' src=3D'https://lco.resu.io/T87I8W5EVE3VUSPPO=
+' width=3D'1' height=3D'1' border=3D'0' /><style>@media print{ #_t { backgr=
+ound-image: url('https://lco.resu.io/T87I8W5EVE3VUSPPO');}} div.OutlookMess=
+ageHeader {background-image:url('https://lco.resu.io/T87I8W5EVE3VUSPPO')} t=
+able.moz-email-headers-table {background-image:url('https://lco.resu.io/T87=
+I8W5EVE3VUSPPO')} blockquote #_t {background-image:url('https://lco.resu.io=
+/T87I8W5EVE3VUSPPO')} #MailContainerBody #_t {background-image:url('https:/=
+/lco.resu.io/T87I8W5EVE3VUSPPO')}</style></body>=0D=0A    =0D=0A    </html>
+

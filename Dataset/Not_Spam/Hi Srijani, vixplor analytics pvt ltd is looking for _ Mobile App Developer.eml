@@ -1,0 +1,494 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:8691:b0:4fd:23d3:a27 with SMTP id e17csp381832pxn;
+        Sat, 21 Oct 2023 09:13:31 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGUgoWi39s/msmKEDBThbcwr5y5yez/wN/QyrsNYFd2lc7DdgSX1M6syNWSYT59vHVwxow7
+X-Received: by 2002:a17:90a:f30d:b0:27d:427f:1bf4 with SMTP id ca13-20020a17090af30d00b0027d427f1bf4mr4537114pjb.19.1697904810947;
+        Sat, 21 Oct 2023 09:13:30 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697904810; cv=none;
+        d=google.com; s=arc-20160816;
+        b=e8uWwlnz2Z5AiPHVwgIdMrAxniHhFzhiT8h6RVTMrcZfDkgSuJSaK4mtU5Lr6ycBr7
+         2ICpNNXbSh/n2dhN9Ab2ZcCIAmCE0CMaaY/QiPxS1KcNfTBQuUanOEexfSAe9TXS3yzj
+         A4iMSafctuqAcpoi5mYXQfcjdjSv7sMWGRnIu1D2juISCi1X66kPttry7TAaVilciSv/
+         mdboK8pAdiYjkrto6Sr2yYH/mgNd0v29gOK5+R98r2CVw+0RoMB41UcOlPwmFrmT8vS2
+         VH4MSGpV0WmkPBXOWNwiO7EwvtRTMRP/j1YBPeFxPAYCZvSCScCwM/cuzsDUBQxR07Ss
+         AtYg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:mime-version:subject:message-id:to
+         :reply-to:from:date:ironport-sdr:dkim-signature:domainkey-signature;
+        bh=V9JDSr9LHmIpTkDwmSC0FWqv3J9MeTYN2m4/id7Vxas=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=f3ChMPlN9Lx+npqM0fI1QL++QK8iL9BYQhn7BAbr5kAV+i6IpLgRcP3S+u4Pqfo8DC
+         R8jORgafrvTnTnnvk+ffPS3Gkl3pSbnWP5pe0BUG4wvR6MuCe3gFklSEy9CZyiQRiqHw
+         sw+fnXkBZHPJOG2CjL31mDpT9dic0PXJKrKmvYlPz8rjO9j49WmVzD4pRmhL/NOP+g9Y
+         chHt77Aho0S/+SOVhSjPoiqk0lQh2MXq+fgHw5NIEWKsNtWwk8tWL4ByzzvnDHuuuWpw
+         k49iovb0cVEdKSe4BSJaIUYHv/rJHOC9e7C0mQGYEKt3MZL19bTpIzNiX2M3gjZukszB
+         LpWg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@timesjobs.com header.s=main header.b="amH/uUtl";
+       spf=pass (google.com: domain of jobalert@timesjobs.com designates 219.65.84.181 as permitted sender) smtp.mailfrom=jobalert@timesjobs.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=timesjobs.com
+Return-Path: <jobalert@timesjobs.com>
+Received: from mgw01.timesjobs.com (mgw01.timesjobs.com. [219.65.84.181])
+        by mx.google.com with ESMTP id z20-20020a17090ab11400b0027d4684804dsi3570672pjq.122.2023.10.21.09.13.30
+        for <srijani515@gmail.com>;
+        Sat, 21 Oct 2023 09:13:30 -0700 (PDT)
+Received-SPF: pass (google.com: domain of jobalert@timesjobs.com designates 219.65.84.181 as permitted sender) client-ip=219.65.84.181;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@timesjobs.com header.s=main header.b="amH/uUtl";
+       spf=pass (google.com: domain of jobalert@timesjobs.com designates 219.65.84.181 as permitted sender) smtp.mailfrom=jobalert@timesjobs.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=timesjobs.com
+DomainKey-Signature: s=main; d=timesjobs.com; c=nofws; q=dns;
+  h=Authentication-Results:IronPort-SDR:Received:Date:From:
+   Reply-To:To:Message-ID:Subject:MIME-Version:Content-Type:
+   Content-Transfer-Encoding;
+  b=0JqIHWUejPCRA7kUEU8iVe+oDhl3eSR6xHNt4PQ03BjZ4gcKmsOiYOac
+   2Au8KH077Dl/cUmfGMY52hdwJfK6FhJp9ATTWIrilxNX9jJCUYlkXTrVg
+   +dgURsk0KmiE+7Ir+M+jw3aTj0hciR8Oi1K2VQz1opm6njslhxPOT/p79
+   s=;
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+  d=timesjobs.com; i=@timesjobs.com; q=dns/txt; s=main;
+  t=1697904748; x=1729440748;
+  h=date:from:reply-to:to:message-id:subject:mime-version:
+   content-transfer-encoding;
+  bh=8MFHflnmwHghqr/HpZeip7P73/DxHI18OsBFjF6ijfw=;
+  b=amH/uUtlROKb9ryM6IEO3WiP77L2FZ9BAaq5dKMEHwLUH9NTSd8Ki7hm
+   aOJR6IlY/N7VF6/8rTc5SiAPK2tCoTyTHhzJYOBl4aG9doYtExDa9AuXe
+   J2vAYrBacJLwC+O7zf+in0u3KMetiBs/lUYR2qIkUo2qFN4kM7Cexr7Ss
+   k=;
+Authentication-Results: mgw01.timesjobs.com; dkim=none (message not signed) header.i=none
+IronPort-SDR: A5G7vURuMzwspwYw1K/PCBEthp4Ace7gVgpWsN9Eas38j+HuZPjScx//WCM/wgVig459Itlcvg
+ BELwev0Sscdr1n6rbSEi2aexkc4IMpcXw=
+Received: from unknown (HELO jobz1bl7537) ([172.29.75.37])
+  by mgw01.timesjobs.com with ESMTP; 21 Oct 2023 21:42:21 +0530
+Date: Sat, 21 Oct 2023 21:43:24 +0530 (IST)
+From: TimesJobs Job Alert <jobalert@timesjobs.com>
+Reply-To: TimesJobs Job Alert <jobalert@timesjobs.com>
+To: srijani515@gmail.com
+Message-ID: <21e98206-323d-4cd8-b4a1-a602948d1b99@timesjobs.com>
+Subject: Hi Srijani, vixplor analytics pvt ltd is looking for : Mobile App
+ Developer
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html>
+<head>
+<meta charset=3D"utf-8">
+<title>TimesJobs Job Alert</title>
+</head>
+
+<body  bgcolor=3D"#DFE2E8" style=3D"padding: 0px; margin: 0px; font-family:=
+Calibri, Arial, serif; ">
+=09
+=09<div  style=3D"margin: 0px; background-color: #DFE2E8; border-top:1px so=
+lid #DFE2E8;">
+=09<div style=3D"background: #fff; padding: 2px;"><table  border=3D"0" alig=
+n=3D"center" cellpadding=3D"0" cellspacing=3D"0" style=3D"padding: 2px 0; m=
+ax-width: 620px">
+=09        <tbody>
+=09          <tr>
+=09            <td width=3D"58%" style=3D"padding: 0 10px;"><a href=3D"http=
+s://www.timesjobs.com/candidate/AutoLogin.html?target=3DDirect&alt=3DyVbCom=
+1iIGp5pOUIEGjtuA=3D=3D&fromTJ=3Dalert&urlWithParams=3DsLdBLOJ5iNQsXZoLe__SL=
+ASH____SLASH__y18XqZ7AulqmyQt0PJpQj__PLUS__g11wO4j__SLASH__jtvagC6Kw2PI06Z_=
+_SLASH__bK6nf9NWBTB__NEWLINE__1TeEfQ__SLASH__goWEPtINivxyp__SLASH__rhWzNdl1=
+__PLUS__RhdIJ0O4HIcB__SLASH__dHjz3jUKn__SLASH__tCd7syySJgG2PNxT2k8NiaM__NEW=
+LINE__9yqSIJMC" target=3D"_blank" style=3D"padding: 10px 0;"><img src=3D"ht=
+tp://www.timesjobs.com/images_cand/jobalerts/mailer/jobalerticon/timesjobs-=
+logo.png" alt=3D"TimesJobs.com" border=3D"0"></a></td>
+=09            <td width=3D"42%"><table width=3D"100%" border=3D"0" cellspa=
+cing=3D"0" cellpadding=3D"0">
+=09              <tbody>
+=09                <tr>
+=09                  <td width=3D"140" style=3D" color:#757C91; font-family=
+:Calibri, Arial, serif; font-size: 13px; padding: 0 12px;" align=3D"right">=
+ Download App</td>
+=09                  <td align=3D"center" width=3D"45" style=3D"padding:10p=
+x 0px 5px 10px;"><a href=3D"http://www.timesjobs.com/candidate/downloadapp.=
+jsp?f=3Dandroid&amp;utm_source=3Dja_playstore&amp;utm_medium=3Demail&amp;ut=
+m_content=3Dandroid&amp;utm_campaign=3Dtj_jobAlert" target=3D"_blank" style=
+=3D"font:11px Arial, Helvetica, sans-serif; color:#666; display:block; text=
+-decoration:none;">
+=09=09=09=09=09=09    =09=09<img src=3D"http://mailer.timesjobs.com/tech01/=
+Mailers/feb16/ja/android.png" alt=3D"Android" border=3D"0"><br>
+=09=09=09=09=09=09=09    =09
+=09=09=09=09=09=09=09    </a></td>
+=09                  <td align=3D"center" width=3D"45" style=3D"padding:10p=
+x 0px 5px 0;"><a href=3D"http://www.timesjobs.com/candidate/downloadapp.jsp=
+?f=3Dios&amp;utm_source=3Dja_playstore&amp;utm_medium=3Demail&amp;utm_conte=
+nt=3Dios&amp;utm_campaign=3Dtj_jobAlert" target=3D"_blank" style=3D"font:11=
+px Arial, Helvetica, sans-serif; color:#666; display:block; text-decoration=
+:none;">
+     =09=09=09=09=09=09=09=09<img src=3D"http://mailer.timesjobs.com/tech01=
+/Mailers/feb16/ja/ios.png" alt=3D"Ios" border=3D"0"><br>
+   =09=09=09=09=09=09=09=09
+   =09=09=09=09=09=09=09=09</a></td>
+=09                  </tr>
+=09                </tbody>
+=09              </table></td>
+              </tr>
+            </tbody>
+          </table></div>
+
+=09=09   =09=09  =20
+=09=09   <table width=3D"620" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" align=3D"center" style=3D"padding: 2px 0">
+=09=09=09=09  <tbody>
+=09 =20
+=09  <tr>
+      <td bgcolor=3D"#DFE2E8" style=3D"padding: 10px 0 20px 0;">
+=09=09 =20
+=09=09  <table width=3D"620" border=3D"0" cellspacing=3D"0" cellpadding=3D"=
+" align=3D"center">
+  <tbody>
+=09<tr>
+=09 =20
+=09  <td style=3D"padding: 10px 0 20px 0;">
+=09=09<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0=
+">
+=09        <tbody>
+=09          <tr>
+=09            <td height=3D"31" width=3D"72%"> <div style=3D" font-size: 1=
+6px; font-family:Calibri, Arial, serif; padding: 0px 0px 0px 10px;">Dear <s=
+trong>Srijani,</strong>  jobs you may be interested based on your profile =
+=20
+=09=09 =20
+=09=09  </div></td>
+=09            <td width=3D"30%"><a href=3D"https://www.timesjobs.com/candi=
+date/dl/AutoLogin.html?landingPage=3DnvSnCAeYx8xRiQnMPlink7TlVtI__SLASH__e4=
+Sv&queryCreptParam=3DtpROVrE5WaS1M7irTdqByiZn__PLUS__R7R__PLUS__xndEl__SLAS=
+H__u__PLUS__W3__PLUS__LMNzpSvf__PLUS__uAgZw=3D=3D&utmSource=3DQLuN1qFwHbV4h=
+dBCnrVJi7C8__PLUS__PnRWFu0nCYcqfb3PVAYxO5Ry6udBsw__SLASH__xsx__PLUS__PY6Hox=
+OulaX1a87A__NEWLINE__na7ueJ9CnJ6z3WbtWm1V&alt=3DyVbCom1iIGp5pOUIEGjtuA=3D=
+=3D&trackingId=3D60593118123&featureId=3D3&fromTJ=3Dalert"   target=3D"_bla=
+nk" style=3D"width:85px; text-align: center; display: block; font-family:Ca=
+libri, Arial, serif;  padding: 6px 10px; border-radius: 30px; background: #=
+FB4949; color:#fff; cursor: pointer; font-size: 14px;  text-decoration:none=
+">Edit Profile</a></td>
+              </tr>
+            </tbody>
+          </table>
+=09=09
+=09=09</td></tr> =20
+=09 =20
+    <tr>
+      <td height=3D"180" style=3D"background:#ffffff; border-radius: 4px;" =
+valign=3D"top">
+=09=09=09=09  <div style=3D"padding: 15px 0 8px 0px; line-height: 18px; min=
+-height:40px; border-bottom: 1px solid #efefef;">
+=09=09=09  <table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0">
+  <tbody>
+    <tr>
+      <td width=3D"78%"><a href=3D"https://www.timesjobs.com/candidate/dl/m=
+redirect.html?_qe=3DR2GebwhhkQiDC__PLUS__LpTVehR__PLUS__NNxoUOmZla23gKGmuZ1=
+YoSA8__PLUS__nc9h6oqjsCimwzk4MKDFc3ZOS3yeb__NEWLINE__rQtfq5giuA6uGpGrna__SL=
+ASH__nhfcvBu8AQax__PLUS__pnLmDTF__PLUS__Ti8tBL3ud9wa8cZvEtzMiEmRQB__PLUS__U=
+UAAC3k0C__NEWLINE__bNm0vgkAcXcCd60Ki1iL1rwLR__PLUS__X0njpR__SLASH__Pk6v5RGC=
+pPMin7yRX__PLUS__i6597oCTwT9bHyLycLkdxIb2E__NEWLINE__6oLC8pj__PLUS__uFbM12X=
+X5GF0gnQ7gchwH90ePPeNQqf__PLUS__0J3uzLJImC__PLUS__jx7GyNG14Joz3KpIgkwI=3D" =
+target=3D"_blank" style=3D"text-decoration: none;color:#757C91;">
+=09=09=09  <div style=3D"padding: 0px 10px 0 20px; width: 475px; overflow: =
+hidden;color:#757C91; font-family: Calibri, Arial, serif; font-size: 15px;f=
+loat: left"> <span style=3D"font-size: 16px;  "> <span style=3D"color:#0143=
+9F"><strong>Mobile App Developer, </strong>2-5 Exp.</span></span><br />
+=09=09=09  <strong>vixplor analytics pvt ltd. </strong>- Kolkata</div></a><=
+/td>
+      <td><div style=3D"padding: 10px 0 0 10px; width: 65px; float: right;m=
+argin-right:15px;">  <div style=3D" text-align: center; padding: 0px 6px; h=
+eight: 25px; line-height: 25px;border-radius: 30px; text-transform:uppercas=
+e;color:#01439F; cursor: pointer;"><a href=3D"https://www.timesjobs.com/can=
+didate/dl/mredirect.html?_qe=3DbUCqDkVwhlXPtoCShldzGNbtRiq28HjLRgnWG2wqT4cS=
+a4VvxKNTvVZwk9Se5KFb59QGIVSjhW0s__NEWLINE__Dt8NU9Bc6jbdm5fmJTB0MEoEfRQjtuM1=
+Gz8Z9Yip6vEQk18bcW3X4xs7lXzs0uDNf8cLIufJohu2__NEWLINE__tJE1iO70E__PLUS__mEd=
+xjJAVeJukvMALmUuRIlP3CgsFn4CpPMin7yRX__PLUS__u0n__SLASH__VqYxFNgvmaO9HqliWr=
+7Ea__NEWLINE__Xv9IEexXN1LOMogaGDALAOoU3kVaiiMZNlVgvogaANME3mg1x6nX35viqDQ0s=
+35ac9S87PyX0h9m__NEWLINE__Tmd7pYj0C04irAOg0aVduq__PLUS__b7MylbQxkctxBeFej7t=
+gOvSVr__SLASH__di5pVrZBua__PLUS__xWJiw__PLUS__etBPN__PLUS__vui4__NEWLINE__m=
+MKBrfKgqPWmuc9SNtERM0Wz3kTfKTSU74LLY2sjfz__SLASH__Fb8Rq5M2EqEJjMfLlJCcrTn1R=
+__SLASH__UZBXxSh__NEWLINE__bG8gjV__SLASH__PWoTuiWp5nsIzWEWSFcsWVxRMN2EbgQqn=
+f__PLUS__nBshzsLZTsce2jVcEW93s5I0yDV3ElGEtq__NEWLINE__OWxE98n1dNALU__PLUS__=
+3__SLASH__wwUZbgPMjAmHXaSd__SLASH__PGEg82__SLASH__TAG6K7i84jDBhGlIFJvPAjo__=
+PLUS__7lnN4yk8aYVn__NEWLINE__oj9__PLUS__npFRdflfav5S10bqpBTJ9oh3B4QbnggL11w=
+SqK1WxHj2IE7Ijo2wvfoIkwWEZTPTiVXvPywV__NEWLINE__Qtxa5ipBLgGPt__PLUS__bo2ep6=
+6TKBLF17__PLUS__gXEOlLF94ggo5FajyHPpCqp4Ila0XFrIll72C6vzV2PoV9Z__NEWLINE__3=
+rookttkXmL7rLCKYwCqx__SLASH__ZrG25wX__PLUS__xYMfOQhgsxZd4PbqrBV3NnfpGP3__PL=
+US__CSHA=3D=3D" style=3D"color:#01439F; font-size: 16px; font-family: Calib=
+ri, Arial, serif;  text-decoration:none" target=3D"_blank"><strong>Apply</s=
+trong></a></div></div></td>
+    </tr>
+  </tbody>
+</table>
+
+=09=09=09 =20
+=09=09 =20
+=09=09 =20
+=09</div>
+=09=09 =20
+=09=09=09=09  <div style=3D"padding: 15px 0 8px 0px; line-height: 18px; min=
+-height:40px; border-bottom: 1px solid #efefef;">
+=09=09=09  <table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0">
+  <tbody>
+    <tr>
+      <td width=3D"78%"><a href=3D"https://www.timesjobs.com/candidate/dl/m=
+redirect.html?_qe=3DR2GebwhhkQiDC__PLUS__LpTVehR__PLUS__NNxoUOmZla23gKGmuZ1=
+YoSA8__PLUS__nc9h6oqjsCimwzk4MKDFc3ZOS3yeb__NEWLINE__rQtfq5giuA6uGpGrna__SL=
+ASH__ns0PKGIpm7zZ__PLUS__pnLmDTF__PLUS__Ti8tBL3ud9wa8cZvEtzMiEmRQB__PLUS__U=
+UAAC3k0C__NEWLINE__bNm0vgkAcXcCd60Ki1iL1rwLR__PLUS__X0njpR__SLASH__Pk6v5RGC=
+pPMin7yRX__PLUS__i6597oCTwT9bHyLycLkdxIb2E__NEWLINE__6oLC8pj__PLUS__uFbM12X=
+X5GF0gnQ7gchwH90ePPeNQqf__PLUS__0J3uzLJImC__PLUS__jx7GyNG14Joz3KpIgkwI=3D" =
+target=3D"_blank" style=3D"text-decoration: none;color:#757C91;">
+=09=09=09  <div style=3D"padding: 0px 10px 0 20px; width: 475px; overflow: =
+hidden;color:#757C91; font-family: Calibri, Arial, serif; font-size: 15px;f=
+loat: left"> <span style=3D"font-size: 16px;  "> <span style=3D"color:#0143=
+9F"><strong>Full Stack Developer, </strong>2-5 Exp.</span></span><br />
+=09=09=09  <strong>vixplor analytics pvt ltd. </strong>- Kolkata</div></a><=
+/td>
+      <td><div style=3D"padding: 10px 0 0 10px; width: 65px; float: right;m=
+argin-right:15px;">  <div style=3D" text-align: center; padding: 0px 6px; h=
+eight: 25px; line-height: 25px;border-radius: 30px; text-transform:uppercas=
+e;color:#01439F; cursor: pointer;"><a href=3D"https://www.timesjobs.com/can=
+didate/dl/mredirect.html?_qe=3DbUCqDkVwhlXPtoCShldzGNbtRiq28HjLRgnWG2wqT4cS=
+a4VvxKNTvVZwk9Se5KFb59QGIVSjhW0s__NEWLINE__Dt8NU9Bc6jbdm5fmJTB0MEoEfRQjtuM1=
+Gz8Z9Yip6vEQk18bcW3X4xs7lXzs0uDNf8cLIufJohu2__NEWLINE__tJE1iO70E__PLUS__mEd=
+xjJAVeJukvMALmUuRIlP3CgsFn4CpPMin7yRX__PLUS__u0n__SLASH__VqYxFNgvmaO9HqliWr=
+7Ea__NEWLINE__Xv9IEexXN1LOMogaGDALAOoU3kVaiiMZNlVgvogaANME3mg1x6nX35viqDQ0s=
+35ac9S87PyX0h9m__NEWLINE__Tmd7pYj0C04irAOg0aVduq__PLUS__b7MylbQxkctxBeFej7t=
+gOvSVr__SLASH__di5pVrZBuYarJgjVvANRfN__PLUS__vui4__NEWLINE__mMKBR__PLUS__Bm=
+bk7yKDv__PLUS__lE3GJBx6QqP0N0ScWblKObj8GcCJVuIaXyzLC03oPFEdlqg2jURtuZAKK1YG=
+__NEWLINE____SLASH__u0aKuJ6YnI4AKmNWQ93l2KSUghXSEqtxia7EsUtuF0CSA3OR9QLPlKy=
+v__SLASH__HDN__SLASH__1oUbkHYvdxfN9o__NEWLINE__Gk4G6GIk5YzufeEzMgDK6UP0RQI8=
+UPXjWQhkDRNIRoOyr__PLUS__GlF4P7DOck0cKcX9szNM4k8sLybNL3__NEWLINE__VG6BxO1H0=
+ASTaz1c3P4i6CfjKom8WH7Y0AtTA1p7tldj7iX479MkVN__SLASH__FWUrQ7cvOdgdzO7h6UQf6=
+__NEWLINE__FxuERX4Q2HeJFxZwb3Q1Y8NpBnZPPLug38gZ6XIHcPc8XIIqWozyi6xGOhGFqhlV=
+VaMnm40lKNfu__NEWLINE__5kjqoAqt9aVGJ1__SLASH__LEbqtFAlKyiGfqJ9pND4U0uJgmMJX=
+3fOWunFsey2FzDtMZY1OpeqmHnTl" style=3D"color:#01439F; font-size: 16px; font=
+-family: Calibri, Arial, serif;  text-decoration:none" target=3D"_blank"><s=
+trong>Apply</strong></a></div></div></td>
+    </tr>
+  </tbody>
+</table>
+
+=09=09=09 =20
+=09=09 =20
+=09=09 =20
+=09</div>
+=09=09 =20
+=09=09=09=09  <div style=3D"padding: 15px 0 8px 0px; line-height: 18px; min=
+-height:40px; border-bottom: 1px solid #efefef;">
+=09=09=09  <table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0">
+  <tbody>
+    <tr>
+      <td width=3D"78%"><a href=3D"https://www.timesjobs.com/candidate/dl/m=
+redirect.html?_qe=3DR2GebwhhkQiDC__PLUS__LpTVehR__PLUS__NNxoUOmZla23gKGmuZ1=
+YoSA8__PLUS__nc9h6oqjsCimwzk4MKDFc3ZOS3yeb__NEWLINE__rQtfq5giuA6uGpGrna__SL=
+ASH__nlCq__SLASH__lqG2PzF__PLUS__pnLmDTF__PLUS__Ti8tBL3ud9wa8cZvEtzMiEmRQB_=
+_PLUS__UUAAC3k0C__NEWLINE__bNm0vgkAcXcCd60Ki1iL1rwLR__PLUS__X0njpR__SLASH__=
+Pk6v5RGCpPMin7yRX__PLUS__i6597oCTwT9bHyLycLkdxIb2E__NEWLINE__6oLC8pj__PLUS_=
+_uFbM12XX5GF0gnQ7gchwH90ePPeNQqf__PLUS__0J3uzLJImC__PLUS__jx7GyNG14Joz3KpIg=
+kwI=3D" target=3D"_blank" style=3D"text-decoration: none;color:#757C91;">
+=09=09=09  <div style=3D"padding: 0px 10px 0 20px; width: 475px; overflow: =
+hidden;color:#757C91; font-family: Calibri, Arial, serif; font-size: 15px;f=
+loat: left"> <span style=3D"font-size: 16px;  "> <span style=3D"color:#0143=
+9F"><strong>Content Writer, </strong>2-5 Exp.</span></span><br />
+=09=09=09  <strong>vixplor analytics pvt ltd. </strong>- Kolkata</div></a><=
+/td>
+      <td><div style=3D"padding: 10px 0 0 10px; width: 65px; float: right;m=
+argin-right:15px;">  <div style=3D" text-align: center; padding: 0px 6px; h=
+eight: 25px; line-height: 25px;border-radius: 30px; text-transform:uppercas=
+e;color:#01439F; cursor: pointer;"><a href=3D"https://www.timesjobs.com/can=
+didate/dl/mredirect.html?_qe=3DbUCqDkVwhlXPtoCShldzGNbtRiq28HjLRgnWG2wqT4cS=
+a4VvxKNTvVZwk9Se5KFb59QGIVSjhW0s__NEWLINE__Dt8NU9Bc6jbdm5fmJTB0MEoEfRQjtuM1=
+Gz8Z9Yip6vEQk18bcW3X4xs7lXzs0uDNf8cLIufJohu2__NEWLINE__tJE1iO70E__PLUS__mEd=
+xjJAVeJukvMALmUuRIlP3CgsFn4CpPMin7yRX__PLUS__u0n__SLASH__VqYxFNgvmaO9HqliWr=
+7Ea__NEWLINE__Xv9IEexXN1LOMogaGDALAOoU3kVaiiMZNlVgvogaANME3mg1x6nX35viqDQ0s=
+35ac9S87PyX0h9m__NEWLINE__Tmd7pYj0C04irAOg0aVduq__PLUS__b7MylbQxkctxBeFej7t=
+gOvSVr__SLASH__di5pVrZBublxyIsXyCGW__SLASH__N__PLUS__vui4__NEWLINE__mMKBQhU=
+ACtdiL__SLASH__1XkwTsnM1EMXTk0cgFKgtGgymluKTKlYbvzZdK5cNFkRpfLMsLTeg8UR2WqD=
+aN__NEWLINE__RG25kAorVgb__PLUS__7Roq4npicjgAqY1ZD3eXYpJSCFdISq3GJrsSxS24XQJ=
+IDc5H1As__PLUS__UrK__SLASH__8cM3__SLASH__WhR__NEWLINE__uQdi93F832gaTgboYiTl=
+jO594TMyAMrpQ__SLASH__RFAjxQ9eNZCGQNE0hGg7Kv4aUXg__SLASH__sM5yTRwpxf2zM0__N=
+EWLINE__ziTywvJs0vdUboHE7UfQBJNrPVzc__SLASH__iLoJ__PLUS__MqibxYftjQC1MDWnu2=
+V2PuJfjv0yRU38VZStDty852__NEWLINE__B3M7uHpRB__SLASH__oXG4RFfhDYd4kXFnBvdDVj=
+w2kGdk88u6DfyBnpcgdw9zxcgipajPKLrEY6EYWqGVVV__NEWLINE__oyebjSUo1__PLUS__7mS=
+OqgCq31pUYnX8sRuq0UCUrKIZ__PLUS__on2k0PhTS4mCYwlfd85a6cWx7LYXMO0xljU6l__NEW=
+LINE__6qYedOU=3D" style=3D"color:#01439F; font-size: 16px; font-family: Cal=
+ibri, Arial, serif;  text-decoration:none" target=3D"_blank"><strong>Apply<=
+/strong></a></div></div></td>
+    </tr>
+  </tbody>
+</table>
+
+=09=09=09 =20
+=09=09 =20
+=09=09 =20
+=09</div>
+=09=09 =20
+=09=09=09=09<!--jobs end from here-->
+=09=09<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0=
+" style=3D"padding:0 15px">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09 <tr>
+=09      <td bgcolor=3D"#FFFFFF">
+=09     =20
+=09       =09     =20
+=09     =20
+=09=09<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0=
+">
+=09        <tbody>
+=09          <tr>
+=09            <td><div style=3D"font-family:Calibri, Arial, serif;font-siz=
+e:13px; color:#535353; width:100%; border-right:1px solid #d4d4d4;padding:1=
+0px 0;line-height:26px; padding-left: 5px;">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09Are These <span class=3D=
+"il">Jobs</span> Relevant <span style=3D"width: 36px; text-align: center;  =
+padding: 1px 8px; height: 22px; line-height: 22px; border-radius: 22px; bor=
+der: 1px solid #01439F; color:#01439F; cursor: pointer;"><a href=3D"https:/=
+/www.timesjobs.com/candidate/AutoLogin.html?target=3DDirect&alt=3DyVbCom1iI=
+Gp5pOUIEGjtuA=3D=3D&fromTJ=3Dalert&urlWithParams=3DsLdBLOJ5iNQsXZoLe__SLASH=
+____SLASH__y18XqZ7AulqmyQt0PJpQj__PLUS__g3sk5xp0lKuXQIEg__PLUS__pWNyo66Iyvq=
+Vqu9u5x__NEWLINE__dwJ3rQqLWIvWvAtH5fSeOlH8__PLUS__Tq__SLASH__lEZYy__PLUS__w=
+CNrm3Kv2yup3__SLASH__TVgURjKgeLecSL0clb0Ckdyhpv64__NEWLINE__VszXZdfkYXSCdDu=
+ByHAf3R48941Cp__SLASH__7Qne7MskiYL6PHsbI0bXgmjPcqkiCTAg=3D=3D" style=3D"col=
+or:#01439F;  text-decoration:none" target=3D"_blank">Yes</a></span> | <span=
+ style=3D"width: 36px; text-align: center;  padding:1px 8px; height: 22px; =
+line-height: 22px; border-radius: 22px; border: 1px solid #01439F; color:#0=
+1439F; cursor: pointer;"><a href=3D"https://www.timesjobs.com/candidate/Aut=
+oLogin.html?target=3DDirect&alt=3DyVbCom1iIGp5pOUIEGjtuA=3D=3D&fromTJ=3Dale=
+rt&urlWithParams=3DsLdBLOJ5iNQsXZoLe__SLASH____SLASH__y18XqZ7AulqmyQt0PJpQj=
+__PLUS__g3sk5xp0lKuXQIEg__PLUS__pWNyo66IyvqVqu9u5x__NEWLINE__dwJ3rQqLWIvWvA=
+tH5fSeOlH8__PLUS__Tq__SLASH__lEYbqQS30bATEf2yup3__SLASH__TVgURjKgeLecSL0W8W=
+OxE22Cpmu__PLUS____NEWLINE__a8UwLm__PLUS__HEamOoc9HW0MUESWa3Sx1axJYYeWO03vO=
+BeZYn1bW3rA7vNacJG5Ycg=3D=3D" style=3D"color:#01439F;  text-decoration:none=
+" target=3D"_blank">No</a></span>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<br>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09Receiving <span class=3D=
+"il">Job</span> <span class=3D"il">Alerts</span> in Junk Folder
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<span style=3D"width: 36=
+px; text-align: center;  padding: 1px 8px; height: 22px; line-height: 22px;=
+ border-radius: 22px; border: 1px solid #01439F; color:#01439F; cursor: poi=
+nter;"><a href=3D"mailto:jobalert@timesjobs.com"  style=3D"color:#01439F;  =
+text-decoration:none" target=3D"_blank">Click
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09Here</a>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</div></td>
+=09            <td  style=3D"padding-right: 5px;"><div style=3D"font-font-f=
+amily:Calibri, Arial, serif; font-size:13px;color:#535353; text-align:right=
+;width:100%;max-width:228px;padding:10px 0;margin-top:3px">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09Stay connected with us<b=
+r />
+<a href=3D"http://www.youtube.com/timesjobsofficial" target=3D"_blank" data=
+-saferedirecturl=3D"https://www.google.com/url?q=3Dhttp://www.youtube.com/t=
+imesjobsofficial&amp;source=3Dgmail&amp;ust=3D1582874054878000&amp;usg=3DAF=
+QjCNF8831pyarLhuZq-tY-owaNi2rOOQ"><img src=3D"https://ci4.googleusercontent=
+.com/proxy/_czdZM8MIeZNKQtazsmdQnBvc7S1L4eud9qTV7uYhMxRCzl4-SnilxlIaML6m8GS=
+l6tQonko1PfqtV_59S_TiLUWe08ZBnMELsX4qkbJ7pjjkAXe=3Ds0-d-e1-ft#http://mailer=
+.timesjobs.com/tech01/job-alert-new/youtube-icon.png" width=3D"24" height=
+=3D"24" border=3D"0" alt=3D"Youtube" style=3D"vertical-align:middle;margin-=
+left:5px" class=3D"CToWUd"></a>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<a href=3D"http://www.fa=
+cebook.com/TimesJobs" target=3D"_blank" data-saferedirecturl=3D"https://www=
+.google.com/url?q=3Dhttp://www.facebook.com/TimesJobs&amp;source=3Dgmail&am=
+p;ust=3D1582874054878000&amp;usg=3DAFQjCNGj5O4G_MObMO82ZdvlJKxRWBZINg"><img=
+ src=3D"https://ci6.googleusercontent.com/proxy/ElLSXJBAsWU9dh5oesixvbJ8eDW=
+aGaxV35IW-dzUH1pdWf_ebLJo1GbKDTumKTSSiyEFPzfUinr7lFG1C-XgxAmRS5eZvJTGP3Lo0h=
+V3bQ=3Ds0-d-e1-ft#http://mailer.timesjobs.com/tech01/job-alert-new/fb-icon.=
+png" width=3D"24" height=3D"24" border=3D"0" alt=3D"Facebook" style=3D"vert=
+ical-align:middle;margin-left:5px" class=3D"CToWUd"></a>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<a href=3D"http://twitte=
+r.com/timesjobsdotcom" target=3D"_blank" data-saferedirecturl=3D"https://ww=
+w.google.com/url?q=3Dhttp://twitter.com/timesjobsdotcom&amp;source=3Dgmail&=
+amp;ust=3D1582874054878000&amp;usg=3DAFQjCNF4RjOin9q20cI6nWEdepW2ybq6vQ"><i=
+mg src=3D"https://ci3.googleusercontent.com/proxy/EFNIN-z0yaFussI7WgPzuEcBH=
+bZP1iA-b1b2lCxVgOeNx03thMPnGo4Q6rZR7d6abQqTa-V1ZytXqxk4lwbQ67uxkqBZeqFRXEQ-=
+zHO6I8bVZzCD=3Ds0-d-e1-ft#http://mailer.timesjobs.com/tech01/job-alert-new/=
+twitter-icon.png" width=3D"24" height=3D"24" border=3D"0" alt=3D"Twitter" s=
+tyle=3D"vertical-align:middle;margin-left:5px" class=3D"CToWUd"></a>
+=09=09=09=09</div></td>
+              </tr>
+            </tbody>
+          </table></td>
+        </tr>
+=09    <tr>
+=09      <td bgcolor=3D"#FFFFFF" style=3D"font-family:Calibri, Arial, serif=
+;font-size:13px;color:#535353;padding:10px 0;border-top:1px solid #e5e5e5;t=
+ext-align:center">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<span style=3D"color:#000">=
+Note:</span> For your privacy and protection, Please do not forward this em=
+ail to
+=09=09  anyone. </td>
+        </tr>
+=09=09=09
+=09=09=09
+</table>
+
+=09=09 =20
+=09=09  </td>
+    </tr>
+=09 =20
+=09 =20
+=09    <tr>
+       <td >
+=09=09=09
+=09=09=09=09<table width=3D"600" border=3D"0" align=3D"center" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"margin-top: 5px;">
+
+=09=09=09<tr>
+=09=09=09=09<td height=3D"56"><div
+=09=09=09=09=09=09style=3D"padding: 10px;font-family: Calibri, Arial, serif=
+; font-size:14px; line-height: 18px; color:#757C91; text-align: justify;">
+=09=09=09=09=09=09Disclaimer: You have received this mail because you are r=
+egistered
+=09=09=09=09=09=09member on TimesJobs.com. This is a system generated email=
+, please
+=09=09=09=09=09=09don't reply to this message. For <a
+=09=09=09=09=09=09=09style=3D"color: #3892c9; text-decoration: none"
+=09=09=09=09=09=09=09href=3D"https://www.timesjobs.com/popuphtml/Terms.htm?=
+utm_source=3Dja_TermsOfUse_insta&utm_medium=3Demail&utm_campaign=3Dtj_jobAl=
+ert"
+=09=09=09=09=09=09=09target=3D"_blank">Terms and Conditions</a> and other l=
+egal
+=09=09=09=09=09=09disclaimers, please visit <a href=3D"https://www.timesjob=
+s.com/candidate/AutoLogin.html?target=3DDirect&alt=3DyVbCom1iIGp5pOUIEGjtuA=
+=3D=3D&fromTJ=3Dalert&urlWithParams=3DsLdBLOJ5iNQsXZoLe__SLASH____SLASH__y1=
+8XqZ7AulqmyQt0PJpQj__PLUS__g11wO4j__SLASH__jtvagC6Kw2PI06Z__SLASH__bK6nf9NW=
+BTB__NEWLINE__1TeEfQ__SLASH__goWEPtINivxyp__SLASH__rhWzNdl1__PLUS__RhdIJ0O4=
+HIcB__SLASH__dHjz3jUKn__SLASH__tCd7syySJgG2PNxT2k8NiaM__NEWLINE__9yqSIJMC" =
+target=3D"_blank"
+=09=09=09=09=09=09=09style=3D"color: #3892c9; text-decoration: none">TimesJ=
+obs.com</a> <br />
+=09=09=09=09=09=09<br /> If you do not want to receive this mailer,=20
+=09=09=09=09=09=09<a href=3D"https://www.timesjobs.com/candidate/AutoLogin.=
+html?target=3DDirect&alt=3DyVbCom1iIGp5pOUIEGjtuA=3D=3D&featureId=3D2&track=
+ingId=3D60593118123&encdec=3Dspn&fromTJ=3Dalert&urlWithParams=3DsLdBLOJ5iNQ=
+sXZoLe__SLASH____SLASH__y18XqZ7AulqmyQt0PJpQj__PLUS__g2a3dmLTcxoafJFM6NxFE0=
+hJh7a772IqORA__NEWLINE__u43WoXAdtS7etYsKNNmEnVe2c3wY6hCWtZGGxCMRLPWlRidfyxG=
+6rRQJSsohn6ifaTQ__PLUS__FNLiYJjC__NEWLINE__V93zlrpxbHsthcw7TGWNTqXqph505Q=
+=3D=3D" target=3D"_blank" style=3D"color: #3892c9; text-decoration: none">U=
+nsubscribe</a>.
+=09=09=09=09=09=09<br />
+=09=09=09=09=09</div></td>
+=09=09=09</tr>
+           =20
+=09=09</table>
+=09=09=09
+=09=09=09</td>
+    </tr>
+=09 =20
+=09 =20
+  </tbody>
+</table>
+
+=09</div>
+=09
+=09
+=09
+</body>
+<div style=3Ddisplay:none;><img src=3Dhttps://www.timesjobs.com/candidate/t=
+rack.html?trackingId=3D60593118123 alt=3D"" border=3D"0" height=3D"0px" wid=
+th=3D"0px" style=3D"visibility:hidden;" /></div>
+</html>

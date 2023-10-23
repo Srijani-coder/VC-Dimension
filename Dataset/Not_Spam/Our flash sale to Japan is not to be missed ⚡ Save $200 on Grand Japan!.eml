@@ -1,0 +1,717 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:8691:b0:4fd:23d3:a27 with SMTP id e17csp568880pxn;
+        Sat, 21 Oct 2023 18:37:56 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEwDu4KrpINFiPiOnK/CSty2ZGeTBrsSPAU1QFm0GvNbBZAB6xFUAl1vwx31T/0RHtdyDHy
+X-Received: by 2002:a0c:f194:0:b0:66d:2e59:4fc7 with SMTP id m20-20020a0cf194000000b0066d2e594fc7mr8108422qvl.19.1697938676115;
+        Sat, 21 Oct 2023 18:37:56 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697938676; cv=none;
+        d=google.com; s=arc-20160816;
+        b=FCdiVz5MHERwfWwuqprj9GO6Mq9qMgOyWOq5z8xEc/lT5xo1cT6MwXTNJYRQjmAVZz
+         4NQKy4SbouNMtR4JaeCOyitSqaAoLOVxxGUbSK17jjOFB5Cpffj5AVCGacFSzByKy6BD
+         mLj0Qy/i3bLrP3C46Qd7z4ZQyRjIEBtPsj+hlfkuAp+qrEN8E1W8501IvlVP6jPuWT/V
+         3jKGjVXpzeC3QS6NRIqSV/g5FVQ4CDwvI0dK2K9QE/tJZWYRntFxm2T1KmBSgLcbRsnX
+         oKBwbzOeYwglOtURqKKg4szGz0Dhp7V9CnceniEcpxBEX/LY/jk7P0zmQKnMtLyc2V3I
+         YHhw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:list-id:reply-to:mime-version
+         :list-unsubscribe-post:list-unsubscribe:date:subject:to:from
+         :dkim-signature;
+        bh=+K+KIjEG1zRkkG45JG21d66LVtP8WW8+EsaCusstVQ8=;
+        fh=Aqe6xtJ2ccSlx9NnrUD9c7Fd7YTQfaNQx9hKYnhgjDI=;
+        b=yL8GNFbDrlbKjqI+3GUx10VSEN/lWC0W52btTHG4WI5LJxX+YpHe+PFrpNK9JmRr1B
+         wJNSBxBaqu+XsVYg08nmYpdnhSwNcim22lC5K8myZjNZlEo7uRQPEdyynyEM6rAk1Q2K
+         07G27MB0b2EDp8GkcmZWp/Rv4IKkmU91z9TJ5nvIpluxr6+5CXZ4hwp9w1EMvan2tMXu
+         xP0Rxfbr+XRrEDssf932T1qAGWllCSIQ6gTvdMvTRPb2UcHLA46dlRyIMHpyq49M0LgH
+         hxk00FBbojEhbKsLKrLYl4kyahoRsvOFY7V0kyRLPButs29hfMkDWUHAZubQPTtxqbha
+         4V0g==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@e.tripadeal.com.au header.s=11dkim1 header.b="X/BYzOmP";
+       spf=pass (google.com: domain of bounce-295_html-230937649-403835-514002847-9038@bounce.e.tripadeal.com.au designates 128.245.68.91 as permitted sender) smtp.mailfrom=bounce-295_HTML-230937649-403835-514002847-9038@bounce.e.tripadeal.com.au;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=e.tripadeal.com.au
+Return-Path: <bounce-295_HTML-230937649-403835-514002847-9038@bounce.e.tripadeal.com.au>
+Received: from mta2.e.tripadeal.com.au (mta2.e.tripadeal.com.au. [128.245.68.91])
+        by mx.google.com with ESMTPS id j14-20020a05620a410e00b00773d54d6a11si3681876qko.387.2023.10.21.18.37.55
+        for <srijani515@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 21 Oct 2023 18:37:56 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-295_html-230937649-403835-514002847-9038@bounce.e.tripadeal.com.au designates 128.245.68.91 as permitted sender) client-ip=128.245.68.91;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@e.tripadeal.com.au header.s=11dkim1 header.b="X/BYzOmP";
+       spf=pass (google.com: domain of bounce-295_html-230937649-403835-514002847-9038@bounce.e.tripadeal.com.au designates 128.245.68.91 as permitted sender) smtp.mailfrom=bounce-295_HTML-230937649-403835-514002847-9038@bounce.e.tripadeal.com.au;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=e.tripadeal.com.au
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=11dkim1; d=e.tripadeal.com.au;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Reply-To:List-ID:X-CSA-Complaints:Message-ID:Content-Type;
+ i=noreply@e.tripadeal.com.au;
+ bh=+K+KIjEG1zRkkG45JG21d66LVtP8WW8+EsaCusstVQ8=;
+ b=X/BYzOmPrpxWsIBJOOwx4NMSnNx8rJy3UCXOjbltJBj4P7598HwIBlJJiQqTQTiMUcbOdLGNChxu
+   kNiiO/J3gwmopGWrOCsp9ZhCnCs1Qc+FfnWzz8Iq5Ggz4EyVUNY46xB7OepeN+L1EKsxdzAOJgyw
+   lO/3q8HGMAnznk0EcsQrP0TtYh44R5o+gIR+cJz2v7WHbZNEooVLa9aGtUinexyYTSZxdnhIr4Xf
+   Zs/g5nFtk/exHjBexEjYyQAaDPj+byDB8l/c8qODhDturnsyF4i9ctT9hYR1GAqkZiuOyI/Tsc84
+   CkMBB5BvdkDS/cbYu5k04UBVpt7uNDngY9c8jg==
+Received: by mta2.e.tripadeal.com.au id h6huf82fmd4d for <srijani515@gmail.com>; Sun, 22 Oct 2023 01:32:11 +0000 (envelope-from <bounce-295_HTML-230937649-403835-514002847-9038@bounce.e.tripadeal.com.au>)
+From: "TripADeal" <noreply@e.tripadeal.com.au>
+To: <srijani515@gmail.com>
+Subject: =?UTF-8?B?T3VyIGZsYXNoIHNhbGUgdG8gSmFwYW4gaXMgbm90IHRvIGJlIG1p?=
+ =?UTF-8?B?c3NlZCDimqEgU2F2ZSAkMjAwIG9uIEdyYW5kIEphcGFuIQ==?=
+Date: Sat, 21 Oct 2023 19:32:11 -0600
+List-Unsubscribe: <https://click.e.tripadeal.com.au/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiI1MTQwMDI4NDciLCJzIjoiMjMwOTM3NjQ5IiwibGlkIjoiMjk1IiwiaiI6IjQwMzgzNSIsImpiIjoiOTAzOCIsImQiOiIxMTAwMzIifQ.yf0xvfNbH8tun_nkLSQ4hfbuifpL1Zn_gO2ueSI4oO0>, <mailto:leave-fd4b1679700b5c392848-fe241673756d077a731079-fec81070766c0778-fe3011717164047f7d1077-ff2b1d70766c@leave.e.tripadeal.com.au>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+Reply-To: "TripADeal" <reply-fec81070766c0778-295_HTML-230937649-514002847-9038@reply.e.tripadeal.com.au>
+List-ID: <514002847.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+X-SFMC-Stack: 11
+x-job: 514002847_403835
+Message-ID: <f5713d98-eb5b-4db6-8282-c58d957caa09@atl1s11mta1083.xt.local>
+Feedback-ID: 514002847:403835:128.245.68.91:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="GBUj2fuh3ESr=_?:"
+
+This is a multi-part message in MIME format.
+
+--GBUj2fuh3ESr=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+TripADealHaving trouble seeing this email?
+
+https://view.e.tripadeal.com.au/?qs=0d771bd99fbe2bb969a00f35b43a6dca3660bb7fa0040e6040e841b870c55f2df6a0ab78790221a20559be50404c347dbb02a8778c5e501ddbd416c801142c97e184dd5b9acaf7f07e7aebde1f82c850 
+View in your browser 
+
+
+https://click.e.tripadeal.com.au/?qs=4eac46f81113ad347caa56bf76f14b30cd440934c8aee90808b74a5d7f9936a10cce2eb8e3d106cb5d72a8a758f575333e1fea4b976d2153d392630c05ac2527 
+
+Experience the beauty of Japan for less with our Grand Japan Flash Sale!
+
+  
+
+ For a limited time, save $200 per person and immerse yourself in a 15-day tour of Japan&rsquo;s unique culture, neon cities and natural wonders.
+
+
+ Offer ends midnight Thursday 12th November or until sold out.
+
+
+
+
+
+https://click.e.tripadeal.com.au/?qs=4eac46f81113ad34fffada86b6e4b4e99077ee1978231f3637868e671833c8afa280f9607fe28aa55e709842dd809755dc0e6d52190a8a7596f54e3aeabcb77e 
+
+https://click.e.tripadeal.com.au/?qs=4eac46f81113ad34fffada86b6e4b4e99077ee1978231f3637868e671833c8afa280f9607fe28aa55e709842dd809755dc0e6d52190a8a7596f54e3aeabcb77e 
+
+https://click.e.tripadeal.com.au/?qs=4eac46f81113ad34fffada86b6e4b4e99077ee1978231f3637868e671833c8afa280f9607fe28aa55e709842dd809755dc0e6d52190a8a7596f54e3aeabcb77e 
+
+https://click.e.tripadeal.com.au/?qs=4eac46f81113ad34fffada86b6e4b4e99077ee1978231f3637868e671833c8afa280f9607fe28aa55e709842dd809755dc0e6d52190a8a7596f54e3aeabcb77e 
+
+
+  15 Days 
+
+
+ Grand Japan
+ 
+ 
+ 
+ Was $3999 | From
+ 
+
+ 
+ 
+ 
+
+
+
+ 
+ 
+ 
+ $
+
+ 3799
+
+ 
+
+
+Per person twin share
+       
+ or 379,900 Qantas Points
+
+ Earn 11,397 Qantas Points
+
+
+ Step into the natural beauty of Japan <br /> Take in stunning views from Mt Fuji’s 5th Station
+Includes Return International Full-Service Flights With Qantas Airways
+
+https://click.e.tripadeal.com.au/?qs=4eac46f81113ad34fffada86b6e4b4e99077ee1978231f3637868e671833c8afa280f9607fe28aa55e709842dd809755dc0e6d52190a8a7596f54e3aeabcb77e 
+VIEW DEAL 
+
+
+
+
+What people say about us.
+
+
+"AMAZING HOLIDAY! Thanks again TripADeal for another value packed travel experience."
+
+CARMEL B
+
+
+https://click.e.tripadeal.com.au/?qs=4eac46f81113ad347caa56bf76f14b30cd440934c8aee90808b74a5d7f9936a10cce2eb8e3d106cb5d72a8a758f575333e1fea4b976d2153d392630c05ac2527 
+
+
+https://click.e.tripadeal.com.au/?qs=4eac46f81113ad349bce179ddc32dad298c50b61ab243e31be34757786a9511f66ae70f01c73c04f7090646d190b05dec0a55c1234cfc3ffec72395f59a5fb25 
+
+
+
+
+
+ 
+You must be a Qantas Frequent Flyer member to earn points. A joining fee may apply. Membership and points are subject to the Qantas Frequent Flyer program terms and conditions.
+
+
+
+To earn Qantas Points with TripADeal, Members will be required to provide a valid Frequent Flyer number and last name at checkout. Only the lead traveller, the primary contact for the booking, will earn 3 Qantas Points per AU$1 spent (including GST) on eligible holiday packages. Qantas Points will not be earned and cannot be redeemed on any amounts payable directly to the hotel. Conditions apply. Qantas Points will be credited to a member's account up to 8 weeks after hotel check-out, cruise, or tour completion. Qantas Points will not be earned on cancelled bookings. 
+
+
+
+Points Plus Pay allows you to choose the number of Qantas Points you redeem above the minimum level of 4,000 and pay for the remainder of the booking value with an accepted payment method. TripADeal booking terms and conditions apply.
+
+ 
+
+
+ 15 Wollongbar St
+ Byron Bay, NSW, 2481
+ Australia
+ 
+
+https://click.e.tripadeal.com.au/?qs=4eac46f81113ad343b3b7aa0740d4acd10f86f9a9ec39fd9936e08577eb8aaa4746bd6d8dc0eb65aa15efdc90e3cb186c327ef2486d4b45916c1ec2e666950d5 
+Contact us 
+
+tel:1300 995 143 
+1300 995 143 
+
+*Terms and conditions apply
+
+Want to change how you receive these emails?
+
+ You can
+https://click.e.tripadeal.com.au/?qs=4eac46f81113ad343e77119c111adca3922777c35a1bbf92937f47c59594a70d792745521b64e4a75958d91814da6c0777dadeefbbc632dbb783be35681eb9f3 
+update your preferences  or 
+https://click.e.tripadeal.com.au/?qs=4eac46f81113ad34b4b91de77255da4fae9984823476ad1053097f4334ebd585afa9054681c59810d8df7647f5d778baa39609c5e0f82664f0541b587c94256e 
+unsubscribe from this list. 
+
+
+
+
+
+
+
+--GBUj2fuh3ESr=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<!---->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"><!--RegionStart[socialslot:"allcontent"]-->
+<head>
+<!--[if gte mso 9]>     <xml>       <o:OfficeDocumentSettings>         <o:AllowPNG />         <o:PixelsPerInch>96</o:PixelsPerInch>       </o:OfficeDocumentSettings>     </xml>     <![endif]-->
+<title>TripADeal</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<!--[if !mso]><!-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i%7CMontserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!--<![endif]-->
+
+<style type="text/css">
+body {
+ margin:0;
+ padding:0;
+ -webkit-text-size-adjust:100% !important;
+ -ms-text-size-adjust:100% !important;
+ -webkit-font-smoothing:antialiased !important;
+}
+img {
+ border:0 !important;
+ outline:none !important;
+}
+p {
+ margin:0 !important;
+ padding:0 !important;
+}
+table {
+ border-collapse:collapse;
+ mso-table-lspace:0;
+ mso-table-rspace:0;
+}
+td, a, span {
+ border-collapse:collapse;
+ mso-line-height-rule:exactly;
+}
+.ExternalClass * {
+ line-height:100%;
+}
+.em_defaultlink a {
+ color:inherit !important;
+ text-decoration:none !important;
+}
+.em_g_img+div {
+ display:none;
+}
+.em_black a {
+ text-decoration:none;
+ color:#000000;
+}
+.em_blue a {
+ text-decoration:underline;
+ color:#00bbd3;
+}
+.em_black1 a {
+ text-decoration:none;
+ color:#222222;
+}
+.em_grayA a {
+ text-decoration:none;
+ color:#656565;
+}
+.em_grayB a {
+ text-decoration:none;
+ color:#555555;
+}
+.em_grayC a {
+ text-decoration:none;
+ color:#333333;
+}
+.em_grayD a {
+ text-decoration:none;
+ color:#999999;
+}
+.em_green a {
+ color:#00c8e0;
+ text-decoration:none;
+}
+.em_greenA a {
+ color:#00bfd6;
+ text-decoration:none;
+}
+.em_white a {
+ color:#ffffff;
+ text-decoration:none;
+}
+  
+  
+  
+  @media screen and (min-width:481px) {
+    .mobile-only-image {
+        display:none;
+    }
+}
+@media screen and (max-width:480px) {
+    .desktop-only-image {
+        display:none;
+    }
+}
+  
+  
+  
+  
+ @media only screen and (min-width:481px) and (max-width:599px) {
+     .text-align-right {text-align: right !important; padding-left: 20px !important;}
+   .text-align-center {text-align: center !important;}
+   .qf-image-padding-2 {padding: 0px 0px 15px 0px !important;}
+   .qf-image-width {width: 45px !important;}
+     .padding-icon-1 {padding: 8px 52px 19px !important}
+   .padding-icon {padding: 19px 52px !important}
+      .padding-para {padding: 22px 44px !important; }
+   .padding-sides-100 {padding-left: 130px !important; padding-right: 130px !important; padding-bottom: 5px !important;}
+   .padding-sides-50 {padding: 0px 90px 10px  !important;}
+   .padding-sides-37 {padding-left: 37px !important; padding-right: 37px !important;}
+   .responsive100 { width: 100% !important; height: auto !important;}
+.responsivehide { display: none !important; }
+.responsiveshow { display: block !important; }
+   .padding-qf-logo {padding: 30px 49px 44px !important;}
+   .welcome-qf-logo {padding: 6px 20px 2px 15px !important;}
+  .padme23 {padding: 0px 23px !important }
+.responsiveblockfull { display: block !important; width: 100% !important; height: auto !important; float: left !important; }
+     .respsonsiveblockauto { display: block !important; width: auto !important; height: auto !important; }
+   
+        .mobile-responsive-td {display: block !important; width: 100% !important; height: auto !important; float: left !important;} 
+        .mobile-responsive-table {display: block !important; width: 100% !important; height: auto !important; float: left !important;} 
+        .mobile-responsive-image {width: 100% !important; max-width: 100% !important; height: auto !important;}
+   
+.em_main_table {
+ width:100% !important;
+}
+.em_wrapper {
+ width:100% !important;
+}
+.em_hide {
+ display:none !important;
+}
+.em_full_img {
+ width:100% !important;
+ height:auto !important;
+}
+.em_full_img img {
+ width:100% !important;
+ height:auto !important;
+ max-width:none !important;
+}
+.em_aside15 {
+ padding:0 15px !important;
+}
+.em_pbottom {
+ padding-bottom:20px !important;
+}
+.em_p15 {
+ padding:15px !important;
+}
+.em_h20 {
+ height:20px !important;
+ font-size:1px !important;
+ line-height:1px !important;
+}
+.em_plrtb_1 {
+ padding:15px 10px 15px 15px !important;
+}
+.em_ptb20 {
+ padding:20px 0 !important;
+}
+}
+ @media screen and (max-width: 480px) {
+   
+      .text-align-right {text-align: right !important; padding-left: 20px !important;}
+   .text-align-center {text-align: center !important;}
+   .qf-image-padding-2 {padding: 0px 0px 15px 0px !important;}
+   .qf-image-width {width: 45px !important;}
+     .padding-icon-1 {padding: 8px 52px 19px !important}
+   .padding-icon {padding: 19px 52px !important}
+      .padding-para {padding: 22px 44px !important; }
+   .padding-sides-100 {padding-left: 130px !important; padding-right: 130px !important; padding-bottom: 5px !important;}
+   .padding-sides-50 {padding: 0px 90px 10px  !important;}
+   .padding-sides-37 {padding-left: 37px !important; padding-right: 37px !important;}
+   .responsive100 { width: 100% !important; height: auto !important;}
+.responsivehide { display: none !important; }
+.responsiveshow { display: block !important; }
+   .padding-qf-logo {padding: 30px 49px 44px !important;}
+   .welcome-qf-logo {padding: 6px 20px 2px 15px !important;}
+  .padme23 {padding: 0px 23px !important }
+.responsiveblockfull { display: block !important; width: 100% !important; height: auto !important; float: left !important; }
+     .respsonsiveblockauto { display: block !important; width: auto !important; height: auto !important; }
+   
+        .mobile-responsive-td {display: block !important; width: 100% !important; height: auto !important; float: left !important;} 
+        .mobile-responsive-table {display: block !important; width: 100% !important; height: auto !important; float: left !important;} 
+        .mobile-responsive-image {width: 100% !important; max-width: 100% !important; height: auto !important;}
+   
+   
+   
+.em_main_table {
+ width:100% !important;
+}
+.em_wrapper {
+ width:100% !important;
+}
+.em_hide {
+ display:none !important;
+}
+.em_full_img {
+ width:100% !important;
+ height:auto !important;
+}
+.em_full_img img {
+ width:100% !important;
+ height:auto !important;
+ max-width:none !important;
+}
+.em_aside15 {
+ padding:0 15px !important;
+}
+.em_pbottom {
+ padding-bottom:20px !important;
+}
+.em_p15 {
+ padding:15px !important;
+}
+.em_h20 {
+ height:20px !important;
+ font-size:1px !important;
+ line-height:1px !important;
+}
+u+.em_body .em_full_wrap {
+ width:100vw !important;
+}
+.em_plrtb_1 {
+ padding:15px 10px 15px 15px !important;
+}
+.em_ptb20 {
+ padding:20px 0 !important;
+}
+}
+</style>
+</head>
+<body class="em_body" style="margin:0px auto; padding:0px;" bgcolor="#ffffff"><style type="text/css">
+div.preheader 
+{ display: none !important; } 
+</style>
+<div class="preheader" style="font-size: 1px; display: none !important;">Includes return international flights, 17 nights hotel accommodation, 18 meals and more.</div>
+<!--Header Section == -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="em_full_wrap" bgcolor="#ffffff">
+  <tr>
+    <td align="center" valign="top"><table align="center" width="600" border="0" cellspacing="0" cellpadding="0" class="em_main_table" style="width:600px;table-layout:fixed;">
+        <tr>
+          <td align="center" valign="top" class="em_grayA" bgcolor="#f7f7f7" style="background-color:#f7f7f7;padding:10px 14px;font-family:Lato, Arial, sans-serif;color:#656565;font-size:11px;line-height:16px;">Having trouble seeing this email?<br>
+            <span style="text-decoration:none;color:#084c9e;"><a href="https://view.e.tripadeal.com.au/?qs=0d771bd99fbe2bb969a00f35b43a6dca3660bb7fa0040e6040e841b870c55f2df6a0ab78790221a20559be50404c347dbb02a8778c5e501ddbd416c801142c97c5214130c7a4c2bf21675f0b6b85c451" target="_blank" style="text-decoration:none;color:#084c9e;">View in your browser</a></span></td>
+        </tr>
+        
+      </table></td>
+  </tr>
+</table>
+<!--//Header Section == --> 
+<!-- == Body Section == -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="em_full_wrap">
+  <tr>
+    <td align="center" valign="top"><table align="center" width="602" border="0" cellspacing="0" cellpadding="0" class="em_main_table" style="width:602px;table-layout:fixed;">
+        <tr>
+          <td align="center" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+              <tbody>
+                <!--Body-->
+                <tr>
+                  <td valign="top" align="center"><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table width="100%" cellspacing="0" cellpadding="0" role="presentation"><tr><td align="center"><a href="https://click.e.tripadeal.com.au/?qs=4eac46f81113ad347ec014757592f47f21e78ad6973f91b1abb721b6fb6459b7e9baa37f8c94f10565916c81826d50efc0edfb238b8e9b2bbc09edec239be680" title="TripADeal - Header"   data-linkto="https://"><img data-assetid="63054" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/3/1131fbbb-b1f5-40b5-968a-8181908c6ce2.jpg" alt="" width="600" style="display: block; padding: 0px; text-align: center; height: auto; width: 100%; border: 0px;"></a></td></tr></table></td></tr></table>
+<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table width="100%" cellspacing="0" cellpadding="0" role="presentation"><tr><td align="center"><img data-assetid="62763" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/3/14ba6b2e-5698-4d2d-9383-0f6cf40634c8.jpg" alt="" width="600" style="display: block; padding: 0px; text-align: center; height: auto; width: 100%; border: 0px;"></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table width="100%" cellspacing="0" cellpadding="0" role="presentation"><tr><td align="center">
+<img data-assetid="64753" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/3/36b27522-6f62-44b8-b15c-f9fee2addd50.gif" alt="" width="1354" style="display: block; padding: 0px; text-align: center; border: 0px solid transparent; height: auto; width: 100%;"></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" style="background-color: #ffffff;" width="100%">
+ 
+  <tr>
+   <td align="center" class="padding-para" style="padding: 30px 80px 0px 80px; font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333333; font-size: 16px; line-height: 22px; letter-spacing:0.2px" valign="top">
+    <b>Experience the beauty of Japan for less with our Grand Japan Flash Sale!</b><br>
+    &nbsp;</td></tr><tr>
+   <td align="center" class="padding-para" style="padding: 0px 70px 30px 70px; font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333333; font-size: 16px; line-height: 22px; letter-spacing:0.2px" valign="top">
+    For a limited time, save $200 per person and immerse yourself in a 15-day tour of Japan&rsquo;s unique culture, neon cities and natural wonders.<br>
+    <br>
+    Offer ends midnight Thursday 12th November or until sold out.</td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+
+
+<table cellpadding="0" cellspacing="0" role="presentation" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding-bottom: 7px;">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=4eac46f81113ad3474fa7010ff16992075eca7d1275051b2720ad108386c3de7b40b74db2bb51f92fde9b6acdc10995f2196bb95066c7858d02ccdfa7c5e1a25" style="color:#ffffff;text-decoration:none;line-height: 50px; text-align: center; display: block; letter-spacing: 0.2;" target="_blank" title="4548"><img alt="4548" src="https://cstad.s3.ap-southeast-2.amazonaws.com/4548_Grand_Japan__WEB_HERO_1new.jpg" style="display: block; padding: 0px; height: auto; width: 100%;" width="600"></a></td></tr></table><table border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" style="width: 100%" width="100%">
+ 
+<tr>
+   <td width="195.33">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=4eac46f81113ad3474fa7010ff16992075eca7d1275051b2720ad108386c3de7b40b74db2bb51f92fde9b6acdc10995f2196bb95066c7858d02ccdfa7c5e1a25" style="color:#ffffff;text-decoration:none;line-height: 40px; text-align: center; display: block; letter-spacing: 0.2;padding: 0px 4.66px 0px 0px;" target="_blank" title="4548"><img align="absbottom" class="responsive100" alt="4548" src="https://cstad.s3.ap-southeast-2.amazonaws.com/4548_Grand_Japan__WEB_HERO_2+old+town+kyoto.jpg" style="max-width:100%;" width="195.33"> </a></td><td width="195.33">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=4eac46f81113ad3474fa7010ff16992075eca7d1275051b2720ad108386c3de7b40b74db2bb51f92fde9b6acdc10995f2196bb95066c7858d02ccdfa7c5e1a25" style="color:#ffffff;text-decoration:none;line-height: 40px; text-align: center; display: block; letter-spacing: 0.2;padding: 0px 2.33px 0px;" target="_blank" title="4548"><img align="absbottom" class="responsive100" alt="4548" src="https://cstad.s3.ap-southeast-2.amazonaws.com/4548_Grand_Japan__WEB_HERO_1+golden+pavilion+kyoto.jpg" style="max-width:100%;" width="195.33"> </a></td><td width="195.33">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=4eac46f81113ad3474fa7010ff16992075eca7d1275051b2720ad108386c3de7b40b74db2bb51f92fde9b6acdc10995f2196bb95066c7858d02ccdfa7c5e1a25" style="color:#ffffff;text-decoration:none;line-height: 40px; text-align: center; display: block; letter-spacing: 0.2; padding: 0px 0px 0px 4.66px;" target="_blank" title="4548"><img align="absbottom" class="responsive100" alt="4548" src="https://cstad.s3.ap-southeast-2.amazonaws.com/4548_Grand_Japan__WEB_HERO_4+tokyo.jpg" style="max-width:100%;" width="195.33"> </a></td></tr></table>
+
+
+
+
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" style="width: 110.87px;" width="300px">
+ 
+  <tr>
+   <td align="center" class="responsive100" style="padding: 0px 20px;" width="300px;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" margin="0">
+     
+      <tr>
+       <td style="padding: 24px 0px 0px 0px;">
+        <table bgcolor="#f5f5f5;" border="0" cellpadding="0" cellspacing="0" margin="0" style="background-color: #f5f5f5; border-radius: 6px;">
+         
+          <tr>
+           <td style="padding: 6px 0px 8px 6px; padding-right: 0px" valign="middle">
+            <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/ebee0928-804a-4b72-8d0f-0d1c5db0f668.png" style="width: 20px; padding: 2px 2px 2px 2px;" valign="top" width="20px"></td><td align="center" class="em_green" style="padding: 0px 8px 0px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #666666; font-size: 18px; font-weight: 700; line-height: 0px;">
+            &nbsp;15&nbsp;Days&nbsp;</td></tr></table></td></tr></table></td></tr></table>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 5px 30px 5px; font-family: Futura BT,'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 35px; font-weight: 500; line-height: 35p; letter-spacing: 0.2;" valign="top">
+    Grand Japan</td></tr>
+     </table>         
+          
+             
+    <table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+<tr>
+   <td align="center" class="em_grayB" style="padding: 0px 15px 0px 15px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #979797; font-size: 14px; line-height: 18px; vertical-align: middle; line-height: 28px;" valign="middle">
+    Was <s>$3999</s> | From</td></tr>
+     </table> 
+
+    
+      
+              
+
+
+
+   
+    
+    <table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding: 0px;">
+    <table border="0" cellpadding="0" cellspacing="0">
+     
+      <tr>
+       <td align="center" style="padding: 0px 4px 6px 0px;" valign="top" width="20">
+        <table>
+         
+          <tr>
+           <td align="center" style="vertical-align: top; font-family:'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #00BFD6; font-size: 30px; line-height:36px; font-weight: 700; vertical-align: middle; mso-line-height-rule: exactly;">
+            $</td></tr></table></td><td align="left" class="em_green" style="padding: 0px 0px 10px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #00BFD6; font-size: 56px; font-weight: 500; vertical-align: top; mso-line-height-rule: exactly; line-height:50px" valign="top">
+        3799</td></tr></table></td></tr></table> 
+
+
+<table align="center" bgcolor="#F5F5F5" border="0" style="background-color: #F5F5F5; border-radius: 4px;">
+ 
+  <tr>
+   <td align="center" class="em_white" height="32" style="vertical-align: middle; width: 0px; padding: 0px 10px 0px 10px;  " valign="middle">
+    <img alt="" data-assetid="89657" height="20" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/4/820076b6-cc2a-490e-9014-b761c8dbe84b.png" style="line-height: 0; display: block; height: 20px; width: 10px; padding: 0px; text-align: center;" width="10"></td><td align="center" class="em_white" height="28" style="vertical-align: middle; padding: 0px 10px 0px 0px; font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; color: #666666; font-weight: 700;  " valign="middle">
+    <span style="color:#666666;">Per person twin share</span></td></tr></table>       <table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 12px 0px 24px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #666666; font-size: 17px; font-weight: 500; line-height: 18px;" valign="top">
+    or <b>379,900 Qantas Points</b></td></tr></table>
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding: 0px 0px 24px 0px; border-radius: 4px;" valign="top">
+    <table bgcolor="#F5F5F5" border="0" cellpadding="0" cellspacing="0" style="background-color: #F5F5F5; width: 240px; border-radius: 4px;" width="240">
+     
+      <tr>
+       <td align="center" class="em_white" height="50" style="vertical-align: middle; width: 25px; padding: 0px 9px 0px 22px;  " valign="middle" width="56px">
+        <img alt="" height="18" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/3/f27e94f4-9f91-4b4a-818f-a053528d873d.png" style="height: 18px; width: 25px;" width="25"></td><td align="left" class="em_white" height="50" style="font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; color: #00000; font-weight: semi-bold; width: 184px;  " valign="middle" width="184px">
+        Earn 11,397 Qantas Points</td></tr></table></td></tr></table>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 0px 28px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 15px; line-height: 30px; letter-spacing: 0.2" valign="top">
+    Step into the natural beauty of Japan <br /> Take in stunning views from Mt Fuji’s 5th Station</td></tr></table><table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 0px 28px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 15px; line-height: 30px; letter-spacing: 0.2" valign="top">
+    <b>Includes Return International Full-Service Flights With Qantas Airways</b></td></tr></table>
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%"><tr><td align="center" height="auto" style="padding: 0px; height: auto;" valign="top"><img align="center" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/1/7d69cd23-315b-4d2a-8081-9de88fa73d6b.png" style="vertical-align: top; padding: 10px 0px 10px;" width="140px"> </td></tr></table>
+
+<table>
+ 
+  <tr>
+   <td align="center" class="text-align-center" style="padding: 24px 0px 10px;" width="600px;">
+    <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/d246d038-0872-4e31-982b-e7030fb60071.png" style="padding: 0px 4px 0px 0px;" width="80px"> <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/35912e0a-01d7-4ff8-8570-f176e03f09b9.png" style="padding: 0px 0px 0px 0px;" width="80px"> <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/b9086b83-feb1-4dd7-bcd9-5b91c10c91f2.png" style="padding: 0px 0px 0px 4px;" width="80px"></td></tr></table>
+
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding-top: 32px; padding-right: 18px; padding-bottom: 64px; padding-left: 18px;" valign="top">
+    <table border="0" cellpadding="0" cellspacing="0" style="border-radius: 5px; background-color: #06bfd6; width: 200px;" width="200">
+     
+      <tr>
+       <td align="center" class="em_white" height="50" style="font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; color: #ffffff; font-weight: bold;" valign="middle">
+        <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=4eac46f81113ad3474fa7010ff16992075eca7d1275051b2720ad108386c3de7b40b74db2bb51f92fde9b6acdc10995f2196bb95066c7858d02ccdfa7c5e1a25" style="color:#ffffff;text-decoration:none;line-height: 50px; text-align: center; display: block; letter-spacing: 0.2;" target="_blank" title="4548">VIEW DEAL</a></td></tr></table></td></tr></table></td></tr></table>
+<style data-ignore-inlining>@media (prefers-color-scheme: dark) { #_t::before {content:url('https://jza16ysc.emltrk.com/v2/jza16ysc?rd&d=00Q2x00000fq14OEAQ');}} @media (prefers-color-scheme: light) { #_t::before {content:url('https://jza16ysc.emltrk.com/v2/jza16ysc?rl&d=00Q2x00000fq14OEAQ');}} @media print{ #_t {background-image:url('https://jza16ysc.emltrk.com/v2/jza16ysc?p&d=00Q2x00000fq14OEAQ');}} div.OutlookMessageHeader {background-image:url('https://jza16ysc.emltrk.com/v2/jza16ysc?f&d=00Q2x00000fq14OEAQ')} table.moz-email-headers-table {background-image:url('https://jza16ysc.emltrk.com/v2/jza16ysc?f&d=00Q2x00000fq14OEAQ')} blockquote #_t {background-image:url('https://jza16ysc.emltrk.com/v2/jza16ysc?f&d=00Q2x00000fq14OEAQ
+')} #MailContainerBody #_t {background-image:url('https://jza16ysc.emltrk.com/v2/jza16ysc?f&d=00Q2x00000fq14OEAQ')}</style><div id="_t"></div>
+<img src="https://jza16ysc.emltrk.com/v2/jza16ysc?d=00Q2x00000fq14OEAQ" width="1" height="1" border="0" alt="" />
+
+
+<style>
+  @media only screen and (max-width: 600px) {
+    .center-table {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+</style><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 600px;" width="600">
+ 
+  <tr>
+   <td align="center" class="responsive100" style="padding: 0px 15px 26px;" valign="middle">
+    &nbsp;<hr>
+   </td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table align="center" cellpadding="0" cellspacing="0" class="stylingblock-content-wrapper" role="presentation" style="min-width: 100%; " width="100%">
+	
+		<tr>
+			<td class="stylingblock-content-wrapper camarker-inner">
+				<table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" style="background-color: #ffffff;" width="100%">
+					
+						<tr>
+							<td style="padding: 0px 31px 30px; ">
+								<table bgcolor="#ffffff" border="0" cellpadding="0" class="responsive100" margin="0" style="width: 540px; background-color: #ffffff; border-radius: 6px;" width="540px">
+									
+										<tr>
+											<td align="center" height="auto" style="padding: 10px; height: auto;" valign="top">
+												<img align="center" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/3/d45a56e9-a3b0-43b8-b1bb-c6960516e0a0.png" style="display: block; width: 35px;" width="35px"></td></tr><tr>
+											<td align="center" style="font-family: Futura, Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 21px; font-weight:  bold; line-height: 30px; padding: 0px 0px 12px;">
+												What people say about us.</td></tr><tr>
+											<td align="center" style="font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 14px; font-weight:  normal; line-height: 22px; padding: 0px 0px 12px; letter-spacing: 0.22px; vertical-align: middle;">
+												<p>
+													&quot;AMAZING HOLIDAY! Thanks again TripADeal for another value packed travel experience.&quot;<br>
+													<br>
+													<strong>CARMEL B</strong></p></td></tr></table></td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table width="100%" cellspacing="0" cellpadding="0" role="presentation"><tr><td align="center"><a href="https://click.e.tripadeal.com.au/?qs=4eac46f81113ad34228618277ea6d10009ad9c0408ed651440ce345dba570a9fbda1690fb3ae96835aa50018b25c84e76d1e5e1597a4e21ea40a2829a86d4db3" title="TripADeal - Footer"   data-linkto="https://"><img data-assetid="94508" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/ed32ca7f-5521-4b1c-b25d-61f6601da8be.jpg" alt="" width="600" style="display: block; padding: 0px; text-align: center; height: auto; width: 100%;"></a></td></tr></table></td></tr></table>
+<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table width="100%" cellspacing="0" cellpadding="0" role="presentation"><tr><td align="center"><a href="https://click.e.tripadeal.com.au/?qs=4eac46f81113ad348d695a410bb7e09b0f41946a60f15bba776b120172c2cd2820f6185840ae824c6799ae38a2ce97bd038322f694793aab7dd39f959b1c3bd0" title=""   data-linkto="https://"><img data-assetid="64183" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/3/752d73d0-9e52-4169-9e7e-f860275ba376.jpg" alt="" width="600" style="display: block; padding: 0px; text-align: center; height: auto; width: 100%; border: 0px;"></a></td></tr></table></td></tr></table>
+<style data-ignore-inlining>@media (prefers-color-scheme: dark) { #_t::before {content:url('https://jza16ysc.emltrk.com/v2/jza16ysc?rd&d=00Q2x00000fq14OEAQ');}} @media (prefers-color-scheme: light) { #_t::before {content:url('https://jza16ysc.emltrk.com/v2/jza16ysc?rl&d=00Q2x00000fq14OEAQ');}} @media print{ #_t {background-image:url('https://jza16ysc.emltrk.com/v2/jza16ysc?p&d=00Q2x00000fq14OEAQ');}} div.OutlookMessageHeader {background-image:url('https://jza16ysc.emltrk.com/v2/jza16ysc?f&d=00Q2x00000fq14OEAQ')} table.moz-email-headers-table {background-image:url('https://jza16ysc.emltrk.com/v2/jza16ysc?f&d=00Q2x00000fq14OEAQ')} blockquote #_t {background-image:url('https://jza16ysc.emltrk.com/v2/jza16ysc?f&d=00Q2x00000fq14OEAQ
+')} #MailContainerBody #_t {background-image:url('https://jza16ysc.emltrk.com/v2/jza16ysc?f&d=00Q2x00000fq14OEAQ')}</style><div id="_t"></div>
+<img src="https://jza16ysc.emltrk.com/v2/jza16ysc?d=00Q2x00000fq14OEAQ" width="1" height="1" border="0" alt="" /></td>
+                </tr>
+                <!--//Body--> 
+              </tbody>
+            </table></td>
+        </tr>
+        <tr>
+          <td class="em_hide" style="line-height:1px;min-width:600px;background-color:#ffffff;"><img alt="" src="http://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/1/d420fed9-d976-43ca-849e-4facf9f2d87a.gif_not_delete_files/spacer_1539171686.gif" height="1" width="600" style="max-height:1px; min-height:1px; display:block; width:600px; min-width:600px;" border="0"></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<!-- == //Body Section == --> 
+  <!-- == AU or NZ Footer == -->
+
+      <!-- == Footer Section == -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="em_full_wrap">
+  <tr>
+    <td align="center" valign="top"><table align="center" width="600" border="0" cellspacing="0" cellpadding="0" class="em_main_table" style="width:600px;table-layout:fixed;">
+        <tr>
+          <td align="left" valign="top" class="em_p15" style="padding:20px 20px;font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:11px;line-height:16px;color:#656565;"><p style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-family:Lato, Arial, sans-serif;font-size:11px;line-height:140%;text-align:left;color:#656565;">             <span style="font-family: Lato, helvetica, arial, sans-serif;color: #656565; font-size: 9px;">You must be a Qantas Frequent Flyer member to earn points. A joining fee may apply. Membership and points are subject to the Qantas Frequent Flyer program terms and conditions.<br><br>
+
+To earn Qantas Points with TripADeal, Members will be required to provide a valid Frequent Flyer number and last name at checkout. Only the lead traveller, the primary contact for the booking, will earn 3 Qantas Points per AU$1 spent (including GST) on eligible holiday packages. Qantas Points will not be earned and cannot be redeemed on any amounts payable directly to the hotel. Conditions apply. Qantas Points will be credited to a member's account up to 8 weeks after hotel check-out, cruise, or tour completion. Qantas Points will not be earned on cancelled bookings. 
+<br><br>
+Points Plus Pay allows you to choose the number of Qantas Points you redeem above the minimum level of 4,000 and pay for the remainder of the booking value with an accepted payment method. TripADeal booking terms and conditions apply.
+
+                <br>
+             
+              <br>
+            15 Wollongbar St<br> Byron Bay, NSW, 2481<br> Australia
+            <br>
+              <br>
+              <span style="font-family: Lato, helvetica, arial, sans-serif;display: inline-block;color: #656565;line-height: 140% !important;"> <a href="https://click.e.tripadeal.com.au/?qs=4eac46f81113ad34f237bd5d91986f0ffbb840065af280fe819491496c11d37d87e484f90ee7f574ecbaad734d40e531e72f955470bddb353bb883e1f553d20e" style=" color:#656565;text-decoration:underline;">Contact us</a> </span> <br>
+              <a href="tel:1300 995 143" style="color:#656565;text-decoration:underline;">1300 995 143</a> <br>
+              <br>
+              <span style="font-family: Lato, helvetica, arial, sans-serif;color: #656565;">*Terms and conditions apply<br>
+              <br>
+              <span style="font-family: Lato, helvetica, arial, sans-serif;color: #656565;">Want to change how you receive these emails?<br>
+                You can</span> <a href="https://click.e.tripadeal.com.au/?qs=4eac46f81113ad34a8b3ce747a4e0637dc693f701aabd4c7189e77659e46a72a45eabe58141b712d6db88fe5f1f49f836301ec4a9ace077fa93b4f8495e13b8b" style="color:#656565;text-decoration:underline;">update your preferences</a> or <a href="https://click.e.tripadeal.com.au/?qs=4eac46f81113ad34de9747578d2e36926cf2afcc85a99ecd67e3e1aa0a468bc65dfcd2d0b8ee4712de1fdce96c8b8d70b16d01ac777fbe8077a348a9f3e6469f" style="color:#656565;text-decoration:underline;">unsubscribe from this list.</a> </span></span> </p></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<!-- == //Footer Section == -->
+<img src="https://click.e.tripadeal.com.au/open.aspx?ffcb10-fec81070766c0778-fe521d76706c047a7d16-fe3011717164047f7d1077-ff5f167970-fe241673756d077a731079-ff2b1d70766c&d=110032&bmt=0" width="1" height="1" alt="">
+</body>
+<!--RegionEnd[socialslot:"allcontent"]--></html>
+
+
+
+</body></html></table>
+<!-- == //Footer Section == -->
+<img src="https://click.e.tripadeal.com.au/open.aspx?ffcb10-fec81070766c0778-fe521d76706c047a7d16-fe3011717164047f7d1077-ff5f167970-fe241673756d077a731079-ff2b1d70766c&d=110032&bmt=0" width="1" height="1" alt="">
+<!--RegionEnd[socialslot:"allcontent"]--><!-- == //AU or NZ Footer == -->
+
+--GBUj2fuh3ESr=_?:--
+

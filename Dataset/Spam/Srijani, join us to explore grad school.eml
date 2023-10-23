@@ -1,0 +1,858 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:839a:b0:4fd:23d3:a27 with SMTP id n26csp647707pxh;
+        Thu, 5 Oct 2023 14:10:35 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFQEIaLwah26JEqPTnmqiSj2Ili1i3WdWMiw2EF/FcyLZihv0eemDjFqupNJ5QUTy5zH75X
+X-Received: by 2002:a5b:110:0:b0:d81:85c9:cea9 with SMTP id 16-20020a5b0110000000b00d8185c9cea9mr5745938ybx.65.1696540235285;
+        Thu, 05 Oct 2023 14:10:35 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1696540235; cv=none;
+        d=google.com; s=arc-20160816;
+        b=w59UrlURUUhQKY6jZkdc6bT08ePyf6ywNrQxR38+bpFfSm5Hf600+TR753wEfO3NrR
+         Cjyru0n7DIwM0VCJloR+1/u6wKdg5VTcIbheVWRYo4MFYALUbvcvQ8IZLRKhcq/rIs8o
+         mVi03wGvi5eEwPsWT6ZR5A6UJOSEIDQiHKNBs1hP1rIaX7AS1ZksyM4/HDYq0poyey2w
+         xwAxicBPuHM72BdsWy4l8cRAfvf9qWU4/8e9A+NKpsKAPsqCru0fTTqUitTgnhTrcVcy
+         iFiisPRHznxzdEkaS4WihaHdHsDi0CsvC2x/odagOGWh5Bsr4ibwZitZuXOkN4o+dcaG
+         zxwA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:importance:list-unsubscribe-post:list-unsubscribe:reply-to
+         :subject:message-id:mime-version:from:date:dkim-signature
+         :dkim-signature;
+        bh=m2D40jivlhXc0v8YnbeOwoJJ6RCMidbHqPd+2R11LUM=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=oWhWrnzKW1YB1YCCmOZU6VavkO5V0lJndzB3m6NnSllqJEL+ZyQ0dbDfF8tO+v41ga
+         PieXgOqCCzVwWpNMoNNzz3zWWfzM/SPHiNouQCVCwMH7Mr+NN6SgyJa5PUeGoisyTYd0
+         PU6L25R+NVwWPe7nbYo2LPmoqF3UlLpnniauBNtvQNTE6S4dThjtr6e16xjKMRkcVI+T
+         UN3EF9g7OF/RChtwv6Jj2ElmXJgb5XCISi24nZNPqFWSU+E7MuPFzxbbGqQFpNz5GKWg
+         5L0UcRxahONlGXgDMlD/13FcUYCyUojQLVEl7ss4Ahe3DeKMP5wAfmDmiX6+Ra8AR+jv
+         QNRQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@ku.edu header.s=slt header.b=O9aI7jD1;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=CPBayywv;
+       spf=pass (google.com: domain of bounces+511372-9b33-srijani515=gmail.com@slate-mx.ku.edu designates 198.37.158.230 as permitted sender) smtp.mailfrom="bounces+511372-9b33-srijani515=gmail.com@slate-mx.ku.edu";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=ku.edu
+Return-Path: <bounces+511372-9b33-srijani515=gmail.com@slate-mx.ku.edu>
+Received: from o4.mx.technolutions.net (o4.mx.technolutions.net. [198.37.158.230])
+        by mx.google.com with ESMTPS id j13-20020a0cf50d000000b0065d009ecc5bsi1462138qvm.241.2023.10.05.14.10.34
+        for <srijani515@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 05 Oct 2023 14:10:35 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+511372-9b33-srijani515=gmail.com@slate-mx.ku.edu designates 198.37.158.230 as permitted sender) client-ip=198.37.158.230;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@ku.edu header.s=slt header.b=O9aI7jD1;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=CPBayywv;
+       spf=pass (google.com: domain of bounces+511372-9b33-srijani515=gmail.com@slate-mx.ku.edu designates 198.37.158.230 as permitted sender) smtp.mailfrom="bounces+511372-9b33-srijani515=gmail.com@slate-mx.ku.edu";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=ku.edu
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ku.edu;
+	h=content-type:from:mime-version:subject:reply-to:list-unsubscribe:
+	x-feedback-id:to:cc:content-type:from:subject:to;
+	s=slt; bh=m2D40jivlhXc0v8YnbeOwoJJ6RCMidbHqPd+2R11LUM=;
+	b=O9aI7jD1P3iypJ13cbOlCFyj+NmbfCmt+ez3e8A43Uln0WPayx3JwY2986LIyAte/fpR
+	E5lvijBlwYuYk8zOHBmkCkrUUktZ4V/fR7NyufTk19RayUrNwXs3AoleoDjxMfL9h5CzoV
+	Gfd0EvMksSSYWi9jfnjteAK1wfpKPknP1Rh8mdPxNix827lVyhc6aipGzmB6JWy4x3MxC4
+	Lxq4ILGqV+NnrLLa18A41fuQq/PnJYZwyvv8kvAQWvkyKEzRMl923tG2ZvPCbpzIIR9SPF
+	inmUx/Ait9B5fh2urNEL4dPt1Oq+Geq8ErsxbML1cwLXl8BX7dhmDjcDtmLnrHRA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:list-unsubscribe:
+	x-feedback-id:to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=m2D40jivlhXc0v8YnbeOwoJJ6RCMidbHqPd+2R11LUM=;
+	b=CPBayywvoUJl5lLn7PneOQ7j0bfNwXkl2I9fM5I1ZzTQ0kT+wiu2HRtmNmfC1ZARkjng
+	puOWbh76S1DwwqNjiTzWRExbyR3DdCsirPP65oYLyVJWVeFGqptu3UiA7xSEj+FGPrAK4h
+	HBbUEn4rAKbHr8TnNNYbhj2lvKPWVpe30=
+Received: by filterdrecv-b5c88f959-nhsk4 with SMTP id filterdrecv-b5c88f959-nhsk4-1-651F264A-2F
+        2023-10-05 21:10:34.590448789 +0000 UTC m=+12778240.587504563
+Received: from NTExMzcy (unknown)
+	by geopod-ismtpd-1 (SG) with HTTP
+	id WvugVKU7QtaRax3Jwc6lRg
+	Thu, 05 Oct 2023 21:10:34.564 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=a58d21230a66ccae491d99f1fcc987cbb8dd493eab29f34c4c0bc358f407
+Date: Thu, 05 Oct 2023 21:10:34 +0000 (UTC)
+From: KU Graduate Admissions <graduateadm@ku.edu>
+Mime-Version: 1.0
+Message-ID: <bf7a6db0-67b0-4944-9115-cb77a941c17d@technolutions.net>
+Subject: Srijani, join us to explore grad school
+Reply-To: KU Graduate Admissions <graduateadm@ku.edu>
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cunsubscribe+kag+bf7a6db0-67b0-4944-9115-cb77a941c17d=40slate-mx?=
+ =?us-ascii?Q?=2Etechnolutions=2Enet=3E=2C?=
+ <https://gograd.ku.edu/go?r=optout&mid=bf7a6db0-67b0-4944-9115-cb77a941c17d>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Importance: Normal
+X-Feedback-ID: 511372:SG
+X-SG-EID: 
+ =?us-ascii?Q?iWcF2xmskib8UMBzL3XLCduqc3VBcLH38WKl+MdazZdomfr0i0s154QxrIEJO1?=
+ =?us-ascii?Q?potjt5LeUan2kgcTpAa09AkL1MUSnUanEW0SzxZ?=
+ =?us-ascii?Q?R+GkdT56GRKcKSxedhsO5jAYvUbg7daabeUNZ6I?=
+ =?us-ascii?Q?XJH0OVxMULtlEL2SVMIAVGWDxpfbin4mhYpuJ4u?=
+ =?us-ascii?Q?Uo2GCR6YoC91QLdzU5DVF61grgCpQk=2FBgYlxCpV?=
+ =?us-ascii?Q?Ues=2FkcWRd5oYz6OK8mj+OusIfZzs9liP+QwmF5?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb4q0eeoxNuArPt8eP9C6Uqv81sb4LC5EL4vXhp=2FdEv?=
+ =?us-ascii?Q?2YwymTYWiAtMndIE81VHt263VTXa+VV+6vULzHd?=
+ =?us-ascii?Q?obPJJS=2FLkWUew2VC8YpOVW+FplKuaZfnr+qNK0r?=
+ =?us-ascii?Q?tkqiVIt9uTxkEFGUE0Thuc9QIw9=2F+f5yzSYMXDO?=
+ =?us-ascii?Q?M4QC9JJSf=2Fh0OkdHd+rdHTUeKxP0TmH4hkt5aIk?=
+ =?us-ascii?Q?e4Rz0jdKqzwu1xplEIfh4WJIcGBBxCgtJQ7Z3C?=
+To: srijani515@gmail.com
+X-Entity-ID: geQ9Q4xFsXTQDPt3MRicTQ==
+
+--a58d21230a66ccae491d99f1fcc987cbb8dd493eab29f34c4c0bc358f407
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+Joing us virtually Oct. 30 - Nov. 3
+
+
+Srijani,
+
+We invite you to join us for Explore Graduate School Week <https://gograd.k=
+u.edu/portal/gradschoolweek-Nov2023?utm_campaign=3DNov2023gradweekinvite1&u=
+tm_source=3Dslate&utm_medium=3Demail>. From Oct. 30 - Nov. 3, Graduate Admi=
+ssions and individual graduate programs will host virtual information sessi=
+ons <https://gograd.ku.edu/portal/gradschoolweek-Nov2023?utm_source=3Dslate=
+&utm_medium=3Demail&utm_campaign=3DNov2023gradweekinvite1> about graduate s=
+tudy opportunities at KU.
+
+Register <https://gograd.ku.edu/portal/gradschoolweek-Nov2023?utm_source=3D=
+slate&utm_medium=3Demail&utm_campaign=3DNov2023gradweekinvite1>
+
+The week is a blend of general and specific sessions. General sessions will=
+ provide an overview of graduate education, the overall application and adm=
+ission process and the application and admission process specifically for i=
+nternational applicants. Throughout the week, you'll have your choice of di=
+scipline- or program-specific sessions, depending on your interests or goal=
+s.
+
+You can register for the entire week's worth of sessions or sign up on a se=
+ssion-by-session basis.
+
+No matter where you are in your decision to pursue a graduate degree, Explo=
+re Graduate School Week will offer the answers you need =E2=80=94 and a clo=
+ser look at what sets KU apart. We hope to see you there.
+
+
+=20
+
+
+
+
+Graduate Admissions
+1502 Iowa St.
+Lawrence, KS 66045
+
+        =20
+
+
+
+graduateadm@ku.edu
+
+785-864-3140
+
+
+KU is an EO/AA institution.
+
+
+This email was sent to srijani515@gmail.com by KU Graduate Admissions.
+Unsubscribe from University of Kansas Graduate Programs. <https://gograd.ku=
+.edu/go?r=3Doptout&mid=3Dbf7a6db0-67b0-4944-9115-cb77a941c17d&utm_source=3D=
+slate&utm_medium=3Demail&utm_campaign=3DNov2023gradweekinvite1>
+--a58d21230a66ccae491d99f1fcc987cbb8dd493eab29f34c4c0bc358f407
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta content=3D"text/html; charset=3Dutf-8" http-equiv=3D"content-type" />
+<base target=3D"_blank" />
+<style>a, a:link, a:visited { color: blue; } a:active, a:hover { color: red=
+; } pre { white-space: pre-wrap; }</style><style type=3D"text/css">@import =
+url("https://use.typekit.net/ngo8hwq.css");</style><meta http-equiv=3D"Cont=
+ent-Type" content=3D"text/html; charset=3Dus-ascii" /><meta name=3D"format-=
+detection" content=3D"telephone=3Dno" /><meta name=3D"viewport" content=3D"=
+width=3Ddevice-width; initial-scale=3D1.0; maximum-scale=3D1.0; user-scalab=
+le=3Dno;" /><meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3D9; IE=3D8;=
+ IE=3D7; IE=3DEDGE" /><style type=3D"text/css">/* @import url('https://font=
+s.googleapis.com/css?family=3DRaleway:400,700'); /*Calling our web font*//*=
+ /\/\/\/\/\/\/\/\/ CLIENT-SPECIFIC STYLES /\/\/\/\/\/\/\/\/ */
+                        #outlook a{padding:0;} /* Force Outlook to provide =
+a "view in browser" message */
+                        .ReadMsgBody{width:100%;} .ExternalClass{width:100%=
+;} /* Force Hotmail to display emails at full width */
+                        .ExternalClass, .ExternalClass p, .ExternalClass sp=
+an, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height=
+: 100%;} /* Force Hotmail to display normal line spacing */
+                        body, table, td, p, a, li, blockquote{-webkit-text-=
+size-adjust:100%; -ms-text-size-adjust:100%;} /* Prevent WebKit and Windows=
+ mobile changing default text sizes */
+                        table, td{border-collapse: collapse; mso-table-lspa=
+ce:0pt; mso-table-rspace:0pt;} /* Remove spacing between tables in Outlook =
+2007 and up */
+                        img{-ms-interpolation-mode:bicubic;} /* Allow smoot=
+her rendering of resized image in Internet Explorer */
+       =20
+/* =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D Mini map  (line # for module groups)
+     =20
+     Headline A: 490
+     Headline B: 525
+     Header Image: 531
+     Body: 548
+     CTA: 560
+     Covid module: 579
+     Footer: 600
+     =20
+      =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D */=20
+
+      /* /\/\/\/\/\/\/\/\/ RESET STYLES /\/\/\/\/\/\/\/\/ */
+                        body{margin:0; padding:0;}
+                        img{border:0; height:auto; line-height:100%; outlin=
+e:none; text-decoration:none;}
+                        table{border-collapse:collapse !important;}
+                        body, #bodyTable, #bodyCell{height:100% !important;=
+ margin:0; padding:0; width:100% !important;}
+
+
+
+/* /\/\/\/\/\/\/\/\/ TEMPLATE STYLES /\/\/\/\/\/\/\/\/ */
+                        #bodyCell{padding:20px;}
+                        .templateContainer{width:600px;}
+
+        /* =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D Page Styles =3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D */
+
+ =20
+                        body, #bodyTable{
+                                background-color:#FFFFFF;
+                        }
+
+                        #bodyCell{
+                                border-top:0px solid #ffffff;
+                        }
+
+                        .templateContainer{
+                                border:0px solid #FFFFFF;
+                        }
+
+                            h1{
+                                color:#333333 !important;
+                                display:block;
+                                font-family: halyard-display, Arial, Helvet=
+ica, Verdana, sans-serif;
+                                font-size:28px;
+                                font-style:normal;
+                                font-weight:500;
+                                line-height:36px;
+                                padding: 0px;
+                                letter-spacing:normal;
+                                text-align:left;
+                        }
+
+                        h2{
+                                color:#0051ba !important;
+                                display:block;
+                                font-family:halyard-text, Arial, Helvetica,=
+ Verdana,sans-serif;
+                                font-size:12px;
+                                font-style:normal;
+                                font-weight:200;
+                                line-height:26px;
+                                padding: 0px;
+                                letter-spacing:normal;
+                                text-align:left;
+                        }
+
+                        h3{
+                                color:#fff !important;
+                                display:block;
+                                font-family: halyard-display, Arial, Helvet=
+ica, Verdana, sans-serif;
+                                font-size:28px;
+                                font-style:normal;
+                                font-weight:500;
+                                line-height:36px;
+                                padding: 0px;
+                                letter-spacing:normal;
+                                text-align:left;
+                        }=20
+
+                        h4 {
+                          color: #ffffff;
+                        }
+
+                       p {
+                                color:#3f3f3f;
+                                font-family:halyard-text, Arial, Helvetica,=
+ Verdana, sans-serif;
+                                font-size:16px;
+                                line-height:28px;
+                                text-align:left;
+      font-weight:300;}
+     =20
+
+
+                      img {max-width: 100%; width: 100%; height: auto;}=20
+           .button {width: 40%;}
+
+=20
+     =20
+        /* =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D Header Styles =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D */
+        /** @tip Set the background color and bottom border for your email'=
+s preheader area.*/
+
+                        #templatePreheader{
+                              display:none !important;
+                               visibility:hidden;
+                               mso-hide:all;
+                               font-size:1px;
+                               color:#ffffff;
+                               line-height:1px;
+                               max-height:0px;
+                               max-width:0px;
+                               opacity:0;
+                               overflow:hidden;
+                                  background-color:#f6f8fa;
+                                  border-bottom:1px solid #CCCCCC;
+                        }
+
+                        .preheaderContent{
+                                  color:#ffffff;
+                                  font-family:Helvetica;
+                                  font-size:1px;
+                                  line-height:125%;
+                                  text-align:left;
+                        }
+
+                        .preheaderContent a:link, .preheaderContent a:visit=
+ed, /* Yahoo! Mail Override */ .preheaderContent a .yshortcuts /* Yahoo! Ma=
+il Override */{
+                                  color:#000000;
+                                  font-weight:normal;
+                                  text-decoration:underline;
+                        }
+                        #templateHeader{
+
+                                background-color:#f6f8fa;
+                                border-top:0px solid #FFFFFF;
+                                border-bottom:0px solid #CCCCCC;
+                        }
+
+                        .headerContent{
+                                          color:#505050;
+                                          font-family:Helvetica;
+                                          font-size:20px;
+                                          font-weight:bold;
+                                          line-height:100%;
+                                          padding:0;
+                                          text-align:left;
+                                          vertical-align:middle;
+                        }
+        .headerContent2{
+                                          color:#505050;
+                                          font-family:Helvetica;
+                                          font-size:20px;
+                                          font-weight:bold;
+                                          line-height:100%;
+                                          padding-bottom:24px;
+                                          text-align:left;
+                                          vertical-align:middle;
+                        }
+
+                        .headerContent a:link, .headerContent a:visited, /*=
+ Yahoo! Mail Override */ .headerContent a .yshortcuts /* Yahoo! Mail Overri=
+de */{
+                                color:#0051ba;
+                                font-weight:normal;
+                                text-decoration:underline;
+                        }
+                        #headerImage{
+                                height:auto;
+                                max-width:600px;
+                                padding-bottom: 0px;
+                        }
+        /* =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D Body Styles =3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D */
+                        #templateBody{
+                                background-color:#ffffff;
+                                  border-top:0px solid #FFFFFF;
+                                  border-bottom:0px solid #CCCCCC;
+                        }
+
+                 .bodyContent{
+                                padding: 40px 60px 0px 60px;
+                        }
+      .bodyContent2{
+                                padding: 0px 0px 40px 0px;
+                        }
+     =20
+        .bodyContent3{
+                                padding: 40px 60px 10px 60px;
+                        }
+       .bodyContent4{
+                                padding:  0px 60px 20px 60px;
+                        }
+                        .bodyContent a:link, .bodyContent a:visited, /* Yah=
+oo! Mail Override */ .bodyContent a .yshortcuts /* Yahoo! Mail Override */{
+                                  color:#0051ba;
+                                  font-weight:normal;
+                                  text-decoration:underline;
+                        }
+                        .bodyContent img{
+                                display:inline;
+                                height:auto;
+                                max-width:600px;
+                        }
+
+
+        /* =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D Footer Styles =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D */
+                        #templateFooter{
+                                background-color:#F4F4F4;
+                                border-top:0px solid #FFFFFF;
+                        }
+
+                        .footerContent{
+                                color:#808080;
+                                font-family:Helvetica;
+                                font-size:14px;
+                                line-height:32px;
+                                padding:20px 10px;
+                                text-align:center;
+                        }
+    =20
+
+                        .footerContent h4{
+                              margin: 0px;
+                        }
+
+                        .footerContent p, .footerContent h2{
+                              color: #ffffff!important;
+                              line-height: 24px;
+                        }
+
+                        .footerContent a:link, .footerContent a:visited, /*=
+ Yahoo! Mail Override */ .footerContent a .yshortcuts, .footerContent a spa=
+n /* Yahoo! Mail Override */{
+                                color:#fff;
+                               =20
+                                text-decoration:none;
+                        }
+     =20
+.center {
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
+  width: ;
+}
+/* /\/\/\/\/\/\/\/\/ MOBILE STYLES /\/\/\/\/\/\/\/\/ */
+              @media only screen and (max-width: 600px){
+
+/* /\/\/\/\/\/\/ CLIENT-SPECIFIC MOBILE STYLES /\/\/\/\/\/\/ */
+              body, table, td, p, a, li, blockquote{-webkit-text-size-adjus=
+t:none !important;}
+              /* Prevent Webkit platforms from changing default text sizes =
+*/
+                body{width:100% !important; min-width:100% !important;}
+              /* Prevent iOS Mail from adding padding to the body */
+
+/* /\/\/\/\/\/\/ MOBILE RESET STYLES /\/\/\/\/\/\/ */
+              #bodyCell{padding:10px !important;}
+
+
+/* /\/\/\/\/\/\/ MOBILE TEMPLATE STYLES /\/\/\/\/\/\/ */
+
+        /* =3D=3D=3D=3D=3D=3D=3D=3D Mobile columns that stack =3D=3D=3D=3D=
+=3D=3D=3D=3D */
+
+        #templateColumns{
+            width:100% !important;
+        }
+
+        .templateColumnContainer{
+            display:block !important;
+            width:100% !important;
+            }
+
+        .columnImage{
+            height:auto !important;
+            max-width:600px !important;
+            width:100% !important;
+            }
+
+            .columnInnerImage{
+                height:auto !important;
+                max-width:560px !important;
+                width:100% !important;
+                }
+
+        .leftColumnContent{
+            font-size:16px !important;
+            line-height:125% !important;
+           padding:10px 0px 0px 0px !important;
+ =20
+            }
+
+        .rightColumnContent{
+            font-size:16px !important;
+            line-height:125% !important;
+
+            }
+
+       /* =3D=3D=3D=3D=3D=3D=3D=3D Extra stuff =3D=3D=3D=3D=3D=3D=3D=3D */
+               =20
+        /*Hide stuff */
+        .hide {
+            display:none !important;
+          margin: 0px
+            }
+
+        .no_pad {padding: 0px;}
+               =20
+        .button {width: 66% !important;}
+
+=20
+
+        /* =3D=3D=3D=3D=3D=3D=3D=3D Page Styles =3D=3D=3D=3D=3D=3D=3D=3D */
+
+                                .templateContainer{
+                                        max-width:600px !important;
+                                        width:100% !important;
+                                }
+
+                                h1{
+                                        font-size:32px !important;
+                                        line-height:130% !important;
+                                }
+
+                                h2{
+                                        font-size:12px !important;
+                                        line-height:150% !important;
+                                        margin-bottom: 10px !important;
+                                }
+
+                                h3{
+                                        font-size:18px !important;
+                                        line-height:100% !important;
+                                }
+
+                                h4{
+                                        font-size:18px !important;
+                                        line-height:100% !important;
+                                }
+               =20
+                                p {
+=20
+                                font-size:16px;
+                                line-height:26px;
+                                }
+
+
+        /* =3D=3D=3D=3D=3D=3D=3D=3D Header Styles =3D=3D=3D=3D=3D=3D=3D=3D =
+*/
+                                #templatePreheader{display:none !important;=
+} /* Hide the template preheader to save space */
+
+                                #headerImage{
+                                        height:auto !important;
+                                        max-width:600px !important;
+                                        width:100% !important;
+                                }
+
+                                .headerContent{
+                                        font-size:20px !important;
+                                        line-height:125% !important;
+                                        padding: 15px 10px 15px 0px;
+                                }
+               =20
+                     .headerContent2{
+                                        font-size:20px !important;
+                                        line-height:125% !important;
+                                        padding: 15px 0px 20px 0px;
+                                }
+               =20
+                                         .jayhawk_logo {
+                                         width: 50px !important;
+                                         margin: 0px !important;
+                                            padding: 0px 0px 0px 10px;
+                                }
+                                =20
+               =20
+               =20
+                                  .confetti {
+                                               width: 240px !important;
+                                    padding: 0px 10px 0px 0px;
+                                  }
+
+
+        /* =3D=3D=3D=3D=3D=3D=3D=3D Body Styles =3D=3D=3D=3D=3D=3D=3D=3D */
+
+                                #bodyImage{
+                                        height:auto !important;
+                                        max-width:560px !important;
+                                        width:100% !important;
+                                }
+
+                                .bodyContent{
+                                        font-size:18px !important;
+                                        line-height:145% !important;
+                                   padding: 10px 30px 10px 30px !important;
+                                }
+ .bodyContent2{
+                                padding: 10px 30px 30px 30px;
+                        }
+.bodyContent4{
+                                padding: 10px 30px 30px 30px;
+                        }
+
+        /* =3D=3D=3D=3D=3D=3D=3D=3D Footer Styles =3D=3D=3D=3D=3D=3D=3D=3D =
+*/
+
+                                .footerContent{
+                                        font-size:14px !important;
+                                  =20
+                                }
+
+                                .footerContent p, .footerContent h2, .foote=
+rContent table{
+                                      text-align: center!important;
+                                }
+
+                                .redRule {
+                                  text-align: center;
+                                }
+
+                                .footerContent a{display:inline-block !impo=
+rtant;}
+                                .divider {visibility: hidden;}
+                .ku_logo {
+               width: 40%;=20
+                }
+               =20
+          =20
+                .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+               =20
+                        }</style><!-- [if (gte mso 9)|(IE)]>
+                <style type=3D"text/css">
+                table {
+                               border:  5px;
+                               border-color: red;
+                               border-collapse: collapse;
+                               border-spacing: 0; }
+                </style>
+<![endif] -->
+</head>
+<body leftmargin=3D"0" marginheight=3D"0" marginwidth=3D"0" offset=3D"0" to=
+pmargin=3D"0">
+<div style=3D"display:none;font-size:1px;color:#333333;line-height:1px;max-=
+height:0px;max-width:0px;opacity:0;overflow:hidden;">Joing us virtually Oct=
+. 30 - Nov. 3 </div><font face=3D"Times New Roman, Times, serif" size=3D"3"=
+><div style=3D"font-family: Times New Roman, Times, serif; font-size: 12pt;=
+"><center><table align=3D"center" bgcolor=3D"#F6F8FA" style=3D"background-c=
+olor: #f6f8fa; border-top: 10px solid; border-color: #e3000d;" width=3D"100=
+%"><tbody><tr><td align=3D"center" bgcolor=3D"#F6F8FA" height=3D"120%" widt=
+h=3D"100%"><table align=3D"center" bgcolor=3D"#F6F8FA" border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" class=3D"hide" height=3D"" width=3D"100%"><tbo=
+dy><tr><td align=3D"center" valign=3D"top"><table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" id=3D"templatePreheader" width=3D"100%"><tbody><tr=
+><td class=3D"preheaderContent" style=3D"padding: 0px;" valign=3D"top"></td=
+></tr></tbody></table></td></tr><tr><td></td></tr></tbody></table><!-- BEGI=
+N EYEBROW - DO NOT EDIT// --><table bgcolor=3D"#F6F8FA" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" max-width=3D"600px" style=3D"border: 0px; mar=
+gin-top: 10px;" width=3D"100%"><tbody><tr><td align=3D"center" max-width=3D=
+"600px" width=3D"600"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" class=3D"templateContainer" id=3D"templateColumns" style=3D"border: 0px;=
+ border-collapse: collapse!important;" width=3D"600"><tbody><tr><td class=
+=3D"headerContent" valign=3D"top"><img alt=3D"The University of Kansas" cla=
+ss=3D"jayhawk_logo" id=3D"" style=3D"width: 90%; margin-bottom: 20px; margi=
+n-left: 0px;" width=3D"90%" src=3D"https://mx.technolutions.net/proxy/yzsAp=
+yDEO6gHOmxP2-kMJZToB4-9Z1uQ3s6Toy5E6e74TVT0uPn2xg6O1aGWh8T3LePIaGP43KlE8hkb=
+0bA7qg" /></td><td class=3D"headerContent2" style=3D"text-align:right;" val=
+ign=3D"top"><img alt=3D"The University of Kansas" class=3D"confetti" id=3D"=
+" style=3D"width: 60%; margin-bottom: 0px;" width=3D"60%" src=3D"https://mx=
+.technolutions.net/proxy/yzsApyDEO6gHOmxP2-kMJZToB4-9Z1uQ3s6Toy5E6e5Yao_R0v=
+dGqPMAWEjisD6z0B8laHUDnpbHcO6B1gw56cTZEU6fe8xWsQikAB2G74k" /></td></tr></tb=
+ody></table></td></tr></tbody></table><!-- END EYEBROW // --><!-- BEGIN TEM=
+PLATE // --><table bgcolor=3D"#FFFFFF" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" class=3D"templateContainer" id=3D"templateColumns" style=3D"bo=
+rder: 0px; border-collapse: collapse!important;" width=3D"600"><tbody><tr><=
+td align=3D"center" bgcolor=3D"#FFFFFF" valign=3D"top"><!-- BEGIN HEADLINE =
+A// --><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"tem=
+plateContainer" id=3D"templateBody" style=3D"max-width:600px !important; wi=
+dth:100% !important;"><tbody><tr><td style=3D"padding: 40px 60px 0px 60px;b=
+order: 0px; border-collapse: collapse!important;" valign=3D"top"><table ali=
+gn=3D"center" bgcolor=3D"" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ id=3D"" style=3D"max-width: 600px; padding: 0px;" width=3D"100%"><tbody><t=
+r><td align=3D"center" class=3D"headerImage" style=3D"text-align:left;"><di=
+v><img alt=3D"University of Kansas" style=3D"width: 100%;" width=3D"100%" s=
+rc=3D"https://mx.technolutions.net/proxy/yzsApyDEO6gHOmxP2-kMJYlRcEJx2ksUQZ=
+qw2fdf9zOV9zsyrOLBj6frvxrxoBDeCRnShCzPPWGZAms6FOtsRCo7PzY0n3aTg_bMVQOigPY" =
+/></div></td></tr></tbody></table><!-- END Image // --></td></tr></tbody></=
+table><!-- BEGIN Body // --><table border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" class=3D"templateContainer" id=3D"templateBody" style=3D"max-width=
+:600px !important; width:100% !important;"><tbody><tr><td style=3D"padding:=
+ 0px 60px 20px 60px;" valign=3D"top"><p style=3D"font-family:Halyard-text,A=
+rial,sans-serif; font-size:16px; line-height:26px; font-weight: 500; color:=
+#3f3f3f;"><strong></strong></p><p><span style=3D"padding-top: 0px; font-fam=
+ily:Halyard-text,Arial,sans-serif;"><br />
+Srijani,<br /><br />
+We invite you to join us for <a href=3D"https://mx.technolutions.net/ss/c/3=
+umeT0p8JC2YP-dw0QylhGXLTIAZ8KP2o1bI6vxBW8SHVEkEz2olk_9LlnOY7uWSF0slouLGWCDC=
+pxUChDyPtxX5w_Bw2EqvuITwSn7Y-jTsKBsN5XHm6Ugra0nGYMHomykEDMOCLxeU8l_eVh9SqcH=
+RiqqZvYxeWMhllFe-YknUjVCWmKdTvNDahkZ1Dh__/406/KmB0SwGMQtWQqpsb-48EFA/h0/BGK=
+4y2Ow2wpwXE-Qliz_uf1vKPn3Yce7-IiGlzWc-1A" title=3D"https://gograd.ku.edu/po=
+rtal/gradschoolweek-Nov2023">Explore Graduate School Week</a>. From Oct. 30=
+ - Nov. 3, Graduate Admissions and individual graduate programs will host v=
+irtual <a href=3D"https://mx.technolutions.net/ss/c/3umeT0p8JC2YP-dw0QylhGX=
+LTIAZ8KP2o1bI6vxBW8SHVEkEz2olk_9LlnOY7uWSAh-YK9q06-cuXPNGZvxBrOpzlv7fZs3HXZ=
+hdtgi39XNbIS9ltZnL7dmtWVY6Nr8I33lvxscufntjoxYSz1gCMp9ex0-ldIzWj2mLAwkGrt8A1=
+KmRRJ_qmBEinFWAnOkT/406/KmB0SwGMQtWQqpsb-48EFA/h1/UIeEc6TPqU9fYThjwB3B08vC4=
+u9g1na7uPuJJaTfyOI" title=3D"https://gograd.ku.edu/portal/gradschoolweek-No=
+v2023">information sessions</a> about graduate study opportunities at KU.</=
+span></p><p style=3D"text-align: center;"><a href=3D"https://mx.technolutio=
+ns.net/ss/c/3umeT0p8JC2YP-dw0QylhGXLTIAZ8KP2o1bI6vxBW8SHVEkEz2olk_9LlnOY7uW=
+SAh-YK9q06-cuXPNGZvxBrOpzlv7fZs3HXZhdtgi39XNbIS9ltZnL7dmtWVY6Nr8I33lvxscufn=
+tjoxYSz1gCMp9ex0-ldIzWj2mLAwkGrt8A1KmRRJ_qmBEinFWAnOkT/406/KmB0SwGMQtWQqpsb=
+-48EFA/h2/366H5zz0YVhfkQJOsb2V5r5W-anoCHAGtgG8dXefiEo" title=3D"https://gog=
+rad.ku.edu/portal/gradschoolweek-Nov2023" class=3D"button" style=3D"text-tr=
+ansform: uppercase; text-align: center; padding: 12px 30px; min-width:50%; =
+width: 50%; height:40%;font-size:16px; font-family:Halyard-text,Arial,sans-=
+serif; margin: 0px auto;font-weight:500; color:#ffffff; text-decoration:non=
+e; border-width:3px 3px; border-style:solid; border-color:#0051ba; display:=
+block; background-color:#0051ba; display: inline-block;">Register</a></p><p=
+><span style=3D"padding-top: 0px; font-family:Halyard-text,Arial,sans-serif=
+;">The week is a blend of general and specific sessions. General sessions w=
+ill provide an overview of graduate education, the overall application and =
+admission process and the application and admission process specifically fo=
+r international applicants. Throughout the week, you&#8217;ll have your cho=
+ice of discipline- or program-specific sessions, depending on your interest=
+s or goals.<br /><br />
+You can register for the entire week&#8217;s worth of sessions or sign up o=
+n a session-by-session basis.<br /><br />
+No matter where you are in your decision to pursue a graduate degree, Explo=
+re Graduate School Week will offer the answers you need &#8212; and a close=
+r look at what sets KU apart. We hope to see you there.</span></p><p style=
+=3D"font-family:Halyard-text,Arial,sans-serif; font-size:16px; line-height:=
+26px; font-weight: 300; color:#3f3f3f;"><br />
+&nbsp;</p></td></tr></tbody></table></td></tr></tbody></table></td></tr></t=
+body></table><table bgcolor=3D"#F6F8FA" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" style=3D"border: 0px; margin-top: 0px;" width=3D"100%"><tbody=
+><tr><td align=3D"center" width=3D"600"><!-- END COVID MOD  // --><!-- BEGI=
+N FOOTER (SIGNATURE BLOCK) // --><table bgcolor=3D"#003459" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" style=3D"border: 0px; border-collapse: co=
+llapse!important;" width=3D"100%"><tbody><tr><td align=3D"center"><table bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"templateContainer" =
+style=3D"border: 0px; border-collapse: collapse!important;"><tbody><tr><td =
+align=3D"left" class=3D"footerContent2" style=3D"padding: 30px 0px 0px 0px;=
+" valign=3D"top"><a href=3D"https://mx.technolutions.net/ss/c/3umeT0p8JC2YP=
+-dw0QylhBgkCUnwqiGfyJYzZ-3iyFEPGQEBGyxqTauNvSohvH2_mlSJOAgBwY6rQY3gGVkUM6-8=
+TeCez1BtNRUqGUw93hkwxhlxAJ4fW6Rc-Q0m3HQYLlWxyK-PMc3NGqAM93kC6Q/406/KmB0SwGM=
+QtWQqpsb-48EFA/h3/sJXlrAlt6o6RydF2-xSxeeNc0jyaexR2Z_GglmAGXnA" title=3D"htt=
+ps://gradapply.ku.edu/"><img alt=3D"The University of Kansas" class=3D"cent=
+er" id=3D"" style=3D"max-width: 200px; margin-top: 20px; width: 200px; floa=
+t: left;" align=3D"left" width=3D"200" src=3D"https://mx.technolutions.net/=
+proxy/yzsApyDEO6gHOmxP2-kMJZToB4-9Z1uQ3s6Toy5E6e5ouGBii_IJEy2EiN19eDkGS2-M5=
+4g11x3-TdEHQd4_Y5ga4z5edmItTZoUAUFnHE0" /></a></td></tr></tbody></table></t=
+d></tr></tbody></table><!-- BEGIN FOOTER (CONTACT BLOCK) // --><table bgcol=
+or=3D"#003459" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"10=
+0%"><tbody><tr><td align=3D"center" width=3D"600"><table border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" id=3D"templateColumns" width=3D"600"><tbody>=
+<tr><td align=3D"center" class=3D"templateColumnContainer" valign=3D"top" w=
+idth=3D"50%"><table border=3D"0" cellpadding=3D"30" cellspacing=3D"0" width=
+=3D"100%"><tbody><tr><td class=3D"leftColumnContent no_pad footerContent"><=
+p style=3D"color: #ffffff; font-family:Halyard-text,Arial,sans-serif;text-d=
+ecoration: none; text-align: left; font-size:16px"><span style=3D"color: #f=
+fffff; font-family:Halyard-text,Arial,sans-serif;text-decoration: none; tex=
+t-align: left; font-size:16px"><strong>Graduate Admissions</strong></span><=
+span style=3D"color: #ffffff; font-family:Halyard-text,Arial,sans-serif;tex=
+t-decoration: none; text-align: left; font-size:16px"><br />
+1502 Iowa St.</span><br /><span href=3D"" style=3D"color: #ffffff; font-fam=
+ily:Halyard-text,Arial,sans-serif;text-decoration: none; text-align: left; =
+font-size:16px">Lawrence, KS 66045</span><br /><br />
+&nbsp;<a href=3D"https://mx.technolutions.net/ss/c/gsby7xed_Q9kJKoUKuDGdFxs=
+_uJnMAO00wmBU85r1qZD6x3CtX9DOlRHkR2AH5Dl_uX5W2b27qONpmiUwMuFQfq16dOCbFW7rWJ=
+fQKhlR5as84v67nTyy0dzjZ3SfM65f7UFh59zy2jaZWxXLGltSYgeXu1CAwGzy8m1xVWyvxz8P6=
+z-WFU6bMTliYWY0GXV/406/KmB0SwGMQtWQqpsb-48EFA/h4/VgA9dZtoZ92988z9VG59g5-Mao=
+9K9DEhjl-tBA2g0ag" title=3D"https://www.instagram.com/universityofkansas/?h=
+l=3Den"><img alt=3D"The University of Kansas" id=3D"" style=3D"width: 20px;=
+" width=3D"20" src=3D"https://mx.technolutions.net/proxy/yzsApyDEO6gHOmxP2-=
+kMJZToB4-9Z1uQ3s6Toy5E6e4N0IC7YMOr55pjVx3vVXoG2mMXuf4ej3rDBi7Sg3jMHQ" /></a=
+>&nbsp;&nbsp;&nbsp;&nbsp;<a href=3D"https://mx.technolutions.net/ss/c/gsby7=
+xed_Q9kJKoUKuDGdIIaz-Ge-UZOM0Rsh3Nqw9-r_7gPGgx45j67RoPMVVkybtAS054_pGbLMLWx=
+XVTibWIoInbCmUHgmz0xXOF-poQ42Iz9NnF9cWocPzuXzdE8LQn67YWspVUP_tBymNE-tw/406/=
+KmB0SwGMQtWQqpsb-48EFA/h5/gXghv1NarNGxRivAY6Yp36-yeQy6-rvg_cujhsbiRMM" titl=
+e=3D"https://www.facebook.com/KU/"><img alt=3D"The University of Kansas" id=
+=3D"" style=3D"width: 20px;" width=3D"20" src=3D"https://mx.technolutions.n=
+et/proxy/yzsApyDEO6gHOmxP2-kMJZToB4-9Z1uQ3s6Toy5E6e6qAg2SQKTpAh1VOqiSy2u2C_=
+pga2vfpmyYzE3Y5Q4Efg" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=3D"https://mx.t=
+echnolutions.net/ss/c/-2pdxw-pEj7Pt2nWJCOXrqQrvL6HkFERWuYIb-CxfYFKGZZ1CxZe3=
+YWw1Q3cznJdHIWpOqoeXbwkq66HmdV8crZqHIQ_nTEYzJlSx1s0PjjCs2D5zfWfpiJIZyBFUZpr=
+9IJl9Jn02yqWIZCA81NoYQ/406/KmB0SwGMQtWQqpsb-48EFA/h6/Zbsb-V_BK7F91MmdvKY_QD=
+2Z3A4V7l2T-k2H8JFoiFA" title=3D"https://twitter.com/univofkansas"><img alt=
+=3D"The University of Kansas" id=3D"" style=3D"width: 20px;" width=3D"20" s=
+rc=3D"https://mx.technolutions.net/proxy/yzsApyDEO6gHOmxP2-kMJZToB4-9Z1uQ3s=
+6Toy5E6e77A7M6P1qC19j58ES-Pf8k2dip14CKjwlAoqLs3S2jcQ" /></a><a href=3D"http=
+s://mx.technolutions.net/ss/c/gsby7xed_Q9kJKoUKuDGdAEoNvTCvmcRJkh8ZzffwzIl1=
+NcHiwkZaWvTXpq2jYZxB3BfjHP_v9LVzrFVcY98NnWvYiBfBlMJU_xhYxP43xwxj0qQ_6tE_0n7=
+aHNwPRN-GopCXeKzqGM9DLMUHGssIQ/406/KmB0SwGMQtWQqpsb-48EFA/h7/rShXUSBDs1jpSU=
+fbnC0vbHOB2WP-MIsZWHaIp5oaL2w" title=3D"https://www.youtube.com/user/KU"><i=
+mg alt=3D"" style=3D"width: 24px; margin-left: 8px;" width=3D"24" src=3D"ht=
+tps://mx.technolutions.net/proxy/yzsApyDEO6gHOmxP2-kMJZToB4-9Z1uQ3s6Toy5E6e=
+4ikj0NCV9I8RT4PxcP05yHMd4UmS0pq2wRLqb-zmoCgg" /></a></p></td></tr></tbody><=
+/table></td><td align=3D"center" class=3D"templateColumnContainer" valign=
+=3D"top" width=3D"50%"><table border=3D"0" cellpadding=3D"10" cellspacing=
+=3D"0" width=3D"100%"><tbody><tr><td class=3D"leftColumnContent no_pad foot=
+erContent"><!-- SKY BLUE HORIZONTAL RULE // --><table class=3D"hide" height=
+=3D"0" width=3D"240px"><tbody><tr><td bgcolor=3D"#003459" height=3D"" style=
+=3D"margin: 6px; font-size: 1px; line-height: 1.5px" width=3D"100%"><img al=
+t=3D"The University of Kansas" id=3D"" style=3D"width: 245px; height: 1px;"=
+ height=3D"1" width=3D"245" src=3D"https://mx.technolutions.net/proxy/yzsAp=
+yDEO6gHOmxP2-kMJfBctfVuEvl9qWjsWdk3eWpmKUZ-zw8YAUwTO7MXhq7T_sXx4dX589gKkRO7=
+7cVXDg" /></td></tr></tbody></table><!-- END: SKY BLUE HORIZONTAL RULE // -=
+-><p><a href=3D"mailto:graduateadm@ku.edu" title=3D"mailto:graduateadm@ku.e=
+du" style=3D"color: #ffffff; font-family:Halyard-text,Arial,sans-serif;text=
+-decoration: none; text-align: left; font-size:16px">graduateadm@ku.edu</a>=
+</p><!-- SKY BLUE HORIZONTAL RULE // --><table class=3D"hide" height=3D"0" =
+width=3D"240px"><tbody><tr><td bgcolor=3D"#003459" height=3D"" style=3D"mar=
+gin: 6px; font-size: 1px; line-height: .25px" width=3D"100%"><img alt=3D"Th=
+e University of Kansas" id=3D"" style=3D"width: 245px; height: 1px;" height=
+=3D"1" width=3D"245" src=3D"https://mx.technolutions.net/proxy/yzsApyDEO6gH=
+OmxP2-kMJfBctfVuEvl9qWjsWdk3eWpmKUZ-zw8YAUwTO7MXhq7T_sXx4dX589gKkRO77cVXDg"=
+ /></td></tr></tbody></table><!-- END: SKY BLUE HORIZONTAL RULE // --><p><a=
+ href=3D"tel:785-864-3140" title=3D"tel:785-864-3140" style=3D"color: #ffff=
+ff; font-family:Halyard-text,Arial,sans-serif;text-decoration: none; text-a=
+lign: left; font-size:16px">785-864-3140</a></p><!-- SKY BLUE HORIZONTAL RU=
+LE // --><table class=3D"hide" height=3D"0" width=3D"240px"><tbody><tr><td =
+bgcolor=3D"#003459" height=3D"" style=3D"margin: 6px; font-size: 1px; line-=
+height: .25px" width=3D"100%"><img alt=3D"The University of Kansas" id=3D""=
+ style=3D"width: 245px; height: 1px;" height=3D"1" width=3D"245" src=3D"htt=
+ps://mx.technolutions.net/proxy/yzsApyDEO6gHOmxP2-kMJfBctfVuEvl9qWjsWdk3eWp=
+mKUZ-zw8YAUwTO7MXhq7T_sXx4dX589gKkRO77cVXDg" /></td></tr></tbody></table><!=
+-- END: SKY BLUE HORIZONTAL RULE // --><h2 style=3D"color:#ffffff!important=
+; text-align: left; font-size:16px;font-family:Halyard-text,Arial,sans-seri=
+f;"><br /><span style=3D"font-size: 10px;font-family:Halyard-text,Arial,san=
+s-serif;color:#ffffff;">KU is an EO/AA institution.</span></h2></td></tr></=
+tbody></table></td></tr></tbody></table></td></tr></tbody></table><!-- // E=
+ND TEMPLATE --></td></tr></tbody></table></center></div></font><div class=
+=3D"deliver_unsubscribe" style=3D"opacity: 0.75; clear: both; color: #33333=
+3; font-family: Arial, Helvetica, sans-serif; font-size: 11px; margin: 25px=
+ auto; width: auto; max-width: 600px; background-color: #fafafa; text-align=
+: center; padding: 5px;">This email was sent to srijani515@gmail.com by KU =
+Graduate Admissions.<br /><a href=3D"https://mx.technolutions.net/ss/c/3ume=
+T0p8JC2YP-dw0QylhInHIw3Ges_JDeQuMp9H7E70bPOYI1xNZCuozCjgpgCCjOlOfvtd1EdRdae=
+TQ4dzKhhdEObRrQPSl0r0x8RSa_eDyvysO7KLtDtsuLwhb7Eo8N2I-auxJv2XyLUTIeDmP5682i=
+5jeDBMkNU6W5-BaOUgwZUU2Bu6phQNH1eWW520Dk0bQikC0-_g-GCc9JbcwA/406/KmB0SwGMQt=
+WQqpsb-48EFA/h8/VP0CQcbPWsxWDyOJm791tx3fMSGM5nV7lARxIiGkhJU">Unsubscribe</a=
+> from University of Kansas Graduate Programs.</div>
+<img src=3D"https://mx.technolutions.net/ss/o/yHCHsZgbT0yLM9hSAJ4AQw/406/Km=
+B0SwGMQtWQqpsb-48EFA/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0"=
+ style=3D"height:1px !important;width:1px !important;border-width:0 !import=
+ant;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !impo=
+rtant;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !i=
+mportant;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--a58d21230a66ccae491d99f1fcc987cbb8dd493eab29f34c4c0bc358f407--

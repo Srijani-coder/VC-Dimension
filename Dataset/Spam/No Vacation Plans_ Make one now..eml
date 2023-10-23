@@ -1,0 +1,634 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6000:147:b0:314:27c5:6113 with SMTP id r7csp1329928wrx;
+        Tue, 26 Sep 2023 00:19:51 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFLl5reRpdVPMWJkynmZP+QmYYj4U4koNPPUp6hCVFAWEFz2VoQ9bwElhvjc9FqTrJicoxi
+X-Received: by 2002:a05:6a00:1c82:b0:68f:c2f7:cef0 with SMTP id y2-20020a056a001c8200b0068fc2f7cef0mr2534739pfw.4.1695712791242;
+        Tue, 26 Sep 2023 00:19:51 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1695712791; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ALhKgM8OX9nFsxUQ/bINiGOAl23tmHdyS5MpP8gGVl7vDL307taQxfzz9mmdexvAOj
+         tN8EO9Tcrd7aAOzHSNhtAZbQtR39tyNNnI1ftF6M125rn5LJbZGu3iuBq7YPF5zeOe/e
+         pmiN/qE6LKj3oqDcnC9/IoE573WVQ/n632Nrg25u9iggBoULupzA2iETWkJ8Wh5q2RzQ
+         rywbyysY48d9wiEBz51IzOn4OwW+96/WSeC/9FRz5hqXDd0uxX9+F902wo+IHKco5dcR
+         bwhOBRRs2tWBkNbvgR82LHi4hUMmscXS8xfqFlAYr6HNwXHrrE52ecLR59BSEdH3ZiAU
+         0z5Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:message-id:subject:mime-version:from:date
+         :content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=eP2ppW2I6P+XvvBEYtVP9d7AMpjDnA2bBWkUJQiYkjk=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=nj7x4sU2Ucs1I8nY84TErIYkV1KsT7pdlytCOKQDbJAaoCLGCfkDHzAvX1rebi9/dA
+         34HvTqo4ZDGs0o7XHhkt52PGtlHzG7jgG6qtllKxuETTZ6vZAMG54AnJB5UK9533W/cL
+         eDEDf4CCtBJaMkhJh30H2zh+LhnsKFzdt3imByt+qhOAkeiPk2SaINa/OPOtNPYj0kSE
+         kB9BCT7bBz6n8ElKcugoabL/OlhDSsmsS7hg1IViQNAWxEESVqIYwj+tncQ7GqGO/+77
+         mYgOyB3KUZz+i3Tg9sQWq7+vtLR9HEy6gdYEirf8FfMm0q0uL3t3qfRpJcVJnHMkghbM
+         1Cpw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@web-spicejet.com header.s=s1 header.b=U1o5bLsv;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=ZVfqqIdS;
+       spf=pass (google.com: domain of bounces+34557702-9afd-srijani515=gmail.com@em6498.web-spicejet.com designates 167.89.73.21 as permitted sender) smtp.mailfrom="bounces+34557702-9afd-srijani515=gmail.com@em6498.web-spicejet.com"
+Return-Path: <bounces+34557702-9afd-srijani515=gmail.com@em6498.web-spicejet.com>
+Received: from o1245.ptr4424.web-spicejet.com (o1245.ptr4424.web-spicejet.com. [167.89.73.21])
+        by mx.google.com with ESMTPS id bz14-20020a056a02060e00b00578b8016c3csi13863876pgb.24.2023.09.26.00.19.49
+        for <srijani515@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 26 Sep 2023 00:19:51 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+34557702-9afd-srijani515=gmail.com@em6498.web-spicejet.com designates 167.89.73.21 as permitted sender) client-ip=167.89.73.21;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@web-spicejet.com header.s=s1 header.b=U1o5bLsv;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=ZVfqqIdS;
+       spf=pass (google.com: domain of bounces+34557702-9afd-srijani515=gmail.com@em6498.web-spicejet.com designates 167.89.73.21 as permitted sender) smtp.mailfrom="bounces+34557702-9afd-srijani515=gmail.com@em6498.web-spicejet.com"
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=web-spicejet.com;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	x-feedback-id:to:list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=eP2ppW2I6P+XvvBEYtVP9d7AMpjDnA2bBWkUJQiYkjk=;
+	b=U1o5bLsvBEaIxurynNYb8EbaKlU9sMKIbRbanfXjCAkoC4Q00E7NeXQKbPD4Qo5wNRJF
+	7C7nwCYNNBObqhl8AoxgK/pRZWIpvrr78drwQXeTPRT533RXQnWKPbuzbIH9Zq4jxMLvgR
+	XnDb8uqDuAGFWUuzKUIkfZ/BeGLQHBUyq4b6Uha59rFOoAI7PpxEOou2JoOC120zUwRCIi
+	RySmCVtP1EMNev1k/6X7c0EMlvtD1+XD+YU3cWfSqo3APsxtuHY9s2C7bRBHlgR41YasKl
+	IFXHVQzMRBIIS446ZW2ZGfjjM4ZzlAO2jCEcqFwfBl/eev7GjLbEFqrUGSS0NPqw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	x-feedback-id:to:list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=eP2ppW2I6P+XvvBEYtVP9d7AMpjDnA2bBWkUJQiYkjk=;
+	b=ZVfqqIdSOHzqjxdzYrWUzEF3x5MNXlNbzYQrlbGPnNM688aeyXiA6Irc6gOoTDzRdBxK
+	fLPkapu2IUsGZpWsYnpIzufp4o+PXp+laKNfYFhRI7wEAVc2qEMVLOSjTXXgh8uR8qfSiR
+	VeJRWCUGlRxo04vCHa3bAToTqL8tOg6GA=
+Received: by filterdrecv-77c9d84d4f-v8n78 with SMTP id filterdrecv-77c9d84d4f-v8n78-1-65128614-2F
+        2023-09-26 07:19:48.653136723 +0000 UTC m=+11950881.082846033
+Received: from MzQ1NTc3MDI (unknown)
+	by geopod-ismtpd-5 (SG) with HTTP
+	id -1mPYDBwR8mDJg_DvpmB8g
+	for <spicejet@web-spicejet.com>;
+	Tue, 26 Sep 2023 07:19:48.440 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Date: Tue, 26 Sep 2023 07:19:48 +0000 (UTC)
+From: SpiceJet <spicejet@web-spicejet.com>
+Mime-Version: 1.0
+Subject: No Vacation Plans? Make one now.
+Message-ID: <-1mPYDBwR8mDJg_DvpmB8g@geopod-ismtpd-5>
+X-Feedback-ID: 34557702:SG
+X-SG-EID: 
+ =?us-ascii?Q?pn+m0cq6NOuOk+qAzXIGfUTgHL+HcXGIZDIUI7Dicls3l3A9VqbfZMsqfwSM1S?=
+ =?us-ascii?Q?5jR8vLR4WvWnrR5yg5hTeB2MWRdGMOqWvCzoO79?=
+ =?us-ascii?Q?aYdoltn9H29IRycK++XP2PEmCyKZqpvxMUxyLHs?=
+ =?us-ascii?Q?g8FLTfJwjY0Q4bAO8zUwdQye1doSL2DpPfmKAgO?=
+ =?us-ascii?Q?7BYbUULknONr8NSJU9u7QECNDINXXjD4fsvNy1i?=
+ =?us-ascii?Q?uQCD2Qgv9an32+VdOjDDdC85afSK=2FTFxn4x9zf?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb6K42pEDG2VibTggWWd57tTL2d7NS=2F0SWM4PBtrpOC?=
+ =?us-ascii?Q?Md2kWLAs68lx=2FFCt93JHJX5Pk5JGtLUxbNhDOz=2F?=
+ =?us-ascii?Q?MGYGLT62+Vnn5nlIRgJtChC+m4D8IrkYCIS7GND?=
+ =?us-ascii?Q?9wUaUq1MjH8jbwiEo5=2FLoij3Bm08yOnrkXjoFCs?=
+ =?us-ascii?Q?uIulpku+=2F=2FJVHPUSXsUU34bW=2F9gAz4j5zOAOuZ8?=
+ =?us-ascii?Q?KrGhBPdpVKilnoAz389ukXw1lCB7daV7TzWi7X4?=
+ =?us-ascii?Q?7cRQDRrRGVlWfXKJlpvDQNDFjKY9WS2ufd2furE?= =?us-ascii?Q?4Hc=3D?=
+To: srijani515@gmail.com
+X-Entity-ID: mfNOtyldiW9zT7MLmytKWw==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em6498=2Eweb-spicejet=2Ecom=3Fsubject=3Dhttps=3A=2F=2Fu3?=
+ =?us-ascii?Q?4557702=2Ect=2Esendgrid=2Enet=2Fwf=2Funsubscribe*?=
+ =?us-ascii?Q?q*upn=3DrWYU-2B0i-2B0Qcz8HINw-2Ff3NK-2FUl?=
+ =?us-ascii?Q?PkrdthebD6Und9AwA-2BH1FOefmsC4Jsv31W1m6?=
+ =?us-ascii?Q?cG6ZZtK3EzI-2B5uGWKZR2r79FClRsal9-2BKRi?=
+ =?us-ascii?Q?xfRsANcmH1rFrqQHRYqrZnAc6PYFO3FIuFXmeQe?=
+ =?us-ascii?Q?v3wG3IiKV4XRhBrZCyxdrwgyXHRZRtoyfG8n-2B?=
+ =?us-ascii?Q?0Pqzfa3OVUgsBQp0HlTj9C7ug8W1Pcw0HK1wW-2?=
+ =?us-ascii?Q?FoG1NLFesO-2BfWChaVg98rywInCBk-2Fwwbdsv?=
+ =?us-ascii?Q?owZH3TsjVYMLDV1e8YOMbA2F1dNtsuDZq83qMHz?=
+ =?us-ascii?Q?DIwyP3-2BsTyO5APdkMwFd0Qd3rPZudBzSaEgRC?=
+ =?us-ascii?Q?-2FY29HH8OKe-2FHRtpR6J9gPu8qWQsWjqglVrz?=
+ =?us-ascii?Q?VoR-2FDDJGQLQnVKgpi-2BeSwjHUMeaTrLdYNw6?=
+ =?us-ascii?Q?kR5mNAET4kq6q17T-2FnqMjgM9SejXVgMem-2F9?=
+ =?us-ascii?Q?gZSgKW-2FneqLG-2FnjdhNP3MBGGlC1U-2FbGei?=
+ =?us-ascii?Q?cGfokW7-2FBVEFueP0ZqeHTTnB8Lwm0t3e5XHB-?=
+ =?us-ascii?Q?2BIwFtFa8xiEKPCOTO=3E?=
+
+<!DOCTYPE html> <!doctype html=3D""> <html> <head>  <title></title>  <style=
+ type=3D"text/css">*{    line-height:80%;    -ms-text-size-adjust:80%;    -=
+webkit-text-size-adjust:none;    -webkit-text-resize:80%;    text-resize:80=
+%;    }    .appleLinks a {color: #000000;text-decoration: none;}    .Extern=
+alClass {width: 100%;background-color: #ffffff;}    body {width: 100%;backg=
+round-color: #ffffff;margin: 0;padding: 0!important;-webkit-font-smoothing:=
+ antialiased;}    html {-webkit-text-size-adjust: none !important;-ms-text-=
+size-adjust: none !important;}    table {border-collapse: collapse;}    .he=
+ightAuto{height:auto!important}        @media only screen and (max-width: 6=
+40px){    .fnclas{font-family: Gotham, Helvetica, sans-serif !important; fo=
+nt-size:28px !important; letter-spacing: -1px !important;}    .ft-8{font-si=
+ze:8px !important;}    .ft-9{font-size:9px !important;}    .ft-10{font-size=
+:10px !important;}    .ft-11{font-size:11px !important;}    .ft-15{font-siz=
+e:15px !important;}    .ht-118{height: 118px !important;}    .ht-60{height:=
+ 60px !important;}    .ht-5{height: 5px !important;}    .wd-320{width: 320p=
+x !important;}    .wd-250{width: 250px !important;}    }    @media only scr=
+een and (max-width: 480px) {    .fnclas{font-family: Gotham, Helvetica, san=
+s-serif !important; font-size:28px !important; letter-spacing: -1px !import=
+ant;}    .ft-8{font-size:8px !important;}    .ft-9{font-size:9px !important=
+;}    .ft-10{font-size:10px !important;}    .ft-11{font-size:11px !importan=
+t;}    .ft-15{font-size:15px !important;}    .ht-118{height: 118px !importa=
+nt;}    .ht-60{height: 60px !important;}    .ht-5{height: 5px !important;} =
+   .wd-320{width: 320px !important;}    .wd-250{width: 250px !important;}  =
+  }  </style> </head> <body data-gr-ext-installed=3D"" data-new-gr-c-s-chec=
+k-loaded=3D"14.1126.0"> <center> <table align=3D"center" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" style=3D"margin:0 auto;" width=3D"600">  <tb=
+ody>   <tr>    <td align=3D"center" style=3D"border: 1px solid #484848;" va=
+lign=3D"top" width=3D"600">    <center>    <table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"600">     <tbody>      =
+<tr>       <td align=3D"center" width=3D"600">       <table align=3D"center=
+" cellpadding=3D"0" cellspacing=3D"0" width=3D"600">        <tbody>        =
+ <tr>          <td align=3D"center" width=3D"600">          <table align=3D=
+"center" cellpadding=3D"0" cellspacing=3D"0" width=3D"600">           <tbod=
+y>            <tr>             <td align=3D"center" style=3D"margin:0; padd=
+ing:0;" width=3D"600"><a href=3D"https://u34557702.ct.sendgrid.net/ls/click=
+?upn=3D5SjtgPrxLiMD-2F7ijF3Td4uTgbnXMh1j0vbzF4YB-2BkI52ULUCxnJB-2Fp9SbaKVGR=
+Af4aK6piFSHK2hG2OXLp7fDfQHOg-2FEgv88AUsrGOOb8wsA4rj8jFy6ftVRjqG-2BqLucCr-2B=
+yaLRsgH6okd2kqiCqUmUVv-2B6UTY3FNa-2BRZMQemxq517NET4nmgOfa-2FE6IfYx68LNLIVVz=
+zxgMTkB4ZtkD36q0loGOVK0rcqmbhxQPg54gG5HcXb3zX-2FM10gYe5sBZCHcnRz-2Bxpnux-2B=
+IhxVm3gOPIUsfhbkPezbR6-2Fl97r78vxxiiiqlXy2hOGosKeysa2QhASquS0PFWxQwqFcTT6c0=
+UWPExfQQ8aMZPKzo3t4Xzz32-2FAtNkRTK5eVLKhn5j7WYMVdbUmx2sQS6zU8Ao79tKPqF8mY3a=
+tSToI1CRRsc6GnnlDkpG2nqOSCJz8POcdNRuNAtsFAHOoTCN8w12vDtVp2C7sPPnOs2kUhHD4dN=
+DkQYHv-2FnfSSYa2s9mzXFI9XM2RKK6m4rkX-2Fqfda60VpZIo-2BXVhzpg0eSwzsyROeD4qG1C=
+oocDHKpuIn04-2FPlEtiTIGIksMwAXO2mmqfFIFhw-3D-3DVXoX_ijSW8RkM-2FIXMlaqj-2FEd=
+h9p8v0SOSA-2FyUc2EIoBfGmbaA1NAX1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34sY3YXjzUul=
+E5UHW1uoZfOJMQrO38OXQtYbS-2Bn1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2Zxsug5zXZBVJdqMs=
+8Cw3wHHgtW6FaxPxgoRYzKC9YWwo-2Bw1-2BO9EgjXY0fPk5jae-2BD4-2BVFJF9oFH8Ud24Gta=
+pFP8Tg2SbxaTvVgXnWNB3jfwTkubCdw0We64JR2mILsfwQcAqR32-2BaNGoWHLQ8XiMSerwSrTg=
+5hLs166mEhGbJFrR-2BcLW45qtdaS68gkZXcHIf1T5l-2FzehSQOpAt8FppoBuHVQ4m9oOck0p4=
+n9UMaMXjfq-2B8hw-2FbVjKNxIBmaNW0q9e6KmozyXfVALAQIpsrzk8HnL50hCiaXnModXFpFTc=
+HOwfrJSK2NBNdlgZRiVCa4Fsz-2Bf-2BxSnGa-2BHVVwBaS-2B1hODbI-3D" style=3D"text-=
+decoration:none"><img height=3D"680" src=3D"https://d1qzvqecfo5h8o.cloudfro=
+nt.net/images/WR9-94R-786Z/SpiceJet/SpiceHoliday12.jpg" style=3D"margin: 0;=
+ border: 0; padding: 0; display: block; height:680px;" width=3D"600" /> </a=
+></td>            </tr>           </tbody>          </table>          </td>=
+         </tr>         <tr>          <td align=3D"center" style=3D"line-hei=
+ght: 1px; font-size: 1px; mso-line-height-rule: exactly; height:25px" width=
+=3D"600"> </td>         </tr>         <tr>          <td align=3D"center" wi=
+dth=3D"600">          <table align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" style=3D"width:544px; background-color:#ec1c24">       =
+    <tbody>            <tr>             <td align=3D"center" style=3D"line-=
+height: 1px; font-size: 1px; mso-line-height-rule: exactly; height:30px" wi=
+dth=3D"544"> </td>            </tr>            <tr>             <td align=
+=3D"center" style=3D"background-color: #ec1c24; color: #ffffff; font-size: =
+20px; font-weight: normal; text-align: center; text-decoration: none; font-=
+family:Gotham, Helvetica, sans-serif; line-height:100%; mso-line-height-rul=
+e:exactly;" valign=3D"middle">Presenting <font style=3D"font-size:25px">Spi=
+ceHolidays,</font></td>            </tr>            <tr>             <td al=
+ign=3D"center" style=3D"line-height: 1px; font-size: 1px; mso-line-height-r=
+ule: exactly; height:10px" width=3D"544"> </td>            </tr>           =
+ <tr>             <td align=3D"center" style=3D"background-color: #ec1c24; =
+color: #ffffff; font-size: 19px; font-weight: normal; text-align: center; t=
+ext-decoration: none; font-family:Gotham, Helvetica, sans-serif; line-heigh=
+t:124%; mso-line-height-rule:exactly;" valign=3D"middle">your gateway to a =
+world of great holiday packages<br />             with exclusive SpiceJet b=
+ene=EF=AC=81ts.</td>            </tr>            <tr>             <td align=
+=3D"center" style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule=
+: exactly; height:25px" width=3D"544"> </td>            </tr>            <t=
+r>             <td align=3D"center" style=3D"background-color: #ec1c24; col=
+or: #ffca29; font-size: 21px; font-weight: bold; text-align: center; text-d=
+ecoration: none; font-family:Gotham, Helvetica, sans-serif; line-height:124=
+%; mso-line-height-rule:exactly;" valign=3D"middle">GET THE SPICEJET ADVANT=
+AGE*</td>            </tr>            <tr>             <td align=3D"center"=
+ style=3D"margin:0; padding:0;" width=3D"544"><img height=3D"88" src=3D"htt=
+ps://d1qzvqecfo5h8o.cloudfront.net/images/WR9-94R-786Z/SpiceJet/SpiceHolida=
+y10.jpg" style=3D"margin: 0; border: 0; padding: 0; display: block; height:=
+88px;" width=3D"544" /></td>            </tr>            <tr>             <=
+td align=3D"center" style=3D"margin:0; padding:0;background-color:#ffffff" =
+width=3D"544">             <table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"width:544px; margin:0; border:0; padding:=
+0; background-color:#ffffff">              <tbody>               <tr>      =
+          <td align=3D"center" style=3D"color: #231f20; font-size: 13px; fo=
+nt-weight: normal; text-align: center; text-decoration: none; font-family:G=
+otham, Helvetica, sans-serif; line-height:124%; mso-line-height-rule:exactl=
+y;" valign=3D"top" width=3D"135">Complimentary Upgrades</td>               =
+ <td align=3D"center" style=3D"color: #231f20; font-size: 13px; font-weight=
+: normal; text-align: center; text-decoration: none; font-family:Gotham, He=
+lvetica, sans-serif; line-height:124%; mso-line-height-rule:exactly;" valig=
+n=3D"top" width=3D"68">Free Seat Selection</td>                <td align=3D=
+"center" width=3D"20"> </td>                <td align=3D"center" style=3D"c=
+olor: #231f20; font-size: 13px; font-weight: normal; text-align: center; te=
+xt-decoration: none; font-family:Gotham, Helvetica, sans-serif; line-height=
+:124%; mso-line-height-rule:exactly;" valign=3D"top" width=3D"91">Free Meal=
+s</td>                <td align=3D"center" style=3D"color: #231f20; font-si=
+ze: 13px; font-weight: normal; text-align: center; text-decoration: none; f=
+ont-family:Gotham, Helvetica, sans-serif; line-height:124%; mso-line-height=
+-rule:exactly;" valign=3D"top" width=3D"110">Extra Baggage Allowance</td>  =
+              <td align=3D"center" style=3D"color: #231f20; font-size: 13px=
+; font-weight: normal; text-align: center; text-decoration: none; font-fami=
+ly:Gotham, Helvetica, sans-serif; line-height:124%; mso-line-height-rule:ex=
+actly;" valign=3D"top" width=3D"91">Free Date Change</td>                <t=
+d align=3D"center" width=3D"29"> </td>               </tr>              </t=
+body>             </table>             </td>            </tr>            <t=
+r>             <td align=3D"center" style=3D"line-height: 1px; font-size: 1=
+px; mso-line-height-rule: exactly; height:25px; background-color:#ffffff" w=
+idth=3D"544"> </td>            </tr>           </tbody>          </table>  =
+        </td>         </tr>         <tr>          <td align=3D"center" widt=
+h=3D"600">          <table align=3D"center" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"170">           <tbody>            <tr>         =
+    <td align=3D"center" style=3D"background-color: #ec2227; padding-top: 8=
+px; padding-bottom: 8px; width:140px; line-height:100%; height: 20px" valig=
+n=3D"middle"><a href=3D"https://u34557702.ct.sendgrid.net/ls/click?upn=3D5S=
+jtgPrxLiMD-2F7ijF3Td4uTgbnXMh1j0vbzF4YB-2BkI52ULUCxnJB-2Fp9SbaKVGRAf4aK6piF=
+SHK2hG2OXLp7fDfQHOg-2FEgv88AUsrGOOb8wsA4rj8jFy6ftVRjqG-2BqLucCr-2ByaLRsgH6o=
+kd2kqiCqUmUVv-2B6UTY3FNa-2BRZMQemxq517NET4nmgOfa-2FE6IfYx68LNLIVVzzxgMTkB4Z=
+tkD36q0loGOVK0rcqmbhxQPg54gG5HcXb3zX-2FM10gYe5sBZCHcnRz-2Bxpnux-2BIhxVm3gOP=
+IUsfhbkPezbR6-2Fl97r78vxxiiiqlXy2hOGosKeysa2QhASquS0PFWxQwqFcTT6c0UWPExfQQ8=
+aMZPKzo3t4Xzz32-2FAtNkRTK5eVLKhn5j7WYMVdbUmx2sQS6zU8Ao79tKPqF8mY3atSToI1CRR=
+sc6GnnlDkpG2nqOSCJz8POcdNRuNAtsFAHOoTCN8w12vDtVp2C7sPPnOs2kUhHD4dNDkQYHv-2F=
+nfSSYa2s9mzXFI9XM2RKK6m4rkX-2Fqfda60VpZIo-2BXVhzpg0eSwzsyROeD4qG1CoocDHKpuI=
+n04-2FPlEtiTIGIksMwAXO2mmqfFIFhw-3D-3DaqG6_ijSW8RkM-2FIXMlaqj-2FEdh9p8v0SOS=
+A-2FyUc2EIoBfGmbaA1NAX1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34sY3YXjzUulE5UHW1uoZ=
+fOJMQrO38OXQtYbS-2Bn1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2Zxsug5zXZBVJdqMs8Cw3wHHgt=
+W6FaxPxgoRYzKC9YWwo-2Bw1-2BO9EgjXY0fPk5jae-2BD4-2BVFJF9oFH8Ud24GtapFP8Tg2Sb=
+xaTvVgXnWNB3jfwTkubCdw0We64JR2mILsfwQcAqR32-2BaNGoWHLQ8XiMSerwSrrZaHF9s-2B6=
+crZ-2FglGKwdG5Wbg7rI2yTwX01WcA812dqHC067hjsIneTZlWRuWdOLAMm-2B1rmaqmai1R4D0=
+OF5ClETMbjTanGxEPmo2Zw7dec7pfsTYNgD50K7CxmvJaV3PdRb-2BN0UBsMLSB2i-2BhWhQnIe=
+p9wt6awpR55NoVfMJWsWN3qMZExvsRSxEnsrwgsIk-3D" style=3D"color: #ffffff; disp=
+lay: block; font-size: 22px; font-weight: bold; text-align: center; text-de=
+coration: none; font-family:Gotham, Helvetica, sans-serif; line-height:100%=
+; mso-line-height-rule:exactly; background-color:#ec2227; border-radius: 30=
+px;">BOOK NOW</a></td>            </tr>           </tbody>          </table=
+>          </td>         </tr>         <tr>          <td align=3D"center" s=
+tyle=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exactly; he=
+ight:25px; background-color:#ffffff" width=3D"544"> </td>         </tr>    =
+     <tr>          <td align=3D"center" width=3D"600">          <table alig=
+n=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"600"=
+>           <tbody>            <tr>             <td align=3D"center" style=
+=3D"color: #231f20; font-size: 16px; font-weight: bold; text-align: center;=
+ text-decoration: none; font-family:Gotham, Helvetica, sans-serif; line-hei=
+ght:100%; mso-line-height-rule:exactly;" width=3D"600">Domestic and interna=
+tional holiday packages at great prices.</td>            </tr>            <=
+tr>             <td align=3D"center" style=3D"line-height: 1px; font-size: =
+1px; mso-line-height-rule: exactly; height:18px; background-color:#ffffff" =
+width=3D"600"> </td>            </tr>            <tr>             <td align=
+=3D"center" width=3D"600">             <table align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" width=3D"502">              <tbody>   =
+            <tr>                <td align=3D"center" style=3D"color: #fffff=
+f; background-color:#231f20; font-size: 16px; font-weight: bold; text-align=
+: center; text-decoration: none; font-family:Gotham, Helvetica, sans-serif;=
+ line-height:99%; mso-line-height-rule:exactly; padding-top:5px; padding-bo=
+ttom:5px; height:23px" width=3D"502">DOMESTIC PACKAGES</td>               <=
+/tr>              </tbody>             </table>             </td>          =
+  </tr>            <tr>             <td align=3D"center" style=3D"line-heig=
+ht: 1px; font-size: 1px; mso-line-height-rule: exactly; height:5px; backgro=
+und-color:#ffffff" width=3D"600"> </td>            </tr>            <tr>   =
+          <td align=3D"center" style=3D"margin:0; padding:0;" width=3D"600"=
+><a href=3D"https://u34557702.ct.sendgrid.net/ls/click?upn=3D5SjtgPrxLiMD-2=
+F7ijF3Td4uTgbnXMh1j0vbzF4YB-2BkI52ULUCxnJB-2Fp9SbaKVGRAf4aK6piFSHK2hG2OXLp7=
+fDfQHOg-2FEgv88AUsrGOOb8wsA4rj8jFy6ftVRjqG-2BqLucCr-2ByaLRsgH6okd2kqiCqUmUV=
+v-2B6UTY3FNa-2BRZMQemxq517NET4nmgOfa-2FE6IfYx68LNLIVVzzxgMTkB4ZtkD36q0loGOV=
+K0rcqmbhxQPg54gG5HcXb3zX-2FM10gYe5sBZCHcnRz-2Bxpnux-2BIhxVm3gOPIUsfhbkPezbR=
+6-2Fl97r78vxxiiiqlXy2hOGosKeysa2QhASquS0PFWxQwqFcTT6c0UWPExfQQ8aMZPKzo3t4Xz=
+z32-2FAtNkRTK5eVLKhn5j7WYMVdbUmx2sQS6zU8Ao79tKPqF8mY3atSToI1CRRsc6GnnlDkpG2=
+nqOSCJz8POcdNRuNAtsFAHOoTCN8w12vDtVp2C7sPPnOs2kUhHD4dNBzKGo6f6bUu89QCViyFyJ=
+kFJq22bpbx6QsCsN-2BqET9rTQZoPFaUb07qKUA6EmGa1-2BcL-2BNMcMA6KJD-2B9W1Emxs-2F=
+25H1PKYxYV8Sd4Bst50hQg-3D-3DGSSb_ijSW8RkM-2FIXMlaqj-2FEdh9p8v0SOSA-2FyUc2EI=
+oBfGmbaA1NAX1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34sY3YXjzUulE5UHW1uoZfOJMQrO38O=
+XQtYbS-2Bn1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2Zxsug5zXZBVJdqMs8Cw3wHHgtW6FaxPxgoR=
+YzKC9YWwo-2Bw1-2BO9EgjXY0fPk5jae-2BD4-2BVFJF9oFH8Ud24GtapFP8Tg2SbxaTvVgXnWN=
+B3jfwTkubCdw0We64JR2mILsfwQcAqR32-2BaNGoWHLQ8XiMSerwSrWeMvY-2BtAWp-2FV5mvZo=
+WupcmJiB1gPx-2FTSRU0HzQlZegYeHxINfVH2gYGvPZGzvCSBRlag1-2F6QfuLG7TPCpzI9xJwO=
+ZpAXSfMTwr6IyUoSsZQgATlNlztqYsndxT4LnzA4OtC3YFeEDBIFfgasPIPoMSrQF7tQNqUK6EN=
+01bMnvSVgBeegW2KkYyUXDi-2Fa-2FK80-3D" style=3D"text-decoration:none"><img h=
+eight=3D"119" src=3D"https://d1qzvqecfo5h8o.cloudfront.net/images/WR9-94R-7=
+86Z/SpiceJet/SpiceHoliday13.jpg" style=3D"margin: 0; border: 0; padding: 0;=
+ height:119px;" width=3D"502" /> </a></td>            </tr>            <tr>=
+             <td align=3D"center" width=3D"600">             <table align=
+=3D"center" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:502px;text-a=
+lign:center" valign=3D"top">              <tbody>               <tr>       =
+         <td align=3D"left" valign=3D"top" width=3D"174">                <t=
+able align=3D"left" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:158p=
+x;" valign=3D"top" width=3D"158">                 <tbody>                  =
+<tr>                   <td align=3D"left" colspan=3D"2" style=3D"color: #ec=
+1c24; font-size: 20px; font-weight: bold; text-align: left; text-decoration=
+: none; font-family:Gotham, Helvetica, sans-serif; line-height:100%; mso-li=
+ne-height-rule:exactly;" valign=3D"middle">Kashmir</td>                  </=
+tr>                  <tr>                   <td align=3D"left" colspan=3D"2=
+" style=3D"color: #231f20; font-size: 12px; font-weight: normal; text-align=
+: left; text-decoration: none; font-family:Gotham, Helvetica, sans-serif; l=
+ine-height:129%; mso-line-height-rule:exactly;" valign=3D"middle">4 Nights/=
+5 Days</td>                  </tr>                  <tr>                   =
+<td align=3D"center" colspan=3D"2" style=3D"font-size: 1px; line-height:1px=
+; mso-line-height-rule:exactly; height:8px" valign=3D"top"> </td>          =
+        </tr>                  <tr>                   <td align=3D"left" st=
+yle=3D"color: #231f20; font-size: 11px; font-weight: normal; text-align: le=
+ft; text-decoration: none; font-family:Gotham, Helvetica, sans-serif; line-=
+height:101%; mso-line-height-rule:exactly;" valign=3D"middle">Startiing<br =
+/>                   Price</td>                   <td align=3D"center" styl=
+e=3D"background-color: #ff0000; color: #ffffff; font-size: 18px; font-weigh=
+t: normal; text-align: center; text-decoration: none; font-family:Gotham, H=
+elvetica, sans-serif; line-height:100%; mso-line-height-rule:exactly; heigh=
+t: 24px" valign=3D"middle"><span class=3D"ln40" style=3D"line-height:40%;co=
+lor:#ffffff; font-size:18px">=E2=82=B9</span><span style=3D"font-weight:bol=
+d;font-size:19px">18,499</span></td>                  </tr>                =
+  <tr>                   <td align=3D"center" colspan=3D"2" style=3D"font-s=
+ize: 1px; line-height:1px; mso-line-height-rule:exactly; height:10px" valig=
+n=3D"top"> </td>                  </tr>                 </tbody>           =
+     </table>                </td>                <td align=3D"left" valign=
+=3D"top" width=3D"173">                <table align=3D"left" cellpadding=3D=
+"0" cellspacing=3D"0" style=3D"width:158px;" valign=3D"top" width=3D"158"> =
+                <tbody>                  <tr>                   <td align=
+=3D"left" colspan=3D"2" style=3D"color: #ec1c24; font-size: 20px; font-weig=
+ht: bold; text-align: left; text-decoration: none; font-family:Gotham, Helv=
+etica, sans-serif; line-height:100%; mso-line-height-rule:exactly;" valign=
+=3D"middle">Kerala</td>                  </tr>                  <tr>       =
+            <td align=3D"left" colspan=3D"2" style=3D"color: #231f20; font-=
+size: 12px; font-weight: normal; text-align: left; text-decoration: none; f=
+ont-family:Gotham, Helvetica, sans-serif; line-height:129%; mso-line-height=
+-rule:exactly;" valign=3D"middle">4 Nights/5 Days</td>                  </t=
+r>                  <tr>                   <td align=3D"center" colspan=3D"=
+2" style=3D"font-size: 1px; line-height:1px; mso-line-height-rule:exactly; =
+height:8px" valign=3D"top"> </td>                  </tr>                  <=
+tr>                   <td align=3D"left" style=3D"color: #231f20; font-size=
+: 11px; font-weight: normal; text-align: left; text-decoration: none; font-=
+family:Gotham, Helvetica, sans-serif; line-height:101%; mso-line-height-rul=
+e:exactly;" valign=3D"middle">Startiing<br />                   Price</td> =
+                  <td align=3D"center" style=3D"background-color: #ff0000; =
+color: #ffffff; font-size: 18px; font-weight: normal; text-align: center; t=
+ext-decoration: none; font-family:Gotham, Helvetica, sans-serif; line-heigh=
+t:100%; mso-line-height-rule:exactly; height: 24px" valign=3D"middle"><span=
+ class=3D"ln40" style=3D"line-height:40%;color:#ffffff; font-size:18px">=E2=
+=82=B9</span><span style=3D"font-weight:bold;font-size:19px">23,999</span><=
+/td>                  </tr>                  <tr>                   <td ali=
+gn=3D"center" colspan=3D"2" style=3D"font-size: 1px; line-height:1px; mso-l=
+ine-height-rule:exactly; height:10px" valign=3D"top"> </td>                =
+  </tr>                 </tbody>                </table>                </t=
+d>                <td align=3D"center" valign=3D"top" width=3D"155">       =
+         <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"width:155px;text-align:center;" valign=3D"top" width=3D"155">          =
+       <tbody>                  <tr>                   <td align=3D"left" c=
+olspan=3D"2" style=3D"color: #ec1c24; font-size: 20px; font-weight: bold; t=
+ext-align: left; text-decoration: none; font-family:Gotham, Helvetica, sans=
+-serif; line-height:100%; mso-line-height-rule:exactly;" valign=3D"middle">=
+Goa</td>                  </tr>                  <tr>                   <td=
+ align=3D"left" colspan=3D"2" style=3D"color: #231f20; font-size: 12px; fon=
+t-weight: normal; text-align: left; text-decoration: none; font-family:Goth=
+am, Helvetica, sans-serif; line-height:129%; mso-line-height-rule:exactly;"=
+ valign=3D"middle">4 Nights/5 Days</td>                  </tr>             =
+     <tr>                   <td align=3D"center" colspan=3D"2" style=3D"fon=
+t-size: 1px; line-height:1px; mso-line-height-rule:exactly; height:8px" val=
+ign=3D"top"> </td>                  </tr>                  <tr>            =
+       <td align=3D"left" style=3D"color: #231f20; font-size: 11px; font-we=
+ight: normal; text-align: left; text-decoration: none; font-family:Gotham, =
+Helvetica, sans-serif; line-height:101%; mso-line-height-rule:exactly;" val=
+ign=3D"middle">Startiing<br />                   Price</td>                =
+   <td align=3D"center" style=3D"background-color: #ff0000; color: #ffffff;=
+ font-size: 18px; font-weight: normal; text-align: center; text-decoration:=
+ none; font-family:Gotham, Helvetica, sans-serif; line-height:100%; mso-lin=
+e-height-rule:exactly; height: 24px" valign=3D"middle"><span class=3D"ln40"=
+ style=3D"line-height:40%;color:#ffffff; font-size:18px">=E2=82=B9</span><s=
+pan style=3D"font-weight:bold;font-size:19px">20,999</span></td>           =
+       </tr>                  <tr>                   <td align=3D"center" c=
+olspan=3D"2" style=3D"font-size: 1px; line-height:1px; mso-line-height-rule=
+:exactly; height:10px" valign=3D"top"> </td>                  </tr>        =
+         </tbody>                </table>                </td>             =
+  </tr>              </tbody>             </table>             </td>       =
+     </tr>            <tr>             <td align=3D"center" style=3D"line-h=
+eight: 1px; font-size: 1px; mso-line-height-rule: exactly; height:15px; bac=
+kground-color:#ffffff" width=3D"600"> </td>            </tr>           </tb=
+ody>          </table>          </td>         </tr>         <tr>          <=
+td align=3D"center" width=3D"600">          <table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"600">           <tbody>=
+            <tr>             <td align=3D"center" width=3D"600">           =
+  <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+width=3D"502">              <tbody>               <tr>                <td a=
+lign=3D"center" style=3D"color: #ffffff; background-color:#231f20; font-siz=
+e: 16px; font-weight: bold; text-align: center; text-decoration: none; font=
+-family:Gotham, Helvetica, sans-serif; line-height:99%; mso-line-height-rul=
+e:exactly; padding-top:5px; padding-bottom:5px; height:23px" width=3D"502">=
+INTERNATIONAL PACKAGES</td>               </tr>              </tbody>      =
+       </table>             </td>            </tr>            <tr>         =
+    <td align=3D"center" style=3D"line-height: 1px; font-size: 1px; mso-lin=
+e-height-rule: exactly; height:5px; background-color:#ffffff" width=3D"600"=
+> </td>            </tr>            <tr>             <td align=3D"center" s=
+tyle=3D"margin:0; padding:0;" width=3D"600"><a href=3D"https://u34557702.ct=
+.sendgrid.net/ls/click?upn=3D5SjtgPrxLiMD-2F7ijF3Td4uTgbnXMh1j0vbzF4YB-2BkI=
+52ULUCxnJB-2Fp9SbaKVGRAf4aK6piFSHK2hG2OXLp7fDfQHOg-2FEgv88AUsrGOOb8wsA4rj8j=
+Fy6ftVRjqG-2BqLucCr-2ByaLRsgH6okd2kqiCqUmUVv-2B6UTY3FNa-2BRZMQemxq517NET4nm=
+gOfa-2FE6IfYx68LNLIVVzzxgMTkB4ZtkD36q0loGOVK0rcqmbhxQPg54gG5HcXb3zX-2FM10gY=
+e5sBZCHcnRz-2Bxpnux-2BIhxVm3gOPIUsfhbkPezbR6-2Fl97r78vxxiiiqlXy2hOGosKeysa2=
+QhASquS0PFWxQwqFcTT6c0UWPExfQQ8aMZPKzo3t4Xzz32-2FAtNkRTK5eVLKhn5j7WYMVdbUmx=
+2sQS6zU8Ao79tKPqF8mY3atSToI1CRRsc6GnnlDkpG2nqOSCJz8POcdNRuNAtsFAHOoTCN8w12v=
+DtVp2C7sPPnOs2kUhHD4dNDo7NMlZBAOsKsZ-2BtANsybyfzI7qpguImjFIdyzOcaY6r6mUU0M9=
+dLI27q2CgMLsL3NcGQU0tys4kzcQNRBJVceYqAEfFCtO5RhEyFy77lyQw-3D-3DZeTG_ijSW8Rk=
+M-2FIXMlaqj-2FEdh9p8v0SOSA-2FyUc2EIoBfGmbaA1NAX1U-2FJe3q5VVhXCcX93uaKx6BAaT=
+wLDc34sY3YXjzUulE5UHW1uoZfOJMQrO38OXQtYbS-2Bn1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2=
+Zxsug5zXZBVJdqMs8Cw3wHHgtW6FaxPxgoRYzKC9YWwo-2Bw1-2BO9EgjXY0fPk5jae-2BD4-2B=
+VFJF9oFH8Ud24GtapFP8Tg2SbxaTvVgXnWNB3jfwTkubCdw0We64JR2mILsfwQcAqR32-2BaNGo=
+WHLQ8XiMSerwSo7-2B6cIJq1ZA9ucDWkUiu4lXQtmqluKZ8Vc9JxISyPA9OB-2FVfp3-2FHoOz-=
+2BGKZYIraQN-2FtS1kfmXQV7lbmygO23ditjkxcjyzS3SnnDKvjFpyoOSjHVGtd08p04p-2FC6T=
+yNNAdNt1LNEs0Gz-2Bayjswnp5Pw3tSrGphpjdN3Av8JbajSxJdhw7Pvl-2Fh-2F4heSFKiNoQ-=
+3D" style=3D"text-decoration:none"><img height=3D"121" src=3D"https://d1qzv=
+qecfo5h8o.cloudfront.net/images/WR9-94R-786Z/SpiceJet/SpiceHoliday14.jpg" s=
+tyle=3D"margin: 0; border: 0; padding: 0; height:121px;" width=3D"502" /> <=
+/a></td>            </tr>            <tr>             <td align=3D"center" =
+width=3D"600">             <table align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" style=3D"width:502px;text-align:center" valign=3D"top">        =
+      <tbody>               <tr>                <td align=3D"left" valign=
+=3D"top" width=3D"174">                <table align=3D"left" cellpadding=3D=
+"0" cellspacing=3D"0" style=3D"width:158px;" valign=3D"top" width=3D"158"> =
+                <tbody>                  <tr>                   <td align=
+=3D"left" colspan=3D"2" style=3D"color: #ec1c24; font-size: 20px; font-weig=
+ht: bold; text-align: left; text-decoration: none; font-family:Gotham, Helv=
+etica, sans-serif; line-height:100%; mso-line-height-rule:exactly;" valign=
+=3D"middle">Dubai</td>                  </tr>                  <tr>        =
+           <td align=3D"left" colspan=3D"2" style=3D"color: #231f20; font-s=
+ize: 12px; font-weight: normal; text-align: left; text-decoration: none; fo=
+nt-family:Gotham, Helvetica, sans-serif; line-height:129%; mso-line-height-=
+rule:exactly;" valign=3D"middle">4 Nights/5 Days</td>                  </tr=
+>                  <tr>                   <td align=3D"center" colspan=3D"2=
+" style=3D"font-size: 1px; line-height:1px; mso-line-height-rule:exactly; h=
+eight:8px" valign=3D"top"> </td>                  </tr>                  <t=
+r>                   <td align=3D"left" style=3D"color: #231f20; font-size:=
+ 11px; font-weight: normal; text-align: left; text-decoration: none; font-f=
+amily:Gotham, Helvetica, sans-serif; line-height:101%; mso-line-height-rule=
+:exactly;" valign=3D"middle">Startiing<br />                   Price</td>  =
+                 <td align=3D"center" style=3D"background-color: #ff0000; c=
+olor: #ffffff; font-size: 18px; font-weight: normal; text-align: center; te=
+xt-decoration: none; font-family:Gotham, Helvetica, sans-serif; line-height=
+:100%; mso-line-height-rule:exactly; height: 24px" valign=3D"middle"><span =
+class=3D"ln40" style=3D"line-height:40%;color:#ffffff; font-size:18px">=E2=
+=82=B9</span><span style=3D"font-weight:bold;font-size:19px">59,999</span><=
+/td>                  </tr>                  <tr>                   <td ali=
+gn=3D"center" colspan=3D"2" style=3D"font-size: 1px; line-height:1px; mso-l=
+ine-height-rule:exactly; height:10px" valign=3D"top"> </td>                =
+  </tr>                 </tbody>                </table>                </t=
+d>                <td align=3D"left" valign=3D"top" width=3D"173">         =
+       <table align=3D"left" cellpadding=3D"0" cellspacing=3D"0" style=3D"w=
+idth:158px;" valign=3D"top" width=3D"158">                 <tbody>         =
+         <tr>                   <td align=3D"left" colspan=3D"2" style=3D"c=
+olor: #ec1c24; font-size: 20px; font-weight: bold; text-align: left; text-d=
+ecoration: none; font-family:Gotham, Helvetica, sans-serif; line-height:100=
+%; mso-line-height-rule:exactly;" valign=3D"middle">Sri Lanka</td>         =
+         </tr>                  <tr>                   <td align=3D"left" c=
+olspan=3D"2" style=3D"color: #231f20; font-size: 12px; font-weight: normal;=
+ text-align: left; text-decoration: none; font-family:Gotham, Helvetica, sa=
+ns-serif; line-height:129%; mso-line-height-rule:exactly;" valign=3D"middle=
+">4 Nights/5 Days</td>                  </tr>                  <tr>        =
+           <td align=3D"center" colspan=3D"2" style=3D"font-size: 1px; line=
+-height:1px; mso-line-height-rule:exactly; height:8px" valign=3D"top"> </td=
+>                  </tr>                  <tr>                   <td align=
+=3D"left" style=3D"color: #231f20; font-size: 11px; font-weight: normal; te=
+xt-align: left; text-decoration: none; font-family:Gotham, Helvetica, sans-=
+serif; line-height:101%; mso-line-height-rule:exactly;" valign=3D"middle">S=
+tartiing<br />                   Price</td>                   <td align=3D"=
+center" style=3D"background-color: #ff0000; color: #ffffff; font-size: 18px=
+; font-weight: normal; text-align: center; text-decoration: none; font-fami=
+ly:Gotham, Helvetica, sans-serif; line-height:100%; mso-line-height-rule:ex=
+actly; height: 24px" valign=3D"middle"><span class=3D"ln40" style=3D"line-h=
+eight:40%;color:#ffffff; font-size:18px">=E2=82=B9</span><span style=3D"fon=
+t-weight:bold;font-size:19px">49,999</span></td>                  </tr>    =
+              <tr>                   <td align=3D"center" colspan=3D"2" sty=
+le=3D"font-size: 1px; line-height:1px; mso-line-height-rule:exactly; height=
+:10px" valign=3D"top"> </td>                  </tr>                 </tbody=
+>                </table>                </td>                <td align=3D"=
+center" valign=3D"top" width=3D"155">                <table align=3D"center=
+" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:155px;text-align:cente=
+r;" valign=3D"top" width=3D"155">                 <tbody>                  =
+<tr>                   <td align=3D"left" colspan=3D"2" style=3D"color: #ec=
+1c24; font-size: 20px; font-weight: bold; text-align: left; text-decoration=
+: none; font-family:Gotham, Helvetica, sans-serif; line-height:100%; mso-li=
+ne-height-rule:exactly;" valign=3D"middle">Thailand</td>                  <=
+/tr>                  <tr>                   <td align=3D"left" colspan=3D"=
+2" style=3D"color: #231f20; font-size: 12px; font-weight: normal; text-alig=
+n: left; text-decoration: none; font-family:Gotham, Helvetica, sans-serif; =
+line-height:129%; mso-line-height-rule:exactly;" valign=3D"middle">4 Nights=
+/5 Days</td>                  </tr>                  <tr>                  =
+ <td align=3D"center" colspan=3D"2" style=3D"font-size: 1px; line-height:1p=
+x; mso-line-height-rule:exactly; height:8px" valign=3D"top"> </td>         =
+         </tr>                  <tr>                   <td align=3D"left" s=
+tyle=3D"color: #231f20; font-size: 11px; font-weight: normal; text-align: l=
+eft; text-decoration: none; font-family:Gotham, Helvetica, sans-serif; line=
+-height:101%; mso-line-height-rule:exactly;" valign=3D"middle">Startiing<br=
+ />                   Price</td>                   <td align=3D"center" sty=
+le=3D"background-color: #ff0000; color: #ffffff; font-size: 18px; font-weig=
+ht: normal; text-align: center; text-decoration: none; font-family:Gotham, =
+Helvetica, sans-serif; line-height:100%; mso-line-height-rule:exactly; heig=
+ht: 24px" valign=3D"middle"><span class=3D"ln40" style=3D"line-height:40%;c=
+olor:#ffffff; font-size:18px">=E2=82=B9</span><span style=3D"font-weight:bo=
+ld;font-size:19px">23,299</span></td>                  </tr>               =
+   <tr>                   <td align=3D"center" colspan=3D"2" style=3D"font-=
+size: 1px; line-height:1px; mso-line-height-rule:exactly; height:10px" vali=
+gn=3D"top"> </td>                  </tr>                 </tbody>          =
+      </table>                </td>               </tr>              </tbod=
+y>             </table>             </td>            </tr>            <tr> =
+            <td align=3D"center" style=3D"line-height: 1px; font-size: 1px;=
+ mso-line-height-rule: exactly; height:15px; background-color:#ffffff" widt=
+h=3D"600"> </td>            </tr>            <tr>             <td align=3D"=
+center" style=3D"color: #231f20; font-size: 16px; font-weight: bold; text-a=
+lign: center; text-decoration: none; font-family:Gotham, Helvetica, sans-se=
+rif; line-height:100%; mso-line-height-rule:exactly;" width=3D"600">Choose =
+from a wide range of air-inclusive/land-only packages.</td>            </tr=
+>            <tr>             <td align=3D"center" style=3D"line-height: 1p=
+x; font-size: 1px; mso-line-height-rule: exactly; height:20px; background-c=
+olor:#ffffff" width=3D"600"> </td>            </tr>            <tr>        =
+     <td align=3D"center" style=3D"color: #231f20; font-size: 18px; font-we=
+ight: bold; text-align: center; text-decoration: none; font-family:Gotham, =
+Helvetica, sans-serif; line-height:120%; mso-line-height-rule:exactly;" wid=
+th=3D"600">Explore the world with SpiceJet Holidays.<br />             Visi=
+t <a href=3D"https://u34557702.ct.sendgrid.net/ls/click?upn=3D5SjtgPrxLiMD-=
+2F7ijF3Td4uTgbnXMh1j0vbzF4YB-2BkI52ULUCxnJB-2Fp9SbaKVGRAf4aK6piFSHK2hG2OXLp=
+7fDfQHOg-2FEgv88AUsrGOOb8wsA4rj8jFy6ftVRjqG-2BqLucCr-2ByaLRsgH6okd2kqiCqUmU=
+Vv-2B6UTY3FNa-2BRZMQemxq517NET4nmgOfa-2FE6IfYx68LNLIVVzzxgMTkB4ZtkD36q0loGO=
+VK0rcqmbhxQPg54gG5HcXb3zX-2FM10gYe5sBZCHcnRz-2Bxpnux-2BIhxVm3gOPIUsfhbkPezb=
+R6-2Fl97r78vxxiiiqlXy2hOGosKeysa2QhASquS0PFWxQwqFcTT6c-2FZQ06oAw5bJR83y3aq4=
+tJaN28k1t5V2vxRRxO-2B5FvKpLl-2BeQM-2FaoHpBlmAC8GHY-2Bbs4XQDPh9K0i8gyttFKl23=
+2vIF5cb4ZUo2SIggyKIlFeNRlRkXzSwOeb1Qir8ibHoNPzWXzHyvYYLwL01qup2o-3D91AP_ijS=
+W8RkM-2FIXMlaqj-2FEdh9p8v0SOSA-2FyUc2EIoBfGmbaA1NAX1U-2FJe3q5VVhXCcX93uaKx6=
+BAaTwLDc34sY3YXjzUulE5UHW1uoZfOJMQrO38OXQtYbS-2Bn1mgtGHfBraFQBcK2xNF8-2FFQf=
+3ZK2Zxsug5zXZBVJdqMs8Cw3wHHgtW6FaxPxgoRYzKC9YWwo-2Bw1-2BO9EgjXY0fPk5jae-2BD=
+4-2BVFJF9oFH8Ud24GtapFP8Tg2SbxaTvVgXnWNB3jfwTkubCdw0We64JR2mILsfwQcAqR32-2B=
+aNGoWHLQ8XiMSerwSrLgXeG77dS5bQD8C19F0Kz-2FvQvRRl-2BpGks-2BG70TdWzZD-2BkxKRd=
+f8-2BSBpuJz-2F-2F2VaUWRVNrUPGuv-2Fgd3XVj8-2FBGBvNozFLCtnNcVvngl8rWkgAVbN9K5=
+j2UZkYSTQOuzpN6vuiBWe2tc9uzpHi0rzBusM0F7LXkslHo4tyiXgzN-2BeuSOzfbcKOahsi2ac=
+euy14-3D" style=3D"color:#ec1c24; line-height:99%;font-weight:bold;text-dec=
+oration:none;">www.spicejet.com</a> to know more.</td>            </tr>    =
+       </tbody>          </table>          </td>         </tr>         <tr>=
+          <td style=3D"line-height: 1px; font-size: 1px; mso-line-height-ru=
+le: exactly; height:10px;" width=3D"600"> </td>         </tr>         <tr> =
+         <td align=3D"center" width=3D"600">          <table align=3D"cente=
+r" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:500px; text-align:cen=
+ter; background-color:#ff0000" width=3D"460">           <tbody>            =
+<tr>             <td align=3D"center" style=3D"font-family:Gotham, Helvetic=
+a, sans-serif;color:#ffffff;font-weight: normal; mso-line-height-rule: exac=
+tly;line-height: 100%;text-align:center;font-size: 18px; letter-spacing:0px=
+; padding-top:8px; padding-bottom:8px;background-color:#ff0000; height: 27p=
+x; border-radius: 10px" valign=3D"middle"><a href=3D"https://u34557702.ct.s=
+endgrid.net/ls/click?upn=3D5SjtgPrxLiMD-2F7ijF3Td4uTgbnXMh1j0vbzF4YB-2BkI52=
+ULUCxnJB-2Fp9SbaKVGRAf4aK6piFSHK2hG2OXLp7fDfQHOg-2FEgv88AUsrGOOb8wsA4rj8jFy=
+6ftVRjqG-2BqLucCr-2ByaLRsgH6okd2kqiCqUmUVv-2B6UTY3FNa-2BRZMQemxq517NET4nmgO=
+fa-2FE6IfYx68LNLIVVzzxgMTkB4ZtkD36q0loGOVK0rcqmbhxQPg54gG5HcXb3zX-2FM10gYe5=
+sBZCHcnRz-2Bxpnux-2BIhxVm3gOPIUsfhbkPezbR6-2Fl97r78vxxiiiqlXy2hOGosKeysa2Qh=
+ASquS0PFWxQwqFcTT6c-2FZQ06oAw5bJR83y3aq4tJaN28k1t5V2vxRRxO-2B5FvKpLl-2BeQM-=
+2FaoHpBlmAC8GHY-2Bbs4XQDPh9K0i8gyttFKl232vIF5cb4ZUo2SIggyKIlFeNRlRkXzSwOeb1=
+Qir8ibHoNPzWXzHyvYYLwL01qup2o-3DD3ya_ijSW8RkM-2FIXMlaqj-2FEdh9p8v0SOSA-2FyU=
+c2EIoBfGmbaA1NAX1U-2FJe3q5VVhXCcX93uaKx6BAaTwLDc34sY3YXjzUulE5UHW1uoZfOJMQr=
+O38OXQtYbS-2Bn1mgtGHfBraFQBcK2xNF8-2FFQf3ZK2Zxsug5zXZBVJdqMs8Cw3wHHgtW6FaxP=
+xgoRYzKC9YWwo-2Bw1-2BO9EgjXY0fPk5jae-2BD4-2BVFJF9oFH8Ud24GtapFP8Tg2SbxaTvVg=
+XnWNB3jfwTkubCdw0We64JR2mILsfwQcAqR32-2BaNGoWHLQ8XiMSerwSpfATktl0VwyLy3eZ8w=
+nlZVAOlBu9-2FCjcgbDbyBbmltwNmeyYu6Biufw33M6526iHRwS8g4w4P8ZsgY3ny4kMsqYZGrh=
+3-2FK8Seq0xY0KQOSd7ZthZUf2PpBv3CIdKOic51BQ02144KleUBiC5cAf6NXNWKkfj5Wjtx8wv=
+WJ-2F4eHa9b6JDBpTXvd1LgAXsLt4m8-3D" style=3D"color:#ffffff; background-colo=
+r:#ff0000; line-height:99%;font-weight:bold;text-decoration:none;">www.spic=
+ejet.com</a> | <a href=3D"tel:+911244983410" style=3D"color:#ffffff; backgr=
+ound-color:#ff0000; line-height:99%; font-weight:bold; text-decoration:none=
+; font-size:17px">+91-124-4983410</a></td>            </tr>           </tbo=
+dy>          </table>          </td>         </tr>        </tbody>       </=
+table>       </td>      </tr>      <tr>       <td style=3D"line-height: 1px=
+; font-size: 1px; mso-line-height-rule: exactly; height:25px;" width=3D"600=
+"> </td>      </tr>      <tr>       <td align=3D"center" style=3D"backgroun=
+d-color:#ff0000" width=3D"600">       <table align=3D"center" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"width:600px;text-align:center;background-=
+color:#ff0000;" width=3D"600">        <tbody>         <tr>          <td col=
+span=3D"3" style=3D"width:600px;">          <table align=3D"center" bgcolor=
+=3D"#ff0000" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:600px;text-=
+align:center;" width=3D"600">           <tbody>            <tr>            =
+ <td align=3D"center" bgcolor=3D"#ff0000" colspan=3D"2" style=3D"width:600p=
+x;" width=3D"600">             <table align=3D"center" bgcolor=3D"#ff0000" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"width: 590px;">              <=
+tbody>               <tr>                <td height=3D"10" style=3D"line-he=
+ight: 1px; font-size: 1px; mso-line-height-rule: exactly; height: 10px;"> <=
+/td>               </tr>               <tr>                <td height=3D"4"=
+ style=3D"line-height: 1px; font-size: 1px; mso-line-height-rule: exactly; =
+height: 5px;"> </td>               </tr>               <tr>                =
+<td style=3D"width:590px;margin:0; padding:0;font-family:Arial, Helvetica, =
+sans-serif;color:#ffffff;font-weight: normal; mso-line-height-rule: exactly=
+;line-height: 146%;text-align:center; font-size: 11px;letter-spacing:0px;ba=
+ckground-color:#ff0000;">Copyright@2023 SpiceJet. All rights reserved. *T&C=
+ Apply. To be sure that you receive<br />                our e-mail in your=
+ inbox, please add SpiceJet to your address book.</td>               </tr> =
+              <tr>                <td height=3D"15" style=3D"line-height: 1=
+px; font-size: 1px; mso-line-height-rule: exactly; height: 15px;"> </td>   =
+            </tr>              </tbody>             </table>             </=
+td>            </tr>           </tbody>          </table>          </td>   =
+      </tr>         <tr>          <td style=3D"width:600px;margin:0; font-f=
+amily:Arial, Helvetica, sans-serif;color:#808285;font-weight: bold; mso-lin=
+e-height-rule: exactly;line-height: 100%;text-align:center; font-size: 11px=
+;letter-spacing:0px;padding-top:10px;padding-bottom:10px; background-color:=
+#ffffff"><a data-track=3D"off" href=3D"https://u34557702.ct.sendgrid.net/wf=
+/unsubscribe?upn=3DrWYU-2B0i-2B0Qcz8HINw-2Ff3NK-2FUlPkrdthebD6Und9AwA-2BH1F=
+OefmsC4Jsv31W1m6cG6ZZtK3EzI-2B5uGWKZR2r79FClRsal9-2BKRixfRsANcmH1rFrqQHRYqr=
+ZnAc6PYFO3FIuFXmeQev3wG3IiKV4XRhBrZCyxdrwgyXHRZRtoyfG8n-2B0Pqzfa3OVUgsBQp0H=
+lTj9C7ug8W1Pcw0HK1wW-2FoG1NLFesO-2BfWChaVg98rywInCBk-2FwwbdsvowZH3TsjVYMLDV=
+1e8YOMbA2F1dNtsuDZq83qMHzDIwyP3-2BsTyO5APcU7JJ-2BNt5Pa-2BsQLa9HoJkNJx9-2BJ3=
+7RYW5Ij-2Bi4ELVN4Y4djectgE7RM51ydPTgOdg6WCSOAiRhK6s7CJ8ySxQSpND7ze7YXTo4M3-=
+2B8xay5ovX5uxPeB-2FYFA5Y1RyQgSCMZFD1b7ls79q-2FXp1sdwQOIxOkgj3EIc1Bme35yQ5kM=
+Ez6nynybDe7x026pqIcOeO47j0AmEXqLjcL4zyBT9fSd">Unsubscribe</a></td>         =
+</tr>        </tbody>       </table>       </td>      </tr>     </tbody>   =
+ </table>    </center>    </td>   </tr>  </tbody> </table> </center> <img s=
+rc=3D"https://u34557702.ct.sendgrid.net/wf/open?upn=3DrWYU-2B0i-2B0Qcz8HINw=
+-2Ff3NK-2FUlPkrdthebD6Und9AwA-2BH1FOefmsC4Jsv31W1m6cG6ZZtK3EzI-2B5uGWKZR2r7=
+9FClRsal9-2BKRixfRsANcmH1rFrqQHRYqrZnAc6PYFO3FIuFXmeQev3wG3IiKV4XRhBrZCyxdr=
+wgyXHRZRtoyfG8n-2B0Pqzfa3OVUgsBQp0HlTj9C7ug8W1Pcw0HK1wW-2FoG1NLFesO-2BfWCha=
+Vg98rywInCBk-2FwwbdsvowZH3TsjVYMLDV1e8YOMbA2F1dNtsuDZq83qMHzDIwyP3-2BsTyO5A=
+PfZJFJdQrISzbcb2ihOk2UrBV-2BfDasYoe9wJO2gbkf1FSOnHhQdo2i8hxvXo552V7Jq6x5Jv-=
+2Bx-2FHIMTAckyLtOsNv3rOaPWEJjvUkwOPK0BRrT8QP6R13ed0tOlgd9fypw34Otwc3ZzsVn0W=
+nSRhvjVssQWqVmPtdGuNbcgtskG4eIdnmDQ7a7NbAnTiXNYUE0-3D" alt=3D"" width=3D"1"=
+ height=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !import=
+ant;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !impo=
+rtant;margin-right:0 !important;margin-left:0 !important;padding-top:0 !imp=
+ortant;padding-bottom:0 !important;padding-right:0 !important;padding-left:=
+0 !important;"/></body> </html> </!doctype><img  alt=3D"" border=3D"0" heig=
+ht=3D"1" width=3D"1" src=3D"https://in1.wizrocketmail.net/r?e=3DKw0Ach8JBWZ=
+6bWp9DSZjfAYICA1jYyw1KS0sNUwBBgBvY2t%2FbiYSC0FVQkc%2BNTwUNDU9IFtVcXQray4uIT=
+88P05%2BXkA%2BPDsoNi47JFwQZ10yLTcvKyFwPEhCWms%2BPnBxdWtkcgcHAARlY2UUZWpgeAI=
+JAwJ1dnA8LSg5FEJZR1sjeGhpICAgIG1UVFI2Lz4%2FdSc%3D&c=3D695233280"></img>

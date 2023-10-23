@@ -1,0 +1,137 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:8691:b0:4fd:23d3:a27 with SMTP id e17csp675252pxn;
+        Sun, 22 Oct 2023 01:18:53 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHoTW5e1OAeZvPLmT3VT7mXFSNhbCsHykSS0m/9U2DyAqkyjNaepr0aQqIKbpRXCJ/1RT+p
+X-Received: by 2002:a05:6808:1b14:b0:3ab:84f0:b491 with SMTP id bx20-20020a0568081b1400b003ab84f0b491mr8182474oib.19.1697962733547;
+        Sun, 22 Oct 2023 01:18:53 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697962733; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Xuz3ZYwnpFvGXFMcRGi0eYigkQxTf2hKMDZXwsd03P5+eEO5kn5Y/uxQ2jBEvzqXyK
+         6liZd0jWGXVBRPnQMRjwktONyuH/nSe4es6hW4CvAhyxNF52hj6GUv3p/98tPNOaM7pM
+         sV0E9KWrwQvORQsvt6oAqt7lDoFxPtmrW0rAbEvxkdNjiOoSJcXWDhfEnMsOXUfxUY9I
+         9efJmAQCxdq+1ZmsXNuEfoIdoguJgzr853Rb3/Z4vhiSrWXPvDFFqPXlUDB7VSOMFka9
+         1Cs+dYEMxV3O9bLKb7ickhAqeVe8m998Um4I6/X3XUReqmaa/rfdh7TF9m2DRsDEIjoZ
+         LeMg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:mime-version:to:reply-to:from:subject:date:message-id
+         :dkim-signature:dkim-signature;
+        bh=1zYJBefgbCI9HSZDwznVqSRnjAMSsgPEgHyEqNM0BgA=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=U1av2kJfLV8bet9sv/hxi9qOuK4cj35RCh+i0yBQrpUHMyubJfABPT7sijb1k2V/Z7
+         Km4gZ5kiGEeVaQxGMutP4geOSMv7NE/nv0WpT9s2LA+q/FQbhjtaLqJfJb0PKtr6Fm/t
+         zel/IPtVdyPc70J/c8d0wGWL0DIhcrYL5H22K6Ov4hSTmnK6rV9QQQN54iOMUEnDLfUU
+         tvXnpM0qcJ8vOxvFHhCg80/sUQ7vNEvrcbUTV/uYf1vUyfRUzd8HfYkn5W2l7EDRmB2R
+         KitXL4Kbftq/nhBvsSkbT8DPvdhxo6LFgEl7K12bK7IZSFFsfd125CWMJWxRRSDDIazn
+         N/cA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@dare2compete.news header.s=6bwq2m5ror7cu45mlxsyicgb6nkvi4mb header.b=WBhbTfNT;
+       dkim=pass header.i=@amazonses.com header.s=rlntogby6xsxlfnvyxwnvvhttakdsqto header.b=VB3hfFvn;
+       spf=pass (google.com: domain of 0109018b56772a66-c7996464-14bb-491f-ac1a-ce0e3c9e1ae4-000000@emails.dare2compete.news designates 76.223.190.145 as permitted sender) smtp.mailfrom=0109018b56772a66-c7996464-14bb-491f-ac1a-ce0e3c9e1ae4-000000@emails.dare2compete.news;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=dare2compete.news
+Return-Path: <0109018b56772a66-c7996464-14bb-491f-ac1a-ce0e3c9e1ae4-000000@emails.dare2compete.news>
+Received: from c190-145.smtp-out.ap-south-1.amazonses.com (c190-145.smtp-out.ap-south-1.amazonses.com. [76.223.190.145])
+        by mx.google.com with ESMTPS id g2-20020a056a0023c200b0068fcc84dda7si4798594pfc.327.2023.10.22.01.18.52
+        for <srijani515@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 22 Oct 2023 01:18:53 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 0109018b56772a66-c7996464-14bb-491f-ac1a-ce0e3c9e1ae4-000000@emails.dare2compete.news designates 76.223.190.145 as permitted sender) client-ip=76.223.190.145;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@dare2compete.news header.s=6bwq2m5ror7cu45mlxsyicgb6nkvi4mb header.b=WBhbTfNT;
+       dkim=pass header.i=@amazonses.com header.s=rlntogby6xsxlfnvyxwnvvhttakdsqto header.b=VB3hfFvn;
+       spf=pass (google.com: domain of 0109018b56772a66-c7996464-14bb-491f-ac1a-ce0e3c9e1ae4-000000@emails.dare2compete.news designates 76.223.190.145 as permitted sender) smtp.mailfrom=0109018b56772a66-c7996464-14bb-491f-ac1a-ce0e3c9e1ae4-000000@emails.dare2compete.news;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=dare2compete.news
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=6bwq2m5ror7cu45mlxsyicgb6nkvi4mb; d=dare2compete.news;
+	t=1697962732;
+	h=Message-ID:Date:Subject:From:Reply-To:To:MIME-Version:Content-Type;
+	bh=6HLsuYGIyCA5//3vZ1ldM36mASYrNtsImqF0Ty175c0=;
+	b=WBhbTfNTl6LaKMzJ8V4DgcjINSI3cDY9/U7B2U9LFFxpH8oXvsYymicqFKcc5agP
+	K3ysCWr2PZR51QTUOYzbvlqyw/by62OBFZMbJJBkKazXsp5iTaMsjjYxlt0sMvwtOcJ
+	i4OsmpReadQ3p/MoZuOK24i5UhaiWQ/fL0TsGIgg=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=rlntogby6xsxlfnvyxwnvvhttakdsqto; d=amazonses.com; t=1697962732;
+	h=Message-ID:Date:Subject:From:Reply-To:To:MIME-Version:Content-Type:Feedback-ID;
+	bh=6HLsuYGIyCA5//3vZ1ldM36mASYrNtsImqF0Ty175c0=;
+	b=VB3hfFvnCJ8x45trPw9KOmyKnzrTqGNSKkP83ccqD2JtpTX+QDaLWAfpM9NFgoms
+	1fOYsakk3v1Iwq4xIZhxsyt0gxAlr1Mjir/Z+l7CPdj+sNmRHHtkj5XkJXKYGLlXHqo
+	W1Rc00MHhnZSJkVjYhtPnnSE5MtZcUvkx10oHDD8=
+Message-ID: <0109018b56772a66-c7996464-14bb-491f-ac1a-ce0e3c9e1ae4-000000@ap-south-1.amazonses.com>
+Date: Sun, 22 Oct 2023 08:18:52 +0000
+Subject: Summer Internship Program by Barclays | Apply Now!
+From: "Internship@Barclays" <noreply@dare2compete.news>
+Reply-To: "Internship@Barclays" <noreply@dare2compete.news>
+To: srijani515@gmail.com
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="_=_swift_1697962732_aa18e62239414989f0a1097380255fdf_=_"
+Feedback-ID: 1.ap-south-1.vLaUspdbZtz+0zahNQSbWc0bbDg5bpfORXW9fnjVqUQ=:AmazonSES
+X-SES-Outgoing: 2023.10.22-76.223.190.145
+
+--_=_swift_1697962732_aa18e62239414989f0a1097380255fdf_=_
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi Unstoppable,
+
+Barclays=C2=A0is live with their=C2=A0Summer Internshi=
+p Program!
+
+Stipend:=C2=A0INR 60,000 (via Glassdoor)
+
+Eligibility:=
+=C2=A0B.E./B.Tech./M.E./M.Tech.
+
+Application Link:=C2=A0https://unstop.=
+com/internships/technology-summer-internship-programme-barclays-797334?ref=
+=3DLawCentre
+
+Check it out fast and apply now before the time runs out!=
+
+
+Regards,
+Team Unstop
+
+--_=_swift_1697962732_aa18e62239414989f0a1097380255fdf_=_
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+=09<title></title>
+</head>
+<body data-gr-ext-installed=3D"" data-new-gr-c-s-check-loaded=3D"14.1118.0"=
+>
+<p>Hi Unstoppable,</p>
+<p><strong>Barclays</strong>&nbsp;is live with their&nbsp;<strong>Summer In=
+ternship Program</strong>!</p>
+<p><strong>Stipend:</strong>&nbsp;INR 60,000 (via Glassdoor)</p>
+<p><strong>Eligibility:</strong>&nbsp;B.E./B.Tech./M.E.<wbr />/M.Tech.</p>
+<p><strong>Application Link:</strong>&nbsp;<a href=3D"https://mstats.dare2c=
+ompete.com/CL0/https:%2F%2Funstop.com%2Finternships%2Ftechnology-summer-int=
+ernship-programme-barclays-797334%3Fref=3DLawCentre/1/0109018b56772a66-c799=
+6464-14bb-491f-ac1a-ce0e3c9e1ae4-000000/9p_Gj_a_ln0xYyY1U9QIgP-gMt2JtRlYeVg=
+KXGdob90=3D125" target=3D"_blank" rel=3D"noopener" data-saferedirecturl=3D"=
+https://www.google.com/url?q=3Dhttps://unstop.com/internships/technology-su=
+mmer-internship-programme-barclays-797334?ref%3DLawCentre&amp;source=3Dgmai=
+l&amp;ust=3D1698039669297000&amp;usg=3DAOvVaw2N2nqjaLNhiU6JHvzPstd5">https:=
+//unstop.com/<wbr />internships/technology-summer-<wbr />internship-program=
+me-barclays-<wbr />797334</a></p>
+<p>Check it out fast and apply now before the time runs out!</p>
+<p><span style=3D?lb=3D22Oct2023_155380&utm_campaign=3Dsite-emails&utm_medi=
+um=3Dd2c-newsletters&utm_source=3Dsummer-internship-program-by-barclays-app=
+ly-now"font-weight: 400;">Regards,<br /></span><span style=3D"font-weight: =
+400;">Team Unstop </span></p>
+<p style=3D"text-align: center;"><a href=3D"https://mstats.dare2compete.com=
+/CL0/https:%2F%2Funstop.com%2Fnewsletter-unsubscribe%2Fc3JpamFuaTUxNUBnbWFp=
+bC5jb20=3D%3Flb=3D22Oct2023_155380%26utm_campaign=3Dsite-emails%26utm_mediu=
+m=3Dd2c-newsletters%26utm_source=3Dsummer-internship-program-by-barclays-ap=
+ply-now/1/0109018b56772a66-c7996464-14bb-491f-ac1a-ce0e3c9e1ae4-000000/x_nx=
+o7N7mXprm7Wk92sAO_xJgYJJW91Lao3wQofrILI=3D125"  style=3D"font-size: 8px;">U=
+nsubscribe here</a></p>
+<img alt=3D"" src=3D"http://mstats.dare2compete.com/CI0/0109018b56772a66-c7=
+996464-14bb-491f-ac1a-ce0e3c9e1ae4-000000/vBgUXCAqzG2TBex4F2lbt-G0Hv5bwXCZk=
+XjZlZryncA=3D125" style=3D"display: none; width: 1px; height: 1px;">
+</body>
+</html>
+
+--_=_swift_1697962732_aa18e62239414989f0a1097380255fdf_=_--

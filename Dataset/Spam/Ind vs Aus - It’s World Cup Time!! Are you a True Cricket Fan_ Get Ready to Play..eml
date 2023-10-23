@@ -1,0 +1,182 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:a163:b0:4fd:23d3:a27 with SMTP id r3csp827491pxe;
+        Sat, 7 Oct 2023 00:45:26 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFRo04prUusnGQSPcxfrpkbZ8WUwzBzl8bukqPpc7f2jvgQDdKn1GQQGZTAU9KX4XWub8YI
+X-Received: by 2002:a5d:4b48:0:b0:317:d048:8d87 with SMTP id w8-20020a5d4b48000000b00317d0488d87mr7908657wrs.61.1696664726287;
+        Sat, 07 Oct 2023 00:45:26 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1696664726; cv=none;
+        d=google.com; s=arc-20160816;
+        b=P3Vas2b9+Hur3Szgt3QfXja+LI3Tba8mL0uAUS5tz9+en4P8emGycah3bCgknGHeHf
+         iFwiKwTR+KGYU0RXjGviLjtxbm6B4+wKSpcEyNd7ufZkuuMv6YHUqJ1GlP2RtpsUP000
+         u4+ZdyfBxhjsGGIJMymPQki5WOZ2zIOaEWynX47Lq5B1Rrp7q/+f7ihUumRn7gqRf4pD
+         TJeOmpSZsRLSeytXgPdHVkJkOhR0q4xpe+3Hj7fUdJ2Q9FVh6i82XjJlQlCSg6quzm4b
+         WMlED+4+u6Mdyg+xggvKsItSHB4628SzTTpkSOIcDrURGYqI5CdzU+RKO6GSGh+1J9to
+         AMdA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=date:feedback-id:reply-to:list-unsubscribe
+         :content-transfer-encoding:mime-version:subject:from:to
+         :domainkey-signature:dkim-signature:dkim-signature:message-id;
+        bh=T0b2aeSmcTpww59be7JjEI1wh6M5AB9vaPrKGdOfiNo=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=KX5sE1KSdqxt8fgz3RN18MdDPcyClhiMNrSd1YxE++r1GcjInke68mzJvsJKM4OZYl
+         OCx7IA1YD0CGSvTQdUTA35nJqNIoiDBSgmQ6uinAl4VaJ4z5/IvJz6bW6+9IYTEwA3YY
+         lkeg3/1FYXVyvuoua1D0ip8ChApiI6th6ircxdsW8nK7NPdpjYg9ZoQttMOdvs1A0VC4
+         Qc9dy0Odsz7zQ0p0Jldj8FXEFFTDZLvRetNeDW101raW8NtQTXdFSv2zRJupaQ61eCrL
+         XWQfYapkE2IeyeFvG32/K7ar2Qp/0jMwfY2MHUkPk2Q++W2Wg1XWNurKJdFBoq0NHeyY
+         fEhw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@nimfpartners.in header.s=nc2048 header.b=sBNKnO4p;
+       dkim=pass header.i=@env.etransmail.com header.s=fnc header.b=bCFrLSJ1;
+       spf=pass (google.com: domain of 16966179652101804-180871-1-gmail.com@delivery.nimfpartners.in designates 175.158.64.68 as permitted sender) smtp.mailfrom=16966179652101804-180871-1-gmail.com@delivery.nimfpartners.in
+Return-Path: <16966179652101804-180871-1-gmail.com@delivery.nimfpartners.in>
+Received: from mta-64.68.etransmail.com (mta-64.68.etransmail.com. [175.158.64.68])
+        by mx.google.com with ESMTPS id j1-20020adfea41000000b0032327cf4241si1631139wrn.126.2023.10.07.00.45.25
+        for <srijani515@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 07 Oct 2023 00:45:26 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 16966179652101804-180871-1-gmail.com@delivery.nimfpartners.in designates 175.158.64.68 as permitted sender) client-ip=175.158.64.68;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@nimfpartners.in header.s=nc2048 header.b=sBNKnO4p;
+       dkim=pass header.i=@env.etransmail.com header.s=fnc header.b=bCFrLSJ1;
+       spf=pass (google.com: domain of 16966179652101804-180871-1-gmail.com@delivery.nimfpartners.in designates 175.158.64.68 as permitted sender) smtp.mailfrom=16966179652101804-180871-1-gmail.com@delivery.nimfpartners.in
+Message-ID: <65210c96.df0a0220.b949f.e764SMTPIN_ADDED_MISSING@mx.google.com>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=nc2048; d=nimfpartners.in;
+ h=To:From:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:List-Unsubscribe:Reply-To:Feedback-Id:Date:from:to:subject; i=debabratachakraborty@nimfpartners.in;
+ bh=T0b2aeSmcTpww59be7JjEI1wh6M5AB9vaPrKGdOfiNo=;
+ b=sBNKnO4pyKVSxDHVVYdLGB4CDVrwrEufpYCyp4pgSgUODk39+2JMmmIuCJHqWdA2Hb54P2ryU60g
+   ApVEQpwB2/bBY2zpJIP2dbnKdg5FloaEOcrpgfAc9nPVElba4P/ALd2l2iJAI8DEC6XyYJv8peVG
+   ulsDUoT7i8QgqClFWaEpUkDaAhMVMUjF9bpKjsR9wkpMSRHaKNSr9yEnOJaM2mHvcoLJ+/si7sch
+   6LPMJBXZSbDaUFNln/BgF5TOnRIyy0DLY5JBoYCg9Xue7Apun5z5Qg1pav+hdhm4YeRu4g/3x6dm
+   0AkJX39sgQc+0p09aDRLxGhLj7xfrnR9Er8tNg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=fnc; d=env.etransmail.com;
+ h=To:From:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:List-Unsubscribe:Reply-To:Feedback-Id:Date:from:to:subject;
+ bh=T0b2aeSmcTpww59be7JjEI1wh6M5AB9vaPrKGdOfiNo=;
+ b=bCFrLSJ1KCbv+VgdleKtr67WI73eDZOZU7W/F/oOFVeMskVWLCZFdbFvMqygxNYbhM1+HXjy7PgG
+   LKym0kLMMSjLDmxsSk0hdMd25Rsq3oZQnX86p0HaMD7LWhwgNx4pzBUTOEv9lAbtG5S5g1bw8n9j
+   c2WqzbXwUu1c1aMp7/w=
+DomainKey-Signature: a=rsa-sha1; c=nofws; q=dns; s=nc2048; d=nimfpartners.in;
+ b=Udx2iNE22cHR6aR8t9QdfbKOFFyIKA7fGUQBvr/0heeA4pISVr1plQSPlbaFmpk/g+it39AAIYbL
+   dVZODioIgBUzbTtogcjaPzJhJr121TKXRVDFzHsr45ty+99Q2z2Qfr5QTRYczg/jHv3xf6hL69us
+   ZHiyXgHGXl9eFq1I1NvX1Vd+OaXtGVnDsgnlBa2xs9oRHmjpQzRuaVaHfscFedzqVp8dfG7/gGrA
+   j7fefAOhG54gmciHJE3mizZGpMyn1syScWPYOReWZWYEQ3E4bX5vBxgWtPaET4wV2cd9XTjuZQlD
+   JOjoThnFha/JT97kO1wSV3nqkGeGEu+PZJRJ3g==;
+To: srijani515@gmail.com
+From: =?UTF-8?B?REVCQUJSQVRBIENIQUtSQUJPUlRZ?= <debabratachakraborty@nimfpartners.in>
+Subject: =?UTF-8?B?SW5kIHZzIEF1cyAtIEl04oCZcyBXb3JsZCBDdXAgVGltZSEhIEFyZSB5b3UgYSBUcnVlIENyaWNrZXQgRmFuPyBHZXTCoFJlYWR5wqB0b8KgUGxheS4=?=
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="_----------=_169666058910105149"
+Content-Transfer-Encoding: binary
+X-Mailer: MIME::Lite 3.030 (F2.84; T1.38; A2.12; B3.13; Q3.13)
+List-Unsubscribe: <mailto:16966179652101804-180871@usub.ftrans03.com?subject=Unsubscribe>, <http://delivery.nimfpartners.in/QIXWNZSFLKM?id=180871=Nh5UBl0HCQcEHkZEQ0IZGBQSFxNBEUZFQxUSQkYRQxFDQkQXRRcREBVCRkRDQhkYFAJLUlhSAAFbA1BXBwFUBQdSVA8EU1RWBFQHXFVUDVoHClUCV1BTBldTClNSCFNXU1dWBlJVCAENVwMAUltaWQUCUk9QB19TVQQFW1AEUQBTU1wHUUtZREESXEtMBlxUXURSQRgfCAwOU0IDFEUNVBERSl4LGGB5bTUoPjAkdXN5DV5XHUdV>
+Reply-To: cdebabrata67@yahoo.com
+Feedback-Id: 180871:202310:1:falconide
+X-Fncid: 180871-16966179652101804-0
+X-Mta-Source: nimfpartnerseapi_180871
+X-Injtime: 1696660589
+X-Traffic-Type: 180871-2
+Date: Sat, 7 Oct 2023 13:15:26 +0530
+
+This is a multi-part message in MIME format.
+
+--_----------=_169666058910105149
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+=C2=A0 DEBABRATA CHAKRABORTY 9434193509 https://debabratachakraborty.nimfpa=
+rtners.com/ =C2=A0 =C2=A0 =C2=A0 If you would like to be removed from our m=
+ailing list please click here: UNSUBSCRIBE Click here to unsubscribe=
+=
+
+--_----------=_169666058910105149
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<div class=3D"mceEditable" contenteditable=3D"true" style=3D"min-height: 14=
+0px;" data-mce-style=3D"min-height: 140px;"><div class=3D"mceEditable" cont=
+enteditable=3D"true" style=3D"min-height: 140px;" data-mce-style=3D"min-hei=
+ght: 140px;"><div class=3D"mceEditable" contenteditable=3D"true" style=3D"m=
+in-height: 140px;" data-mce-style=3D"min-height: 140px;"><table width=3D"80=
+0" border=3D"0" align=3D"center" cellpadding=3D"0" cellspacing=3D"0"><tbody=
+><tr><td><a href=3D"http://delivery.nimfpartners.in/QIXWNZSFLKM?id=3D180871=
+=3DIB5UBl0HCQcEHlMFBVUAC1BQAlZQVQVUBwcEUVcJAgZWA1EEB1EFB1dRU1JUUQABAwdLUlhS=
+AAFbA1BXBwFUBQdSVA8EU1RWBFQHXFVUDVoHClUCV1BTBldTClNSCFNXU1dWBlJVCAENVwMAUlt=
+aWQUCUk9QB19TVQQFW1AEUQBTU1wHUUtZREESXEtMBlxUXURSQRgfCAwOU0IDFEUNVBERSl4LGG=
+B5bTUoPjAkdXN5DV5XHUdV&fl=3DCxYQRxYNHh9RBwQFARBYTFVRX1IKQwcHDEdGG0hfClwFEgV=
+FEVlUQkZMBQsOTVVZWlZeXQZBBwIGGlEQD1IIVBdPE1gXW1UdVhcWSRAHWEtbXBpCFFgcSFI=3D=
+&ext=3DY2hhbm5lbF90eXBlPUVtYWlsJmNvbnRlbnQ9RW1haWxBdXRvUG9zdCZjYW1wX2lkPVMw=
+Uk5NMU5UVlhOV1Jtc3dUV3BPVlZsQmNHZERaejA5JnBpZD1TMFJPUlUxVWEzUk9SbXQ0VEhwT1Z=
+WbEJjR2REWnowOSZzZW1haWw9VVVSb1ZFeFRiemhLYVZaT1RWVmpNVkZVVld4T1ZtZDZVbE13TV=
+V4RFVsWktlbXR1VFZSck1WWnNSbFJOZVZwV1RHb3hSMHRVUlhaTk1WSm5RMjFCU3c9PSZjPS1jb=
+250SWQt" target=3D"_blank" data-mce-href=3D"http://delivery.nimfpartners.in=
+/QIXWNZSFLKM?id=3D180871=3DIB5UBl0HCQcEHlMFBVUAC1BQAlZQVQVUBwcEUVcJAgZWA1EE=
+B1EFB1dRU1JUUQABAwdLUlhSAAFbA1BXBwFUBQdSVA8EU1RWBFQHXFVUDVoHClUCV1BTBldTClN=
+SCFNXU1dWBlJVCAENVwMAUltaWQUCUk9QB19TVQQFW1AEUQBTU1wHUUtZREESXEtMBlxUXURSQR=
+gfCAwOU0IDFEUNVBERSl4LGGB5bTUoPjAkdXN5DV5XHUdV&fl=3DCxYQRxYNHh9RBwQFARBYTFV=
+RX1IKQwcHDEdGG0hfClwFEgVFEVlUQkZMBQsOTVVZWlZeXQZBBwIGGlEQD1IIVBdPE1gXW1UdVh=
+cWSRAHWEtbXBpCFFgcSFI=3D&ext=3DY2hhbm5lbF90eXBlPUVtYWlsJmNvbnRlbnQ9RW1haWxB=
+dXRvUG9zdCZjYW1wX2lkPVMwUk5NMU5UVlhOV1Jtc3dUV3BPVlZsQmNHZERaejA5JnBpZD1TMFJ=
+PUlUxVWEzUk9SbXQ0VEhwT1ZWbEJjR2REWnowOSZzZW1haWw9VVVSb1ZFeFRiemhLYVZaT1RWVm=
+pNVkZVVld4T1ZtZDZVbE13TVV4RFVsWktlbXR1VFZSck1WWnNSbFJOZVZwV1RHb3hSMHRVUlhaT=
+k1WSm5RMjFCU3c9PSZjPS1jb250SWQt"><img src=3D"https://salespanda.com/client/=
+nimf/edm/word-cup2023/08/nimf-wc-ind-aus.jpg" width=3D"800" height=3D"800" =
+alt=3D"Play The Quiz" data-mce-src=3D"https://salespanda.com/client/nimf/ed=
+m/word-cup2023/08/nimf-wc-ind-aus.jpg"></a></td></tr><tr><td>=C2=A0</td></t=
+r><tr><td><table width=3D"750" border=3D"0" align=3D"center" cellpadding=3D=
+"0" cellspacing=3D"0"><tbody><tr><td width=3D"230" align=3D"center" style=
+=3D"font-family: Arial, 'sans-serif'; font-size: 14px; color: #58595b; line=
+-height: 20px;" data-mce-style=3D"font-family: Arial, 'sans-serif'; font-si=
+ze: 14px; color: #58595b; line-height: 20px;">DEBABRATA CHAKRABORTY</td><td=
+ width=3D"228" align=3D"center" style=3D"font-family: Arial, 'sans-serif'; =
+font-size: 14px; color: #58595b; line-height: 20px;" data-mce-style=3D"font=
+-family: Arial, 'sans-serif'; font-size: 14px; color: #58595b; line-height:=
+ 20px;">9434193509</td><td width=3D"242" align=3D"center" style=3D"font-fam=
+ily: Arial, 'sans-serif'; ;font-size: 14px; color: #58595b; line-height: 20=
+px;" data-mce-style=3D"font-family: Arial, 'sans-serif'; ;font-size: 14px; =
+color: #58595b; line-height: 20px;">https://debabratachakraborty.nimfpartne=
+rs.com/</td></tr><tr><td width=3D"230" height=3D"25" align=3D"center" style=
+=3D"font-family: Arial, 'sans-serif'; font-size: 14px; line-height: 20px; c=
+olor: #7a7a7a;" data-mce-style=3D"font-family: Arial, 'sans-serif'; font-si=
+ze: 14px; line-height: 20px; color: #7a7a7a;">=C2=A0</td><td width=3D"228" =
+height=3D"25" align=3D"center" style=3D"font-family: Arial, 'sans-serif'; f=
+ont-size: 14px; line-height: 20px; color: #7a7a7a;" data-mce-style=3D"font-=
+family: Arial, 'sans-serif'; font-size: 14px; line-height: 20px; color: #7a=
+7a7a;">=C2=A0</td><td width=3D"242" height=3D"25" align=3D"center" style=3D=
+"font-family: Arial, 'sans-serif'; font-size: 14px; line-height: 20px; colo=
+r: #7a7a7a;" data-mce-style=3D"font-family: Arial, 'sans-serif'; font-size:=
+ 14px; line-height: 20px; color: #7a7a7a;">=C2=A0</td></tr></tbody></table>=
+</td></tr></tbody></table></div></div></div><p style=3D"text-align: left;" =
+data-mce-style=3D"text-align: left;"><span style=3D"text-align: center; fon=
+t-size: 10px;" data-mce-style=3D"text-align: center; font-size: 10px;">If y=
+ou would like to be removed from our mailing list please click here: <a hre=
+f=3D"http://delivery.nimfpartners.in/QIXWNZSFLKM?id=3D180871=3DIB5UBl0HCQcE=
+HgJQAVVfWwBUUVFYVwAABlAEWwcIVQQHWgUEAwEFAwYBBwYHAA9aAVdLUlhSAAFbA1BXBwFUBQd=
+SVA8EU1RWBFQHXFVUDVoHClUCV1BTBldTClNSCFNXU1dWBlJVCAENVwMAUltaWQUCUk9QB19TVQ=
+QFW1AEUQBTU1wHUUtZREESXEtMBlxUXURSQRgfCAwOU0IDFEUNVBERSl4LGGB5bTUoPjAkdXN5D=
+V5XHUdV&fl=3DCxYQRxYNHh9UEhZKDQtUXkRTRUcPVBQWTVZdD0lcAl8CBQFFSkJfQ0AAFQcRC1=
+tdGkJfQw=3D=3D&ext=3DZW1haWw9VVVSb1ZFeFRiemhLYVZaT1RWVmpNVkZVVld4T1ZtZDZVbE=
+13TVV4RFVsWktlbXR1VFZSck1WWnNSbFJOZVZwV1RHb3hSMHRVUlhaTk1WSm5RMjFCU3c9PSZjX=
+2lkPVUxQk9NVEF5TVRJdyZjYW1wX2lkPTMxNzUyJmM9LWNvbnRJZC0=3D" style=3D"font-si=
+ze: 8px;" data-mce-href=3D"http://delivery.nimfpartners.in/QIXWNZSFLKM?id=
+=3D180871=3DIB5UBl0HCQcEHgJQAVVfWwBUUVFYVwAABlAEWwcIVQQHWgUEAwEFAwYBBwYHAA9=
+aAVdLUlhSAAFbA1BXBwFUBQdSVA8EU1RWBFQHXFVUDVoHClUCV1BTBldTClNSCFNXU1dWBlJVCA=
+ENVwMAUltaWQUCUk9QB19TVQQFW1AEUQBTU1wHUUtZREESXEtMBlxUXURSQRgfCAwOU0IDFEUNV=
+BERSl4LGGB5bTUoPjAkdXN5DV5XHUdV&fl=3DCxYQRxYNHh9UEhZKDQtUXkRTRUcPVBQWTVZdD0=
+lcAl8CBQFFSkJfQ0AAFQcRC1tdGkJfQw=3D=3D&ext=3DZW1haWw9VVVSb1ZFeFRiemhLYVZaT1=
+RWVmpNVkZVVld4T1ZtZDZVbE13TVV4RFVsWktlbXR1VFZSck1WWnNSbFJOZVZwV1RHb3hSMHRVU=
+lhaTk1WSm5RMjFCU3c9PSZjX2lkPVUxQk9NVEF5TVRJdyZjYW1wX2lkPTMxNzUyJmM9LWNvbnRJ=
+ZC0=3D" data-mce-style=3D"font-size: 8px;">UNSUBSCRIBE</a></span></p>Click =
+<a href=3D"http://delivery.nimfpartners.in/QIXWNZSFLKM?id=3D180871=3DNh5UBl=
+0HCQcEHkZEQ0IZGBQSFxNBEUZFQxUSQkYRQxFDQkQXRRcREBVCRkRDQhkYFAJLUlhSAAFbA1BXB=
+wFUBQdSVA8EU1RWBFQHXFVUDVoHClUCV1BTBldTClNSCFNXU1dWBlJVCAENVwMAUltaWQUCUk9Q=
+B19TVQQFW1AEUQBTU1wHUUtZREESXEtMBlxUXURSQRgfCAwOU0IDFEUNVBERSl4LGGB5bTUoPjA=
+kdXN5DV5XHUdV">here</a> to unsubscribe<img src=3D'http://delivery.nimfpartn=
+ers.in/QIXWNZSFLKM?id=3D180871=3DLB5UBl0HCQcEHkZEQ0IZGBQSFxNBEUZFQxUSQkYRQx=
+FDQkQXRRcREBVCRkRDQhkYFAJLUlhSAAFbA1BXBwFUBQdSVA8EU1RWBFQHXFVUDVoHClUCV1BTB=
+ldTClNSCFNXU1dWBlJVCAENVwMAUltaWQUCUk9QB19TVQQFW1AEUQBTU1wHUUtZREESXEtMBlxU=
+XURSQRgfCAwOU0IDFEUNVBERSl4LGGB5bTUoPjAkdXN5DV5XHUdV' alt=3D'' />=
+=
+
+--_----------=_169666058910105149--
+

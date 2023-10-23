@@ -1,0 +1,333 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:329a:b0:4fd:23d3:a27 with SMTP id k26csp5510452pxc;
+        Wed, 18 Oct 2023 06:26:06 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHhAgeFa6Em98Xlcdt/ZaMx5truE5XxI9NPvDmSGYA0SEO4Fh5pYh+xWibnsnbDMFPC6WRB
+X-Received: by 2002:ad4:5967:0:b0:66d:4e5e:df5f with SMTP id eq7-20020ad45967000000b0066d4e5edf5fmr6306734qvb.22.1697635566029;
+        Wed, 18 Oct 2023 06:26:06 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697635566; cv=none;
+        d=google.com; s=arc-20160816;
+        b=kvV6+VqFpleRsnhQQX/Hhii+hp3kI1lzDpgovAidayTZcXoZo23MXbcIu8ChmMuQTa
+         m5Uf+NWZi8+8myK36sEZ5OAPdWd6VRsIBVF5hISfgD/jCet5jBovBRxm2suSH876uhMY
+         yKUJxlJKZ58aZsiXGNYFgVZuV5cl9Y2tjwp2WDRdGSgKMDcijFKzqd071G4BwZyM+Zft
+         V0Pt7n3Qhusxs/uYLwffQObcPxjf3/w9fWwZ+J6pbyys3cLpjmpo+p6cXUfmGZyAQ7zL
+         t1VUrXzgd9lCXRmD/FTYaed3Nwaa6m/gTpv0dcZkUc1c0DGTAr/msWc795d5CHRJzCkU
+         zbYw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:date:content-language:mime-version:reply-to
+         :from:to:subject:list-unsubscribe:dkim-signature
+         :freelancer-domain-signer;
+        bh=HSPRHxByscP3ARWdya8ifUy1rgs5qN5+CCp8BKWkjoU=;
+        fh=+1OmKbeKtFehuH3uuFu5nN9qak2FQtED3IgG8Xk48HM=;
+        b=XY8ATHcI6m9UWrwrfExqqqABxThGdavwp38sDNZSoloPPGAAZeVKX9AGsm+zbitrAe
+         UkVmuEHKOR9kp7UKkBl0zUAE+El3W6PaXYC6EdcRZzdPi2bvkQNnTKd8urtlBS/J+4KH
+         pOdj9hKWosTijQ5ynvYoK6IqAqOxdmYjdWYujRMwYxe7/5aNSOvoWCdXKJC0+ESRlQS+
+         lWX49V9JJUHo0qsnFAXtiyqJbglerXbo+NxBPVkLRg4rtBAgYPj8DaE7kOTGelYbjE5w
+         IsxAb7qAMjZTxZA7dKVp5nKhc+DMqS1JCcyiV+GJ0K9Sa2L8TPXDUK6gSJxPUUIGewih
+         pSWw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass (test mode) header.i=@freelancer.com header.s=mail header.b="bP8/YFNc";
+       spf=pass (google.com: domain of noreply@updates.freelancer.com designates 54.235.236.13 as permitted sender) smtp.mailfrom=noreply@updates.freelancer.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=updates.freelancer.com
+Return-Path: <noreply@updates.freelancer.com>
+Received: from mail004.use.t3.freelancer.com (mail004.use.t3.freelancer.com. [54.235.236.13])
+        by mx.google.com with ESMTPS id j15-20020ae9c20f000000b007742afe97bcsi2599733qkg.523.2023.10.18.06.26.05
+        for <srijani515@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 18 Oct 2023 06:26:05 -0700 (PDT)
+Received-SPF: pass (google.com: domain of noreply@updates.freelancer.com designates 54.235.236.13 as permitted sender) client-ip=54.235.236.13;
+Authentication-Results: mx.google.com;
+       dkim=pass (test mode) header.i=@freelancer.com header.s=mail header.b="bP8/YFNc";
+       spf=pass (google.com: domain of noreply@updates.freelancer.com designates 54.235.236.13 as permitted sender) smtp.mailfrom=noreply@updates.freelancer.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=updates.freelancer.com
+freelancer-domain-signer: signer-01
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=freelancer.com; 
+ i=@freelancer.com; q=dns/txt; s=mail; t=1697635565; h=Subject : To : 
+ From : Date; bh=J7Aa6bYYgM/ZzSlgxaSC+twItFSiFWviwR/n6U3Qy7E=; 
+ b=bP8/YFNcYgDMoBm6ayoQhXm0AFxaSy06gxNHu7OyBihJfVu/J2kFd55vOyayST5oGr6a6j
+ oAXvYy3olQo567+OYW1ExXFL08Bj2v3pymXLZA6IqkepCGWIQAb3wtBTggIJ2l2rp3VlGhvf
+ 3KAXjbvEsIVipJ1/3ddupmRt/rQWY=
+List-Unsubscribe: <http://www.freelancer.com/bl-email/unsubscribe.php?id=38178860&token=bc7151c612edd22cd690c675057ff1db&subject=Unsubscribe-Black%2BFriday%2Bis%2Bonly%2B5%2Bweeks%2Baway.%2BAre%2Byou%2Bready%253F-38178860>
+Subject: Black Friday is only 5 weeks away. Are you ready?
+To: srijani515@gmail.com
+From: Freelancer.com <noreply@updates.freelancer.com>
+Reply-To: Freelancer.com <noreply@updates.freelancer.com>
+MIME-version: 1.0
+Content-language: en
+X-Priority: 3 (Normal)
+X-Accept-Language: en
+Content-Type: text/html; charset="UTF-8"
+Date: Wed, 18 Oct 2023 09:26:05 -0400
+Message-Id: <noreply+mailer-652fdcedc1a413.75487006@freelancer.com>
+X-CampaignID: freelancer:MEE980233100
+X-GreenArrow-MailClass: EDM
+Feedback-ID: 2958:edm:none:freelancer
+
+<!DOCTYPE html>
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta content="width=device-width" name="viewport"><meta name="campaign_code" content="MEE980233100"><meta name="edata-campaignid" content="freelancer:MEE980233100"><meta name="edata-mailclass" content="EDM"><meta name="campaign_name" content="Black Friday 2023"><title></title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><!--[if mso]><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch><o:AllowPNG/></o:OfficeDocumentSettings></xml><![endif]--><!--[if !mso]><!--><!--<![endif]--><style>
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		a[x-apple-data-detectors] {
+			color: inherit !important;
+			text-decoration: inherit !important;
+		}
+
+		#MessageViewBody a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+		p {
+			line-height: inherit
+		}
+
+		.desktop_hide,
+		.desktop_hide table {
+			mso-hide: all;
+			display: none;
+			max-height: 0px;
+			overflow: hidden;
+		}
+
+		.image_block img+div {
+			display: none;
+		}
+
+		@media (max-width:620px) {
+			.social_block.desktop_hide .social-table {
+				display: inline-block !important;
+			}
+
+			.mobile_hide {
+				display: none;
+			}
+
+			.row-content {
+				width: 100% !important;
+			}
+
+			.stack .column {
+				width: 100%;
+				display: block;
+			}
+
+			.mobile_hide {
+				min-height: 0;
+				max-height: 0;
+				max-width: 0;
+				overflow: hidden;
+				font-size: 0px;
+			}
+
+			.desktop_hide,
+			.desktop_hide table {
+				display: table !important;
+				max-height: none !important;
+			}
+
+			.row-4 .column-1 .block-10.text_block td.pad,
+			.row-4 .column-1 .block-13.text_block td.pad,
+			.row-4 .column-1 .block-7.text_block td.pad {
+				padding: 5px 30px 25px 25px !important;
+			}
+
+			.row-3 .column-1 .block-2.text_block td.pad {
+				padding: 15px 10px 15px 15px !important;
+			}
+
+			.row-4 .column-1 .block-4.heading_block h1 {
+				font-size: 29px !important;
+			}
+		}
+	</style><!--[if true]><style>.forceBgColor{background-color: white !important}</style><![endif]--></head><body class="forceBgColor" style="background-color: transparent; margin: 0; padding: 0; -webkit-text-size-adjust: none; text-size-adjust: none;">
+<img src="https://t.freelancer.com/1px.gif?user_id=38178860&amp;en=email_open&amp;program=MEE&amp;program_id=980233100&amp;method=img&amp;acct=.Freelancer.com&amp;uniqid=38178860-414283-652fdced-1f223659" alt=""><table class="nl-container" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: transparent; background-size: auto; background-image: none; background-position: top left; background-repeat: no-repeat;"><tbody><tr><td>
+					<table class="row row-1" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-size: auto;"><tbody><tr><td>
+									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-image: url('https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/538626_519633/Black%20BG.png'); background-repeat: no-repeat; background-size: auto; color: #000; width: 600px; margin: 0 auto;" width="600"><tbody><tr><td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+													<table class="image_block block-1 mobile_hide" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr><td class="pad" style="width:100%;">
+																<div class="alignment" align="center" style="line-height:10px"><a href="https://www.freelancer.com/campaign/0MEE980233101/?l=%2F%3Futm_campaign%3Dblack%26utm_medium%3Demail%26utm_source%3D&amp;uniqid=38178860-414283-652fdced-1f223659&amp;linkid=0" target="_blank" style="outline:none" tabindex="-1"><img src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/538626_519633/FLN%20logo%20black%20desktop.png" style="display: block; height: auto; border: 0; max-width: 600px; width: 100%;" width="600" alt="Freelancer Logo" title="Freelancer Logo"></a></div>
+															</td>
+														</tr></table><table class="image_block block-2 desktop_hide" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; mso-hide: all; display: none; max-height: 0; overflow: hidden;"><tr><td class="pad" style="width:100%;">
+																<div class="alignment" align="center" style="line-height:10px"><a href="https://www.freelancer.com/campaign/0MEE980233102/?l=%2F%3Futm_campaign%3Dblack%26utm_medium%3Demail%26utm_source%3D&amp;uniqid=38178860-414283-652fdced-1f223659&amp;linkid=1" target="_blank" style="outline:none" tabindex="-1"><img src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/538626_519633/FLN%20logo%20black%20mobile.png" style="display: block; height: auto; border: 0; max-width: 600px; width: 100%;" width="600"></a></div>
+															</td>
+														</tr></table></td>
+											</tr></tbody></table></td>
+							</tr></tbody></table><table class="row row-2" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-size: auto;"><tbody><tr><td>
+									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-image: url('https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/538626_519633/Black%20BG.png'); background-repeat: repeat; background-size: auto; color: #000; background-color: #000; width: 600px; margin: 0 auto;" width="600"><tbody><tr><td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+													<table class="image_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr><td class="pad" style="width:100%;">
+																<div class="alignment" align="center" style="line-height:10px"><a href="https://www.freelancer.com/campaign/0MEE980233103/?l=%2Fpost-project%3Futm_campaign%3Dblack%26utm_medium%3Demail%26utm_source%3D&amp;uniqid=38178860-414283-652fdced-1f223659&amp;linkid=2" target="_blank" style="outline:none" tabindex="-1"><img src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/538626_519633/BLACK%20FRIDAY%20HEADER%20v2%20sml.png" style="display: block; height: auto; border: 0; max-width: 600px; width: 100%;" width="600" alt="Black Friday gift box ready to go off!" title="Black Friday gift box ready to go off!"></a></div>
+															</td>
+														</tr></table></td>
+											</tr></tbody></table></td>
+							</tr></tbody></table><table class="row row-3" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-size: auto;"><tbody><tr><td>
+									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #000; background-size: auto; color: #000; width: 600px; margin: 0 auto;" width="600"><tbody><tr><td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+													<table class="text_block block-1 mobile_hide" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;"><tr><td class="pad" style="padding-left:25px;padding-right:30px;padding-top:10px;">
+																<div style="font-family: sans-serif">
+																	<div class style="font-size: 14px; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 16.8px; color: #ffffff; line-height: 1.2;">
+																		<p style="margin: 0; font-size: 50px; text-align: left; mso-line-height-alt: 60px; letter-spacing: normal;"><span style="font-size:50px;"><strong>Don't Wait!</strong></span></p>
+																		<p style="margin: 0; font-size: 50px; text-align: left; mso-line-height-alt: 60px; letter-spacing: normal;"><span style="font-size:50px;"><span style><a href="https://www.freelancer.com/campaign/0MEE980233104/?l=%2Fpost-project%3Futm_campaign%3Dblack%26utm_medium%3Demail%26utm_source%3D&amp;uniqid=38178860-414283-652fdced-1f223659&amp;linkid=3" target="_blank" style="text-decoration: none; color: #29b2fe;" rel="noopener"></a></span><span style><strong><a href="https://www.freelancer.com/campaign/0MEE980233105/?l=%2Fpost-project%3Futm_campaign%3Dblack%26utm_medium%3Demail%26utm_source%3Dblackfriday&amp;uniqid=38178860-414283-652fdced-1f223659&amp;linkid=4" target="_blank" style="text-decoration: none; color: #29b2fe;" rel="noopener">Black Friday</a> Beckons</strong></span></span></p>
+																	</div>
+																</div>
+															</td>
+														</tr></table><table class="text_block block-2 desktop_hide" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; mso-hide: all; display: none; max-height: 0; overflow: hidden; word-break: break-word;"><tr><td class="pad" style="padding-bottom:15px;padding-left:15px;padding-right:20px;padding-top:15px;">
+																<div style="font-family: sans-serif">
+																	<div class style="font-size: 14px; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 16.8px; color: #ffffff; line-height: 1.2;">
+																		<p style="margin: 0; font-size: 46px; mso-line-height-alt: 55.199999999999996px;"><span style="font-size:46px;"><strong>Don't Wait!<a href="https://www.freelancer.com/campaign/0MEE980233106/?l=%2Fpost-project%3Futm_campaign%3Dblack%26utm_medium%3Demail%26utm_source%3D&amp;uniqid=38178860-414283-652fdced-1f223659&amp;linkid=5" target="_blank" rel="noopener" style="text-decoration: underline; color: #29b2fe;"></a></strong></span></p>
+																		<p style="margin: 0; font-size: 46px; mso-line-height-alt: 55.199999999999996px;"><span style="font-size:46px;"><strong><a href="https://www.freelancer.com/campaign/0MEE980233107/?l=%2Fpost-project%3Futm_campaign%3Dblack%26utm_medium%3Demail%26utm_source%3Dblackfriday&amp;uniqid=38178860-414283-652fdced-1f223659&amp;linkid=6" target="_blank" style="text-decoration: none; color: #29b2fe;" rel="noopener">Black Friday</a> Beckons</strong></span></p>
+																	</div>
+																</div>
+															</td>
+														</tr></table></td>
+											</tr></tbody></table></td>
+							</tr></tbody></table><table class="row row-4" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-size: auto;"><tbody><tr><td>
+									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #000; background-size: auto; color: #000; width: 600px; margin: 0 auto;" width="600"><tbody><tr><td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 30px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+													<table class="text_block block-1 mobile_hide" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;"><tr><td class="pad" style="padding-bottom:25px;padding-left:25px;padding-right:30px;padding-top:25px;">
+																<div style="font-family: sans-serif">
+																	<div class style="font-size: 14px; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 21px; color: #ffffff; line-height: 1.5;">
+																		<p style="margin: 0; font-size: 15px; mso-line-height-alt: 22.5px;"><span style="font-size:15px;">Hi Srijani</span></p>
+																		<p style="margin: 0; font-size: 15px; mso-line-height-alt: 21px;"> </p>
+																		<p style="margin: 0; font-size: 15px; mso-line-height-alt: 22.5px;">Are you ready to make this Black Friday your most profitable yet?</p>
+																		<p style="margin: 0; font-size: 15px; mso-line-height-alt: 22.5px;">It's time to prep your promotions and get ahead of the game!<br><br>At Freelancer, our squad of expert freelancers is on standby, ready to turn your Black Friday vision into a reality. Here's how we can help:<br><br><strong><a href="https://www.freelancer.com/campaign/0MEE980233108/?l=%2Fpost-project%3Futm_campaign%3Dblack%26utm_medium%3Demail%26utm_source%3Deyecatchingwebsitebanners&amp;uniqid=38178860-414283-652fdced-1f223659&amp;linkid=7" target="_blank" style="text-decoration: none; color: #29b2fe;" rel="noopener">Eye-Catching Website Banners:</a></strong> Direct customers to your must-have deals with stunning banners that scream "Black Friday DEALS!"<br><br><strong><a href="https://www.freelancer.com/campaign/0MEE980233109/?l=%2Fpost-project%3Futm_campaign%3Dblack%26utm_medium%3Demail%26utm_source%3Dcompellingpostersandflyer&amp;uniqid=38178860-414283-652fdced-1f223659&amp;linkid=8" target="_blank" style="text-decoration: none; color: #29b2fe;" rel="noopener">Compelling Posters and Flyers:</a></strong> Make your brand the talk of the town with flyers and posters, driving foot traffic.<br><br><strong><a href="https://www.freelancer.com/campaign/0MEE980233110/?l=%2Fpost-project%3Futm_campaign%3Dblack%26utm_medium%3Demail%26utm_source%3Dengagingsocialmediaposts&amp;uniqid=38178860-414283-652fdced-1f223659&amp;linkid=9" target="_blank" style="text-decoration: none; color: #29b2fe;" rel="noopener">Engaging Social Media Posts:</a></strong> Drive engagement and sales with a creative, edgy, or outright surreal social media campaign.<br><br>Don't wait until the last minute to start your Black Friday promotions. With Freelancer, you can delegate the creative heavy lifting, leaving you more time to fine-tune your offers.<br><br>Ready to take your Black Friday game to the next level? <a href="https://www.freelancer.com/campaign/0MEE980233111/?l=%2Fpost-project%3Futm_campaign%3Dblack%26utm_medium%3Demail%26utm_source%3Dpostaproject&amp;uniqid=38178860-414283-652fdced-1f223659&amp;linkid=10" target="_blank" style="text-decoration: none; color: #29b2fe;" rel="noopener">Post a project </a>today and let Freelancer make your Black Friday unforgettable.</p>
+																	</div>
+																</div>
+															</td>
+														</tr></table><table class="text_block block-2 desktop_hide" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; mso-hide: all; display: none; max-height: 0; overflow: hidden; word-break: break-word;"><tr><td class="pad" style="padding-bottom:25px;padding-left:25px;padding-right:30px;padding-top:25px;">
+																<div style="font-family: sans-serif">
+																	<div class style="font-size: 14px; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 21px; color: #ffffff; line-height: 1.5;">
+																		<p style="margin: 0; font-size: 15px; mso-line-height-alt: 22.5px;"><span style="font-size:15px;">Hi Srijani</span></p>
+																		<p style="margin: 0; font-size: 15px; mso-line-height-alt: 21px;"> </p>
+																		<p style="margin: 0; font-size: 15px; mso-line-height-alt: 22.5px;"><span style="font-size:15px;">Are you ready to make this Black Friday your most profitable yet?</span></p>
+																		<p style="margin: 0; font-size: 15px; mso-line-height-alt: 22.5px;"><span style="font-size:15px;">It's time to prep your promotions and get ahead of the game!</span><br><br><span style="font-size:15px;">At Freelancer, our squad of expert freelancers is on standby, ready to turn your Black Friday vision into a reality. Here's how we can help:</span><br><br><span style="font-size:15px;"><strong><a href="https://www.freelancer.com/campaign/0MEE980233112/?l=%2Fpost-project%3Futm_campaign%3Dblack%26utm_medium%3Demail%26utm_source%3Deyecatchingwebsitebanners&amp;uniqid=38178860-414283-652fdced-1f223659&amp;linkid=11" target="_blank" style="text-decoration: none; color: #29b2fe;" rel="noopener">Eye-Catching Website Banners:</a></strong> Direct customers to your must-have deals with stunning banners that scream "Black Friday DEALS!"</span><br><br><span style="font-size:15px;"><strong><a href="https://www.freelancer.com/campaign/0MEE980233113/?l=%2Fpost-project%3Futm_campaign%3Dblack%26utm_medium%3Demail%26utm_source%3Dcompellingpostersandflyer&amp;uniqid=38178860-414283-652fdced-1f223659&amp;linkid=12" target="_blank" style="text-decoration: none; color: #29b2fe;" rel="noopener">Compelling Posters and Flyers:</a></strong> Make your brand the talk of the town with flyers and posters, driving foot traffic.</span><br><br><span style="font-size:15px;"><strong><a href="https://www.freelancer.com/campaign/0MEE980233114/?l=%2Fpost-project%3Futm_campaign%3Dblack%26utm_medium%3Demail%26utm_source%3Dengagingsocialmediaposts&amp;uniqid=38178860-414283-652fdced-1f223659&amp;linkid=13" target="_blank" style="text-decoration: none; color: #29b2fe;" rel="noopener">Engaging Social Media Posts:</a></strong> Drive engagement and sales with a creative, edgy, or outright surreal social media campaign.</span><br><br><span style="font-size:15px;">Don't wait until the last minute to start your Black Friday promotions. With Freelancer, you can delegate the creative heavy lifting, leaving you more time to fine-tune your offers.</span><br><br><span style="font-size:15px;">Ready to take your Black Friday game to the next level? <a href="https://www.freelancer.com/campaign/0MEE980233115/?l=%2Fpost-project%3Futm_campaign%3Dblack%26utm_medium%3Demail%26utm_source%3Dpostaproject&amp;uniqid=38178860-414283-652fdced-1f223659&amp;linkid=14" target="_blank" style="text-decoration: none; color: #29b2fe;" rel="noopener">Post a project </a>today and let Freelancer make your Black Friday unforgettable.</span></p>
+																	</div>
+																</div>
+															</td>
+														</tr></table><table class="heading_block block-3 mobile_hide" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr><td class="pad" style="padding-bottom:10px;padding-left:25px;padding-right:30px;padding-top:10px;text-align:center;width:100%;">
+																<h1 style="margin: 0; color: #ffffff; direction: ltr; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; font-size: 38px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: left; margin-top: 0; margin-bottom: 0;"><span class="tinyMce-placeholder">Get inspired by some Black Friday brilliance: </span></h1>
+															</td>
+														</tr></table><table class="heading_block block-4 desktop_hide" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; mso-hide: all; display: none; max-height: 0; overflow: hidden;"><tr><td class="pad" style="padding-bottom:10px;padding-left:25px;padding-right:30px;padding-top:10px;text-align:center;width:100%;">
+																<h1 style="margin: 0; color: #ffffff; direction: ltr; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; font-size: 38px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: left; margin-top: 0; margin-bottom: 0;">Get inspired by some Black Friday brilliance: </h1>
+															</td>
+														</tr></table><table class="image_block block-5" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr><td class="pad">
+																<div class="alignment" align="center" style="line-height:10px"><a href="https://www.freelancer.com/campaign/0MEE980233116/?l=%2Fpost-project%3Futm_campaign%3Dblack%26utm_medium%3Demail%26utm_source%3D&amp;uniqid=38178860-414283-652fdced-1f223659&amp;linkid=15" target="_blank" style="outline:none" tabindex="-1"><img src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/538626_519633/2175092-Black-Friday-brushes_1600x1200-clean.jpg" style="display: block; height: auto; border: 0; max-width: 580px; width: 100%;" width="580" alt="Black Friday web banner" title="Black Friday web banner"></a></div>
+															</td>
+														</tr></table><table class="text_block block-6 mobile_hide" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;"><tr><td class="pad" style="padding-bottom:25px;padding-left:25px;padding-right:30px;padding-top:5px;">
+																<div style="font-family: sans-serif">
+																	<div class style="font-size: 14px; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 21px; color: #dddddd; line-height: 1.5;">
+																		<p style="margin: 0; font-size: 15px; text-align: center; mso-line-height-alt: 22.5px;"><strong>This web banner cost $20 and took 2 days to make</strong></p>
+																	</div>
+																</div>
+															</td>
+														</tr></table><table class="text_block block-7 desktop_hide" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; mso-hide: all; display: none; max-height: 0; overflow: hidden; word-break: break-word;"><tr><td class="pad" style="padding-bottom:25px;padding-left:25px;padding-right:30px;padding-top:25px;">
+																<div style="font-family: sans-serif">
+																	<div class style="font-size: 14px; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 21px; color: #dddddd; line-height: 1.5;">
+																		<p style="margin: 0; font-size: 15px; text-align: center; mso-line-height-alt: 22.5px;"><strong>This web banner cost $20 </strong></p>
+																		<p style="margin: 0; font-size: 15px; text-align: center; mso-line-height-alt: 22.5px;"><strong>and took 2 days to make</strong></p>
+																	</div>
+																</div>
+															</td>
+														</tr></table><table class="image_block block-8" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr><td class="pad">
+																<div class="alignment" align="center" style="line-height:10px"><a href="https://www.freelancer.com/campaign/0MEE980233117/?l=%2Fpost-project%3Futm_campaign%3Dblack%26utm_medium%3Demail%26utm_source%3D&amp;uniqid=38178860-414283-652fdced-1f223659&amp;linkid=16" target="_blank" style="outline:none" tabindex="-1"><img src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/538626_519633/2169127-black-Friday-socials-yellow_1600x1200-clean.jpg" style="display: block; height: auto; border: 0; max-width: 580px; width: 100%;" width="580" alt="Black Friday Social Media Ads" title="Black Friday Social Media Ads"></a></div>
+															</td>
+														</tr></table><table class="text_block block-9 mobile_hide" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;"><tr><td class="pad" style="padding-bottom:25px;padding-left:25px;padding-right:30px;padding-top:5px;">
+																<div style="font-family: sans-serif">
+																	<div class style="font-size: 14px; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 21px; color: #dddddd; line-height: 1.5;">
+																		<p style="margin: 0; font-size: 15px; text-align: center; mso-line-height-alt: 22.5px;"><strong>These social media posts cost $50 and took 1 day to make</strong></p>
+																	</div>
+																</div>
+															</td>
+														</tr></table><table class="text_block block-10 desktop_hide" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; mso-hide: all; display: none; max-height: 0; overflow: hidden; word-break: break-word;"><tr><td class="pad" style="padding-bottom:25px;padding-left:25px;padding-right:30px;padding-top:25px;">
+																<div style="font-family: sans-serif">
+																	<div class style="font-size: 14px; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 21px; color: #dddddd; line-height: 1.5;">
+																		<p style="margin: 0; font-size: 15px; text-align: center; mso-line-height-alt: 22.5px;"><strong>These social media posts cost $50 </strong></p>
+																		<p style="margin: 0; font-size: 15px; text-align: center; mso-line-height-alt: 22.5px;"><strong>and took 1 day to make</strong></p>
+																	</div>
+																</div>
+															</td>
+														</tr></table><table class="image_block block-11" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr><td class="pad">
+																<div class="alignment" align="center" style="line-height:10px"><a href="https://www.freelancer.com/campaign/0MEE980233118/?l=%2Fpost-project%3Futm_campaign%3Dblack%26utm_medium%3Demail%26utm_source%3D&amp;uniqid=38178860-414283-652fdced-1f223659&amp;linkid=17" target="_blank" style="outline:none" tabindex="-1"><img src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/538626_519633/1847311-Black-Friday-dog-ad_1600x1200-clean.jpg" style="display: block; height: auto; border: 0; max-width: 580px; width: 100%;" width="580" alt="Black Friday Digital Advertisement" title="Black Friday Digital Advertisement"></a></div>
+															</td>
+														</tr></table><table class="text_block block-12 mobile_hide" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;"><tr><td class="pad" style="padding-bottom:25px;padding-left:25px;padding-right:30px;padding-top:5px;">
+																<div style="font-family: sans-serif">
+																	<div class style="font-size: 14px; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 21px; color: #dddddd; line-height: 1.5;">
+																		<p style="margin: 0; font-size: 15px; text-align: center; mso-line-height-alt: 22.5px;"><strong>This digital advertisement cost $150 and took 2 days to make</strong></p>
+																	</div>
+																</div>
+															</td>
+														</tr></table><table class="text_block block-13 desktop_hide" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; mso-hide: all; display: none; max-height: 0; overflow: hidden; word-break: break-word;"><tr><td class="pad" style="padding-bottom:25px;padding-left:25px;padding-right:30px;padding-top:25px;">
+																<div style="font-family: sans-serif">
+																	<div class style="font-size: 14px; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 21px; color: #dddddd; line-height: 1.5;">
+																		<p style="margin: 0; font-size: 15px; text-align: center; mso-line-height-alt: 22.5px;"><strong>This digital advertisement cost $150</strong></p>
+																		<p style="margin: 0; font-size: 15px; text-align: center; mso-line-height-alt: 22.5px;"><strong> and took 2 days to make</strong></p>
+																	</div>
+																</div>
+															</td>
+														</tr></table><table class="button_block block-14" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr><td class="pad" style="text-align:center;">
+																<div class="alignment" align="center"><!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.freelancer.com/campaign/0MEE980233119/?l=%2Fpost-project%3Futm_campaign%3Dblack%26utm_medium%3Demail%26utm_source%3D" style="height:42px;width:137px;v-text-anchor:middle;" arcsize="10%" stroke="false" fillcolor="#f20091"><w:anchorlock/><v:textbox inset="0px,0px,0px,0px"><center style="color:#ffffff; font-family:Arial, sans-serif; font-size:16px"><![endif]--><a href="https://www.freelancer.com/campaign/0MEE980233120/?l=%2Fpost-project%3Futm_campaign%3Dblack%26utm_medium%3Demail%26utm_source%3D&amp;uniqid=38178860-414283-652fdced-1f223659&amp;linkid=18" target="_blank" style="text-decoration:none;display:inline-block;color:#ffffff;background-color:#f20091;border-radius:4px;width:auto;border-top:0px solid transparent;font-weight:400;border-right:0px solid transparent;border-bottom:0px solid transparent;border-left:0px solid transparent;padding-top:5px;padding-bottom:5px;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;font-size:16px;text-align:center;mso-border-alt:none;word-break:keep-all;"><span style="padding-left:20px;padding-right:20px;font-size:16px;display:inline-block;letter-spacing:normal;"><span style="word-break: break-word; line-height: 32px;">Post a project</span></span></a><!--[if mso]></center></v:textbox></v:roundrect><![endif]--></div>
+															</td>
+														</tr></table></td>
+											</tr></tbody></table></td>
+							</tr></tbody></table><table class="row row-5" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-size: auto;"><tbody><tr><td>
+									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-image: url('https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/538626_519633/Black%20BG.png'); background-repeat: repeat; background-size: auto; color: #000; background-color: #0e1724; width: 600px; margin: 0 auto;" width="600"><tbody><tr><td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+													<table class="divider_block block-1" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr><td class="pad">
+																<div class="alignment" align="center">
+																	<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr><td class="divider_inner" style="font-size: 1px; line-height: 1px; border-top: 1px solid #dddddd;"><span> </span></td>
+																		</tr></table></div>
+															</td>
+														</tr></table><table class="social_block block-2 mobile_hide" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr><td class="pad" style="padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:20px;text-align:center;">
+																<div class="alignment" align="center">
+																	<table class="social-table" width="503.35543837697736px" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; display: inline-block;"><tr><td style="padding:0 10px 0 10px;"><a href="https://www.facebook.com/fansoffreelancer" target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-circle-white/facebook@2x.png" width="32" height="32" alt="Facebook" title="Facebook" style="display: block; height: auto; border: 0;"></a></td>
+																			<td style="padding:0 10px 0 10px;"><a href="https://twitter.com/freelancer" target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-circle-white/twitter@2x.png" width="32" height="32" alt="Twitter" title="Twitter" style="display: block; height: auto; border: 0;"></a></td>
+																			<td style="padding:0 10px 0 10px;"><a href="https://www.instagram.com/freelancerofficial/" target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-circle-white/instagram@2x.png" width="32" height="32" alt="Instagram" title="Instagram" style="display: block; height: auto; border: 0;"></a></td>
+																			<td style="padding:0 10px 0 10px;"><a href="https://www.youtube.com/channel/UCVtPK85j_D_voWq2MWN87Lg" target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-circle-white/youtube@2x.png" width="32" height="32" alt="YouTube" title="YouTube" style="display: block; height: auto; border: 0;"></a></td>
+																			<td style="padding:0 10px 0 10px;"><a href="https://www.tiktok.com/@freelancer.com" target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-circle-white/tiktok@2x.png" width="32" height="32" alt="TikTok" title="TikTok" style="display: block; height: auto; border: 0;"></a></td>
+																			<td style="padding:0 10px 0 10px;"><a href="https://apps.apple.com/us/app/freelancer-hire-find-jobs/id927810012" target="_blank"><img src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/538626_519633/editor_images/cbfa5deb-4a84-402d-ba7a-0311d387c2f1.png" width="95.28358208955224" height="32" alt="Download on the App Store" title="apple store" style="display: block; height: auto; border: 0;"></a></td>
+																			<td style="padding:0 10px 0 10px;"><a href="https://play.google.com/store/apps/details?id=com.freelancer.android.messenger" target="_blank"><img src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/538626_519633/Get%20It%20On%20Google.png" width="108.07185628742515" height="32" alt="Get It On Google Play" title="google play" style="display: block; height: auto; border: 0;"></a></td>
+																		</tr></table></div>
+															</td>
+														</tr></table><table class="social_block block-3 desktop_hide" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; mso-hide: all; display: none; max-height: 0; overflow: hidden;"><tr><td class="pad" style="padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:20px;text-align:center;">
+																<div class="alignment" align="center">
+																	<table class="social-table" width="230px" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; mso-hide: all; max-height: 0; overflow: hidden; display: inline-block;"><tr><td style="padding:0 7px 0 7px;"><a href="https://www.facebook.com/fansoffreelancer" target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-circle-white/facebook@2x.png" width="32" height="32" alt="Facebook" title="Facebook" style="display: block; height: auto; border: 0;"></a></td>
+																			<td style="padding:0 7px 0 7px;"><a href="https://twitter.com/freelancer" target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-circle-white/twitter@2x.png" width="32" height="32" alt="Twitter" title="Twitter" style="display: block; height: auto; border: 0;"></a></td>
+																			<td style="padding:0 7px 0 7px;"><a href="https://www.instagram.com/freelancerofficial/" target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-circle-white/instagram@2x.png" width="32" height="32" alt="Instagram" title="Instagram" style="display: block; height: auto; border: 0;"></a></td>
+																			<td style="padding:0 7px 0 7px;"><a href="https://www.youtube.com/channel/UCVtPK85j_D_voWq2MWN87Lg" target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-circle-white/youtube@2x.png" width="32" height="32" alt="YouTube" title="YouTube" style="display: block; height: auto; border: 0;"></a></td>
+																			<td style="padding:0 7px 0 7px;"><a href="https://www.tiktok.com/@freelancer.com" target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-circle-white/tiktok@2x.png" width="32" height="32" alt="TikTok" title="TikTok" style="display: block; height: auto; border: 0;"></a></td>
+																		</tr></table></div>
+															</td>
+														</tr></table><table class="social_block block-4 desktop_hide" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; mso-hide: all; display: none; max-height: 0; overflow: hidden;"><tr><td class="pad" style="padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:20px;text-align:center;">
+																<div class="alignment" align="center">
+																	<table class="social-table" width="231.688622754491px" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; mso-hide: all; max-height: 0; overflow: hidden; display: inline-block;"><tr><td style="padding:0 7px 0 7px;"><a href="https://apps.apple.com/us/app/freelancer-hire-find-jobs/id927810012" target="_blank"><img src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/538626_519633/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917%20copy.png" width="95.61676646706587" height="32" alt="Custom" title="apple store" style="display: block; height: auto; border: 0;"></a></td>
+																			<td style="padding:0 7px 0 7px;"><a href="https://play.google.com/store/apps/details?id=com.freelancer.android.messenger" target="_blank"><img src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/538626_519633/Get%20It%20On%20Google.png" width="108.07185628742515" height="32" alt="Custom" title="google play" style="display: block; height: auto; border: 0;"></a></td>
+																		</tr></table></div>
+															</td>
+														</tr></table></td>
+											</tr></tbody></table></td>
+							</tr></tbody></table><table class="row row-6" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-size: auto;"><tbody><tr><td>
+									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #000; background-size: auto; color: #000; width: 600px; margin: 0 auto;" width="600"><tbody><tr><td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+													<table class="html_block block-1 mobile_hide" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr><td class="pad">
+																<div style="font-family:Arial, Helvetica Neue, Helvetica, sans-serif;text-align:center;" align="center"><div style="font-size:16px;text-align:center;font-family:Arial, Helvetica Neue, Helvetica, sans-serif">
+  <div style="color:#ffffff;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;line-height:2;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
+    <div class="txtTinyMce-wrapper" style="line-height: 2; font-size: 12px; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; color: #ffffff; mso-line-height-alt: 24px;">
+      <p style="text-align: center; line-height: 2; word-break: break-word; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; font-size: 10px; mso-line-height-alt: 20px; margin: 0;"><span style="font-size: 10px;"> © 2023 Freelancer Technology Pty Limited. All Rights Reserved.</span><br><span style="font-size: 10px;">Level 37, Grosvenor Place, 225 George Street, Sydney, NSW 2000, Australia</span></p>
+      <p style="text-align: center; line-height: 2; word-break: break-word; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; font-size: 10px; mso-line-height-alt: 20px; margin: 0;"><span style="font-size: 10px;"><a style="text-decoration: underline; color: #ffffff;" href="https://www.freelancer.com/campaign/0MEE980233121/?l=%2Fabout%2Fprivacy%3Futm_campaign%3Dblack%26utm_medium%3Demail%26utm_source%3Dprivacypolicy&amp;uniqid=38178860-414283-652fdced-1f223659&amp;linkid=19" target="_blank">Privacy Policy</a> | <a style="text-decoration: underline; color: #ffffff;" href="https://www.freelancer.com/campaign/0MEE980233122/?l=%2Fabout%2Fterms%3Futm_campaign%3Dblack%26utm_medium%3Demail%26utm_source%3Dtermsandconditions&amp;uniqid=38178860-414283-652fdced-1f223659&amp;linkid=20" target="_blank">Terms and Conditions</a> | <a style="text-decoration: underline; color: #ffffff;" href="https://www.freelancer.com/campaign/0MEE980233123/?l=https%3A%2F%2Fwww.freelancer.com%2Fusers%2Femail%2Fsubscriptions.php%3Ftoken%3DeyJhbGciOiJIUzI1NiIsInR5cCI6IkZyZWVsYW5jZXJcXEdBRlxcQ29yZVxcSldUXFxKV1QifQ.eyJpZCI6IjM4MTc4ODYwIiwic3ViIjoidW5zdWJzY3JpYmUiLCJpYXQiOjE2OTc2MzU1NjV9.4SCYv9MBcW7wGCnv5e9vFQtQPOKbBTTvsi9coYa8wvQ&amp;type=%3Futm_campaign%3Dblack%26utm_medium%3Demail%26utm_source%3Dunsubscribe&amp;uniqid=38178860-414283-652fdced-1f223659&amp;linkid=21" target="_blank">Unsubscribe</a> | <a style="text-decoration: underline; color: #ffffff;" href="https://www.freelancer.com/campaign/0MEE980233124/?l=%2Fsupport%3Futm_campaign%3Dblack%26utm_medium%3Demail%26utm_source%3Dgetsupport&amp;uniqid=38178860-414283-652fdced-1f223659&amp;linkid=22" target="_blank">Get Support</a></span></p>
+    </div>
+  </div>
+</div></div>
+															</td>
+														</tr></table><table class="html_block block-2 desktop_hide" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; mso-hide: all; display: none; max-height: 0; overflow: hidden;"><tr><td class="pad">
+																<div style="font-family:Arial, Helvetica Neue, Helvetica, sans-serif;text-align:center;" align="center"><!--[if false]><!--><div style="color:#ffffff;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;line-height:2;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
+  <div class="txtTinyMce-wrapper" style="line-height: 2; font-size: 12px; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; color: #ffffff; mso-line-height-alt: 24px;">
+    <p style="text-align: center; line-height: 2; word-break: break-word; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; font-size: 8px; mso-line-height-alt: 16px; margin: 0;"><span style="font-size: 8px;"> © 2023 Freelancer Technology Pty Limited. All Rights Reserved.</span><br><span style="font-size: 8px;">Level 37, Grosvenor Place, 225 George Street, Sydney, NSW 2000, Australia</span></p>
+    <p style="text-align: center; line-height: 2; word-break: break-word; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; font-size: 8px; mso-line-height-alt: 16px; margin: 0;"><span style="font-size: 8px;"><a style="text-decoration: underline; color: #ffffff;" href="https://www.freelancer.com/campaign/0MEE980233125/?l=%2Fabout%2Fprivacy%3Futm_campaign%3Dblack%26utm_medium%3Demail%26utm_source%3Dprivacypolicy&amp;uniqid=38178860-414283-652fdced-1f223659&amp;linkid=23" target="_blank">Privacy Policy</a> | <a style="text-decoration: underline; color: #ffffff;" href="https://www.freelancer.com/campaign/0MEE980233126/?l=%2Fabout%2Fterms%3Futm_campaign%3Dblack%26utm_medium%3Demail%26utm_source%3Dtermsandconditions&amp;uniqid=38178860-414283-652fdced-1f223659&amp;linkid=24" target="_blank">Terms and Conditions</a> | <a style="text-decoration: underline; color: #ffffff;" href="https://www.freelancer.com/campaign/0MEE980233127/?l=https%3A%2F%2Fwww.freelancer.com%2Fusers%2Femail%2Fsubscriptions.php%3Ftoken%3DeyJhbGciOiJIUzI1NiIsInR5cCI6IkZyZWVsYW5jZXJcXEdBRlxcQ29yZVxcSldUXFxKV1QifQ.eyJpZCI6IjM4MTc4ODYwIiwic3ViIjoidW5zdWJzY3JpYmUiLCJpYXQiOjE2OTc2MzU1NjV9.4SCYv9MBcW7wGCnv5e9vFQtQPOKbBTTvsi9coYa8wvQ&amp;type=%3Futm_campaign%3Dblack%26utm_medium%3Demail%26utm_source%3Dunsubscribe&amp;uniqid=38178860-414283-652fdced-1f223659&amp;linkid=25" target="_blank">Unsubscribe</a> | <a style="text-decoration: underline; color: #ffffff;" href="https://www.freelancer.com/campaign/0MEE980233128/?l=%2Fsupport%3Futm_campaign%3Dblack%26utm_medium%3Demail%26utm_source%3Dgetsupport&amp;uniqid=38178860-414283-652fdced-1f223659&amp;linkid=26" target="_blank">Get Support</a></span></p>
+  </div>
+</div><!--<![endif]--></div>
+															</td>
+														</tr></table><div class="spacer_block block-3" style="height:60px;line-height:60px;font-size:1px;"> </div>
+												</td>
+											</tr></tbody></table></td>
+							</tr></tbody></table></td>
+			</tr></tbody></table><!-- End --></body></html><!-- X-250ok-CID: FlnMEE980233100-->

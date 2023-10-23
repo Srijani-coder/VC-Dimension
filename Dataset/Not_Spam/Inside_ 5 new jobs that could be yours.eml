@@ -1,0 +1,1700 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:8691:b0:4fd:23d3:a27 with SMTP id e17csp130201pxn;
+        Fri, 20 Oct 2023 23:20:55 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IECIrFl4n5QwiO5hKy4uPRuUbFynFvk+REb2Caoc5GGDVgcT4c7fJCi2vkZmv3onDu+Fq+E
+X-Received: by 2002:a17:90a:bc0b:b0:27d:2ac3:befb with SMTP id w11-20020a17090abc0b00b0027d2ac3befbmr3591613pjr.18.1697869255566;
+        Fri, 20 Oct 2023 23:20:55 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697869255; cv=none;
+        d=google.com; s=arc-20160816;
+        b=xAHoLONYh6RNCp6iVkXQeBqjg4PuyJpAljc4g1nkUNCaHKe1/ap3DWWmt0nwTB9EVt
+         WR2ugImBzMBH9+Rp03TJyB1T3ArsebMrNRkYybN/2IyscpJ6iqUowfXptLQMRLBzhchw
+         mgM65ogdZuAOmU8j6VeI7V01Dj7Pmvv6ufrHDuqJ8wDR2to3idIxXu/PSaJIZ/2smZvh
+         BEPmM/yjZOm6RxJ2hkHPx6QevUriB98e8eLvsfNiVwKedGQEAROTB78g6HBNOTU+OA2Y
+         +S0mFylwuZhIU0tcwdXQKgvgFPUa1T6nlohFyxoEVKUgRd7+c0f6WFnziceBma1WsYXv
+         0Wdw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:subject:from:reply-to:mime-version:date:message-id:to
+         :dkim-signature;
+        bh=+USP7QZT9i5VmmfvHZp10EelRcDx6OLwD9Tj8UD1LwU=;
+        fh=1jpT/WKx9w1MSp8pGnZ42S6s7FoxGExtHbOmXF4FNqs=;
+        b=XJaJqFGIxdx215Gz/tN2qqjEGCYYbaWBRDB5U4s9F83gi/Y88kcTXp+Hrmw2SNBnqb
+         89Fw8MuCRrWxTk6OL2LBc9LMfCuzdt0HPOTmZfrgd0GkygizZlMfohJH6QLZo/7RK/JV
+         kb8uLDlhwrihWy3/kMpxgwZARquSrLAAMhv0wPjDUq0tFwu8GCkSkVQWUs9MgvwmTvH9
+         BJof6gEcj6DuLXFKQ28/wLe3OIf8cItBH5mbO/Lhxwtb/K80RFgRzEJV50tK4ALBQH9X
+         /5+P28RvRqjPiQBiLpGstinRGmdKz1UjHdRKjEJXB0hjQTS+/rMheISsY6+asalujJqZ
+         YUdQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@care.com header.s=scph1118 header.b=JBqt2wnc;
+       spf=pass (google.com: domain of msprvs1=196589ch9nueq=bounces-243468@bounce2.care.com designates 192.174.85.176 as permitted sender) smtp.mailfrom="msprvs1=196589ch9nuEQ=bounces-243468@bounce2.care.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=care.com
+Return-Path: <msprvs1=196589ch9nuEQ=bounces-243468@bounce2.care.com>
+Received: from mta-174-85-176.care.com.sparkpostmail.com (mta-174-85-176.care.com.sparkpostmail.com. [192.174.85.176])
+        by mx.google.com with ESMTPS id kk2-20020a17090b4a0200b0026b51ae4574si6375131pjb.36.2023.10.20.23.20.55
+        for <srijani515@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 20 Oct 2023 23:20:55 -0700 (PDT)
+Received-SPF: pass (google.com: domain of msprvs1=196589ch9nueq=bounces-243468@bounce2.care.com designates 192.174.85.176 as permitted sender) client-ip=192.174.85.176;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@care.com header.s=scph1118 header.b=JBqt2wnc;
+       spf=pass (google.com: domain of msprvs1=196589ch9nueq=bounces-243468@bounce2.care.com designates 192.174.85.176 as permitted sender) smtp.mailfrom="msprvs1=196589ch9nuEQ=bounces-243468@bounce2.care.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=care.com
+X-MSFBL: jNHDb6ZgUb3VlsIDPg7gwnwLLN8avDxXg3bB3G2+VDI=|eyJ0ZW5hbnRfaWQiOiJ
+	zcGMiLCJzdWJhY2NvdW50X2lkIjoiMCIsIm1lc3NhZ2VfaWQiOiI2NTMyYzc2ZDM
+	zNjUwZTA5YWZlNiIsImN1c3RvbWVyX2lkIjoiMjQzNDY4IiwiciI6InNyaWphbmk
+	1MTVAZ21haWwuY29tIn0=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=care.com;
+	s=scph1118; t=1697869255; i=@care.com;
+	bh=+USP7QZT9i5VmmfvHZp10EelRcDx6OLwD9Tj8UD1LwU=;
+	h=To:Message-ID:Date:Content-Type:From:Subject:From:To:Cc:Subject;
+	b=JBqt2wnc10OsFsqZTEurYENWQ+ZKC9oUAqzojepefwA5egyrXqMWzFba/n8oSYdmD
+	 67frqqMYZozRltFisVm81ItLmmbBGrJgXiiwAKRBhiPjjL30/kDjMmP6Sf5z4BIwnb
+	 p/x7JFw/BRteXMfMxInkIN1J8DMpB2rcG34qUbaM=
+To: "Srijani Chakrabarti" <srijani515@gmail.com>
+Message-ID: <FA.6E.33274.7CD63356@kz.mta1vrest.cc.prd.sparkpost>
+Date: Sat, 21 Oct 2023 06:20:55 +0000
+Content-Type: multipart/alternative; boundary="_----9/na3LnQsrGQX0suYtK14A===_BA/6E-33274-7CD63356"
+MIME-Version: 1.0
+Reply-To: infoen-au@care.com
+X-Campaign-ID: 2044649
+From: "Care.com" <infoen-au@care.com>
+Subject: Inside: 5 new jobs that could be yours
+X-Message-ID: 4a6b53471d4b423f852fa61a344f5baa
+X-Feedback-ID: 2807002:2044649:42254:iterable
+Feedback-ID: 2807002:2044649:42254:iterable
+
+--_----9/na3LnQsrGQX0suYtK14A===_BA/6E-33274-7CD63356
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="UTF-8"
+
+Find your ideal job on Care.com =E2=80=BA =0A=0A =0A<https://www.care.com/e=
+n-au/login/byExternalId=3FforMember=3Db076e98a-fc28-4a6e-8d01-33c86ecd17e5&=
+redirectUrl=3Dhttps%3A%2F%2Fwww.care.com%2Fen-au%2Fmy-account>=0A=0A=0ANew =
+Jobs Near You =0A=0AHere's a selection of your latest job offers - act fast=
+ and apply now! =0AView all jobs =0A<https://www.care.com/en-au/login/byExt=
+ernalId=3FforMember=3Db076e98a-fc28-4a6e-8d01-33c86ecd17e5&redirectUrl=3Dht=
+tps%3A%2F%2Fwww.care.com%2Fen-au%2Fmy-account%2F>=0A=0A=0AAttention: Nanny =
+Needed for Our Child =0A<https://www.care.com/en-au/login/byExternalId=3Ffo=
+rMember=3Db076e98a-fc28-4a6e-8d01-33c86ecd17e5&redirectUrl=3Dhttps%3A%2F%2F=
+www.care.com%2Fen-au%2Fjobs%2Fad%2Fattention-nanny-needed-for-our-child-job=
+-in-canada-bay%2F24554101>=0A=0ABreakfast Point =E2=80=A2 by Olivia C. =0A<=
+https://www.care.com/en-au/login/byExternalId=3FforMember=3Db076e98a-fc28-4=
+a6e-8d01-33c86ecd17e5&redirectUrl=3Dhttps%3A%2F%2Fwww.care.com%2Fen-au%2Fjo=
+bs%2Fad%2Fattention-nanny-needed-for-our-child-job-in-canada-bay%2F24554101=
+>=0A=0AStarts: 06.11.2023 =0A<https://www.care.com/en-au/login/byExternalId=
+=3FforMember=3Db076e98a-fc28-4a6e-8d01-33c86ecd17e5&redirectUrl=3Dhttps%3A%=
+2F%2Fwww.care.com%2Fen-au%2Fjobs%2Fad%2Fattention-nanny-needed-for-our-chil=
+d-job-in-canada-bay%2F24554101>=0A=0A$380 20 Hr. / Week =0A<https://www.car=
+e.com/en-au/login/byExternalId=3FforMember=3Db076e98a-fc28-4a6e-8d01-33c86e=
+cd17e5&redirectUrl=3Dhttps%3A%2F%2Fwww.care.com%2Fen-au%2Fjobs%2Fad%2Fatten=
+tion-nanny-needed-for-our-child-job-in-canada-bay%2F24554101>=0A=0A=E2=80=
+=BA =0A<https://www.care.com/en-au/login/byExternalId=3FforMember=3Db076e98=
+a-fc28-4a6e-8d01-33c86ecd17e5&redirectUrl=3Dhttps%3A%2F%2Fwww.care.com%2Fen=
+-au%2Fjobs%2Fad%2Fattention-nanny-needed-for-our-child-job-in-canada-bay%2F=
+24554101>=0A=0A=0A=0A=0A=0ALooking for nanny to look after our 2 year old =
+=0A<https://www.care.com/en-au/login/byExternalId=3FforMember=3Db076e98a-fc=
+28-4a6e-8d01-33c86ecd17e5&redirectUrl=3Dhttps%3A%2F%2Fwww.care.com%2Fen-au%=
+2Fjobs%2Fad%2Flooking-for-nanny-to-look-after-our-2-year-old-job-in-woollah=
+ra%2F24557658>=0A=0ARose Bay =E2=80=A2 by Rachel D. =0A<https://www.care.co=
+m/en-au/login/byExternalId=3FforMember=3Db076e98a-fc28-4a6e-8d01-33c86ecd17=
+e5&redirectUrl=3Dhttps%3A%2F%2Fwww.care.com%2Fen-au%2Fjobs%2Fad%2Flooking-f=
+or-nanny-to-look-after-our-2-year-old-job-in-woollahra%2F24557658>=0A=0ASta=
+rts: 20.10.2023 =0A<https://www.care.com/en-au/login/byExternalId=3FforMemb=
+er=3Db076e98a-fc28-4a6e-8d01-33c86ecd17e5&redirectUrl=3Dhttps%3A%2F%2Fwww.c=
+are.com%2Fen-au%2Fjobs%2Fad%2Flooking-for-nanny-to-look-after-our-2-year-ol=
+d-job-in-woollahra%2F24557658>=0A=0A$475 25 Hr. / Week =0A<https://www.care=
+.com/en-au/login/byExternalId=3FforMember=3Db076e98a-fc28-4a6e-8d01-33c86e=
+cd17e5&redirectUrl=3Dhttps%3A%2F%2Fwww.care.com%2Fen-au%2Fjobs%2Fad%2Flooki=
+ng-for-nanny-to-look-after-our-2-year-old-job-in-woollahra%2F24557658>=0A=
+=0A=E2=80=BA =0A<https://www.care.com/en-au/login/byExternalId=3FforMember=
+=3Db076e98a-fc28-4a6e-8d01-33c86ecd17e5&redirectUrl=3Dhttps%3A%2F%2Fwww.car=
+e.com%2Fen-au%2Fjobs%2Fad%2Flooking-for-nanny-to-look-after-our-2-year-old-=
+job-in-woollahra%2F24557658>=0A=0A=0A=0A=0A=0AAfter school care required fo=
+r two kids, aged seven and 10 from mid November =0Atill end of year. =0A<ht=
+tps://www.care.com/en-au/login/byExternalId=3FforMember=3Db076e98a-fc28-4a6=
+e-8d01-33c86ecd17e5&redirectUrl=3Dhttps%3A%2F%2Fwww.care.com%2Fen-au%2Fjobs=
+%2Fad%2Fafter-school-care-required-for-two-kids-aged-seven-and-10-from-mid-=
+november-till-end-of-year-job-in-canada-bay%2F24557874>=0A=0ACabarita =E2=
+=80=A2 by Suzanne M. =0A<https://www.care.com/en-au/login/byExternalId=3Ffo=
+rMember=3Db076e98a-fc28-4a6e-8d01-33c86ecd17e5&redirectUrl=3Dhttps%3A%2F%2F=
+www.care.com%2Fen-au%2Fjobs%2Fad%2Fafter-school-care-required-for-two-kids-=
+aged-seven-and-10-from-mid-november-till-end-of-year-job-in-canada-bay%2F24=
+557874>=0A=0AStarts: 20.11.2023 =0A<https://www.care.com/en-au/login/byExte=
+rnalId=3FforMember=3Db076e98a-fc28-4a6e-8d01-33c86ecd17e5&redirectUrl=3Dhtt=
+ps%3A%2F%2Fwww.care.com%2Fen-au%2Fjobs%2Fad%2Fafter-school-care-required-fo=
+r-two-kids-aged-seven-and-10-from-mid-november-till-end-of-year-job-in-cana=
+da-bay%2F24557874>=0A=0A$285 15 Hr. / Week =0A<https://www.care.com/en-au/l=
+ogin/byExternalId=3FforMember=3Db076e98a-fc28-4a6e-8d01-33c86ecd17e5&redire=
+ctUrl=3Dhttps%3A%2F%2Fwww.care.com%2Fen-au%2Fjobs%2Fad%2Fafter-school-care-=
+required-for-two-kids-aged-seven-and-10-from-mid-november-till-end-of-year-=
+job-in-canada-bay%2F24557874>=0A=0A=E2=80=BA =0A<https://www.care.com/en-au=
+/login/byExternalId=3FforMember=3Db076e98a-fc28-4a6e-8d01-33c86ecd17e5&redi=
+rectUrl=3Dhttps%3A%2F%2Fwww.care.com%2Fen-au%2Fjobs%2Fad%2Fafter-school-car=
+e-required-for-two-kids-aged-seven-and-10-from-mid-november-till-end-of-yea=
+r-job-in-canada-bay%2F24557874>=0A=0A=0A=0A=0A=0ANanny Needed for Our Child=
+ in Hunter's Hill 2111 =0A<https://www.care.com/en-au/login/byExternalId=3F=
+forMember=3Db076e98a-fc28-4a6e-8d01-33c86ecd17e5&redirectUrl=3Dhttps%3A%2F%=
+2Fwww.care.com%2Fen-au%2Fjobs%2Fad%2Fnanny-needed-for-our-child-in-hunter-s=
+-hill-2111-job-in-hunter-s-hill%2F24558126>=0A=0AGladesville =E2=80=A2 by C=
+hristina S. =0A<https://www.care.com/en-au/login/byExternalId=3FforMember=
+=3Db076e98a-fc28-4a6e-8d01-33c86ecd17e5&redirectUrl=3Dhttps%3A%2F%2Fwww.car=
+e.com%2Fen-au%2Fjobs%2Fad%2Fnanny-needed-for-our-child-in-hunter-s-hill-211=
+1-job-in-hunter-s-hill%2F24558126>=0A=0AStarts: 21.10.2023 =0A<https://www.=
+care.com/en-au/login/byExternalId=3FforMember=3Db076e98a-fc28-4a6e-8d01-33c=
+86ecd17e5&redirectUrl=3Dhttps%3A%2F%2Fwww.care.com%2Fen-au%2Fjobs%2Fad%2Fna=
+nny-needed-for-our-child-in-hunter-s-hill-2111-job-in-hunter-s-hill%2F24558=
+126>=0A=0A$19 / hour =0A<https://www.care.com/en-au/login/byExternalId=3Ffo=
+rMember=3Db076e98a-fc28-4a6e-8d01-33c86ecd17e5&redirectUrl=3Dhttps%3A%2F%2F=
+www.care.com%2Fen-au%2Fjobs%2Fad%2Fnanny-needed-for-our-child-in-hunter-s-h=
+ill-2111-job-in-hunter-s-hill%2F24558126>=0A=0A=E2=80=BA =0A<https://www.ca=
+re.com/en-au/login/byExternalId=3FforMember=3Db076e98a-fc28-4a6e-8d01-33c86=
+ecd17e5&redirectUrl=3Dhttps%3A%2F%2Fwww.care.com%2Fen-au%2Fjobs%2Fad%2Fnann=
+y-needed-for-our-child-in-hunter-s-hill-2111-job-in-hunter-s-hill%2F2455812=
+6>=0A=0A=0A=0A=0A=0AReliable Babysitter Needed for 2 Children in Canada Bay=
+ =0A<https://www.care.com/en-au/login/byExternalId=3FforMember=3Db076e98a-f=
+c28-4a6e-8d01-33c86ecd17e5&redirectUrl=3Dhttps%3A%2F%2Fwww.care.com%2Fen-au=
+%2Fjobs%2Fad%2Freliable-babysitter-needed-for-2-children-in-canada-bay-job-=
+in-canada-bay%2F24558576>=0A=0AConcord =E2=80=A2 by Jing G. =0A<https://www=
+.care.com/en-au/login/byExternalId=3FforMember=3Db076e98a-fc28-4a6e-8d01-3=
+3c86ecd17e5&redirectUrl=3Dhttps%3A%2F%2Fwww.care.com%2Fen-au%2Fjobs%2Fad%2F=
+reliable-babysitter-needed-for-2-children-in-canada-bay-job-in-canada-bay%2=
+F24558576>=0A=0AStarts: 21.10.2023 =0A<https://www.care.com/en-au/login/byE=
+xternalId=3FforMember=3Db076e98a-fc28-4a6e-8d01-33c86ecd17e5&redirectUrl=3D=
+https%3A%2F%2Fwww.care.com%2Fen-au%2Fjobs%2Fad%2Freliable-babysitter-needed=
+-for-2-children-in-canada-bay-job-in-canada-bay%2F24558576>=0A=0A$19 / hour=
+ =0A<https://www.care.com/en-au/login/byExternalId=3FforMember=3Db076e98a-f=
+c28-4a6e-8d01-33c86ecd17e5&redirectUrl=3Dhttps%3A%2F%2Fwww.care.com%2Fen-au=
+%2Fjobs%2Fad%2Freliable-babysitter-needed-for-2-children-in-canada-bay-job-=
+in-canada-bay%2F24558576>=0A=0A=E2=80=BA =0A<https://www.care.com/en-au/log=
+in/byExternalId=3FforMember=3Db076e98a-fc28-4a6e-8d01-33c86ecd17e5&redirect=
+Url=3Dhttps%3A%2F%2Fwww.care.com%2Fen-au%2Fjobs%2Fad%2Freliable-babysitter-=
+needed-for-2-children-in-canada-bay-job-in-canada-bay%2F24558576>=0A=0A=0A=
+=0A=0A=0A=0A Care.com is an online venue for care seekers and care provider=
+s to connect =0Awith each other. We do not introduce or supply carers to th=
+ose seeking care, =0Anor do we select or propose specific carers to those s=
+eeking care or care =0Aseekers to carers. Care.com does not verify the iden=
+tity of, or information =0Aposted by, care seekers or carers. Please see ou=
+r Safety Centre for guidance on =0Ahow to verify the identity of, and infor=
+mation posted by, other users.=0A=0A Care.com and "There for you" are trade=
+marks of Care.com Inc., the parent of =0ACare.com Australia Pty Limited. =
+=C2=A92023 Care.com Australia Pty Limited. All =0Arights reserved.=0A=0ACar=
+e.com Australia Pty Limited, PO Box 629, North Sydney NSW 2059. Australia =
+=0AAustralian Business Number (ABN): 85 161 047 123=0A=0ATerms of Use <http=
+s://www.care.com/en-au/terms-of-use> Privacy Policy =0A<https://www.care.co=
+m/en-au/privacy-policy> Unsubscribe =0A<http://links2.care.com/e/eh=3F_t=3D=
+24560b526ec649f8b85da96745570677&_m=3D4a6b53471d4b423f852fa61a344f5baa&_e=
+=3DRGFyiv2w_9EcQd-3Qqng22XBJyVpA-Es4ho1WmeqLgYxpo4goJfYeUYWisJ4HQ3qyWu88C03=
+OBqUNh7ff2lRg67Q9Lj0eex3v6k_HaDqToa3MbTCQmynC9RmYD11BUgVc__jDvaxbYe2rKLbmCK=
+ak0HvN7xEkUoJYk66RiI8p1dx3jJ_THu3Bb3wED4X632v97NM3FhXPxAiIYBh8LdesTptyBf1C-=
+Ubh5u6zqfXDkSx_r8YOFHkJ5VPY2l6-e2iMcIJomzg6hv7iBG9u_llFnrht0cFAhDx0XMCuKeQp=
+-I%3D>
+--_----9/na3LnQsrGQX0suYtK14A===_BA/6E-33274-7CD63356
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www=
+.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html xmlns=3D"http://www.=
+w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn=
+:schemas-microsoft-com:office:office" style=3D"line-height: inherit;"> <hea=
+d> <!--[if gte mso 9]><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:Pixels=
+PerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml><![endif]--> <=
+meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"> <m=
+eta name=3D"viewport" content=3D"width=3Ddevice-width"> <!--[if !mso]><!-->=
+ <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"> <!--<![endif]-=
+-> <title></title> <!--[if !mso]><!--> <link href=3D"https://fonts.googleap=
+is.com/css=3Ffamily=3DLato" rel=3D"stylesheet" type=3D"text/css"> <link hre=
+f=3D"https://euwprd-cdn-w.care.com/assets/proxima-nova-regular.woff2" rel=
+=3D"stylesheet" type=3D"text/css"> <link href=3D"https://euwprd-cdn-w.care.=
+com/assets/proxima-nova-semibold.woff2" rel=3D"stylesheet" type=3D"text/css=
+"> <!--<![endif]--> <style type=3D"text/css">body{margin:0;padding:0}table,=
+td,tr{vertical-align:top;border-collapse:collapse}*{line-height:inherit}a[x=
+-apple-data-detectors=3Dtrue]{color:inherit!important;text-decoration:none!=
+important}</style> <style type=3D"text/css" id=3D"media-query">@media(max-w=
+idth:520px){.block-grid,.col{min-width:320px!important;max-width:100%!impor=
+tant;display:block!important}.block-grid{width:100%!important}.col{width:10=
+0%!important}.col_cont{margin:0 auto}img.fullwidth,img.fullwidthOnMobile{ma=
+x-width:100%!important}.no-stack .col{min-width:0!important;display:table-c=
+ell!important}.no-stack.two-up .col{width:50%!important}.no-stack .col.num2=
+{width:16.6%!important}.no-stack .col.num3{width:25%!important}.no-stack .c=
+ol.num4{width:33%!important}.no-stack .col.num5{width:41.6%!important}.no-s=
+tack .col.num6{width:50%!important}.no-stack .col.num7{width:58.3%!importan=
+t}.no-stack .col.num8{width:66.6%!important}.no-stack .col.num9{width:75%!i=
+mportant}.no-stack .col.num10{width:83.3%!important}.video-block{max-width:=
+none!important}.mobile_hide{min-height:0;max-height:0;max-width:0;display:n=
+one;overflow:hidden;font-size:0}.desktop_hide{display:block!important;max-h=
+eight:none!important}}</style> </head> <body class=3D"clean-body" style=3D"=
+line-height: inherit; margin: 0; padding: 0; -webkit-text-size-adjust: 100%=
+; background-color: #f6f7f8;">=0D=0A<div style=3D"color:transparent;visibil=
+ity:hidden;opacity:0;font-size:0px;border:0;max-height:1px;width:1px;margin=
+:0px;padding:0px;border-width:0px!important;display:none!important;line-hei=
+ght:0px!important;"><img border=3D"0" width=3D"1" height=3D"1" src=3D"http:=
+//track2.care.com/q/4Sx0TpUM4mXZ9QiSuDOz9A~~/AAO3DAA~/RgRnFfLHPVcDc3BjQgplM=
+sdtM2UOCa_mUhRzcmlqYW5pNTE1QGdtYWlsLmNvbVgEAAAAAA~~" alt=3D""/></div>=0D=0A=
+<span style=3D"color:transparent;visibility:hidden;display:none;opacity:0;h=
+eight:0;width:0;font-size:0;"> Find your ideal job on Care.com =E2=80=BA</s=
+pan><img src=3D"http://links2.care.com/e/eo=3F_t=3D24560b526ec649f8b85da967=
+45570677&amp;_m=3D4a6b53471d4b423f852fa61a344f5baa&amp;_e=3DLmLFHsBIITQUPmm=
+jj1bfRBkyCEknVUbg0006GKOtboPkb2X-lY_WVzStjLAB0ByDgsheOhz_hyaiynbsJ0-Aj4i9zU=
+YHz1JD6sq8aGWD_N286JDk5CqKfIcuqQQ2LrGUbmMiF2kxqH880ZrPYMnN2w%3D%3D" style=
+=3D"border:0;width:1px;height:1px;border-width:0px!important;display:none!i=
+mportant;line-height:0!important;" width=3D"1" height=3D"1"/> <!--[if IE]><=
+div class=3D"ie-browser"><![endif]--> <table class=3D"nl-container" style=
+=3D"line-height: inherit; table-layout: fixed; vertical-align: top; min-wid=
+th: 320px; border-spacing: 0; border-collapse: collapse; mso-table-lspace: =
+0pt; mso-table-rspace: 0pt; background-color: #f6f7f8; width: 100%;" cellpa=
+dding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%" bgcolor=
+=3D"#f6f7f8" valign=3D"top"> <tbody style=3D"line-height: inherit;"> <tr st=
+yle=3D"line-height: inherit; border-collapse: collapse; vertical-align: top=
+;" valign=3D"top"> <td style=3D"line-height: inherit; border-collapse: coll=
+apse; word-break: break-word; vertical-align: top;" valign=3D"top"> <!--[if=
+ (mso)|(IE)]><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" bord=
+er=3D"0"><tr><td align=3D"center" style=3D"background-color:#f6f7f8"><![end=
+if]--> <div style=3D"line-height: inherit; background-color: #f6f7f8;"> <di=
+v class=3D"block-grid " style=3D"line-height: inherit; min-width: 320px; ma=
+x-width: 500px; overflow-wrap: break-word; word-wrap: break-word; word-brea=
+k: break-word; Margin: 0 auto; background-color: #f6f7f8;"> <div style=3D"l=
+ine-height: inherit; border-collapse: collapse; display: table; width: 100%=
+; background-color: #f6f7f8;"> <!--[if (mso)|(IE)]><table width=3D"100%" ce=
+llpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"background-color:#f=
+6f7f8;"><tr><td align=3D"center"><table cellpadding=3D"0" cellspacing=3D"0"=
+ border=3D"0" style=3D"width:500px"><tr class=3D"layout-full-width" style=
+=3D"background-color:#f6f7f8"><![endif]--> <!--[if (mso)|(IE)]><td align=3D=
+"center" width=3D"500" style=3D"background-color:#f6f7f8;width:500px; borde=
+r-top: 0px dotted transparent; border-left: 0px dotted transparent; border-=
+bottom: 0px dotted transparent; border-right: 0px dotted transparent;" vali=
+gn=3D"top"><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0"><tr><td style=3D"padding-right: 0px; padding-left: 0px; padding-top:=
+15px; padding-bottom:0px;"><![endif]--> <div class=3D"col num12" style=3D"l=
+ine-height: inherit; min-width: 320px; max-width: 500px; display: table-cel=
+l; vertical-align: top; width: 500px;"> <div class=3D"col_cont" style=3D"li=
+ne-height: inherit; width: 100% !important;"> <!--[if (!mso)&(!IE)]><!--> <=
+div style=3D"line-height: inherit; border-top: 0px dotted transparent; bord=
+er-left: 0px dotted transparent; border-bottom: 0px dotted transparent; bor=
+der-right: 0px dotted transparent; padding-top: 15px; padding-bottom: 0px; =
+padding-right: 0px; padding-left: 0px;"> <!--<![endif]--> <!--[if mso]><tab=
+le width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td =
+style=3D"padding-right: 10px; padding-left: 10px; padding-top: 10px; paddin=
+g-bottom: 10px; font-family: Arial, sans-serif"><![endif]--> <div style=3D"=
+color: #444444; font-family: Proxima Nova, Lato, Arial, sans-serif; line-he=
+ight: 1.5; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; pa=
+dding-left: 10px;"> <div class=3D"txtTinyMce-wrapper" style=3D"line-height:=
+ 1.5; font-size: 12px; color: #444444; font-family: Proxima Nova, Lato, Ari=
+al, sans-serif; mso-line-height-alt: 18px;"> <p style=3D"margin: 0; font-si=
+ze: 14px; line-height: 1.5; word-break: break-word; text-align: center; mso=
+-line-height-alt: 21px; margin-top: 0; margin-bottom: 0;"><a target=3D"_bla=
+nk" href=3D"http://links2.care.com/u/click=3F_t=3D24560b526ec649f8b85da9674=
+5570677&_m=3D4a6b53471d4b423f852fa61a344f5baa&_e=3DRGFyiv2w_9EcQd-3Qqng22XB=
+JyVpA-Es4ho1WmeqLga2z1MpmwZ78kvyWJ4X2FM2-lLdjFtKr3SZuL-nHOmSqYqc49GTulyfE5f=
+s3NpMk67Qm4aZOscnlu3k0qAc6KeFGoTKeOdJBsSYSW9RKbdiP2sTRCfOos0xJ64n1G_Xos1LVF=
+HyIn-uemOHXqs4o2hUkTTxncuKIN6D5Fj5Z6HztSZB9MR9staPKj3Zxjp8okdwxVB_5AZ8o8b2q=
+FdVE9SHZ6XqSP5r_NGdP56vi0BOuzmM-R62OHOvIG-D6E1b00vi8PU47u_qtsOFN4OOZIcvRFZr=
+hUVUdUgP4Ho75K5NchzA187YslCbuvf5fx376R7TWveebt3jNQX_SFti_9ghBPyn-OQb-TFFOXN=
+WpAY1PDyJ7cNF3bv16w3PB3iHqQc_Fk3VFYU32mnOVMHjVPWWCcXx0s17pRljx8ZuxKc59l_6oa=
+Ilb2wRdD2CK1-OZUc9VIL8LJrNXYEY_od5QDx3D_0j8iCVfDv61SeOxnF7x490ZGeEFYRGMJmqs=
+GSMoPCrcWZDoa_j0D-LVV36ASulDXc_Uqw4PJlD7uzzn1IkgA%3D%3D"><!----><!----><img=
+ alt=3D"Care.com" title=3D"Care.com" width=3D"116" src=3D"https://d15k2d11r=
+6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542c=
+ff6dd6a/24560b526ec649f8b85da96745570677/crm-logo%402x.png"/><!----><!---->=
+</a></p> </div> </div> <!--[if mso]></td></tr></table><![endif]--> <!--[if =
+(!mso)&(!IE)]><!--> </div> <!--<![endif]--> </div> </div> <!--[if (mso)|(IE=
+)]></td></tr></table><![endif]--> <!--[if (mso)|(IE)]></td></tr></table></t=
+d></tr></table><![endif]--> </div> </div> </div> <div style=3D"line-height:=
+ inherit; background-color: #f6f7f8;"> <div class=3D"block-grid no-stack" s=
+tyle=3D"line-height: inherit; min-width: 320px; max-width: 500px; overflow-=
+wrap: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 =
+auto; background-color: #ffffff;"> <div style=3D"line-height: inherit; bord=
+er-collapse: collapse; display: table; width: 100%; background-color: #ffff=
+ff;"> <!--[if (mso)|(IE)]><table width=3D"100%" cellpadding=3D"0" cellspaci=
+ng=3D"0" border=3D"0" style=3D"background-color:#f6f7f8;"><tr><td align=3D"=
+center"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"wi=
+dth:500px"><tr class=3D"layout-full-width" style=3D"background-color:#fffff=
+f"><![endif]--> <!--[if (mso)|(IE)]><td align=3D"center" width=3D"500" styl=
+e=3D"background-color:#ffffff;width:500px; border-top: 0px solid transparen=
+t; border-left: 0px solid transparent; border-bottom: 0px solid transparent=
+; border-right: 0px solid transparent;" valign=3D"top"><table width=3D"100%=
+" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=3D"padding=
+-right: 0px; padding-left: 0px; padding-top:0px; padding-bottom:0px;"><![en=
+dif]--> <div class=3D"col num12" style=3D"line-height: inherit; min-width: =
+320px; max-width: 500px; display: table-cell; vertical-align: top; width: 5=
+00px;"> <div class=3D"col_cont" style=3D"line-height: inherit; width: 100% =
+!important;"> <!--[if (!mso)&(!IE)]><!--> <div style=3D"line-height: inheri=
+t; border-top: 0px solid transparent; border-left: 0px solid transparent; b=
+order-bottom: 0px solid transparent; border-right: 0px solid transparent; p=
+adding-top: 0px; padding-bottom: 0px; padding-right: 0px; padding-left: 0px=
+;"> <!--<![endif]--> <div style=3D"line-height: inherit; font-size: 16px; t=
+ext-align: center; font-family: Proxima Nova, Lato, Arial, sans-serif;"> <t=
+able style=3D"line-height: inherit; vertical-align: top; border-collapse: c=
+ollapse; background-color: #f6f7f8;" width=3D"100%" border=3D"0" cellspacin=
+g=3D"0" cellpadding=3D"0" bgcolor=3D"#f6f7f8" valign=3D"top"> <tr style=3D"=
+line-height: inherit; vertical-align: top; border-collapse: collapse;" vali=
+gn=3D"top"> <td style=3D"line-height: inherit; vertical-align: top; border-=
+collapse: collapse;" valign=3D"top"> <div style=3D"line-height: inherit; ba=
+ckground-color: #ffffff; border: 0px solid #ffffff; border-radius: 12px 12p=
+x 0px 0px; display: inline-block; text-align: center; width: 100%; -webkit-=
+text-size-adjust: none; mso-hide: all;">=C2=A0</div> </td> </tr> </table> <=
+/div> <!--[if mso]><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0"><tr><td style=3D"padding-right: 50px; padding-left: 50px; pa=
+dding-top: 32px; padding-bottom: 24px; font-family: Arial, sans-serif"><![e=
+ndif]--> <div style=3D"color: #172c42; font-family: Proxima Nova, Lato, Ari=
+al, sans-serif; line-height: 1.5; padding-top: 32px; padding-right: 50px; p=
+adding-bottom: 24px; padding-left: 50px;"> <div class=3D"txtTinyMce-wrapper=
+" style=3D"line-height: 1.5; font-size: 12px; color: #172c42; font-family: =
+Proxima Nova, Lato, Arial, sans-serif; mso-line-height-alt: 18px;"> <p styl=
+e=3D"margin: 0; font-size: 22px; line-height: 1.5; word-break: break-word; =
+text-align: center; mso-line-height-alt: 33px; margin-top: 0; margin-bottom=
+: 0;"><span style=3D"line-height: inherit; font-size: 22px;"><strong style=
+=3D"line-height: inherit;"><!----> <!----> <!----> <!----> <!----> <!---->N=
+ew Jobs Near You <!----><!----> <!----><!----> <!----><!----></strong></spa=
+n></p> <p style=3D"margin: 0; font-size: 16px; line-height: 1.5; word-break=
+: break-word; text-align: center; mso-line-height-alt: 24px; margin-top: 0;=
+ margin-bottom: 0;"><span style=3D"line-height: inherit; font-size: 16px;">=
+<!----> <!----> <!----> <!----> <!----> <!---->Here's a selection of your l=
+atest job offers - act fast and apply now! <!----><!----> <!----><!----> <!=
+----><!----></span></p> </div> </div> <!--[if mso]></td></tr></table><![end=
+if]--> <div class=3D"button-container" align=3D"center" style=3D"line-heigh=
+t: inherit; padding-top: 0px; padding-right: 60px; padding-bottom: 10px; pa=
+dding-left: 60px;"> <!--[if mso]><table width=3D"100%" cellpadding=3D"0" ce=
+llspacing=3D"0" border=3D"0" style=3D"border-spacing: 0; border-collapse: c=
+ollapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"><tr><td style=3D"padd=
+ing-top: 0px; padding-right: 60px; padding-bottom: 10px; padding-left: 60px=
+" align=3D"center"><v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" x=
+mlns:w=3D"urn:schemas-microsoft-com:office:word" href=3D"http://links2.care=
+.com/u/click=3F_t=3D24560b526ec649f8b85da96745570677&_m=3D4a6b53471d4b423f=
+852fa61a344f5baa&_e=3DRGFyiv2w_9EcQd-3Qqng22XBJyVpA-Es4ho1WmeqLga2z1MpmwZ78=
+kvyWJ4X2FM2-lLdjFtKr3SZuL-nHOmSqYqc49GTulyfE5fs3NpMk67Qm4aZOscnlu3k0qAc6KeF=
+GoTKeOdJBsSYSW9RKbdiP2sTRCfOos0xJ64n1G_Xos1LVFHyIn-uemOHXqs4o2hUUaj07ubJoPE=
+pygHv-GIN9XiSlvmF39j7SUpJaQage9UBF_NXLvQsth60H8xS-jp4xwLyVUEpLInbQW553vkOIR=
+4c-pf3pt4X571819ZOWBBgq4A4JC2C8aT0_MR0m1hiw0F4zD0M9MgSo6RuiqXVL8DGaazMw2pv-=
+uzDGetT465mlSOYmU2EJcaAZWASZ-tdQ64OQ69x3Ez3i3nv-SxoUIO6fEPleMafmMZrop3bvASD=
+_1bqRJmttuLJED4e4HFBpPcrFVZCivR0N88c-rPEtDI5D3hPheT8P4rgxoZAGlw1Llk1-VpSuJU=
+ktYEHTmeGYo07Khset3pNuFYjOPrANxFh8HRGRlFmnM2QkiW1rhx4HlyrPwrEO0cTnS0pIlDw14=
+baDrRNe8CeiAah77nfQQ%3D%3D" style=3D"height:27.75pt;width:132.75pt;v-text-a=
+nchor:middle;" arcsize=3D"55%" stroke=3D"false" fillcolor=3D"#ef5844"><w:an=
+chorlock/><v:textbox inset=3D"0,0,0,0"><center style=3D"color:#ffffff; font=
+-family:Arial, sans-serif; font-size:18px"><![endif]--><a href=3D"http://li=
+nks2.care.com/u/click=3F_t=3D24560b526ec649f8b85da96745570677&_m=3D4a6b5347=
+1d4b423f852fa61a344f5baa&_e=3DRGFyiv2w_9EcQd-3Qqng22XBJyVpA-Es4ho1WmeqLga2z=
+1MpmwZ78kvyWJ4X2FM2-lLdjFtKr3SZuL-nHOmSqYqc49GTulyfE5fs3NpMk67Qm4aZOscnlu3k=
+0qAc6KeFGoTKeOdJBsSYSW9RKbdiP2sTRCfOos0xJ64n1G_Xos1LVFHyIn-uemOHXqs4o2hUUaj=
+07ubJoPEpygHv-GIN9XiSlvmF39j7SUpJaQage9UBF_NXLvQsth60H8xS-jp4xwLyVUEpLInbQW=
+553vkOIR4c-pf3pt4X571819ZOWBBgq4A4JC2C8aT0_MR0m1hiw0F4zD0M9MgSo6RuiqXVL8DGa=
+azMw2pv-uzDGetT465mlSOYmU2EJcaAZWASZ-tdQ64OQ69x3Ez3i3nv-SxoUIO6fEPleMafmMZr=
+op3bvATTZ7AvAlCR7HkHtIDzLJTAMqzSWv8_k40CvSCiW7aJ9-utv6xn_USTE8VRhxvAQj-knB8=
+A2fP93iGQzlX5I4KVwy-eeqTPFmrh9vf0-8i-EnbF5EOUvgJ37-mjW0Q4LBuioFXTCz_Yjlk1ci=
+0UjNb_F7TjPVveyZJLfH8GU692JQ%3D%3D" target=3D"_blank" style=3D"line-height:=
+ inherit; -webkit-text-size-adjust: none; text-decoration: none; display: i=
+nline-block; color: #ffffff; background-color: #ef5844; border-radius: 20px=
+; -webkit-border-radius: 20px; -moz-border-radius: 20px; width: auto; width=
+: auto; border-top: 1px solid #ef5844; border-right: 1px solid #ef5844; bor=
+der-bottom: 1px solid #ef5844; border-left: 1px solid #ef5844; padding-top:=
+ 5px; padding-bottom: 5px; font-family: Proxima Nova, Lato, Arial, sans-ser=
+if; text-align: center; mso-border-alt: none; word-break: keep-all;"><span =
+style=3D"line-height: inherit; padding-left: 20px; padding-right: 20px; fon=
+t-size: 18px; display: inline-block; letter-spacing: undefined;"><span styl=
+e=3D"font-size: 16px; line-height: 1.5; word-break: break-word; mso-line-he=
+ight-alt: 24px;"><span style=3D"font-size: 18px; line-height: 27px;" data-m=
+ce-style=3D"font-size: 18px; line-height: 27px;">View all jobs</span></span=
+></span></a> <!--[if mso]></center></v:textbox></v:roundrect></td></tr></ta=
+ble><![endif]--> </div> <!--[if (!mso)&(!IE)]><!--> </div> <!--<![endif]-->=
+ </div> </div> <!--[if (mso)|(IE)]></td></tr></table><![endif]--> <!--[if (=
+mso)|(IE)]></td></tr></table></td></tr></table><![endif]--> </div> </div> <=
+/div> <div style=3D"line-height: inherit; background-color: transparent;"> =
+<div class=3D"block-grid " style=3D"line-height: inherit; min-width: 320px;=
+ max-width: 500px; overflow-wrap: break-word; word-wrap: break-word; word-b=
+reak: break-word; Margin: 0 auto; background-color: #ffffff;"> <div style=
+=3D"line-height: inherit; border-collapse: collapse; display: table; width:=
+ 100%; background-color: #ffffff;"> <!--[if (mso)|(IE)]><table width=3D"100=
+%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"background-col=
+or:transparent;"><tr><td align=3D"center"><table cellpadding=3D"0" cellspac=
+ing=3D"0" border=3D"0" style=3D"width:500px"><tr class=3D"layout-full-width=
+" style=3D"background-color:#ffffff"><![endif]--> <!--[if (mso)|(IE)]><td a=
+lign=3D"center" width=3D"500" style=3D"background-color:#ffffff;width:500px=
+; border-top: 0px solid transparent; border-left: 0px solid transparent; bo=
+rder-bottom: 0px solid transparent; border-right: 0px solid transparent;" v=
+align=3D"top"><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" bor=
+der=3D"0"><tr><td style=3D"padding-right: 0px; padding-left: 0px; padding-t=
+op:5px; padding-bottom:5px;"><![endif]--> <div class=3D"col num12" style=3D=
+"line-height: inherit; min-width: 320px; max-width: 500px; display: table-c=
+ell; vertical-align: top; width: 500px;"> <div class=3D"col_cont" style=3D"=
+line-height: inherit; width: 100% !important;"> <!--[if (!mso)&(!IE)]><!-->=
+ <div style=3D"line-height: inherit; border-top: 0px solid transparent; bor=
+der-left: 0px solid transparent; border-bottom: 0px solid transparent; bord=
+er-right: 0px solid transparent; padding-top: 5px; padding-bottom: 5px; pad=
+ding-right: 0px; padding-left: 0px;"> <!--<![endif]--> <!--[if mso]><table =
+width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td sty=
+le=3D"padding-right: 0px; padding-left: 0px; padding-top: 0px; padding-bott=
+om: 0px; font-family: Arial, sans-serif"><![endif]--> <div style=3D"color: =
+#555555; font-family: Proxima Nova, Lato, Arial, sans-serif; line-height: 1=
+.2; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-lef=
+t: 0px;"> <div class=3D"txtTinyMce-wrapper" style=3D"line-height: 1.2; font=
+-size: 12px; color: #555555; font-family: Proxima Nova, Lato, Arial, sans-s=
+erif; mso-line-height-alt: 14px;"> <p style=3D"margin: 0; font-size: 14px; =
+line-height: 1.2; word-break: break-word; mso-line-height-alt: 17px; margin=
+-top: 0; margin-bottom: 0;"></p> </div> </div> <!--[if mso]></td></tr></tab=
+le><![endif]--> <!--[if (!mso)&(!IE)]><!--> </div> <!--<![endif]--> </div> =
+</div> <!--[if (mso)|(IE)]></td></tr></table><![endif]--> <!--[if (mso)|(IE=
+)]></td></tr></table></td></tr></table><![endif]--> </div> </div> </div> <d=
+iv style=3D"line-height: inherit; background-color: #f6f7f8;"> <div class=
+=3D"block-grid mixed-two-up no-stack" style=3D"line-height: inherit; min-wi=
+dth: 320px; max-width: 500px; overflow-wrap: break-word; word-wrap: break-w=
+ord; word-break: break-word; Margin: 0 auto; background-color: #ffffff;"> <=
+div style=3D"line-height: inherit; border-collapse: collapse; display: tabl=
+e; width: 100%; background-color: #ffffff;"> <!--[if (mso)|(IE)]><table wid=
+th=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"backg=
+round-color:#f6f7f8;"><tr><td align=3D"center"><table cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0" style=3D"width:500px"><tr class=3D"layout-full-=
+width" style=3D"background-color:#ffffff"><![endif]--> <!--[if (mso)|(IE)]>=
+<td align=3D"center" width=3D"375" style=3D"background-color:#ffffff;width:=
+375px; border-top: 0px solid transparent; border-left: 0px solid transparen=
+t; border-bottom: 0px solid transparent; border-right: 0px solid transparen=
+t;" valign=3D"top"><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0"><tr><td style=3D"padding-right: 0px; padding-left: 0px; padd=
+ing-top:10px; padding-bottom:0px;"><![endif]--> <div class=3D"col num9" sty=
+le=3D"line-height: inherit; display: table-cell; vertical-align: top; max-w=
+idth: 320px; min-width: 369px; width: 375px;"> <div class=3D"col_cont" styl=
+e=3D"line-height: inherit; width: 100% !important;"> <!--[if (!mso)&(!IE)]>=
+<!--> <div style=3D"line-height: inherit; border-top: 0px solid transparent=
+; border-left: 0px solid transparent; border-bottom: 0px solid transparent;=
+ border-right: 0px solid transparent; padding-top: 10px; padding-bottom: 0p=
+x; padding-right: 0px; padding-left: 0px;"> <!--<![endif]--> <!--[if mso]><=
+table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><=
+td style=3D"padding-right: 20px; padding-left: 60px; padding-top: 0px; padd=
+ing-bottom: 8px; font-family: Arial, sans-serif"><![endif]--> <div style=3D=
+"color: #172c42; font-family: Proxima Nova, Lato, Arial, sans-serif; line-h=
+eight: 1.5; padding-top: 0px; padding-right: 20px; padding-bottom: 8px; pad=
+ding-left: 60px;"> <div class=3D"txtTinyMce-wrapper" style=3D"line-height: =
+1.5; font-size: 12px; color: #172c42; font-family: Proxima Nova, Lato, Aria=
+l, sans-serif; mso-line-height-alt: 18px;"> <p style=3D"margin: 0; line-hei=
+ght: 1.5; word-break: break-word; text-align: left; mso-line-height-alt: 18=
+px; margin-top: 0; margin-bottom: 0;"><span style=3D"line-height: inherit; =
+color: #172c42;"><strong style=3D"line-height: inherit;"><span style=3D"lin=
+e-height: inherit; font-size: 16px;"><a href=3D"http://links2.care.com/u/cl=
+ick=3F_t=3D24560b526ec649f8b85da96745570677&_m=3D4a6b53471d4b423f852fa61a34=
+4f5baa&_e=3DRGFyiv2w_9EcQd-3Qqng22XBJyVpA-Es4ho1WmeqLga2z1MpmwZ78kvyWJ4X2FM=
+2-lLdjFtKr3SZuL-nHOmSqYqc49GTulyfE5fs3NpMk67Qm4aZOscnlu3k0qAc6KeFGoTKeOdJBs=
+SYSW9RKbdiP2sTRCfOos0xJ64n1G_Xos2fQDh7qKbjEQFh6BgovJ1ZfaL6dRHArD-KyKF_jcSUF=
+8nfRGcn7iMqs7dPrXdagTbUGbN_4m_xcNDZnO9MqRB_dPIx47MbDg4hC5Spjy1qMN1rmErC7Xww=
+_JEivxXjThkfUBXDOjMgxWN5Yt3FM9QAUWYt_8eWhjd5bPOYxpeuXKlmgi1UNjgAn5jM7Px6xvT=
+AHO7s3RbQ4pOLpz8mAVp-Hpy_YsryZvHSN03Zz2poy6ptzdHiuq-dgWfoWA2lRRjYbuzZKqXbtg=
+I8eF2CXSxwpvqj-q6uNM0T8qtdkL4qIWxWALn7aEqJJ5ivbLte8D9iFra7vvgfBBOPvvyFaXynd=
+VFTOkWHZ8vyyCT2_y4z28yalg9edO2ZXZx0JaIn52Ug6n2Argvv6j7Gg94N71nRWnWgzpcaVv1P=
+pzvXzjEygXntSjMq5zDk6bqq6zOACl-6vwTbH0_s8vgavOAh-OtwYlX1XFNWfQengDl_4L6kRA%=
+3D%3D" target=3D"_blank" style=3D"line-height: inherit; text-decoration: no=
+ne; color: #172c42;" rel=3D"noopener">Attention: Nanny Needed for Our Child=
+</a></span></strong></span></p> </div> </div> <!--[if mso]></td></tr></tabl=
+e><![endif]--> <!--[if mso]><table width=3D"100%" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0"><tr><td style=3D"padding-right: 20px; padding-left:=
+ 60px; padding-top: 0px; padding-bottom: 8px; font-family: Arial, sans-seri=
+f"><![endif]--> <div style=3D"color: #505d6d; font-family: Proxima Nova, La=
+to, Arial, sans-serif; line-height: 1.5; padding-top: 0px; padding-right: 2=
+0px; padding-bottom: 8px; padding-left: 60px;"> <div class=3D"txtTinyMce-wr=
+apper" style=3D"line-height: 1.5; font-size: 12px; color: #505d6d; font-fam=
+ily: Proxima Nova, Lato, Arial, sans-serif; mso-line-height-alt: 18px;"> <p=
+ style=3D"margin: 0; line-height: 1.5; word-break: break-word; text-align: =
+left; font-size: 14px; mso-line-height-alt: 21px; margin-top: 0; margin-bot=
+tom: 0;"><span style=3D"line-height: inherit; color: #505d6d; font-size: 14=
+px;"><a href=3D"http://links2.care.com/u/click=3F_t=3D24560b526ec649f8b85da=
+96745570677&_m=3D4a6b53471d4b423f852fa61a344f5baa&_e=3DRGFyiv2w_9EcQd-3Qqng=
+22XBJyVpA-Es4ho1WmeqLga2z1MpmwZ78kvyWJ4X2FM2-lLdjFtKr3SZuL-nHOmSqYqc49GTuly=
+fE5fs3NpMk67Qm4aZOscnlu3k0qAc6KeFGoTKeOdJBsSYSW9RKbdiP2sTRCfOos0xJ64n1G_Xos=
+2fQDh7qKbjEQFh6BgovJ1ZfaL6dRHArD-KyKF_jcSUF8nfRGcn7iMqs7dPrXdagTbUGbN_4m_xc=
+NDZnO9MqRB_dPIx47MbDg4hC5Spjy1qMN1rmErC7Xww_JEivxXjThkfUBXDOjMgxWN5Yt3FM9QA=
+UWYt_8eWhjd5bPOYxpeuXKlmgi1UNjgAn5jM7Px6xvTAHO7s3RbQ4pOLpz8mAVp-Hpy_YsryZvH=
+SN03Zz2poy6ptzdHiuq-dgWfoWA2lRRjYbuzZKqXbtgI8eF2CXSxwpvqj-q6uNM0T8qtdkL4qIW=
+xWALn7aEqJJ5ivbLte8D9iFra7vvgfBBOPvvyFaXynQ1_214O5dLKvMxI70P1GVAAFCOTacrtT-=
+7ZlKgmZ0qlA18kiFxE_hNaGYUxOUnyiC0Is4qEp2lI1956OXbADSYpW4awAPOQiva89Ec_vouai=
+tJBjWob8tp9k5aaVW8RjpRDBj6MEweEp9dmUoVU0nA%3D%3D" target=3D"_blank" style=
+=3D"line-height: inherit; text-decoration: none; color: #505d6d;" rel=3D"no=
+opener">Breakfast Point =E2=80=A2 by Olivia C.</a></span></p> </div> </div>=
+ <!--[if mso]></td></tr></table><![endif]--> <!--[if mso]><table width=3D"1=
+00%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=3D"padd=
+ing-right: 20px; padding-left: 60px; padding-top: 0px; padding-bottom: 8px;=
+ font-family: Arial, sans-serif"><![endif]--> <div style=3D"color: #172c42;=
+ font-family: 'Proxima Nova Semibold','Lato', Arial, sans-serif; line-heigh=
+t: 1.5; padding-top: 0px; padding-right: 20px; padding-bottom: 8px; padding=
+-left: 60px;"> <div class=3D"txtTinyMce-wrapper" style=3D"line-height: 1.5;=
+ font-size: 12px; color: #172c42; font-family: 'Proxima Nova Semibold','Lat=
+o', Arial, sans-serif; mso-line-height-alt: 18px;"> <p style=3D"margin: 0; =
+line-height: 1.5; word-break: break-word; text-align: left; mso-line-height=
+-alt: 18px; margin-top: 0; margin-bottom: 0;"><span style=3D"line-height: i=
+nherit; color: #068456;"><a href=3D"http://links2.care.com/u/click=3F_t=3D2=
+4560b526ec649f8b85da96745570677&_m=3D4a6b53471d4b423f852fa61a344f5baa&_e=3D=
+RGFyiv2w_9EcQd-3Qqng22XBJyVpA-Es4ho1WmeqLga2z1MpmwZ78kvyWJ4X2FM2-lLdjFtKr3S=
+ZuL-nHOmSqYqc49GTulyfE5fs3NpMk67Qm4aZOscnlu3k0qAc6KeFGoTKeOdJBsSYSW9RKbdiP2=
+sTRCfOos0xJ64n1G_Xos2fQDh7qKbjEQFh6BgovJ1ZfaL6dRHArD-KyKF_jcSUF8nfRGcn7iMqs=
+7dPrXdagTbUGbN_4m_xcNDZnO9MqRB_dPIx47MbDg4hC5Spjy1qMN1rmErC7Xww_JEivxXjThkf=
+UBXDOjMgxWN5Yt3FM9QAUWYt_8eWhjd5bPOYxpeuXKlmgi1UNjgAn5jM7Px6xvTAHO7s3RbQ4pO=
+Lpz8mAVp-Hpy_YsryZvHSN03Zz2poy6ptzdHiuq-dgWfoWA2lRRjYbuzZKqXbtgI8eF2CXSxwpv=
+qj-q6uNM0T8qtdkL4qIWxWALn7aEqJJ5ivbLte8D9iFra7vvgfBBOPvvyFaXynuZpwyR5mMVmqY=
+e7HUI0259S8v1BV0EiDCx5t-hs1NIxM0I4qXHxlzClD76jTojFDviYhcvYr1wz7oMa728MF0YFf=
+VlkydINxmRB0lqR-gHihxRVQdUeR7IBIm4ORxnsVcC2B-5oP-9enbU2RiYp4Gg%3D%3D" targe=
+t=3D"_blank" style=3D"line-height: inherit; text-decoration: none; color: #=
+068456;" rel=3D"noopener">Starts: 06.11.2023</a></span></p> </div> </div> <=
+!--[if mso]></td></tr></table><![endif]--> <!--[if mso]><table width=3D"100=
+%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=3D"paddin=
+g-right: 20px; padding-left: 60px; padding-top: 0px; padding-bottom: 0px; f=
+ont-family: Arial, sans-serif"><![endif]--> <div style=3D"color: #172c42; f=
+ont-family: Proxima Nova, Lato, Arial, sans-serif; line-height: 1.5; paddin=
+g-top: 0px; padding-right: 20px; padding-bottom: 0px; padding-left: 60px;">=
+ <div class=3D"txtTinyMce-wrapper" style=3D"line-height: 1.5; font-size: 12=
+px; color: #172c42; font-family: Proxima Nova, Lato, Arial, sans-serif; mso=
+-line-height-alt: 18px;"> <p style=3D"margin: 0; line-height: 1.5; word-bre=
+ak: break-word; text-align: left; mso-line-height-alt: 18px; margin-top: 0;=
+ margin-bottom: 0;"><span style=3D"line-height: inherit; color: #172c42;"><=
+a href=3D"http://links2.care.com/u/click=3F_t=3D24560b526ec649f8b85da967455=
+70677&_m=3D4a6b53471d4b423f852fa61a344f5baa&_e=3DRGFyiv2w_9EcQd-3Qqng22XBJy=
+VpA-Es4ho1WmeqLga2z1MpmwZ78kvyWJ4X2FM2-lLdjFtKr3SZuL-nHOmSqYqc49GTulyfE5fs3=
+NpMk67Qm4aZOscnlu3k0qAc6KeFGoTKeOdJBsSYSW9RKbdiP2sTRCfOos0xJ64n1G_Xos2fQDh7=
+qKbjEQFh6BgovJ1ZfaL6dRHArD-KyKF_jcSUF8nfRGcn7iMqs7dPrXdagTbUGbN_4m_xcNDZnO9=
+MqRB_dPIx47MbDg4hC5Spjy1qMN1rmErC7Xww_JEivxXjThkfUBXDOjMgxWN5Yt3FM9QAUWYt_8=
+eWhjd5bPOYxpeuXKlmgi1UNjgAn5jM7Px6xvTAHO7s3RbQ4pOLpz8mAVp-Hpy_YsryZvHSN03Zz=
+2poy6ptzdHiuq-dgWfoWA2lRRjYbuzZKqXbtgI8eF2CXSxwpvqj-q6uNM0T8qtdkL4qIWxWALn7=
+aEqJJ5ivbLte8D9iFra7vvgfBBOPvvyFaXynxM044pFxP3pCIT6DMeSNXxrLaTGPSYlr689BTed=
+eWYMYOzpyNkS3UfpXeJHVAhzS2-VKFj80Pse6MWJ7xh0fPW1zp1buQvCa6VGOo5EDJ6dsmHRX_b=
+V51T8HZX4DJXbPWXXCHoengKmyvxC0fQ-v0w%3D%3D" target=3D"_blank" style=3D"line=
+-height: inherit; text-decoration: none; color: #172c42;" rel=3D"noopener">=
+$380 20 Hr. / Week</a></span></p> </div> </div> <!--[if mso]></td></tr></ta=
+ble><![endif]--> <!--[if (!mso)&(!IE)]><!--> </div> <!--<![endif]--> </div>=
+ </div> <!--[if (mso)|(IE)]></td></tr></table><![endif]--> <!--[if (mso)|(I=
+E)]></td><td align=3D"center" width=3D"125" style=3D"background-color:#ffff=
+ff;width:125px; border-top: 0px solid transparent; border-left: 0px solid t=
+ransparent; border-bottom: 0px solid transparent; border-right: 0px solid t=
+ransparent;" valign=3D"top"><table width=3D"100%" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0"><tr><td style=3D"padding-right: 0px; padding-left: =
+0px; padding-top:0px; padding-bottom:0px;"><![endif]--> <div class=3D"col n=
+um3" style=3D"line-height: inherit; display: table-cell; vertical-align: to=
+p; max-width: 320px; min-width: 123px; width: 125px;"> <div class=3D"col_co=
+nt" style=3D"line-height: inherit; width: 100% !important;"> <!--[if (!mso)=
+&(!IE)]><!--> <div style=3D"line-height: inherit; border-top: 0px solid tra=
+nsparent; border-left: 0px solid transparent; border-bottom: 0px solid tran=
+sparent; border-right: 0px solid transparent; padding-top: 0px; padding-bot=
+tom: 0px; padding-right: 0px; padding-left: 0px;"> <!--<![endif]--> <!--[if=
+ mso]><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0=
+"><tr><td style=3D"padding-right: 60px; padding-left: 0px; padding-top: 0px=
+; padding-bottom: 0px; font-family: Arial, sans-serif"><![endif]--> <div st=
+yle=3D"color: #172c42; font-family: Proxima Nova, Lato, Arial, sans-serif; =
+line-height: 1.2; padding-top: 0px; padding-right: 60px; padding-bottom: 0p=
+x; padding-left: 0px;"> <div class=3D"txtTinyMce-wrapper" style=3D"line-hei=
+ght: 1.2; font-size: 12px; color: #172c42; font-family: Proxima Nova, Lato,=
+ Arial, sans-serif; mso-line-height-alt: 14px;"> <p style=3D"margin: 0; fon=
+t-size: 30px; line-height: 1.2; word-break: break-word; text-align: right; =
+mso-line-height-alt: 36px; margin-top: 0; margin-bottom: 0;"><span style=3D=
+"line-height: inherit; font-size: 30px; color: #172c42;"><a href=3D"http://=
+links2.care.com/u/click=3F_t=3D24560b526ec649f8b85da96745570677&_m=3D4a6b53=
+471d4b423f852fa61a344f5baa&_e=3DRGFyiv2w_9EcQd-3Qqng22XBJyVpA-Es4ho1WmeqLga=
+2z1MpmwZ78kvyWJ4X2FM2-lLdjFtKr3SZuL-nHOmSqYqc49GTulyfE5fs3NpMk67Qm4aZOscnlu=
+3k0qAc6KeFGoTKeOdJBsSYSW9RKbdiP2sTRCfOos0xJ64n1G_Xos2fQDh7qKbjEQFh6BgovJ1Zf=
+aL6dRHArD-KyKF_jcSUF8nfRGcn7iMqs7dPrXdagTbUGbN_4m_xcNDZnO9MqRB_dPIx47MbDg4h=
+C5Spjy1qMN1rmErC7Xww_JEivxXjThkfUBXDOjMgxWN5Yt3FM9QAUWYt_8eWhjd5bPOYxpeuXKl=
+mgi1UNjgAn5jM7Px6xvTAHO7s3RbQ4pOLpz8mAVp-Hpy_YsryZvHSN03Zz2poy6ptzdHiuq-dgW=
+foWA2lRRjYbuzZKqXbtgI8eF2CXSxwpvqj-q6uNM0T8qtdkL4qIWxWALn7aEqJJ5ivbLte8D9iF=
+ra7vvgfBBOPvvyFaXynhJi05XGzLiQIE8ZzXDTE-UamZpgYtcWzS0MGCrCOYXrLpCDXrIHHQo91=
+KZhWdRgY1kHEOBuuyZITe7HytpgzdtVQAb79UjfhTjqIC7TVHwchBJuEjtmgSxtu20QMDDrBsCo=
+ZEvMfQTDJJELjVkA8Kg%3D%3D" target=3D"_blank" style=3D"line-height: inherit;=
+ text-decoration: none; color: #172c42;" rel=3D"noopener">=E2=80=BA</a></sp=
+an></p> </div> </div> <!--[if mso]></td></tr></table><![endif]--> <!--[if (=
+!mso)&(!IE)]><!--> </div> <!--<![endif]--> </div> </div> <!--[if (mso)|(IE)=
+]></td></tr></table><![endif]--> <!--[if (mso)|(IE)]></td></tr></table></td=
+></tr></table><![endif]--> </div> </div> </div> <div style=3D"line-height: =
+inherit; background-color: transparent;"> <div class=3D"block-grid no-stack=
+" style=3D"line-height: inherit; min-width: 320px; max-width: 500px; overfl=
+ow-wrap: break-word; word-wrap: break-word; word-break: break-word; Margin:=
+ 0 auto; background-color: #ffffff;"> <div style=3D"line-height: inherit; b=
+order-collapse: collapse; display: table; width: 100%; background-color: #f=
+fffff;"> <!--[if (mso)|(IE)]><table width=3D"100%" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" style=3D"background-color:transparent;"><tr><td al=
+ign=3D"center"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D"width:500px"><tr class=3D"layout-full-width" style=3D"background-color=
+:#ffffff"><![endif]--> <!--[if (mso)|(IE)]><td align=3D"center" width=3D"50=
+0" style=3D"background-color:#ffffff;width:500px; border-top: 0px solid tra=
+nsparent; border-left: 0px solid transparent; border-bottom: 0px solid tran=
+sparent; border-right: 0px solid transparent;" valign=3D"top"><table width=
+=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=3D=
+"padding-right: 0px; padding-left: 0px; padding-top:0px; padding-bottom:0px=
+;"><![endif]--> <div class=3D"col num12" style=3D"line-height: inherit; min=
+-width: 320px; max-width: 500px; display: table-cell; vertical-align: top; =
+width: 500px;"> <div class=3D"col_cont" style=3D"line-height: inherit; widt=
+h: 100% !important;"> <!--[if (!mso)&(!IE)]><!--> <div style=3D"line-height=
+: inherit; border-top: 0px solid transparent; border-left: 0px solid transp=
+arent; border-bottom: 0px solid transparent; border-right: 0px solid transp=
+arent; padding-top: 0px; padding-bottom: 0px; padding-right: 0px; padding-l=
+eft: 0px;"> <!--<![endif]--> <table class=3D"divider" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"line-height: inherit; t=
+able-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse=
+: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%; =
+-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" role=3D"presen=
+tation" valign=3D"top"> <tbody style=3D"line-height: inherit;"> <tr style=
+=3D"line-height: inherit; border-collapse: collapse; vertical-align: top;" =
+valign=3D"top"> <td class=3D"divider_inner" style=3D"line-height: inherit; =
+border-collapse: collapse; word-break: break-word; vertical-align: top; min=
+-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; p=
+adding-top: 24px; padding-right: 60px; padding-bottom: 10px; padding-left: =
+60px;" valign=3D"top"> <table class=3D"divider_content" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"line-height: inherit;=
+ table-layout: fixed; vertical-align: top; border-spacing: 0; border-collap=
+se: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-top: 2px=
+ solid #F3F4F6; width: 100%;" align=3D"center" role=3D"presentation" valign=
+=3D"top"> <tbody style=3D"line-height: inherit;"> <tr style=3D"line-height:=
+ inherit; border-collapse: collapse; vertical-align: top;" valign=3D"top"> =
+<td style=3D"line-height: inherit; border-collapse: collapse; word-break: b=
+reak-word; vertical-align: top; -ms-text-size-adjust: 100%; -webkit-text-si=
+ze-adjust: 100%;" valign=3D"top"><span style=3D"line-height: inherit;"></sp=
+an></td> </tr> </tbody> </table> </td> </tr> </tbody> </table> <!--[if mso]=
+><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr=
+><td style=3D"padding-right: 0px; padding-left: 0px; padding-top: 0px; padd=
+ing-bottom: 0px; font-family: Arial, sans-serif"><![endif]--> <div style=3D=
+"color: #555555; font-family: Proxima Nova, Lato, Arial, sans-serif; line-h=
+eight: 1.2; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padd=
+ing-left: 0px;"> <div class=3D"txtTinyMce-wrapper" style=3D"line-height: 1.=
+2; font-size: 12px; color: #555555; font-family: Proxima Nova, Lato, Arial,=
+ sans-serif; mso-line-height-alt: 14px;"> <p style=3D"margin: 0; font-size:=
+ 14px; line-height: 1.2; word-break: break-word; mso-line-height-alt: 17px;=
+ margin-top: 0; margin-bottom: 0;"></p> </div> </div> <!--[if mso]></td></t=
+r></table><![endif]--> <!--[if (!mso)&(!IE)]><!--> </div> <!--<![endif]--> =
+</div> </div> <!--[if (mso)|(IE)]></td></tr></table><![endif]--> <!--[if (m=
+so)|(IE)]></td></tr></table></td></tr></table><![endif]--> </div> </div> </=
+div> <div style=3D"line-height: inherit; background-color: #f6f7f8;"> <div =
+class=3D"block-grid mixed-two-up no-stack" style=3D"line-height: inherit; m=
+in-width: 320px; max-width: 500px; overflow-wrap: break-word; word-wrap: br=
+eak-word; word-break: break-word; Margin: 0 auto; background-color: #ffffff=
+;"> <div style=3D"line-height: inherit; border-collapse: collapse; display:=
+ table; width: 100%; background-color: #ffffff;"> <!--[if (mso)|(IE)]><tabl=
+e width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"=
+background-color:#f6f7f8;"><tr><td align=3D"center"><table cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" style=3D"width:500px"><tr class=3D"layout-=
+full-width" style=3D"background-color:#ffffff"><![endif]--> <!--[if (mso)|(=
+IE)]><td align=3D"center" width=3D"375" style=3D"background-color:#ffffff;w=
+idth:375px; border-top: 0px solid transparent; border-left: 0px solid trans=
+parent; border-bottom: 0px solid transparent; border-right: 0px solid trans=
+parent;" valign=3D"top"><table width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0"><tr><td style=3D"padding-right: 0px; padding-left: 0px;=
+ padding-top:10px; padding-bottom:0px;"><![endif]--> <div class=3D"col num9=
+" style=3D"line-height: inherit; display: table-cell; vertical-align: top; =
+max-width: 320px; min-width: 369px; width: 375px;"> <div class=3D"col_cont"=
+ style=3D"line-height: inherit; width: 100% !important;"> <!--[if (!mso)&(!=
+IE)]><!--> <div style=3D"line-height: inherit; border-top: 0px solid transp=
+arent; border-left: 0px solid transparent; border-bottom: 0px solid transpa=
+rent; border-right: 0px solid transparent; padding-top: 10px; padding-botto=
+m: 0px; padding-right: 0px; padding-left: 0px;"> <!--<![endif]--> <!--[if m=
+so]><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">=
+<tr><td style=3D"padding-right: 20px; padding-left: 60px; padding-top: 0px;=
+ padding-bottom: 8px; font-family: Arial, sans-serif"><![endif]--> <div sty=
+le=3D"color: #172c42; font-family: Proxima Nova, Lato, Arial, sans-serif; l=
+ine-height: 1.5; padding-top: 0px; padding-right: 20px; padding-bottom: 8px=
+; padding-left: 60px;"> <div class=3D"txtTinyMce-wrapper" style=3D"line-hei=
+ght: 1.5; font-size: 12px; color: #172c42; font-family: Proxima Nova, Lato,=
+ Arial, sans-serif; mso-line-height-alt: 18px;"> <p style=3D"margin: 0; lin=
+e-height: 1.5; word-break: break-word; text-align: left; mso-line-height-al=
+t: 18px; margin-top: 0; margin-bottom: 0;"><span style=3D"line-height: inhe=
+rit; color: #172c42;"><strong style=3D"line-height: inherit;"><span style=
+=3D"line-height: inherit; font-size: 16px;"><a href=3D"http://links2.care.c=
+om/u/click=3F_t=3D24560b526ec649f8b85da96745570677&_m=3D4a6b53471d4b423f852=
+fa61a344f5baa&_e=3DRGFyiv2w_9EcQd-3Qqng22XBJyVpA-Es4ho1WmeqLga2z1MpmwZ78kvy=
+WJ4X2FM2-lLdjFtKr3SZuL-nHOmSqYqc49GTulyfE5fs3NpMk67Qm4aZOscnlu3k0qAc6KeFGoT=
+KeOdJBsSYSW9RKbdiP2sTRCfOos0xJ64n1G_Xos2fQDh7qKbjEQFh6BgovJ1ZuAVcud6M1IJPaz=
+w_I6IBkzqntbxBvZO6ijE6J7RsGx_S3E7cOxzK2zfXSNfd96tj7_DYbXXgi376VRyszo6eIL38X=
+TR2SwtiZvWEQv6LMOs8q29l5-PBab5iORZov8IBCSgUKLJyZ30axu66tjvd6NCyKD3LwjMHVKgb=
+DtiebbRkM_8M0VLrERCllscJZRZJEeO1jwff4nzaqnoyG3TUcFGZxULmjpI462og0YhvUGzqWow=
+c45DH4oMuZq1BNNW_aMMKOa8n6UpPewRs7XXivK_CyLsIHxYR8WIjojm76dQ4ksxKuraU3NdtXP=
+ZRXNKcyUDsjJFv0eGkku3_d9nNV7zL6INdL9XKKsi2BC4wuTObRP9TDGcEXI45l0NMOUnujT0Qk=
+-iJ5Wcl-8Tm33Mp217Hjpo1Q_axJkK8yvzS6HYqi7BsS62ficOqqkPX8zlKnYNh3TNFk8ixjX7M=
+Bdb8ZiU2qyYG3a9W-pNQ9YhBwZc%3D" target=3D"_blank" style=3D"line-height: inh=
+erit; text-decoration: none; color: #172c42;" rel=3D"noopener">Looking for =
+nanny to look after our 2 year old</a></span></strong></span></p> </div> </=
+div> <!--[if mso]></td></tr></table><![endif]--> <!--[if mso]><table width=
+=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=3D=
+"padding-right: 20px; padding-left: 60px; padding-top: 0px; padding-bottom:=
+ 8px; font-family: Arial, sans-serif"><![endif]--> <div style=3D"color: #50=
+5d6d; font-family: Proxima Nova, Lato, Arial, sans-serif; line-height: 1.5;=
+ padding-top: 0px; padding-right: 20px; padding-bottom: 8px; padding-left: =
+60px;"> <div class=3D"txtTinyMce-wrapper" style=3D"line-height: 1.5; font-s=
+ize: 12px; color: #505d6d; font-family: Proxima Nova, Lato, Arial, sans-ser=
+if; mso-line-height-alt: 18px;"> <p style=3D"margin: 0; line-height: 1.5; w=
+ord-break: break-word; text-align: left; font-size: 14px; mso-line-height-a=
+lt: 21px; margin-top: 0; margin-bottom: 0;"><span style=3D"line-height: inh=
+erit; color: #505d6d; font-size: 14px;"><a href=3D"http://links2.care.com/u=
+/click=3F_t=3D24560b526ec649f8b85da96745570677&_m=3D4a6b53471d4b423f852fa61=
+a344f5baa&_e=3DRGFyiv2w_9EcQd-3Qqng22XBJyVpA-Es4ho1WmeqLga2z1MpmwZ78kvyWJ4X=
+2FM2-lLdjFtKr3SZuL-nHOmSqYqc49GTulyfE5fs3NpMk67Qm4aZOscnlu3k0qAc6KeFGoTKeOd=
+JBsSYSW9RKbdiP2sTRCfOos0xJ64n1G_Xos2fQDh7qKbjEQFh6BgovJ1ZuAVcud6M1IJPazw_I6=
+IBkzqntbxBvZO6ijE6J7RsGx_S3E7cOxzK2zfXSNfd96tj7_DYbXXgi376VRyszo6eIL38XTR2S=
+wtiZvWEQv6LMOs8q29l5-PBab5iORZov8IBCSgUKLJyZ30axu66tjvd6NCyKD3LwjMHVKgbDtie=
+bbRkM_8M0VLrERCllscJZRZJEeO1jwff4nzaqnoyG3TUcFGZxULmjpI462og0YhvUGzqWowc45D=
+H4oMuZq1BNNW_aMMKOa8n6UpPewRs7XXivK_CyLsIHxYR8WIjojm76dQ4ksxKuraU3NdtXPZRXN=
+KcyUDsjJFv0eGkku3_d9nNVzdyZlRxQOCNnZGZBhfiyqCuQy369xgvlOUjIsh9hgltPSdcNsNfJ=
+2v0ONBV06Xc66m7DIS9YTl6ur77mkEvjSgIq7jU_fVviI_Y4qpXEO-PWW_yn5KBQazdFQvDvZWz=
+Q56HbGjH_lpY9OMNvrQg5O8%3D" target=3D"_blank" style=3D"line-height: inherit=
+; text-decoration: none; color: #505d6d;" rel=3D"noopener">Rose Bay =E2=80=
+=A2 by Rachel D.</a></span></p> </div> </div> <!--[if mso]></td></tr></tabl=
+e><![endif]--> <!--[if mso]><table width=3D"100%" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0"><tr><td style=3D"padding-right: 20px; padding-left:=
+ 60px; padding-top: 0px; padding-bottom: 8px; font-family: Arial, sans-seri=
+f"><![endif]--> <div style=3D"color: #172c42; font-family: 'Proxima Nova Se=
+mibold','Lato', Arial, sans-serif; line-height: 1.5; padding-top: 0px; padd=
+ing-right: 20px; padding-bottom: 8px; padding-left: 60px;"> <div class=3D"t=
+xtTinyMce-wrapper" style=3D"line-height: 1.5; font-size: 12px; color: #172c=
+42; font-family: 'Proxima Nova Semibold','Lato', Arial, sans-serif; mso-lin=
+e-height-alt: 18px;"> <p style=3D"margin: 0; line-height: 1.5; word-break: =
+break-word; text-align: left; mso-line-height-alt: 18px; margin-top: 0; mar=
+gin-bottom: 0;"><span style=3D"line-height: inherit; color: #068456;"><a hr=
+ef=3D"http://links2.care.com/u/click=3F_t=3D24560b526ec649f8b85da9674557067=
+7&_m=3D4a6b53471d4b423f852fa61a344f5baa&_e=3DRGFyiv2w_9EcQd-3Qqng22XBJyVpA-=
+Es4ho1WmeqLga2z1MpmwZ78kvyWJ4X2FM2-lLdjFtKr3SZuL-nHOmSqYqc49GTulyfE5fs3NpMk=
+67Qm4aZOscnlu3k0qAc6KeFGoTKeOdJBsSYSW9RKbdiP2sTRCfOos0xJ64n1G_Xos2fQDh7qKbj=
+EQFh6BgovJ1ZuAVcud6M1IJPazw_I6IBkzqntbxBvZO6ijE6J7RsGx_S3E7cOxzK2zfXSNfd96t=
+j7_DYbXXgi376VRyszo6eIL38XTR2SwtiZvWEQv6LMOs8q29l5-PBab5iORZov8IBCSgUKLJyZ3=
+0axu66tjvd6NCyKD3LwjMHVKgbDtiebbRkM_8M0VLrERCllscJZRZJEeO1jwff4nzaqnoyG3TUc=
+FGZxULmjpI462og0YhvUGzqWowc45DH4oMuZq1BNNW_aMMKOa8n6UpPewRs7XXivK_CyLsIHxYR=
+8WIjojm76dQ4ksxKuraU3NdtXPZRXNKcyUDsjJFv0eGkku3_d9nNV4d_WyzvuwSiE90MvyDxtPP=
+xNB-a4ij5VWbrYpGuE7KP4NzkZRJbGmHo1G7sCZOIIyAv7MLOC-34gQ_l1kUScRABt4ap5xqeBI=
+9CrOVnP0P3FmgRLmbqR24DMVnsd9VoBDuVr5ZhWgkgbegPeRwR5Zw%3D" target=3D"_blank"=
+ style=3D"line-height: inherit; text-decoration: none; color: #068456;" rel=
+=3D"noopener">Starts: 20.10.2023</a></span></p> </div> </div> <!--[if mso]>=
+</td></tr></table><![endif]--> <!--[if mso]><table width=3D"100%" cellpaddi=
+ng=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=3D"padding-right: 20p=
+x; padding-left: 60px; padding-top: 0px; padding-bottom: 0px; font-family: =
+Arial, sans-serif"><![endif]--> <div style=3D"color: #172c42; font-family: =
+Proxima Nova, Lato, Arial, sans-serif; line-height: 1.5; padding-top: 0px; =
+padding-right: 20px; padding-bottom: 0px; padding-left: 60px;"> <div class=
+=3D"txtTinyMce-wrapper" style=3D"line-height: 1.5; font-size: 12px; color: =
+#172c42; font-family: Proxima Nova, Lato, Arial, sans-serif; mso-line-heigh=
+t-alt: 18px;"> <p style=3D"margin: 0; line-height: 1.5; word-break: break-w=
+ord; text-align: left; mso-line-height-alt: 18px; margin-top: 0; margin-bot=
+tom: 0;"><span style=3D"line-height: inherit; color: #172c42;"><a href=3D"h=
+ttp://links2.care.com/u/click=3F_t=3D24560b526ec649f8b85da96745570677&_m=3D=
+4a6b53471d4b423f852fa61a344f5baa&_e=3DRGFyiv2w_9EcQd-3Qqng22XBJyVpA-Es4ho1W=
+meqLga2z1MpmwZ78kvyWJ4X2FM2-lLdjFtKr3SZuL-nHOmSqYqc49GTulyfE5fs3NpMk67Qm4aZ=
+Oscnlu3k0qAc6KeFGoTKeOdJBsSYSW9RKbdiP2sTRCfOos0xJ64n1G_Xos2fQDh7qKbjEQFh6Bg=
+ovJ1ZuAVcud6M1IJPazw_I6IBkzqntbxBvZO6ijE6J7RsGx_S3E7cOxzK2zfXSNfd96tj7_DYbX=
+Xgi376VRyszo6eIL38XTR2SwtiZvWEQv6LMOs8q29l5-PBab5iORZov8IBCSgUKLJyZ30axu66t=
+jvd6NCyKD3LwjMHVKgbDtiebbRkM_8M0VLrERCllscJZRZJEeO1jwff4nzaqnoyG3TUcFGZxULm=
+jpI462og0YhvUGzqWowc45DH4oMuZq1BNNW_aMMKOa8n6UpPewRs7XXivK_CyLsIHxYR8WIjojm=
+76dQ4ksxKuraU3NdtXPZRXNKcyUDsjJFv0eGkku3_d9nNV82Mf9ApqmHp8exo2tjz7UH5CaoWym=
+dqaHfc9xnHRexsqaKOFQQgumdaXhikFAl5zjXDvliSv1gicTZ-dTSK0LupdsLGZW9hZ_O9B02dT=
+duloiJqHLVfcya5M4s9iBHsJaZ0km0KC8o4ewsLrtChlsE%3D" target=3D"_blank" style=
+=3D"line-height: inherit; text-decoration: none; color: #172c42;" rel=3D"no=
+opener">$475 25 Hr. / Week</a></span></p> </div> </div> <!--[if mso]></td><=
+/tr></table><![endif]--> <!--[if (!mso)&(!IE)]><!--> </div> <!--<![endif]--=
+> </div> </div> <!--[if (mso)|(IE)]></td></tr></table><![endif]--> <!--[if =
+(mso)|(IE)]></td><td align=3D"center" width=3D"125" style=3D"background-col=
+or:#ffffff;width:125px; border-top: 0px solid transparent; border-left: 0px=
+ solid transparent; border-bottom: 0px solid transparent; border-right: 0px=
+ solid transparent;" valign=3D"top"><table width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0"><tr><td style=3D"padding-right: 0px; paddin=
+g-left: 0px; padding-top:0px; padding-bottom:0px;"><![endif]--> <div class=
+=3D"col num3" style=3D"line-height: inherit; display: table-cell; vertical-=
+align: top; max-width: 320px; min-width: 123px; width: 125px;"> <div class=
+=3D"col_cont" style=3D"line-height: inherit; width: 100% !important;"> <!--=
+[if (!mso)&(!IE)]><!--> <div style=3D"line-height: inherit; border-top: 0px=
+ solid transparent; border-left: 0px solid transparent; border-bottom: 0px =
+solid transparent; border-right: 0px solid transparent; padding-top: 0px; p=
+adding-bottom: 0px; padding-right: 0px; padding-left: 0px;"> <!--<![endif]-=
+-> <!--[if mso]><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0"><tr><td style=3D"padding-right: 60px; padding-left: 0px; paddin=
+g-top: 0px; padding-bottom: 0px; font-family: Arial, sans-serif"><![endif]-=
+-> <div style=3D"color: #172c42; font-family: Proxima Nova, Lato, Arial, sa=
+ns-serif; line-height: 1.2; padding-top: 0px; padding-right: 60px; padding-=
+bottom: 0px; padding-left: 0px;"> <div class=3D"txtTinyMce-wrapper" style=
+=3D"line-height: 1.2; font-size: 12px; color: #172c42; font-family: Proxima=
+ Nova, Lato, Arial, sans-serif; mso-line-height-alt: 14px;"> <p style=3D"ma=
+rgin: 0; font-size: 30px; line-height: 1.2; word-break: break-word; text-al=
+ign: right; mso-line-height-alt: 36px; margin-top: 0; margin-bottom: 0;"><s=
+pan style=3D"line-height: inherit; font-size: 30px; color: #172c42;"><a hre=
+f=3D"http://links2.care.com/u/click=3F_t=3D24560b526ec649f8b85da96745570677=
+&_m=3D4a6b53471d4b423f852fa61a344f5baa&_e=3DRGFyiv2w_9EcQd-3Qqng22XBJyVpA-E=
+s4ho1WmeqLga2z1MpmwZ78kvyWJ4X2FM2-lLdjFtKr3SZuL-nHOmSqYqc49GTulyfE5fs3NpMk6=
+7Qm4aZOscnlu3k0qAc6KeFGoTKeOdJBsSYSW9RKbdiP2sTRCfOos0xJ64n1G_Xos2fQDh7qKbjE=
+QFh6BgovJ1ZuAVcud6M1IJPazw_I6IBkzqntbxBvZO6ijE6J7RsGx_S3E7cOxzK2zfXSNfd96tj=
+7_DYbXXgi376VRyszo6eIL38XTR2SwtiZvWEQv6LMOs8q29l5-PBab5iORZov8IBCSgUKLJyZ30=
+axu66tjvd6NCyKD3LwjMHVKgbDtiebbRkM_8M0VLrERCllscJZRZJEeO1jwff4nzaqnoyG3TUcF=
+GZxULmjpI462og0YhvUGzqWowc45DH4oMuZq1BNNW_aMMKOa8n6UpPewRs7XXivK_CyLsIHxYR8=
+WIjojm76dQ4ksxKuraU3NdtXPZRXNKcyUDsjJFv0eGkku3_d9nNVzVdm9LnJsBDi5725RzR37_g=
+s9OVktAiQnUZkr5A4FPGT8YCBnIKQ-s_P5t0TA0WHvYjzCGse4-GujUrsZWtqjULzXu-Iz-5dHq=
+0B-o7gvpsUzki2RgChIQRcxgcDS0kFNKpCFP9BblSHBkoHICHdYg%3D" target=3D"_blank" =
+style=3D"line-height: inherit; text-decoration: none; color: #172c42;" rel=
+=3D"noopener">=E2=80=BA</a></span></p> </div> </div> <!--[if mso]></td></tr=
+></table><![endif]--> <!--[if (!mso)&(!IE)]><!--> </div> <!--<![endif]--> <=
+/div> </div> <!--[if (mso)|(IE)]></td></tr></table><![endif]--> <!--[if (ms=
+o)|(IE)]></td></tr></table></td></tr></table><![endif]--> </div> </div> </d=
+iv> <div style=3D"line-height: inherit; background-color: transparent;"> <d=
+iv class=3D"block-grid no-stack" style=3D"line-height: inherit; min-width: =
+320px; max-width: 500px; overflow-wrap: break-word; word-wrap: break-word; =
+word-break: break-word; Margin: 0 auto; background-color: #ffffff;"> <div s=
+tyle=3D"line-height: inherit; border-collapse: collapse; display: table; wi=
+dth: 100%; background-color: #ffffff;"> <!--[if (mso)|(IE)]><table width=3D=
+"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"background=
+-color:transparent;"><tr><td align=3D"center"><table cellpadding=3D"0" cell=
+spacing=3D"0" border=3D"0" style=3D"width:500px"><tr class=3D"layout-full-w=
+idth" style=3D"background-color:#ffffff"><![endif]--> <!--[if (mso)|(IE)]><=
+td align=3D"center" width=3D"500" style=3D"background-color:#ffffff;width:5=
+00px; border-top: 0px solid transparent; border-left: 0px solid transparent=
+; border-bottom: 0px solid transparent; border-right: 0px solid transparent=
+;" valign=3D"top"><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0"=
+ border=3D"0"><tr><td style=3D"padding-right: 0px; padding-left: 0px; paddi=
+ng-top:0px; padding-bottom:0px;"><![endif]--> <div class=3D"col num12" styl=
+e=3D"line-height: inherit; min-width: 320px; max-width: 500px; display: tab=
+le-cell; vertical-align: top; width: 500px;"> <div class=3D"col_cont" style=
+=3D"line-height: inherit; width: 100% !important;"> <!--[if (!mso)&(!IE)]><=
+!--> <div style=3D"line-height: inherit; border-top: 0px solid transparent;=
+ border-left: 0px solid transparent; border-bottom: 0px solid transparent; =
+border-right: 0px solid transparent; padding-top: 0px; padding-bottom: 0px;=
+ padding-right: 0px; padding-left: 0px;"> <!--<![endif]--> <table class=3D"=
+divider" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" st=
+yle=3D"line-height: inherit; table-layout: fixed; vertical-align: top; bord=
+er-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-=
+rspace: 0pt; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size=
+-adjust: 100%;" role=3D"presentation" valign=3D"top"> <tbody style=3D"line-=
+height: inherit;"> <tr style=3D"line-height: inherit; border-collapse: coll=
+apse; vertical-align: top;" valign=3D"top"> <td class=3D"divider_inner" sty=
+le=3D"line-height: inherit; border-collapse: collapse; word-break: break-wo=
+rd; vertical-align: top; min-width: 100%; -ms-text-size-adjust: 100%; -webk=
+it-text-size-adjust: 100%; padding-top: 24px; padding-right: 60px; padding-=
+bottom: 10px; padding-left: 60px;" valign=3D"top"> <table class=3D"divider_=
+content" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" st=
+yle=3D"line-height: inherit; table-layout: fixed; vertical-align: top; bord=
+er-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-=
+rspace: 0pt; border-top: 2px solid #F3F4F6; width: 100%;" align=3D"center" =
+role=3D"presentation" valign=3D"top"> <tbody style=3D"line-height: inherit;=
+"> <tr style=3D"line-height: inherit; border-collapse: collapse; vertical-a=
+lign: top;" valign=3D"top"> <td style=3D"line-height: inherit; border-colla=
+pse: collapse; word-break: break-word; vertical-align: top; -ms-text-size-a=
+djust: 100%; -webkit-text-size-adjust: 100%;" valign=3D"top"><span style=3D=
+"line-height: inherit;"></span></td> </tr> </tbody> </table> </td> </tr> </=
+tbody> </table> <!--[if mso]><table width=3D"100%" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0"><tr><td style=3D"padding-right: 0px; padding-left:=
+ 0px; padding-top: 0px; padding-bottom: 0px; font-family: Arial, sans-serif=
+"><![endif]--> <div style=3D"color: #555555; font-family: Proxima Nova, Lat=
+o, Arial, sans-serif; line-height: 1.2; padding-top: 0px; padding-right: 0p=
+x; padding-bottom: 0px; padding-left: 0px;"> <div class=3D"txtTinyMce-wrapp=
+er" style=3D"line-height: 1.2; font-size: 12px; color: #555555; font-family=
+: Proxima Nova, Lato, Arial, sans-serif; mso-line-height-alt: 14px;"> <p st=
+yle=3D"margin: 0; font-size: 14px; line-height: 1.2; word-break: break-word=
+; mso-line-height-alt: 17px; margin-top: 0; margin-bottom: 0;"></p> </div> =
+</div> <!--[if mso]></td></tr></table><![endif]--> <!--[if (!mso)&(!IE)]><!=
+--> </div> <!--<![endif]--> </div> </div> <!--[if (mso)|(IE)]></td></tr></t=
+able><![endif]--> <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><=
+![endif]--> </div> </div> </div> <div style=3D"line-height: inherit; backgr=
+ound-color: #f6f7f8;"> <div class=3D"block-grid mixed-two-up no-stack" styl=
+e=3D"line-height: inherit; min-width: 320px; max-width: 500px; overflow-wra=
+p: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 aut=
+o; background-color: #ffffff;"> <div style=3D"line-height: inherit; border-=
+collapse: collapse; display: table; width: 100%; background-color: #ffffff;=
+"> <!--[if (mso)|(IE)]><table width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" style=3D"background-color:#f6f7f8;"><tr><td align=3D"ce=
+nter"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"widt=
+h:500px"><tr class=3D"layout-full-width" style=3D"background-color:#ffffff"=
+><![endif]--> <!--[if (mso)|(IE)]><td align=3D"center" width=3D"375" style=
+=3D"background-color:#ffffff;width:375px; border-top: 0px solid transparent=
+; border-left: 0px solid transparent; border-bottom: 0px solid transparent;=
+ border-right: 0px solid transparent;" valign=3D"top"><table width=3D"100%"=
+ cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=3D"padding-=
+right: 0px; padding-left: 0px; padding-top:10px; padding-bottom:0px;"><![en=
+dif]--> <div class=3D"col num9" style=3D"line-height: inherit; display: tab=
+le-cell; vertical-align: top; max-width: 320px; min-width: 369px; width: 37=
+5px;"> <div class=3D"col_cont" style=3D"line-height: inherit; width: 100% !=
+important;"> <!--[if (!mso)&(!IE)]><!--> <div style=3D"line-height: inherit=
+; border-top: 0px solid transparent; border-left: 0px solid transparent; bo=
+rder-bottom: 0px solid transparent; border-right: 0px solid transparent; pa=
+dding-top: 10px; padding-bottom: 0px; padding-right: 0px; padding-left: 0px=
+;"> <!--<![endif]--> <!--[if mso]><table width=3D"100%" cellpadding=3D"0" c=
+ellspacing=3D"0" border=3D"0"><tr><td style=3D"padding-right: 20px; padding=
+-left: 60px; padding-top: 0px; padding-bottom: 8px; font-family: Arial, san=
+s-serif"><![endif]--> <div style=3D"color: #172c42; font-family: Proxima No=
+va, Lato, Arial, sans-serif; line-height: 1.5; padding-top: 0px; padding-ri=
+ght: 20px; padding-bottom: 8px; padding-left: 60px;"> <div class=3D"txtTiny=
+Mce-wrapper" style=3D"line-height: 1.5; font-size: 12px; color: #172c42; fo=
+nt-family: Proxima Nova, Lato, Arial, sans-serif; mso-line-height-alt: 18px=
+;"> <p style=3D"margin: 0; line-height: 1.5; word-break: break-word; text-a=
+lign: left; mso-line-height-alt: 18px; margin-top: 0; margin-bottom: 0;"><s=
+pan style=3D"line-height: inherit; color: #172c42;"><strong style=3D"line-h=
+eight: inherit;"><span style=3D"line-height: inherit; font-size: 16px;"><a =
+href=3D"http://links2.care.com/u/click=3F_t=3D24560b526ec649f8b85da96745570=
+677&_m=3D4a6b53471d4b423f852fa61a344f5baa&_e=3DRGFyiv2w_9EcQd-3Qqng22XBJyVp=
+A-Es4ho1WmeqLga2z1MpmwZ78kvyWJ4X2FM2-lLdjFtKr3SZuL-nHOmSqYqc49GTulyfE5fs3Np=
+Mk67Qm4aZOscnlu3k0qAc6KeFGoTKeOdJBsSYSW9RKbdiP2sTRCfOos0xJ64n1G_Xos2fQDh7qK=
+bjEQFh6BgovJ1ZyPDzQdAO0b6tRTEDHJsahSP2OWDgh78hUT8rK6NTelibt9FPR2aDy58jcnOzE=
+u--fmxDKos3UOI6DQZpvmoC3JMMzw_Ai2BmeveFX1hlPEcBN4glC7oVg2s4ntQimL290ISE0NmC=
+UnbWanu8IzJqRL170wsBrWTBbtAo1L7dOrMQXAa3kBY0M0uDbYirV1BHzVLkSnpzioE_dH3Rxik=
+IbYfNxAPli9YWZYuCMpk5xNKpcGnAxEmWjlE9YABUsgMpC6JIfbV8BmQE0G_wvC5jfQ4z-M11vY=
+y422kx-l4Nd478Hc6_k9hSLlKeQSXtYcl8GktE-YtIfyauwe9qGqHcNh7cq7LJy7-S4a4UrX6lv=
+iB95dGg9r64soi9txmSkqQrjZFThM9pEUWQQ9leDNevk2szFupsViY92c3CZCmF6Suh4SkUywKU=
+z8lHAcCMuUtGZnlZfJAT6AnJSweEaUk4BoOedk3t1bWWsUOnu7WUEaAN92RWaaDASUHvA6qWbX2=
+suIKeAVSUrwZjpNWsvuG26e65LbAHPIWICkIOuqLJ59s%3D" target=3D"_blank" style=3D=
+"line-height: inherit; text-decoration: none; color: #172c42;" rel=3D"noope=
+ner">After school care required for two kids, aged seven and 10 from mid No=
+vember till end of year.</a></span></strong></span></p> </div> </div> <!--[=
+if mso]></td></tr></table><![endif]--> <!--[if mso]><table width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=3D"padding-ri=
+ght: 20px; padding-left: 60px; padding-top: 0px; padding-bottom: 8px; font-=
+family: Arial, sans-serif"><![endif]--> <div style=3D"color: #505d6d; font-=
+family: Proxima Nova, Lato, Arial, sans-serif; line-height: 1.5; padding-to=
+p: 0px; padding-right: 20px; padding-bottom: 8px; padding-left: 60px;"> <di=
+v class=3D"txtTinyMce-wrapper" style=3D"line-height: 1.5; font-size: 12px; =
+color: #505d6d; font-family: Proxima Nova, Lato, Arial, sans-serif; mso-lin=
+e-height-alt: 18px;"> <p style=3D"margin: 0; line-height: 1.5; word-break: =
+break-word; text-align: left; font-size: 14px; mso-line-height-alt: 21px; m=
+argin-top: 0; margin-bottom: 0;"><span style=3D"line-height: inherit; color=
+: #505d6d; font-size: 14px;"><a href=3D"http://links2.care.com/u/click=3F_t=
+=3D24560b526ec649f8b85da96745570677&_m=3D4a6b53471d4b423f852fa61a344f5baa&_=
+e=3DRGFyiv2w_9EcQd-3Qqng22XBJyVpA-Es4ho1WmeqLga2z1MpmwZ78kvyWJ4X2FM2-lLdjFt=
+Kr3SZuL-nHOmSqYqc49GTulyfE5fs3NpMk67Qm4aZOscnlu3k0qAc6KeFGoTKeOdJBsSYSW9RKb=
+diP2sTRCfOos0xJ64n1G_Xos2fQDh7qKbjEQFh6BgovJ1ZyPDzQdAO0b6tRTEDHJsahSP2OWDgh=
+78hUT8rK6NTelibt9FPR2aDy58jcnOzEu--fmxDKos3UOI6DQZpvmoC3JMMzw_Ai2BmeveFX1hl=
+PEcBN4glC7oVg2s4ntQimL290ISE0NmCUnbWanu8IzJqRL170wsBrWTBbtAo1L7dOrMQXAa3kBY=
+0M0uDbYirV1BHzVLkSnpzioE_dH3RxikIbYfNxAPli9YWZYuCMpk5xNKpcGnAxEmWjlE9YABUsg=
+MpC6JIfbV8BmQE0G_wvC5jfQ4z-M11vYy422kx-l4Nd478Hc6_k9hSLlKeQSXtYcl8GktE-YtIf=
+yauwe9qGqHcNh7cq7LJy7-S4a4UrX6lviB95dGg9r64soi9txmSkqQrjZFThM9pEUWQQ9leDNev=
+kwai9HWYneNRtmge9nDR0yLWRkEUEjI7LdOtyl1lUb2Lfeyh5yUfZLSszVLJ1dOjopX8CkIHqQA=
+iTtbEbXm7k7_e67BaZtQ_EZRu7UznKSZuQRwGA4t9m6eaYQkNUJVgbwtGSapT6cwPzc7P4KGb_o=
+s%3D" target=3D"_blank" style=3D"line-height: inherit; text-decoration: non=
+e; color: #505d6d;" rel=3D"noopener">Cabarita =E2=80=A2 by Suzanne M.</a></=
+span></p> </div> </div> <!--[if mso]></td></tr></table><![endif]--> <!--[if=
+ mso]><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0=
+"><tr><td style=3D"padding-right: 20px; padding-left: 60px; padding-top: 0p=
+x; padding-bottom: 8px; font-family: Arial, sans-serif"><![endif]--> <div s=
+tyle=3D"color: #172c42; font-family: 'Proxima Nova Semibold','Lato', Arial,=
+ sans-serif; line-height: 1.5; padding-top: 0px; padding-right: 20px; paddi=
+ng-bottom: 8px; padding-left: 60px;"> <div class=3D"txtTinyMce-wrapper" sty=
+le=3D"line-height: 1.5; font-size: 12px; color: #172c42; font-family: 'Prox=
+ima Nova Semibold','Lato', Arial, sans-serif; mso-line-height-alt: 18px;"> =
+<p style=3D"margin: 0; line-height: 1.5; word-break: break-word; text-align=
+: left; mso-line-height-alt: 18px; margin-top: 0; margin-bottom: 0;"><span =
+style=3D"line-height: inherit; color: #068456;"><a href=3D"http://links2.ca=
+re.com/u/click=3F_t=3D24560b526ec649f8b85da96745570677&_m=3D4a6b53471d4b423=
+f852fa61a344f5baa&_e=3DRGFyiv2w_9EcQd-3Qqng22XBJyVpA-Es4ho1WmeqLga2z1MpmwZ7=
+8kvyWJ4X2FM2-lLdjFtKr3SZuL-nHOmSqYqc49GTulyfE5fs3NpMk67Qm4aZOscnlu3k0qAc6Ke=
+FGoTKeOdJBsSYSW9RKbdiP2sTRCfOos0xJ64n1G_Xos2fQDh7qKbjEQFh6BgovJ1ZyPDzQdAO0b=
+6tRTEDHJsahSP2OWDgh78hUT8rK6NTelibt9FPR2aDy58jcnOzEu--fmxDKos3UOI6DQZpvmoC3=
+JMMzw_Ai2BmeveFX1hlPEcBN4glC7oVg2s4ntQimL290ISE0NmCUnbWanu8IzJqRL170wsBrWTB=
+btAo1L7dOrMQXAa3kBY0M0uDbYirV1BHzVLkSnpzioE_dH3RxikIbYfNxAPli9YWZYuCMpk5xNK=
+pcGnAxEmWjlE9YABUsgMpC6JIfbV8BmQE0G_wvC5jfQ4z-M11vYy422kx-l4Nd478Hc6_k9hSLl=
+KeQSXtYcl8GktE-YtIfyauwe9qGqHcNh7cq7LJy7-S4a4UrX6lviB95dGg9r64soi9txmSkqQrj=
+ZFThM9pEUWQQ9leDNevk_b7AvVPjBN3NbqXaBB54I42HnhaxDMU9Okpp5oc8hBHCOwxBP92drIR=
+aXvU0bmiv4CdiRYDC2Jt0upqAqjE-HnMXyX_uNoYF79tfX_yXiWPddCf33OvBO7Z4wGw8mY1kV5=
+bna2gQPZ7FD8cQRMedp4%3D" target=3D"_blank" style=3D"line-height: inherit; t=
+ext-decoration: none; color: #068456;" rel=3D"noopener">Starts: 20.11.2023<=
+/a></span></p> </div> </div> <!--[if mso]></td></tr></table><![endif]--> <!=
+--[if mso]><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0"><tr><td style=3D"padding-right: 20px; padding-left: 60px; padding-to=
+p: 0px; padding-bottom: 0px; font-family: Arial, sans-serif"><![endif]--> <=
+div style=3D"color: #172c42; font-family: Proxima Nova, Lato, Arial, sans-s=
+erif; line-height: 1.5; padding-top: 0px; padding-right: 20px; padding-bott=
+om: 0px; padding-left: 60px;"> <div class=3D"txtTinyMce-wrapper" style=3D"l=
+ine-height: 1.5; font-size: 12px; color: #172c42; font-family: Proxima Nova=
+, Lato, Arial, sans-serif; mso-line-height-alt: 18px;"> <p style=3D"margin:=
+ 0; line-height: 1.5; word-break: break-word; text-align: left; mso-line-he=
+ight-alt: 18px; margin-top: 0; margin-bottom: 0;"><span style=3D"line-heigh=
+t: inherit; color: #172c42;"><a href=3D"http://links2.care.com/u/click=3F_t=
+=3D24560b526ec649f8b85da96745570677&_m=3D4a6b53471d4b423f852fa61a344f5baa&_=
+e=3DRGFyiv2w_9EcQd-3Qqng22XBJyVpA-Es4ho1WmeqLga2z1MpmwZ78kvyWJ4X2FM2-lLdjFt=
+Kr3SZuL-nHOmSqYqc49GTulyfE5fs3NpMk67Qm4aZOscnlu3k0qAc6KeFGoTKeOdJBsSYSW9RKb=
+diP2sTRCfOos0xJ64n1G_Xos2fQDh7qKbjEQFh6BgovJ1ZyPDzQdAO0b6tRTEDHJsahSP2OWDgh=
+78hUT8rK6NTelibt9FPR2aDy58jcnOzEu--fmxDKos3UOI6DQZpvmoC3JMMzw_Ai2BmeveFX1hl=
+PEcBN4glC7oVg2s4ntQimL290ISE0NmCUnbWanu8IzJqRL170wsBrWTBbtAo1L7dOrMQXAa3kBY=
+0M0uDbYirV1BHzVLkSnpzioE_dH3RxikIbYfNxAPli9YWZYuCMpk5xNKpcGnAxEmWjlE9YABUsg=
+MpC6JIfbV8BmQE0G_wvC5jfQ4z-M11vYy422kx-l4Nd478Hc6_k9hSLlKeQSXtYcl8GktE-YtIf=
+yauwe9qGqHcNh7cq7LJy7-S4a4UrX6lviB95dGg9r64soi9txmSkqQrjZFThM9pEUWQQ9leDNev=
+k0C1CYcicfomEeFFQZU4JAm_BKKein2fQiDZXpUWiGLABfP_IOh5j0kJ7ucfvR4CDc4QvafoJmo=
+VZ_3iwLlqZLXmFjQzSoZkgqN_Pi_87SKpNNKUHD5g0YwyQeHbu6bttcJSLbYCW9RhLl9k72Cl7b=
+E%3D" target=3D"_blank" style=3D"line-height: inherit; text-decoration: non=
+e; color: #172c42;" rel=3D"noopener">$285 15 Hr. / Week</a></span></p> </di=
+v> </div> <!--[if mso]></td></tr></table><![endif]--> <!--[if (!mso)&(!IE)]=
+><!--> </div> <!--<![endif]--> </div> </div> <!--[if (mso)|(IE)]></td></tr>=
+</table><![endif]--> <!--[if (mso)|(IE)]></td><td align=3D"center" width=3D=
+"125" style=3D"background-color:#ffffff;width:125px; border-top: 0px solid =
+transparent; border-left: 0px solid transparent; border-bottom: 0px solid t=
+ransparent; border-right: 0px solid transparent;" valign=3D"top"><table wid=
+th=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=
+=3D"padding-right: 0px; padding-left: 0px; padding-top:0px; padding-bottom:=
+0px;"><![endif]--> <div class=3D"col num3" style=3D"line-height: inherit; d=
+isplay: table-cell; vertical-align: top; max-width: 320px; min-width: 123px=
+; width: 125px;"> <div class=3D"col_cont" style=3D"line-height: inherit; wi=
+dth: 100% !important;"> <!--[if (!mso)&(!IE)]><!--> <div style=3D"line-heig=
+ht: inherit; border-top: 0px solid transparent; border-left: 0px solid tran=
+sparent; border-bottom: 0px solid transparent; border-right: 0px solid tran=
+sparent; padding-top: 0px; padding-bottom: 0px; padding-right: 0px; padding=
+-left: 0px;"> <!--<![endif]--> <!--[if mso]><table width=3D"100%" cellpaddi=
+ng=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=3D"padding-right: 60p=
+x; padding-left: 0px; padding-top: 0px; padding-bottom: 0px; font-family: A=
+rial, sans-serif"><![endif]--> <div style=3D"color: #172c42; font-family: P=
+roxima Nova, Lato, Arial, sans-serif; line-height: 1.2; padding-top: 0px; p=
+adding-right: 60px; padding-bottom: 0px; padding-left: 0px;"> <div class=3D=
+"txtTinyMce-wrapper" style=3D"line-height: 1.2; font-size: 12px; color: #17=
+2c42; font-family: Proxima Nova, Lato, Arial, sans-serif; mso-line-height-a=
+lt: 14px;"> <p style=3D"margin: 0; font-size: 30px; line-height: 1.2; word-=
+break: break-word; text-align: right; mso-line-height-alt: 36px; margin-top=
+: 0; margin-bottom: 0;"><span style=3D"line-height: inherit; font-size: 30p=
+x; color: #172c42;"><a href=3D"http://links2.care.com/u/click=3F_t=3D24560b=
+526ec649f8b85da96745570677&_m=3D4a6b53471d4b423f852fa61a344f5baa&_e=3DRGFyi=
+v2w_9EcQd-3Qqng22XBJyVpA-Es4ho1WmeqLga2z1MpmwZ78kvyWJ4X2FM2-lLdjFtKr3SZuL-n=
+HOmSqYqc49GTulyfE5fs3NpMk67Qm4aZOscnlu3k0qAc6KeFGoTKeOdJBsSYSW9RKbdiP2sTRCf=
+Oos0xJ64n1G_Xos2fQDh7qKbjEQFh6BgovJ1ZyPDzQdAO0b6tRTEDHJsahSP2OWDgh78hUT8rK6=
+NTelibt9FPR2aDy58jcnOzEu--fmxDKos3UOI6DQZpvmoC3JMMzw_Ai2BmeveFX1hlPEcBN4glC=
+7oVg2s4ntQimL290ISE0NmCUnbWanu8IzJqRL170wsBrWTBbtAo1L7dOrMQXAa3kBY0M0uDbYir=
+V1BHzVLkSnpzioE_dH3RxikIbYfNxAPli9YWZYuCMpk5xNKpcGnAxEmWjlE9YABUsgMpC6JIfbV=
+8BmQE0G_wvC5jfQ4z-M11vYy422kx-l4Nd478Hc6_k9hSLlKeQSXtYcl8GktE-YtIfyauwe9qGq=
+HcNh7cq7LJy7-S4a4UrX6lviB95dGg9r64soi9txmSkqQrjZFThM9pEUWQQ9leDNevkySzHLxtE=
+PXUDiJQoIDI5DO8XP58FHegY-yMW4viz7RXjCum_3Hptg-zE05KsFSjTCJ4xtnTpoJY8UEE8tXI=
+DT5kGZX7foeRW0QxghYlGihfMYqf2ts16SV8HYpLGQp39ZiwGVTiU5PCncocx1vFFgQ%3D" tar=
+get=3D"_blank" style=3D"line-height: inherit; text-decoration: none; color:=
+ #172c42;" rel=3D"noopener">=E2=80=BA</a></span></p> </div> </div> <!--[if =
+mso]></td></tr></table><![endif]--> <!--[if (!mso)&(!IE)]><!--> </div> <!--=
+<![endif]--> </div> </div> <!--[if (mso)|(IE)]></td></tr></table><![endif]-=
+-> <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]--> </d=
+iv> </div> </div> <div style=3D"line-height: inherit; background-color: tra=
+nsparent;"> <div class=3D"block-grid no-stack" style=3D"line-height: inheri=
+t; min-width: 320px; max-width: 500px; overflow-wrap: break-word; word-wrap=
+: break-word; word-break: break-word; Margin: 0 auto; background-color: #ff=
+ffff;"> <div style=3D"line-height: inherit; border-collapse: collapse; disp=
+lay: table; width: 100%; background-color: #ffffff;"> <!--[if (mso)|(IE)]><=
+table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=
+=3D"background-color:transparent;"><tr><td align=3D"center"><table cellpadd=
+ing=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:500px"><tr class=3D=
+"layout-full-width" style=3D"background-color:#ffffff"><![endif]--> <!--[if=
+ (mso)|(IE)]><td align=3D"center" width=3D"500" style=3D"background-color:#=
+ffffff;width:500px; border-top: 0px solid transparent; border-left: 0px sol=
+id transparent; border-bottom: 0px solid transparent; border-right: 0px sol=
+id transparent;" valign=3D"top"><table width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0"><tr><td style=3D"padding-right: 0px; padding-le=
+ft: 0px; padding-top:0px; padding-bottom:0px;"><![endif]--> <div class=3D"c=
+ol num12" style=3D"line-height: inherit; min-width: 320px; max-width: 500px=
+; display: table-cell; vertical-align: top; width: 500px;"> <div class=3D"c=
+ol_cont" style=3D"line-height: inherit; width: 100% !important;"> <!--[if (=
+!mso)&(!IE)]><!--> <div style=3D"line-height: inherit; border-top: 0px soli=
+d transparent; border-left: 0px solid transparent; border-bottom: 0px solid=
+ transparent; border-right: 0px solid transparent; padding-top: 0px; paddin=
+g-bottom: 0px; padding-right: 0px; padding-left: 0px;"> <!--<![endif]--> <t=
+able class=3D"divider" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wid=
+th=3D"100%" style=3D"line-height: inherit; table-layout: fixed; vertical-al=
+ign: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0=
+pt; mso-table-rspace: 0pt; min-width: 100%; -ms-text-size-adjust: 100%; -we=
+bkit-text-size-adjust: 100%;" role=3D"presentation" valign=3D"top"> <tbody =
+style=3D"line-height: inherit;"> <tr style=3D"line-height: inherit; border-=
+collapse: collapse; vertical-align: top;" valign=3D"top"> <td class=3D"divi=
+der_inner" style=3D"line-height: inherit; border-collapse: collapse; word-b=
+reak: break-word; vertical-align: top; min-width: 100%; -ms-text-size-adjus=
+t: 100%; -webkit-text-size-adjust: 100%; padding-top: 24px; padding-right: =
+60px; padding-bottom: 10px; padding-left: 60px;" valign=3D"top"> <table cla=
+ss=3D"divider_content" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wid=
+th=3D"100%" style=3D"line-height: inherit; table-layout: fixed; vertical-al=
+ign: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0=
+pt; mso-table-rspace: 0pt; border-top: 2px solid #F3F4F6; width: 100%;" ali=
+gn=3D"center" role=3D"presentation" valign=3D"top"> <tbody style=3D"line-he=
+ight: inherit;"> <tr style=3D"line-height: inherit; border-collapse: collap=
+se; vertical-align: top;" valign=3D"top"> <td style=3D"line-height: inherit=
+; border-collapse: collapse; word-break: break-word; vertical-align: top; -=
+ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" valign=3D"top">=
+<span style=3D"line-height: inherit;"></span></td> </tr> </tbody> </table> =
+</td> </tr> </tbody> </table> <!--[if mso]><table width=3D"100%" cellpaddin=
+g=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=3D"padding-right: 0px;=
+ padding-left: 0px; padding-top: 0px; padding-bottom: 0px; font-family: Ari=
+al, sans-serif"><![endif]--> <div style=3D"color: #555555; font-family: Pro=
+xima Nova, Lato, Arial, sans-serif; line-height: 1.2; padding-top: 0px; pad=
+ding-right: 0px; padding-bottom: 0px; padding-left: 0px;"> <div class=3D"tx=
+tTinyMce-wrapper" style=3D"line-height: 1.2; font-size: 12px; color: #55555=
+5; font-family: Proxima Nova, Lato, Arial, sans-serif; mso-line-height-alt:=
+ 14px;"> <p style=3D"margin: 0; font-size: 14px; line-height: 1.2; word-bre=
+ak: break-word; mso-line-height-alt: 17px; margin-top: 0; margin-bottom: 0;=
+"></p> </div> </div> <!--[if mso]></td></tr></table><![endif]--> <!--[if (!=
+mso)&(!IE)]><!--> </div> <!--<![endif]--> </div> </div> <!--[if (mso)|(IE)]=
+></td></tr></table><![endif]--> <!--[if (mso)|(IE)]></td></tr></table></td>=
+</tr></table><![endif]--> </div> </div> </div> <div style=3D"line-height: i=
+nherit; background-color: #f6f7f8;"> <div class=3D"block-grid mixed-two-up =
+no-stack" style=3D"line-height: inherit; min-width: 320px; max-width: 500px=
+; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word;=
+ Margin: 0 auto; background-color: #ffffff;"> <div style=3D"line-height: in=
+herit; border-collapse: collapse; display: table; width: 100%; background-c=
+olor: #ffffff;"> <!--[if (mso)|(IE)]><table width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" style=3D"background-color:#f6f7f8;"><tr><t=
+d align=3D"center"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" =
+style=3D"width:500px"><tr class=3D"layout-full-width" style=3D"background-c=
+olor:#ffffff"><![endif]--> <!--[if (mso)|(IE)]><td align=3D"center" width=
+=3D"375" style=3D"background-color:#ffffff;width:375px; border-top: 0px sol=
+id transparent; border-left: 0px solid transparent; border-bottom: 0px soli=
+d transparent; border-right: 0px solid transparent;" valign=3D"top"><table =
+width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td sty=
+le=3D"padding-right: 0px; padding-left: 0px; padding-top:10px; padding-bott=
+om:0px;"><![endif]--> <div class=3D"col num9" style=3D"line-height: inherit=
+; display: table-cell; vertical-align: top; max-width: 320px; min-width: 36=
+9px; width: 375px;"> <div class=3D"col_cont" style=3D"line-height: inherit;=
+ width: 100% !important;"> <!--[if (!mso)&(!IE)]><!--> <div style=3D"line-h=
+eight: inherit; border-top: 0px solid transparent; border-left: 0px solid t=
+ransparent; border-bottom: 0px solid transparent; border-right: 0px solid t=
+ransparent; padding-top: 10px; padding-bottom: 0px; padding-right: 0px; pad=
+ding-left: 0px;"> <!--<![endif]--> <!--[if mso]><table width=3D"100%" cellp=
+adding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=3D"padding-right:=
+ 20px; padding-left: 60px; padding-top: 0px; padding-bottom: 8px; font-fami=
+ly: Arial, sans-serif"><![endif]--> <div style=3D"color: #172c42; font-fami=
+ly: Proxima Nova, Lato, Arial, sans-serif; line-height: 1.5; padding-top: 0=
+px; padding-right: 20px; padding-bottom: 8px; padding-left: 60px;"> <div cl=
+ass=3D"txtTinyMce-wrapper" style=3D"line-height: 1.5; font-size: 12px; colo=
+r: #172c42; font-family: Proxima Nova, Lato, Arial, sans-serif; mso-line-he=
+ight-alt: 18px;"> <p style=3D"margin: 0; line-height: 1.5; word-break: brea=
+k-word; text-align: left; mso-line-height-alt: 18px; margin-top: 0; margin-=
+bottom: 0;"><span style=3D"line-height: inherit; color: #172c42;"><strong s=
+tyle=3D"line-height: inherit;"><span style=3D"line-height: inherit; font-si=
+ze: 16px;"><a href=3D"http://links2.care.com/u/click=3F_t=3D24560b526ec649f=
+8b85da96745570677&_m=3D4a6b53471d4b423f852fa61a344f5baa&_e=3DRGFyiv2w_9EcQd=
+-3Qqng22XBJyVpA-Es4ho1WmeqLga2z1MpmwZ78kvyWJ4X2FM2-lLdjFtKr3SZuL-nHOmSqYqc4=
+9GTulyfE5fs3NpMk67Qm4aZOscnlu3k0qAc6KeFGoTKeOdJBsSYSW9RKbdiP2sTRCfOos0xJ64n=
+1G_Xos2fQDh7qKbjEQFh6BgovJ1ZYC8CskOqYicw_nWJb5YwjUG1OXc1-wWXzxpUyYLaCgo2h9G=
+Sda9mEp_WJ8ZPkLP4HqEG_pSki5q37QnJrvHWpZODEKKTnGBrlQE2DOWOFWBkoFVifVKjlvcACj=
+rXiojiKFyBZrFnQFu7RegyxbiPeNkJhKGz2xbd0uSY7mW1cTxcnW-8hSNopB3zyqCQgUAIgLzrM=
+Aepl8O9dEVt4Vxiexx4X5Do4vhFbjFsHpci0BmCUktZcb4ydsAWDvMVpxvnJGhIh8cVyO0J8wHc=
+t0WeiqXCEDNumq3qOKXg6O4NWoG7BuUUIHQCt04biR6gnAg6rI1F9BmlRuil25ulM4sTr_tUzCF=
+geoTqirfpWiLttLeLic_kd5wASJzBpqasGDudoX_tjKr1RY9cL_ys7qYh8sYopnQ62HQEv1IYlE=
+chMxDxbKI3_eOkKEZvxtOiqICSykmfnDuB829NCRHMGCTVuEBqh8CaAhtp-ykY61D7xeY%3D" t=
+arget=3D"_blank" style=3D"line-height: inherit; text-decoration: none; colo=
+r: #172c42;" rel=3D"noopener">Nanny Needed for Our Child in Hunter&#x27;s H=
+ill 2111</a></span></strong></span></p> </div> </div> <!--[if mso]></td></t=
+r></table><![endif]--> <!--[if mso]><table width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0"><tr><td style=3D"padding-right: 20px; paddi=
+ng-left: 60px; padding-top: 0px; padding-bottom: 8px; font-family: Arial, s=
+ans-serif"><![endif]--> <div style=3D"color: #505d6d; font-family: Proxima =
+Nova, Lato, Arial, sans-serif; line-height: 1.5; padding-top: 0px; padding-=
+right: 20px; padding-bottom: 8px; padding-left: 60px;"> <div class=3D"txtTi=
+nyMce-wrapper" style=3D"line-height: 1.5; font-size: 12px; color: #505d6d; =
+font-family: Proxima Nova, Lato, Arial, sans-serif; mso-line-height-alt: 18=
+px;"> <p style=3D"margin: 0; line-height: 1.5; word-break: break-word; text=
+-align: left; font-size: 14px; mso-line-height-alt: 21px; margin-top: 0; ma=
+rgin-bottom: 0;"><span style=3D"line-height: inherit; color: #505d6d; font-=
+size: 14px;"><a href=3D"http://links2.care.com/u/click=3F_t=3D24560b526ec64=
+9f8b85da96745570677&_m=3D4a6b53471d4b423f852fa61a344f5baa&_e=3DRGFyiv2w_9Ec=
+Qd-3Qqng22XBJyVpA-Es4ho1WmeqLga2z1MpmwZ78kvyWJ4X2FM2-lLdjFtKr3SZuL-nHOmSqYq=
+c49GTulyfE5fs3NpMk67Qm4aZOscnlu3k0qAc6KeFGoTKeOdJBsSYSW9RKbdiP2sTRCfOos0xJ6=
+4n1G_Xos2fQDh7qKbjEQFh6BgovJ1ZYC8CskOqYicw_nWJb5YwjUG1OXc1-wWXzxpUyYLaCgo2h=
+9GSda9mEp_WJ8ZPkLP4HqEG_pSki5q37QnJrvHWpZODEKKTnGBrlQE2DOWOFWBkoFVifVKjlvcA=
+CjrXiojiKFyBZrFnQFu7RegyxbiPeNkJhKGz2xbd0uSY7mW1cTxcnW-8hSNopB3zyqCQgUAIgLz=
+rMAepl8O9dEVt4Vxiexx4X5Do4vhFbjFsHpci0BmCUktZcb4ydsAWDvMVpxvnJGhIh8cVyO0J8w=
+Hct0WeiqXCEDNumq3qOKXg6O4NWoG7BuUUIHQCt04biR6gnAg6rI1F9BmlRuil25ulM4sTry-Js=
+I3OWYPsYumwY8OY7GkLTz2bDKeyX9BXNEi8FOT4BVLJY6EFyF_sK_FsvFoFOHoYizukWuhpEKOM=
+DY1HRhO61_6qZn_e7Pvy5Z_mJFJdAlhzrNTJY_XsajpIFAGjw2tiwyTbykBP7yPgvkqt7Gw%3D"=
+ target=3D"_blank" style=3D"line-height: inherit; text-decoration: none; co=
+lor: #505d6d;" rel=3D"noopener">Gladesville =E2=80=A2 by Christina S.</a></=
+span></p> </div> </div> <!--[if mso]></td></tr></table><![endif]--> <!--[if=
+ mso]><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0=
+"><tr><td style=3D"padding-right: 20px; padding-left: 60px; padding-top: 0p=
+x; padding-bottom: 8px; font-family: Arial, sans-serif"><![endif]--> <div s=
+tyle=3D"color: #172c42; font-family: 'Proxima Nova Semibold','Lato', Arial,=
+ sans-serif; line-height: 1.5; padding-top: 0px; padding-right: 20px; paddi=
+ng-bottom: 8px; padding-left: 60px;"> <div class=3D"txtTinyMce-wrapper" sty=
+le=3D"line-height: 1.5; font-size: 12px; color: #172c42; font-family: 'Prox=
+ima Nova Semibold','Lato', Arial, sans-serif; mso-line-height-alt: 18px;"> =
+<p style=3D"margin: 0; line-height: 1.5; word-break: break-word; text-align=
+: left; mso-line-height-alt: 18px; margin-top: 0; margin-bottom: 0;"><span =
+style=3D"line-height: inherit; color: #068456;"><a href=3D"http://links2.ca=
+re.com/u/click=3F_t=3D24560b526ec649f8b85da96745570677&_m=3D4a6b53471d4b423=
+f852fa61a344f5baa&_e=3DRGFyiv2w_9EcQd-3Qqng22XBJyVpA-Es4ho1WmeqLga2z1MpmwZ7=
+8kvyWJ4X2FM2-lLdjFtKr3SZuL-nHOmSqYqc49GTulyfE5fs3NpMk67Qm4aZOscnlu3k0qAc6Ke=
+FGoTKeOdJBsSYSW9RKbdiP2sTRCfOos0xJ64n1G_Xos2fQDh7qKbjEQFh6BgovJ1ZYC8CskOqYi=
+cw_nWJb5YwjUG1OXc1-wWXzxpUyYLaCgo2h9GSda9mEp_WJ8ZPkLP4HqEG_pSki5q37QnJrvHWp=
+ZODEKKTnGBrlQE2DOWOFWBkoFVifVKjlvcACjrXiojiKFyBZrFnQFu7RegyxbiPeNkJhKGz2xbd=
+0uSY7mW1cTxcnW-8hSNopB3zyqCQgUAIgLzrMAepl8O9dEVt4Vxiexx4X5Do4vhFbjFsHpci0Bm=
+CUktZcb4ydsAWDvMVpxvnJGhIh8cVyO0J8wHct0WeiqXCEDNumq3qOKXg6O4NWoG7BuUUIHQCt0=
+4biR6gnAg6rI1F9BmlRuil25ulM4sTr13czkiHNm-OzjsRqlc5TPUXoKZm0PXVPpDBgg-hrd31v=
+bQwoywrpyGDTKoZ-5Pzv9HvbeR1X9jbLtGIX4_dtxmpcF4aQKMWjJ1jeUmTh6d6A-6tB06v2g7n=
+tiZdKhdu2cgqoxmxQzDgjA3c3K__fWQ%3D" target=3D"_blank" style=3D"line-height:=
+ inherit; text-decoration: none; color: #068456;" rel=3D"noopener">Starts: =
+21.10.2023</a></span></p> </div> </div> <!--[if mso]></td></tr></table><![e=
+ndif]--> <!--[if mso]><table width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0"><tr><td style=3D"padding-right: 20px; padding-left: 60p=
+x; padding-top: 0px; padding-bottom: 0px; font-family: Arial, sans-serif"><=
+![endif]--> <div style=3D"color: #172c42; font-family: Proxima Nova, Lato, =
+Arial, sans-serif; line-height: 1.5; padding-top: 0px; padding-right: 20px;=
+ padding-bottom: 0px; padding-left: 60px;"> <div class=3D"txtTinyMce-wrappe=
+r" style=3D"line-height: 1.5; font-size: 12px; color: #172c42; font-family:=
+ Proxima Nova, Lato, Arial, sans-serif; mso-line-height-alt: 18px;"> <p sty=
+le=3D"margin: 0; line-height: 1.5; word-break: break-word; text-align: left=
+; mso-line-height-alt: 18px; margin-top: 0; margin-bottom: 0;"><span style=
+=3D"line-height: inherit; color: #172c42;"><a href=3D"http://links2.care.co=
+m/u/click=3F_t=3D24560b526ec649f8b85da96745570677&_m=3D4a6b53471d4b423f852f=
+a61a344f5baa&_e=3DRGFyiv2w_9EcQd-3Qqng22XBJyVpA-Es4ho1WmeqLga2z1MpmwZ78kvyW=
+J4X2FM2-lLdjFtKr3SZuL-nHOmSqYqc49GTulyfE5fs3NpMk67Qm4aZOscnlu3k0qAc6KeFGoTK=
+eOdJBsSYSW9RKbdiP2sTRCfOos0xJ64n1G_Xos2fQDh7qKbjEQFh6BgovJ1ZYC8CskOqYicw_nW=
+Jb5YwjUG1OXc1-wWXzxpUyYLaCgo2h9GSda9mEp_WJ8ZPkLP4HqEG_pSki5q37QnJrvHWpZODEK=
+KTnGBrlQE2DOWOFWBkoFVifVKjlvcACjrXiojiKFyBZrFnQFu7RegyxbiPeNkJhKGz2xbd0uSY7=
+mW1cTxcnW-8hSNopB3zyqCQgUAIgLzrMAepl8O9dEVt4Vxiexx4X5Do4vhFbjFsHpci0BmCUktZ=
+cb4ydsAWDvMVpxvnJGhIh8cVyO0J8wHct0WeiqXCEDNumq3qOKXg6O4NWoG7BuUUIHQCt04biR6=
+gnAg6rI1F9BmlRuil25ulM4sTr-wpHXAWZecCXtdu7a8Z2OUKtOS43RsAVunfEUvfd84bUP4UMt=
+Ld2g_tf9pHkB5E38D0DcFN0Vga8TZjNOz4ibR4JMK-MYBtJCa9JU1w8aHTuaoV7hjHaZ7-28psu=
+6JcRlyX9koZNHLLVazGZiZsy_g%3D" target=3D"_blank" style=3D"line-height: inhe=
+rit; text-decoration: none; color: #172c42;" rel=3D"noopener">$19 / hour</a=
+></span></p> </div> </div> <!--[if mso]></td></tr></table><![endif]--> <!--=
+[if (!mso)&(!IE)]><!--> </div> <!--<![endif]--> </div> </div> <!--[if (mso)=
+|(IE)]></td></tr></table><![endif]--> <!--[if (mso)|(IE)]></td><td align=3D=
+"center" width=3D"125" style=3D"background-color:#ffffff;width:125px; borde=
+r-top: 0px solid transparent; border-left: 0px solid transparent; border-bo=
+ttom: 0px solid transparent; border-right: 0px solid transparent;" valign=
+=3D"top"><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0"><tr><td style=3D"padding-right: 0px; padding-left: 0px; padding-top:=
+0px; padding-bottom:0px;"><![endif]--> <div class=3D"col num3" style=3D"lin=
+e-height: inherit; display: table-cell; vertical-align: top; max-width: 320=
+px; min-width: 123px; width: 125px;"> <div class=3D"col_cont" style=3D"line=
+-height: inherit; width: 100% !important;"> <!--[if (!mso)&(!IE)]><!--> <di=
+v style=3D"line-height: inherit; border-top: 0px solid transparent; border-=
+left: 0px solid transparent; border-bottom: 0px solid transparent; border-r=
+ight: 0px solid transparent; padding-top: 0px; padding-bottom: 0px; padding=
+-right: 0px; padding-left: 0px;"> <!--<![endif]--> <!--[if mso]><table widt=
+h=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=
+=3D"padding-right: 60px; padding-left: 0px; padding-top: 0px; padding-botto=
+m: 0px; font-family: Arial, sans-serif"><![endif]--> <div style=3D"color: #=
+172c42; font-family: Proxima Nova, Lato, Arial, sans-serif; line-height: 1.=
+2; padding-top: 0px; padding-right: 60px; padding-bottom: 0px; padding-left=
+: 0px;"> <div class=3D"txtTinyMce-wrapper" style=3D"line-height: 1.2; font-=
+size: 12px; color: #172c42; font-family: Proxima Nova, Lato, Arial, sans-se=
+rif; mso-line-height-alt: 14px;"> <p style=3D"margin: 0; font-size: 30px; l=
+ine-height: 1.2; word-break: break-word; text-align: right; mso-line-height=
+-alt: 36px; margin-top: 0; margin-bottom: 0;"><span style=3D"line-height: i=
+nherit; font-size: 30px; color: #172c42;"><a href=3D"http://links2.care.com=
+/u/click=3F_t=3D24560b526ec649f8b85da96745570677&_m=3D4a6b53471d4b423f852fa=
+61a344f5baa&_e=3DRGFyiv2w_9EcQd-3Qqng22XBJyVpA-Es4ho1WmeqLga2z1MpmwZ78kvyWJ=
+4X2FM2-lLdjFtKr3SZuL-nHOmSqYqc49GTulyfE5fs3NpMk67Qm4aZOscnlu3k0qAc6KeFGoTKe=
+OdJBsSYSW9RKbdiP2sTRCfOos0xJ64n1G_Xos2fQDh7qKbjEQFh6BgovJ1ZYC8CskOqYicw_nWJ=
+b5YwjUG1OXc1-wWXzxpUyYLaCgo2h9GSda9mEp_WJ8ZPkLP4HqEG_pSki5q37QnJrvHWpZODEKK=
+TnGBrlQE2DOWOFWBkoFVifVKjlvcACjrXiojiKFyBZrFnQFu7RegyxbiPeNkJhKGz2xbd0uSY7m=
+W1cTxcnW-8hSNopB3zyqCQgUAIgLzrMAepl8O9dEVt4Vxiexx4X5Do4vhFbjFsHpci0BmCUktZc=
+b4ydsAWDvMVpxvnJGhIh8cVyO0J8wHct0WeiqXCEDNumq3qOKXg6O4NWoG7BuUUIHQCt04biR6g=
+nAg6rI1F9BmlRuil25ulM4sTr5-fkBXiKc0D7BLUcUE9EDCgp4PUsRoxZZSjy67tZ_qFjqu-15x=
+Fh0z6JRR2RGRcUrvnXoApMdtT2zO3mCl0GctGTks_UvxZIiUcJO57nimZdVL0AJ6xctMAgF37Ub=
+EI612k_TyOc9y3fxS31OrPSpY%3D" target=3D"_blank" style=3D"line-height: inher=
+it; text-decoration: none; color: #172c42;" rel=3D"noopener">=E2=80=BA</a><=
+/span></p> </div> </div> <!--[if mso]></td></tr></table><![endif]--> <!--[i=
+f (!mso)&(!IE)]><!--> </div> <!--<![endif]--> </div> </div> <!--[if (mso)|(=
+IE)]></td></tr></table><![endif]--> <!--[if (mso)|(IE)]></td></tr></table><=
+/td></tr></table><![endif]--> </div> </div> </div> <div style=3D"line-heigh=
+t: inherit; background-color: transparent;"> <div class=3D"block-grid no-st=
+ack" style=3D"line-height: inherit; min-width: 320px; max-width: 500px; ove=
+rflow-wrap: break-word; word-wrap: break-word; word-break: break-word; Marg=
+in: 0 auto; background-color: #ffffff;"> <div style=3D"line-height: inherit=
+; border-collapse: collapse; display: table; width: 100%; background-color:=
+ #ffffff;"> <!--[if (mso)|(IE)]><table width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0" style=3D"background-color:transparent;"><tr><td=
+ align=3D"center"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" s=
+tyle=3D"width:500px"><tr class=3D"layout-full-width" style=3D"background-co=
+lor:#ffffff"><![endif]--> <!--[if (mso)|(IE)]><td align=3D"center" width=3D=
+"500" style=3D"background-color:#ffffff;width:500px; border-top: 0px solid =
+transparent; border-left: 0px solid transparent; border-bottom: 0px solid t=
+ransparent; border-right: 0px solid transparent;" valign=3D"top"><table wid=
+th=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=
+=3D"padding-right: 0px; padding-left: 0px; padding-top:0px; padding-bottom:=
+0px;"><![endif]--> <div class=3D"col num12" style=3D"line-height: inherit; =
+min-width: 320px; max-width: 500px; display: table-cell; vertical-align: to=
+p; width: 500px;"> <div class=3D"col_cont" style=3D"line-height: inherit; w=
+idth: 100% !important;"> <!--[if (!mso)&(!IE)]><!--> <div style=3D"line-hei=
+ght: inherit; border-top: 0px solid transparent; border-left: 0px solid tra=
+nsparent; border-bottom: 0px solid transparent; border-right: 0px solid tra=
+nsparent; padding-top: 0px; padding-bottom: 0px; padding-right: 0px; paddin=
+g-left: 0px;"> <!--<![endif]--> <table class=3D"divider" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"line-height: inherit=
+; table-layout: fixed; vertical-align: top; border-spacing: 0; border-colla=
+pse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100=
+%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" role=3D"pre=
+sentation" valign=3D"top"> <tbody style=3D"line-height: inherit;"> <tr styl=
+e=3D"line-height: inherit; border-collapse: collapse; vertical-align: top;"=
+ valign=3D"top"> <td class=3D"divider_inner" style=3D"line-height: inherit;=
+ border-collapse: collapse; word-break: break-word; vertical-align: top; mi=
+n-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+padding-top: 24px; padding-right: 60px; padding-bottom: 10px; padding-left:=
+ 60px;" valign=3D"top"> <table class=3D"divider_content" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"line-height: inherit=
+; table-layout: fixed; vertical-align: top; border-spacing: 0; border-colla=
+pse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-top: 2p=
+x solid #F3F4F6; width: 100%;" align=3D"center" role=3D"presentation" valig=
+n=3D"top"> <tbody style=3D"line-height: inherit;"> <tr style=3D"line-height=
+: inherit; border-collapse: collapse; vertical-align: top;" valign=3D"top">=
+ <td style=3D"line-height: inherit; border-collapse: collapse; word-break: =
+break-word; vertical-align: top; -ms-text-size-adjust: 100%; -webkit-text-s=
+ize-adjust: 100%;" valign=3D"top"><span style=3D"line-height: inherit;"></s=
+pan></td> </tr> </tbody> </table> </td> </tr> </tbody> </table> <!--[if mso=
+]><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><t=
+r><td style=3D"padding-right: 0px; padding-left: 0px; padding-top: 0px; pad=
+ding-bottom: 0px; font-family: Arial, sans-serif"><![endif]--> <div style=
+=3D"color: #555555; font-family: Proxima Nova, Lato, Arial, sans-serif; lin=
+e-height: 1.2; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; p=
+adding-left: 0px;"> <div class=3D"txtTinyMce-wrapper" style=3D"line-height:=
+ 1.2; font-size: 12px; color: #555555; font-family: Proxima Nova, Lato, Ari=
+al, sans-serif; mso-line-height-alt: 14px;"> <p style=3D"margin: 0; font-si=
+ze: 14px; line-height: 1.2; word-break: break-word; mso-line-height-alt: 17=
+px; margin-top: 0; margin-bottom: 0;"></p> </div> </div> <!--[if mso]></td>=
+</tr></table><![endif]--> <!--[if (!mso)&(!IE)]><!--> </div> <!--<![endif]-=
+-> </div> </div> <!--[if (mso)|(IE)]></td></tr></table><![endif]--> <!--[if=
+ (mso)|(IE)]></td></tr></table></td></tr></table><![endif]--> </div> </div>=
+ </div> <div style=3D"line-height: inherit; background-color: #f6f7f8;"> <d=
+iv class=3D"block-grid mixed-two-up no-stack" style=3D"line-height: inherit=
+; min-width: 320px; max-width: 500px; overflow-wrap: break-word; word-wrap:=
+ break-word; word-break: break-word; Margin: 0 auto; background-color: #fff=
+fff;"> <div style=3D"line-height: inherit; border-collapse: collapse; displ=
+ay: table; width: 100%; background-color: #ffffff;"> <!--[if (mso)|(IE)]><t=
+able width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=
+=3D"background-color:#f6f7f8;"><tr><td align=3D"center"><table cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:500px"><tr class=3D"la=
+yout-full-width" style=3D"background-color:#ffffff"><![endif]--> <!--[if (m=
+so)|(IE)]><td align=3D"center" width=3D"375" style=3D"background-color:#fff=
+fff;width:375px; border-top: 0px solid transparent; border-left: 0px solid =
+transparent; border-bottom: 0px solid transparent; border-right: 0px solid =
+transparent;" valign=3D"top"><table width=3D"100%" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0"><tr><td style=3D"padding-right: 0px; padding-left:=
+ 0px; padding-top:10px; padding-bottom:0px;"><![endif]--> <div class=3D"col=
+ num9" style=3D"line-height: inherit; display: table-cell; vertical-align: =
+top; max-width: 320px; min-width: 369px; width: 375px;"> <div class=3D"col_=
+cont" style=3D"line-height: inherit; width: 100% !important;"> <!--[if (!ms=
+o)&(!IE)]><!--> <div style=3D"line-height: inherit; border-top: 0px solid t=
+ransparent; border-left: 0px solid transparent; border-bottom: 0px solid tr=
+ansparent; border-right: 0px solid transparent; padding-top: 10px; padding-=
+bottom: 0px; padding-right: 0px; padding-left: 0px;"> <!--<![endif]--> <!--=
+[if mso]><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0"><tr><td style=3D"padding-right: 20px; padding-left: 60px; padding-to=
+p: 0px; padding-bottom: 8px; font-family: Arial, sans-serif"><![endif]--> <=
+div style=3D"color: #172c42; font-family: Proxima Nova, Lato, Arial, sans-s=
+erif; line-height: 1.5; padding-top: 0px; padding-right: 20px; padding-bott=
+om: 8px; padding-left: 60px;"> <div class=3D"txtTinyMce-wrapper" style=3D"l=
+ine-height: 1.5; font-size: 12px; color: #172c42; font-family: Proxima Nova=
+, Lato, Arial, sans-serif; mso-line-height-alt: 18px;"> <p style=3D"margin:=
+ 0; line-height: 1.5; word-break: break-word; text-align: left; mso-line-he=
+ight-alt: 18px; margin-top: 0; margin-bottom: 0;"><span style=3D"line-heigh=
+t: inherit; color: #172c42;"><strong style=3D"line-height: inherit;"><span =
+style=3D"line-height: inherit; font-size: 16px;"><a href=3D"http://links2.c=
+are.com/u/click=3F_t=3D24560b526ec649f8b85da96745570677&_m=3D4a6b53471d4b42=
+3f852fa61a344f5baa&_e=3DRGFyiv2w_9EcQd-3Qqng22XBJyVpA-Es4ho1WmeqLga2z1MpmwZ=
+78kvyWJ4X2FM2-lLdjFtKr3SZuL-nHOmSqYqc49GTulyfE5fs3NpMk67Qm4aZOscnlu3k0qAc6K=
+eFGoTKeOdJBsSYSW9RKbdiP2sTRCfOos0xJ64n1G_Xos2fQDh7qKbjEQFh6BgovJ1Z6951yEkqd=
+bHj2QBsXMgm3P6j5p--Y6TKOKIXima1znpOITTuoH_w_NFyjh2lLRdRVKsryuAVVS2d4kcB3a3a=
+nbD2LsPPOeP80d_ozwyf3D1SdpYa-ULTVMWZY8q9GkymvTMh_dbLH_sKL9QhDieFhAGIzbYJvi9=
+_m78VAh4_0BzfK0Ukt6-KRs9_7TsszLchhthvSpI1Akl3K52MGf470Q3So4Jkne-xahrPaF1kzt=
+aWeW4_UvOKKtBdkww0yevcepZ09e3qLsH9ThEVAEhK0RiEB7EUyfgyXkveA2hKLKnLStR4AWV5W=
+cy2mVAwBUqPKw2R7SLRJGVz1xQNKtylzfWQ9QORdTp6jr8fiG_95o1LzQE4xR_MB9KXwphmBisO=
+aWPSustHhr2cLwsMecxDgTEDyGQtOQcl6272-qOeXohHVQb9x6-aodRWF_pkO2ocqU1CqpNq4ZA=
+YzlQhWDancuHLSQGgR0N0jnmrUQ6yfY8ZE9ZHdP-Ch5pig2b37Nhg" target=3D"_blank" st=
+yle=3D"line-height: inherit; text-decoration: none; color: #172c42;" rel=3D=
+"noopener">Reliable Babysitter Needed for 2 Children in Canada Bay</a></spa=
+n></strong></span></p> </div> </div> <!--[if mso]></td></tr></table><![endi=
+f]--> <!--[if mso]><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0"><tr><td style=3D"padding-right: 20px; padding-left: 60px; pa=
+dding-top: 0px; padding-bottom: 8px; font-family: Arial, sans-serif"><![end=
+if]--> <div style=3D"color: #505d6d; font-family: Proxima Nova, Lato, Arial=
+, sans-serif; line-height: 1.5; padding-top: 0px; padding-right: 20px; padd=
+ing-bottom: 8px; padding-left: 60px;"> <div class=3D"txtTinyMce-wrapper" st=
+yle=3D"line-height: 1.5; font-size: 12px; color: #505d6d; font-family: Prox=
+ima Nova, Lato, Arial, sans-serif; mso-line-height-alt: 18px;"> <p style=3D=
+"margin: 0; line-height: 1.5; word-break: break-word; text-align: left; fon=
+t-size: 14px; mso-line-height-alt: 21px; margin-top: 0; margin-bottom: 0;">=
+<span style=3D"line-height: inherit; color: #505d6d; font-size: 14px;"><a h=
+ref=3D"http://links2.care.com/u/click=3F_t=3D24560b526ec649f8b85da967455706=
+77&_m=3D4a6b53471d4b423f852fa61a344f5baa&_e=3DRGFyiv2w_9EcQd-3Qqng22XBJyVpA=
+-Es4ho1WmeqLga2z1MpmwZ78kvyWJ4X2FM2-lLdjFtKr3SZuL-nHOmSqYqc49GTulyfE5fs3NpM=
+k67Qm4aZOscnlu3k0qAc6KeFGoTKeOdJBsSYSW9RKbdiP2sTRCfOos0xJ64n1G_Xos2fQDh7qKb=
+jEQFh6BgovJ1Z6951yEkqdbHj2QBsXMgm3P6j5p--Y6TKOKIXima1znpOITTuoH_w_NFyjh2lLR=
+dRVKsryuAVVS2d4kcB3a3anbD2LsPPOeP80d_ozwyf3D1SdpYa-ULTVMWZY8q9GkymvTMh_dbLH=
+_sKL9QhDieFhAGIzbYJvi9_m78VAh4_0BzfK0Ukt6-KRs9_7TsszLchhthvSpI1Akl3K52MGf47=
+0Q3So4Jkne-xahrPaF1kztaWeW4_UvOKKtBdkww0yevcepZ09e3qLsH9ThEVAEhK0RiEB7EUyfg=
+yXkveA2hKLKnLStR4AWV5Wcy2mVAwBUqPKw2R7SLRJGVz1xQNKtylzcdScYTC9II-A3IhWDAkAE=
+4JqwSQMj37fbeiTph-QrwRnqyKoyo6CcpXqDvZEXDOCQzMUytw7mzUrbrIyZG5jVdsdTASsOT84=
+EzehqPi_yNHNDdFTby2oGQ-jKcyZ-dmKiu-TXr5ruA6aiWG42zOYSD3zFQhE89L7eAIBDCErQ6H=
+" target=3D"_blank" style=3D"line-height: inherit; text-decoration: none; c=
+olor: #505d6d;" rel=3D"noopener">Concord =E2=80=A2 by Jing G.</a></span></p=
+> </div> </div> <!--[if mso]></td></tr></table><![endif]--> <!--[if mso]><t=
+able width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><t=
+d style=3D"padding-right: 20px; padding-left: 60px; padding-top: 0px; paddi=
+ng-bottom: 8px; font-family: Arial, sans-serif"><![endif]--> <div style=3D"=
+color: #172c42; font-family: 'Proxima Nova Semibold','Lato', Arial, sans-se=
+rif; line-height: 1.5; padding-top: 0px; padding-right: 20px; padding-botto=
+m: 8px; padding-left: 60px;"> <div class=3D"txtTinyMce-wrapper" style=3D"li=
+ne-height: 1.5; font-size: 12px; color: #172c42; font-family: 'Proxima Nova=
+ Semibold','Lato', Arial, sans-serif; mso-line-height-alt: 18px;"> <p style=
+=3D"margin: 0; line-height: 1.5; word-break: break-word; text-align: left; =
+mso-line-height-alt: 18px; margin-top: 0; margin-bottom: 0;"><span style=3D=
+"line-height: inherit; color: #068456;"><a href=3D"http://links2.care.com/u=
+/click=3F_t=3D24560b526ec649f8b85da96745570677&_m=3D4a6b53471d4b423f852fa61=
+a344f5baa&_e=3DRGFyiv2w_9EcQd-3Qqng22XBJyVpA-Es4ho1WmeqLga2z1MpmwZ78kvyWJ4X=
+2FM2-lLdjFtKr3SZuL-nHOmSqYqc49GTulyfE5fs3NpMk67Qm4aZOscnlu3k0qAc6KeFGoTKeOd=
+JBsSYSW9RKbdiP2sTRCfOos0xJ64n1G_Xos2fQDh7qKbjEQFh6BgovJ1Z6951yEkqdbHj2QBsXM=
+gm3P6j5p--Y6TKOKIXima1znpOITTuoH_w_NFyjh2lLRdRVKsryuAVVS2d4kcB3a3anbD2LsPPO=
+eP80d_ozwyf3D1SdpYa-ULTVMWZY8q9GkymvTMh_dbLH_sKL9QhDieFhAGIzbYJvi9_m78VAh4_=
+0BzfK0Ukt6-KRs9_7TsszLchhthvSpI1Akl3K52MGf470Q3So4Jkne-xahrPaF1kztaWeW4_UvO=
+KKtBdkww0yevcepZ09e3qLsH9ThEVAEhK0RiEB7EUyfgyXkveA2hKLKnLStR4AWV5Wcy2mVAwBU=
+qPKw2R7SLRJGVz1xQNKtylzWTk7QJGTmAAc4T7uUmCDZCzLQqoEVKPx1HLhgziBTbUIpAAWqq-W=
+hLp_TQ3kU0NXfD2uXsd3jbIgmYMfQGXPHAyObx5oapq0-5E7okz0Zl-S-1WtBZjJvTM80ReapO2=
+iMtzgs25Qdu3hXjmJ4dbYq0Ijcm3HTcgvH4CidxV8XyG" target=3D"_blank" style=3D"li=
+ne-height: inherit; text-decoration: none; color: #068456;" rel=3D"noopener=
+">Starts: 21.10.2023</a></span></p> </div> </div> <!--[if mso]></td></tr></=
+table><![endif]--> <!--[if mso]><table width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0"><tr><td style=3D"padding-right: 20px; padding-l=
+eft: 60px; padding-top: 0px; padding-bottom: 0px; font-family: Arial, sans-=
+serif"><![endif]--> <div style=3D"color: #172c42; font-family: Proxima Nova=
+, Lato, Arial, sans-serif; line-height: 1.5; padding-top: 0px; padding-righ=
+t: 20px; padding-bottom: 0px; padding-left: 60px;"> <div class=3D"txtTinyMc=
+e-wrapper" style=3D"line-height: 1.5; font-size: 12px; color: #172c42; font=
+-family: Proxima Nova, Lato, Arial, sans-serif; mso-line-height-alt: 18px;"=
+> <p style=3D"margin: 0; line-height: 1.5; word-break: break-word; text-ali=
+gn: left; mso-line-height-alt: 18px; margin-top: 0; margin-bottom: 0;"><spa=
+n style=3D"line-height: inherit; color: #172c42;"><a href=3D"http://links2.=
+care.com/u/click=3F_t=3D24560b526ec649f8b85da96745570677&_m=3D4a6b53471d4b4=
+23f852fa61a344f5baa&_e=3DRGFyiv2w_9EcQd-3Qqng22XBJyVpA-Es4ho1WmeqLga2z1Mpmw=
+Z78kvyWJ4X2FM2-lLdjFtKr3SZuL-nHOmSqYqc49GTulyfE5fs3NpMk67Qm4aZOscnlu3k0qAc6=
+KeFGoTKeOdJBsSYSW9RKbdiP2sTRCfOos0xJ64n1G_Xos2fQDh7qKbjEQFh6BgovJ1Z6951yEkq=
+dbHj2QBsXMgm3P6j5p--Y6TKOKIXima1znpOITTuoH_w_NFyjh2lLRdRVKsryuAVVS2d4kcB3a3=
+anbD2LsPPOeP80d_ozwyf3D1SdpYa-ULTVMWZY8q9GkymvTMh_dbLH_sKL9QhDieFhAGIzbYJvi=
+9_m78VAh4_0BzfK0Ukt6-KRs9_7TsszLchhthvSpI1Akl3K52MGf470Q3So4Jkne-xahrPaF1kz=
+taWeW4_UvOKKtBdkww0yevcepZ09e3qLsH9ThEVAEhK0RiEB7EUyfgyXkveA2hKLKnLStR4AWV5=
+Wcy2mVAwBUqPKw2R7SLRJGVz1xQNKtylzWDj6U4nPcmkpIRfJOo0dYaOS72WiY9UkCl0Rt877m3=
+vEIH__69p2Ghgrr9LK6MpMYDDBJ6qBMBR6xggwTto3hC4VnFzXSETQwI31iz1fBPVmijZ0Wt3qd=
+NF9SVaxwR-qqkBWe-7iXTY-axg8iR7NTP0D7baCZyPqEqrj7s2J4NT" target=3D"_blank" s=
+tyle=3D"line-height: inherit; text-decoration: none; color: #172c42;" rel=
+=3D"noopener">$19 / hour</a></span></p> </div> </div> <!--[if mso]></td></t=
+r></table><![endif]--> <!--[if (!mso)&(!IE)]><!--> </div> <!--<![endif]--> =
+</div> </div> <!--[if (mso)|(IE)]></td></tr></table><![endif]--> <!--[if (m=
+so)|(IE)]></td><td align=3D"center" width=3D"125" style=3D"background-color=
+:#ffffff;width:125px; border-top: 0px solid transparent; border-left: 0px s=
+olid transparent; border-bottom: 0px solid transparent; border-right: 0px s=
+olid transparent;" valign=3D"top"><table width=3D"100%" cellpadding=3D"0" c=
+ellspacing=3D"0" border=3D"0"><tr><td style=3D"padding-right: 0px; padding-=
+left: 0px; padding-top:0px; padding-bottom:0px;"><![endif]--> <div class=3D=
+"col num3" style=3D"line-height: inherit; display: table-cell; vertical-ali=
+gn: top; max-width: 320px; min-width: 123px; width: 125px;"> <div class=3D"=
+col_cont" style=3D"line-height: inherit; width: 100% !important;"> <!--[if =
+(!mso)&(!IE)]><!--> <div style=3D"line-height: inherit; border-top: 0px sol=
+id transparent; border-left: 0px solid transparent; border-bottom: 0px soli=
+d transparent; border-right: 0px solid transparent; padding-top: 0px; paddi=
+ng-bottom: 0px; padding-right: 0px; padding-left: 0px;"> <!--<![endif]--> <=
+!--[if mso]><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" borde=
+r=3D"0"><tr><td style=3D"padding-right: 60px; padding-left: 0px; padding-to=
+p: 0px; padding-bottom: 0px; font-family: Arial, sans-serif"><![endif]--> <=
+div style=3D"color: #172c42; font-family: Proxima Nova, Lato, Arial, sans-s=
+erif; line-height: 1.2; padding-top: 0px; padding-right: 60px; padding-bott=
+om: 0px; padding-left: 0px;"> <div class=3D"txtTinyMce-wrapper" style=3D"li=
+ne-height: 1.2; font-size: 12px; color: #172c42; font-family: Proxima Nova,=
+ Lato, Arial, sans-serif; mso-line-height-alt: 14px;"> <p style=3D"margin: =
+0; font-size: 30px; line-height: 1.2; word-break: break-word; text-align: r=
+ight; mso-line-height-alt: 36px; margin-top: 0; margin-bottom: 0;"><span st=
+yle=3D"line-height: inherit; font-size: 30px; color: #172c42;"><a href=3D"h=
+ttp://links2.care.com/u/click=3F_t=3D24560b526ec649f8b85da96745570677&_m=3D=
+4a6b53471d4b423f852fa61a344f5baa&_e=3DRGFyiv2w_9EcQd-3Qqng22XBJyVpA-Es4ho1W=
+meqLga2z1MpmwZ78kvyWJ4X2FM2-lLdjFtKr3SZuL-nHOmSqYqc49GTulyfE5fs3NpMk67Qm4aZ=
+Oscnlu3k0qAc6KeFGoTKeOdJBsSYSW9RKbdiP2sTRCfOos0xJ64n1G_Xos2fQDh7qKbjEQFh6Bg=
+ovJ1Z6951yEkqdbHj2QBsXMgm3P6j5p--Y6TKOKIXima1znpOITTuoH_w_NFyjh2lLRdRVKsryu=
+AVVS2d4kcB3a3anbD2LsPPOeP80d_ozwyf3D1SdpYa-ULTVMWZY8q9GkymvTMh_dbLH_sKL9QhD=
+ieFhAGIzbYJvi9_m78VAh4_0BzfK0Ukt6-KRs9_7TsszLchhthvSpI1Akl3K52MGf470Q3So4Jk=
+ne-xahrPaF1kztaWeW4_UvOKKtBdkww0yevcepZ09e3qLsH9ThEVAEhK0RiEB7EUyfgyXkveA2h=
+KLKnLStR4AWV5Wcy2mVAwBUqPKw2R7SLRJGVz1xQNKtylzavR4iE9GSSuLdJsAcVHucCQYRv0T9=
+moHM1KmCO0W1_hYNZJ-wO5Yo4mdZ64doaqtv3xj8dlmnhywhilKeFDXJy9Ay6-SW8rm8Va0fudU=
+iCpxcOU8EcZyD7fuoE3KzBiN4HFGTOty_pFwnQb5mPUUD1gRmKhlX7uvWEPQFjVcfYx" target=
+=3D"_blank" style=3D"line-height: inherit; text-decoration: none; color: #1=
+72c42;" rel=3D"noopener">=E2=80=BA</a></span></p> </div> </div> <!--[if mso=
+]></td></tr></table><![endif]--> <!--[if (!mso)&(!IE)]><!--> </div> <!--<![=
+endif]--> </div> </div> <!--[if (mso)|(IE)]></td></tr></table><![endif]--> =
+<!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]--> </div>=
+ </div> </div> <div style=3D"line-height: inherit; background-color: transp=
+arent;"> <div class=3D"block-grid no-stack" style=3D"line-height: inherit; =
+min-width: 320px; max-width: 500px; overflow-wrap: break-word; word-wrap: b=
+reak-word; word-break: break-word; Margin: 0 auto; background-color: #fffff=
+f;"> <div style=3D"line-height: inherit; border-collapse: collapse; display=
+: table; width: 100%; background-color: #ffffff;"> <!--[if (mso)|(IE)]><tab=
+le width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D=
+"background-color:transparent;"><tr><td align=3D"center"><table cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:500px"><tr class=3D"la=
+yout-full-width" style=3D"background-color:#ffffff"><![endif]--> <!--[if (m=
+so)|(IE)]><td align=3D"center" width=3D"500" style=3D"background-color:#fff=
+fff;width:500px; border-top: 0px solid transparent; border-left: 0px solid =
+transparent; border-bottom: 0px solid transparent; border-right: 0px solid =
+transparent;" valign=3D"top"><table width=3D"100%" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0"><tr><td style=3D"padding-right: 0px; padding-left:=
+ 0px; padding-top:0px; padding-bottom:0px;"><![endif]--> <div class=3D"col =
+num12" style=3D"line-height: inherit; min-width: 320px; max-width: 500px; d=
+isplay: table-cell; vertical-align: top; width: 500px;"> <div class=3D"col_=
+cont" style=3D"line-height: inherit; width: 100% !important;"> <!--[if (!ms=
+o)&(!IE)]><!--> <div style=3D"line-height: inherit; border-top: 0px solid t=
+ransparent; border-left: 0px solid transparent; border-bottom: 0px solid tr=
+ansparent; border-right: 0px solid transparent; padding-top: 0px; padding-b=
+ottom: 0px; padding-right: 0px; padding-left: 0px;"> <!--<![endif]--> <tabl=
+e class=3D"divider" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"line-height: inherit; table-layout: fixed; vertical-alig=
+n: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt=
+; mso-table-rspace: 0pt; min-width: 100%; -ms-text-size-adjust: 100%; -webk=
+it-text-size-adjust: 100%;" role=3D"presentation" valign=3D"top"> <tbody st=
+yle=3D"line-height: inherit;"> <tr style=3D"line-height: inherit; border-co=
+llapse: collapse; vertical-align: top;" valign=3D"top"> <td class=3D"divide=
+r_inner" style=3D"line-height: inherit; border-collapse: collapse; word-bre=
+ak: break-word; vertical-align: top; min-width: 100%; -ms-text-size-adjust:=
+ 100%; -webkit-text-size-adjust: 100%; padding-top: 24px; padding-right: 60=
+px; padding-bottom: 10px; padding-left: 60px;" valign=3D"top"> <table class=
+=3D"divider_content" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"line-height: inherit; table-layout: fixed; vertical-alig=
+n: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt=
+; mso-table-rspace: 0pt; border-top: 2px solid #F3F4F6; width: 100%;" align=
+=3D"center" role=3D"presentation" valign=3D"top"> <tbody style=3D"line-heig=
+ht: inherit;"> <tr style=3D"line-height: inherit; border-collapse: collapse=
+; vertical-align: top;" valign=3D"top"> <td style=3D"line-height: inherit; =
+border-collapse: collapse; word-break: break-word; vertical-align: top; -ms=
+-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" valign=3D"top"><s=
+pan style=3D"line-height: inherit;"></span></td> </tr> </tbody> </table> </=
+td> </tr> </tbody> </table> <!--[if mso]><table width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=3D"padding-right: 0px; =
+padding-left: 0px; padding-top: 0px; padding-bottom: 0px; font-family: Aria=
+l, sans-serif"><![endif]--> <div style=3D"color: #555555; font-family: Prox=
+ima Nova, Lato, Arial, sans-serif; line-height: 1.2; padding-top: 0px; padd=
+ing-right: 0px; padding-bottom: 0px; padding-left: 0px;"> <div class=3D"txt=
+TinyMce-wrapper" style=3D"line-height: 1.2; font-size: 12px; color: #555555=
+; font-family: Proxima Nova, Lato, Arial, sans-serif; mso-line-height-alt: =
+14px;"> <p style=3D"margin: 0; font-size: 14px; line-height: 1.2; word-brea=
+k: break-word; mso-line-height-alt: 17px; margin-top: 0; margin-bottom: 0;"=
+></p> </div> </div> <!--[if mso]></td></tr></table><![endif]--> <!--[if (!m=
+so)&(!IE)]><!--> </div> <!--<![endif]--> </div> </div> <!--[if (mso)|(IE)]>=
+</td></tr></table><![endif]--> <!--[if (mso)|(IE)]></td></tr></table></td><=
+/tr></table><![endif]--> </div> </div> </div> <div style=3D"line-height: in=
+herit; background-color: transparent;"> <div class=3D"block-grid " style=3D=
+"line-height: inherit; min-width: 320px; max-width: 500px; overflow-wrap: b=
+reak-word; word-wrap: break-word; word-break: break-word; Margin: 0 auto; b=
+ackground-color: #ffffff;"> <div style=3D"line-height: inherit; border-coll=
+apse: collapse; display: table; width: 100%; background-color: #ffffff;"> <=
+!--[if (mso)|(IE)]><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0" style=3D"background-color:transparent;"><tr><td align=3D"cen=
+ter"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width=
+:500px"><tr class=3D"layout-full-width" style=3D"background-color:#ffffff">=
+<![endif]--> <!--[if (mso)|(IE)]><td align=3D"center" width=3D"500" style=
+=3D"background-color:#ffffff;width:500px; border-top: 0px solid transparent=
+; border-left: 0px solid transparent; border-bottom: 0px solid transparent;=
+ border-right: 0px solid transparent;" valign=3D"top"><table width=3D"100%"=
+ cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=3D"padding-=
+right: 0px; padding-left: 0px; padding-top:0px; padding-bottom:0px;"><![end=
+if]--> <div class=3D"col num12" style=3D"line-height: inherit; min-width: 3=
+20px; max-width: 500px; display: table-cell; vertical-align: top; width: 50=
+0px;"> <div class=3D"col_cont" style=3D"line-height: inherit; width: 100% !=
+important;"> <!--[if (!mso)&(!IE)]><!--> <div style=3D"line-height: inherit=
+; border-top: 0px solid transparent; border-left: 0px solid transparent; bo=
+rder-bottom: 0px solid transparent; border-right: 0px solid transparent; pa=
+dding-top: 0px; padding-bottom: 0px; padding-right: 0px; padding-left: 0px;=
+"> <!--<![endif]--> <div style=3D"line-height: inherit; font-size: 16px; te=
+xt-align: center; font-family: Proxima Nova, Lato, Arial, sans-serif;"> <ta=
+ble style=3D"line-height: inherit; vertical-align: top; border-collapse: co=
+llapse; background-color: #f6f7f8;" width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" bgcolor=3D"#f6f7f8" valign=3D"top"> <tr style=3D"l=
+ine-height: inherit; vertical-align: top; border-collapse: collapse;" valig=
+n=3D"top"> <td style=3D"line-height: inherit; vertical-align: top; border-c=
+ollapse: collapse;" valign=3D"top"> <div style=3D"line-height: inherit; bac=
+kground-color: #ffffff; border: 0px solid #ffffff; border-radius: 0px 0px 1=
+2px 12px; display: inline-block; text-align: center; width: 100%; -webkit-t=
+ext-size-adjust: none; mso-hide: all;">=C2=A0</div> </td> </tr> </table> </=
+div> <!--[if (!mso)&(!IE)]><!--> </div> <!--<![endif]--> </div> </div> <!--=
+[if (mso)|(IE)]></td></tr></table><![endif]--> <!--[if (mso)|(IE)]></td></t=
+r></table></td></tr></table><![endif]--> </div> </div> </div> <div style=3D=
+"line-height: inherit; background-color: #f6f7f8;"> <div class=3D"block-gri=
+d " style=3D"line-height: inherit; min-width: 320px; max-width: 500px; over=
+flow-wrap: break-word; word-wrap: break-word; word-break: break-word; Margi=
+n: 0 auto; background-color: #f6f7f8;"> <div style=3D"line-height: inherit;=
+ border-collapse: collapse; display: table; width: 100%; background-color: =
+#f6f7f8;"> <!--[if (mso)|(IE)]><table width=3D"100%" cellpadding=3D"0" cell=
+spacing=3D"0" border=3D"0" style=3D"background-color:#f6f7f8;"><tr><td alig=
+n=3D"center"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=
+=3D"width:500px"><tr class=3D"layout-full-width" style=3D"background-color:=
+#f6f7f8"><![endif]--> <!--[if (mso)|(IE)]><td align=3D"center" width=3D"500=
+" style=3D"background-color:#f6f7f8;width:500px; border-top: 0px dotted tra=
+nsparent; border-left: 0px dotted transparent; border-bottom: 0px dotted tr=
+ansparent; border-right: 0px dotted transparent;" valign=3D"top"><table wid=
+th=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=
+=3D"padding-right: 0px; padding-left: 0px; padding-top:15px; padding-bottom=
+:30px;"><![endif]--> <div class=3D"col num12" style=3D"line-height: inherit=
+; min-width: 320px; max-width: 500px; display: table-cell; vertical-align: =
+top; width: 500px;"> <div class=3D"col_cont" style=3D"line-height: inherit;=
+ width: 100% !important;"> <!--[if (!mso)&(!IE)]><!--> <div style=3D"line-h=
+eight: inherit; border-top: 0px dotted transparent; border-left: 0px dotted=
+ transparent; border-bottom: 0px dotted transparent; border-right: 0px dott=
+ed transparent; padding-top: 15px; padding-bottom: 30px; padding-right: 0px=
+; padding-left: 0px;"> <!--<![endif]--> <!--[if mso]><table width=3D"100%" =
+cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=3D"padding-r=
+ight: 20px; padding-left: 20px; padding-top: 0px; padding-bottom: 10px; fon=
+t-family: Arial, sans-serif"><![endif]--> <div style=3D"color: #667483; fon=
+t-family: Proxima Nova, Lato, Arial, sans-serif; line-height: 1.5; padding-=
+top: 0px; padding-right: 20px; padding-bottom: 10px; padding-left: 20px;"> =
+<div class=3D"txtTinyMce-wrapper" style=3D"line-height: 1.5; font-size: 12p=
+x; color: #667483; font-family: Proxima Nova, Lato, Arial, sans-serif; mso-=
+line-height-alt: 18px;"> <p style=3D"margin: 0; font-size: 12px; line-heigh=
+t: 1.5; word-break: break-word; text-align: center; mso-line-height-alt: 18=
+px; margin-top: 0; margin-bottom: 0;"><span style=3D"line-height: inherit; =
+font-size: 12px;"><!----> <!----> <!----> <!----> <!----> <!----> Care.com =
+is an online venue for care seekers and care providers to connect with each=
+ other. We do not introduce or supply carers to those seeking care, nor do =
+we select or propose specific carers to those seeking care or care seekers =
+to carers. Care.com does not verify the identity of, or information posted =
+by, care seekers or carers. Please see our Safety Centre for guidance on ho=
+w to verify the identity of, and information posted by, other users. <!----=
+><!----><!----><!----><!----><!----></span></p> </div> </div> <!--[if mso]>=
+</td></tr></table><![endif]--> <!--[if mso]><table width=3D"100%" cellpaddi=
+ng=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=3D"padding-right: 20p=
+x; padding-left: 20px; padding-top: 0px; padding-bottom: 10px; font-family:=
+ Arial, sans-serif"><![endif]--> <div style=3D"color: #667483; font-family:=
+ Proxima Nova, Lato, Arial, sans-serif; line-height: 1.5; padding-top: 0px;=
+ padding-right: 20px; padding-bottom: 10px; padding-left: 20px;"> <div clas=
+s=3D"txtTinyMce-wrapper" style=3D"line-height: 1.5; font-size: 12px; color:=
+ #667483; font-family: Proxima Nova, Lato, Arial, sans-serif; mso-line-heig=
+ht-alt: 18px;"> <p style=3D"margin: 0; font-size: 12px; line-height: 1.5; w=
+ord-break: break-word; text-align: center; mso-line-height-alt: 18px; margi=
+n-top: 0; margin-bottom: 0;"><span style=3D"line-height: inherit; font-size=
+: 12px;"><!----> <!----> <!----> <!----> <!----> <!----> Care.com and "Ther=
+e for you" are trademarks of Care.com Inc., the parent of Care.com Australi=
+a Pty Limited. =C2=A92023 Care.com Australia Pty Limited. All rights reserv=
+ed. <!----><!----><!----><!----><!----><!----></span></p> </div> </div> <!-=
+-[if mso]></td></tr></table><![endif]--> <!--[if mso]><table width=3D"100%"=
+ cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=3D"padding-=
+right: 20px; padding-left: 20px; padding-top: 0px; padding-bottom: 10px; fo=
+nt-family: Arial, sans-serif"><![endif]--> <div style=3D"color: #667483; fo=
+nt-family: Proxima Nova, Lato, Arial, sans-serif; line-height: 1.5; padding=
+-top: 0px; padding-right: 20px; padding-bottom: 10px; padding-left: 20px;">=
+ <div class=3D"txtTinyMce-wrapper" style=3D"line-height: 1.5; font-size: 12=
+px; color: #667483; font-family: Proxima Nova, Lato, Arial, sans-serif; mso=
+-line-height-alt: 18px;"> <p style=3D"margin: 0; font-size: 12px; line-heig=
+ht: 1.5; word-break: break-word; text-align: center; mso-line-height-alt: 1=
+8px; margin-top: 0; margin-bottom: 0;"><span style=3D"line-height: inherit;=
+ font-size: 12px;"><!----> <!----> <!----> <!----> <!---->Care.com Australi=
+a Pty Limited, PO Box 629, North Sydney NSW 2059. Australia Australian Busi=
+ness Number (ABN): 85 161 047 123 <!----><!----><!----><!----><!----></span=
+></p> </div> </div> <!--[if mso]></td></tr></table><![endif]--> <!--[if mso=
+]><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><t=
+r><td style=3D"padding-right: 20px; padding-left: 20px; padding-top: 0px; p=
+adding-bottom: 10px; font-family: Arial, sans-serif"><![endif]--> <div styl=
+e=3D"color: #015ac8; font-family: Proxima Nova, Lato, Arial, sans-serif; li=
+ne-height: 1.5; padding-top: 0px; padding-right: 20px; padding-bottom: 10px=
+; padding-left: 20px;"> <div class=3D"txtTinyMce-wrapper" style=3D"line-hei=
+ght: 1.5; font-size: 12px; color: #015ac8; font-family: Proxima Nova, Lato,=
+ Arial, sans-serif; mso-line-height-alt: 18px;"> <p style=3D"margin: 0; fon=
+t-size: 14px; line-height: 1.5; word-break: break-word; text-align: center;=
+ mso-line-height-alt: 21px; margin-top: 0; margin-bottom: 0;"><strong style=
+=3D"line-height: inherit;"><span style=3D"line-height: inherit; font-size: =
+10px;"><!----> <!----> <!----> <!----> <a style=3D"outline: none;text-decor=
+ation: none; color:#015ac8" target=3D"_blank" href=3D"http://links2.care.co=
+m/u/click=3F_t=3D24560b526ec649f8b85da96745570677&_m=3D4a6b53471d4b423f852f=
+a61a344f5baa&_e=3DRGFyiv2w_9EcQd-3Qqng22XBJyVpA-Es4ho1WmeqLgY5RJJZu4SIIzhhl=
+3Sxqo9kZcWA5xYXYv6TotF52kisHAZQcMb0G-_sCNhvQF21NJ2vxTdbCbxpzpXrQh82NSSH6_nW=
+zjxJXfHh-B_l_gIX6vniNaEE_yFsVu6BxWJTVJCRyEnzgZx_qXHfCsag1KiJ-A5BdPECC_SAEhG=
+dGW2r3GXg8q7cL6Czboa3yUc-X0jfx6_4CfXxE9Zy__HFFTWtvnoODYUBTgCY3fTSbbfiYkKVCz=
+LhUfHHuyhqlVYZ07_qaX2tU9ilvIJ-WIfVNvJ1j3MEwFXjj_qHqnRSpJdb2QNzLzXajwYekxpSJ=
+WsaJ5wZGUqbdh_e2mmV5_w_-0QfriaRI59zpBXn820SiX_-rUPwtOcZxUBcMVRutPQ_vJB7Y5mY=
+ZcBaDTpJKNTalFoL">Terms of Use</a>&nbsp;&nbsp;&nbsp;<a style=3D"outline: no=
+ne;text-decoration: none; color:#015ac8" href=3D"http://links2.care.com/u/c=
+lick=3F_t=3D24560b526ec649f8b85da96745570677&_m=3D4a6b53471d4b423f852fa61a3=
+44f5baa&_e=3DRGFyiv2w_9EcQd-3Qqng22XBJyVpA-Es4ho1WmeqLgbjjlZBactRLXfFbSKSjA=
+uu2NoU07fohfh7He5C_yaFKBjQEL6Jn6HhRuqaeoPEzDLBknnUt4WZQai7ybG4pGQVhwypxZ49d=
+AhiAQWpfwh6NFaA7Tp7ahbXF6g612fBAwnh68td68WaRN8igzWHbyQM_aVtlBbdh-gqyzn6_4zj=
+ZTU6SHxXH8jZdlsudgl6kAAch61zXbun63CF0X33WUomBOIMD7-cRFQqjJ6itFuUufLtOnhQSWv=
+J46tcqWAgnxnDQmRiKzPW60Mx8YU6kGqVcTWVm0SPo5bI0w6FTbshmExMKrWE5cxqW7nYfmVACk=
+usiH8UNSfzcjlIf71sOmkCVNcMyuipjzLVa1jrkGxDtMhYV0KPCn4g9Xkf-MvSKWBQcn8e-927x=
+o_yMKAsJD2Q">Privacy Policy</a>&nbsp;&nbsp;&nbsp;<a style=3D"outline: none;=
+text-decoration: none;color: #015ac8;" target=3D"_blank" href=3D"http://lin=
+ks2.care.com/e/eh=3F_t=3D24560b526ec649f8b85da96745570677&_m=3D4a6b53471d4b=
+423f852fa61a344f5baa&_e=3DRGFyiv2w_9EcQd-3Qqng22XBJyVpA-Es4ho1WmeqLgYxpo4go=
+JfYeUYWisJ4HQ3qyWu88C03OBqUNh7ff2lRg67Q9Lj0eex3v6k_HaDqToa3MbTCQmynC9RmYD11=
+BUgVc__jDvaxbYe2rKLbmCKak0HvN7xEkUoJYk66RiI8p1fYS38QaVZJ2b6xYDd2RQvCtdRyyEU=
+he68mPNCsoX6iDvH8Tu82HoRMrhVGKPmqdvtvh8LeVqEwKve4_Jy70vhcWZanjDO8D8KegTx-Al=
+oJql1VfQJtQzOuT2kfSQn3MehEmGRURaXmT8ePrQaE-FO4knH_y2pw0CTIw_zVlsOAq1aAc5LQ3=
+OaZe335-PZju-2cQtY2Qz2vV0q6UxbpdL7NTYxtMgeFbmsnpFk9R-3WnwCzMEPbYUfhX3MxCcE1=
+xWFyrQfJgSS_pjO7a18JVD0-CjDfAC8zdHboCiedIxWG1_ipGmPL8OQDEOZebYTJw6On4aSvbE2=
+OXGOzJmH4Z3Xb">Unsubscribe</a> <!----><!----><!----><!----></span></strong>=
+</p> </div> </div> <!--[if mso]></td></tr></table><![endif]--> <!--[if (!ms=
+o)&(!IE)]><!--> </div> <!--<![endif]--> </div> </div> <!--[if (mso)|(IE)]><=
+/td></tr></table><![endif]--> <!--[if (mso)|(IE)]></td></tr></table></td></=
+tr></table><![endif]--> </div> </div> </div> <!--[if (mso)|(IE)]></td></tr>=
+</table><![endif]--> </td> </tr> </tbody> </table> <!--[if (IE)]></div><![e=
+ndif]--> =0D=0A<img border=3D"0" width=3D"1" height=3D"1" alt=3D"" src=3D"h=
+ttp://track2.care.com/q/tcpiVE-oYTGIWGVIhQIOLw~~/AAO3DAA~/RgRnFfLHPlcDc3BjQ=
+gplMsdtM2UOCa_mUhRzcmlqYW5pNTE1QGdtYWlsLmNvbVgEAAAAAA~~">=0D=0A</body> </ht=
+ml>
+--_----9/na3LnQsrGQX0suYtK14A===_BA/6E-33274-7CD63356--
+

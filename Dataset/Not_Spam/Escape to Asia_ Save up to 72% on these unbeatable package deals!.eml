@@ -1,0 +1,1803 @@
+Delivered-To: srijani515@gmail.com
+Received: by 2002:a05:6a10:8691:b0:4fd:23d3:a27 with SMTP id e17csp527412pxn;
+        Sat, 21 Oct 2023 16:11:06 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEwg9hxAQ/wcw8EM6p8KaNqwh8T+E1Q9fUd4NGfzBTcncsU3CjvdEC1895NttdoErh7e8DD
+X-Received: by 2002:a05:6358:4296:b0:134:dc90:b7d1 with SMTP id s22-20020a056358429600b00134dc90b7d1mr7354726rwc.25.1697929866119;
+        Sat, 21 Oct 2023 16:11:06 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697929866; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Td6KisIBXd9b+NQw02ofszaUDYSvLbn2TS+tGXP0BUTB2gR9DqeH7eznHtuvxk79UF
+         XEvw3IhDFwk5NfPj/iU4r4zL25BIEnG3P/kf56ewh1J7kUsA2NHaT78oiOfm5QBF9/kB
+         3HMd3sfu2zegdB2qiIe9i8KHx5dSyKrnuM60Hcfvmh6ViIg44PQ18zh7GS2nE456YQtj
+         /T7DsITb7igD67Im5hv6LQZyZqSakf1nx3iNzN1CnbOlCJF2b+S08t22Mt0oANRyhPzj
+         VdEG3jxGsk/HVVGx2XCK4v1dLQnSb3hku1gTIxtroc8y5oe7uBgqRrUMV4yeKAz1GGny
+         RfRQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:list-id:reply-to:mime-version
+         :list-unsubscribe-post:list-unsubscribe:date:subject:to:from
+         :dkim-signature;
+        bh=pmpSSt8+XRt65YW1H06kTUNBq3rM0TLjEjfEhxG2ukA=;
+        fh=Aqe6xtJ2ccSlx9NnrUD9c7Fd7YTQfaNQx9hKYnhgjDI=;
+        b=PJBKwwaAKeIBLI6w/wwBv2zDnmHO3hrUcfFS6vciTilRO8EyTrWzUyXl+sB4zfQAdw
+         JNN3+SVQtuTNzh2JmCm0+/SPNfrDpjejRsXd/fYQsm0OhCQn/etn9WUZv87ZAk2w6syU
+         w23gZO8M9Lkh1vS7deyJLyUs+EQSGmPk95J5/BuYoMwvVhuzo8MGyXKozFZoLEKlbKd4
+         yrsj2kbvmMzqD58OOfhyWrNNWzUBV/KpN05Amy7rOaorI3sN90Qt+xZ7ogUKpmc+BoT9
+         IvCufqFB1LhE5Y2HV7eFr9tDtbh0vFQMaJoO9++qMpZj6E/VV/4RlDx6BvAlgOH/n3SL
+         jnxQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@e.tripadeal.com.au header.s=11dkim1 header.b=80Y0AEKB;
+       spf=pass (google.com: domain of bounce-295_html-230937649-403455-514002847-15029@bounce.e.tripadeal.com.au designates 128.245.68.91 as permitted sender) smtp.mailfrom=bounce-295_HTML-230937649-403455-514002847-15029@bounce.e.tripadeal.com.au;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=e.tripadeal.com.au
+Return-Path: <bounce-295_HTML-230937649-403455-514002847-15029@bounce.e.tripadeal.com.au>
+Received: from mta2.e.tripadeal.com.au (mta2.e.tripadeal.com.au. [128.245.68.91])
+        by mx.google.com with ESMTPS id s14-20020a05620a254e00b0076f0cc82e44si3358739qko.718.2023.10.21.16.11.05
+        for <srijani515@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 21 Oct 2023 16:11:06 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-295_html-230937649-403455-514002847-15029@bounce.e.tripadeal.com.au designates 128.245.68.91 as permitted sender) client-ip=128.245.68.91;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@e.tripadeal.com.au header.s=11dkim1 header.b=80Y0AEKB;
+       spf=pass (google.com: domain of bounce-295_html-230937649-403455-514002847-15029@bounce.e.tripadeal.com.au designates 128.245.68.91 as permitted sender) smtp.mailfrom=bounce-295_HTML-230937649-403455-514002847-15029@bounce.e.tripadeal.com.au;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=e.tripadeal.com.au
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=11dkim1; d=e.tripadeal.com.au;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Reply-To:List-ID:X-CSA-Complaints:Message-ID:Content-Type;
+ i=noreply@e.tripadeal.com.au;
+ bh=pmpSSt8+XRt65YW1H06kTUNBq3rM0TLjEjfEhxG2ukA=;
+ b=80Y0AEKBAN7cc1zTH0I7vHEIv1rIHSTXUgOXCfp9b8TOqxXmVZ2djyWJxWUbw6gYIfzczxoxgpjN
+   oagj//N23dKxCw7cuKo523PgO3/AfXlvYjREbF8KXbF1f638hOuJo3AB/QwuIXfLj3/7jCp5r1pE
+   QZM9g8zjqTqswFW1TQ7IzQhipcZV8WKVO+4F962bzFUQKmoVkeux1QljrwlLII5JQPY85rFsa4mF
+   vt1EYNFQ6IIEQ6m8IDuNaPyPA5hxqUJZrb8M211NpkH3tOEIqyn9DeATRzEQsXSCFZSX280tNSwi
+   7Lq4HFl1CPA5SDJ44tTmWWWJ/NQpLxErQP6uJQ==
+Received: by mta2.e.tripadeal.com.au id h6hd8k2fmd45 for <srijani515@gmail.com>; Sat, 21 Oct 2023 23:06:00 +0000 (envelope-from <bounce-295_HTML-230937649-403455-514002847-15029@bounce.e.tripadeal.com.au>)
+From: "TripADeal" <noreply@e.tripadeal.com.au>
+To: <srijani515@gmail.com>
+Subject: Escape to Asia: Save up to 72% on these unbeatable package deals!
+Date: Sat, 21 Oct 2023 17:06:00 -0600
+List-Unsubscribe: <https://click.e.tripadeal.com.au/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiI1MTQwMDI4NDciLCJzIjoiMjMwOTM3NjQ5IiwibGlkIjoiMjk1IiwiaiI6IjQwMzQ1NSIsImpiIjoiMTUwMjkiLCJkIjoiMTEwMDI1In0.U2ziQFgUOcA7fxQHVxWytBEQgawUSMk2thNoxcb0Z7U>, <mailto:leave-fd4b1679700b5c392848-fe241673756d077a731079-feca107076600178-fe3011717164047f7d1077-fefe157575660d@leave.e.tripadeal.com.au>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+Reply-To: "TripADeal" <reply-feca107076600178-295_HTML-230937649-514002847-15029@reply.e.tripadeal.com.au>
+List-ID: <514002847.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+X-SFMC-Stack: 11
+x-job: 514002847_403455
+Message-ID: <3635560d-4d0a-40d3-8249-fbfaab3f00c6@atl1s11mta1086.xt.local>
+Feedback-ID: 514002847:403455:128.245.68.91:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="dERMze9cq3lT=_?:"
+
+This is a multi-part message in MIME format.
+
+--dERMze9cq3lT=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+TripADealHaving trouble seeing this email?
+
+https://view.e.tripadeal.com.au/?qs=becf171c823771da4ddaa18d4a9f2f2580880273b63dc727e6f86ba12ad12b50b01ee5d24300c62db5824d7f02c7b7571f9e24f636cf726893d4dca013dfcf532695e53292634d518ac5ea21aa84700f 
+View in your browser 
+
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2cdd42d45739c672c121331e6c9bb24d2b009742884e474bec21a22e967828c92833b22bf39d5bc73919d4d49df0633fe8129b7ee1676a85b2 
+
+
+
+
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2cd90bc60fb57869aee0665d2db01374e36133e7a9fb7d0548f0b4ff7f2120b9e94fad6d9343d020d5538a1a0e1a2a11d49e6c37b1e5c0e7f6 
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2cd90bc60fb57869aee0665d2db01374e36133e7a9fb7d0548f0b4ff7f2120b9e94fad6d9343d020d5538a1a0e1a2a11d49e6c37b1e5c0e7f6 
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2cd90bc60fb57869aee0665d2db01374e36133e7a9fb7d0548f0b4ff7f2120b9e94fad6d9343d020d5538a1a0e1a2a11d49e6c37b1e5c0e7f6 
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2cd90bc60fb57869aee0665d2db01374e36133e7a9fb7d0548f0b4ff7f2120b9e94fad6d9343d020d5538a1a0e1a2a11d49e6c37b1e5c0e7f6 
+
+
+  15 Days 
+
+
+ Vietnam & Cambodia Discovery
+Valued up to $4299 | Save 39%
+ 
+ 
+
+ From
+ 
+ 
+ 
+
+
+
+ 
+ 
+ 
+ $
+
+ 2599
+
+ 
+
+
+Per person twin share
+       
+ or 259,900 Qantas Points
+
+ Earn 7,797 Qantas Points
+
+
+ Uncover two gems of Asia on a small group tour  <br />  Visit the ancient temples of Angkor Wat, Angkor Thom & more
+Includes Return International Full-Service Flights
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2cd90bc60fb57869aee0665d2db01374e36133e7a9fb7d0548f0b4ff7f2120b9e94fad6d9343d020d5538a1a0e1a2a11d49e6c37b1e5c0e7f6 
+VIEW DEAL 
+
+
+
+
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2cde443fc32e7d68cdef666be2e61bb9e4e38c184e74fe3c00b1cf2cf1a280028c46ef6b29ff6fbf0f0d1fcd938adcf8d448759e8ffc208bf0 
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2cde443fc32e7d68cdef666be2e61bb9e4e38c184e74fe3c00b1cf2cf1a280028c46ef6b29ff6fbf0f0d1fcd938adcf8d448759e8ffc208bf0 
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2cde443fc32e7d68cdef666be2e61bb9e4e38c184e74fe3c00b1cf2cf1a280028c46ef6b29ff6fbf0f0d1fcd938adcf8d448759e8ffc208bf0 
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2cde443fc32e7d68cdef666be2e61bb9e4e38c184e74fe3c00b1cf2cf1a280028c46ef6b29ff6fbf0f0d1fcd938adcf8d448759e8ffc208bf0 
+
+
+  6, 9 or 12 Nights 
+
+
+ Luxury 5 Star Sofitel Bali
+Valued up to $6014 | Save 66%
+ 
+ 
+
+ From
+ 
+ 
+ 
+
+
+
+ 
+ 
+ 
+ $
+
+ 1999
+
+ 
+
+
+ For 2 people
+      
+ or 199,900 Qantas Points
+
+ Earn 5,997 Qantas Points
+
+
+ Experience a new level of luxury, sophistication & French-inspired refinement <br /> Enjoy 6 incredible dining experiences, massages, cocktails & more
+One Child Under 12 Stays Free
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2cde443fc32e7d68cdef666be2e61bb9e4e38c184e74fe3c00b1cf2cf1a280028c46ef6b29ff6fbf0f0d1fcd938adcf8d448759e8ffc208bf0 
+VIEW DEAL 
+
+
+
+
+
+
+
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2cc9aa72176717ca64bcdb6823df369c1c8e3d7dcffb0bce0648a6d0bdafa5c74c58569a838071ed06f233cdc0b77b906157882a2bb24647e2 
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2cc9aa72176717ca64bcdb6823df369c1c8e3d7dcffb0bce0648a6d0bdafa5c74c58569a838071ed06f233cdc0b77b906157882a2bb24647e2 
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2cc9aa72176717ca64bcdb6823df369c1c8e3d7dcffb0bce0648a6d0bdafa5c74c58569a838071ed06f233cdc0b77b906157882a2bb24647e2 
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2cc9aa72176717ca64bcdb6823df369c1c8e3d7dcffb0bce0648a6d0bdafa5c74c58569a838071ed06f233cdc0b77b906157882a2bb24647e2 
+
+
+  9 Days 
+
+
+ 2 for 1 South Korea
+ 
+ 
+ 
+ 
+
+ From
+ 
+ 
+ 
+
+
+
+ 
+ 
+ 
+ $
+
+ 4999
+
+ 
+
+
+ For 2 people
+      
+ or 499,900 Qantas Points
+
+ Earn 14,997 Qantas Points
+
+
+ Discover an ancient Asian culture with an ultra-modern twist  <br />  Travel to bustling Seoul, food-haven Jeonju & beautiful Busan
+Includes Return International Full-Service Qantas Flights
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2cc9aa72176717ca64bcdb6823df369c1c8e3d7dcffb0bce0648a6d0bdafa5c74c58569a838071ed06f233cdc0b77b906157882a2bb24647e2 
+VIEW DEAL 
+
+
+
+
+
+
+
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2ca2c52449cd05d4cbc4d830d75a904bd89cc4c6b8aae623a14adf6a9912a6995b6dc7a17423fd06322b513b18839acbfb4a535acb3cd96d07 
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2ca2c52449cd05d4cbc4d830d75a904bd89cc4c6b8aae623a14adf6a9912a6995b6dc7a17423fd06322b513b18839acbfb4a535acb3cd96d07 
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2ca2c52449cd05d4cbc4d830d75a904bd89cc4c6b8aae623a14adf6a9912a6995b6dc7a17423fd06322b513b18839acbfb4a535acb3cd96d07 
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2ca2c52449cd05d4cbc4d830d75a904bd89cc4c6b8aae623a14adf6a9912a6995b6dc7a17423fd06322b513b18839acbfb4a535acb3cd96d07 
+
+
+  14 Days 
+
+
+ Singapore, Vietnam & Thailand Explorer
+Valued up to $5023 | Save 40%
+ 
+ 
+
+ From
+ 
+ 
+ 
+
+
+
+ 
+ 
+ 
+ $
+
+ 2999
+
+ 
+
+
+Per person twin share
+       
+ or 299,900 Qantas Points
+
+ Earn 8,997 Qantas Points
+
+
+ Explore the jewels of Southeast Asia on a Royal Caribbean Cruise <br /> Discover bustling markets, exotic street food, ornate temples & more
+Includes Return International Full-Service Flights
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2ca2c52449cd05d4cbc4d830d75a904bd89cc4c6b8aae623a14adf6a9912a6995b6dc7a17423fd06322b513b18839acbfb4a535acb3cd96d07 
+VIEW DEAL 
+
+
+
+
+
+
+
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2cd77083edda9a2d6676ac9b1953280176b9e01b80c61423d77c1a7a6785b4c358e7a91bfe443f1dc3c305018e780b4f23ccf332eaf9f2f4b6 
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2cd77083edda9a2d6676ac9b1953280176b9e01b80c61423d77c1a7a6785b4c358e7a91bfe443f1dc3c305018e780b4f23ccf332eaf9f2f4b6 
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2cd77083edda9a2d6676ac9b1953280176b9e01b80c61423d77c1a7a6785b4c358e7a91bfe443f1dc3c305018e780b4f23ccf332eaf9f2f4b6 
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2cd77083edda9a2d6676ac9b1953280176b9e01b80c61423d77c1a7a6785b4c358e7a91bfe443f1dc3c305018e780b4f23ccf332eaf9f2f4b6 
+
+
+  12 Days 
+
+
+ 2 for 1 Warriors of China
+ 
+ 
+ 
+ Was $2999 | From
+ 
+
+ 
+ 
+ 
+
+
+
+ 
+ 
+ 
+ $
+
+ 2799
+
+ 
+
+
+ For 2 people
+      
+ or 279,900 Qantas Points
+
+ Earn 8,397 Qantas Points
+
+
+ Discover the cultural wonders & rich history of China with a friend  <br />  Walk the remarkable Great Wall & marvel at the Terracotta Warriors
+Includes Return International Full-Service Flights
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2cd77083edda9a2d6676ac9b1953280176b9e01b80c61423d77c1a7a6785b4c358e7a91bfe443f1dc3c305018e780b4f23ccf332eaf9f2f4b6 
+VIEW DEAL 
+
+
+
+
+
+
+
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2c76c46194614675d11ffce92d5c5e3ab06a4fca7541c49323304e2c46618600e9c78ff2fb664f3b74ed3dfbb8e918179a5afda5051a5601e7 
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2c76c46194614675d11ffce92d5c5e3ab06a4fca7541c49323304e2c46618600e9c78ff2fb664f3b74ed3dfbb8e918179a5afda5051a5601e7 
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2c76c46194614675d11ffce92d5c5e3ab06a4fca7541c49323304e2c46618600e9c78ff2fb664f3b74ed3dfbb8e918179a5afda5051a5601e7 
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2c76c46194614675d11ffce92d5c5e3ab06a4fca7541c49323304e2c46618600e9c78ff2fb664f3b74ed3dfbb8e918179a5afda5051a5601e7 
+
+
+  9 Days 
+
+
+ Premium All-Inclusive Maldives & Singapore
+Valued up to $4570 | Save 21%
+ 
+ 
+ 
+
+ From
+ 
+ 
+ 
+
+
+
+ 
+ 
+ 
+ $
+
+ 3599
+
+ 
+
+
+Per person twin share
+       
+ or 359,900 Qantas Points
+
+ Earn 10,797 Qantas Points
+
+
+ Experience the sights of Singapore and an unlimited Maldives island paradise <br /> A perfect blend of city nightlife and tropical adventure
+Includes Return International Full-Service Singapore Airlines flights
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2c76c46194614675d11ffce92d5c5e3ab06a4fca7541c49323304e2c46618600e9c78ff2fb664f3b74ed3dfbb8e918179a5afda5051a5601e7 
+VIEW DEAL 
+
+
+
+
+
+
+
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2cf7400f859d6f30f260d61d5a9a7e4ad12bff7caafb3a41a5492beb8291d52603718d31dc470f4f9c35bfc4dd60b4cbfc6e727657058a5a5e 
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2cf7400f859d6f30f260d61d5a9a7e4ad12bff7caafb3a41a5492beb8291d52603718d31dc470f4f9c35bfc4dd60b4cbfc6e727657058a5a5e 
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2cf7400f859d6f30f260d61d5a9a7e4ad12bff7caafb3a41a5492beb8291d52603718d31dc470f4f9c35bfc4dd60b4cbfc6e727657058a5a5e 
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2cf7400f859d6f30f260d61d5a9a7e4ad12bff7caafb3a41a5492beb8291d52603718d31dc470f4f9c35bfc4dd60b4cbfc6e727657058a5a5e 
+
+
+  9 Days 
+
+
+ Luxury Resorts Thailand Fly, Stay & Tour
+Valued up to $8456 | Save 72%
+ 
+ 
+ 
+
+ From
+ 
+ 
+ 
+
+
+
+ 
+ 
+ 
+ $
+
+ 2299
+
+ 
+
+
+Per person twin share
+       
+ or 229,900 Qantas Points
+
+ Earn 6,897 Qantas Points
+
+
+ Stay in 5-star luxury with 5 nights at Avani Phuket & 3 nights at Avani Khao Lak <br /> Includes return international flights, hotel transfers & Phi Phi Island tour
+Enjoy Daily Buffet Breakfast, Inter-Resort & Airport Transfers Plus More
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2cf7400f859d6f30f260d61d5a9a7e4ad12bff7caafb3a41a5492beb8291d52603718d31dc470f4f9c35bfc4dd60b4cbfc6e727657058a5a5e 
+VIEW DEAL 
+
+
+
+
+
+
+
+What people say about us.
+
+
+"AMAZING HOLIDAY! Thanks again TripADeal for another value packed travel experience."
+
+CARMEL B
+
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2cdd42d45739c672c121331e6c9bb24d2b009742884e474bec21a22e967828c92833b22bf39d5bc73919d4d49df0633fe8129b7ee1676a85b2 
+
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2c39f41dc7b560e9fe220d0923a90682a8314adb9e204e307d29b47ec637d8296175ce358e539d22d192a2e43613d543c05009a63e8480255e 
+
+
+
+
+
+ 
+You must be a Qantas Frequent Flyer member to earn points. A joining fee may apply. Membership and points are subject to the Qantas Frequent Flyer program terms and conditions.
+
+
+
+To earn Qantas Points with TripADeal, Members will be required to provide a valid Frequent Flyer number and last name at checkout. Only the lead traveller, the primary contact for the booking, will earn 3 Qantas Points per AU$1 spent (including GST) on eligible holiday packages. Qantas Points will not be earned and cannot be redeemed on any amounts payable directly to the hotel. Conditions apply. Qantas Points will be credited to a member's account up to 8 weeks after hotel check-out, cruise, or tour completion. Qantas Points will not be earned on cancelled bookings. 
+
+
+
+Points Plus Pay allows you to choose the number of Qantas Points you redeem above the minimum level of 4,000 and pay for the remainder of the booking value with an accepted payment method. TripADeal booking terms and conditions apply.
+
+ 
+
+
+ 15 Wollongbar St
+ Byron Bay, NSW, 2481
+ Australia
+ 
+
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2c73b56828304977be03d05211263e68d27374466e8b792f9a4f14920c619a36444f9e857814621318e9d014f6e554810ed8561f4fb8dd59f6 
+Contact us 
+
+tel:1300 995 143 
+1300 995 143 
+
+*Terms and conditions apply
+
+Want to change how you receive these emails?
+
+ You can
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2c4d2d871382bd42652daa867df354839ec830050cc8e2d40488c808623ec3d0388b939b08db07a568bcb67bc52f26ef2e4715620738013024 
+update your preferences  or 
+https://click.e.tripadeal.com.au/?qs=9b030da363147b2c427d4165a94e5bc2d09fa106b5721d65965213b8f3edbcd0a3fcf68f65c3590761a7f071099ac226bc9bcd50e97e49af58d714e644a8ae91 
+unsubscribe from this list. 
+
+
+
+
+
+
+
+--dERMze9cq3lT=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<!---->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"><!--RegionStart[socialslot:"allcontent"]-->
+<head><meta name="robots" content="noindex, nofollow"/><meta name="referrer" content="no-referrer"/>
+<!--[if gte mso 9]>     <xml>       <o:OfficeDocumentSettings>         <o:AllowPNG />         <o:PixelsPerInch>96</o:PixelsPerInch>       </o:OfficeDocumentSettings>     </xml>     <![endif]-->
+<title>TripADeal</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<!--[if !mso]><!-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i%7CMontserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!--<![endif]-->
+
+<style type="text/css">
+body {
+ margin:0;
+ padding:0;
+ -webkit-text-size-adjust:100% !important;
+ -ms-text-size-adjust:100% !important;
+ -webkit-font-smoothing:antialiased !important;
+}
+img {
+ border:0 !important;
+ outline:none !important;
+}
+p {
+ margin:0 !important;
+ padding:0 !important;
+}
+table {
+ border-collapse:collapse;
+ mso-table-lspace:0;
+ mso-table-rspace:0;
+}
+td, a, span {
+ border-collapse:collapse;
+ mso-line-height-rule:exactly;
+}
+.ExternalClass * {
+ line-height:100%;
+}
+.em_defaultlink a {
+ color:inherit !important;
+ text-decoration:none !important;
+}
+.em_g_img+div {
+ display:none;
+}
+.em_black a {
+ text-decoration:none;
+ color:#000000;
+}
+.em_blue a {
+ text-decoration:underline;
+ color:#00bbd3;
+}
+.em_black1 a {
+ text-decoration:none;
+ color:#222222;
+}
+.em_grayA a {
+ text-decoration:none;
+ color:#656565;
+}
+.em_grayB a {
+ text-decoration:none;
+ color:#555555;
+}
+.em_grayC a {
+ text-decoration:none;
+ color:#333333;
+}
+.em_grayD a {
+ text-decoration:none;
+ color:#999999;
+}
+.em_green a {
+ color:#00c8e0;
+ text-decoration:none;
+}
+.em_greenA a {
+ color:#00bfd6;
+ text-decoration:none;
+}
+.em_white a {
+ color:#ffffff;
+ text-decoration:none;
+}
+ @media only screen and (min-width:481px) and (max-width:599px) {
+     .text-align-right {text-align: right !important; padding-left: 20px !important;}
+   .text-align-center {text-align: center !important;}
+   .qf-image-padding-2 {padding: 0px 0px 15px 0px !important;}
+   .qf-image-width {width: 45px !important;}
+     .padding-icon-1 {padding: 8px 52px 19px !important}
+   .padding-icon {padding: 19px 52px !important}
+      .padding-para {padding: 22px 44px !important; }
+   .padding-sides-100 {padding-left: 130px !important; padding-right: 130px !important; padding-bottom: 5px !important;}
+   .padding-sides-50 {padding: 0px 90px 10px  !important;}
+   .padding-sides-37 {padding-left: 37px !important; padding-right: 37px !important;}
+   .responsive100 { width: 100% !important; height: auto !important;}
+.responsivehide { display: none !important; }
+.responsiveshow { display: block !important; }
+   .padding-qf-logo {padding: 30px 49px 44px !important;}
+   .welcome-qf-logo {padding: 6px 20px 2px 15px !important;}
+  .padme23 {padding: 0px 23px !important }
+.responsiveblockfull { display: block !important; width: 100% !important; height: auto !important; float: left !important; }
+     .respsonsiveblockauto { display: block !important; width: auto !important; height: auto !important; }
+   
+        .mobile-responsive-td {display: block !important; width: 100% !important; height: auto !important; float: left !important;} 
+        .mobile-responsive-table {display: block !important; width: 100% !important; height: auto !important; float: left !important;} 
+        .mobile-responsive-image {width: 100% !important; max-width: 100% !important; height: auto !important;}
+   
+   
+.em_main_table {
+ width:100% !important;
+}
+.em_wrapper {
+ width:100% !important;
+}
+.em_hide {
+ display:none !important;
+}
+.em_full_img {
+ width:100% !important;
+ height:auto !important;
+}
+.em_full_img img {
+ width:100% !important;
+ height:auto !important;
+ max-width:none !important;
+}
+.em_aside15 {
+ padding:0 15px !important;
+}
+.em_pbottom {
+ padding-bottom:20px !important;
+}
+.em_p15 {
+ padding:15px !important;
+}
+.em_h20 {
+ height:20px !important;
+ font-size:1px !important;
+ line-height:1px !important;
+}
+.em_plrtb_1 {
+ padding:15px 10px 15px 15px !important;
+}
+.em_ptb20 {
+ padding:20px 0 !important;
+}
+}
+ @media screen and (max-width: 480px) {
+   
+      .text-align-right {text-align: right !important; padding-left: 20px !important;}
+   .text-align-center {text-align: center !important;}
+   .qf-image-padding-2 {padding: 0px 0px 15px 0px !important;}
+   .qf-image-width {width: 45px !important;}
+     .padding-icon-1 {padding: 8px 52px 19px !important}
+   .padding-icon {padding: 19px 52px !important}
+      .padding-para {padding: 22px 44px !important; }
+   .padding-sides-100 {padding-left: 130px !important; padding-right: 130px !important; padding-bottom: 5px !important;}
+   .padding-sides-50 {padding: 0px 90px 10px  !important;}
+   .padding-sides-37 {padding-left: 37px !important; padding-right: 37px !important;}
+   .responsive100 { width: 100% !important; height: auto !important;}
+.responsivehide { display: none !important; }
+.responsiveshow { display: block !important; }
+   .padding-qf-logo {padding: 30px 49px 44px !important;}
+   .welcome-qf-logo {padding: 6px 20px 2px 15px !important;}
+  .padme23 {padding: 0px 23px !important }
+.responsiveblockfull { display: block !important; width: 100% !important; height: auto !important; float: left !important; }
+     .respsonsiveblockauto { display: block !important; width: auto !important; height: auto !important; }
+   
+        .mobile-responsive-td {display: block !important; width: 100% !important; height: auto !important; float: left !important;} 
+        .mobile-responsive-table {display: block !important; width: 100% !important; height: auto !important; float: left !important;} 
+        .mobile-responsive-image {width: 100% !important; max-width: 100% !important; height: auto !important;}
+.em_main_table {
+ width:100% !important;
+}
+.em_wrapper {
+ width:100% !important;
+}
+.em_hide {
+ display:none !important;
+}
+.em_full_img {
+ width:100% !important;
+ height:auto !important;
+}
+.em_full_img img {
+ width:100% !important;
+ height:auto !important;
+ max-width:none !important;
+}
+.em_aside15 {
+ padding:0 15px !important;
+}
+.em_pbottom {
+ padding-bottom:20px !important;
+}
+.em_p15 {
+ padding:15px !important;
+}
+.em_h20 {
+ height:20px !important;
+ font-size:1px !important;
+ line-height:1px !important;
+}
+u+.em_body .em_full_wrap {
+ width:100vw !important;
+}
+.em_plrtb_1 {
+ padding:15px 10px 15px 15px !important;
+}
+.em_ptb20 {
+ padding:20px 0 !important;
+}
+}
+</style>
+</head>
+<body class="em_body" style="margin:0px auto; padding:0px;" bgcolor="#ffffff"><style type="text/css">
+div.preheader 
+{ display: none !important; } 
+</style>
+<div class="preheader" style="font-size: 1px; display: none !important;">Vietnam & Cambodia | Bali | South Korea | Signapore, Vietnam & Thailand | China | Maldives & Singapore | Thailand Fly, Stay & Tour</div><style type="text/css">
+div.preheader 
+{ display: none !important; } 
+</style>
+<div class="preheader" style="font-size: 1px; display: none !important;"></div>
+<!--Header Section == -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="em_full_wrap" bgcolor="#ffffff">
+  <tr>
+    <td align="center" valign="top"><table align="center" width="600" border="0" cellspacing="0" cellpadding="0" class="em_main_table" style="width:600px;table-layout:fixed;">
+        <tr>
+          <td align="center" valign="top" class="em_grayA" bgcolor="#f7f7f7" style="background-color:#f7f7f7;padding:10px 14px;font-family:Lato, Arial, sans-serif;color:#656565;font-size:11px;line-height:16px;">Having trouble seeing this email?<br>
+            <span style="text-decoration:none;color:#084c9e;"><a href="https://view.e.tripadeal.com.au/?qs=becf171c823771da4ddaa18d4a9f2f2580880273b63dc727e6f86ba12ad12b50b01ee5d24300c62db5824d7f02c7b7571f9e24f636cf726893d4dca013dfcf53b01d3716376fdc4c55c2c00c590eb894" target="_blank" style="text-decoration:none;color:#084c9e;">View in your browser</a></span></td>
+        </tr>
+        
+      </table></td>
+  </tr>
+</table>
+<!--//Header Section == --> 
+<!-- == Body Section == -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="em_full_wrap">
+  <tr>
+    <td align="center" valign="top"><table align="center" width="600" border="0" cellspacing="0" cellpadding="0" class="em_main_table" style="width:600px;table-layout:fixed;">
+        <tr>
+          <td align="center" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+              <tbody>
+                <!--Body-->
+                <tr>
+                  <td valign="top" align="center"><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table width="100%" cellspacing="0" cellpadding="0" role="presentation"><tr><td align="center"><a href="https://click.e.tripadeal.com.au/?qs=9b030da363147b2cd835a44d522fc5c1bf284ff1bc0b8c220eefe56d46406597401422ef4f11f23eaff8e14adee0f9ab495914140ad5a54f7d85622a9307e01f" title="TripADeal - Header"   data-linkto="https://"><img data-assetid="63054" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/3/1131fbbb-b1f5-40b5-968a-8181908c6ce2.jpg" alt="" width="600" style="display: block; padding: 0px; text-align: center; height: auto; width: 100%; border: 0px;"></a></td></tr></table></td></tr></table>
+<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table width="100%" cellspacing="0" cellpadding="0" role="presentation"><tr><td align="center"><img data-assetid="62763" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/3/14ba6b2e-5698-4d2d-9383-0f6cf40634c8.jpg" alt="" width="600" style="display: block; padding: 0px; text-align: center; height: auto; width: 100%; border: 0px;"></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+
+
+<table cellpadding="0" cellspacing="0" role="presentation" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding-bottom: 7px;">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb64a2d5b0744bbbdc8d3feb00cbed141f4367d6ce66befbb26b16005350ba7e51c878344172f57f9b5bbaf25e72526bda6de8296044140c5d64" style="color:#ffffff;text-decoration:none;line-height: 50px; text-align: center; display: block; letter-spacing: 0.2;" target="_blank" title="4559"><img alt="4559" src="https://cstad.s3.ap-southeast-2.amazonaws.com/4559_Vietnam_Cambodia_WEB_HERO_1.jpg" style="display: block; padding: 0px; height: auto; width: 100%;" width="600"></a></td></tr></table><table border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" style="width: 100%" width="100%">
+   <tr>
+   <td width="195.33">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb64a2d5b0744bbbdc8d3feb00cbed141f4367d6ce66befbb26b16005350ba7e51c878344172f57f9b5bbaf25e72526bda6de8296044140c5d64" style="color:#ffffff;text-decoration:none;line-height: 40px; text-align: center; display: block; letter-spacing: 0.2;padding: 0px 4.66px 0px 0px;" target="_blank" title="4793"><img align="absbottom" class="responsive100" alt="4793" src="https://cstad.s3.ap-southeast-2.amazonaws.com/4559_Vietnam_Cambodia_WEB_HERO_2.jpg" style="max-width:100%;" width="195.33"> </a></td><td width="195.33">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb64a2d5b0744bbbdc8d3feb00cbed141f4367d6ce66befbb26b16005350ba7e51c878344172f57f9b5bbaf25e72526bda6de8296044140c5d64" style="color:#ffffff;text-decoration:none;line-height: 40px; text-align: center; display: block; letter-spacing: 0.2;padding: 0px 2.33px 0px;" target="_blank" title="4793"><img align="absbottom" class="responsive100" alt="4793" src="https://cstad.s3.ap-southeast-2.amazonaws.com/4559_Vietnam_Cambodia_WEB_HERO_3.jpg" style="max-width:100%;" width="195.33"> </a></td><td width="195.33">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb64a2d5b0744bbbdc8d3feb00cbed141f4367d6ce66befbb26b16005350ba7e51c878344172f57f9b5bbaf25e72526bda6de8296044140c5d64" style="color:#ffffff;text-decoration:none;line-height: 40px; text-align: center; display: block; letter-spacing: 0.2; padding: 0px 0px 0px 4.66px;" target="_blank" title="4793"><img align="absbottom" class="responsive100" alt="4793" src="https://cstad.s3.ap-southeast-2.amazonaws.com/4559_Vietnam_Cambodia_WEB_HERO_4.jpg" style="max-width:100%;" width="195.33"> </a></td></tr></table>
+
+
+
+
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" style="width: 110.87px;" width="300px">
+ 
+  <tr>
+   <td align="center" class="responsive100" style="padding: 0px 20px;" width="300px;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" margin="0">
+     
+      <tr>
+       <td style="padding: 24px 0px 0px 0px;">
+        <table bgcolor="#f5f5f5;" border="0" cellpadding="0" cellspacing="0" margin="0" style="background-color: #f5f5f5; border-radius: 6px;">
+         
+          <tr>
+           <td style="padding: 6px 0px 8px 6px; padding-right: 0px" valign="middle">
+            <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/ebee0928-804a-4b72-8d0f-0d1c5db0f668.png" style="width: 20px; padding: 2px 2px 2px 2px;" valign="top" width="20px"></td><td align="center" class="em_green" style="padding: 0px 8px 0px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #666666; font-size: 18px; font-weight: 700; line-height: 0px;">
+            &nbsp;15&nbsp;Days&nbsp;</td></tr></table></td></tr></table></td></tr></table>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 5px 30px 5px; font-family: Futura BT,'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 35px; font-weight: 500; line-height: 35p; letter-spacing: 0.2;" valign="top">
+    Vietnam & Cambodia Discovery</td></tr>
+     </table>         
+          
+              <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">        
+    <tr>
+
+   <td align="center" class="em_black" style="padding: 6px 15px 8px 15px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 16px; line-height: 19px;" valign="top">
+
+     <strong>Valued up to $4299 | Save 39%</strong></td></tr></table>     
+    
+
+    <table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ <tr>
+   <td align="center" class="em_grayB" style="padding: 0px 15px 0px 15px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #979797; font-size: 14px; line-height: 18px; vertical-align: middle; line-height: 28px;" valign="middle">
+    From</td></tr>
+     </table> 
+      
+              
+
+
+
+   
+    
+    <table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding: 0px;">
+    <table border="0" cellpadding="0" cellspacing="0">
+     
+      <tr>
+       <td align="center" style="padding: 0px 4px 6px 0px;" valign="top" width="20">
+        <table>
+         
+          <tr>
+           <td align="center" style="vertical-align: top; font-family:'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #00BFD6; font-size: 30px; line-height:36px; font-weight: 700; vertical-align: middle; mso-line-height-rule: exactly;">
+            $</td></tr></table></td><td align="left" class="em_green" style="padding: 0px 0px 10px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #00BFD6; font-size: 56px; font-weight: 500; vertical-align: top; mso-line-height-rule: exactly; line-height:50px" valign="top">
+        2599</td></tr></table></td></tr></table> 
+
+
+<table align="center" bgcolor="#F5F5F5" border="0" style="background-color: #F5F5F5; border-radius: 4px;">
+ 
+  <tr>
+   <td align="center" class="em_white" height="32" style="vertical-align: middle; width: 0px; padding: 0px 10px 0px 10px;  " valign="middle">
+    <img alt="" data-assetid="89657" height="20" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/4/820076b6-cc2a-490e-9014-b761c8dbe84b.png" style="line-height: 0; display: block; height: 20px; width: 10px; padding: 0px; text-align: center;" width="10"></td><td align="center" class="em_white" height="28" style="vertical-align: middle; padding: 0px 10px 0px 0px; font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; color: #666666; font-weight: 700;  " valign="middle">
+    <span style="color:#666666;">Per person twin share</span></td></tr></table>       <table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 12px 0px 24px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #666666; font-size: 17px; font-weight: 500; line-height: 18px;" valign="top">
+    or <b>259,900 Qantas Points</b></td></tr></table>
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding: 0px 0px 24px 0px; border-radius: 4px;" valign="top">
+    <table bgcolor="#F5F5F5" border="0" cellpadding="0" cellspacing="0" style="background-color: #F5F5F5; width: 240px; border-radius: 4px;" width="240">
+     
+      <tr>
+       <td align="center" class="em_white" height="50" style="vertical-align: middle; width: 25px; padding: 0px 9px 0px 22px;  " valign="middle" width="56px">
+        <img alt="" height="18" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/3/f27e94f4-9f91-4b4a-818f-a053528d873d.png" style="height: 18px; width: 25px;" width="25"></td><td align="left" class="em_white" height="50" style="font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; color: #00000; font-weight: semi-bold; width: 184px;  " valign="middle" width="184px">
+        Earn 7,797 Qantas Points</td></tr></table></td></tr></table>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 0px 28px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 15px; line-height: 30px; letter-spacing: 0.2" valign="top">
+    Uncover two gems of Asia on a small group tour  <br />  Visit the ancient temples of Angkor Wat, Angkor Thom & more</td></tr></table><table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 0px 28px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 15px; line-height: 30px; letter-spacing: 0.2" valign="top">
+    <b>Includes Return International Full-Service Flights</b></td></tr></table>
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="text-align-center" style="padding: 24px 0px 10px; vertical-align: middle;" width="300px;" valign="middle">
+
+    <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/dc742ead-bde3-48e7-bc26-3509f729b1ff.png" style="padding: 0px 4px 0px 0px;" width="80px"> <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/28d1ae3a-be7a-47be-9f72-f528a9777840.png" style="padding: 0px 0px 0px 0px;" width="80px"> <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/c4f47127-1bf7-4fa8-bb9c-1f883ef4fa82.png" style="padding: 0px 0px 0px 4px;" width="80px"></td></tr></table>
+
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding-top: 32px; padding-right: 18px; padding-bottom: 64px; padding-left: 18px;" valign="top">
+    <table border="0" cellpadding="0" cellspacing="0" style="border-radius: 5px; background-color: #06bfd6; width: 200px;" width="200">
+     
+      <tr>
+       <td align="center" class="em_white" height="50" style="font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; color: #ffffff; font-weight: bold;" valign="middle">
+        <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb64a2d5b0744bbbdc8d3feb00cbed141f4367d6ce66befbb26b16005350ba7e51c878344172f57f9b5bbaf25e72526bda6de8296044140c5d64" style="color:#ffffff;text-decoration:none;line-height: 50px; text-align: center; display: block; letter-spacing: 0.2;" target="_blank" title="4559">VIEW DEAL</a></td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+
+
+<table cellpadding="0" cellspacing="0" role="presentation" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding-bottom: 7px;">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb647bbb66a6e53d3ec42cb5687cbb39871da3faa8993b27f3d249793937ab9b82f8946d2c78b53ec73538db5bc3c852e9f894a1b2931f835bfc" style="color:#ffffff;text-decoration:none;line-height: 50px; text-align: center; display: block; letter-spacing: 0.2;" target="_blank" title="4992"><img alt="4992" src="https://cstad.s3.ap-southeast-2.amazonaws.com/4992_Sofitel_Nusa_Dua+_WEB_HERO_1.jpg" style="display: block; padding: 0px; height: auto; width: 100%;" width="600"></a></td></tr></table><table border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" style="width: 100%" width="100%">
+ 
+  <tr>
+   <td width="195.33">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb647bbb66a6e53d3ec42cb5687cbb39871da3faa8993b27f3d249793937ab9b82f8946d2c78b53ec73538db5bc3c852e9f894a1b2931f835bfc" style="color:#ffffff;text-decoration:none;line-height: 40px; text-align: center; display: block; letter-spacing: 0.2;padding: 0px 4.66px 0px 0px;" target="_blank" title="4992"><img align="absbottom" class="responsive100" alt="4992" src="https://cstad.s3.ap-southeast-2.amazonaws.com/4992_Sofitel_Nusa_Dua+_WEB_HERO_4.jpg" style="max-width:100%;" width="195.33"> </a></td><td width="195.33">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb647bbb66a6e53d3ec42cb5687cbb39871da3faa8993b27f3d249793937ab9b82f8946d2c78b53ec73538db5bc3c852e9f894a1b2931f835bfc" style="color:#ffffff;text-decoration:none;line-height: 40px; text-align: center; display: block; letter-spacing: 0.2;padding: 0px 2.33px 0px;" target="_blank" title="4992"><img align="absbottom" class="responsive100" alt="4992" src="https://cstad.s3.ap-southeast-2.amazonaws.com/4992_Sofitel_Nusa_Dua+_WEB_HERO_2.jpg" style="max-width:100%;" width="195.33"> </a></td><td width="195.33">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb647bbb66a6e53d3ec42cb5687cbb39871da3faa8993b27f3d249793937ab9b82f8946d2c78b53ec73538db5bc3c852e9f894a1b2931f835bfc" style="color:#ffffff;text-decoration:none;line-height: 40px; text-align: center; display: block; letter-spacing: 0.2; padding: 0px 0px 0px 4.66px;" target="_blank" title="4992"><img align="absbottom" class="responsive100" alt="4992" src="https://cstad.s3.ap-southeast-2.amazonaws.com/4992_Sofitel_Nusa_Dua+_WEB_HERO_3.jpg" style="max-width:100%;" width="195.33"> </a></td></tr></table>
+
+
+
+
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" style="width: 300px;" width="300px">
+ 
+  <tr>
+   <td align="center" class="responsive100" style="padding: 0px 20px;" width="300px;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" margin="0">
+     
+      <tr>
+       <td style="padding: 24px 0px 0px 0px;">
+        <table bgcolor="#f5f5f5;" border="0" cellpadding="0" cellspacing="0" margin="0" style="background-color: #f5f5f5; border-radius: 6px;">
+         
+          <tr>
+           <td style="padding: 6px 0px 8px 6px; padding-right: 0px" valign="middle">
+            <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/ebee0928-804a-4b72-8d0f-0d1c5db0f668.png" style="width: 20px; padding: 2px 2px 2px 2px;" valign="top" width="20px"></td><td align="center" class="em_green" style="padding: 0px 8px 0px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #666666; font-size: 18px; font-weight: 700; line-height: 0px;">
+            &nbsp;6, 9 or 12 Nights&nbsp;</td></tr></table></td></tr></table></td></tr></table>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 5px 30px 5px; font-family: Futura BT,'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 35px; font-weight: 500; line-height: 35p; letter-spacing: 0.2;" valign="top">
+    Luxury 5 Star Sofitel Bali</td></tr>
+     </table>         
+          
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">        
+    <tr>
+
+   <td align="center" class="em_black" style="padding: 6px 15px 8px 15px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 16px; line-height: 19px;" valign="top">
+
+     <strong>Valued up to $6014 | Save 66%</strong></td></tr></table>           
+    
+
+    <table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ <tr>
+   <td align="center" class="em_grayB" style="padding: 0px 15px 0px 15px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #979797; font-size: 14px; line-height: 18px; vertical-align: middle; line-height: 28px;" valign="middle">
+    From</td></tr>
+     </table> 
+      
+              
+
+
+
+   
+    
+    <table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding: 0px;">
+    <table border="0" cellpadding="0" cellspacing="0">
+     
+      <tr>
+       <td align="center" style="padding: 0px 4px 6px 0px;" valign="top" width="20">
+        <table>
+         
+          <tr>
+           <td align="center" style="vertical-align: top; font-family:'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #00BFD6; font-size: 30px; line-height:36px; font-weight: 700; vertical-align: middle; mso-line-height-rule: exactly;">
+            $</td></tr></table></td><td align="left" class="em_green" style="padding: 0px 0px 10px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #00BFD6; font-size: 56px; font-weight: 500; vertical-align: top; mso-line-height-rule: exactly; line-height:50px" valign="top">
+        1999</td></tr></table></td></tr></table> 
+
+
+ <table align="center" bgcolor="#F5F5F5" border="0" cellpadding="0" cellspacing="0" style="background-color: #F5F5F5; border-radius: 4px;">
+ 
+  <tr>
+   <td align="center" class="em_white" height="32" style="vertical-align: middle; width: 0px; padding: 0px 8px 0px 10px;  " valign="middle">
+    <img alt="" data-assetid="89574" height="20" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/4/b5dd5fbc-0ecc-494e-b124-93819acb046e.png" style="line-height: 0; display: block; height: 24px; width: 22px; padding: 0px; text-align: center;" width="20"></td><td align="center" class="em_white" height="28" style="vertical-align: middle; padding: 0px 10px 0px 0px; font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; color: #666666; font-weight: 700;  " valign="middle">
+    <span style="color:#666666;">For 2 people</span></td></tr></table>      <table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 12px 0px 24px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #666666; font-size: 17px; font-weight: 500; line-height: 18px;" valign="top">
+    or <b>199,900 Qantas Points</b></td></tr></table>
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding: 0px 0px 24px 0px; border-radius: 4px;" valign="top">
+    <table bgcolor="#F5F5F5" border="0" cellpadding="0" cellspacing="0" style="background-color: #F5F5F5; width: 240px; border-radius: 4px;" width="240">
+     
+      <tr>
+       <td align="center" class="em_white" height="50" style="vertical-align: middle; width: 25px; padding: 0px 9px 0px 22px;  " valign="middle" width="56px">
+        <img alt="" height="18" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/3/f27e94f4-9f91-4b4a-818f-a053528d873d.png" style="height: 18px; width: 25px;" width="25"></td><td align="left" class="em_white" height="50" style="font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; color: #00000; font-weight: semi-bold; width: 184px;  " valign="middle" width="184px">
+        Earn 5,997 Qantas Points</td></tr></table></td></tr></table>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 0px 28px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 15px; line-height: 30px; letter-spacing: 0.2" valign="top">
+    Experience a new level of luxury, sophistication & French-inspired refinement <br /> Enjoy 6 incredible dining experiences, massages, cocktails & more</td></tr></table><table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 0px 28px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 15px; line-height: 30px; letter-spacing: 0.2" valign="top">
+    <b>One Child Under 12 Stays Free</b></td></tr></table>
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%"><tr><td align="center" height="auto" style="padding: 0px; height: auto;" valign="top"><img align="center" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/1/d60141dd-f6b2-41cd-896d-1202313aa9c5.png" style="vertical-align: top; padding: 10px 0px 10px;" width="140px"> </td></tr></table>
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+ 
+    <tr>
+   <td align="center" class="text-align-center" style="padding: 24px 0px 10px; vertical-align: middle;" width="300px;" valign="middle">
+
+    <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/450632e4-d680-4063-a38d-d52ec00d9d4f.png" style="padding: 0px 4px 0px 0px;" width="80px"> <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/b37f5234-bc41-4b60-aeb8-2192318b03ba.png" style="padding: 0px 0px 0px 0px;" width="80px"> <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/617b529e-14f8-4f88-b625-734ae7c51711.png" style="padding: 0px 0px 0px 4px;" width="80px"></td></tr></table>
+
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding-top: 32px; padding-right: 18px; padding-bottom: 64px; padding-left: 18px;" valign="top">
+    <table border="0" cellpadding="0" cellspacing="0" style="border-radius: 5px; background-color: #06bfd6; width: 200px;" width="200">
+     
+      <tr>
+       <td align="center" class="em_white" height="50" style="font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; color: #ffffff; font-weight: bold;" valign="middle">
+        <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb647bbb66a6e53d3ec42cb5687cbb39871da3faa8993b27f3d249793937ab9b82f8946d2c78b53ec73538db5bc3c852e9f894a1b2931f835bfc" style="color:#ffffff;text-decoration:none;line-height: 50px; text-align: center; display: block; letter-spacing: 0.2;" target="_blank" title="4992">VIEW DEAL</a></td></tr></table></td></tr></table>
+
+</td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+
+
+<table cellpadding="0" cellspacing="0" role="presentation" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding-bottom: 7px;">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb64dea2f3911f42f3b73cbc6b5e9e950e00883e61c9dfac3c7f9fe4dd6eb7c8b22b0ff949b81cc7beb7c82cec79e8340e5aa65d15c8bd22c9e2" style="color:#ffffff;text-decoration:none;line-height: 50px; text-align: center; display: block; letter-spacing: 0.2;" target="_blank" title="4793"><img alt="4793" src="https://cstad.s3.ap-southeast-2.amazonaws.com/4371_10D_South_Korea_Web_Hero.jpg" style="display: block; padding: 0px; height: auto; width: 100%;" width="600"></a></td></tr></table><table border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" style="width: 100%" width="100%">
+ 
+  <tr>
+   <td width="195.33">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb64dea2f3911f42f3b73cbc6b5e9e950e00883e61c9dfac3c7f9fe4dd6eb7c8b22b0ff949b81cc7beb7c82cec79e8340e5aa65d15c8bd22c9e2" style="color:#ffffff;text-decoration:none;line-height: 40px; text-align: center; display: block; letter-spacing: 0.2;padding: 0px 4.66px 0px 0px;" target="_blank" title="4793"><img align="absbottom" class="responsive100" alt="4793" src="https://cstad.s3.ap-southeast-2.amazonaws.com/4793_2_for_1_South_Korea_WEB_HERO_2.jpg" style="max-width:100%;" width="195.33"> </a></td><td width="195.33">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb64dea2f3911f42f3b73cbc6b5e9e950e00883e61c9dfac3c7f9fe4dd6eb7c8b22b0ff949b81cc7beb7c82cec79e8340e5aa65d15c8bd22c9e2" style="color:#ffffff;text-decoration:none;line-height: 40px; text-align: center; display: block; letter-spacing: 0.2;padding: 0px 2.33px 0px;" target="_blank" title="4793"><img align="absbottom" class="responsive100" alt="4793" src="https://cstad.s3.ap-southeast-2.amazonaws.com/4793_2_for_1_South_Korea_WEB_HERO_3.jpg" style="max-width:100%;" width="195.33"> </a></td><td width="195.33">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb64dea2f3911f42f3b73cbc6b5e9e950e00883e61c9dfac3c7f9fe4dd6eb7c8b22b0ff949b81cc7beb7c82cec79e8340e5aa65d15c8bd22c9e2" style="color:#ffffff;text-decoration:none;line-height: 40px; text-align: center; display: block; letter-spacing: 0.2; padding: 0px 0px 0px 4.66px;" target="_blank" title="4793"><img align="absbottom" class="responsive100" alt="4793" src="https://cstad.s3.ap-southeast-2.amazonaws.com/4371_10D_South_Korea_Web_Hero4.jpg" style="max-width:100%;" width="195.33"> </a></td></tr></table>
+
+
+
+
+
+
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" style="width: 110.87px;" width="300px">
+ 
+  <tr>
+   <td align="center" class="responsive100" style="padding: 0px 20px;" width="300px;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" margin="0">
+     
+      <tr>
+       <td style="padding: 24px 0px 0px 0px;">
+        <table bgcolor="#f5f5f5;" border="0" cellpadding="0" cellspacing="0" margin="0" style="background-color: #f5f5f5; border-radius: 6px;">
+         
+          <tr>
+           <td style="padding: 6px 0px 8px 6px; padding-right: 0px" valign="middle">
+            <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/ebee0928-804a-4b72-8d0f-0d1c5db0f668.png" style="width: 20px; padding: 2px 2px 2px 2px;" valign="top" width="20px"></td><td align="center" class="em_green" style="padding: 0px 8px 0px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #666666; font-size: 18px; font-weight: 700; line-height: 0px;">
+            &nbsp;9&nbsp;Days&nbsp;</td></tr></table></td></tr></table></td></tr></table>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 5px 30px 5px; font-family: Futura BT,'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 35px; font-weight: 500; line-height: 35p; letter-spacing: 0.2;" valign="top">
+    2 for 1 South Korea</td></tr>
+     </table>         
+          
+             
+    
+
+    <table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ <tr>
+   <td align="center" class="em_grayB" style="padding: 0px 15px 0px 15px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #979797; font-size: 14px; line-height: 18px; vertical-align: middle; line-height: 28px;" valign="middle">
+    From</td></tr>
+     </table> 
+      
+              
+
+
+
+   
+    
+    <table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding: 0px;">
+    <table border="0" cellpadding="0" cellspacing="0">
+     
+      <tr>
+       <td align="center" style="padding: 0px 4px 6px 0px;" valign="top" width="20">
+        <table>
+         
+          <tr>
+           <td align="center" style="vertical-align: top; font-family:'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #00BFD6; font-size: 30px; line-height:36px; font-weight: 700; vertical-align: middle; mso-line-height-rule: exactly;">
+            $</td></tr></table></td><td align="left" class="em_green" style="padding: 0px 0px 10px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #00BFD6; font-size: 56px; font-weight: 500; vertical-align: top; mso-line-height-rule: exactly; line-height:50px" valign="top">
+        4999</td></tr></table></td></tr></table> 
+
+
+ <table align="center" bgcolor="#F5F5F5" border="0" cellpadding="0" cellspacing="0" style="background-color: #F5F5F5; border-radius: 4px;">
+ 
+  <tr>
+   <td align="center" class="em_white" height="32" style="vertical-align: middle; width: 0px; padding: 0px 8px 0px 10px;  " valign="middle">
+    <img alt="" data-assetid="89574" height="20" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/4/b5dd5fbc-0ecc-494e-b124-93819acb046e.png" style="line-height: 0; display: block; height: 24px; width: 22px; padding: 0px; text-align: center;" width="20"></td><td align="center" class="em_white" height="28" style="vertical-align: middle; padding: 0px 10px 0px 0px; font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; color: #666666; font-weight: 700;  " valign="middle">
+    <span style="color:#666666;">For 2 people</span></td></tr></table>      <table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 12px 0px 24px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #666666; font-size: 17px; font-weight: 500; line-height: 18px;" valign="top">
+    or <b>499,900 Qantas Points</b></td></tr></table>
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding: 0px 0px 24px 0px; border-radius: 4px;" valign="top">
+    <table bgcolor="#F5F5F5" border="0" cellpadding="0" cellspacing="0" style="background-color: #F5F5F5; width: 240px; border-radius: 4px;" width="240">
+     
+      <tr>
+       <td align="center" class="em_white" height="50" style="vertical-align: middle; width: 25px; padding: 0px 9px 0px 22px;  " valign="middle" width="56px">
+        <img alt="" height="18" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/3/f27e94f4-9f91-4b4a-818f-a053528d873d.png" style="height: 18px; width: 25px;" width="25"></td><td align="left" class="em_white" height="50" style="font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; color: #00000; font-weight: semi-bold; width: 184px;  " valign="middle" width="184px">
+        Earn 14,997 Qantas Points</td></tr></table></td></tr></table>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 0px 28px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 15px; line-height: 30px; letter-spacing: 0.2" valign="top">
+    Discover an ancient Asian culture with an ultra-modern twist  <br />  Travel to bustling Seoul, food-haven Jeonju & beautiful Busan</td></tr></table><table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 0px 24px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 15px; line-height: 30px; letter-spacing: 0.2" valign="top">
+    <b>Includes Return International Full-Service Qantas Flights</b></td></tr></table>
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%"><tr><td align="center" height="auto" style="padding: 0px; height: auto;" valign="top"><img align="center" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/1/8cd75420-8264-4d15-9860-b239ea200b70.png" style="vertical-align: top; padding: 10px 0px 10px;" width="150px"> </td></tr></table>
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+   <tr>
+   <td align="center" class="text-align-center" style="padding: 24px 0px 10px; vertical-align: middle;" width="300px;" valign="middle">
+    <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/00f192ce-a1da-4bed-b0d8-392c1bfecb52.png" style="padding: 0px 4px 0px 0px;" width="80px"> <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/c4f47127-1bf7-4fa8-bb9c-1f883ef4fa82.png" style="padding: 0px 0px 0px 0px;" width="80px"> <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/35912e0a-01d7-4ff8-8570-f176e03f09b9.png" style="padding: 0px 0px 0px 4px;" width="80px"></td></tr></table>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding-top: 32px; padding-right: 18px; padding-bottom: 64px; padding-left: 18px;" valign="top">
+    <table border="0" cellpadding="0" cellspacing="0" style="border-radius: 5px; background-color: #06bfd6; width: 200px;" width="200">
+     
+      <tr>
+       <td align="center" class="em_white" height="50" style="font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; color: #ffffff; font-weight: bold;" valign="middle">
+        <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb64dea2f3911f42f3b73cbc6b5e9e950e00883e61c9dfac3c7f9fe4dd6eb7c8b22b0ff949b81cc7beb7c82cec79e8340e5aa65d15c8bd22c9e2" style="color:#ffffff;text-decoration:none;line-height: 50px; text-align: center; display: block; letter-spacing: 0.2;" target="_blank" title="4793">VIEW DEAL</a></td></tr></table></td></tr></table>
+
+</td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+
+
+<table cellpadding="0" cellspacing="0" role="presentation" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding-bottom: 7px;">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb647c2ec0ed5078f601378c936bfd95ae4b140a97c36a21fcc4cef425e65ab6da320488255addfc0c40b8e90650a5e7ee43390ea6f72480df00" style="color:#ffffff;text-decoration:none;line-height: 50px; text-align: center; display: block; letter-spacing: 0.2;" target="_blank" title="5047"><img alt="5047" src="https://cstad.s3.ap-southeast-2.amazonaws.com/5047_Singapore_Vietnam_and_Thailand_Explorer_WEB_HERO_1_Buu_Long_Buddhist_pagoda_Ho_Chi_Minh.jpg" style="display: block; padding: 0px; height: auto; width: 100%;" width="600"></a></td></tr></table><table border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" style="width: 100%" width="100%">
+ 
+  <tr>
+   <td width="195.33">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb647c2ec0ed5078f601378c936bfd95ae4b140a97c36a21fcc4cef425e65ab6da320488255addfc0c40b8e90650a5e7ee43390ea6f72480df00" style="color:#ffffff;text-decoration:none;line-height: 40px; text-align: center; display: block; letter-spacing: 0.2;padding: 0px 4.66px 0px 0px;" target="_blank" title="5047"><img align="absbottom" class="responsive100" alt="5047" src="https://cstad.s3.ap-southeast-2.amazonaws.com/5047_Singapore_Vietnam_and_Thailand_Explorer_WEB_HERO_2_Nah_Trang_Beach_Viet.jpg" style="max-width:100%;" width="195.33"> </a></td><td width="195.33">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb647c2ec0ed5078f601378c936bfd95ae4b140a97c36a21fcc4cef425e65ab6da320488255addfc0c40b8e90650a5e7ee43390ea6f72480df00" style="color:#ffffff;text-decoration:none;line-height: 40px; text-align: center; display: block; letter-spacing: 0.2;padding: 0px 2.33px 0px;" target="_blank" title="5047"><img align="absbottom" class="responsive100" alt="5047" src="https://cstad.s3.ap-southeast-2.amazonaws.com/5047_Singapore_Vietnam_and_Thailand_Explorer_WEB_HERO_3.jpg" style="max-width:100%;" width="195.33"> </a></td><td width="195.33">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb647c2ec0ed5078f601378c936bfd95ae4b140a97c36a21fcc4cef425e65ab6da320488255addfc0c40b8e90650a5e7ee43390ea6f72480df00" style="color:#ffffff;text-decoration:none;line-height: 40px; text-align: center; display: block; letter-spacing: 0.2; padding: 0px 0px 0px 4.66px;" target="_blank" title="5047"><img align="absbottom" class="responsive100" alt="5047" src="https://cstad.s3.ap-southeast-2.amazonaws.com/5047_Singapore_Vietnam_and_Thailand_Explorer_WEB_HERO_4_Singapore_Garden_at_the_Bay.jpg" style="max-width:100%;" width="195.33"> </a></td></tr></table>
+
+
+
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" style="width: 110.87px;" width="300px">
+ 
+  <tr>
+   <td align="center" class="responsive100" style="padding: 0px 20px;" width="300px;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" margin="0">
+     
+      <tr>
+       <td style="padding: 24px 0px 0px 0px;">
+        <table bgcolor="#f5f5f5;" border="0" cellpadding="0" cellspacing="0" margin="0" style="background-color: #f5f5f5; border-radius: 6px;">
+         
+          <tr>
+           <td style="padding: 6px 0px 8px 6px; padding-right: 0px" valign="middle">
+            <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/ebee0928-804a-4b72-8d0f-0d1c5db0f668.png" style="width: 20px; padding: 2px 2px 2px 2px;" valign="top" width="20px"></td><td align="center" class="em_green" style="padding: 0px 8px 0px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #666666; font-size: 18px; font-weight: 700; line-height: 0px;">
+            &nbsp;14&nbsp;Days&nbsp;</td></tr></table></td></tr></table></td></tr></table>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 5px 30px 5px; font-family: Futura BT,'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 35px; font-weight: 500; line-height: 35p; letter-spacing: 0.2;" valign="top">
+    Singapore, Vietnam & Thailand Explorer</td></tr>
+     </table>         
+          
+ <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">        
+    <tr>
+
+   <td align="center" class="em_black" style="padding: 6px 15px 8px 15px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 16px; line-height: 19px;" valign="top">
+
+     <strong>Valued up to $5023 | Save 40%</strong></td></tr></table>                  
+    
+
+    <table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ <tr>
+   <td align="center" class="em_grayB" style="padding: 0px 15px 0px 15px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #979797; font-size: 14px; line-height: 18px; vertical-align: middle; line-height: 28px;" valign="middle">
+    From</td></tr>
+     </table> 
+      
+              
+
+
+
+   
+    
+    <table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding: 0px;">
+    <table border="0" cellpadding="0" cellspacing="0">
+     
+      <tr>
+       <td align="center" style="padding: 0px 4px 6px 0px;" valign="top" width="20">
+        <table>
+         
+          <tr>
+           <td align="center" style="vertical-align: top; font-family:'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #00BFD6; font-size: 30px; line-height:36px; font-weight: 700; vertical-align: middle; mso-line-height-rule: exactly;">
+            $</td></tr></table></td><td align="left" class="em_green" style="padding: 0px 0px 10px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #00BFD6; font-size: 56px; font-weight: 500; vertical-align: top; mso-line-height-rule: exactly; line-height:50px" valign="top">
+        2999</td></tr></table></td></tr></table> 
+
+
+<table align="center" bgcolor="#F5F5F5" border="0" style="background-color: #F5F5F5; border-radius: 4px;">
+ 
+  <tr>
+   <td align="center" class="em_white" height="32" style="vertical-align: middle; width: 0px; padding: 0px 10px 0px 10px;  " valign="middle">
+    <img alt="" data-assetid="89657" height="20" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/4/820076b6-cc2a-490e-9014-b761c8dbe84b.png" style="line-height: 0; display: block; height: 20px; width: 10px; padding: 0px; text-align: center;" width="10"></td><td align="center" class="em_white" height="28" style="vertical-align: middle; padding: 0px 10px 0px 0px; font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; color: #666666; font-weight: 700;  " valign="middle">
+    <span style="color:#666666;">Per person twin share</span></td></tr></table>       <table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 12px 0px 24px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #666666; font-size: 17px; font-weight: 500; line-height: 18px;" valign="top">
+    or <b>299,900 Qantas Points</b></td></tr></table>
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding: 0px 0px 24px 0px; border-radius: 4px;" valign="top">
+    <table bgcolor="#F5F5F5" border="0" cellpadding="0" cellspacing="0" style="background-color: #F5F5F5; width: 240px; border-radius: 4px;" width="240">
+     
+      <tr>
+       <td align="center" class="em_white" height="50" style="vertical-align: middle; width: 25px; padding: 0px 9px 0px 22px;  " valign="middle" width="56px">
+        <img alt="" height="18" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/3/f27e94f4-9f91-4b4a-818f-a053528d873d.png" style="height: 18px; width: 25px;" width="25"></td><td align="left" class="em_white" height="50" style="font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; color: #00000; font-weight: semi-bold; width: 184px;  " valign="middle" width="184px">
+        Earn 8,997 Qantas Points</td></tr></table></td></tr></table>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 0px 28px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 15px; line-height: 30px; letter-spacing: 0.2" valign="top">
+    Explore the jewels of Southeast Asia on a Royal Caribbean Cruise <br /> Discover bustling markets, exotic street food, ornate temples & more</td></tr></table><table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 0px 24px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 15px; line-height: 30px; letter-spacing: 0.2" valign="top">
+    <b>Includes Return International Full-Service Flights</b></td></tr></table>
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%"><tr><td align="center" height="auto" style="padding: 0px; height: auto;" valign="top"><img align="center" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/1/0c2b7948-ba56-4feb-8262-338294701271.png" style="vertical-align: top; padding: 10px 0px 10px;" width="140px"> </td></tr></table>
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+    <tr>
+   <td align="center" class="text-align-center" style="padding: 24px 0px 10px; vertical-align: middle;" width="300px;" valign="middle">
+    <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/c4f47127-1bf7-4fa8-bb9c-1f883ef4fa82.png" style="padding: 0px 4px 0px 0px;" width="80px"> <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/35912e0a-01d7-4ff8-8570-f176e03f09b9.png" style="padding: 0px 0px 0px 0px;" width="80px"> <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/fddd37c7-f066-454a-a250-d3ca1677b2d0.png" style="padding: 0px 0px 0px 4px;" width="80px"></td></tr></table>
+
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding-top: 32px; padding-right: 18px; padding-bottom: 64px; padding-left: 18px;" valign="top">
+    <table border="0" cellpadding="0" cellspacing="0" style="border-radius: 5px; background-color: #06bfd6; width: 200px;" width="200">
+     
+      <tr>
+       <td align="center" class="em_white" height="50" style="font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; color: #ffffff; font-weight: bold;" valign="middle">
+        <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb647c2ec0ed5078f601378c936bfd95ae4b140a97c36a21fcc4cef425e65ab6da320488255addfc0c40b8e90650a5e7ee43390ea6f72480df00" style="color:#ffffff;text-decoration:none;line-height: 50px; text-align: center; display: block; letter-spacing: 0.2;" target="_blank" title="5047">VIEW DEAL</a></td></tr></table></td></tr></table>
+
+</td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table width="100%" cellspacing="0" cellpadding="0" role="presentation"><tr><td align="center"><img data-assetid="64753" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/3/36b27522-6f62-44b8-b15c-f9fee2addd50.gif" alt="" width="1354" style="display: block; padding: 0px; text-align: center; border: 0px solid transparent; height: auto; width: 100%;"></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+
+
+<table cellpadding="0" cellspacing="0" role="presentation" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding-bottom: 7px;">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb64b7b5ec103f08ceabf34d0dcb78606811a17ca89c28d3579b9ed8dcae9829d155e6c0a7e4c199f4600da3af8b713a9f9973206b7055debf2d" style="color:#ffffff;text-decoration:none;line-height: 50px; text-align: center; display: block; letter-spacing: 0.2;" target="_blank" title="4822"><img alt="4822" src="https://cstad.s3.ap-southeast-2.amazonaws.com/4822_2_for_1_Warriors_of_China_EDM_WEB_HERO_1.jpg" style="display: block; padding: 0px; height: auto; width: 100%;" width="600"></a></td></tr></table><table border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" style="width: 100%" width="100%">
+ 
+   <tr>
+   <td width="195.33">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb64b7b5ec103f08ceabf34d0dcb78606811a17ca89c28d3579b9ed8dcae9829d155e6c0a7e4c199f4600da3af8b713a9f9973206b7055debf2d" style="color:#ffffff;text-decoration:none;line-height: 40px; text-align: center; display: block; letter-spacing: 0.2;padding: 0px 4.66px 0px 0px;" target="_blank" title="4822"><img align="absbottom" class="responsive100" alt="4822" src="https://cstad.s3.ap-southeast-2.amazonaws.com/4822_2_for_1_Warriors_of_China_EDM_WEB_HERO_2.jpg" style="max-width:100%;" width="195.33"> </a></td><td width="195.33">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb64b7b5ec103f08ceabf34d0dcb78606811a17ca89c28d3579b9ed8dcae9829d155e6c0a7e4c199f4600da3af8b713a9f9973206b7055debf2d" style="color:#ffffff;text-decoration:none;line-height: 40px; text-align: center; display: block; letter-spacing: 0.2;padding: 0px 2.33px 0px;" target="_blank" title="4822"><img align="absbottom" class="responsive100" alt="4822" src="https://cstad.s3.ap-southeast-2.amazonaws.com/4822_2_for_1_Warriors_of_China_EDM_WEB_HERO_3.jpg" style="max-width:100%;" width="195.33"> </a></td><td width="195.33">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb64b7b5ec103f08ceabf34d0dcb78606811a17ca89c28d3579b9ed8dcae9829d155e6c0a7e4c199f4600da3af8b713a9f9973206b7055debf2d" style="color:#ffffff;text-decoration:none;line-height: 40px; text-align: center; display: block; letter-spacing: 0.2; padding: 0px 0px 0px 4.66px;" target="_blank" title="4822"><img align="absbottom" class="responsive100" alt="4822" src="https://cstad.s3.ap-southeast-2.amazonaws.com/4822_2_for_1_Warriors_of_China_EDM_WEB_HERO_4.jpg" style="max-width:100%;" width="195.33"> </a></td></tr></table>
+
+
+
+
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" style="width: 110.87px;" width="300px">
+ 
+  <tr>
+   <td align="center" class="responsive100" style="padding: 0px 20px;" width="300px;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" margin="0">
+     
+      <tr>
+       <td style="padding: 24px 0px 0px 0px;">
+        <table bgcolor="#f5f5f5;" border="0" cellpadding="0" cellspacing="0" margin="0" style="background-color: #f5f5f5; border-radius: 6px;">
+         
+          <tr>
+           <td style="padding: 6px 0px 8px 6px; padding-right: 0px" valign="middle">
+            <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/ebee0928-804a-4b72-8d0f-0d1c5db0f668.png" style="width: 20px; padding: 2px 2px 2px 2px;" valign="top" width="20px"></td><td align="center" class="em_green" style="padding: 0px 8px 0px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #666666; font-size: 18px; font-weight: 700; line-height: 0px;">
+            &nbsp;12&nbsp;Days&nbsp;</td></tr></table></td></tr></table></td></tr></table>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 5px 30px 5px; font-family: Futura BT,'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 35px; font-weight: 500; line-height: 35p; letter-spacing: 0.2;" valign="top">
+    2 for 1 Warriors of China</td></tr>
+     </table>         
+          
+             
+    <table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+<tr>
+   <td align="center" class="em_grayB" style="padding: 0px 15px 0px 15px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #979797; font-size: 14px; line-height: 18px; vertical-align: middle; line-height: 28px;" valign="middle">
+    Was <s>$2999</s> | From</td></tr>
+     </table> 
+
+    
+      
+              
+
+
+
+   
+    
+    <table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding: 0px;">
+    <table border="0" cellpadding="0" cellspacing="0">
+     
+      <tr>
+       <td align="center" style="padding: 0px 4px 6px 0px;" valign="top" width="20">
+        <table>
+         
+          <tr>
+           <td align="center" style="vertical-align: top; font-family:'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #00BFD6; font-size: 30px; line-height:36px; font-weight: 700; vertical-align: middle; mso-line-height-rule: exactly;">
+            $</td></tr></table></td><td align="left" class="em_green" style="padding: 0px 0px 10px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #00BFD6; font-size: 56px; font-weight: 500; vertical-align: top; mso-line-height-rule: exactly; line-height:50px" valign="top">
+        2799</td></tr></table></td></tr></table> 
+
+
+ <table align="center" bgcolor="#F5F5F5" border="0" cellpadding="0" cellspacing="0" style="background-color: #F5F5F5; border-radius: 4px;">
+ 
+  <tr>
+   <td align="center" class="em_white" height="32" style="vertical-align: middle; width: 0px; padding: 0px 8px 0px 10px;  " valign="middle">
+    <img alt="" data-assetid="89574" height="20" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/4/b5dd5fbc-0ecc-494e-b124-93819acb046e.png" style="line-height: 0; display: block; height: 24px; width: 22px; padding: 0px; text-align: center;" width="20"></td><td align="center" class="em_white" height="28" style="vertical-align: middle; padding: 0px 10px 0px 0px; font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; color: #666666; font-weight: 700;  " valign="middle">
+    <span style="color:#666666;">For 2 people</span></td></tr></table>      <table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 12px 0px 24px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #666666; font-size: 17px; font-weight: 500; line-height: 18px;" valign="top">
+    or <b>279,900 Qantas Points</b></td></tr></table>
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding: 0px 0px 24px 0px; border-radius: 4px;" valign="top">
+    <table bgcolor="#F5F5F5" border="0" cellpadding="0" cellspacing="0" style="background-color: #F5F5F5; width: 240px; border-radius: 4px;" width="240">
+     
+      <tr>
+       <td align="center" class="em_white" height="50" style="vertical-align: middle; width: 25px; padding: 0px 9px 0px 22px;  " valign="middle" width="56px">
+        <img alt="" height="18" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/3/f27e94f4-9f91-4b4a-818f-a053528d873d.png" style="height: 18px; width: 25px;" width="25"></td><td align="left" class="em_white" height="50" style="font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; color: #00000; font-weight: semi-bold; width: 184px;  " valign="middle" width="184px">
+        Earn 8,397 Qantas Points</td></tr></table></td></tr></table>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 0px 28px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 15px; line-height: 30px; letter-spacing: 0.2" valign="top">
+    Discover the cultural wonders & rich history of China with a friend  <br />  Walk the remarkable Great Wall & marvel at the Terracotta Warriors</td></tr></table><table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 0px 28px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 15px; line-height: 30px; letter-spacing: 0.2" valign="top">
+    <b>Includes Return International Full-Service Flights</b></td></tr></table>
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+   <tr>
+   <td align="center" class="text-align-center" style="padding: 24px 0px 10px; vertical-align: middle;" width="300px;" valign="middle">
+    <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/d246d038-0872-4e31-982b-e7030fb60071.png" style="padding: 0px 4px 0px 0px;" width="80px"> <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/c4f47127-1bf7-4fa8-bb9c-1f883ef4fa82.png" style="padding: 0px 0px 0px 0px;" width="80px"> <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/35912e0a-01d7-4ff8-8570-f176e03f09b9.png" style="padding: 0px 0px 0px 4px;" width="80px"></td></tr></table>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding-top: 32px; padding-right: 18px; padding-bottom: 64px; padding-left: 18px;" valign="top">
+    <table border="0" cellpadding="0" cellspacing="0" style="border-radius: 5px; background-color: #06bfd6; width: 200px;" width="200">
+     
+      <tr>
+       <td align="center" class="em_white" height="50" style="font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; color: #ffffff; font-weight: bold;" valign="middle">
+        <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb64b7b5ec103f08ceabf34d0dcb78606811a17ca89c28d3579b9ed8dcae9829d155e6c0a7e4c199f4600da3af8b713a9f9973206b7055debf2d" style="color:#ffffff;text-decoration:none;line-height: 50px; text-align: center; display: block; letter-spacing: 0.2;" target="_blank" title="4822">VIEW DEAL</a></td></tr></table></td></tr></table>
+
+</td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+
+
+<table cellpadding="0" cellspacing="0" role="presentation" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding-bottom: 7px;">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb641414b475c0fd898c94e5c6bd5c1b66084ccc5d65b06a0adba790d586787b29dce1859abea4bef2f380a348f58f4a1c4831a7a739bcdefc0c" style="color:#ffffff;text-decoration:none;line-height: 50px; text-align: center; display: block; letter-spacing: 0.2;" target="_blank" title="4985"><img alt="4985" src="https://cstad.s3.ap-southeast-2.amazonaws.com/4985_Singapore_Maldives_Hudhuran_WEB_HERO_1.jpg" style="display: block; padding: 0px; height: auto; width: 100%;" width="600"></a></td></tr></table><table border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" style="width: 100%" width="100%">
+ 
+ <tr>
+   <td width="195.33">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb641414b475c0fd898c94e5c6bd5c1b66084ccc5d65b06a0adba790d586787b29dce1859abea4bef2f380a348f58f4a1c4831a7a739bcdefc0c" style="color:#ffffff;text-decoration:none;line-height: 40px; text-align: center; display: block; letter-spacing: 0.2;padding: 0px 4.66px 0px 0px;" target="_blank" title="4985"><img align="absbottom" class="responsive100" alt="4985" src="https://cstad.s3.ap-southeast-2.amazonaws.com/4985_Singapore_Maldives_Hudhuran_WEB_HERO_2.jpg" style="max-width:100%;" width="195.33"> </a></td><td width="195.33">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb641414b475c0fd898c94e5c6bd5c1b66084ccc5d65b06a0adba790d586787b29dce1859abea4bef2f380a348f58f4a1c4831a7a739bcdefc0c" style="color:#ffffff;text-decoration:none;line-height: 40px; text-align: center; display: block; letter-spacing: 0.2;padding: 0px 2.33px 0px;" target="_blank" title="4985"><img align="absbottom" class="responsive100" alt="4985" src="https://cstad.s3.ap-southeast-2.amazonaws.com/4985_Singapore_Maldives_Hudhuran_WEB_HERO_3.jpg" style="max-width:100%;" width="195.33"> </a></td><td width="195.33">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb641414b475c0fd898c94e5c6bd5c1b66084ccc5d65b06a0adba790d586787b29dce1859abea4bef2f380a348f58f4a1c4831a7a739bcdefc0c" style="color:#ffffff;text-decoration:none;line-height: 40px; text-align: center; display: block; letter-spacing: 0.2; padding: 0px 0px 0px 4.66px;" target="_blank" title="4985"><img align="absbottom" class="responsive100" alt="4985" src="https://cstad.s3.ap-southeast-2.amazonaws.com/4985_Singapore_Maldives_Hudhuran_WEB_HERO_4.jpg" style="max-width:100%;" width="195.33"> </a></td></tr></table>
+
+
+
+
+
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" style="width: 110.87px;" width="300px">
+ 
+  <tr>
+   <td align="center" class="responsive100" style="padding: 0px 20px;" width="300px;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" margin="0">
+     
+      <tr>
+       <td style="padding: 24px 0px 0px 0px;">
+        <table bgcolor="#f5f5f5;" border="0" cellpadding="0" cellspacing="0" margin="0" style="background-color: #f5f5f5; border-radius: 6px;">
+         
+          <tr>
+           <td style="padding: 6px 0px 8px 6px; padding-right: 0px" valign="middle">
+            <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/ebee0928-804a-4b72-8d0f-0d1c5db0f668.png" style="width: 20px; padding: 2px 2px 2px 2px;" valign="top" width="20px"></td><td align="center" class="em_green" style="padding: 0px 8px 0px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #666666; font-size: 18px; font-weight: 700; line-height: 0px;">
+            &nbsp;9&nbsp;Days&nbsp;</td></tr></table></td></tr></table></td></tr></table>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 5px 30px 5px; font-family: Futura BT,'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 35px; font-weight: 500; line-height: 35p; letter-spacing: 0.2;" valign="top">
+    Premium All-Inclusive Maldives & Singapore</td></tr>
+     </table>         
+
+
+
+ <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">        
+    <tr>
+
+   <td align="center" class="em_black" style="padding: 6px 15px 8px 15px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 16px; line-height: 19px;" valign="top">
+
+     <strong>Valued up to $4570 | Save 21%</strong></td></tr></table>               
+             
+    
+
+    <table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ <tr>
+   <td align="center" class="em_grayB" style="padding: 0px 15px 0px 15px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #979797; font-size: 14px; line-height: 18px; vertical-align: middle; line-height: 28px;" valign="middle">
+    From</td></tr>
+     </table> 
+      
+              
+
+
+
+   
+    
+    <table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding: 0px;">
+    <table border="0" cellpadding="0" cellspacing="0">
+     
+      <tr>
+       <td align="center" style="padding: 0px 4px 6px 0px;" valign="top" width="20">
+        <table>
+         
+          <tr>
+           <td align="center" style="vertical-align: top; font-family:'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #00BFD6; font-size: 30px; line-height:36px; font-weight: 700; vertical-align: middle; mso-line-height-rule: exactly;">
+            $</td></tr></table></td><td align="left" class="em_green" style="padding: 0px 0px 10px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #00BFD6; font-size: 56px; font-weight: 500; vertical-align: top; mso-line-height-rule: exactly; line-height:50px" valign="top">
+        3599</td></tr></table></td></tr></table> 
+
+
+<table align="center" bgcolor="#F5F5F5" border="0" style="background-color: #F5F5F5; border-radius: 4px;">
+ 
+  <tr>
+   <td align="center" class="em_white" height="32" style="vertical-align: middle; width: 0px; padding: 0px 10px 0px 10px;  " valign="middle">
+    <img alt="" data-assetid="89657" height="20" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/4/820076b6-cc2a-490e-9014-b761c8dbe84b.png" style="line-height: 0; display: block; height: 20px; width: 10px; padding: 0px; text-align: center;" width="10"></td><td align="center" class="em_white" height="28" style="vertical-align: middle; padding: 0px 10px 0px 0px; font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; color: #666666; font-weight: 700;  " valign="middle">
+    <span style="color:#666666;">Per person twin share</span></td></tr></table>       <table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 12px 0px 24px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #666666; font-size: 17px; font-weight: 500; line-height: 18px;" valign="top">
+    or <b>359,900 Qantas Points</b></td></tr></table>
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding: 0px 0px 24px 0px; border-radius: 4px;" valign="top">
+    <table bgcolor="#F5F5F5" border="0" cellpadding="0" cellspacing="0" style="background-color: #F5F5F5; width: 240px; border-radius: 4px;" width="240">
+     
+      <tr>
+       <td align="center" class="em_white" height="50" style="vertical-align: middle; width: 25px; padding: 0px 9px 0px 22px;  " valign="middle" width="56px">
+        <img alt="" height="18" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/3/f27e94f4-9f91-4b4a-818f-a053528d873d.png" style="height: 18px; width: 25px;" width="25"></td><td align="left" class="em_white" height="50" style="font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; color: #00000; font-weight: semi-bold; width: 184px;  " valign="middle" width="184px">
+        Earn 10,797 Qantas Points</td></tr></table></td></tr></table>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 0px 28px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 15px; line-height: 30px; letter-spacing: 0.2" valign="top">
+    Experience the sights of Singapore and an unlimited Maldives island paradise <br /> A perfect blend of city nightlife and tropical adventure</td></tr></table><table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 0px 28px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 15px; line-height: 30px; letter-spacing: 0.2" valign="top">
+    <b>Includes Return International Full-Service Singapore Airlines flights</b></td></tr></table>
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%"><tr><td align="center" height="auto" style="padding: 0px; height: auto;" valign="top"><img align="center" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/1/b71515cf-2ed6-4034-98fd-2268ada5df06.png" style="vertical-align: top; padding: 10px 0px 10px;" width="140px"> </td></tr></table>
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+    <tr>
+   <td align="center" class="text-align-center" style="padding: 24px 0px 10px; vertical-align: middle;" width="300px;" valign="middle">
+    <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/bc4be7ad-5070-4e99-a636-4b29a76de618.png" style="padding: 0px 4px 0px 0px;" width="80px"> <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/7051bf75-409d-41b1-8f7d-3dcf8e60b92d.png" style="padding: 0px 0px 0px 0px;" width="80px"> <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/ac9bed23-dc71-430c-a53c-203d24f004dc.png" style="padding: 0px 0px 0px 4px;" width="80px"></td></tr></table>
+
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding-top: 32px; padding-right: 18px; padding-bottom: 64px; padding-left: 18px;" valign="top">
+    <table border="0" cellpadding="0" cellspacing="0" style="border-radius: 5px; background-color: #06bfd6; width: 200px;" width="200">
+     
+      <tr>
+       <td align="center" class="em_white" height="50" style="font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; color: #ffffff; font-weight: bold;" valign="middle">
+        <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb641414b475c0fd898c94e5c6bd5c1b66084ccc5d65b06a0adba790d586787b29dce1859abea4bef2f380a348f58f4a1c4831a7a739bcdefc0c" style="color:#ffffff;text-decoration:none;line-height: 50px; text-align: center; display: block; letter-spacing: 0.2;" target="_blank" title="4985">VIEW DEAL</a></td></tr></table></td></tr></table>
+
+</td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+
+
+<table cellpadding="0" cellspacing="0" role="presentation" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding-bottom: 7px;">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb64203cc0ceee7d5ab5abefb579ede0a10c42f4c15605c0401f25c0fe08f60ae51de1844b8c81df960144e91c8b58262acf824a1fcf30bd76e7" style="color:#ffffff;text-decoration:none;line-height: 50px; text-align: center; display: block; letter-spacing: 0.2;" target="_blank" title="5002"><img alt="5002" src="https://cstad.s3.ap-southeast-2.amazonaws.com/5002_Avani_phuket_Avani_Khao_Lak_and_flights_WEB_HERO_1.jpg" style="display: block; padding: 0px; height: auto; width: 100%;" width="600"></a></td></tr></table><table border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" style="width: 100%" width="100%">
+ 
+  <tr>
+   <td width="195.33">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb64203cc0ceee7d5ab5abefb579ede0a10c42f4c15605c0401f25c0fe08f60ae51de1844b8c81df960144e91c8b58262acf824a1fcf30bd76e7" style="color:#ffffff;text-decoration:none;line-height: 40px; text-align: center; display: block; letter-spacing: 0.2;padding: 0px 4.66px 0px 0px;" target="_blank" title="5002"><img align="absbottom" class="responsive100" alt="5002" src="https://cstad.s3.ap-southeast-2.amazonaws.com/5002_Avani_phuket_Avani_Khao_Lak_and_flights_WEB_HERO_2.jpg" style="max-width:100%;" width="195.33"> </a></td><td width="195.33">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb64203cc0ceee7d5ab5abefb579ede0a10c42f4c15605c0401f25c0fe08f60ae51de1844b8c81df960144e91c8b58262acf824a1fcf30bd76e7" style="color:#ffffff;text-decoration:none;line-height: 40px; text-align: center; display: block; letter-spacing: 0.2;padding: 0px 2.33px 0px;" target="_blank" title="5002"><img align="absbottom" class="responsive100" alt="5002" src="https://cstad.s3.ap-southeast-2.amazonaws.com/5002_Avani_phuket_Avani_Khao_Lak_and_flights_WEB_HERO_3.jpg" style="max-width:100%;" width="195.33"> </a></td><td width="195.33">
+    <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb64203cc0ceee7d5ab5abefb579ede0a10c42f4c15605c0401f25c0fe08f60ae51de1844b8c81df960144e91c8b58262acf824a1fcf30bd76e7" style="color:#ffffff;text-decoration:none;line-height: 40px; text-align: center; display: block; letter-spacing: 0.2; padding: 0px 0px 0px 4.66px;" target="_blank" title="5002"><img align="absbottom" class="responsive100" alt="5002" src="https://cstad.s3.ap-southeast-2.amazonaws.com/5002_Avani_phuket_Avani_Khao_Lak_and_flights_WEB_HERO_4.jpg" style="max-width:100%;" width="195.33"> </a></td></tr></table>
+
+
+
+
+
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" style="width: 110.87px;" width="300px">
+ 
+  <tr>
+   <td align="center" class="responsive100" style="padding: 0px 20px;" width="300px;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" margin="0">
+     
+      <tr>
+       <td style="padding: 24px 0px 0px 0px;">
+        <table bgcolor="#f5f5f5;" border="0" cellpadding="0" cellspacing="0" margin="0" style="background-color: #f5f5f5; border-radius: 6px;">
+         
+          <tr>
+           <td style="padding: 6px 0px 8px 6px; padding-right: 0px" valign="middle">
+            <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/ebee0928-804a-4b72-8d0f-0d1c5db0f668.png" style="width: 20px; padding: 2px 2px 2px 2px;" valign="top" width="20px"></td><td align="center" class="em_green" style="padding: 0px 8px 0px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #666666; font-size: 18px; font-weight: 700; line-height: 0px;">
+            &nbsp;9&nbsp;Days&nbsp;</td></tr></table></td></tr></table></td></tr></table>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 5px 30px 5px; font-family: Futura BT,'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 35px; font-weight: 500; line-height: 35p; letter-spacing: 0.2;" valign="top">
+    Luxury Resorts Thailand Fly, Stay & Tour</td></tr>
+     </table>         
+           <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">        
+    <tr>
+
+   <td align="center" class="em_black" style="padding: 6px 15px 8px 15px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 16px; line-height: 19px;" valign="top">
+
+     <strong>Valued up to $8456 | Save 72%</strong></td></tr></table>     
+             
+    
+
+    <table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ <tr>
+   <td align="center" class="em_grayB" style="padding: 0px 15px 0px 15px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #979797; font-size: 14px; line-height: 18px; vertical-align: middle; line-height: 28px;" valign="middle">
+    From</td></tr>
+     </table> 
+      
+              
+
+
+
+   
+    
+    <table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding: 0px;">
+    <table border="0" cellpadding="0" cellspacing="0">
+     
+      <tr>
+       <td align="center" style="padding: 0px 4px 6px 0px;" valign="top" width="20">
+        <table>
+         
+          <tr>
+           <td align="center" style="vertical-align: top; font-family:'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #00BFD6; font-size: 30px; line-height:36px; font-weight: 700; vertical-align: middle; mso-line-height-rule: exactly;">
+            $</td></tr></table></td><td align="left" class="em_green" style="padding: 0px 0px 10px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #00BFD6; font-size: 56px; font-weight: 500; vertical-align: top; mso-line-height-rule: exactly; line-height:50px" valign="top">
+        2299</td></tr></table></td></tr></table> 
+
+
+<table align="center" bgcolor="#F5F5F5" border="0" style="background-color: #F5F5F5; border-radius: 4px;">
+ 
+  <tr>
+   <td align="center" class="em_white" height="32" style="vertical-align: middle; width: 0px; padding: 0px 10px 0px 10px;  " valign="middle">
+    <img alt="" data-assetid="89657" height="20" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/4/820076b6-cc2a-490e-9014-b761c8dbe84b.png" style="line-height: 0; display: block; height: 20px; width: 10px; padding: 0px; text-align: center;" width="10"></td><td align="center" class="em_white" height="28" style="vertical-align: middle; padding: 0px 10px 0px 0px; font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; color: #666666; font-weight: 700;  " valign="middle">
+    <span style="color:#666666;">Per person twin share</span></td></tr></table>       <table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 12px 0px 24px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #666666; font-size: 17px; font-weight: 500; line-height: 18px;" valign="top">
+    or <b>229,900 Qantas Points</b></td></tr></table>
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding: 0px 0px 24px 0px; border-radius: 4px;" valign="top">
+    <table bgcolor="#F5F5F5" border="0" cellpadding="0" cellspacing="0" style="background-color: #F5F5F5; width: 240px; border-radius: 4px;" width="240">
+     
+      <tr>
+       <td align="center" class="em_white" height="50" style="vertical-align: middle; width: 25px; padding: 0px 9px 0px 22px;  " valign="middle" width="56px">
+        <img alt="" height="18" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/3/f27e94f4-9f91-4b4a-818f-a053528d873d.png" style="height: 18px; width: 25px;" width="25"></td><td align="left" class="em_white" height="50" style="font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; color: #00000; font-weight: semi-bold; width: 184px;  " valign="middle" width="184px">
+        Earn 6,897 Qantas Points</td></tr></table></td></tr></table>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 0px 28px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 15px; line-height: 30px; letter-spacing: 0.2" valign="top">
+    Stay in 5-star luxury with 5 nights at Avani Phuket & 3 nights at Avani Khao Lak <br /> Includes return international flights, hotel transfers & Phi Phi Island tour</td></tr></table><table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ 
+  <tr>
+   <td align="center" class="em_green" style="padding: 0px 28px 0px; font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 15px; line-height: 30px; letter-spacing: 0.2" valign="top">
+    <b>Enjoy Daily Buffet Breakfast, Inter-Resort & Airport Transfers Plus More</b></td></tr></table>
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 100%;" width="100%">
+ <tr>
+   <td align="center" class="text-align-center" style="padding: 24px 0px 10px; vertical-align: middle;" width="300px;" valign="middle">
+    <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/fc698eb9-6a20-445b-8c59-a4977fa0b9b6.png" style="padding: 0px 4px 0px 0px;" width="80px"> <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/245fb2a0-8816-4c85-af53-5e7f07948149.png" style="padding: 0px 0px 0px 0px;" width="80px"> <img src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/35912e0a-01d7-4ff8-8570-f176e03f09b9.png" style="padding: 0px 0px 0px 4px;" width="80px"></td></tr></table>
+
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="responsive100" margin="0" width="100%">
+ 
+  <tr>
+   <td align="center" style="padding-top: 32px; padding-right: 18px; padding-bottom: 64px; padding-left: 18px;" valign="top">
+    <table border="0" cellpadding="0" cellspacing="0" style="border-radius: 5px; background-color: #06bfd6; width: 200px;" width="200">
+     
+      <tr>
+       <td align="center" class="em_white" height="50" style="font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; color: #ffffff; font-weight: bold;" valign="middle">
+        <a   data-linkto="https://" href="https://click.e.tripadeal.com.au/?qs=e8d33224bc05fb64203cc0ceee7d5ab5abefb579ede0a10c42f4c15605c0401f25c0fe08f60ae51de1844b8c81df960144e91c8b58262acf824a1fcf30bd76e7" style="color:#ffffff;text-decoration:none;line-height: 50px; text-align: center; display: block; letter-spacing: 0.2;" target="_blank" title="5002">VIEW DEAL</a></td></tr></table></td></tr></table>
+
+</td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table border="0" cellpadding="0" cellspacing="0" class="responsive100" style="width: 600px;" width="600">
+ 
+  <tr>
+   <td align="center" class="responsive100" style="padding: 0px 15px 26px;" valign="middle">
+    &nbsp;<hr>
+   </td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table align="center" cellpadding="0" cellspacing="0" class="stylingblock-content-wrapper" role="presentation" style="min-width: 100%; " width="100%">
+	
+		<tr>
+			<td class="stylingblock-content-wrapper camarker-inner">
+				<table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" style="background-color: #ffffff;" width="100%">
+					
+						<tr>
+							<td style="padding: 0px 31px 30px; ">
+								<table bgcolor="#ffffff" border="0" cellpadding="0" class="responsive100" margin="0" style="width: 540px; background-color: #ffffff; border-radius: 6px;" width="540px">
+									
+										<tr>
+											<td align="center" height="auto" style="padding: 10px; height: auto;" valign="top">
+												<img align="center" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/3/d45a56e9-a3b0-43b8-b1bb-c6960516e0a0.png" style="display: block; width: 35px;" width="35px"></td></tr><tr>
+											<td align="center" style="font-family: Futura, Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 21px; font-weight:  bold; line-height: 30px; padding: 0px 0px 12px;">
+												What people say about us.</td></tr><tr>
+											<td align="center" style="font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; font-size: 14px; font-weight:  normal; line-height: 22px; padding: 0px 0px 12px; letter-spacing: 0.22px; vertical-align: middle;">
+												<p>
+													&quot;AMAZING HOLIDAY! Thanks again TripADeal for another value packed travel experience.&quot;<br>
+													<br>
+													<strong>CARMEL B</strong></p></td></tr></table></td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table width="100%" cellspacing="0" cellpadding="0" role="presentation"><tr><td align="center"><a href="https://click.e.tripadeal.com.au/?qs=9b030da363147b2cb148d499057b1a698975c9ceea4985d6492cc81f318cff38bd65d0ade400461f6444346f6d64ad104503f99df1fdfea28bfc72ce22d14aea" title="TripADeal - Footer"   data-linkto="https://"><img data-assetid="94508" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/5/ed32ca7f-5521-4b1c-b25d-61f6601da8be.jpg" alt="" width="600" style="display: block; padding: 0px; text-align: center; height: auto; width: 100%;"></a></td></tr></table></td></tr></table>
+<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table width="100%" cellspacing="0" cellpadding="0" role="presentation"><tr><td align="center"><a href="https://click.e.tripadeal.com.au/?qs=9b030da363147b2cbb10e7ef008728aecff8781b07ccc76d45440961c44a0418e833198786cfcf3cc046128d20013b32eb62f7d9ed23c4e062786af33978952b" title=""   data-linkto="https://"><img data-assetid="64183" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/3/752d73d0-9e52-4169-9e7e-f860275ba376.jpg" alt="" width="600" style="display: block; padding: 0px; text-align: center; height: auto; width: 100%; border: 0px;"></a></td></tr></table></td></tr></table>
+<style data-ignore-inlining>@media (prefers-color-scheme: dark) { #_t::before {content:url('https://jza16ysc.emltrk.com/v2/jza16ysc?rd&d=00Q2x00000fq14OEAQ');}} @media (prefers-color-scheme: light) { #_t::before {content:url('https://jza16ysc.emltrk.com/v2/jza16ysc?rl&d=00Q2x00000fq14OEAQ');}} @media print{ #_t {background-image:url('https://jza16ysc.emltrk.com/v2/jza16ysc?p&d=00Q2x00000fq14OEAQ');}} div.OutlookMessageHeader {background-image:url('https://jza16ysc.emltrk.com/v2/jza16ysc?f&d=00Q2x00000fq14OEAQ')} table.moz-email-headers-table {background-image:url('https://jza16ysc.emltrk.com/v2/jza16ysc?f&d=00Q2x00000fq14OEAQ')} blockquote #_t {background-image:url('https://jza16ysc.emltrk.com/v2/jza16ysc?f&d=00Q2x00000fq14OEAQ
+')} #MailContainerBody #_t {background-image:url('https://jza16ysc.emltrk.com/v2/jza16ysc?f&d=00Q2x00000fq14OEAQ')}</style><div id="_t"></div>
+<img src="https://jza16ysc.emltrk.com/v2/jza16ysc?d=00Q2x00000fq14OEAQ" width="1" height="1" border="0" alt="" /></td>
+                </tr>
+                <!--//Body--> 
+              </tbody>
+            </table></td>
+        </tr>
+        <tr>
+          <td class="em_hide" style="line-height:1px;min-width:600px;background-color:#ffffff;"><img alt="" src="http://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/1/d420fed9-d976-43ca-849e-4facf9f2d87a.gif_not_delete_files/spacer_1539171686.gif" height="1" width="600" style="max-height:1px; min-height:1px; display:block; width:600px; min-width:600px;" border="0"></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<!-- == //Body Section == --> 
+  <!-- == AU or NZ Footer == -->
+
+      <!-- == Footer Section == -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="em_full_wrap">
+  <tr>
+    <td align="center" valign="top"><table align="center" width="600" border="0" cellspacing="0" cellpadding="0" class="em_main_table" style="width:600px;table-layout:fixed;">
+        <tr>
+          <td align="left" valign="top" class="em_p15" style="padding:20px 20px;font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:11px;line-height:16px;color:#656565;"><p style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-family:Lato, Arial, sans-serif;font-size:11px;line-height:140%;text-align:left;color:#656565;">             <span style="font-family: Lato, helvetica, arial, sans-serif;color: #656565; font-size: 9px;">You must be a Qantas Frequent Flyer member to earn points. A joining fee may apply. Membership and points are subject to the Qantas Frequent Flyer program terms and conditions.<br><br>
+
+To earn Qantas Points with TripADeal, Members will be required to provide a valid Frequent Flyer number and last name at checkout. Only the lead traveller, the primary contact for the booking, will earn 3 Qantas Points per AU$1 spent (including GST) on eligible holiday packages. Qantas Points will not be earned and cannot be redeemed on any amounts payable directly to the hotel. Conditions apply. Qantas Points will be credited to a member's account up to 8 weeks after hotel check-out, cruise, or tour completion. Qantas Points will not be earned on cancelled bookings. 
+<br><br>
+Points Plus Pay allows you to choose the number of Qantas Points you redeem above the minimum level of 4,000 and pay for the remainder of the booking value with an accepted payment method. TripADeal booking terms and conditions apply.
+
+                <br>
+             
+              <br>
+            15 Wollongbar St<br> Byron Bay, NSW, 2481<br> Australia
+            <br>
+              <br>
+              <span style="font-family: Lato, helvetica, arial, sans-serif;display: inline-block;color: #656565;line-height: 140% !important;"> <a href="https://click.e.tripadeal.com.au/?qs=9b030da363147b2c975cd4c2d98f9a78cf7198b8ec8c60057339c4416130dd764a9214e0803fc3a8a0a805f4d4f0391a2192dd52c142c4f274d9496f624f38f3" style=" color:#656565;text-decoration:underline;">Contact us</a> </span> <br>
+              <a href="tel:1300 995 143" style="color:#656565;text-decoration:underline;">1300 995 143</a> <br>
+              <br>
+              <span style="font-family: Lato, helvetica, arial, sans-serif;color: #656565;">*Terms and conditions apply<br>
+              <br>
+              <span style="font-family: Lato, helvetica, arial, sans-serif;color: #656565;">Want to change how you receive these emails?<br>
+                You can</span> <a href="https://click.e.tripadeal.com.au/?qs=9b030da363147b2cc5f727dc8d1977509cc9d3cd3ca1c47fff944f5574f57c35556783b67a16134ad09168ba91cfb2ec2485606d20c08df9787f943eb74bbace" style="color:#656565;text-decoration:underline;">update your preferences</a> or <a href="https://click.e.tripadeal.com.au/?qs=9b030da363147b2cdcb7e6f35ac51b150f0e66179f321eb40107d0d8b9632784f64cec90ae45a725dff8eac12280b1a90915a8138ad5f0b90676eb83949036e3" style="color:#656565;text-decoration:underline;">unsubscribe from this list.</a> </span></span> </p></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<!-- == //Footer Section == -->
+<img src="https://click.e.tripadeal.com.au/open.aspx?ffcb10-feca107076600178-fe521d76706c047a7d16-fe3011717164047f7d1077-ff5f167970-fe241673756d077a731079-fefe157575660d&d=110025&bmt=0" width="1" height="1" alt="">
+</body>
+<!--RegionEnd[socialslot:"allcontent"]--></html>
+
+
+
+</body></html></table>
+<!-- == //Footer Section == -->
+<img src="https://click.e.tripadeal.com.au/open.aspx?ffcb10-feca107076600178-fe521d76706c047a7d16-fe3011717164047f7d1077-ff5f167970-fe241673756d077a731079-fefe157575660d&d=110025&bmt=0" width="1" height="1" alt="">
+<!--RegionEnd[socialslot:"allcontent"]--><!-- == //AU or NZ Footer == -->
+
+--dERMze9cq3lT=_?:--
+
